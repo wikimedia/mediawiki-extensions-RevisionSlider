@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee5cbf65_e7aba119",
+        "filename": "extension.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-04-19T14:43:46Z",
+      "side": 1,
+      "message": "This should be changed at some point, added for now to have this file pass the validation",
+      "revId": "23b5b2f1124dd019304334f0d1688ade369ac416",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
