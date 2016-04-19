@@ -1,0 +1,54 @@
+{
+	"name": "RevisionSlider",
+	"version": "0.0.0",
+	"author": [
+		"WMDE"
+	],
+	"url": "https://phabricator.wikimedia.org/project/profile/1639/",
+	"namemsg": "revisionSlider",
+	"descriptionmsg": "revisionSlider-desc",
+	"license-name": "GPL-2.0+",
+	"type": "other",
+	"manifest_version": 1,
+	"MessageDirs": {
+		"RevisionSlider": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"RevisionSliderHooks": "RevisionSlider.hooks.php"
+	},
+	"ResourceModules": {
+		"ext.RevisionSlider.init": {
+			"scripts": [
+				"modules/ext.RevisionSlider.init.js"
+			],
+			"styles": [
+				"modules/ext.RevisionSlider.css"
+			],
+			"dependencies": [
+				"ext.RevisionSlider.rainbow",
+				"ext.RevisionSlider.fetchRevisions"
+			],
+			"position": "top"
+		},
+		"ext.RevisionSlider.rainbow": {
+			"scripts": [
+				"modules/ext.RevisionSlider.rainbow.js"
+			]
+		},
+		"ext.RevisionSlider.fetchRevisions": {
+			"scripts": [
+				"modules/ext.RevisionSlider.fetchRevisions.js"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": ""
+	},
+	"Hooks": {
+		"BeforePageDisplay": [
+			"RevisionSliderHooks::onBeforePageDisplay"
+		]
+	}
+}
