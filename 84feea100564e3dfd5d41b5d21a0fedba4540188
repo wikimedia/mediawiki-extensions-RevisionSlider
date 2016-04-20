@@ -16,6 +16,24 @@
       "revId": "84feea100564e3dfd5d41b5d21a0fedba4540188",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_b1261010",
+        "filename": "RevisionSlider.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-04-20T08:45:20Z",
+      "side": 1,
+      "message": "Really as this is a totally new extension we may not even need the php entry point (only if we want it to work with version of mediawiki before wdLoadExtension existed)",
+      "parentUuid": "ae564743_9122ec4e",
+      "revId": "84feea100564e3dfd5d41b5d21a0fedba4540188",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
