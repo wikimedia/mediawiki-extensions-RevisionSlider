@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_9122ec4e",
+        "filename": "RevisionSlider.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-04-20T08:40:49Z",
+      "side": 1,
+      "message": "Why not show the warning?",
+      "revId": "84feea100564e3dfd5d41b5d21a0fedba4540188",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
