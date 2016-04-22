@@ -14,7 +14,7 @@
 	// 	var $url = gServer + gScript + '?title=' + gPageName + '&diff=' + v2 + '&oldid=' + v1;
 	// 	location.href = $url;
 	// }
-	
+
 	// Formating date in JS
 	function formatDate( rawDate ) {
 		var months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ],
@@ -22,8 +22,8 @@
 			fDate = f.getUTCDate(),
 			fMonth = f.getUTCMonth(),
 			fYear = f.getUTCFullYear(),
-			fHours = ( '0' + f.getUTCHours()).slice( -2 ),
-			fMinutes = ( '0' + f.getUTCMinutes()).slice( -2 );
+			fHours = ( '0' + f.getUTCHours() ).slice( -2 ),
+			fMinutes = ( '0' + f.getUTCMinutes() ).slice( -2 );
 
 		return ( fHours + ':' + fMinutes + ', ' + fDate + ' ' + months[ fMonth ] + ' ' + fYear ).toString();
 	}
@@ -46,21 +46,23 @@
 			changeSize = 0,
 			section,
 			sectionMap = {},
-			result;
+			result,
+			i,
+			sectionName;
 
-		for ( var i = 1; i < revs.length; i++ ) {
+		for ( i = 1; i < revs.length; i++ ) {
 			changeSize = Math.abs( revs[ i ].size - revs[ i - 1 ].size );
 			section = getSection( revs[ i ].comment );
 			if ( changeSize > max ) {
 				max = changeSize;
 			}
-			if ( section.length > 0 && !(section in sectionMap) ) {
+			if ( section.length > 0 && !( section in sectionMap ) ) {
 				sectionMap[ section ] = '';
 			}
 		}
 
 		i = 0;
-		for ( var sectionName in sectionMap ) {
+		for ( sectionName in sectionMap ) {
 			sectionMap[ sectionName ] = mw.libs.revisionSlider.rainbow( Object.keys( sectionMap ).length, i );
 			i++;
 		}
@@ -78,28 +80,27 @@
 	function setSliderTicks( element, revs ) {
 		var $slider = $( element ),
 			revData = getComposedRevData( revs ),
-			maxChangeSizeLogged = Math.log( revData.maxChangeSize );
+			maxChangeSizeLogged = Math.log( revData.maxChangeSize ),
+			i, diffSize, relativeChangeSize, section, html;
 
-		for ( var i = 1; i < revs.length; i++ ) {
-			var diffSize = revs[ i ].size - revs[ i - 1 ].size,
-				relativeChangeSize = Math.ceil( 65.0 * Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) + 5,
-				section = getSection( revs[ i ].comment ),
-				html = '<b>' + formatDate( revs[ i ].timestamp ) + '</b><br>';
+		for ( i = 1; i < revs.length; i++ ) {
+			diffSize = revs[ i ].size - revs[ i - 1 ].size;
+			relativeChangeSize = Math.ceil( 65.0 * Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) + 5;
+			section = getSection( revs[ i ].comment );
+			html = '<b>' + formatDate( revs[ i ].timestamp ) + '</b><br>';
 
 			html += mw.html.escape( revs[ i ].user ) + '<br>';
 			if ( revs[ i ].comment !== '' ) {
 				html += '<br><i>' + mw.html.escape( revs[ i ].parsedcomment ) + '</i>';
 			}
-			//html += '<br> ' + revs[i].minor ? '<b>K</b> ' : '';
 			html += '<br>' + diffSize + ' byte';
+
 			$( '<div class="ui-slider-tick-mark revision" title="<center>' + html + '</center>"/>' )
 				.css( {
-					'left': i + '%',
-					'height': relativeChangeSize + 'px',
-					'top': diffSize > 0 ? '-' + relativeChangeSize + 'px' : 0,
-					'background': revData.sectionMap[ section ] || 'black'
-					//'opacity' : revs[i].minor ? 0.15 : 0.35
-					//'background' : i%2 == 1 ? 'white' : 'black'
+					left: i + '%',
+					height: relativeChangeSize + 'px',
+					top: diffSize > 0 ? '-' + relativeChangeSize + 'px' : 0,
+					background: revData.sectionMap[ section ] || 'black'
 				} )
 				.tipsy( {
 					gravity: 's',
@@ -108,7 +109,7 @@
 				} )
 				.appendTo( $slider );
 			$( '<div class="stopper"/>' )
-				.css( 'left', (i - 1) + '.5%' )
+				.css( 'left', ( i - 1 ) + '.5%' )
 				.appendTo( $slider );
 		}
 	}
@@ -119,7 +120,7 @@
 	 * @param {int} pointerPos
 	 * @param {int} start
 	 * @param {int} end
-	 * @returns {boolean}
+	 * @return {boolean}
 	 */
 	function isPointerInRange( pointerPos, start, end ) {
 		return pointerPos >= start &&
@@ -134,7 +135,7 @@
 	 */
 	function slide( $container, direction ) {
 		$container.animate( {
-			scrollLeft: $container.scrollLeft() + ($container.width() * direction)
+			scrollLeft: $container.scrollLeft() + ( $container.width() * direction )
 		} );
 	}
 
@@ -142,7 +143,7 @@
 	 * Determines the revision from a position in the revisionsContainer
 	 *
 	 * @param {int} pos
-	 * @returns {number}
+	 * @return {number}
 	 */
 	function revisionOfPosition( pos ) {
 		return Math.floor( pos / revisionWidth );
@@ -156,7 +157,7 @@
 	 */
 	function slideToPosition( $pointer, pos ) {
 		var containerOffset = $container.offset().left - $revisionSlider.offset().left,
-			left = (pos % 100) * revisionWidth;
+			left = ( pos % 100 ) * revisionWidth;
 
 		$pointer.animate( { left: left + containerOffset } );
 	}
@@ -181,9 +182,10 @@
 
 	function getSectionLegend( revs ) {
 		var revData = getComposedRevData( revs ),
-			html = '';
-		for ( var sectionName in revData.sectionMap ) {
-			html += '<span class="rvslider-legend-box" style="color:' + revData.sectionMap[ sectionName ] + ';"> ■</span>' + sectionName + '';
+			html = '',
+			sectionName;
+		for ( sectionName in revData.sectionMap ) {
+			html += '<span class="rvslider-legend-box" style="color:' + revData.sectionMap[ sectionName ] + ';"> ■</span>' + sectionName;
 		}
 		return html;
 	}
@@ -237,7 +239,7 @@
 			stop: function () {
 				var posLeft = parseInt( $( this ).css( 'left' ), 10 ),
 					offset = $revisionSlider.find( '.arrow' ).outerWidth() + 20,
-					pos = Math.round( (posLeft + $container.scrollLeft() - offset) / revisionWidth );
+					pos = Math.round( ( posLeft + $container.scrollLeft() - offset ) / revisionWidth );
 
 				if ( $( this ).hasClass( 'left-pointer' ) ) {
 					pointerPosL = pos;
@@ -249,10 +251,14 @@
 			}
 		} );
 
-		var $html = $( '<td colspan="4" style="text-align:center;" class="slider"></td>' ).append( $revisionSlider );
-		var $html2 = $( '<tr>' ).append( $html );
-		var $legendHtml = $( '<td colspan="4" style="text-align:center; font-size: 0.75em; padding: 1em 0 0.5em;"></td>' ).append( getSectionLegend( revs ) );
-		$( '.diff > tbody > tr' ).eq( 0 ).after( $legendHtml ).after( $html2 );
+		$( '.diff > tbody > tr' ).eq( 0 )
+			.after(
+				$( '<td colspan="4" style="text-align:center; font-size: 0.75em; padding: 1em 0 0.5em;"></td>' )
+					.append( getSectionLegend( revs ) ) )
+			.after(
+				$( '<tr/>' )
+					.append( $( '<td colspan="4" style="text-align:center;" class="slider"/>' )
+						.append( $revisionSlider ) ) );
 
 		revisionWidth = $( '.slider' ).width() * 90 / 10000;
 		slideToSide( $leftPointer, -1, 1 );
