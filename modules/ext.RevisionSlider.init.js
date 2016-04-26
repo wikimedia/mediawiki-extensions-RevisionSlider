@@ -1,5 +1,7 @@
 ( function ( mw, $ ) {
 	var revisionWidth = 10,
+		maxNumberOfTicks = 100,
+		containerMargin = 90,
 		$container = null,
 		$revisionSlider = null,
 		revs = [],
@@ -77,7 +79,7 @@
 
 	// Setting the tick marks on the slider
 	// Params: element - jQuery slider; revs - revisions data from API
-	function setSliderTicks( element, revs ) {
+	function setSliderTicks( element, revs, maxWidthPerTick ) {
 		var $slider = $( element ),
 			revData = getComposedRevData( revs ),
 			maxChangeSizeLogged = Math.log( revData.maxChangeSize ),
@@ -97,8 +99,9 @@
 
 			$( '<div class="ui-slider-tick-mark revision" title="<center>' + html + '</center>"/>' )
 				.css( {
-					left: i + '%',
+					left: maxWidthPerTick * ( i - 1 ) + 'px',
 					height: relativeChangeSize + 'px',
+					width: maxWidthPerTick + 'px',
 					top: diffSize > 0 ? '-' + relativeChangeSize + 'px' : 0,
 					background: revData.sectionMap[ section ] || 'black'
 				} )
@@ -190,14 +193,31 @@
 		return html;
 	}
 
+	function getMaxWidthPerTick( maxNumberOfTicks ) {
+		return Math.floor( ( $( '#mw-content-text' ).width() - containerMargin ) / maxNumberOfTicks );
+	}
+
+	function getTickContainerWidth( numberOfTicks, maxNumberOfTicks, maxWidthPerTick ) {
+		return ( ( numberOfTicks >= maxNumberOfTicks ? maxNumberOfTicks : numberOfTicks ) * maxWidthPerTick );
+	}
+
 	function addSlider( revs ) {
 		var $revisions = $( '<div class="revisions"></div>' ).css( 'width', revs.length * revisionWidth ),
 			$leftPointer = $( '<div class="pointer left-pointer" />' ),
-			$rightPointer = $( '<div class="pointer right-pointer" />' );
+			$rightPointer = $( '<div class="pointer right-pointer" />' ),
+			maxWidthPerTick = getMaxWidthPerTick( maxNumberOfTicks ),
+			containerWidth = getTickContainerWidth( revs.length, maxNumberOfTicks, maxWidthPerTick );
 
 		$revisionSlider = $( '<div class="revision-slider" />' )
+			.css( {
+				width: containerWidth + containerMargin + 'px'
+			} )
 			.append( $( '<a class="arrow left-arrow" data-dir="-1"></a>' ) )
-			.append( $( '<div class="revisions-container" />' ).append( $revisions ) )
+			.append( $( '<div class="revisions-container" />' )
+				.css( {
+					width: containerWidth + 'px'
+				} )
+				.append( $revisions ) )
 			.append( $( '<a class="arrow right-arrow" data-dir="1"></a>' ) )
 			.append( $( '<div style="clear: both" />' ) )
 			.append(
@@ -230,7 +250,7 @@
 			slide( $container, direction );
 		} );
 
-		setSliderTicks( $revisions, revs );
+		setSliderTicks( $revisions, revs, maxWidthPerTick );
 
 		$revisionSlider.find( '.pointer' ).draggable( {
 			axis: 'x',
