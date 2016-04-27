@@ -5,12 +5,12 @@
 		"WMDE"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:RevisionSlider",
-	"namemsg": "revisionSlider",
-	"descriptionmsg": "revisionSlider-desc",
+	"namemsg": "revisionslider",
+	"descriptionmsg": "revisionslider-desc",
 	"license-name": "GPL-2.0+",
 	"type": "other",
 	"manifest_version": 1,
-	"MessageDirs": {
+	"MessagesDirs": {
 		"RevisionSlider": [
 			"i18n"
 		]

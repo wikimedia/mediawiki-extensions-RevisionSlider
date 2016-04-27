@@ -4,6 +4,6 @@
             "WMDE"
         ]
     },
-    "revisionSlider": "Revision Slider",
-    "revisionSlider-desc": "{{desc|name=RevisionSlider|url=https://www.mediawiki.org/wiki/Extension:RevisionSlider}}"
+    "revisionslider": "Revision Slider",
+    "revisionslider-desc": "{{desc|name=RevisionSlider|url=https://www.mediawiki.org/wiki/Extension:RevisionSlider}}"
 }
