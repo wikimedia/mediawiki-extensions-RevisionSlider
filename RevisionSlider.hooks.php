@@ -17,4 +17,18 @@ class RevisionSliderHooks {
 	private static function isRevisionPage( WebRequest $request ) {
 		return $request->getVal( 'action' ) === 'history' || $request->getVal( 'type' ) === 'revision';
 	}
+
+	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
+		$testModules['qunit']['ext.RevisionSlider.tests'] = [
+			'scripts' => [
+				'tests/RevisionSlider.Revision.test.js',
+			],
+			'dependencies' => [
+				'ext.RevisionSlider.Revision'
+			],
+			'localBasePath' => __DIR__,
+		];
+
+		return true;
+	}
 }

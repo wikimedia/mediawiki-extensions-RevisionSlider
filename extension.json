@@ -27,6 +27,7 @@
 				"modules/ext.RevisionSlider.css"
 			],
 			"dependencies": [
+				"ext.RevisionSlider.Revision",
 				"ext.RevisionSlider.rainbow",
 				"ext.RevisionSlider.fetchRevisions"
 			],
@@ -41,6 +42,11 @@
 			"scripts": [
 				"modules/ext.RevisionSlider.fetchRevisions.js"
 			]
+		},
+		"ext.RevisionSlider.Revision": {
+			"scripts": [
+				"modules/ext.RevisionSlider.Revision.js"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -49,6 +55,9 @@
 	"Hooks": {
 		"BeforePageDisplay": [
 			"RevisionSliderHooks::onBeforePageDisplay"
+		],
+		"ResourceLoaderTestModules": [
+			"RevisionSliderHooks::onResourceLoaderTestModules"
 		]
 	}
 }

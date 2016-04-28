@@ -17,19 +17,6 @@
 	// 	location.href = $url;
 	// }
 
-	// Formating date in JS
-	function formatDate( rawDate ) {
-		var months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ],
-			f = new Date( rawDate ),
-			fDate = f.getUTCDate(),
-			fMonth = f.getUTCMonth(),
-			fYear = f.getUTCFullYear(),
-			fHours = ( '0' + f.getUTCHours() ).slice( -2 ),
-			fMinutes = ( '0' + f.getUTCMinutes() ).slice( -2 );
-
-		return ( fHours + ':' + fMinutes + ', ' + fDate + ' ' + months[ fMonth ] + ' ' + fYear ).toString();
-	}
-
 	function getSection( text ) {
 		text = text.match(
 			new RegExp( '(/\\* [^\\*]* \\*/)', 'gi' )
@@ -53,8 +40,8 @@
 			sectionName;
 
 		for ( i = 1; i < revs.length; i++ ) {
-			changeSize = Math.abs( revs[ i ].size - revs[ i - 1 ].size );
-			section = getSection( revs[ i ].comment );
+			changeSize = Math.abs( revs[ i ].getSize() - revs[ i - 1 ].getSize() );
+			section = getSection( revs[ i ].getComment() );
 			if ( changeSize > max ) {
 				max = changeSize;
 			}
@@ -86,14 +73,14 @@
 			i, diffSize, relativeChangeSize, section, html;
 
 		for ( i = 1; i < revs.length; i++ ) {
-			diffSize = revs[ i ].size - revs[ i - 1 ].size;
+			diffSize = revs[ i ].getSize() - revs[ i - 1 ].getSize();
 			relativeChangeSize = Math.ceil( 65.0 * Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) + 5;
-			section = getSection( revs[ i ].comment );
-			html = '<b>' + formatDate( revs[ i ].timestamp ) + '</b><br>';
+			section = getSection( revs[ i ].getComment() );
+			html = '<b>' + revs[ i ].getFormattedDate() + '</b><br>';
 
-			html += mw.html.escape( revs[ i ].user ) + '<br>';
-			if ( revs[ i ].comment !== '' ) {
-				html += '<br><i>' + mw.html.escape( revs[ i ].parsedcomment ) + '</i>';
+			html += mw.html.escape( revs[ i ].getUser() ) + '<br>';
+			if ( revs[ i ].getComment() !== '' ) {
+				html += '<br><i>' + mw.html.escape( revs[ i ].getParsedComment() ) + '</i>';
 			}
 			html += '<br>' + diffSize + ' byte';
 
@@ -201,6 +188,17 @@
 		return ( ( numberOfTicks >= maxNumberOfTicks ? maxNumberOfTicks : numberOfTicks ) * maxWidthPerTick );
 	}
 
+	function initializeRevs( revs ) {
+		var revisions = [],
+			i;
+
+		for ( i = 0; i < revs.length; i++ ) {
+			revisions.push( new mw.libs.revisionSlider.Revision( revs[ i ] ) );
+		}
+
+		return revisions;
+	}
+
 	function addSlider( revs ) {
 		var $revisions = $( '<div class="revisions"></div>' ).css( 'width', revs.length * revisionWidth ),
 			$leftPointer = $( '<div class="pointer left-pointer" />' ),
@@ -298,7 +296,7 @@
 					}
 					revs.reverse();
 
-					addSlider( revs );
+					addSlider( initializeRevs( revs ) );
 				}
 			} );
 		} );
