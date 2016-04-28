@@ -1,7 +1,6 @@
 ( function ( mw, $ ) {
-	var revisionWidth = 10,
-		maxNumberOfTicks = 100,
-		containerMargin = 90,
+	var revisionTickWidth = 16,
+		containerMargin = 80, // 2 * arrow + margins
 		$container = null,
 		$revisionSlider = null,
 		revs = [],
@@ -66,7 +65,7 @@
 
 	// Setting the tick marks on the slider
 	// Params: element - jQuery slider; revs - revisions data from API
-	function setSliderTicks( element, revs, maxWidthPerTick ) {
+	function setSliderTicks( element, revs ) {
 		var $slider = $( element ),
 			revData = getComposedRevData( revs ),
 			maxChangeSizeLogged = Math.log( revData.maxChangeSize ),
@@ -86,9 +85,9 @@
 
 			$( '<div class="ui-slider-tick-mark revision" title="<center>' + html + '</center>"/>' )
 				.css( {
-					left: maxWidthPerTick * ( i - 1 ) + 'px',
+					left: revisionTickWidth * ( i - 1 ) + 'px',
 					height: relativeChangeSize + 'px',
-					width: maxWidthPerTick + 'px',
+					width: revisionTickWidth + 'px',
 					top: diffSize > 0 ? '-' + relativeChangeSize + 'px' : 0,
 					background: revData.sectionMap[ section ] || 'black'
 				} )
@@ -99,7 +98,10 @@
 				} )
 				.appendTo( $slider );
 			$( '<div class="stopper"/>' )
-				.css( 'left', ( i - 1 ) + '.5%' )
+				.css( {
+					left: revisionTickWidth * ( i - 1 ) + 'px',
+					width: revisionTickWidth + 'px'
+				} )
 				.appendTo( $slider );
 		}
 	}
@@ -136,7 +138,7 @@
 	 * @return {number}
 	 */
 	function revisionOfPosition( pos ) {
-		return Math.floor( pos / revisionWidth );
+		return Math.floor( pos / revisionTickWidth );
 	}
 
 	/**
@@ -147,7 +149,7 @@
 	 */
 	function slideToPosition( $pointer, pos ) {
 		var containerOffset = $container.offset().left - $revisionSlider.offset().left,
-			left = ( pos % 100 ) * revisionWidth;
+			left = ( pos % 100 ) * revisionTickWidth;
 
 		$pointer.animate( { left: left + containerOffset } );
 	}
@@ -163,8 +165,8 @@
 		var containerOffset = $revisionSlider.find( '.arrow' ).outerWidth() + 20, // 20 == margin right
 			isLeft = pointerPos < revisionOfPosition( $container.scrollLeft() ) + direction * revisionOfPosition( $container.width() ),
 			sideFactor = isLeft ? -1 : 1,
-			sideOffset = 3 * revisionWidth * sideFactor / 2,
-			offsetRight = $pointer.hasClass( 'left-pointer' ) ? -revisionWidth : 0,
+			sideOffset = 3 * revisionTickWidth * sideFactor / 2,
+			offsetRight = $pointer.hasClass( 'left-pointer' ) ? -revisionTickWidth : 0,
 			xPos = isLeft ? containerOffset : $container.width() + containerOffset;
 
 		$pointer.animate( { left: xPos + offsetRight + sideOffset } );
@@ -180,12 +182,12 @@
 		return html;
 	}
 
-	function getMaxWidthPerTick( maxNumberOfTicks ) {
-		return Math.floor( ( $( '#mw-content-text' ).width() - containerMargin ) / maxNumberOfTicks );
+	function getMaxTicksPerPage() {
+		return Math.floor( ( $( '#mw-content-text' ).width() - containerMargin ) / revisionTickWidth );
 	}
 
 	function getTickContainerWidth( numberOfTicks, maxNumberOfTicks, maxWidthPerTick ) {
-		return ( ( numberOfTicks >= maxNumberOfTicks ? maxNumberOfTicks : numberOfTicks ) * maxWidthPerTick );
+		return Math.min( numberOfTicks, maxNumberOfTicks ) * maxWidthPerTick;
 	}
 
 	function initializeRevs( revs ) {
@@ -200,11 +202,11 @@
 	}
 
 	function addSlider( revs ) {
-		var $revisions = $( '<div class="revisions"></div>' ).css( 'width', revs.length * revisionWidth ),
+		var maxNumberOfTicks = getMaxTicksPerPage(),
+			containerWidth = getTickContainerWidth( revs.length, maxNumberOfTicks, revisionTickWidth ),
+			$revisions = $( '<div class="revisions"></div>' ),
 			$leftPointer = $( '<div class="pointer left-pointer" />' ),
-			$rightPointer = $( '<div class="pointer right-pointer" />' ),
-			maxWidthPerTick = getMaxWidthPerTick( maxNumberOfTicks ),
-			containerWidth = getTickContainerWidth( revs.length, maxNumberOfTicks, maxWidthPerTick );
+			$rightPointer = $( '<div class="pointer right-pointer" />' );
 
 		$revisionSlider = $( '<div class="revision-slider" />' )
 			.css( {
@@ -213,13 +215,17 @@
 			.append( $( '<a class="arrow left-arrow" data-dir="-1"></a>' ) )
 			.append( $( '<div class="revisions-container" />' )
 				.css( {
-					width: containerWidth + 'px'
+					width: containerWidth  + 'px'
 				} )
 				.append( $revisions ) )
 			.append( $( '<a class="arrow right-arrow" data-dir="1"></a>' ) )
 			.append( $( '<div style="clear: both" />' ) )
 			.append(
 				$( '<div class="pointer-container" />' )
+					.css( {
+						left: 40 - revisionTickWidth + 'px', // 40 == arrow + margin right
+						width: containerWidth + revisionTickWidth * 1.5 + 'px'
+					} )
 					.append( $leftPointer )
 					.append( $rightPointer )
 			);
@@ -248,16 +254,16 @@
 			slide( $container, direction );
 		} );
 
-		setSliderTicks( $revisions, revs, maxWidthPerTick );
+		setSliderTicks( $revisions, revs );
 
 		$revisionSlider.find( '.pointer' ).draggable( {
 			axis: 'x',
 			snap: '.stopper',
-			containment: '.revisions-container',
+			containment: '.pointer-container',
 			stop: function () {
-				var posLeft = parseInt( $( this ).css( 'left' ), 10 ),
+				var posLeft = parseInt( $( this ).css( 'left' ), revisionTickWidth ),
 					offset = $revisionSlider.find( '.arrow' ).outerWidth() + 20,
-					pos = Math.round( ( posLeft + $container.scrollLeft() - offset ) / revisionWidth );
+					pos = Math.round( ( posLeft + $container.scrollLeft() - offset ) / containerWidth );
 
 				if ( $( this ).hasClass( 'left-pointer' ) ) {
 					pointerPosL = pos;
@@ -278,7 +284,6 @@
 					.append( $( '<td colspan="4" style="text-align:center;" class="slider"/>' )
 						.append( $revisionSlider ) ) );
 
-		revisionWidth = $( '.slider' ).width() * 90 / 10000;
 		slideToSide( $leftPointer, -1, 1 );
 		slideToSide( $rightPointer, -1, 1 );
 	}
