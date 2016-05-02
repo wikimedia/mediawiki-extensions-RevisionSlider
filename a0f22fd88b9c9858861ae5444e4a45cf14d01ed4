@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_0da8381c",
+        "filename": "modules/ext.RevisionSlider.Revision.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-02T15:03:48Z",
+      "side": 1,
+      "message": "As far as I can tell this would match \n/* foo */\nand\n/*  */ (two spaces in the comment)\n\nbut not things like:\n/*foo*/\n/* foo*/\n/* */ (single space)\n/**/ (empty comment)\n\nI don\u0027t know if this is intended or unwanted here. Might be intended as this is basically moved over from other file, so please ignore this comment if this is the case.",
+      "revId": "a0f22fd88b9c9858861ae5444e4a45cf14d01ed4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_cdd120d2",
+        "filename": "tests/RevisionSlider.Revision.test.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-02T15:03:48Z",
+      "side": 1,
+      "message": "I know it might not really matter here but it generally seems a bit odd to have \"comment\" parsed into \"\u003cb\u003ehello\u003c/b\"",
+      "revId": "a0f22fd88b9c9858861ae5444e4a45cf14d01ed4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_cd9f6005",
+        "filename": "tests/RevisionSlider.test.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-02T15:03:48Z",
+      "side": 1,
+      "message": "This is a question not a suggestion/remark of any kind. I simply don\u0027t know:\nWhat is the reason to change it upper case or any value of changing it?",
+      "revId": "a0f22fd88b9c9858861ae5444e4a45cf14d01ed4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
