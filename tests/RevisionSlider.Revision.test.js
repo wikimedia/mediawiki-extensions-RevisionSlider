@@ -18,4 +18,23 @@
 		assert.equal( rev.getUser(), data.user );
 	} );
 
+	QUnit.test( 'get Revision with section', function ( assert ) {
+		var data = {
+				comment: '/* section */ comment',
+				parsedcomment: '<b>hello</b>'
+			},
+			rev = new mw.libs.revisionSlider.Revision( data );
+
+		assert.equal( rev.getSection(), 'section' );
+	} );
+
+	QUnit.test( 'get Revision without section', function ( assert ) {
+		var data = {
+				comment: 'no section comment'
+			},
+			rev = new mw.libs.revisionSlider.Revision( data );
+
+		assert.equal( rev.getSection(), '' );
+	} );
+
 })( mediaWiki, jQuery );

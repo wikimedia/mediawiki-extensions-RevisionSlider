@@ -16,19 +16,6 @@
 	// 	location.href = $url;
 	// }
 
-	function getSection( text ) {
-		text = text.match(
-			new RegExp( '(/\\* [^\\*]* \\*/)', 'gi' )
-		);
-		if ( !text ) {
-			return '';
-		}
-		return text[ 0 ].replace(
-			new RegExp( ' \\*/|/\\* ', 'ig' ),
-			''
-		);
-	}
-
 	function getComposedRevData( revs ) {
 		var max = 0,
 			changeSize = 0,
@@ -40,7 +27,7 @@
 
 		for ( i = 1; i < revs.length; i++ ) {
 			changeSize = Math.abs( revs[ i ].getSize() - revs[ i - 1 ].getSize() );
-			section = getSection( revs[ i ].getComment() );
+			section = revs[ i ].getSection();
 			if ( changeSize > max ) {
 				max = changeSize;
 			}
@@ -74,7 +61,7 @@
 		for ( i = 1; i < revs.length; i++ ) {
 			diffSize = revs[ i ].getSize() - revs[ i - 1 ].getSize();
 			relativeChangeSize = Math.ceil( 65.0 * Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) + 5;
-			section = getSection( revs[ i ].getComment() );
+			section = revs[ i ].getSection();
 			html = '<b>' + revs[ i ].getFormattedDate() + '</b><br>';
 
 			html += mw.html.escape( revs[ i ].getUser() ) + '<br>';

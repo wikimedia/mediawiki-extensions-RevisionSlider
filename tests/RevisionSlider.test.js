@@ -1,5 +1,5 @@
 ( function ( mw, $ ) {
-	QUnit.module( 'ext.revisionSlider' );
+	QUnit.module( 'ext.RevisionSlider' );
 
 	/**
 	 * Write your QUnit tests here. For more information on

@@ -46,6 +46,20 @@
 			return this.comment;
 		},
 
+		getSection: function () {
+			var comment = this.getComment();
+			comment = comment.match(
+				new RegExp( '(/\\* [^\\*]* \\*/)', 'gi' )
+			);
+			if ( !comment ) {
+				return '';
+			}
+			return comment[ 0 ].replace(
+				new RegExp( ' \\*/|/\\* ', 'gi' ),
+				''
+			);
+		},
+
 		formatDate: function ( rawDate ) {
 			var MONTHS = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ],
 				f = new Date( rawDate ),
