@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_177cc71a",
+        "filename": "package.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2016-05-02T09:46:57Z",
+      "side": 1,
+      "message": "This needs updating to 1.0.0 please.",
+      "revId": "f5c50e6adb2876c293351bda0a59c95db947217b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_978f3726",
+        "filename": "package.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2016-05-02T09:46:57Z",
+      "side": 1,
+      "message": "This would need to be updated but sometime later since this may cause the tests to fail.",
+      "revId": "f5c50e6adb2876c293351bda0a59c95db947217b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
