@@ -6,5 +6,6 @@
     },
     "revisionslider": "RevisionSlider",
     "revisionslider-desc": "",
-    "revisionslider-loading-placeholder": "The revision slider is loading."
+    "revisionslider-loading-placeholder": "The revision slider is loading.",
+    "revisionslider-loading-noscript": "As you have JavaScript disabled the revision slider will not be able to load."
 }

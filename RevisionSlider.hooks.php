@@ -21,6 +21,10 @@ class RevisionSliderHooks {
 		$out->addHTML(
 			'<p id="revision-slider-placeholder" style="text-align: center">' .  $placeHolder. '</p>'
 		);
+		$noScriptMessage = ( new Message( 'revisionslider-loading-noscript' ) )->parse();
+		$out->addHTML(
+			'<noscript><p style="text-align: center" >' . $noScriptMessage . '</p></noscript>'
+		);
 		$out->addHTML( '</div>' );
 	}
 
