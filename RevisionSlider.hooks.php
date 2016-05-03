@@ -9,13 +9,13 @@
  */
 class RevisionSliderHooks {
 	public static function onBeforePageDisplay( OutputPage $out, Skin $skin ) {
-		if ( self::isRevisionPage( $skin->getContext()->getRequest() ) ) {
+		if ( self::shouldLoadRevisionSlider( $skin->getContext()->getRequest() ) ) {
 			$out->addModules( 'ext.RevisionSlider.init' );
 		}
 	}
 
-	private static function isRevisionPage( WebRequest $request ) {
-		return $request->getVal( 'action' ) === 'history' || $request->getVal( 'type' ) === 'revision';
+	private static function shouldLoadRevisionSlider( WebRequest $request ) {
+		return $request->getCheck( 'diff' );
 	}
 
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
