@@ -174,12 +174,12 @@
 
 	function getSectionLegend( revs ) {
 		var revData = getComposedRevData( revs ),
-			html = '',
+			html = '<div class="revisions-legend">',
 			sectionName;
 		for ( sectionName in revData.sectionMap ) {
 			html += '<span class="rvslider-legend-box" style="color:' + revData.sectionMap[ sectionName ] + ';"> ■</span>' + sectionName;
 		}
-		return html;
+		return html + '</div>';
 	}
 
 	function getMaxTicksPerPage() {
@@ -275,14 +275,9 @@
 			}
 		} );
 
-		$( '.diff > tbody > tr' ).eq( 0 )
-			.after(
-				$( '<td colspan="4" style="text-align:center; font-size: 0.75em; padding: 1em 0 0.5em;"></td>' )
-					.append( getSectionLegend( revs ) ) )
-			.after(
-				$( '<tr/>' )
-					.append( $( '<td colspan="4" style="text-align:center;" class="slider"/>' )
-						.append( $revisionSlider ) ) );
+		$( '#revision-slider-container' )
+			.append( $revisionSlider )
+			.append( getSectionLegend( revs ) );
 
 		slideToSide( $leftPointer, -1, 1 );
 		slideToSide( $rightPointer, -1, 1 );
