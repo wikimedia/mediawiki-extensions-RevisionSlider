@@ -1,4 +1,4 @@
-(function ( mw, $ ) {
+( function ( mw ) {
 	QUnit.module( 'ext.RevisionSlider.Revision' );
 
 	QUnit.test( 'create Revision', function ( assert ) {
@@ -20,8 +20,7 @@
 
 	QUnit.test( 'get Revision with section', function ( assert ) {
 		var data = {
-				comment: '/* section */ comment',
-				parsedcomment: '<b>hello</b>'
+				comment: '/* section */ comment'
 			},
 			rev = new mw.libs.revisionSlider.Revision( data );
 
@@ -36,5 +35,5 @@
 
 		assert.equal( rev.getSection(), '' );
 	} );
+} )( mediaWiki );
 
-})( mediaWiki, jQuery );

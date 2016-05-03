@@ -12,6 +12,7 @@ module.exports = function ( grunt ) {
 			},
 			all: [
 				'*.js',
+				'tests/*.js',
 				'modules/**/*.js'
 			]
 		},
