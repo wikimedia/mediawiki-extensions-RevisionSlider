@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_abf00fd7",
+        "filename": "modules/ext.RevisionSlider.Revision.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-05-03T09:49:35Z",
+      "side": 1,
+      "message": "Getting the section is a bit hacky. MW adds the section name as /* SECTION */ to the front of the comment. So the cases not matching you mentioned do not matter. \n\nMatching /*  */ with two space does nothing wrong since the result will be the empty string but it could be optimized to skip the second step.",
+      "parentUuid": "ae564743_0da8381c",
+      "revId": "a0f22fd88b9c9858861ae5444e4a45cf14d01ed4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_cdd120d2",
         "filename": "tests/RevisionSlider.Revision.test.js",
         "patchSetId": 1
