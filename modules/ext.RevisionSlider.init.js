@@ -4,8 +4,8 @@
 		$container = null,
 		$revisionSlider = null,
 		revs = [],
-		pointerPosL = -1,
-		pointerPosR = -1;
+		leftPointer = new mw.libs.revisionSlider.Pointer( 'left-pointer', -revisionTickWidth ),
+		rightPointer = new mw.libs.revisionSlider.Pointer( 'right-pointer', 0 );
 
 	// Function called when a tick on the slider is clicked
 	// Params: v1 - Left revision ID; v2 - Right revision ID
@@ -96,14 +96,14 @@
 	/**
 	 * Checks whether pointerPos is between start and end
 	 *
-	 * @param {int} pointerPos
+	 * @param {Pointer} pointer
 	 * @param {int} start
 	 * @param {int} end
 	 * @return {boolean}
 	 */
-	function isPointerInRange( pointerPos, start, end ) {
-		return pointerPos >= start &&
-			pointerPos <= Math.min( revs.length, end );
+	function isPointerInRange( pointer, start, end ) {
+		return pointer.getPosition() >= start &&
+			pointer.getPosition() <= Math.min( revs.length, end );
 	}
 
 	/**
@@ -129,34 +129,31 @@
 	}
 
 	/**
-	 * Slides a $pointer to a position
+	 * Slides a Pointer to its position
 	 *
-	 * @param {jQuery} $pointer
-	 * @param {int} pos
+	 * @param {Pointer} pointer
 	 */
-	function slideToPosition( $pointer, pos ) {
+	function slideToPosition( pointer ) {
 		var containerOffset = $container.offset().left - $revisionSlider.offset().left,
-			left = ( pos % 100 ) * revisionTickWidth;
+			left = ( pointer.getPosition() % 100 ) * revisionTickWidth; // TODO: the `% 100` no longer makes sense as the number of revisions now varies
 
-		$pointer.animate( { left: left + containerOffset } );
+		pointer.getView().getElement().animate( { left: left + containerOffset } );
 	}
 
 	/**
-	 * Slides a $pointer to the side of the slider
+	 * Slides a Pointer to the side of the slider
 	 *
-	 * @param {jQuery} $pointer
-	 * @param {int} pointerPos
+	 * @param {Pointer} pointer
 	 * @param {int} direction
 	 */
-	function slideToSide( $pointer, pointerPos, direction ) {
+	function slideToSide( pointer, direction ) {
 		var containerOffset = $revisionSlider.find( '.arrow' ).outerWidth() + 20, // 20 == margin right
-			isLeft = pointerPos < revisionOfPosition( $container.scrollLeft() ) + direction * revisionOfPosition( $container.width() ),
+			isLeft = pointer.getPosition() < revisionOfPosition( $container.scrollLeft() ) + direction * revisionOfPosition( $container.width() ),
 			sideFactor = isLeft ? -1 : 1,
 			sideOffset = 3 * revisionTickWidth * sideFactor / 2,
-			offsetRight = $pointer.hasClass( 'left-pointer' ) ? -revisionTickWidth : 0,
 			xPos = isLeft ? containerOffset : $container.width() + containerOffset;
 
-		$pointer.animate( { left: xPos + offsetRight + sideOffset } );
+		pointer.getView().getElement().animate( { left: xPos + pointer.getView().getOffset() + sideOffset } );
 	}
 
 	function getSectionLegend( revs ) {
@@ -191,9 +188,7 @@
 	function addSlider( revs ) {
 		var maxNumberOfTicks = getMaxTicksPerPage(),
 			containerWidth = getTickContainerWidth( revs.length, maxNumberOfTicks, revisionTickWidth ),
-			$revisions = $( '<div class="revisions"></div>' ),
-			$leftPointer = $( '<div class="pointer left-pointer" />' ),
-			$rightPointer = $( '<div class="pointer right-pointer" />' );
+			$revisions = $( '<div class="revisions"></div>' );
 
 		$revisionSlider = $( '<div class="revision-slider" />' )
 			.css( {
@@ -202,7 +197,7 @@
 			.append( $( '<a class="arrow left-arrow" data-dir="-1"></a>' ) )
 			.append( $( '<div class="revisions-container" />' )
 				.css( {
-					width: containerWidth  + 'px'
+					width: containerWidth + 'px'
 				} )
 				.append( $revisions ) )
 			.append( $( '<a class="arrow right-arrow" data-dir="1"></a>' ) )
@@ -213,8 +208,8 @@
 						left: 40 - revisionTickWidth + 'px', // 40 == arrow + margin right
 						width: containerWidth + revisionTickWidth * 1.5 + 'px'
 					} )
-					.append( $leftPointer )
-					.append( $rightPointer )
+					.append( leftPointer.getView().render() )
+					.append( rightPointer.getView().render() )
 			);
 
 		$container = $revisionSlider.find( '.revisions-container' );
@@ -226,16 +221,16 @@
 					) + ( direction * revisionOfPosition( $container.width() ) ),
 				newEnd = newStart + revisionOfPosition( $container.width() );
 
-			if ( isPointerInRange( pointerPosL, newStart, newEnd ) ) {
-				slideToPosition( $leftPointer, pointerPosL );
+			if ( isPointerInRange( leftPointer, newStart, newEnd ) ) {
+				slideToPosition( leftPointer );
 			} else {
-				slideToSide( $leftPointer, pointerPosL, direction );
+				slideToSide( leftPointer, direction );
 			}
 
-			if ( isPointerInRange( pointerPosR, newStart, newEnd ) ) {
-				slideToPosition( $rightPointer, pointerPosR );
+			if ( isPointerInRange( rightPointer, newStart, newEnd ) ) {
+				slideToPosition( rightPointer );
 			} else {
-				slideToSide( $rightPointer, pointerPosR, direction );
+				slideToSide( rightPointer, direction );
 			}
 
 			slide( $container, direction );
@@ -253,9 +248,9 @@
 					pos = Math.round( ( posLeft + $container.scrollLeft() - offset ) / containerWidth );
 
 				if ( $( this ).hasClass( 'left-pointer' ) ) {
-					pointerPosL = pos;
+					leftPointer.setPosition( pos );
 				} else {
-					pointerPosR = pos;
+					rightPointer.setPosition( pos );
 				}
 
 				// refresh( pointerPosL, pointerPosR );
@@ -268,8 +263,8 @@
 			.append( $revisionSlider )
 			.append( getSectionLegend( revs ) );
 
-		slideToSide( $leftPointer, -1, 1 );
-		slideToSide( $rightPointer, -1, 1 );
+		slideToSide( leftPointer, 1 );
+		slideToSide( rightPointer, 1 );
 	}
 
 	mw.loader.using( [ 'jquery.ui.draggable', 'jquery.ui.tooltip', 'jquery.tipsy' ], function () {

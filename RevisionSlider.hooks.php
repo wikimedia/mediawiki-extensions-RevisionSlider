@@ -48,9 +48,13 @@ class RevisionSliderHooks {
 		$testModules['qunit']['ext.RevisionSlider.tests'] = [
 			'scripts' => [
 				'tests/RevisionSlider.Revision.test.js',
+				'tests/RevisionSlider.Pointer.test.js',
+				'tests/RevisionSlider.PointerView.test.js',
 			],
 			'dependencies' => [
-				'ext.RevisionSlider.Revision'
+				'ext.RevisionSlider.Revision',
+				'ext.RevisionSlider.Pointer',
+				'ext.RevisionSlider.PointerView',
 			],
 			'localBasePath' => __DIR__,
 		];
