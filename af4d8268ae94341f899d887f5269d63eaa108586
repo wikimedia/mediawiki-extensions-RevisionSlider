@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_ebbb27b8",
+        "filename": "tests/RevisionSlider.Revision.test.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-03T10:34:06Z",
+      "side": 0,
+      "message": "This could have probably been removed separately, I guess JSCS is not that smart to complain about it :)",
+      "revId": "af4d8268ae94341f899d887f5269d63eaa108586",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
