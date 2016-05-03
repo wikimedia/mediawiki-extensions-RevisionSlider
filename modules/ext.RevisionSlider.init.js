@@ -275,6 +275,8 @@
 			}
 		} );
 
+		$( '#revision-slider-placeholder' ).remove();
+
 		$( '#revision-slider-container' )
 			.append( $revisionSlider )
 			.append( getSectionLegend( revs ) );
