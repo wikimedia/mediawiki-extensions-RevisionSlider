@@ -18,6 +18,15 @@ class RevisionSliderHooks {
 		return $request->getCheck( 'diff' );
 	}
 
+	public static function onDiffViewHeader(
+		DifferenceEngine $diff,
+		Revision $oldRev,
+		Revision $newRev
+	) {
+		$out = RequestContext::getMain()->getOutput();
+		$out->addHTML( '<div id="revision-slider-container" style="min-height: 150px;"></div>' );
+	}
+
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
 		$testModules['qunit']['ext.RevisionSlider.tests'] = [
 			'scripts' => [

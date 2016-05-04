@@ -56,6 +56,9 @@
 		"BeforePageDisplay": [
 			"RevisionSliderHooks::onBeforePageDisplay"
 		],
+		"DiffViewHeader": [
+			"RevisionSliderHooks::onDiffViewHeader"
+		],
 		"ResourceLoaderTestModules": [
 			"RevisionSliderHooks::onResourceLoaderTestModules"
 		]

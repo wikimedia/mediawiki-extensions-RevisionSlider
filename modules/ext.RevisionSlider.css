@@ -21,6 +21,12 @@
     font-size: 1.4em;
 }
 
+.revisions-legend {
+    text-align: center;
+    font-size: 0.9em;
+    padding: 0.5em 0.5em;
+}
+
 .revisions {
     height: 150px;
 }
@@ -64,9 +70,6 @@
     width: 0;
 }
 
-.slider {
-    position: relative;
-}
 .revision-slider {
     position: relative;
     margin: auto;
