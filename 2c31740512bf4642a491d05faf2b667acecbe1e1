@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_2953626f",
+        "filename": "modules/ext.RevisionSlider.PointerView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-05-04T08:52:20Z",
+      "side": 1,
+      "message": "I guess \"left-pointer\" should not be in there.",
+      "revId": "2c31740512bf4642a491d05faf2b667acecbe1e1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_09ddbee1",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-05-04T08:52:20Z",
+      "side": 1,
+      "message": "leftPointer :-)",
+      "revId": "2c31740512bf4642a491d05faf2b667acecbe1e1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
