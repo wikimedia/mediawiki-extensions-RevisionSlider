@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_3fd8b07e",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 121
+      },
+      "writtenOn": "2016-05-04T13:03:40Z",
+      "side": 1,
+      "message": "Thanks. More standard would be:\n\n\"Shows a slider allowing selecting and comparing of revisions on a diff page\"\n\nw/o period for consistency.",
+      "revId": "0edc4748dc8f125dafe69f444347ee19f0589067",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
