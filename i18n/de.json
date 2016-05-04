@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Metalhead64"
+		]
+	},
+	"revisionslider": "Versionsschieber",
+	"revisionslider-desc": "Zeigt einen Schieber an, der das Auswählen und Vergleichen von Versionen auf einer Unterschiedsseite ermöglicht.",
+	"revisionslider-loading-placeholder": "Der Versionsschieber wird geladen.",
+	"revisionslider-loading-noscript": "Da du JavaScript deaktiviert hast, kann der Versionsschieber nicht geladen werden."
+}
