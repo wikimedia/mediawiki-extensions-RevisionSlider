@@ -14,6 +14,19 @@ class RevisionSliderHooks {
 		Revision $oldRev,
 		Revision $newRev
 	) {
+		global $wgUser;
+
+		/**
+		 * If this extension is deployed with the BetaFeatures extension then require the
+		 * current user to have it enabled as a BetaFeature.
+		 */
+		if (
+			class_exists( BetaFeatures::class ) &&
+			!BetaFeatures::isFeatureEnabled( $wgUser, 'revisionslider' ) )
+		{
+			return true;
+		}
+
 		$out = RequestContext::getMain()->getOutput();
 		$out->addModules( 'ext.RevisionSlider.init' );
 		$out->addHTML(
@@ -43,6 +56,16 @@ class RevisionSliderHooks {
 					)
 				)
 			)
+		);
+		return true;
+	}
+
+	public static function getBetaFeaturePreferences( $user, &$prefs ) {
+		$prefs['revisionslider'] = array(
+			'label-message' => 'revisionslider-beta-feature-message',
+			'desc-message' => 'revisionslider-beta-feature-description',
+			'info-link' => 'https://www.mediawiki.org/wiki/Extension:RevisionSlider',
+			'discussion-link' => 'https://www.mediawiki.org/wiki/Extension_talk:RevisionSlider',
 		);
 	}
 
