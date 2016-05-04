@@ -25,6 +25,12 @@ class RevisionSliderHooks {
 	) {
 		$out = RequestContext::getMain()->getOutput();
 		$out->addHTML( '<div id="revision-slider-container" style="min-height: 150px;"></div>' );
+
+		$placeHolder = ( new Message( 'revisionslider-loading-placeholder' ) )->parse();
+		$out->addHTML(
+			'<p id="revision-slider-placeholder" style="text-align: center">' .  $placeHolder. '</p>'
+		);
+		$out->addHTML( '</div>' );
 	}
 
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
