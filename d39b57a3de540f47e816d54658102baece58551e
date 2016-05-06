@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_2e8b5621",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-05-06T12:20:28Z",
+      "side": 1,
+      "message": "This won\u0027t work in all cases.\nslideToPosition only works if the revision that the pointer points at is currently visible. If it isn\u0027t the slider should move to the side of the slider using the slideToSide function.\n\nExample: Because of your window size there are 20 revisions visible and you use the slider to select revision 20 and revision 42. What will happen with this code is that one slider will stick to 20 as it should but the other one will completely slide out of the browser window, which shouldn\u0027t happen.",
+      "revId": "d39b57a3de540f47e816d54658102baece58551e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
