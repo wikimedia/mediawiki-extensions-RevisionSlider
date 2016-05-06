@@ -16,16 +16,32 @@ class RevisionSliderHooks {
 	) {
 		$out = RequestContext::getMain()->getOutput();
 		$out->addModules( 'ext.RevisionSlider.init' );
-		$out->addHTML( '<div id="revision-slider-container" style="min-height: 150px;">' );
-		$placeHolder = ( new Message( 'revisionslider-loading-placeholder' ) )->parse();
 		$out->addHTML(
-			'<p id="revision-slider-placeholder" style="text-align: center">' .  $placeHolder. '</p>'
+			Html::rawElement(
+				'div',
+				[
+					'id' => 'revision-slider-container',
+					'style' => 'min-height: 150px;',
+				],
+				Html::element(
+					'p',
+					[
+						'id' => 'revision-slider-placeholder',
+						'style' => 'text-align: center',
+					],
+					( new Message( 'revisionslider-loading-placeholder' ) )->parse()
+				) .
+				Html::rawElement(
+					'noscript',
+					[ ],
+					Html::element(
+						'p',
+						[ 'style' => 'text-align: center' ],
+						( new Message( 'revisionslider-loading-noscript' ) )->parse()
+					)
+				)
+			)
 		);
-		$noScriptMessage = ( new Message( 'revisionslider-loading-noscript' ) )->parse();
-		$out->addHTML(
-			'<noscript><p style="text-align: center" >' . $noScriptMessage . '</p></noscript>'
-		);
-		$out->addHTML( '</div>' );
 	}
 
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
