@@ -22,6 +22,8 @@ class RevisionSliderHooks {
 				[
 					'id' => 'revision-slider-container',
 					'style' => 'min-height: 150px;',
+					'data-oldrev' => $oldRev->getId(),
+					'data-newrev' => $newRev->getId(),
 				],
 				Html::element(
 					'p',
