@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_a9900099",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-05-06T13:58:55Z",
+      "side": 1,
+      "message": ".data( \u0027revid\u0027, rev.getId() )\nlooks better than the inline one IMO :)",
+      "revId": "061a9eb7a92c3a8700ebc694618e75a17c87a157",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
