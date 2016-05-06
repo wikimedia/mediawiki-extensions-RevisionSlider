@@ -56,21 +56,23 @@
 		var $slider = $( element ),
 			revData = getComposedRevData( revs ),
 			maxChangeSizeLogged = Math.log( revData.maxChangeSize ),
-			i, diffSize, relativeChangeSize, section, html;
+			i, diffSize, relativeChangeSize, section, html, rev;
 
 		for ( i = 1; i < revs.length; i++ ) {
-			diffSize = revs[ i ].getSize() - revs[ i - 1 ].getSize();
+			rev = revs[ i ];
+			diffSize = rev.getSize() - revs[ i - 1 ].getSize();
 			relativeChangeSize = Math.ceil( 65.0 * Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) + 5;
-			section = revs[ i ].getSection();
-			html = '<b>' + revs[ i ].getFormattedDate() + '</b><br>';
+			section = rev.getSection();
+			html = '<b>' + rev.getFormattedDate() + '</b><br>';
 
-			html += mw.html.escape( revs[ i ].getUser() ) + '<br>';
-			if ( revs[ i ].getComment() !== '' ) {
-				html += '<br><i>' + mw.html.escape( revs[ i ].getParsedComment() ) + '</i>';
+			html += mw.html.escape( rev.getUser() ) + '<br>';
+			if ( rev.getComment() !== '' ) {
+				html += '<br><i>' + mw.html.escape( rev.getParsedComment() ) + '</i>';
 			}
 			html += '<br>' + diffSize + ' byte';
 
 			$( '<div class="ui-slider-tick-mark revision" title="<center>' + html + '</center>"/>' )
+				.data( 'revid', rev.getId() )
 				.css( {
 					left: revisionTickWidth * ( i - 1 ) + 'px',
 					height: relativeChangeSize + 'px',

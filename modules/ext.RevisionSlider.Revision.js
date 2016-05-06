@@ -1,6 +1,7 @@
 ( function ( mw, $ ) {
 
 	var Revision = function ( data ) {
+		this.id = data.revid;
 		this.size = data.size;
 		this.comment = data.comment;
 		this.parsedComment = data.parsedcomment;
@@ -9,6 +10,11 @@
 	};
 
 	$.extend( Revision.prototype, {
+		/**
+		 * @type {int}
+		 */
+		id: 0,
+
 		/**
 		 * @type {int}
 		 */
@@ -33,6 +39,10 @@
 		 * @type {string}
 		 */
 		user: '',
+
+		getId: function () {
+			return this.id;
+		},
 
 		getSize: function () {
 			return this.size;
