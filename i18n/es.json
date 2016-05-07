@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"revisionslider": "Deslizador de revisiones",
+	"revisionslider-desc": "Muestra un control deslizante que permite la selección y comparación de las revisiones en una página de diferencias",
+	"revisionslider-loading-placeholder": "El deslizador de revisiones se está cargando.",
+	"revisionslider-loading-noscript": "Como tienes desactivado JavaScript, la deslizador de revisiones no se cargará."
+}

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"revisionslider": "修订滑块",
+	"revisionslider-desc": "显示一个滑块，它允许在差异页面上选择和比较修订",
+	"revisionslider-loading-placeholder": "修订滑块正在加载。",
+	"revisionslider-loading-noscript": "由于您禁用了JavaScript，修订滑块将无法加载。"
+}

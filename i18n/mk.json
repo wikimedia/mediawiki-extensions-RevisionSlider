@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"revisionslider": "Лизгач на преработки",
+	"revisionslider-desc": "Покажува лизгач за избирање и споредување на преработки на страница со разлики",
+	"revisionslider-loading-placeholder": "Лизгачот на преработки се вчитува.",
+	"revisionslider-loading-noscript": "Лизгачот на преработки нема да може да се вчита бидејќи немате овозможено JavaScript."
+}

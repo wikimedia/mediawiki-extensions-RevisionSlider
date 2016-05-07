@@ -5,6 +5,7 @@
 		]
 	},
 	"revisionslider": "RevisionSlider",
+	"revisionslider-desc": "Affiche un curseur permettant de sélectionner et comparer les révisions d’une page de diff",
 	"revisionslider-loading-placeholder": "L’ascenseur des révisions se charge.",
 	"revisionslider-loading-noscript": "Comme vous avez désactivé JavaScript, l’ascenseur des révisions ne pourra pas se charger."
 }
