@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_593768e0",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-05-09T07:47:32Z",
+      "side": 1,
+      "message": "Why not getBetaFeaturePreferences ?",
+      "revId": "1e48e09c1ff7dcff01d5c779bc0cd395d8804969",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
