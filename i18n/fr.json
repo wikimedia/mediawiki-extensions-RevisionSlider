@@ -1,11 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Yasten"
 		]
 	},
 	"revisionslider": "RevisionSlider",
 	"revisionslider-desc": "Affiche un curseur permettant de sélectionner et comparer les révisions d’une page de diff",
+	"revisionslider-beta-feature-message": "Curseur de révision",
+	"revisionslider-beta-feature-description": "Afficher un curseur de révision lorsque deux versions d'une page sont comparées.",
 	"revisionslider-loading-placeholder": "L’ascenseur des révisions se charge.",
 	"revisionslider-loading-noscript": "Comme vous avez désactivé JavaScript, l’ascenseur des révisions ne pourra pas se charger."
 }

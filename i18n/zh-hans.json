@@ -6,6 +6,8 @@
 	},
 	"revisionslider": "修订滑块",
 	"revisionslider-desc": "显示一个滑块，它允许在差异页面上选择和比较修订",
+	"revisionslider-beta-feature-message": "修订滑块",
+	"revisionslider-beta-feature-description": "在比较页面的两个修订版本时显示修订滑块。",
 	"revisionslider-loading-placeholder": "修订滑块正在加载。",
 	"revisionslider-loading-noscript": "由于您禁用了JavaScript，修订滑块将无法加载。"
 }

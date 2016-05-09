@@ -1,13 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "WMDE"
-        ]
-    },
-    "revisionslider": "Revision Slider",
-    "revisionslider-desc": "{{desc|name=RevisionSlider|url=https://www.mediawiki.org/wiki/Extension:RevisionSlider}}",
-    "revisionslider-beta-feature-message": "Label for the revision slider Beta Feature.",
-    "revisionslider-beta-feature-description": "Description for the revision slider Beta Feature, describing the feature that will be enabled.",
-    "revisionslider-loading-placeholder": "Message shown while the RevisionSlider is still loading on a diff page. Once loaded the message is removed.",
-    "revisionslider-loading-noscript": "Message shown while the RevisionSlider is trying to load but when JavaScript is disabled and thus it will not be successful."
+	"@metadata": {
+		"authors": [
+			"WMDE"
+		]
+	},
+	"revisionslider": "Revision Slider",
+	"revisionslider-desc": "{{desc|name=RevisionSlider|url=https://www.mediawiki.org/wiki/Extension:RevisionSlider}}",
+	"revisionslider-beta-feature-message": "Label for the revision slider Beta Feature.",
+	"revisionslider-beta-feature-description": "Description for the revision slider Beta Feature, describing the feature that will be enabled.",
+	"revisionslider-loading-placeholder": "Message shown while the RevisionSlider is still loading on a diff page. Once loaded the message is removed.",
+	"revisionslider-loading-noscript": "Message shown while the RevisionSlider is trying to load but when JavaScript is disabled and thus it will not be successful."
 }
