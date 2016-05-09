@@ -48,7 +48,7 @@ class RevisionSliderHooks {
 				) .
 				Html::rawElement(
 					'noscript',
-					[ ],
+					[],
 					Html::element(
 						'p',
 						[ 'style' => 'text-align: center' ],
@@ -61,12 +61,12 @@ class RevisionSliderHooks {
 	}
 
 	public static function getBetaFeaturePreferences( $user, &$prefs ) {
-		$prefs['revisionslider'] = array(
+		$prefs['revisionslider'] = [
 			'label-message' => 'revisionslider-beta-feature-message',
 			'desc-message' => 'revisionslider-beta-feature-description',
 			'info-link' => 'https://www.mediawiki.org/wiki/Extension:RevisionSlider',
 			'discussion-link' => 'https://www.mediawiki.org/wiki/Extension_talk:RevisionSlider',
-		);
+		];
 	}
 
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
