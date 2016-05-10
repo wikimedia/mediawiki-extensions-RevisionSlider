@@ -4,5 +4,10 @@
 			"Elisardojm"
 		]
 	},
-	"revisionslider": "RevisionSlider"
+	"revisionslider": "RevisionSlider",
+	"revisionslider-desc": "Mostra un control deslizante que permite a selección e comparación das revisións nunha páxina de diferenzas",
+	"revisionslider-beta-feature-message": "Deslizador de revisións",
+	"revisionslider-beta-feature-description": "Mostra un control deslizante cando se compara dúas versións dunha páxina.",
+	"revisionslider-loading-placeholder": "O deslizador de revisións está a cargarse.",
+	"revisionslider-loading-noscript": "Como ten desactivado JavaScript, o deslizador de revisións non se vai cargar."
 }
