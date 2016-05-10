@@ -30,7 +30,8 @@
 
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
-				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
+				sectionLegend = new mw.libs.revisionSlider.SectionLegend( this.slider.getRevisions() ),
+				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth, sectionLegend.getSectionColorMap() ),
 				$slider = $( '<div class="revision-slider"/>' ),
 				self = this;
 
@@ -59,7 +60,8 @@
 						} )
 						.append( this.leftPointer.getView().render() )
 						.append( this.rightPointer.getView().render() )
-				);
+				)
+				.append( sectionLegend.getHtml() );
 
 			$slider.find( '.arrow' ).click( function () {
 				self.slide( $( this ).data( 'dir' ) );

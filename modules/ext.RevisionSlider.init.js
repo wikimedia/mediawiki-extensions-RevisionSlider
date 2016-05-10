@@ -9,16 +9,6 @@
 	// 	location.href = $url;
 	// }
 
-	// function getSectionLegend( revs ) {
-	// 	var revData = getComposedRevData( revs ),
-	// 		html = '<div class="revisions-legend">',
-	// 		sectionName;
-	// 	for ( sectionName in revData.sectionMap ) {
-	// 		html += '<span class="rvslider-legend-box" style="color:' + revData.sectionMap[ sectionName ] + ';"> ■</span>' + sectionName;
-	// 	}
-	// 	return html + '</div>';
-	// }
-
 	mw.loader.using( [ 'jquery.ui.draggable', 'jquery.ui.tooltip', 'jquery.tipsy' ], function () {
 		$( function () {
 			mw.libs.revisionSlider.fetchRevisions( {
@@ -41,8 +31,6 @@
 					slider.getView().render( $container );
 
 					$( '#revision-slider-placeholder' ).remove();
-
-					// TODO add the legend back!
 				}
 			} );
 		} );
