@@ -75,11 +75,17 @@ class RevisionSliderHooks {
 				'tests/RevisionSlider.Revision.test.js',
 				'tests/RevisionSlider.Pointer.test.js',
 				'tests/RevisionSlider.PointerView.test.js',
+				'tests/RevisionSlider.Slider.test.js',
+				'tests/RevisionSlider.SliderView.test.js',
+				'tests/RevisionSlider.RevisionList.test.js',
 			],
 			'dependencies' => [
 				'ext.RevisionSlider.Revision',
 				'ext.RevisionSlider.Pointer',
 				'ext.RevisionSlider.PointerView',
+				'ext.RevisionSlider.Slider',
+				'ext.RevisionSlider.SliderView',
+				'ext.RevisionSlider.RevisionList',
 			],
 			'localBasePath' => __DIR__,
 		];
