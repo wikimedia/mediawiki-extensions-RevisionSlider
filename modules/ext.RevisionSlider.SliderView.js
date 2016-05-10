@@ -126,6 +126,17 @@
 			self.leftPointer.getView().getElement().draggable( 'disable' );
 			self.rightPointer.getView().getElement().draggable( 'disable' );
 
+			if ( this.slider.isAtStart() ) {
+				$( '.left-arrow' ).css( 'visibility', 'hidden' );
+			} else {
+				$( '.left-arrow' ).css( 'visibility', '' );
+			}
+			if ( this.slider.isAtEnd() ) {
+				$( '.right-arrow' ).css( 'visibility', 'hidden' );
+			} else {
+				$( '.right-arrow' ).css( 'visibility', '' );
+			}
+
 			this.$element.find( '.revisions-container' ).animate(
 				{ scrollLeft: this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth },
 				duration,

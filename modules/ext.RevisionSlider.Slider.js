@@ -39,6 +39,18 @@
 			return this.firstVisibleRevisionIndex;
 		},
 
+		getLastVisibleRevisionIndex: function () {
+			return this.firstVisibleRevisionIndex + this.revisionsPerWindow - 1;
+		},
+
+		isAtStart: function () {
+			return this.getFirstVisibleRevisionIndex() === 0 || this.revisions.getLength() <= this.revisionsPerWindow;
+		},
+
+		isAtEnd: function () {
+			return this.getLastVisibleRevisionIndex() === this.revisions.getLength() - 2 || this.revisions.getLength() <= this.revisionsPerWindow;
+		},
+
 		slide: function ( direction ) {
 			var highestPossibleFirstRev = this.revisions.getLength() - 1 - this.revisionsPerWindow;
 
