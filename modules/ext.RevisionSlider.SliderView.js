@@ -34,7 +34,11 @@
 				$slider = $( '<div class="revision-slider"/>' ),
 				self = this;
 
-			this.initializePointers();
+			this.initializePointers(
+				$container.attr( 'data-oldrev' ),
+				$container.attr( 'data-newrev' ),
+				$revisions
+			);
 
 			$slider.css( {
 					width: ( containerWidth + this.containerMargin ) + 'px'
@@ -76,11 +80,24 @@
 			this.$element = $slider;
 			$container.html( $slider );
 			this.slider.setRevisionsPerWindow( $container.find( '.revisions-container' ).width() / this.revisionWidth );
+
+			this.leftPointer.getView().slideToSideOrPosition( this, 0 );
+			this.rightPointer.getView().slideToSideOrPosition( this, 0 );
 		},
 
-		initializePointers: function () {
+		initializePointers: function ( oldRevId, newRevId, $revisions ) {
 			this.leftPointer = new mw.libs.revisionSlider.Pointer( 'left-pointer', -this.revisionWidth );
 			this.rightPointer = new mw.libs.revisionSlider.Pointer( 'right-pointer', 0 );
+			this.leftPointer.setPosition(
+				$revisions
+					.find( 'div.revision[data-revid=\'' + oldRevId + '\']' )
+					.attr( 'data-pos' )
+			);
+			this.rightPointer.setPosition(
+				$revisions
+					.find( 'div.revision[data-revid=\'' + newRevId + '\']' )
+					.attr( 'data-pos' )
+			);
 		},
 
 		calculateRevisionsPerWindow: function () {

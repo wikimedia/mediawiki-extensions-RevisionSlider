@@ -21,7 +21,7 @@
 				$tooltip = this.makeTooltip( revs[ i ], diffSize );
 
 				$html
-					.append( $( '<div class="revision" title="' + $tooltip + '"/>' )
+					.append( $( '<div class="revision" data-revid="' + revs[ i ].getId() + '" data-pos="' + ( i ) + '" title="' + $tooltip + '"/>' )
 						.css( {
 							left: revisionTickWidth * ( i - 1 ) + 'px',
 							height: relativeChangeSize + 'px',
