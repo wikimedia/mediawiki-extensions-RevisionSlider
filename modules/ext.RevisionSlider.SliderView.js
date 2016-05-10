@@ -31,6 +31,7 @@
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
 				sectionLegend = new mw.libs.revisionSlider.SectionLegend( this.slider.getRevisions() ),
+				diffPage = new mw.libs.revisionSlider.DiffPage( this.slider.getRevisions() ),
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth, sectionLegend.getSectionColorMap() ),
 				$slider = $( '<div class="revision-slider"/>' ),
 				self = this;
@@ -76,6 +77,14 @@
 						pointer = self.whichPointer( $p ),
 						pos = parseInt( $p.css( 'left' ), 10 );
 					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + Math.floor( pos / self.revisionWidth ) );
+					diffPage.refresh(
+						$revisions
+							.find( 'div.revision[data-pos=\'' + self.leftPointer.getPosition() + '\']' )
+							.attr( 'data-revid' ),
+						$revisions
+							.find( 'div.revision[data-pos=\'' + self.rightPointer.getPosition() + '\']' )
+							.attr( 'data-revid' )
+					);
 				}
 			} );
 

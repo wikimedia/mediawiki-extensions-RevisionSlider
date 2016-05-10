@@ -76,6 +76,7 @@
 			],
 			"dependencies": [
 				"ext.RevisionSlider.SectionLegend",
+				"ext.RevisionSlider.DiffPage",
 				"ext.RevisionSlider.Pointer"
 			]
 		},
@@ -85,6 +86,11 @@
 			],
 			"dependencies": [
 				"ext.RevisionSlider.rainbow"
+			]
+		},
+		"ext.RevisionSlider.DiffPage": {
+			"scripts": [
+				"modules/ext.RevisionSlider.DiffPage.js"
 			]
 		},
 		"ext.RevisionSlider.RevisionList": {
