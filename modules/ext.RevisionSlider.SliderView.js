@@ -36,11 +36,8 @@
 				$slider = $( '<div class="revision-slider"/>' ),
 				self = this;
 
-			this.initializePointers(
-				$container.attr( 'data-oldrev' ),
-				$container.attr( 'data-newrev' ),
-				$revisions
-			);
+			this.leftPointer = new mw.libs.revisionSlider.Pointer( 'left-pointer', -this.revisionWidth );
+			this.rightPointer = new mw.libs.revisionSlider.Pointer( 'right-pointer', 0 );
 
 			$slider.css( {
 					width: ( containerWidth + this.containerMargin ) + 'px'
@@ -92,13 +89,15 @@
 			$container.html( $slider );
 			this.slider.setRevisionsPerWindow( $container.find( '.revisions-container' ).width() / this.revisionWidth );
 
-			this.leftPointer.getView().slideToSideOrPosition( this, 0 );
-			this.rightPointer.getView().slideToSideOrPosition( this, 0 );
+			this.initializeSlider(
+				$container.attr( 'data-oldrev' ),
+				$container.attr( 'data-newrev' ),
+				$revisions
+			);
+
 		},
 
-		initializePointers: function ( oldRevId, newRevId, $revisions ) {
-			this.leftPointer = new mw.libs.revisionSlider.Pointer( 'left-pointer', -this.revisionWidth );
-			this.rightPointer = new mw.libs.revisionSlider.Pointer( 'right-pointer', 0 );
+		initializeSlider: function ( oldRevId, newRevId, $revisions ) {
 			this.leftPointer.setPosition(
 				$revisions
 					.find( 'div.revision[data-revid=\'' + oldRevId + '\']' )
@@ -109,6 +108,7 @@
 					.find( 'div.revision[data-revid=\'' + newRevId + '\']' )
 					.attr( 'data-pos' )
 			);
+			this.slide( Math.floor( this.rightPointer.getPosition() / this.slider.getRevisionsPerWindow() ), 0 );
 		},
 
 		calculateRevisionsPerWindow: function () {
@@ -119,14 +119,14 @@
 			return Math.min( this.slider.getRevisions().getLength(), this.calculateRevisionsPerWindow() ) * this.revisionWidth;
 		},
 
-		slide: function ( direction ) {
+		slide: function ( direction, duration ) {
 			this.slider.slide( direction );
 
 			this.$element.find( '.revisions-container' ).animate( {
 				scrollLeft: this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth
-			} );
-			this.leftPointer.getView().slideToSideOrPosition( this );
-			this.rightPointer.getView().slideToSideOrPosition( this );
+			}, duration );
+			this.leftPointer.getView().slideToSideOrPosition( this, duration );
+			this.rightPointer.getView().slideToSideOrPosition( this, duration );
 		},
 
 		whichPointer: function ( $e ) {
