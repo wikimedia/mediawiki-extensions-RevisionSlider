@@ -86,6 +86,9 @@ class RevisionSliderHooks {
 				'ext.RevisionSlider.Slider',
 				'ext.RevisionSlider.SliderView',
 				'ext.RevisionSlider.RevisionList',
+				'jquery.ui.draggable',
+				'jquery.ui.tooltip',
+				'jquery.tipsy',
 			],
 			'localBasePath' => __DIR__,
 		];
