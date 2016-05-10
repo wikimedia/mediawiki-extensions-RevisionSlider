@@ -120,11 +120,22 @@
 		},
 
 		slide: function ( direction, duration ) {
-			this.slider.slide( direction );
+			var self = this;
 
-			this.$element.find( '.revisions-container' ).animate( {
-				scrollLeft: this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth
-			}, duration );
+			this.slider.slide( direction );
+			self.leftPointer.getView().getElement().draggable( 'disable' );
+			self.rightPointer.getView().getElement().draggable( 'disable' );
+
+			this.$element.find( '.revisions-container' ).animate(
+				{ scrollLeft: this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth },
+				duration,
+				null,
+				function () {
+					self.leftPointer.getView().getElement().draggable( 'enable' );
+					self.rightPointer.getView().getElement().draggable( 'enable' );
+				}
+			);
+
 			this.leftPointer.getView().slideToSideOrPosition( this, duration );
 			this.rightPointer.getView().slideToSideOrPosition( this, duration );
 		},
