@@ -75,7 +75,16 @@
 				"modules/ext.RevisionSlider.SliderView.js"
 			],
 			"dependencies": [
+				"ext.RevisionSlider.SectionLegend",
 				"ext.RevisionSlider.Pointer"
+			]
+		},
+		"ext.RevisionSlider.SectionLegend": {
+			"scripts": [
+				"modules/ext.RevisionSlider.SectionLegend.js"
+			],
+			"dependencies": [
+				"ext.RevisionSlider.rainbow"
 			]
 		},
 		"ext.RevisionSlider.RevisionList": {
