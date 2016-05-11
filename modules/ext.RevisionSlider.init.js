@@ -8,21 +8,37 @@
 				startId: mw.config.get( 'wgCurRevisionId' ),
 
 				success: function ( data ) {
-					var revs = data.query.pages[ 0 ].revisions,
+					var revs,
 						revisionList,
 						$container,
 						slider;
-					if ( !revs ) {
-						return;
+
+					try {
+						revs = data.query.pages[ 0 ].revisions;
+						if ( !revs ) {
+							return;
+						}
+						revs.reverse();
+
+						revisionList = new mw.libs.revisionSlider.RevisionList( revs );
+						$container = $( '#revision-slider-container' );
+						slider = new mw.libs.revisionSlider.Slider( revisionList );
+						slider.getView().render( $container );
+
+						$( '#revision-slider-placeholder' ).remove();
+					} catch ( err ) {
+						$( '#revision-slider-placeholder' )
+							.html( mw.message( 'revisionslider-loading-failed' ).text() );
+						console.log( err );
+						mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
 					}
-					revs.reverse();
 
-					revisionList = new mw.libs.revisionSlider.RevisionList( revs );
-					$container = $( '#revision-slider-container' );
-					slider = new mw.libs.revisionSlider.Slider( revisionList );
-					slider.getView().render( $container );
-
-					$( '#revision-slider-placeholder' ).remove();
+				},
+				error: function ( err ) {
+					$( '#revision-slider-placeholder' )
+						.html( mw.message( 'revisionslider-loading-failed' ).text() );
+					console.log( err );
+					mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
 				}
 			} );
 		} );

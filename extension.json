@@ -27,10 +27,14 @@
 				"modules/ext.RevisionSlider.css"
 			],
 			"dependencies": [
+				"mediawiki.jqueryMsg",
 				"ext.RevisionSlider.Slider",
 				"ext.RevisionSlider.Revision",
 				"ext.RevisionSlider.RevisionList",
 				"ext.RevisionSlider.fetchRevisions"
+			],
+			"messages": [
+				"revisionslider-loading-failed"
 			],
 			"position": "top"
 		},

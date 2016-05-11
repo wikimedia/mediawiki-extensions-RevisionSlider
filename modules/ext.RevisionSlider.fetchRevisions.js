@@ -4,7 +4,7 @@
 	/**
 	 * Fetches up to 500 revisions at a time
 	 *
-	 * @param {{}} options - Options containing success callback, pageName and startId
+	 * @param {{}} options - Options containing success /error callback, pageName and startId
 	 */
 	mw.libs.revisionSlider.fetchRevisions = function ( options ) {
 		$.ajax( {
@@ -20,7 +20,8 @@
 				'continue': '',
 				rvlimit: 500
 			},
-			success: options.success
+			success: options.success,
+			error: options.error
 		} );
 	};
 }( mediaWiki, jQuery ) );

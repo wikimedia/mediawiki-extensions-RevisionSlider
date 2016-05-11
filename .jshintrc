@@ -1,6 +1,7 @@
 {
 	// Enforcing
 	"bitwise": true,
+	"devel": true,
 	"eqeqeq": true,
 	"es3": true,
 	"latedef": true,
