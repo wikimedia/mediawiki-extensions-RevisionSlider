@@ -11,6 +11,7 @@
 
 	mw.loader.using( [ 'jquery.ui.draggable', 'jquery.ui.tooltip', 'jquery.tipsy' ], function () {
 		$( function () {
+			mw.track( 'counter.MediaWiki.RevisionSlider.event.init' );
 			mw.libs.revisionSlider.fetchRevisions( {
 				pageName: mw.config.get( 'wgPageName' ),
 				startId: mw.config.get( 'wgCurRevisionId' ),

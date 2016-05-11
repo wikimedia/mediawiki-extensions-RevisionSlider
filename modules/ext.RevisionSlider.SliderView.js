@@ -62,6 +62,7 @@
 				.append( sectionLegend.getHtml() );
 
 			$slider.find( '.arrow' ).click( function () {
+				mw.track( 'counter.MediaWiki.RevisionSlider.event.arrowClick' );
 				self.slide( $( this ).data( 'dir' ) );
 			} );
 
@@ -73,6 +74,7 @@
 					var $p = $( this ),
 						pointer = self.whichPointer( $p ),
 						pos = parseInt( $p.css( 'left' ), 10 );
+					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
 					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + Math.floor( pos / self.revisionWidth ) );
 					diffPage.refresh(
 						$revisions
