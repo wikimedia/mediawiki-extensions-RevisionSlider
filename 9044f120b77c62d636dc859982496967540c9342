@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_55f717d0",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-05-11T09:12:19Z",
+      "side": 1,
+      "message": "Is this really necessary? Didnt we originally use the parsedcomment here?",
+      "revId": "9044f120b77c62d636dc859982496967540c9342",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
