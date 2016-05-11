@@ -94,3 +94,18 @@
     border-style: solid;
     border-width: 0 10px 10px 10px;
 }
+
+#revision-slider-darkness {
+    background-color: white;
+    filter:alpha(opacity=50); /* IE */
+    opacity: 0.5; /* Safari, Opera */
+    -moz-opacity:0.50; /* FireFox */
+    z-index: 20;
+    height: 100%;
+    width: 100%;
+    background-repeat:no-repeat;
+    background-position:center;
+    position:absolute;
+    top: 0;
+    left: 0;
+}

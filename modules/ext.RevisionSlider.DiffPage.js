@@ -4,6 +4,9 @@
 
 	$.extend( DiffPage.prototype, {
 		refresh: function ( oldId, newId ) {
+			$( 'body' )
+				.find( 'table.diff[data-mw=\'interface\']' )
+				.append( '<div id="revision-slider-darkness"></div>' );
 			$.ajax( {
 				url: mw.util.wikiScript( 'index' ),
 				data: {
