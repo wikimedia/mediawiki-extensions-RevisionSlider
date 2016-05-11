@@ -3,15 +3,15 @@
 	};
 
 	$.extend( DiffPage.prototype, {
-		refresh: function ( oldId, newId ) {
+		refresh: function ( revId1, revId2 ) {
 			$( 'body' )
 				.find( 'table.diff[data-mw=\'interface\']' )
 				.append( '<div id="revision-slider-darkness"></div>' );
 			$.ajax( {
 				url: mw.util.wikiScript( 'index' ),
 				data: {
-					diff: newId,
-					oldid: oldId
+					diff: Math.max( revId1, revId2 ),
+					oldid: Math.min( revId1, revId2 )
 				},
 				success: function ( data ) {
 					data = $( '<div/>' ).html( data ).contents();
