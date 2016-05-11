@@ -16,6 +16,24 @@
       "revId": "9044f120b77c62d636dc859982496967540c9342",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_75fa1bb7",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-05-11T09:13:29Z",
+      "side": 1,
+      "message": "If parsedComment was initially used then we may be better switching to that.\nBut yes if we use the raw comment this is defiantly needed!",
+      "parentUuid": "ae564743_55f717d0",
+      "revId": "9044f120b77c62d636dc859982496967540c9342",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
