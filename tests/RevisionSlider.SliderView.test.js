@@ -1,16 +1,21 @@
-( function () {
-	// var SliderView = mw.libs.revisionSlider.SliderView,
-	// 	Slider = mw.libs.revisionSlider.Slider;
+( function ( mw ) {
+	var SliderView = mw.libs.revisionSlider.SliderView,
+		Slider = mw.libs.revisionSlider.Slider,
+		Revision = mw.libs.revisionSlider.Revision,
+		RevisionList = mw.libs.revisionSlider.RevisionList;
 
 	QUnit.module( 'ext.RevisionSlider.SliderView' );
 
-	// TODO FIX ME
-	// QUnit.test( 'render', function ( assert ) {
-	// 	var $container = $( '<div/>' ),
-	// 		view = new SliderView( new Slider( [] ) );
-	//
-	// 	view.render( $container );
-	// 	assert.ok( $container.find( '.revision-slider' ).length > 0 );
-	// } );
+	QUnit.test( 'render', function ( assert ) {
+		var $container = $( '<div/>' ),
+			view = new SliderView( new Slider( new RevisionList( [
+				new Revision( { size: 5, comment: 'Comment1', user: 'User1' } ),
+				new Revision( { size: 21, comment: 'Comment2', user: 'User2' } ),
+				new Revision( { size: 13, comment: 'Comment3', user: 'User3' } )
+			] ) ) );
+
+		view.render( $container );
+		assert.ok( $container.find( '.revision-slider' ).length > 0 );
+	} );
 
 } )( mediaWiki );

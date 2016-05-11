@@ -1,5 +1,6 @@
 ( function ( mw, $ ) {
 	var RevisionList = function ( revs ) {
+		this.revisions = [];
 		this.initialize( revs );
 		this.view = new mw.libs.revisionSlider.RevisionListView( this );
 	};
