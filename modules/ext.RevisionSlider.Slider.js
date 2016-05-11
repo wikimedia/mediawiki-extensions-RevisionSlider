@@ -51,6 +51,10 @@
 			return this.getLastVisibleRevisionIndex() === this.revisions.getLength() - 2 || this.revisions.getLength() <= this.revisionsPerWindow;
 		},
 
+		setFirstVisibleRevisionIndex: function ( value ) {
+			this.firstVisibleRevisionIndex = value;
+		},
+
 		slide: function ( direction ) {
 			var highestPossibleFirstRev = this.revisions.getLength() - 1 - this.revisionsPerWindow;
 

@@ -20,6 +20,29 @@
 						.html( data.find( 'table.diff[data-mw=\'interface\']' ) );
 				}
 			} );
+		},
+
+		pushState: function ( revId1, revId2, sliderView ) {
+			history.pushState(
+				{ revid1: revId1, revid2: revId2, leftPos: sliderView.leftPointer.getPosition(), rightPos: sliderView.rightPointer.getPosition(), sliderPos: sliderView.slider.getFirstVisibleRevisionIndex() },
+				$( document ).find( 'title' ).text(),
+				mw.util.wikiScript( 'index' ) + '?diff=' + Math.max( revId1, revId2 ) + '&oldid=' + Math.min( revId1, revId2 )
+			);
+		},
+
+		initOnPopState: function ( sliderView ) {
+			var self = this;
+			window.addEventListener( 'popstate', function ( event ) {
+				if ( event.state === null ) {
+					return;
+				}
+				mw.track( 'counter.MediaWiki.RevisionSlider.event.historyChange' );
+				sliderView.leftPointer.setPosition( event.state.leftPos );
+				sliderView.rightPointer.setPosition( event.state.rightPos );
+				sliderView.slider.setFirstVisibleRevisionIndex( event.state.sliderPos );
+				sliderView.slide( 0 );
+				self.refresh( event.state.revid1, event.state.revid2 );
+			} );
 		}
 	} );
 
