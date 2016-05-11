@@ -27,9 +27,9 @@
 				"modules/ext.RevisionSlider.css"
 			],
 			"dependencies": [
+				"ext.RevisionSlider.Slider",
 				"ext.RevisionSlider.Revision",
-				"ext.RevisionSlider.rainbow",
-				"ext.RevisionSlider.Pointer",
+				"ext.RevisionSlider.RevisionList",
 				"ext.RevisionSlider.fetchRevisions"
 			],
 			"position": "top"
@@ -60,6 +60,36 @@
 		"ext.RevisionSlider.PointerView": {
 			"scripts": [
 				"modules/ext.RevisionSlider.PointerView.js"
+			]
+		},
+		"ext.RevisionSlider.Slider": {
+			"scripts": [
+				"modules/ext.RevisionSlider.Slider.js"
+			],
+			"dependencies": [
+				"ext.RevisionSlider.SliderView"
+			]
+		},
+		"ext.RevisionSlider.SliderView": {
+			"scripts": [
+				"modules/ext.RevisionSlider.SliderView.js"
+			],
+			"dependencies": [
+				"ext.RevisionSlider.Pointer"
+			]
+		},
+		"ext.RevisionSlider.RevisionList": {
+			"scripts": [
+				"modules/ext.RevisionSlider.RevisionList.js"
+			],
+			"dependencies": [
+				"ext.RevisionSlider.Revision",
+				"ext.RevisionSlider.RevisionListView"
+			]
+		},
+		"ext.RevisionSlider.RevisionListView": {
+			"scripts": [
+				"modules/ext.RevisionSlider.RevisionListView.js"
 			]
 		}
 	},

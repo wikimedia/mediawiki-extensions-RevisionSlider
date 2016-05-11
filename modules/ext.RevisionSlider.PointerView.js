@@ -1,5 +1,6 @@
 ( function ( mw, $ ) {
-	var PointerView = function ( cssClass, offset ) {
+	var PointerView = function ( pointer, cssClass, offset ) {
+		this.pointer = pointer;
 		this.cssClass = cssClass;
 		this.offset = offset;
 	};
@@ -14,6 +15,10 @@
 		 * @type {int}
 		 */
 		offset: 0,
+
+		/**
+		 * @type {Pointer}
+		 */
 
 		/**
 		 * @type {jQuery}
@@ -41,6 +46,34 @@
 
 		getOffset: function () {
 			return this.offset;
+		},
+
+		animateTo: function ( posInPx ) {
+			this.getElement().animate( { left: posInPx } );
+		},
+
+		slideToPosition: function ( slider ) {
+			var relativePos = this.pointer.getPosition() - slider.slider.getFirstVisibleRevisionIndex();
+			this.animateTo( relativePos * slider.revisionWidth );
+		},
+
+		slideToSide: function ( slider, posBeforeSlider ) {
+			if ( posBeforeSlider ) {
+				this.animateTo( this.offset - slider.revisionWidth );
+			} else {
+				this.animateTo( ( slider.slider.getRevisionsPerWindow() + 1 ) * slider.revisionWidth - this.offset );
+			}
+		},
+
+		slideToSideOrPosition: function ( slider ) {
+			var firstVisibleRev = slider.slider.getFirstVisibleRevisionIndex(),
+				posBeforeSlider = this.pointer.getPosition() < firstVisibleRev,
+				isVisible = !posBeforeSlider && this.pointer.getPosition() <= firstVisibleRev + slider.slider.getRevisionsPerWindow();
+			if ( isVisible ) {
+				this.slideToPosition( slider );
+			} else {
+				this.slideToSide( slider, posBeforeSlider );
+			}
 		}
 	} );
 
