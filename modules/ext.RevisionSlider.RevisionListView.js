@@ -9,7 +9,7 @@
 		 */
 		revisionList: null,
 
-		render: function ( revisionTickWidth, sectionColorMap ) {
+		render: function ( revisionTickWidth ) {
 			var $html = $( '<div class="revisions"/>' ),
 				revs = this.revisionList.getRevisions(),
 				maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() ),
@@ -27,7 +27,7 @@
 							height: relativeChangeSize + 'px',
 							width: revisionTickWidth + 'px',
 							top: diffSize > 0 ? '-' + relativeChangeSize + 'px' : 0,
-							background: sectionColorMap[ revs[ i ].getSection() ] || 'black'
+							background: 'black'
 						} )
 						.tipsy( {
 							gravity: 's',

@@ -17,17 +17,6 @@
     transition: all ease 0.2s;
 }
 
-.rvslider-legend-box {
-    opacity: 0.35;
-    font-size: 1.4em;
-}
-
-.revisions-legend {
-    text-align: center;
-    font-size: 0.9em;
-    padding: 0.5em 0.5em;
-}
-
 .revisions {
     height: 150px;
 }

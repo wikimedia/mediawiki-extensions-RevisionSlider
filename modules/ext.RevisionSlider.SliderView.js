@@ -30,9 +30,8 @@
 
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
-				sectionLegend = new mw.libs.revisionSlider.SectionLegend( this.slider.getRevisions() ),
 				diffPage = new mw.libs.revisionSlider.DiffPage( this.slider.getRevisions() ),
-				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth, sectionLegend.getSectionColorMap() ),
+				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
 				$slider = $( '<div class="revision-slider"/>' ),
 				self = this;
 
@@ -58,8 +57,7 @@
 						} )
 						.append( this.leftPointer.getView().render() )
 						.append( this.rightPointer.getView().render() )
-				)
-				.append( sectionLegend.getHtml() );
+				);
 
 			$slider.find( '.arrow' ).click( function () {
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.arrowClick' );

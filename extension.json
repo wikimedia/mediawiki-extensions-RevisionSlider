@@ -39,11 +39,6 @@
 			],
 			"position": "top"
 		},
-		"ext.RevisionSlider.rainbow": {
-			"scripts": [
-				"modules/ext.RevisionSlider.rainbow.js"
-			]
-		},
 		"ext.RevisionSlider.fetchRevisions": {
 			"scripts": [
 				"modules/ext.RevisionSlider.fetchRevisions.js"
@@ -80,17 +75,8 @@
 				"modules/ext.RevisionSlider.SliderView.js"
 			],
 			"dependencies": [
-				"ext.RevisionSlider.SectionLegend",
 				"ext.RevisionSlider.DiffPage",
 				"ext.RevisionSlider.Pointer"
-			]
-		},
-		"ext.RevisionSlider.SectionLegend": {
-			"scripts": [
-				"modules/ext.RevisionSlider.SectionLegend.js"
-			],
-			"dependencies": [
-				"ext.RevisionSlider.rainbow"
 			]
 		},
 		"ext.RevisionSlider.DiffPage": {
