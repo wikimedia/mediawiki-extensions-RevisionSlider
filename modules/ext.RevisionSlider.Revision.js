@@ -87,7 +87,8 @@
 
 		formatDate: function ( rawDate ) {
 			var MONTHS = [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec' ],
-				f = new Date( rawDate ),
+				offset = mw.user.options.values.timecorrection ? mw.user.options.values.timecorrection.split( '|' )[ 1 ] : mw.config.values.extRevisionSliderTimeOffset,
+				f = new Date( ( new Date( rawDate ) ).getTime() + ( offset * 60 * 1000 ) ),
 				fDate = f.getUTCDate(),
 				fMonth = f.getUTCMonth(),
 				fYear = f.getUTCFullYear(),

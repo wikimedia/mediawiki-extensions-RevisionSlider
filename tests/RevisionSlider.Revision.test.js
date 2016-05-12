@@ -11,6 +11,9 @@
 			},
 			rev = new mw.libs.revisionSlider.Revision( data );
 
+		mw.config.values.extRevisionSliderTimeOffset = 0;
+		mw.user.options.values.timecorrection = 0;
+
 		assert.equal( rev.getSize(), data.size );
 		assert.equal( rev.getComment(), data.comment );
 		assert.equal( rev.getParsedComment(), data.parsedcomment );
@@ -30,6 +33,9 @@
 			},
 			rev = new mw.libs.revisionSlider.Revision( data );
 
+		mw.config.values.extRevisionSliderTimeOffset = 0;
+		mw.user.options.values.timecorrection = 0;
+
 		assert.equal( rev.getSize(), data.size );
 		assert.equal( rev.getComment(), data.comment );
 		assert.equal( rev.getParsedComment(), data.parsedcomment );
@@ -48,6 +54,9 @@
 				minor: true
 			},
 			rev = new mw.libs.revisionSlider.Revision( data );
+
+		mw.config.values.extRevisionSliderTimeOffset = 0;
+		mw.user.options.values.timecorrection = 0;
 
 		assert.equal( rev.getSize(), data.size );
 		assert.equal( rev.getComment(), data.comment );
@@ -81,5 +90,39 @@
 		rev.setRelativeSize( size );
 		assert.equal( rev.getRelativeSize(), size );
 	} );
+
+	QUnit.test( 'getFormattedDate No user offset, 0 default offset', function ( assert ) {
+		var rev = new mw.libs.revisionSlider.Revision( {
+				timestamp: '2016-04-26T10:27:14Z' // 10:27, 26 Apr 2016
+			} );
+
+		mw.user.options.values.timecorrection = undefined;
+		mw.config.values.extRevisionSliderTimeOffset = 0;
+
+		assert.equal( rev.getFormattedDate(), '10:27, 26 Apr 2016' );
+	} );
+
+	QUnit.test( 'getFormattedDate No user offset, 1 default offset', function ( assert ) {
+		var rev = new mw.libs.revisionSlider.Revision( {
+				timestamp: '2016-04-26T10:27:14Z' // 10:27, 26 Apr 2016
+			} );
+
+		mw.user.options.values.timecorrection = undefined;
+		mw.config.values.extRevisionSliderTimeOffset = 60;
+
+		assert.equal( rev.getFormattedDate(), '11:27, 26 Apr 2016' );
+	} );
+
+	QUnit.test( 'getFormattedDate 2 user offset, 1 default offset', function ( assert ) {
+		var rev = new mw.libs.revisionSlider.Revision( {
+				timestamp: '2016-04-26T10:27:14Z' // 10:27, 26 Apr 2016
+			} );
+
+		mw.user.options.values.timecorrection = 'FOO|120|BAR';
+		mw.config.values.extRevisionSliderTimeOffset = 60;
+
+		assert.equal( rev.getFormattedDate(), '12:27, 26 Apr 2016' );
+	} );
+
 } )( mediaWiki );
 

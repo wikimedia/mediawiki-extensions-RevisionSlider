@@ -1,4 +1,5 @@
 <?php
+use MediaWiki\MediaWikiServices;
 
 /**
  * RevisionSlider extension hooks
@@ -27,10 +28,19 @@ class RevisionSliderHooks {
 			return true;
 		}
 
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$timeOffset = $config->get( 'LocalTZoffset' );
+		if ( is_null( $config->get( 'Localtimezone' ) ) ) {
+			$timeOffset = 0;
+		} elseif ( is_null( $timeOffset ) ) {
+			$timeOffset = 0;
+		}
+
 		$out = RequestContext::getMain()->getOutput();
 		$out->addModules( 'ext.RevisionSlider.init' );
 		$out->addJsConfigVars( 'extRevisionSliderOldRev', $oldRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderNewRev', $newRev->getId() );
+		$out->addJsConfigVars( 'extRevisionSliderTimeOffset', intval( $timeOffset ) );
 		$out->addHTML(
 			Html::rawElement(
 				'div',
