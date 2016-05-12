@@ -13,11 +13,24 @@
 					diff: Math.max( revId1, revId2 ),
 					oldid: Math.min( revId1, revId2 )
 				},
+				tryCount: 0,
+				retryLimit: 2,
 				success: function ( data ) {
 					data = $( '<div/>' ).html( data ).contents();
 					$( 'body' )
 						.find( 'table.diff[data-mw=\'interface\']' )
 						.html( data.find( 'table.diff[data-mw=\'interface\']' ) );
+				},
+				error: function ( err ) {
+					this.tryCount++;
+					console.log( err );
+					mw.track( 'counter.MediaWiki.RevisionSlider.error.refresh' );
+					if ( this.tryCount <= this.retryLimit ) {
+						console.log( 'Retrying request' );
+						$.ajax( this );
+					}
+					// TODO notify the user that we failed to update the diff?
+					// This could also attempt to reload the page with the correct diff loaded without ajax?
 				}
 			} );
 		},
