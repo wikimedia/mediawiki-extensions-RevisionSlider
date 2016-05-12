@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_9866fae8",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-05-12T15:34:28Z",
+      "side": 1,
+      "message": "oldRevElement.data( \u0027pos\u0027 )",
+      "revId": "811d767adc55793c583d65856ec3c2747eb73f22",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_d85cf220",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-05-12T15:34:28Z",
+      "side": 1,
+      "message": "newRevElement.data( \u0027pos\u0027 )",
+      "revId": "811d767adc55793c583d65856ec3c2747eb73f22",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
