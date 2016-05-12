@@ -53,22 +53,22 @@
 		},
 
 		slideToPosition: function ( slider, duration ) {
-			var relativePos = this.pointer.getPosition() - slider.slider.getFirstVisibleRevisionIndex();
-			this.animateTo( relativePos * slider.revisionWidth, duration );
+			var relativePos = this.pointer.getPosition() - slider.getFirstVisibleRevisionIndex();
+			this.animateTo( relativePos * slider.getView().revisionWidth, duration );
 		},
 
 		slideToSide: function ( slider, posBeforeSlider, duration ) {
 			if ( posBeforeSlider ) {
-				this.animateTo( this.offset - slider.revisionWidth, duration );
+				this.animateTo( this.offset - slider.getView().revisionWidth, duration );
 			} else {
-				this.animateTo( ( slider.slider.getRevisionsPerWindow() + 1 ) * slider.revisionWidth - this.offset, duration );
+				this.animateTo( ( slider.getRevisionsPerWindow() + 1 ) * slider.getView().revisionWidth - this.offset, duration );
 			}
 		},
 
 		slideToSideOrPosition: function ( slider, duration ) {
-			var firstVisibleRev = slider.slider.getFirstVisibleRevisionIndex(),
+			var firstVisibleRev = slider.getFirstVisibleRevisionIndex(),
 				posBeforeSlider = this.pointer.getPosition() < firstVisibleRev,
-				isVisible = !posBeforeSlider && this.pointer.getPosition() <= firstVisibleRev + slider.slider.getRevisionsPerWindow();
+				isVisible = !posBeforeSlider && this.pointer.getPosition() <= firstVisibleRev + slider.getRevisionsPerWindow();
 			if ( isVisible ) {
 				this.slideToPosition( slider, duration );
 			} else {

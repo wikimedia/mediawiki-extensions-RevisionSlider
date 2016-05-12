@@ -154,8 +154,8 @@
 				}
 			);
 
-			this.leftPointer.getView().slideToSideOrPosition( this, duration );
-			this.rightPointer.getView().slideToSideOrPosition( this, duration );
+			this.leftPointer.getView().slideToSideOrPosition( this.slider, duration );
+			this.rightPointer.getView().slideToSideOrPosition( this.slider, duration );
 		},
 
 		whichPointer: function ( $e ) {
