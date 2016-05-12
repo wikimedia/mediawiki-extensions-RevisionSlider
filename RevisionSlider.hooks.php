@@ -29,14 +29,14 @@ class RevisionSliderHooks {
 
 		$out = RequestContext::getMain()->getOutput();
 		$out->addModules( 'ext.RevisionSlider.init' );
+		$out->addJsConfigVars( 'extRevisionSliderOldRev', $oldRev->getId() );
+		$out->addJsConfigVars( 'extRevisionSliderNewRev', $newRev->getId() );
 		$out->addHTML(
 			Html::rawElement(
 				'div',
 				[
 					'id' => 'revision-slider-container',
 					'style' => 'min-height: 150px;',
-					'data-oldrev' => $oldRev->getId(),
-					'data-newrev' => $newRev->getId(),
 				],
 				Html::element(
 					'p',

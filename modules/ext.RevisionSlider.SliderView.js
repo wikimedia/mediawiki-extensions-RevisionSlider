@@ -91,23 +91,19 @@
 
 			this.slider.setRevisionsPerWindow( $slider.find( '.revisions-container' ).width() / this.revisionWidth );
 
-			this.initializePointers(
-				$container.data( 'oldrev' ),
-				$container.data( 'newrev' ),
-				$revisions
-			);
+			this.initializePointers( $revisions );
 
 			this.$element = $slider;
 			$container.html( $slider );
 
 			this.slide( Math.floor( this.rightPointer.getPosition() / this.slider.getRevisionsPerWindow() ), 0 );
-			diffPage.pushState( $container.attr( 'data-oldrev' ), $container.attr( 'data-newrev' ), this );
+			diffPage.pushState( mw.config.values.extRevisionSliderOldRev, mw.config.values.extRevisionSliderNewRev, this );
 			diffPage.initOnPopState( this );
 		},
 
-		initializePointers: function ( oldRevId, newRevId, $revisions ) {
-			var oldRevElement = $revisions.find( 'div.revision[data-revid=\'' + oldRevId + '\']' ),
-				newRevElement = $revisions.find( 'div.revision[data-revid=\'' + newRevId + '\']' );
+		initializePointers: function ( $revisions ) {
+			var oldRevElement = $revisions.find( 'div.revision[data-revid=\'' + mw.config.values.extRevisionSliderOldRev + '\']' ),
+				newRevElement = $revisions.find( 'div.revision[data-revid=\'' + mw.config.values.extRevisionSliderNewRev + '\']' );
 
 			if ( oldRevElement.length === 0 || newRevElement.length === 0 ) {
 				// Note: this is currently caught in init.js
