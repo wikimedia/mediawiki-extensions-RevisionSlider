@@ -27,10 +27,17 @@
 
 						$( '#revision-slider-placeholder' ).remove();
 					} catch ( err ) {
-						$( '#revision-slider-placeholder' )
-							.html( mw.message( 'revisionslider-loading-failed' ).text() );
-						console.log( err );
-						mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
+						if ( err === 'RS-rev-out-of-range' ) {
+							$( '#revision-slider-placeholder' )
+								.html( mw.message( 'revisionslider-loading-out-of-range' ).text() );
+							console.log( err );
+							mw.track( 'counter.MediaWiki.RevisionSlider.error.outOfRange' );
+						} else {
+							$( '#revision-slider-placeholder' )
+								.html( mw.message( 'revisionslider-loading-failed' ).text() );
+							console.log( err );
+							mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
+						}
 					}
 
 				},

@@ -10,5 +10,6 @@
     "revisionslider-beta-feature-description": "Show a revision slider when comparing two revisions of a page.",
     "revisionslider-loading-placeholder": "The revision slider is loading.",
     "revisionslider-loading-failed": "The revision slider failed to load.",
+    "revisionslider-loading-out-of-range": "The revision slider failed to load as the requested revisions are not in the top 500 versions of the page.",
     "revisionslider-loading-noscript": "As you have JavaScript disabled the revision slider will not be able to load."
 }

@@ -91,31 +91,32 @@
 				}
 			} );
 
-			this.$element = $slider;
-			$container.html( $slider );
-			this.slider.setRevisionsPerWindow( $container.find( '.revisions-container' ).width() / this.revisionWidth );
+			this.slider.setRevisionsPerWindow( $slider.find( '.revisions-container' ).width() / this.revisionWidth );
 
-			this.initializeSlider(
+			this.initializePointers(
 				$container.data( 'oldrev' ),
 				$container.data( 'newrev' ),
 				$revisions
 			);
+
+			this.$element = $slider;
+			$container.html( $slider );
+
+			this.slide( Math.floor( this.rightPointer.getPosition() / this.slider.getRevisionsPerWindow() ), 0 );
 			diffPage.pushState( $container.attr( 'data-oldrev' ), $container.attr( 'data-newrev' ), this );
 			diffPage.initOnPopState( this );
 		},
 
-		initializeSlider: function ( oldRevId, newRevId, $revisions ) {
-			this.leftPointer.setPosition(
-				$revisions
-					.find( 'div.revision[data-revid=\'' + oldRevId + '\']' )
-					.data( 'pos' )
-			);
-			this.rightPointer.setPosition(
-				$revisions
-					.find( 'div.revision[data-revid=\'' + newRevId + '\']' )
-					.data( 'pos' )
-			);
-			this.slide( Math.floor( this.rightPointer.getPosition() / this.slider.getRevisionsPerWindow() ), 0 );
+		initializePointers: function ( oldRevId, newRevId, $revisions ) {
+			var oldRevElement = $revisions.find( 'div.revision[data-revid=\'' + oldRevId + '\']' ),
+				newRevElement = $revisions.find( 'div.revision[data-revid=\'' + newRevId + '\']' );
+
+			if ( oldRevElement.length === 0 || newRevElement.length === 0 ) {
+				// Note: this is currently caught in init.js
+				throw 'RS-rev-out-of-range';
+			}
+			this.leftPointer.setPosition( oldRevElement.data( 'pos' ) );
+			this.rightPointer.setPosition( newRevElement.data( 'pos' ) );
 		},
 
 		calculateRevisionsPerWindow: function () {

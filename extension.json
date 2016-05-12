@@ -34,6 +34,7 @@
 				"ext.RevisionSlider.fetchRevisions"
 			],
 			"messages": [
+				"revisionslider-loading-out-of-range",
 				"revisionslider-loading-failed"
 			],
 			"position": "top"
