@@ -91,6 +91,9 @@
 			"dependencies": [
 				"ext.RevisionSlider.Revision",
 				"ext.RevisionSlider.RevisionListView"
+			],
+			"messages": [
+				"minoredit"
 			]
 		},
 		"ext.RevisionSlider.RevisionListView": {

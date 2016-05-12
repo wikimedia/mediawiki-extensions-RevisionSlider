@@ -48,7 +48,9 @@
 			var $tooltip = $( '<center/>' ) // TODO: center is deprecated since 1995
 				.append( '<p><b>' + rev.getFormattedDate() + '</b></p>' )
 				.append( $( '<p/>' ).text( mw.html.escape( rev.getUser() ) ) )
-				.append( rev.getComment() ? $( '<p/>' ).append( '<i/>' ).text( mw.html.escape( rev.getComment() ) ) : '' );
+				.append( rev.getComment() ? $( '<p/>' ).append( '<i/>' ).text( mw.html.escape( rev.getComment() ) ) : '' )
+				.append( $( '<p/>' ).html( rev.getSize() + ' bytes' ) )
+				.append( rev.isMinor() ? $( '<p/>' ).html( mw.message( 'minoredit' ).text() ) : '' );
 
 			return $( '<div/>' ).append( $tooltip ).html();
 		}

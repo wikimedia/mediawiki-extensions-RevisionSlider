@@ -7,6 +7,7 @@
 		this.parsedComment = data.parsedcomment;
 		this.timestamp = data.timestamp;
 		this.user = data.user;
+		this.minor = data.hasOwnProperty( 'minor' ) && ( data.minor || data.minor === '' );
 	};
 
 	$.extend( Revision.prototype, {
@@ -24,6 +25,11 @@
 		 * @type {string}
 		 */
 		comment: '',
+
+		/**
+		 * @type {boolean}
+		 */
+		minor: false,
 
 		/**
 		 * @type {string}
@@ -51,6 +57,10 @@
 
 		getSize: function () {
 			return this.size;
+		},
+
+		isMinor: function () {
+			return this.minor;
 		},
 
 		getParsedComment: function () {

@@ -16,6 +16,45 @@
 		assert.equal( rev.getParsedComment(), data.parsedcomment );
 		assert.equal( rev.getFormattedDate(), '10:27, 26 Apr 2016' );
 		assert.equal( rev.getUser(), data.user );
+		assert.equal( rev.isMinor(), false );
+	} );
+
+	QUnit.test( 'create minor Revision (minor empty string)', function ( assert ) {
+		var data = {
+				size: 5,
+				comment: 'hello',
+				parsedcomment: '<b>hello</b>',
+				timestamp: '2016-04-26T10:27:14Z', // 10:27, 26 Apr 2016
+				user: 'meh',
+				minor: ''
+			},
+			rev = new mw.libs.revisionSlider.Revision( data );
+
+		assert.equal( rev.getSize(), data.size );
+		assert.equal( rev.getComment(), data.comment );
+		assert.equal( rev.getParsedComment(), data.parsedcomment );
+		assert.equal( rev.getFormattedDate(), '10:27, 26 Apr 2016' );
+		assert.equal( rev.getUser(), data.user );
+		assert.equal( rev.isMinor(), true );
+	} );
+
+	QUnit.test( 'create minor Revision (minor true, as if from another Revision object)', function ( assert ) {
+		var data = {
+				size: 5,
+				comment: 'hello',
+				parsedcomment: '<b>hello</b>',
+				timestamp: '2016-04-26T10:27:14Z', // 10:27, 26 Apr 2016
+				user: 'meh',
+				minor: true
+			},
+			rev = new mw.libs.revisionSlider.Revision( data );
+
+		assert.equal( rev.getSize(), data.size );
+		assert.equal( rev.getComment(), data.comment );
+		assert.equal( rev.getParsedComment(), data.parsedcomment );
+		assert.equal( rev.getFormattedDate(), '10:27, 26 Apr 2016' );
+		assert.equal( rev.getUser(), data.user );
+		assert.equal( rev.isMinor(), true );
 	} );
 
 	QUnit.test( 'get Revision with section', function ( assert ) {
