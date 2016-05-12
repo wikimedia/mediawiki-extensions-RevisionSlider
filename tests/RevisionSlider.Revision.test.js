@@ -35,5 +35,12 @@
 
 		assert.equal( rev.getSection(), '' );
 	} );
+
+	QUnit.test( 'get and set relative size', function ( assert ) {
+		var size = 5,
+			rev = new mw.libs.revisionSlider.Revision( {} );
+		rev.setRelativeSize( size );
+		assert.equal( rev.getRelativeSize(), size );
+	} );
 } )( mediaWiki );
 

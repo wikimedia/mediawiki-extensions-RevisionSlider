@@ -15,15 +15,15 @@
 				maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() ),
 				i, diffSize, $tooltip, relativeChangeSize;
 
-			for ( i = 1; i < revs.length; i++ ) {
-				diffSize = revs[ i ].getSize() - revs[ i - 1 ].getSize();
+			for ( i = 0; i < revs.length; i++ ) {
+				diffSize = revs[ i ].getRelativeSize();
 				relativeChangeSize = Math.ceil( 65.0 * Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) + 5;
 				$tooltip = this.makeTooltip( revs[ i ], diffSize );
 
 				$html
-					.append( $( '<div class="revision" data-revid="' + revs[ i ].getId() + '" data-pos="' + ( i ) + '" title="' + $tooltip + '"/>' )
+					.append( $( '<div class="revision" data-revid="' + revs[ i ].getId() + '" data-pos="' + ( i + 1 ) + '" title="' + $tooltip + '"/>' )
 						.css( {
-							left: revisionTickWidth * ( i - 1 ) + 'px',
+							left: revisionTickWidth * i + 'px',
 							height: relativeChangeSize + 'px',
 							width: revisionTickWidth + 'px',
 							top: diffSize > 0 ? '-' + relativeChangeSize + 'px' : 0,
@@ -36,7 +36,7 @@
 						} ) )
 					.append( $( '<div class="stopper"/>' )
 						.css( {
-							left: revisionTickWidth * ( i - 1 ) + 'px',
+							left: revisionTickWidth * i + 'px',
 							width: revisionTickWidth + 'px'
 						} ) );
 			}

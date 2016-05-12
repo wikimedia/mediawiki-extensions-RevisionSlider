@@ -14,7 +14,7 @@
 				revisions = this.revisionList.getRevisions(),
 				section, i;
 
-			for ( i = 1; i < revisions.length; i++ ) {
+			for ( i = 0; i < revisions.length; i++ ) {
 				section = revisions[ i ].getSection();
 				if ( section.length > 0 && !( section in sectionMap ) ) {
 					sectionMap[ section ] = '';

@@ -40,6 +40,11 @@
 		 */
 		user: '',
 
+		/**
+		 * @type {int}
+		 */
+		relativeSize: 0,
+
 		getId: function () {
 			return this.id;
 		},
@@ -88,6 +93,14 @@
 
 		getUser: function () {
 			return this.user;
+		},
+
+		setRelativeSize: function ( size ) {
+			this.relativeSize = size;
+		},
+
+		getRelativeSize: function () {
+			return this.relativeSize;
 		}
 	} );
 

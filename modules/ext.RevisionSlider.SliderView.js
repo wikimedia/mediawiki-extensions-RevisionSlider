@@ -74,17 +74,17 @@
 					var $p = $( this ),
 						pointer = self.whichPointer( $p ),
 						pos = parseInt( $p.css( 'left' ), 10 ),
+						relativeIndex = Math.floor( ( pos + self.revisionWidth / 2 ) / self.revisionWidth ),
 						revId1, revId2;
-
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
-					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + Math.floor( pos / self.revisionWidth ) );
+					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + relativeIndex );
 
 					revId1 = $revisions
 						.find( 'div.revision[data-pos=\'' + self.leftPointer.getPosition() + '\']' )
-						.attr( 'data-revid' );
+						.data( 'revid' );
 					revId2 = $revisions
 						.find( 'div.revision[data-pos=\'' + self.rightPointer.getPosition() + '\']' )
-						.attr( 'data-revid' );
+						.data( 'revid' );
 
 					diffPage.refresh( revId1, revId2 );
 					diffPage.pushState( revId1, revId2, self );
@@ -96,8 +96,8 @@
 			this.slider.setRevisionsPerWindow( $container.find( '.revisions-container' ).width() / this.revisionWidth );
 
 			this.initializeSlider(
-				$container.attr( 'data-oldrev' ),
-				$container.attr( 'data-newrev' ),
+				$container.data( 'oldrev' ),
+				$container.data( 'newrev' ),
 				$revisions
 			);
 			diffPage.pushState( $container.attr( 'data-oldrev' ), $container.attr( 'data-newrev' ), this );
@@ -108,12 +108,12 @@
 			this.leftPointer.setPosition(
 				$revisions
 					.find( 'div.revision[data-revid=\'' + oldRevId + '\']' )
-					.attr( 'data-pos' )
+					.data( 'pos' )
 			);
 			this.rightPointer.setPosition(
 				$revisions
 					.find( 'div.revision[data-revid=\'' + newRevId + '\']' )
-					.attr( 'data-pos' )
+					.data( 'pos' )
 			);
 			this.slide( Math.floor( this.rightPointer.getPosition() / this.slider.getRevisionsPerWindow() ), 0 );
 		},

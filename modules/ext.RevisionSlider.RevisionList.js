@@ -17,20 +17,22 @@
 		view: null,
 
 		initialize: function ( revs ) {
-			var i;
+			var i, rev;
 
 			for ( i = 0; i < revs.length; i++ ) {
-				this.revisions.push( new mw.libs.revisionSlider.Revision( revs[ i ] ) );
+				rev = new mw.libs.revisionSlider.Revision( revs[ i ] );
+				rev.setRelativeSize( i > 0 ? revs[ i ].size - revs[ i - 1 ].size : revs[ i ].size );
+
+				this.revisions.push( rev );
 			}
 		},
 
 		getBiggestChangeSize: function () {
 			var max = 0,
-				changeSize, i;
+				i;
 
-			for ( i = 1; i < this.revisions.length; i++ ) {
-				changeSize = Math.abs( this.revisions[ i ].getSize() - this.revisions[ i - 1 ].getSize() );
-				max = Math.max( max, changeSize );
+			for ( i = 0; i < this.revisions.length; i++ ) {
+				max = Math.max( max, Math.abs( this.revisions[ i ].getRelativeSize() ) );
 			}
 
 			return max;
