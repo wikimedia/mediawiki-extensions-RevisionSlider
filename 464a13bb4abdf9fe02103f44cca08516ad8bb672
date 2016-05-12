@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_22ed018b",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-05-12T12:27:41Z",
+      "side": 1,
+      "message": "1. Localize! 2. Why not having the things used on the hist page? E.g. a bold \"m\" on en wiki and a bold \"K\" on the de wiki...",
+      "revId": "464a13bb4abdf9fe02103f44cca08516ad8bb672",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
