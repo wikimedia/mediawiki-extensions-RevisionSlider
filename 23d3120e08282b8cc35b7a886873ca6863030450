@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_69fa35db",
+        "filename": "modules/ext.RevisionSlider.Revision.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-13T10:56:10Z",
+      "side": 1,
+      "message": "wouldn\u0027t isMinor be a better name for this method?",
+      "revId": "23d3120e08282b8cc35b7a886873ca6863030450",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
