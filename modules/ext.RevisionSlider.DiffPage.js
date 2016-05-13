@@ -17,9 +17,10 @@
 				retryLimit: 2,
 				success: function ( data ) {
 					data = $( '<div/>' ).html( data ).contents();
+					data.find( '#revision-slider-container' ).replaceWith( $( '#revision-slider-container' ) );
 					$( 'body' )
-						.find( 'table.diff[data-mw=\'interface\']' )
-						.html( data.find( 'table.diff[data-mw=\'interface\']' ) );
+						.find( '#mw-content-text' )
+						.html( data.find( '#mw-content-text' ) );
 				},
 				error: function ( err ) {
 					this.tryCount++;
