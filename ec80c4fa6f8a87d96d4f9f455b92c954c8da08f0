@@ -16,6 +16,24 @@
       "revId": "ec80c4fa6f8a87d96d4f9f455b92c954c8da08f0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_0c8d87d8",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-05-13T15:45:16Z",
+      "side": 1,
+      "message": "Ahh yes, this totally make sense!\nI\u0027ll do it in a followup!",
+      "parentUuid": "ae564743_4c313f56",
+      "revId": "ec80c4fa6f8a87d96d4f9f455b92c954c8da08f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
