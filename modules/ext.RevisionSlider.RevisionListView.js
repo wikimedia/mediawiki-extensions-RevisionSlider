@@ -17,7 +17,7 @@
 
 			for ( i = 0; i < revs.length; i++ ) {
 				diffSize = revs[ i ].getRelativeSize();
-				relativeChangeSize = Math.ceil( 65.0 * Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) + 5;
+				relativeChangeSize = diffSize !== 0 ? Math.ceil( 65.0 * Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) + 5 : 0;
 				$tooltip = this.makeTooltip( revs[ i ] );
 
 				$html
