@@ -69,11 +69,11 @@
     margin: auto;
     z-index: 10;
 }
-.left-pointer {
-    border-color: transparent transparent #00f transparent;
+.oldid-pointer {
+    border-color: transparent transparent #ffe49c transparent;
 }
-.right-pointer {
-    border-color: transparent transparent #f00 transparent;
+.newid-pointer {
+    border-color: transparent transparent #a3d3ff transparent;
 }
 .pointer {
     position: absolute !important;

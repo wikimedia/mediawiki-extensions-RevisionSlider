@@ -54,6 +54,13 @@
 				sliderView.rightPointer.setPosition( event.state.rightPos );
 				sliderView.slider.setFirstVisibleRevisionIndex( event.state.sliderPos );
 				sliderView.slide( 0 );
+				if ( sliderView.leftPointer.getPosition() > sliderView.rightPointer.getPosition() ) {
+					sliderView.leftPointer.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
+					sliderView.rightPointer.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
+				} else {
+					sliderView.leftPointer.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
+					sliderView.rightPointer.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
+				}
 				self.refresh( event.state.revid1, event.state.revid2 );
 			} );
 		}

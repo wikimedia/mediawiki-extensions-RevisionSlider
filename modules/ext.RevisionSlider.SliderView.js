@@ -86,6 +86,17 @@
 
 					diffPage.refresh( revId1, revId2 );
 					diffPage.pushState( revId1, revId2, self );
+				},
+				drag: function () {
+					var leftPointerOffset = self.leftPointer.getView().getElement().offset(),
+						rightPointerOffset = self.rightPointer.getView().getElement().offset();
+					if ( leftPointerOffset.left > rightPointerOffset.left ) {
+						self.leftPointer.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
+						self.rightPointer.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
+					} else {
+						self.leftPointer.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
+						self.rightPointer.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
+					}
 				}
 			} );
 

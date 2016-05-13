@@ -27,6 +27,11 @@
 
 		initialize: function () {
 			this.$html = $( '<div class="pointer" />' ).addClass( this.cssClass );
+			if ( this.cssClass === 'left-pointer' ) {
+				this.$html.addClass( 'oldid-pointer' );
+			} else {
+				this.$html.addClass( 'newid-pointer' );
+			}
 		},
 
 		/**
