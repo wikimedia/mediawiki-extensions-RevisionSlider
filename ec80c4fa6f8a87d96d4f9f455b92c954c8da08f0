@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_4c313f56",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-13T15:32:57Z",
+      "side": 1,
+      "message": "When no longer calling pointers \"left\" and \"right\" why not store \"position one\" and \"position two\" in the state?\nThat could also simplify things when it turns out time goes right to left in (some) RTL wikis (I am still not sure what is the status there)",
+      "revId": "ec80c4fa6f8a87d96d4f9f455b92c954c8da08f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
