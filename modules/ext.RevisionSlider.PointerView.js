@@ -1,7 +1,7 @@
 ( function ( mw, $ ) {
-	var PointerView = function ( pointer, cssClass, offset ) {
+	var PointerView = function ( pointer, id, offset ) {
 		this.pointer = pointer;
-		this.cssClass = cssClass;
+		this.id = id;
 		this.offset = offset;
 	};
 
@@ -9,7 +9,7 @@
 		/**
 		 * @type {string}
 		 */
-		cssClass: '',
+		id: '',
 
 		/**
 		 * @type {int}
@@ -26,12 +26,7 @@
 		$html: null,
 
 		initialize: function () {
-			this.$html = $( '<div class="pointer" />' ).addClass( this.cssClass );
-			if ( this.cssClass === 'left-pointer' ) {
-				this.$html.addClass( 'oldid-pointer' );
-			} else {
-				this.$html.addClass( 'newid-pointer' );
-			}
+			this.$html = $( '<div id="' + this.id + '" class="pointer" />' );
 		},
 
 		/**

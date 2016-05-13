@@ -4,7 +4,7 @@
 	QUnit.module( 'ext.RevisionSlider.Revision' );
 
 	QUnit.test( 'Initialize Pointer', function ( assert ) {
-		assert.ok( ( new Pointer( 'left-pointer' ) ).getView().render().find( '.left-pointer' ) );
+		assert.ok( ( new Pointer( 'a-pointer' ) ).getView().render().find( '#a-pointer' ) );
 	} );
 
 	QUnit.test( 'Set and get position', function ( assert ) {

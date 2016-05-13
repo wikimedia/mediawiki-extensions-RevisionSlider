@@ -1,6 +1,6 @@
 ( function ( mw, $ ) {
-	var Pointer = function ( cssClass, offset ) {
-		this.view = new mw.libs.revisionSlider.PointerView( this, cssClass, offset );
+	var Pointer = function ( id, offset ) {
+		this.view = new mw.libs.revisionSlider.PointerView( this, id, offset );
 	};
 
 	$.extend( Pointer.prototype, {

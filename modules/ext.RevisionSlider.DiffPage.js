@@ -37,7 +37,7 @@
 
 		pushState: function ( revId1, revId2, sliderView ) {
 			history.pushState(
-				{ revid1: revId1, revid2: revId2, leftPos: sliderView.leftPointer.getPosition(), rightPos: sliderView.rightPointer.getPosition(), sliderPos: sliderView.slider.getFirstVisibleRevisionIndex() },
+				{ revid1: revId1, revid2: revId2, leftPos: sliderView.pointerOne.getPosition(), rightPos: sliderView.pointerTwo.getPosition(), sliderPos: sliderView.slider.getFirstVisibleRevisionIndex() },
 				$( document ).find( 'title' ).text(),
 				mw.util.wikiScript( 'index' ) + '?diff=' + Math.max( revId1, revId2 ) + '&oldid=' + Math.min( revId1, revId2 )
 			);
@@ -50,17 +50,11 @@
 					return;
 				}
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.historyChange' );
-				sliderView.leftPointer.setPosition( event.state.leftPos );
-				sliderView.rightPointer.setPosition( event.state.rightPos );
+				sliderView.pointerOne.setPosition( event.state.leftPos );
+				sliderView.pointerTwo.setPosition( event.state.rightPos );
 				sliderView.slider.setFirstVisibleRevisionIndex( event.state.sliderPos );
 				sliderView.slide( 0 );
-				if ( sliderView.leftPointer.getPosition() > sliderView.rightPointer.getPosition() ) {
-					sliderView.leftPointer.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
-					sliderView.rightPointer.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
-				} else {
-					sliderView.leftPointer.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
-					sliderView.rightPointer.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
-				}
+				sliderView.resetPointerColorsBasedOnPosition();
 				self.refresh( event.state.revid1, event.state.revid2 );
 			} );
 		}

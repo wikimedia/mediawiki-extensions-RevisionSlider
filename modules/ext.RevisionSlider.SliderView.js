@@ -21,12 +21,12 @@
 		/**
 		 * @type {Pointer}
 		 */
-		leftPointer: null,
+		pointerOne: null,
 
 		/**
 		 * @type {Pointer}
 		 */
-		rightPointer: null,
+		pointerTwo: null,
 
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
@@ -35,8 +35,8 @@
 				$slider = $( '<div class="revision-slider"/>' ),
 				self = this;
 
-			this.leftPointer = new mw.libs.revisionSlider.Pointer( 'left-pointer', -this.revisionWidth );
-			this.rightPointer = new mw.libs.revisionSlider.Pointer( 'right-pointer', 0 );
+			this.pointerOne = new mw.libs.revisionSlider.Pointer( 'revslider-pointer-one', -this.revisionWidth );
+			this.pointerTwo = new mw.libs.revisionSlider.Pointer( 'revslider-pointer-two', 0 );
 
 			$slider.css( {
 					width: ( containerWidth + this.containerMargin ) + 'px'
@@ -55,8 +55,8 @@
 							left: 40 - this.revisionWidth + 'px', // 40 == arrow + margin right
 							width: containerWidth + this.revisionWidth * 1.5 + 'px'
 						} )
-						.append( this.leftPointer.getView().render() )
-						.append( this.rightPointer.getView().render() )
+						.append( this.pointerOne.getView().render() )
+						.append( this.pointerTwo.getView().render() )
 				);
 
 			$slider.find( '.arrow' ).click( function () {
@@ -78,25 +78,17 @@
 					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + relativeIndex );
 
 					revId1 = $revisions
-						.find( 'div.revision[data-pos=\'' + self.leftPointer.getPosition() + '\']' )
+						.find( 'div.revision[data-pos=\'' + self.pointerOne.getPosition() + '\']' )
 						.data( 'revid' );
 					revId2 = $revisions
-						.find( 'div.revision[data-pos=\'' + self.rightPointer.getPosition() + '\']' )
+						.find( 'div.revision[data-pos=\'' + self.pointerTwo.getPosition() + '\']' )
 						.data( 'revid' );
 
 					diffPage.refresh( revId1, revId2 );
 					diffPage.pushState( revId1, revId2, self );
 				},
 				drag: function () {
-					var leftPointerOffset = self.leftPointer.getView().getElement().offset(),
-						rightPointerOffset = self.rightPointer.getView().getElement().offset();
-					if ( leftPointerOffset.left > rightPointerOffset.left ) {
-						self.leftPointer.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
-						self.rightPointer.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
-					} else {
-						self.leftPointer.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
-						self.rightPointer.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
-					}
+					self.resetPointerColorsBasedOnOffset();
 				}
 			} );
 
@@ -107,7 +99,7 @@
 			this.$element = $slider;
 			$container.html( $slider );
 
-			this.slide( Math.floor( this.rightPointer.getPosition() / this.slider.getRevisionsPerWindow() ), 0 );
+			this.slide( Math.floor( this.pointerTwo.getPosition() / this.slider.getRevisionsPerWindow() ), 0 );
 			diffPage.pushState( mw.config.values.extRevisionSliderOldRev, mw.config.values.extRevisionSliderNewRev, this );
 			diffPage.initOnPopState( this );
 		},
@@ -120,8 +112,31 @@
 				// Note: this is currently caught in init.js
 				throw 'RS-rev-out-of-range';
 			}
-			this.leftPointer.setPosition( oldRevElement.data( 'pos' ) );
-			this.rightPointer.setPosition( newRevElement.data( 'pos' ) );
+			this.pointerOne.setPosition( oldRevElement.data( 'pos' ) );
+			this.pointerTwo.setPosition( newRevElement.data( 'pos' ) );
+			this.resetPointerColorsBasedOnPosition();
+		},
+
+		resetPointerColorsBasedOnOffset: function () {
+			var leftPointerOffset = this.pointerOne.getView().getElement().offset(),
+				rightPointerOffset = this.pointerTwo.getView().getElement().offset();
+			if ( leftPointerOffset.left > rightPointerOffset.left ) {
+				this.pointerOne.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
+				this.pointerTwo.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
+			} else {
+				this.pointerOne.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
+				this.pointerTwo.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
+			}
+		},
+
+		resetPointerColorsBasedOnPosition: function () {
+			if ( this.pointerOne.getPosition() > this.pointerTwo.getPosition() ) {
+				this.pointerOne.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
+				this.pointerTwo.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
+			} else {
+				this.pointerOne.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
+				this.pointerTwo.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
+			}
 		},
 
 		calculateRevisionsPerWindow: function () {
@@ -136,8 +151,8 @@
 			var self = this;
 
 			this.slider.slide( direction );
-			self.leftPointer.getView().getElement().draggable( 'disable' );
-			self.rightPointer.getView().getElement().draggable( 'disable' );
+			self.pointerOne.getView().getElement().draggable( 'disable' );
+			self.pointerTwo.getView().getElement().draggable( 'disable' );
 
 			if ( this.slider.isAtStart() ) {
 				$( '.left-arrow' ).css( 'visibility', 'hidden' );
@@ -155,17 +170,17 @@
 				duration,
 				null,
 				function () {
-					self.leftPointer.getView().getElement().draggable( 'enable' );
-					self.rightPointer.getView().getElement().draggable( 'enable' );
+					self.pointerOne.getView().getElement().draggable( 'enable' );
+					self.pointerTwo.getView().getElement().draggable( 'enable' );
 				}
 			);
 
-			this.leftPointer.getView().slideToSideOrPosition( this.slider, duration );
-			this.rightPointer.getView().slideToSideOrPosition( this.slider, duration );
+			this.pointerOne.getView().slideToSideOrPosition( this.slider, duration );
+			this.pointerTwo.getView().slideToSideOrPosition( this.slider, duration );
 		},
 
 		whichPointer: function ( $e ) {
-			return $e.hasClass( 'left-pointer' ) ? this.leftPointer : this.rightPointer;
+			return $e.attr( 'id' ) === 'revslider-pointer-one' ? this.pointerOne : this.pointerTwo;
 		}
 	} );
 
