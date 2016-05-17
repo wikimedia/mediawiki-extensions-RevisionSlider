@@ -55,7 +55,7 @@
 				sliderView.pointerTwo.setPosition( event.state.rightPos );
 				sliderView.slider.setFirstVisibleRevisionIndex( event.state.sliderPos );
 				sliderView.slide( 0 );
-				sliderView.resetPointerColorsBasedOnPosition();
+				sliderView.resetPointerStylesBasedOnPosition();
 				self.refresh( event.state.revid1, event.state.revid2 );
 			} );
 		}

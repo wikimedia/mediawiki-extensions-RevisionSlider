@@ -32,7 +32,8 @@
 				"ext.RevisionSlider.Revision",
 				"ext.RevisionSlider.RevisionList",
 				"ext.RevisionSlider.fetchRevisions",
-				"ext.RevisionSlider.pointers"
+				"ext.RevisionSlider.pointers.lower",
+				"ext.RevisionSlider.pointers.upper"
 			],
 			"messages": [
 				"revisionslider-loading-out-of-range",
@@ -102,13 +103,22 @@
 				"modules/ext.RevisionSlider.RevisionListView.js"
 			]
 		},
-		"ext.RevisionSlider.pointers": {
+		"ext.RevisionSlider.pointers.lower": {
 			"position": "top",
 			"class": "ResourceLoaderImageModule",
-			"selector": ".{name}-pointer",
+			"selector": ".lower-pointer.{name}-pointer",
 			"images": {
-				"oldid": "resources/ext.RevisionSlider.pointers/pointer-old.svg",
-				"newid": "resources/ext.RevisionSlider.pointers/pointer-new.svg"
+				"oldid": "resources/ext.RevisionSlider.pointers/pointer-lower-old.svg",
+				"newid": "resources/ext.RevisionSlider.pointers/pointer-lower-new.svg"
+			}
+		},
+		"ext.RevisionSlider.pointers.upper": {
+			"position": "top",
+			"class": "ResourceLoaderImageModule",
+			"selector": ".upper-pointer.{name}-pointer",
+			"images": {
+				"oldid": "resources/ext.RevisionSlider.pointers/pointer-upper-old.svg",
+				"newid": "resources/ext.RevisionSlider.pointers/pointer-upper-new.svg"
 			}
 		}
 	},

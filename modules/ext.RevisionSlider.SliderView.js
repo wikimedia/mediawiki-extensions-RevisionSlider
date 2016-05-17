@@ -76,6 +76,7 @@
 						revId1, revId2;
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
 					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + relativeIndex );
+					self.resetPointerStylesBasedOnPosition();
 
 					revId1 = $revisions
 						.find( 'div.revision[data-pos=\'' + self.pointerOne.getPosition() + '\']' )
@@ -114,13 +115,13 @@
 			}
 			this.pointerOne.setPosition( oldRevElement.data( 'pos' ) );
 			this.pointerTwo.setPosition( newRevElement.data( 'pos' ) );
-			this.resetPointerColorsBasedOnPosition();
+			this.resetPointerStylesBasedOnPosition();
 		},
 
 		resetPointerColorsBasedOnOffset: function () {
-			var leftPointerOffset = this.pointerOne.getView().getElement().offset(),
-				rightPointerOffset = this.pointerTwo.getView().getElement().offset();
-			if ( leftPointerOffset.left > rightPointerOffset.left ) {
+			var pointerOneOffset = this.pointerOne.getView().getElement().offset(),
+				pointerTwoOffset = this.pointerTwo.getView().getElement().offset();
+			if ( pointerOneOffset.left > pointerTwoOffset.left ) {
 				this.pointerOne.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
 				this.pointerTwo.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
 			} else {
@@ -129,13 +130,17 @@
 			}
 		},
 
-		resetPointerColorsBasedOnPosition: function () {
+		resetPointerStylesBasedOnPosition: function () {
 			if ( this.pointerOne.getPosition() > this.pointerTwo.getPosition() ) {
-				this.pointerOne.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
-				this.pointerTwo.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
+				this.pointerOne.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' )
+					.removeClass( 'lower-pointer' ).addClass( 'upper-pointer' );
+				this.pointerTwo.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' )
+					.removeClass( 'upper-pointer' ).addClass( 'lower-pointer' );
 			} else {
-				this.pointerOne.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
-				this.pointerTwo.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
+				this.pointerOne.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' )
+					.removeClass( 'upper-pointer' ).addClass( 'lower-pointer' );
+				this.pointerTwo.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' )
+					.removeClass( 'lower-pointer' ).addClass( 'upper-pointer' );
 			}
 		},
 

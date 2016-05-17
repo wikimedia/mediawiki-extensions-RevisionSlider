@@ -69,9 +69,12 @@
     position: absolute;
     clear: both;
     height: 1px;
-    top: 77px;
+    top: 65px;
     margin: auto;
     z-index: 10;
+}
+.lower-pointer {
+    top: 12px;
 }
 .pointer {
     position: absolute !important;
