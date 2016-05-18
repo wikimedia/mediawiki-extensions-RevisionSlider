@@ -28,6 +28,7 @@
 			],
 			"dependencies": [
 				"mediawiki.jqueryMsg",
+				"oojs-ui.styles.icons-movement",
 				"ext.RevisionSlider.Slider",
 				"ext.RevisionSlider.Revision",
 				"ext.RevisionSlider.RevisionList",
