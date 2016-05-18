@@ -17,6 +17,10 @@
     transition: all ease 0.2s;
 }
 
+.revision-tooltip {
+    text-align: center;
+}
+
 .revisions {
     height: 150px;
 }
