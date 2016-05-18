@@ -1,20 +1,40 @@
 .revision {
-    display: 	inline-block;
-    border: 	1px solid black;
-    height:		9px;
-    position:	absolute;
-    top:		-3px;
-    opacity: 	0.35;
-    z-index:	10;
-    margin-top: 75px;
+    position: absolute;
+    margin-top: 70px;
+    background-color: #bcbcbc;
 }
-
 .revision:hover {
-    opacity: 0.65!important;
+    background-color: #a6a6a6;
+    border-color: #a6a6a6;
+    transition: all ease 0.2s;
     -webkit-transition: all ease 0.2s;
     -moz-transition: all ease 0.2s;
     -o-transition: all ease 0.2s;
+}
+.revision-up {
+    border-bottom: 2px solid #bcbcbc;
+}
+.revision-down {
+    border-top: 2px solid #bcbcbc;
+}
+
+.revision-wrapper {
+    position: absolute;
+    z-index: 10;
+    height: 140px;
+}
+.revision-wrapper:hover {
+    background-color: #e3e3e3;
     transition: all ease 0.2s;
+    -webkit-transition: all ease 0.2s;
+    -moz-transition: all ease 0.2s;
+    -o-transition: all ease 0.2s;
+}
+
+.revision-border-box {
+    height: 100%;
+    width: 100%;
+    border-left: solid 1px white;
 }
 
 .revision-tooltip {
@@ -22,7 +42,7 @@
 }
 
 .revisions {
-    height: 150px;
+    height: 140px;
 }
 .revisions-container {
     width: 90%;
@@ -34,7 +54,7 @@
 }
 .arrow {
     width: 5%;
-    margin-top: 63px;
+    margin-top: 58px;
 }
 .left-arrow {
     width: 0;
@@ -69,7 +89,7 @@
     position: absolute;
     clear: both;
     height: 1px;
-    top: 65px;
+    top: 60px;
     margin: auto;
     z-index: 10;
 }

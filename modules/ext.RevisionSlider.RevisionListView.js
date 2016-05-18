@@ -21,20 +21,27 @@
 				$tooltip = this.makeTooltip( revs[ i ] );
 
 				$html
-					.append( $( '<div class="revision" data-revid="' + revs[ i ].getId() + '" data-pos="' + ( i + 1 ) + '" title="' + $tooltip + '"/>' )
+					.append( $( '<div class="revision-wrapper" title="' + $tooltip + '"/>' )
 						.css( {
 							left: revisionTickWidth * i + 'px',
-							height: relativeChangeSize + 'px',
-							width: revisionTickWidth + 'px',
-							top: diffSize > 0 ? '-' + relativeChangeSize + 'px' : 0,
-							background: 'black'
+							width: revisionTickWidth + 'px'
 						} )
 						.tipsy( {
 							gravity: 's',
 							html: true,
 							fade: true,
 							className: 'revision-tooltip'
-						} ) )
+						} )
+						.append( $( '<div class="revision" data-revid="' + revs[ i ].getId() + '" data-pos="' + ( i + 1 ) + '"/>' )
+							.css( {
+								height: relativeChangeSize + 'px',
+								width: revisionTickWidth + 'px',
+								top: diffSize > 0 ? '-' + relativeChangeSize + 'px' : 0
+							} )
+							.addClass( diffSize > 0 ? 'revision-up' : 'revision-down' )
+							.append( $( '<div class="revision-border-box"/>' ) )
+						)
+					)
 					.append( $( '<div class="stopper"/>' )
 						.css( {
 							left: revisionTickWidth * i + 'px',
