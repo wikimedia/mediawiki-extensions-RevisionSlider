@@ -69,19 +69,11 @@
     margin: auto;
     z-index: 10;
 }
-.oldid-pointer {
-    border-color: transparent transparent #ffe49c transparent;
-}
-.newid-pointer {
-    border-color: transparent transparent #a3d3ff transparent;
-}
 .pointer {
     position: absolute !important;
     z-index: 11;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 10px 10px 10px;
+    width: 20px;
+    height: 10px;
 }
 
 #revision-slider-darkness {

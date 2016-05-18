@@ -31,7 +31,8 @@
 				"ext.RevisionSlider.Slider",
 				"ext.RevisionSlider.Revision",
 				"ext.RevisionSlider.RevisionList",
-				"ext.RevisionSlider.fetchRevisions"
+				"ext.RevisionSlider.fetchRevisions",
+				"ext.RevisionSlider.pointers"
 			],
 			"messages": [
 				"revisionslider-loading-out-of-range",
@@ -100,6 +101,15 @@
 			"scripts": [
 				"modules/ext.RevisionSlider.RevisionListView.js"
 			]
+		},
+		"ext.RevisionSlider.pointers": {
+			"position": "top",
+			"class": "ResourceLoaderImageModule",
+			"selector": ".{name}-pointer",
+			"images": {
+				"oldid": "resources/ext.RevisionSlider.pointers/pointer-old.svg",
+				"newid": "resources/ext.RevisionSlider.pointers/pointer-new.svg"
+			}
 		}
 	},
 	"ResourceFileModulePaths": {
