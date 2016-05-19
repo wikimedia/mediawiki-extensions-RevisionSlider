@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_ee4f426c",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-19T13:01:32Z",
+      "side": 1,
+      "message": "how about scrollLeft \u003d $container.find ... ?",
+      "revId": "9668e5d148153d57f678cc80fbb023fd25a8fa37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
