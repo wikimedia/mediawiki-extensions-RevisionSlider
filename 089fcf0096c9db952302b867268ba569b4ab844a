@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_fbda6276",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-05-19T10:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_db5dde1b",
+      "revId": "089fcf0096c9db952302b867268ba569b4ab844a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_bb58ea29",
         "filename": "modules/ext.RevisionSlider.RevisionListView.js",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_5bceeeb9",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-05-19T10:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_bb58ea29",
+      "revId": "089fcf0096c9db952302b867268ba569b4ab844a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_9be4063b",
         "filename": "modules/ext.RevisionSlider.css",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2016-05-19T10:44:44Z",
       "side": 1,
       "message": "Ok, so this makes the \"border\" of \"up\" revisions change colour on hover - good. But still there is no change in colour of the border of \"down\" revisions. There should be also border-top-color added here, I suppose.",
+      "revId": "089fcf0096c9db952302b867268ba569b4ab844a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_5b542ec9",
+        "filename": "modules/ext.RevisionSlider.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-05-19T10:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_9be4063b",
       "revId": "089fcf0096c9db952302b867268ba569b4ab844a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
