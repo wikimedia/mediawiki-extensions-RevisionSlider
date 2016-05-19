@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_3b617a32",
+        "filename": "modules/ext.RevisionSlider.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-05-19T12:20:50Z",
+      "side": 1,
+      "message": "At a guess this should probably be packaged with the extension.\nImagine a situation where someone is using this locally with no internet connection.",
+      "revId": "8b21458fb08daec91a925b016934f80cf5dd9a61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
