@@ -4,8 +4,7 @@
 
 	$.extend( DiffPage.prototype, {
 		refresh: function ( revId1, revId2 ) {
-			$( 'body' )
-				.find( 'table.diff[data-mw=\'interface\']' )
+			$( 'table.diff[data-mw=\'interface\']' )
 				.append( '<div id="revision-slider-darkness"></div>' );
 			$.ajax( {
 				url: mw.util.wikiScript( 'index' ),
@@ -16,11 +15,14 @@
 				tryCount: 0,
 				retryLimit: 2,
 				success: function ( data ) {
-					data = $( '<div/>' ).html( data ).contents();
-					data.find( '#revision-slider-container' ).replaceWith( $( '#revision-slider-container' ) );
-					$( 'body' )
-						.find( '#mw-content-text' )
-						.html( data.find( '#mw-content-text' ) );
+					var $container = $( '#revision-slider-container' ),
+						scrollLeft = $container.find( '.revisions-container' ).scrollLeft();
+
+					data = $( data );
+					data.find( '#revision-slider-container' )
+						.replaceWith( $container );
+					$( '#mw-content-text' ).html( data.find( '#mw-content-text' ) )
+						.find( '.revisions-container' ).scrollLeft( scrollLeft );
 				},
 				error: function ( err ) {
 					this.tryCount++;
@@ -38,7 +40,13 @@
 
 		pushState: function ( revId1, revId2, sliderView ) {
 			history.pushState(
-				{ revid1: revId1, revid2: revId2, leftPos: sliderView.pointerOne.getPosition(), rightPos: sliderView.pointerTwo.getPosition(), sliderPos: sliderView.slider.getFirstVisibleRevisionIndex() },
+				{
+					revid1: revId1,
+					revid2: revId2,
+					leftPos: sliderView.pointerOne.getPosition(),
+					rightPos: sliderView.pointerTwo.getPosition(),
+					sliderPos: sliderView.slider.getFirstVisibleRevisionIndex()
+				},
 				$( document ).find( 'title' ).text(),
 				mw.util.wikiScript( 'index' ) + '?diff=' + Math.max( revId1, revId2 ) + '&oldid=' + Math.min( revId1, revId2 )
 			);
