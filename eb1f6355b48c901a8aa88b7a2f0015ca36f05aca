@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_585ef47b",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-19T10:12:30Z",
+      "side": 1,
+      "message": "this whole append thing is getting bigger and bigger. Might make sense to factor it out. But I\u0027ll be fine with this happening in the follow up.",
+      "revId": "eb1f6355b48c901a8aa88b7a2f0015ca36f05aca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_f86a6810",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-19T10:12:30Z",
+      "side": 1,
+      "message": "This seems a bit nasty to me.\nThat said my quick attempts to have a white border added to the left in a way that all other things look exactly as they look using this failed, I wouldn\u0027t complain about that.\n\nStill, it seems to me that bars overlap each other which is not the prettiest thing. But then the axis line wouldn\u0027t be \"continuous\" if there is an actual space between bars...\n\nSo basically, the whole message in this lengthy comment is: a bit hacky but probably ok!",
+      "revId": "eb1f6355b48c901a8aa88b7a2f0015ca36f05aca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_d8f7a454",
+        "filename": "modules/ext.RevisionSlider.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-19T10:12:30Z",
+      "side": 1,
+      "message": "I am guessing there should also be :hover counterparts for both revision.down and up as the color of the \"fake\" border should also change on hover, no? In particular zero-height bar does not get any \"darker\" color when hover.\nThis is a very tiny detail, I know\n\nAlso, I don\u0027t really feel confident with CSS stuff, but would it make more sense to have \"revision-down\" and \"revision-up\" classes here instead of combining revision class with sounding-quite-generic up/down classes?",
+      "revId": "eb1f6355b48c901a8aa88b7a2f0015ca36f05aca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
