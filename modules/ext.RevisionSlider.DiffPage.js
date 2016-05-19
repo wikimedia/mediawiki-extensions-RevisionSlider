@@ -64,6 +64,9 @@
 				sliderView.slider.setFirstVisibleRevisionIndex( event.state.sliderPos );
 				sliderView.slide( 0 );
 				sliderView.resetPointerStylesBasedOnPosition();
+				sliderView.resetRevisionStylesBasedOnPointerPosition(
+					sliderView.$element.find( 'div.revisions' )
+				);
 				self.refresh( event.state.revid1, event.state.revid2 );
 			} );
 		}

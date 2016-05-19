@@ -1,21 +1,49 @@
 .revision {
     position: absolute;
     margin-top: 70px;
-    background-color: #bcbcbc;
+    background-color: #e3e3e3;
+    border-color: #e3e3e3;
 }
 .revision:hover {
-    background-color: #a6a6a6;
-    border-color: #a6a6a6;
+    background-color: #cccccc;
+    border-color: #cccccc;
     transition: all ease 0.2s;
     -webkit-transition: all ease 0.2s;
     -moz-transition: all ease 0.2s;
     -o-transition: all ease 0.2s;
 }
 .revision-up {
-    border-bottom: 2px solid #bcbcbc;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
 }
 .revision-down {
-    border-top: 2px solid #bcbcbc;
+    border-top-width: 2px;
+    border-top-style: solid;
+}
+
+.revision-old {
+    background-color: #fee6a8;
+    border-color: #e8bd4f;
+}
+.revision-old:hover {
+    background-color: #fdc44b;
+    border-color: #dda000;
+}
+.revision-new {
+    background-color: #c3e2ff;
+    border-color: #1e6db8;
+}
+.revision-new:hover {
+    background-color: #45a6ff;
+    border-color: #065cad;
+}
+.revision-intermediate {
+    background-color: #bcbcbc;
+    border-color: #989898;
+}
+.revision-intermediate:hover {
+    background-color: #a6a6a6;
+    border-color: #828282;
 }
 
 .revision-wrapper {
@@ -24,7 +52,7 @@
     height: 140px;
 }
 .revision-wrapper:hover {
-    background-color: #e3e3e3;
+    background-color: #f2f2f2;
     transition: all ease 0.2s;
     -webkit-transition: all ease 0.2s;
     -moz-transition: all ease 0.2s;
