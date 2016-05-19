@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_db5dde1b",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-05-19T10:41:42Z",
+      "side": 1,
+      "message": "A double space snuck in before diffSize",
+      "revId": "089fcf0096c9db952302b867268ba569b4ab844a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_bb58ea29",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-05-19T10:41:42Z",
+      "side": 1,
+      "message": "Another double space before $",
+      "revId": "089fcf0096c9db952302b867268ba569b4ab844a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
