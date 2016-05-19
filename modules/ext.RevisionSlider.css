@@ -89,18 +89,19 @@
     position: absolute;
     clear: both;
     height: 1px;
-    top: 60px;
+    top: 57px;
     margin: auto;
     z-index: 10;
 }
 .lower-pointer {
-    top: 12px;
+    top: 15px;
 }
 .pointer {
     position: absolute !important;
     z-index: 11;
-    width: 20px;
-    height: 10px;
+    width: 18px;
+    height: 13px;
+    background-repeat: no-repeat;
 }
 
 #revision-slider-darkness {
