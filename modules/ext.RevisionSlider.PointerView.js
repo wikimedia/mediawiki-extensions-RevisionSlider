@@ -59,7 +59,7 @@
 
 		slideToSide: function ( slider, posBeforeSlider, duration ) {
 			if ( posBeforeSlider ) {
-				this.animateTo( this.offset - slider.getView().revisionWidth, duration );
+				this.animateTo( this.offset - slider.getView().revisionWidth + 20, duration ); // +20 otherwise pointer is in arrow
 			} else {
 				this.animateTo( ( slider.getRevisionsPerWindow() + 1 ) * slider.getView().revisionWidth - this.offset, duration );
 			}

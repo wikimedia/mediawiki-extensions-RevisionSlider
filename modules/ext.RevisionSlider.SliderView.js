@@ -6,7 +6,7 @@
 	$.extend( SliderView.prototype, {
 		revisionWidth: 16,
 
-		containerMargin: 80,
+		containerMargin: 120,
 
 		/**
 		 * @type {jQuery}
@@ -41,18 +41,18 @@
 			$slider.css( {
 					width: ( containerWidth + this.containerMargin ) + 'px'
 				} )
-				.append( $( '<a class="arrow left-arrow" data-dir="-1"></a>' ) )
+				.append( $( '<a class="arrow left-arrow oo-ui-icon-caretLast" data-dir="-1"></a>' ) )
 				.append( $( '<div class="revisions-container" />' )
 					.css( {
 						width: containerWidth + 'px'
 					} )
 					.append( $revisions ) )
-				.append( $( '<a class="arrow right-arrow" data-dir="1"></a>' ) )
+				.append( $( '<a class="arrow right-arrow oo-ui-icon-caretNext" data-dir="1"></a>' ) )
 				.append( $( '<div style="clear: both" />' ) )
 				.append(
 					$( '<div class="pointer-container" />' )
 						.css( {
-							left: 40 - this.revisionWidth + 'px', // 40 == arrow + margin right
+							left: 50 - this.revisionWidth + 'px', // 50 == arrow + margin right
 							width: containerWidth + this.revisionWidth * 1.5 + 'px'
 						} )
 						.append( this.pointerOne.getView().render() )
