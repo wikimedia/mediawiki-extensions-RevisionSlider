@@ -16,6 +16,24 @@
       "revId": "8b21458fb08daec91a925b016934f80cf5dd9a61",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_c725fcaa",
+        "filename": "modules/ext.RevisionSlider.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-05-20T07:46:24Z",
+      "side": 1,
+      "message": "Done. Using the icons from the oo-ui lib.",
+      "parentUuid": "ae564743_3b617a32",
+      "revId": "8b21458fb08daec91a925b016934f80cf5dd9a61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
