@@ -40,6 +40,9 @@
 .revision-tooltip {
     text-align: center;
 }
+.revision-tooltip .tipsy-inner {
+    max-width: none;
+}
 
 .revisions {
     height: 140px;
