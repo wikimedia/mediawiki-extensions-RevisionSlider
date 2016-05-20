@@ -48,7 +48,7 @@
 		},
 
 		isAtEnd: function () {
-			return this.getLastVisibleRevisionIndex() === this.revisions.getLength() - 2 || this.revisions.getLength() <= this.revisionsPerWindow;
+			return this.getLastVisibleRevisionIndex() === this.revisions.getLength() - 1 || this.revisions.getLength() <= this.revisionsPerWindow;
 		},
 
 		setFirstVisibleRevisionIndex: function ( value ) {
@@ -56,7 +56,7 @@
 		},
 
 		slide: function ( direction ) {
-			var highestPossibleFirstRev = this.revisions.getLength() - 1 - this.revisionsPerWindow;
+			var highestPossibleFirstRev = this.revisions.getLength() - this.revisionsPerWindow;
 
 			this.firstVisibleRevisionIndex += direction * this.revisionsPerWindow;
 			this.firstVisibleRevisionIndex = Math.min( this.firstVisibleRevisionIndex, highestPossibleFirstRev );
