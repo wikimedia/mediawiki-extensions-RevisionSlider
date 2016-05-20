@@ -1,6 +1,7 @@
 ( function ( mw, $ ) {
 	var SliderView = function ( slider ) {
 		this.slider = slider;
+		this.diffPage = new mw.libs.revisionSlider.DiffPage( this.slider.getRevisions() );
 	};
 
 	$.extend( SliderView.prototype, {
@@ -12,6 +13,11 @@
 		 * @type {jQuery}
 		 */
 		$element: null,
+
+		/**
+		 * @type {DiffPage}
+		 */
+		diffPage: null,
 
 		/**
 		 * @type {Slider}
@@ -30,7 +36,6 @@
 
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
-				diffPage = new mw.libs.revisionSlider.DiffPage( this.slider.getRevisions() ),
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
 				$slider = $( '<div class="revision-slider"/>' ),
 				self = this;
@@ -80,24 +85,49 @@
 					self.resetPointerStylesBasedOnPosition();
 					self.resetRevisionStylesBasedOnPointerPosition( $revisions );
 
-					revId1 = $revisions
-						.find( 'div.revision[data-pos=\'' + self.pointerOne.getPosition() + '\']' )
-						.data( 'revid' );
-					revId2 = $revisions
-						.find( 'div.revision[data-pos=\'' + self.pointerTwo.getPosition() + '\']' )
-						.data( 'revid' );
+					revId1 = self.getRevElementAtPosition( $revisions, self.pointerOne.getPosition() ).data( 'revid' );
+					revId2 = self.getRevElementAtPosition( $revisions, self.pointerTwo.getPosition() ).data( 'revid' );
 
-					diffPage.refresh( revId1, revId2 );
-					diffPage.pushState( revId1, revId2, self );
+					self.diffPage.refresh( revId1, revId2 );
+					self.diffPage.pushState( revId1, revId2, self );
 				},
 				drag: function () {
-					self.resetPointerColorsBasedOnOffset();
+					self.resetPointerColorsBasedOnValues(
+						self.pointerOne.getView().getElement().offset().left,
+						self.pointerTwo.getView().getElement().offset().left
+					);
 				}
+			} );
+
+			$slider.find( '.revision-wrapper' ).click( function ( e ) {
+				var $revWrap = $( this ),
+					$clickedRev = $revWrap.find( '.revision' ),
+					hasClickedTop = e.pageY - $revWrap.offset().top < $revWrap.height() / 2,
+					pOld = self.getOldRevPointer(),
+					pNew = self.getNewRevPointer();
+
+				if ( hasClickedTop ) {
+					self.refreshRevisions(
+						self.getRevElementAtPosition( $revisions, pOld.getPosition() ).data( 'revid' ),
+						$clickedRev.data( 'revid' )
+					);
+					pNew.setPosition( $clickedRev.data( 'pos' ) );
+				} else {
+					self.refreshRevisions(
+						$clickedRev.data( 'revid' ),
+						self.getRevElementAtPosition( $revisions, pNew.getPosition() ).data( 'revid' )
+					);
+					pOld.setPosition( $clickedRev.data( 'pos' ) );
+				}
+
+				self.resetPointerColorsBasedOnValues( pOld.getPosition(), pNew.getPosition() );
+				self.resetRevisionStylesBasedOnPointerPosition( $revisions );
+				self.alignPointers();
 			} );
 
 			this.slider.setRevisionsPerWindow( $slider.find( '.revisions-container' ).width() / this.revisionWidth );
 
-			this.initializePointers( $revisions );
+			this.initializePointers( this.getOldRevElement( $revisions ), this.getNewRevElement( $revisions ) );
 			this.resetRevisionStylesBasedOnPointerPosition( $revisions );
 
 			this.$element = $slider;
@@ -105,8 +135,35 @@
 			$slider.after( this.makeAnnotations() );
 
 			this.slide( Math.floor( this.pointerTwo.getPosition() / this.slider.getRevisionsPerWindow() ), 0 );
-			diffPage.pushState( mw.config.values.extRevisionSliderOldRev, mw.config.values.extRevisionSliderNewRev, this );
-			diffPage.initOnPopState( this );
+			this.diffPage.pushState( mw.config.values.extRevisionSliderOldRev, mw.config.values.extRevisionSliderNewRev, this );
+			this.diffPage.initOnPopState( this );
+		},
+
+		getOldRevPointer: function () {
+			return this.pointerOne.getPosition() <= this.pointerTwo.getPosition() ? this.pointerOne : this.pointerTwo;
+		},
+
+		getNewRevPointer: function () {
+			return this.pointerOne.getPosition() > this.pointerTwo.getPosition() ? this.pointerOne : this.pointerTwo;
+		},
+
+		refreshRevisions: function ( revId1, revId2 ) {
+			var oldRev = Math.min( revId1, revId2 ),
+				newRev = Math.max( revId1, revId2 );
+			this.diffPage.refresh( oldRev, newRev );
+			this.diffPage.pushState( oldRev, newRev, this );
+		},
+
+		getRevElementAtPosition: function ( $revs, pos ) {
+			return $revs.find( 'div.revision[data-pos=\'' + pos + '\']' );
+		},
+
+		getOldRevElement: function ( $revs ) {
+			return $revs.find( 'div.revision[data-revid=\'' + mw.config.values.extRevisionSliderOldRev + '\']' );
+		},
+
+		getNewRevElement: function ( $revs ) {
+			return $revs.find( 'div.revision[data-revid=\'' + mw.config.values.extRevisionSliderNewRev + '\']' );
 		},
 
 		makeAnnotations: function () {
@@ -115,23 +172,18 @@
 				.append( '<span class="revisions-newer">' + mw.message( 'revisionslider-annotations-newer' ).text() + ' →</span>' );
 		},
 
-		initializePointers: function ( $revisions ) {
-			var oldRevElement = $revisions.find( 'div.revision[data-revid=\'' + mw.config.values.extRevisionSliderOldRev + '\']' ),
-				newRevElement = $revisions.find( 'div.revision[data-revid=\'' + mw.config.values.extRevisionSliderNewRev + '\']' );
-
-			if ( oldRevElement.length === 0 || newRevElement.length === 0 ) {
+		initializePointers: function ( $oldRevElement, $newRevElement ) {
+			if ( $oldRevElement.length === 0 || $newRevElement.length === 0 ) {
 				// Note: this is currently caught in init.js
 				throw 'RS-rev-out-of-range';
 			}
-			this.pointerOne.setPosition( oldRevElement.data( 'pos' ) );
-			this.pointerTwo.setPosition( newRevElement.data( 'pos' ) );
+			this.pointerOne.setPosition( $oldRevElement.data( 'pos' ) );
+			this.pointerTwo.setPosition( $newRevElement.data( 'pos' ) );
 			this.resetPointerStylesBasedOnPosition();
 		},
 
-		resetPointerColorsBasedOnOffset: function () {
-			var pointerOneOffset = this.pointerOne.getView().getElement().offset(),
-				pointerTwoOffset = this.pointerTwo.getView().getElement().offset();
-			if ( pointerOneOffset.left > pointerTwoOffset.left ) {
+		resetPointerColorsBasedOnValues: function ( p1, p2 ) {
+			if ( p1 > p2 ) {
 				this.pointerOne.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
 				this.pointerTwo.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
 			} else {
@@ -141,32 +193,24 @@
 		},
 
 		resetPointerStylesBasedOnPosition: function () {
-			if ( this.pointerOne.getPosition() > this.pointerTwo.getPosition() ) {
-				this.pointerOne.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' )
-					.removeClass( 'lower-pointer' ).addClass( 'upper-pointer' );
-				this.pointerTwo.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' )
-					.removeClass( 'upper-pointer' ).addClass( 'lower-pointer' );
-			} else {
-				this.pointerOne.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' )
-					.removeClass( 'upper-pointer' ).addClass( 'lower-pointer' );
-				this.pointerTwo.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' )
-					.removeClass( 'lower-pointer' ).addClass( 'upper-pointer' );
-			}
+			this.getNewRevPointer().getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' )
+				.removeClass( 'lower-pointer' ).addClass( 'upper-pointer' );
+			this.getOldRevPointer().getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' )
+				.removeClass( 'upper-pointer' ).addClass( 'lower-pointer' );
 		},
 
 		resetRevisionStylesBasedOnPointerPosition: function ( $revisions ) {
-			var pointerOnePosition = this.pointerOne.getPosition(),
-				pointerTwoPosition = this.pointerTwo.getPosition(),
-				olderRevPosition = Math.min( pointerOnePosition, pointerTwoPosition ),
-				newerRevPosition = Math.max( pointerOnePosition, pointerTwoPosition ),
+			var olderRevPosition = this.getOldRevPointer().getPosition(),
+				newerRevPosition = this.getNewRevPointer().getPosition(),
 				positionIndex = olderRevPosition + 1;
-			$revisions.find( 'div.revision' ).each( function () {
-				$( this ).removeClass( 'revision-intermediate' ).removeClass( 'revision-old' ).removeClass( 'revision-new' );
-			} );
-			$revisions.find( 'div.revision[data-pos=\'' + olderRevPosition + '\']' ).addClass( 'revision-old' );
-			$revisions.find( 'div.revision[data-pos=\'' + newerRevPosition + '\']' ).addClass( 'revision-new' );
+
+			$revisions.find( 'div.revision' )
+				.removeClass( 'revision-intermediate revision-old revision-new' );
+
+			this.getRevElementAtPosition( $revisions, olderRevPosition ).addClass( 'revision-old' );
+			this.getRevElementAtPosition( $revisions, newerRevPosition ).addClass( 'revision-new' );
 			while ( positionIndex < newerRevPosition ) {
-				$revisions.find( 'div.revision[data-pos=\'' + positionIndex + '\']' ).addClass( 'revision-intermediate' );
+				this.getRevElementAtPosition( $revisions, positionIndex ).addClass( 'revision-intermediate' );
 				positionIndex++;
 			}
 		},
@@ -207,8 +251,22 @@
 				}
 			);
 
-			this.pointerOne.getView().slideToSideOrPosition( this.slider, duration );
-			this.pointerTwo.getView().slideToSideOrPosition( this.slider, duration );
+			this.alignPointers( duration );
+		},
+
+		alignPointers: function ( duration ) {
+			var self = this;
+
+			this.pointerOne.getView()
+				.slideToSideOrPosition( this.slider, duration )
+				.promise().done( function () {
+					self.resetPointerStylesBasedOnPosition();
+				} );
+			this.pointerTwo.getView()
+				.slideToSideOrPosition( this.slider, duration )
+				.promise().done( function () {
+					self.resetPointerStylesBasedOnPosition();
+				} );
 		},
 
 		whichPointer: function ( $e ) {
