@@ -54,7 +54,7 @@
 
 		slideToPosition: function ( slider, duration ) {
 			var relativePos = this.pointer.getPosition() - slider.getFirstVisibleRevisionIndex();
-			this.animateTo( relativePos * slider.getView().revisionWidth, duration );
+			this.animateTo( relativePos * slider.getView().revisionWidth + 4, duration ); // +4 to align triangle and revision
 		},
 
 		slideToSide: function ( slider, posBeforeSlider, duration ) {
