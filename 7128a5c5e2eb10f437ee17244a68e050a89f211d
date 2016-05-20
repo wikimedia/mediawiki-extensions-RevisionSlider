@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_6a583529",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-05-20T12:20:37Z",
+      "side": 1,
+      "message": "I don\u0027t think the arrows should really be in the messages.\n1) We probably want to use the same arrows for all languages\n2) Thinking of RTL the arrows will want to be on the other side etc depending on RTL (when we do RTL) maybe?",
+      "revId": "7128a5c5e2eb10f437ee17244a68e050a89f211d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
