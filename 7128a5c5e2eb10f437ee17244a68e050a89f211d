@@ -16,6 +16,24 @@
       "revId": "7128a5c5e2eb10f437ee17244a68e050a89f211d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_ea41e55e",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-05-20T14:49:16Z",
+      "side": 1,
+      "message": "I removed the arrows from the i18n. Related to RTL: Yes we want that. Let someone with RTL see and test how that works. IMO we should leave it like that for now.",
+      "parentUuid": "ae564743_6a583529",
+      "revId": "7128a5c5e2eb10f437ee17244a68e050a89f211d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
