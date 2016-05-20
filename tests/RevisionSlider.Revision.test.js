@@ -11,8 +11,7 @@
 			},
 			rev = new mw.libs.revisionSlider.Revision( data );
 
-		mw.config.values.extRevisionSliderTimeOffset = 0;
-		mw.user.options.values.timecorrection = 0;
+		mw.libs.revisionSlider.userOffset = 0;
 
 		assert.equal( rev.getSize(), data.size );
 		assert.equal( rev.getComment(), data.comment );
@@ -33,8 +32,7 @@
 			},
 			rev = new mw.libs.revisionSlider.Revision( data );
 
-		mw.config.values.extRevisionSliderTimeOffset = 0;
-		mw.user.options.values.timecorrection = 0;
+		mw.libs.revisionSlider.userOffset = 0;
 
 		assert.equal( rev.getSize(), data.size );
 		assert.equal( rev.getComment(), data.comment );
@@ -55,8 +53,7 @@
 			},
 			rev = new mw.libs.revisionSlider.Revision( data );
 
-		mw.config.values.extRevisionSliderTimeOffset = 0;
-		mw.user.options.values.timecorrection = 0;
+		mw.libs.revisionSlider.userOffset = 0;
 
 		assert.equal( rev.getSize(), data.size );
 		assert.equal( rev.getComment(), data.comment );
@@ -73,37 +70,36 @@
 		assert.equal( rev.getRelativeSize(), size );
 	} );
 
-	QUnit.test( 'getFormattedDate No user offset, 0 default offset', function ( assert ) {
+	QUnit.test( 'getFormattedDate, offset: 0', function ( assert ) {
 		var rev = new mw.libs.revisionSlider.Revision( {
 				timestamp: '2016-04-26T10:27:14Z' // 10:27, 26 Apr 2016
 			} );
 
-		mw.user.options.values.timecorrection = undefined;
-		mw.config.values.extRevisionSliderTimeOffset = 0;
+		mw.libs.revisionSlider.userOffset = 0;
 
 		assert.equal( rev.getFormattedDate(), '10:27, 26 Apr 2016' );
 	} );
 
-	QUnit.test( 'getFormattedDate No user offset, 1 default offset', function ( assert ) {
+	QUnit.test( 'getFormattedDate, offset: 120 (treat as hours, +2h)', function ( assert ) {
 		var rev = new mw.libs.revisionSlider.Revision( {
 				timestamp: '2016-04-26T10:27:14Z' // 10:27, 26 Apr 2016
 			} );
 
-		mw.user.options.values.timecorrection = undefined;
-		mw.config.values.extRevisionSliderTimeOffset = 60;
-
-		assert.equal( rev.getFormattedDate(), '11:27, 26 Apr 2016' );
-	} );
-
-	QUnit.test( 'getFormattedDate 2 user offset, 1 default offset', function ( assert ) {
-		var rev = new mw.libs.revisionSlider.Revision( {
-				timestamp: '2016-04-26T10:27:14Z' // 10:27, 26 Apr 2016
-			} );
-
-		mw.user.options.values.timecorrection = 'FOO|120|BAR';
-		mw.config.values.extRevisionSliderTimeOffset = 60;
+		// Berlin = 120
+		mw.libs.revisionSlider.userOffset = 120;
 
 		assert.equal( rev.getFormattedDate(), '12:27, 26 Apr 2016' );
+	} );
+
+	QUnit.test( 'getFormattedDate, negative offset: -420 (treat as hours, -7h)', function ( assert ) {
+		var rev = new mw.libs.revisionSlider.Revision( {
+				timestamp: '2016-04-26T10:27:14Z' // 10:27, 26 Apr 2016
+			} );
+
+		// San Francisco = -420
+		mw.libs.revisionSlider.userOffset = -420;
+
+		assert.equal( rev.getFormattedDate(), '03:27, 26 Apr 2016' );
 	} );
 
 	QUnit.test( 'hasEmptyComment comment with whitespaces', function ( assert ) {

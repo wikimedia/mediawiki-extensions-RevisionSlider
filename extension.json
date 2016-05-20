@@ -54,6 +54,9 @@
 		"ext.RevisionSlider.Revision": {
 			"scripts": [
 				"modules/ext.RevisionSlider.Revision.js"
+			],
+			"dependencies": [
+				"moment"
 			]
 		},
 		"ext.RevisionSlider.Pointer": {

@@ -1,5 +1,6 @@
 ( function ( mw, $ ) {
 	mw.track( 'counter.MediaWiki.RevisionSlider.event.init' );
+	mw.libs.revisionSlider.userOffset = mw.user.options.values.timecorrection ? mw.user.options.values.timecorrection.split( '|' )[ 1 ] : mw.config.values.extRevisionSliderTimeOffset;
 	mw.libs.revisionSlider.fetchRevisions( {
 		pageName: mw.config.get( 'wgPageName' ),
 		startId: mw.config.get( 'wgCurRevisionId' ),
