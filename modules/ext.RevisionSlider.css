@@ -1,5 +1,10 @@
+#mw-revision-slider-container {
+    /* This will flip with CSSJanus in case */
+    /* the interface is in RTL */
+    direction: ltr;
+}
 .mw-revision {
-    position: absolute;
+    position: relative;
     margin-top: 70px;
     background-color: #e3e3e3;
     border-color: #e3e3e3;
@@ -47,7 +52,7 @@
 }
 
 .mw-revision-wrapper {
-    position: absolute;
+    display: inline-block;
     cursor: pointer;
     z-index: 10;
     height: 140px;
@@ -72,6 +77,7 @@
 
 .mw-revisions {
     height: 140px;
+    white-space: nowrap;
 }
 .mw-revisions-container {
     width: 90%;
@@ -87,10 +93,10 @@
     background-position: center center;
     background-repeat: no-repeat;
 }
-.mw-arrow-left {
+.mw-arrow-backwards {
     margin-right: 30px;
 }
-.mw-arrow-right {
+.mw-arrow-forwards {
     margin-left: 30px;
 }
 .mw-arrow-enabled, .mw-arrow-disabled {
@@ -114,7 +120,6 @@
     position: absolute;
     clear: both;
     height: 1px;
-    left: 55px;
     top: 57px;
     margin: auto;
     z-index: 10;

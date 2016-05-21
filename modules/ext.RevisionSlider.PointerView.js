@@ -48,8 +48,20 @@
 			return this.isUpperPointer() ? 16 : 0;
 		},
 
+		// For correct positioning of the pointer in the RTL mode the left position is flipped in the container.
+		// Additionally what must be taken into consideration is the width of the revision,
+		// and the extra space added on the right side of the pointer container used for correct
+		// restricting the pointer dragging area
+		getAdjustedLeftPositionWhenRtl: function ( pos ) {
+			return this.getElement().offsetParent().width() - pos - 16 - 15;
+		},
+
 		animateTo: function ( posInPx, duration ) {
-			return this.getElement().animate( { left: posInPx }, duration );
+			var animatePos = { left: posInPx };
+			if ( this.getElement().css( 'direction' ) === 'rtl' ) {
+				animatePos.left = this.getAdjustedLeftPositionWhenRtl( animatePos.left );
+			}
+			return this.getElement().animate( animatePos, duration );
 		},
 
 		slideToPosition: function ( slider, duration ) {

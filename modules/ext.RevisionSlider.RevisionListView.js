@@ -24,10 +24,7 @@
 					.append( $( '<div>' )
 						.addClass( 'mw-revision-wrapper' )
 						.attr( 'title', tooltip )
-						.css( {
-							left: revisionTickWidth * i + 'px',
-							width: revisionTickWidth + 'px'
-						} )
+						.width( revisionTickWidth )
 						.tipsy( {
 							gravity: 's',
 							html: true,
