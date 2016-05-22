@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_6dda0aee",
+        "filename": "modules/ext.RevisionSlider.fetchRevisions.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-05-22T11:52:04Z",
+      "side": 1,
+      "message": "this seems like an odd place to have this bit of code.",
+      "revId": "a3e3de478b24d16e7089b84d35744d0c9896735c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
