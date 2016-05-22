@@ -80,6 +80,11 @@
 			"dependencies": [
 				"ext.RevisionSlider.DiffPage",
 				"ext.RevisionSlider.Pointer"
+			],
+			"messages": [
+				"revisionslider-annotations-newer",
+				"revisionslider-annotations-older",
+				"revisionslider-annotations-diffsize"
 			]
 		},
 		"ext.RevisionSlider.DiffPage": {

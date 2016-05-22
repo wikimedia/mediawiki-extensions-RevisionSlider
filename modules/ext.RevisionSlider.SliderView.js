@@ -42,6 +42,7 @@
 					width: ( containerWidth + this.containerMargin ) + 'px'
 				} )
 				.append( $( '<a class="arrow left-arrow oo-ui-icon-caretLast" data-dir="-1"></a>' ) )
+				.append( $( '<div class="revisions-diffsize">' + mw.message( 'revisionslider-annotations-diffsize' ).text() + '</div>' ) )
 				.append( $( '<div class="revisions-container" />' )
 					.css( {
 						width: containerWidth + 'px'
@@ -101,10 +102,17 @@
 
 			this.$element = $slider;
 			$container.html( $slider );
+			$slider.after( this.makeAnnotations() );
 
 			this.slide( Math.floor( this.pointerTwo.getPosition() / this.slider.getRevisionsPerWindow() ), 0 );
 			diffPage.pushState( mw.config.values.extRevisionSliderOldRev, mw.config.values.extRevisionSliderNewRev, this );
 			diffPage.initOnPopState( this );
+		},
+
+		makeAnnotations: function () {
+			return $( '<div class="revisions-annotations"/>' )
+				.append( '<span class="revisions-older">← ' + mw.message( 'revisionslider-annotations-older' ).text() + '</span>' )
+				.append( '<span class="revisions-newer">' + mw.message( 'revisionslider-annotations-newer' ).text() + ' →</span>' );
 		},
 
 		initializePointers: function ( $revisions ) {
