@@ -77,6 +77,7 @@
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
 					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + relativeIndex );
 					self.resetPointerStylesBasedOnPosition();
+					self.resetRevisionStylesBasedOnPointerPosition( $revisions );
 
 					revId1 = $revisions
 						.find( 'div.revision[data-pos=\'' + self.pointerOne.getPosition() + '\']' )
@@ -96,6 +97,7 @@
 			this.slider.setRevisionsPerWindow( $slider.find( '.revisions-container' ).width() / this.revisionWidth );
 
 			this.initializePointers( $revisions );
+			this.resetRevisionStylesBasedOnPointerPosition( $revisions );
 
 			this.$element = $slider;
 			$container.html( $slider );
@@ -141,6 +143,23 @@
 					.removeClass( 'upper-pointer' ).addClass( 'lower-pointer' );
 				this.pointerTwo.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' )
 					.removeClass( 'lower-pointer' ).addClass( 'upper-pointer' );
+			}
+		},
+
+		resetRevisionStylesBasedOnPointerPosition: function ( $revisions ) {
+			var pointerOnePosition = this.pointerOne.getPosition(),
+				pointerTwoPosition = this.pointerTwo.getPosition(),
+				olderRevPosition = Math.min( pointerOnePosition, pointerTwoPosition ),
+				newerRevPosition = Math.max( pointerOnePosition, pointerTwoPosition ),
+				positionIndex = olderRevPosition + 1;
+			$revisions.find( 'div.revision' ).each( function () {
+				$( this ).removeClass( 'revision-intermediate' ).removeClass( 'revision-old' ).removeClass( 'revision-new' );
+			} );
+			$revisions.find( 'div.revision[data-pos=\'' + olderRevPosition + '\']' ).addClass( 'revision-old' );
+			$revisions.find( 'div.revision[data-pos=\'' + newerRevPosition + '\']' ).addClass( 'revision-new' );
+			while ( positionIndex < newerRevPosition ) {
+				$revisions.find( 'div.revision[data-pos=\'' + positionIndex + '\']' ).addClass( 'revision-intermediate' );
+				positionIndex++;
 			}
 		},
 
