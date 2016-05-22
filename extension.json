@@ -102,6 +102,9 @@
 		"ext.RevisionSlider.RevisionListView": {
 			"scripts": [
 				"modules/ext.RevisionSlider.RevisionListView.js"
+			],
+			"messages": [
+				"revisionslider-revision-bytes"
 			]
 		},
 		"ext.RevisionSlider.pointers.lower": {

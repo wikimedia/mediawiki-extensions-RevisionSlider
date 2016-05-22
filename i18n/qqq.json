@@ -8,6 +8,7 @@
 	"revisionslider-desc": "{{desc|name=RevisionSlider|url=https://www.mediawiki.org/wiki/Extension:RevisionSlider}}",
 	"revisionslider-beta-feature-message": "Label for the revision slider Beta Feature.",
 	"revisionslider-beta-feature-description": "Description for the revision slider Beta Feature, describing the feature that will be enabled.",
+	"revisionslider-revision-bytes": "Label describing the amount of bytes changed in this revision.\nParameters:\n* $1 - Revision size in bytes.",
 	"revisionslider-loading-placeholder": "Message shown while the RevisionSlider is still loading on a diff page. Once loaded the message is removed.",
 	"revisionslider-loading-failed": "Message shown if the RevisionSlider fails to initially load.",
 	"revisionslider-loading-out-of-range": "Message shown if the RevisionSlider fails to initially load due to revisions being requested that are not in the most recent 500 revisions.",
