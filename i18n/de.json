@@ -8,8 +8,12 @@
 	"revisionslider-desc": "Zeigt einen Schieber an, der das Auswählen und Vergleichen von Versionen auf einer Unterschiedsseite ermöglicht.",
 	"revisionslider-beta-feature-message": "Versionsschieber",
 	"revisionslider-beta-feature-description": "Zeigt beim Vergleichen zweier Seitenversionen einen Versionsschieber an.",
+	"revisionslider-revision-bytes": "{{PLURAL:$1|Ein Byte|$1 Bytes}}",
 	"revisionslider-loading-placeholder": "Der Versionsschieber wird geladen.",
 	"revisionslider-loading-failed": "Der Versionsschieber konnte nicht geladen werden.",
 	"revisionslider-loading-out-of-range": "Der Versionsschieber konnte nicht geladen werden, da die angeforderten Versionen nicht in den letzten 500 Versionen der Seite sind.",
-	"revisionslider-loading-noscript": "Da du JavaScript deaktiviert hast, kann der Versionsschieber nicht geladen werden."
+	"revisionslider-loading-noscript": "Da du JavaScript deaktiviert hast, kann der Versionsschieber nicht geladen werden.",
+	"revisionslider-annotations-newer": "neuer",
+	"revisionslider-annotations-older": "älter",
+	"revisionslider-annotations-diffsize": "Unterschiedsgröße"
 }
