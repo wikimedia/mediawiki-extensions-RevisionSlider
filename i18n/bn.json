@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aftabuzzaman"
+		]
+	},
+	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|বাইট}}",
+	"revisionslider-annotations-newer": "অপেক্ষাকৃত নতুন",
+	"revisionslider-annotations-older": "অপেক্ষাকৃত পুরনো",
+	"revisionslider-annotations-diffsize": "পার্থক্যের আকার"
+}

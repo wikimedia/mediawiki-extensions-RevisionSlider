@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|byte}}",
+	"revisionslider-annotations-newer": "più recenti",
+	"revisionslider-annotations-older": "meno recenti"
+}
