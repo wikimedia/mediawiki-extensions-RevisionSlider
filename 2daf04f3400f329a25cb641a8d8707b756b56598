@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_5ef7ea87",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-23T09:35:14Z",
+      "side": 1,
+      "message": "Those guys should probably not be named left and right given I7c903c2e9d8ee2a0ef2eeb7b99f2251f230a794e",
+      "revId": "2daf04f3400f329a25cb641a8d8707b756b56598",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_deedba8b",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-23T09:35:14Z",
+      "side": 1,
+      "message": "This and getOldRevPointer do not seem to handle case of both pointers pointing at the same position. If both positions are equal both methods return this.pointerTwo.\nThis breaks resetPointerStylesBasedOnPosition and results with both pointers getting same CSS styles and being displayed on top of each other.",
+      "revId": "2daf04f3400f329a25cb641a8d8707b756b56598",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_de381aee",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-23T09:35:14Z",
+      "side": 1,
+      "message": "I am a bit confused about introducing this method that does almost the same as resetPointerStylesBasedOnPosition.\nI think I get the idea why it got added here but then I am thinking maybe it still could use resetPointerStylesBasedOnPosition (maybe adding some more checks to it). I am not sure which solution would be better.\nI\u0027d like to have another look at this (so please don\u0027t change it just because I made this comment) and think a bit longer about all possible scenarios once this patch is made RTL-compliant (as this adds even more trickness to the position comparing etc).",
+      "revId": "2daf04f3400f329a25cb641a8d8707b756b56598",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
