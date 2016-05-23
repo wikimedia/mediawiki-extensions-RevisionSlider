@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_7e62aea3",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-23T08:28:49Z",
+      "side": 1,
+      "message": "I am not going to insist on having this changed here but as this change is introducing some more descriptive naming (which I like) for pointers instead of \"one\" and \"two\" or \"left\" and \"right\", how about storing olderPos (or pointerOlderPos, getting long, I know) and newerPos in the history? These things are might not even be really \"left\" and \"right\" in LTR.\n\nThis was supposed to be changed to something like \"pointerOnePos\" once we stopped calling pointers \"left\" and \"right\" but apparently we forgot it :)",
+      "revId": "a19655e557612717fbcb19f228ad5e2c8776a7b7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
