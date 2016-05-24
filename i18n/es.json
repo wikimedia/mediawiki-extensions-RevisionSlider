@@ -8,8 +8,12 @@
 	"revisionslider-desc": "Muestra un control deslizante que permite la selección y comparación de las revisiones en una página de diferencias",
 	"revisionslider-beta-feature-message": "Deslizador de revisiones",
 	"revisionslider-beta-feature-description": "Mostrar una deslizador de revisiones al comparar dos revisiones de una página.",
+	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|byte|bytes}}",
 	"revisionslider-loading-placeholder": "El deslizador de revisiones se está cargando.",
 	"revisionslider-loading-failed": "El deslizador de revisiones no se pudo cargar.",
 	"revisionslider-loading-out-of-range": "El deslizador de revisiones no se pudo cargar. ya que las revisiones solicitadas no están entre las primeras 500 versiones de la página.",
-	"revisionslider-loading-noscript": "Como tienes desactivado JavaScript, la deslizador de revisiones no se cargará."
+	"revisionslider-loading-noscript": "Como tienes desactivado JavaScript, la deslizador de revisiones no se cargará.",
+	"revisionslider-annotations-newer": "más recientes",
+	"revisionslider-annotations-older": "más antiguas",
+	"revisionslider-annotations-diffsize": "tamaño de la diferencia"
 }

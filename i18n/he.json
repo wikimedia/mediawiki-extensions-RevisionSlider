@@ -7,5 +7,8 @@
 	"revisionslider": "מחוון הגרסה",
 	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|בייט|בייטים}}",
 	"revisionslider-loading-placeholder": "מחוון הגרסה נמצא בטעינה.",
-	"revisionslider-loading-noscript": "מכיוון שתכונות ה־JavaScript מבוטלת בדפדפן שלך, מחוון הגרסה לא יכול להיטען."
+	"revisionslider-loading-noscript": "מכיוון שתכונות ה־JavaScript מבוטלת בדפדפן שלך, מחוון הגרסה לא יכול להיטען.",
+	"revisionslider-annotations-newer": "חדשות יותר",
+	"revisionslider-annotations-older": "ישנות יותר",
+	"revisionslider-annotations-diffsize": "השינוי בגודל הדף"
 }
