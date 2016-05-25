@@ -49,19 +49,19 @@
 		},
 
 		animateTo: function ( posInPx, duration ) {
-			this.getElement().animate( { left: posInPx }, duration );
+			return this.getElement().animate( { left: posInPx }, duration );
 		},
 
 		slideToPosition: function ( slider, duration ) {
 			var relativePos = this.pointer.getPosition() - slider.getFirstVisibleRevisionIndex();
-			this.animateTo( relativePos * slider.getView().revisionWidth + 4, duration ); // +4 to align triangle and revision
+			return this.animateTo( relativePos * slider.getView().revisionWidth + 4, duration ); // +4 to align triangle and revision
 		},
 
 		slideToSide: function ( slider, posBeforeSlider, duration ) {
 			if ( posBeforeSlider ) {
-				this.animateTo( this.offset - slider.getView().revisionWidth + 20, duration ); // +20 otherwise pointer is in arrow
+				return this.animateTo( this.offset - slider.getView().revisionWidth + 20, duration ); // +20 otherwise pointer is in arrow
 			} else {
-				this.animateTo( ( slider.getRevisionsPerWindow() + 1 ) * slider.getView().revisionWidth - this.offset, duration );
+				return this.animateTo( ( slider.getRevisionsPerWindow() + 1 ) * slider.getView().revisionWidth - this.offset, duration );
 			}
 		},
 
@@ -70,9 +70,9 @@
 				posBeforeSlider = this.pointer.getPosition() < firstVisibleRev,
 				isVisible = !posBeforeSlider && this.pointer.getPosition() <= firstVisibleRev + slider.getRevisionsPerWindow();
 			if ( isVisible ) {
-				this.slideToPosition( slider, duration );
+				return this.slideToPosition( slider, duration );
 			} else {
-				this.slideToSide( slider, posBeforeSlider, duration );
+				return this.slideToSide( slider, posBeforeSlider, duration );
 			}
 		}
 	} );
