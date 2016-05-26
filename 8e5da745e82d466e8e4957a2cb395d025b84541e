@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_7c473a7c",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-26T10:06:48Z",
+      "side": 1,
+      "message": "this is doesn\u0027t seem right. I believe the left position of this should be matching the left of the \"revisions-container\", and not use hard-coded value (as the positioning of revisions-container is not fixed!)\nI have some weird issues here while working on the change, though, that\u0027s why it is left like that for now.",
+      "revId": "8e5da745e82d466e8e4957a2cb395d025b84541e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
