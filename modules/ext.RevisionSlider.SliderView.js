@@ -66,10 +66,7 @@
 				.append( $( '<div style="clear: both" />' ) )
 				.append(
 					$( '<div class="pointer-container" />' )
-						.css( {
-							left: 50 - this.revisionWidth + 'px', // 50 == arrow + margin right
-							width: containerWidth + this.revisionWidth * 1.5 + 'px'
-						} )
+						.css( { width: containerWidth + this.revisionWidth - 1 + 'px' } )
 						.append( this.pointerOne.getView().render() )
 						.append( this.pointerTwo.getView().render() )
 				);
@@ -81,13 +78,13 @@
 
 			$slider.find( '.pointer' ).draggable( {
 				axis: 'x',
-				snap: '.stopper',
+				grid: [ this.revisionWidth, null ],
 				containment: '.pointer-container',
 				stop: function () {
 					var $p = $( this ),
 						pointer = self.whichPointer( $p ),
 						pos = parseInt( $p.css( 'left' ), 10 ),
-						relativeIndex = Math.floor( ( pos + self.revisionWidth / 2 ) / self.revisionWidth ),
+						relativeIndex = Math.ceil( ( pos + self.revisionWidth / 2 ) / self.revisionWidth ),
 						revId1, revId2;
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
 					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + relativeIndex );
@@ -100,7 +97,9 @@
 					self.diffPage.refresh( revId1, revId2 );
 					self.diffPage.pushState( revId1, revId2, self );
 				},
-				drag: function () {
+				drag: function ( event, ui ) {
+					var newestVisibleRevisionLeftPos = containerWidth - self.revisionWidth;
+					ui.position.left = Math.min( ui.position.left, newestVisibleRevisionLeftPos );
 					self.resetPointerColorsBasedOnValues(
 						self.pointerOne.getView().getElement().offset().left,
 						self.pointerTwo.getView().getElement().offset().left

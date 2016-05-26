@@ -52,14 +52,14 @@
 
 		slideToPosition: function ( slider, duration ) {
 			var relativePos = this.pointer.getPosition() - slider.getFirstVisibleRevisionIndex();
-			return this.animateTo( relativePos * slider.getView().revisionWidth + 4, duration ); // +4 to align triangle and revision
+			return this.animateTo( ( relativePos - 1 ) * slider.getView().revisionWidth, duration );
 		},
 
 		slideToSide: function ( slider, posBeforeSlider, duration ) {
 			if ( posBeforeSlider ) {
-				return this.animateTo( this.getOffset() - ( slider.getView().revisionWidth / 2 ), duration ); // +10 otherwise pointer is in arrow
+				return this.animateTo( this.getOffset() - 2 * slider.getView().revisionWidth, duration );
 			} else {
-				return this.animateTo( ( slider.getRevisionsPerWindow() + 1 ) * slider.getView().revisionWidth + this.getOffset(), duration );
+				return this.animateTo( slider.getRevisionsPerWindow()  * slider.getView().revisionWidth + this.getOffset(), duration );
 			}
 		},
 

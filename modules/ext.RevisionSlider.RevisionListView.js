@@ -41,12 +41,7 @@
 							.addClass( diffSize > 0 ? 'revision-up' : 'revision-down' )
 							.append( $( '<div class="revision-border-box"/>' ) )
 						)
-					)
-					.append( $( '<div class="stopper"/>' )
-						.css( {
-							left: revisionTickWidth * i + 'px',
-							width: revisionTickWidth + 'px'
-						} ) );
+					);
 			}
 
 			return $html;

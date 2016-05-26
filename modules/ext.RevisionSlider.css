@@ -102,13 +102,6 @@
     margin-left: 30px;
 }
 
-.stopper {
-    position: absolute;
-    top: 50%;
-    height: 50px;
-    width: 0;
-}
-
 .revision-slider {
     position: relative;
     margin: auto;
@@ -118,6 +111,7 @@
     position: absolute;
     clear: both;
     height: 1px;
+    left: 55px;
     top: 57px;
     margin: auto;
     z-index: 10;
