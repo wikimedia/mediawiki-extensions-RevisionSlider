@@ -129,7 +129,7 @@
 					pOld.setPosition( $clickedRev.data( 'pos' ) );
 				}
 
-				self.resetPointerColorsBasedOnValues( pOld.getPosition(), pNew.getPosition() );
+				self.resetPointerColorsBasedOnValues( self.pointerOne.getPosition(), self.pointerTwo.getPosition() );
 				self.resetRevisionStylesBasedOnPointerPosition( $revisions );
 				self.alignPointers();
 			} );
