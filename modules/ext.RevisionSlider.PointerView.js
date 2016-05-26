@@ -1,8 +1,7 @@
 ( function ( mw, $ ) {
-	var PointerView = function ( pointer, id, offset ) {
+	var PointerView = function ( pointer, id ) {
 		this.pointer = pointer;
 		this.id = id;
-		this.offset = offset;
 	};
 
 	$.extend( PointerView.prototype, {
@@ -10,11 +9,6 @@
 		 * @type {string}
 		 */
 		id: '',
-
-		/**
-		 * @type {int}
-		 */
-		offset: 0,
 
 		/**
 		 * @type {Pointer}
@@ -44,8 +38,12 @@
 			return this.$html;
 		},
 
+		isUpperPointer: function () {
+			return this.getElement().hasClass( 'upper-pointer' );
+		},
+
 		getOffset: function () {
-			return this.offset;
+			return this.isUpperPointer() ? 16 : 0;
 		},
 
 		animateTo: function ( posInPx, duration ) {
@@ -59,9 +57,9 @@
 
 		slideToSide: function ( slider, posBeforeSlider, duration ) {
 			if ( posBeforeSlider ) {
-				return this.animateTo( this.offset - slider.getView().revisionWidth + 20, duration ); // +20 otherwise pointer is in arrow
+				return this.animateTo( this.getOffset() - ( slider.getView().revisionWidth / 2 ), duration ); // +10 otherwise pointer is in arrow
 			} else {
-				return this.animateTo( ( slider.getRevisionsPerWindow() + 1 ) * slider.getView().revisionWidth - this.offset, duration );
+				return this.animateTo( ( slider.getRevisionsPerWindow() + 1 ) * slider.getView().revisionWidth + this.getOffset(), duration );
 			}
 		},
 
