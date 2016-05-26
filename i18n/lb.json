@@ -4,8 +4,5 @@
 			"Robby"
 		]
 	},
-	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|Byte|Byten}}",
-	"revisionslider-annotations-newer": "méi rezent",
-	"revisionslider-annotations-older": "méi al",
-	"revisionslider-annotations-diffsize": "diff Gréisst"
+	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|Byte|Byten}}"
 }

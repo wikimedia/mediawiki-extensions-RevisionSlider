@@ -4,8 +4,5 @@
 			"Purodha"
 		]
 	},
-	"revisionslider-revision-bytes": "$1&nbsp;<i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Binary Digit\">{{PLURAL:$1|Byte|Bytes|Byte}}</i>",
-	"revisionslider-annotations-newer": "neujer",
-	"revisionslider-annotations-older": "ähler",
-	"revisionslider-annotations-diffsize": "Jrühße-Ongerscheid"
+	"revisionslider-revision-bytes": "$1&nbsp;<i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Binary Digit\">{{PLURAL:$1|Byte|Bytes|Byte}}</i>"
 }

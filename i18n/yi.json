@@ -4,8 +4,5 @@
 			"פוילישער"
 		]
 	},
-	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|בייט|בייטן}}",
-	"revisionslider-annotations-newer": "נייער",
-	"revisionslider-annotations-older": "עלטער",
-	"revisionslider-annotations-diffsize": "גרייס־אונטערשייד"
+	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|בייט|בייטן}}"
 }

@@ -12,8 +12,5 @@
 	"revisionslider-loading-placeholder": "Лизгачот на преработки се вчитува.",
 	"revisionslider-loading-failed": "Лизгачот на преработки не се вчита.",
 	"revisionslider-loading-out-of-range": "Лизгачот на преработки не се вчита бидејќи бараните преработки не се во последните 500.",
-	"revisionslider-loading-noscript": "Лизгачот на преработки нема да може да се вчита бидејќи немате овозможено JavaScript.",
-	"revisionslider-annotations-newer": "понови",
-	"revisionslider-annotations-older": "постари",
-	"revisionslider-annotations-diffsize": "големина на разликата"
+	"revisionslider-loading-noscript": "Лизгачот на преработки нема да може да се вчита бидејќи немате овозможено JavaScript."
 }
