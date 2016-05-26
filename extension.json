@@ -108,7 +108,10 @@
 				"modules/ext.RevisionSlider.RevisionListView.js"
 			],
 			"messages": [
-				"revisionslider-revision-bytes"
+				"revisionslider-revision-bytes",
+				"revisionslider-label-article-size",
+				"revisionslider-label-user",
+				"revisionslider-label-comment"
 			]
 		},
 		"ext.RevisionSlider.pointers.lower": {

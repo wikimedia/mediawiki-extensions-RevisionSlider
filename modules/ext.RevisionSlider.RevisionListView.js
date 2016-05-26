@@ -55,9 +55,19 @@
 		makeTooltip: function ( rev ) {
 			var $tooltip = $( '<div/>' )
 				.append( '<p><b>' + rev.getFormattedDate() + '</b></p>' )
-				.append( $( '<bdi/>' ).append( $( '<p/>' ).text( mw.html.escape( rev.getUser() ) ) ) )
-				.append( rev.getComment() ? $( '<bdi/>' ).append( $( '<p/>' ).append( '<i/>' ).text( mw.html.escape( rev.getComment() ) ) ) : '' )
-				.append( $( '<p/>' ).html( mw.msg( 'revisionslider-revision-bytes', rev.getSize() ) ) )
+				.append( $( '<bdi/>' ).append( $( '<p/>' ).text(
+					mw.msg( 'revisionslider-label-user', mw.html.escape( rev.getUser() ) )
+				) ) )
+				.append(
+					rev.getComment() ?
+						$( '<bdi/>' ).append( $( '<p/>' ).append( $( '<i/>' ).text(
+							mw.msg( 'revisionslider-label-comment', mw.html.escape( rev.getComment() ) )
+						) ) )
+						: ''
+				)
+				.append( $( '<p/>' ).html(
+					mw.msg( 'revisionslider-label-article-size', mw.msg( 'revisionslider-revision-bytes', rev.getSize() ) )
+				) )
 				.append( rev.isMinor() ? $( '<p/>' ).html( mw.message( 'minoredit' ).text() ) : '' );
 
 			return $tooltip.html();
