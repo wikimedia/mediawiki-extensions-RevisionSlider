@@ -46,14 +46,23 @@
 			$slider.css( {
 					width: ( containerWidth + this.containerMargin ) + 'px'
 				} )
-				.append( $( '<a class="arrow left-arrow oo-ui-icon-caretLast" data-dir="-1"></a>' ) )
-				.append( $( '<div class="revisions-diffsize">' + mw.message( 'revisionslider-annotations-diffsize' ).text() + '</div>' ) )
+				.append(
+					$( '<a class="arrow left-arrow oo-ui-icon-caretLast" data-dir="-1" title="' + mw.message( 'revisionslider-arrow-tooltip-older' ).text() + '"></a>' )
+					.tipsy()
+				)
 				.append( $( '<div class="revisions-container" />' )
 					.css( {
 						width: containerWidth + 'px'
 					} )
 					.append( $revisions ) )
-				.append( $( '<a class="arrow right-arrow oo-ui-icon-caretNext" data-dir="1"></a>' ) )
+				.append(
+					$( '<a class="arrow right-arrow oo-ui-icon-caretNext" data-dir="1" title="' + mw.message( 'revisionslider-arrow-tooltip-newer' ).text() + '"></a>' )
+					.tipsy( {
+						gravity: function () {
+							return Math.abs( window.innerWidth - this.getBoundingClientRect().right ) > 90 ? 'n' : 'ne';
+						}
+					} )
+				)
 				.append( $( '<div style="clear: both" />' ) )
 				.append(
 					$( '<div class="pointer-container" />' )
@@ -132,7 +141,6 @@
 
 			this.$element = $slider;
 			$container.html( $slider );
-			$slider.after( this.makeAnnotations() );
 
 			this.slide( Math.floor( this.pointerTwo.getPosition() / this.slider.getRevisionsPerWindow() ), 0 );
 			this.diffPage.pushState( mw.config.values.extRevisionSliderOldRev, mw.config.values.extRevisionSliderNewRev, this );
@@ -164,12 +172,6 @@
 
 		getNewRevElement: function ( $revs ) {
 			return $revs.find( 'div.revision[data-revid=\'' + mw.config.values.extRevisionSliderNewRev + '\']' );
-		},
-
-		makeAnnotations: function () {
-			return $( '<div class="revisions-annotations"/>' )
-				.append( '<span class="revisions-older">← ' + mw.message( 'revisionslider-annotations-older' ).text() + '</span>' )
-				.append( '<span class="revisions-newer">' + mw.message( 'revisionslider-annotations-newer' ).text() + ' →</span>' );
 		},
 
 		initializePointers: function ( $oldRevElement, $newRevElement ) {

@@ -132,46 +132,11 @@
     background-repeat: no-repeat;
 }
 
-
-.revisions-annotations {
-    color: #bcbcbc;
-    font-size: 88%;
-    margin: 0 60px;
-}
 .revisions-older {
     float:left;
 }
 .revisions-newer {
     float:right;
-}
-.revisions-diffsize {
-    color: #bcbcbc;
-    font-size: 88%;
-
-    width: 140px;
-    height: 20px;
-    border-bottom: solid 1px #bcbcbc;
-
-    position: absolute;
-    top: 60px;
-    left: -30px;
-
-    /* see http://stackoverflow.com/a/1080812/4782503 */
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-
-    /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
-    -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    -ms-transform-origin: 50% 50%;
-    -o-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-
-    /* Should be unset in IE9+ I think. */
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
 #revision-slider-darkness {

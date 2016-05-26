@@ -13,7 +13,6 @@
 	"revisionslider-loading-failed": "Message shown if the RevisionSlider fails to initially load.",
 	"revisionslider-loading-out-of-range": "Message shown if the RevisionSlider fails to initially load due to revisions being requested that are not in the most recent 500 revisions.",
 	"revisionslider-loading-noscript": "Message shown while the RevisionSlider is trying to load but when JavaScript is disabled and thus it will not be successful.",
-	"revisionslider-annotations-newer": "Label shown to indicate the direction to newer revisions.",
-	"revisionslider-annotations-older": "Label shown to indicate direction to older revisions.",
-	"revisionslider-annotations-diffsize": "Label shown vertically to indicate meaning of revision bar heights."
+	"revisionslider-arrow-tooltip-newer": "Text shown after hovering the button scrolling to newer revisions.",
+	"revisionslider-arrow-tooltip-older": "Text shown after hovering the button scrolling to older revisions."
 }

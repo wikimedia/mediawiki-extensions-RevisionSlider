@@ -82,9 +82,8 @@
 				"ext.RevisionSlider.Pointer"
 			],
 			"messages": [
-				"revisionslider-annotations-newer",
-				"revisionslider-annotations-older",
-				"revisionslider-annotations-diffsize"
+				"revisionslider-arrow-tooltip-newer",
+				"revisionslider-arrow-tooltip-older"
 			]
 		},
 		"ext.RevisionSlider.DiffPage": {
