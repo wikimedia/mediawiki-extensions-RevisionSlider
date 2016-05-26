@@ -39,7 +39,7 @@
 		slider.setRevisionsPerWindow( 50 );
 		slider.slide( 1 );
 
-		assert.equal( slider.getFirstVisibleRevisionIndex(), 24 );
+		assert.equal( slider.getFirstVisibleRevisionIndex(), 25 );
 	} );
 
 	QUnit.test( 'firstVisibleRevisionIndex cannot be lower than 0', function ( assert ) {
