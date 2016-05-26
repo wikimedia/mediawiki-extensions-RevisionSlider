@@ -7,11 +7,21 @@
 		assert.ok( ( new PointerView( null, 'revslider-pointer' ) ).render().hasClass( 'pointer' ) );
 	} );
 
-	QUnit.test( 'Has offset', function ( assert ) {
-		var offset = 30,
-			pointer = new PointerView( null, 'revslider-pointer', offset );
+	QUnit.test( 'Is upper pointer', function ( assert ) {
+		var pv = new PointerView( null, 'revslider-pointer' );
+		pv.render();
+		assert.notOk( pv.isUpperPointer() );
 
-		assert.equal( pointer.getOffset(), offset );
+		pv.getElement().addClass( 'upper-pointer' );
+		assert.ok( pv.isUpperPointer() );
 	} );
 
+	QUnit.test( 'Has offset', function ( assert ) {
+		var pv = new PointerView( null, 'revslider-pointer' );
+		pv.render();
+		assert.equal( pv.getOffset(), 0 );
+
+		pv.getElement().addClass( 'upper-pointer' );
+		assert.equal( pv.getOffset(), 16 );
+	} );
 } )( mediaWiki );
