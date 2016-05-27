@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_11e09c92",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-05-27T13:30:09Z",
+      "side": 0,
+      "message": "Where does the 13 come from? Isn\u0027t that the grid setting for the y-axis? IIRC we can\u0027t just omit it but could it be 0 or null?",
+      "revId": "c9f9bdfe433854dafcb828ae1751c3bdeda65369",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
