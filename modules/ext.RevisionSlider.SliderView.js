@@ -47,8 +47,15 @@
 					width: ( containerWidth + this.containerMargin ) + 'px'
 				} )
 				.append(
-					$( '<a class="arrow left-arrow oo-ui-icon-caretLast" data-dir="-1" title="' + mw.message( 'revisionslider-arrow-tooltip-older' ).text() + '"></a>' )
-					.tipsy()
+					$( '<a class="arrow arrow-left" data-dir="-1"></a>' )
+					.tipsy( {
+						title: function () {
+							if ( $( this ).hasClass( 'arrow-disabled' ) ) {
+								return '';
+							}
+							return mw.message( 'revisionslider-arrow-tooltip-older' ).text();
+						}
+					} )
 				)
 				.append( $( '<div class="revisions-container" />' )
 					.css( {
@@ -56,10 +63,16 @@
 					} )
 					.append( $revisions ) )
 				.append(
-					$( '<a class="arrow right-arrow oo-ui-icon-caretNext" data-dir="1" title="' + mw.message( 'revisionslider-arrow-tooltip-newer' ).text() + '"></a>' )
+					$( '<a class="arrow arrow-right" data-dir="1"></a>' )
 					.tipsy( {
 						gravity: function () {
 							return Math.abs( window.innerWidth - this.getBoundingClientRect().right ) > 90 ? 'n' : 'ne';
+						},
+						title: function () {
+							if ( $( this ).hasClass( 'arrow-disabled' ) ) {
+								return '';
+							}
+							return mw.message( 'revisionslider-arrow-tooltip-newer' ).text();
 						}
 					} )
 				)
@@ -72,9 +85,41 @@
 				);
 
 			$slider.find( '.arrow' ).click( function () {
-				mw.track( 'counter.MediaWiki.RevisionSlider.event.arrowClick' );
-				self.slide( $( this ).data( 'dir' ) );
-			} );
+					var $arrow = $( this );
+					if ( $arrow.hasClass( 'arrow-disabled' ) ) {
+						return;
+					}
+					mw.track( 'counter.MediaWiki.RevisionSlider.event.arrowClick' );
+					self.slide( $arrow.data( 'dir' ) );
+				} )
+				.mouseenter( function () {
+					var $arrow = $( this );
+					if ( $arrow.hasClass( 'arrow-disabled' ) ) {
+						return;
+					}
+					$arrow.removeClass( 'arrow-enabled' ).addClass( 'arrow-hovered' );
+				} )
+				.mouseleave( function () {
+					var $arrow = $( this );
+					if ( $arrow.hasClass( 'arrow-disabled' ) ) {
+						return;
+					}
+					$arrow.removeClass( 'arrow-hovered' ).addClass( 'arrow-enabled' );
+				} )
+				.mousedown( function ( event ) {
+					var $arrow = $( this );
+					if ( $arrow.hasClass( 'arrow-disabled' ) || event.which !== 1 ) {
+						return;
+					}
+					$arrow.addClass( 'arrow-active' );
+				} )
+				.mouseup( function ( event ) {
+					var $arrow = $( this );
+					if ( $arrow.hasClass( 'arrow-disabled' ) || event.which !== 1 ) {
+						return;
+					}
+					$arrow.removeClass( 'arrow-active' );
+				} );
 
 			$slider.find( '.pointer' ).draggable( {
 				axis: 'x',
@@ -232,14 +277,14 @@
 			self.pointerTwo.getView().getElement().draggable( 'disable' );
 
 			if ( this.slider.isAtStart() ) {
-				$( '.left-arrow' ).css( 'visibility', 'hidden' );
+				$( '.arrow-left' ).removeClass( 'arrow-enabled' ).removeClass( 'arrow-hovered' ).addClass( 'arrow-disabled' );
 			} else {
-				$( '.left-arrow' ).css( 'visibility', '' );
+				$( '.arrow-left' ).removeClass( 'arrow-disabled' ).addClass( 'arrow-enabled' );
 			}
 			if ( this.slider.isAtEnd() ) {
-				$( '.right-arrow' ).css( 'visibility', 'hidden' );
+				$( '.arrow-right' ).removeClass( 'arrow-enabled' ).removeClass( 'arrow-hovered' ).addClass( 'arrow-disabled' );
 			} else {
-				$( '.right-arrow' ).css( 'visibility', '' );
+				$( '.arrow-right' ).removeClass( 'arrow-disabled' ).addClass( 'arrow-enabled' );
 			}
 
 			this.$element.find( '.revisions-container' ).animate(

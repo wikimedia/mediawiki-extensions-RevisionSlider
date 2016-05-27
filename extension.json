@@ -28,11 +28,12 @@
 			],
 			"dependencies": [
 				"mediawiki.jqueryMsg",
-				"oojs-ui.styles.icons-movement",
 				"ext.RevisionSlider.Slider",
 				"ext.RevisionSlider.Revision",
 				"ext.RevisionSlider.RevisionList",
 				"ext.RevisionSlider.fetchRevisions",
+				"ext.RevisionSlider.arrows.left",
+				"ext.RevisionSlider.arrows.right",
 				"ext.RevisionSlider.pointers.lower",
 				"ext.RevisionSlider.pointers.upper"
 			],
@@ -113,6 +114,26 @@
 				"revisionslider-label-user",
 				"revisionslider-label-comment"
 			]
+		},
+		"ext.RevisionSlider.arrows.left": {
+			"position": "top",
+			"class": "ResourceLoaderImageModule",
+			"selector": ".arrow-left.arrow-{name}",
+			"images": {
+				"enabled": "resources/ext.RevisionSlider.arrows/arrow-left-enabled.svg",
+				"hovered": "resources/ext.RevisionSlider.arrows/arrow-left-hovered.svg",
+				"disabled": "resources/ext.RevisionSlider.arrows/arrow-left-disabled.svg"
+			}
+		},
+		"ext.RevisionSlider.arrows.right": {
+			"position": "top",
+			"class": "ResourceLoaderImageModule",
+			"selector": ".arrow-right.arrow-{name}",
+			"images": {
+				"enabled": "resources/ext.RevisionSlider.arrows/arrow-right-enabled.svg",
+				"hovered": "resources/ext.RevisionSlider.arrows/arrow-right-hovered.svg",
+				"disabled": "resources/ext.RevisionSlider.arrows/arrow-right-disabled.svg"
+			}
 		},
 		"ext.RevisionSlider.pointers.lower": {
 			"position": "top",
