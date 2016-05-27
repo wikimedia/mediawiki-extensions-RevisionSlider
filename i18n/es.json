@@ -9,8 +9,13 @@
 	"revisionslider-beta-feature-message": "Deslizador de revisiones",
 	"revisionslider-beta-feature-description": "Mostrar una deslizador de revisiones al comparar dos revisiones de una página.",
 	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|byte|bytes}}",
+	"revisionslider-label-article-size": "Tamaño del artículo: $1",
+	"revisionslider-label-comment": "Comentario: $1",
+	"revisionslider-label-user": "Usuario: $1",
 	"revisionslider-loading-placeholder": "El deslizador de revisiones se está cargando.",
 	"revisionslider-loading-failed": "El deslizador de revisiones no se pudo cargar.",
 	"revisionslider-loading-out-of-range": "El deslizador de revisiones no se pudo cargar. ya que las revisiones solicitadas no están entre las primeras 500 versiones de la página.",
-	"revisionslider-loading-noscript": "Como tienes desactivado JavaScript, la deslizador de revisiones no se cargará."
+	"revisionslider-loading-noscript": "Como tienes desactivado JavaScript, la deslizador de revisiones no se cargará.",
+	"revisionslider-arrow-tooltip-newer": "Ver revisiones más recientes",
+	"revisionslider-arrow-tooltip-older": "Ver revisiones anteriores"
 }

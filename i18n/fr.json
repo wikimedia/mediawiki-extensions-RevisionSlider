@@ -3,7 +3,8 @@
 		"authors": [
 			"Gomoko",
 			"Yasten",
-			"Wladek92"
+			"Wladek92",
+			"Trial"
 		]
 	},
 	"revisionslider": "RevisionSlider",
@@ -11,8 +12,12 @@
 	"revisionslider-beta-feature-message": "Curseur de révision",
 	"revisionslider-beta-feature-description": "Afficher un curseur de révision lorsque deux versions d'une page sont comparées.",
 	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|octet|octets}}",
+	"revisionslider-label-article-size": "Taille de l'article : $1",
+	"revisionslider-label-comment": "Commentaire : $1",
+	"revisionslider-label-user": "Utilisateur : $1",
 	"revisionslider-loading-placeholder": "L’ascenseur des révisions se charge.",
 	"revisionslider-loading-failed": "Impossible de charger le curseur de révision.",
 	"revisionslider-loading-out-of-range": "Le chargement du curseur de révision a échoué car les révisions demandées ne figurent pas parmi les 500 dernières versions de la page.",
-	"revisionslider-loading-noscript": "Comme vous avez désactivé JavaScript, l’ascenseur des révisions ne pourra pas se charger."
+	"revisionslider-loading-noscript": "Comme vous avez désactivé JavaScript, l’ascenseur des révisions ne pourra pas se charger.",
+	"revisionslider-arrow-tooltip-newer": "Voir les nouvelles versions"
 }

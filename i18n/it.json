@@ -2,9 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Matteocng"
+			"Matteocng",
+			"Macofe"
 		]
 	},
 	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|byte}}",
-	"revisionslider-arrow-tooltip-newer": "Vedi le versioni più recenti"
+	"revisionslider-label-article-size": "Dimensione voce: $1",
+	"revisionslider-label-comment": "Commento: $1",
+	"revisionslider-label-user": "Utente: $1",
+	"revisionslider-arrow-tooltip-newer": "Vedi le versioni più recenti",
+	"revisionslider-arrow-tooltip-older": "Vedi le versioni meno recenti"
 }

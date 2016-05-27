@@ -4,6 +4,8 @@
 			"Ләйсән"
 		]
 	},
-	"revisionslider-annotations-newer": "яңыраҡтар",
-	"revisionslider-annotations-older": "иҫкерәктәр"
+	"revisionslider-label-comment": "Аңлатма: $1.",
+	"revisionslider-label-user": "Ҡулланыусы: $1",
+	"revisionslider-arrow-tooltip-newer": "Яңы үҙгәртеүҙәрҙе ҡарарға",
+	"revisionslider-arrow-tooltip-older": "Элекке версияны ҡарарға"
 }

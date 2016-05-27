@@ -4,5 +4,10 @@
 			"Robby"
 		]
 	},
-	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|Byte|Byten}}"
+	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|Byte|Byten}}",
+	"revisionslider-label-article-size": "Gréisst vum Artikel: $1",
+	"revisionslider-label-comment": "Bemierkung: $1",
+	"revisionslider-label-user": "Benotzer: $1",
+	"revisionslider-arrow-tooltip-newer": "Méi nei Versioune weisen",
+	"revisionslider-arrow-tooltip-older": "Méi al Versioune weisen"
 }
