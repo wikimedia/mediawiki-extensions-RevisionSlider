@@ -134,7 +134,8 @@
 		}
 	},
 	"ResourceFileModulePaths": {
-		"localBasePath": ""
+		"localBasePath": "",
+		"remoteExtPath": "RevisionSlider"
 	},
 	"Hooks": {
 		"DiffViewHeader": [
