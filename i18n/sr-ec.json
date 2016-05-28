@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Milicevic01"
+		]
+	},
+	"revisionslider-label-comment": "Коментар: $1",
+	"revisionslider-label-user": "Корисник: $1"
+}

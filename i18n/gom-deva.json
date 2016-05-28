@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vaishali Parab"
+		]
+	},
+	"revisionslider-label-article-size": "लेखाचो आकार: $1",
+	"revisionslider-label-comment": "शेरो: $1",
+	"revisionslider-label-user": "उपेगकर्तो: $1"
+}
