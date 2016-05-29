@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robin van der Vliet"
+		]
+	},
+	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|bitoko|bitokoj}}",
+	"revisionslider-label-comment": "Komento: $1",
+	"revisionslider-label-user": "Uzanto: $1"
+}
