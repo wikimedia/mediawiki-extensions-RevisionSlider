@@ -67,22 +67,12 @@
 			return this.parsedComment;
 		},
 
-		getComment: function () {
-			return this.comment;
+		hasEmptyComment: function () {
+			return this.getComment().trim().length === 0;
 		},
 
-		getSection: function () {
-			var comment = this.getComment();
-			comment = comment.match(
-				new RegExp( '(/\\* [^\\*]* \\*/)', 'gi' )
-			);
-			if ( !comment ) {
-				return '';
-			}
-			return comment[ 0 ].replace(
-				new RegExp( ' \\*/|/\\* ', 'gi' ),
-				''
-			);
+		getComment: function () {
+			return this.comment;
 		},
 
 		formatDate: function ( rawDate ) {
