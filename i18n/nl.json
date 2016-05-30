@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sjoerddebruin"
+		]
+	},
+	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|byte|bytes}}",
+	"revisionslider-label-user": "Gebruiker: $1"
+}
