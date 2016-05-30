@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_83d3b463",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-30T09:52:51Z",
+      "side": 1,
+      "message": "now the indentation here is a bit off. I\u0027ll adjust that",
+      "revId": "9e0971fc6af4b36894e0902e4b7341bd8c17bb89",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
