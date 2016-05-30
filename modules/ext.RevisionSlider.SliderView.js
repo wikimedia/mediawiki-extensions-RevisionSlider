@@ -37,56 +37,57 @@
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
-				$slider = $( '<div class="revision-slider"/>' ),
+				$slider = $( '<div>' ).addClass( 'mw-revision-slider' ),
 				self = this;
 
-			this.pointerOne = new mw.libs.revisionSlider.Pointer( 'revslider-pointer-one', -this.revisionWidth );
-			this.pointerTwo = new mw.libs.revisionSlider.Pointer( 'revslider-pointer-two', 0 );
+			this.pointerOne = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-one', -this.revisionWidth );
+			this.pointerTwo = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-two', 0 );
 
 			$slider.css( {
 					width: ( containerWidth + this.containerMargin ) + 'px'
 				} )
 				.append(
-					$( '<a class="arrow arrow-left" data-dir="-1"></a>' )
-					.tipsy( {
-						title: function () {
-							if ( $( this ).hasClass( 'arrow-disabled' ) ) {
-								return '';
+					$( '<a> ' )
+						.addClass( 'mw-arrow mw-arrow-left' )
+						.attr( 'data-dir', '-1' )
+						.tipsy( {
+							title: function () {
+								if ( $( this ).hasClass( 'mw-arrow-disabled' ) ) {
+									return '';
+								}
+								return mw.message( 'revisionslider-arrow-tooltip-older' ).text();
 							}
-							return mw.message( 'revisionslider-arrow-tooltip-older' ).text();
-						}
-					} )
-				)
-				.append( $( '<div class="revisions-container" />' )
-					.css( {
-						width: containerWidth + 'px'
-					} )
-					.append( $revisions ) )
-				.append(
-					$( '<a class="arrow arrow-right" data-dir="1"></a>' )
-					.tipsy( {
-						gravity: function () {
-							return Math.abs( window.innerWidth - this.getBoundingClientRect().right ) > 90 ? 'n' : 'ne';
-						},
-						title: function () {
-							if ( $( this ).hasClass( 'arrow-disabled' ) ) {
-								return '';
+						} ),
+					$( '<div>' )
+						.addClass( 'mw-revisions-container' )
+						.css( {
+							width: containerWidth + 'px'
+						} )
+						.append( $revisions ),
+					$( '<a> ' )
+						.addClass( 'mw-arrow mw-arrow-right' )
+						.attr( 'data-dir', '1' )
+						.tipsy( {
+							gravity: function () {
+								return Math.abs( window.innerWidth - this.getBoundingClientRect().right ) > 90 ? 'n' : 'ne';
+							},
+							title: function () {
+								if ( $( this ).hasClass( 'mw-arrow-disabled' ) ) {
+									return '';
+								}
+								return mw.message( 'revisionslider-arrow-tooltip-newer' ).text();
 							}
-							return mw.message( 'revisionslider-arrow-tooltip-newer' ).text();
-						}
-					} )
-				)
-				.append( $( '<div style="clear: both" />' ) )
-				.append(
-					$( '<div class="pointer-container" />' )
+						} ),
+					$( '<div>' ).css( { clear: 'both' } ),
+					$( '<div>' )
+						.addClass( 'mw-pointer-container' )
 						.css( { width: containerWidth + this.revisionWidth - 1 + 'px' } )
-						.append( this.pointerOne.getView().render() )
-						.append( this.pointerTwo.getView().render() )
+						.append( this.pointerOne.getView().render(), this.pointerTwo.getView().render() )
 				);
 
-			$slider.find( '.arrow' ).click( function () {
+			$slider.find( '.mw-arrow' ).click( function () {
 					var $arrow = $( this );
-					if ( $arrow.hasClass( 'arrow-disabled' ) ) {
+					if ( $arrow.hasClass( 'mw-arrow-disabled' ) ) {
 						return;
 					}
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.arrowClick' );
@@ -94,37 +95,37 @@
 				} )
 				.mouseenter( function () {
 					var $arrow = $( this );
-					if ( $arrow.hasClass( 'arrow-disabled' ) ) {
+					if ( $arrow.hasClass( 'mw-arrow-disabled' ) ) {
 						return;
 					}
-					$arrow.removeClass( 'arrow-enabled' ).addClass( 'arrow-hovered' );
+					$arrow.removeClass( 'mw-arrow-enabled' ).addClass( 'mw-arrow-hovered' );
 				} )
 				.mouseleave( function () {
 					var $arrow = $( this );
-					if ( $arrow.hasClass( 'arrow-disabled' ) ) {
+					if ( $arrow.hasClass( 'mw-arrow-disabled' ) ) {
 						return;
 					}
-					$arrow.removeClass( 'arrow-hovered' ).addClass( 'arrow-enabled' );
+					$arrow.removeClass( 'mw-arrow-hovered' ).addClass( 'mw-arrow-enabled' );
 				} )
 				.mousedown( function ( event ) {
 					var $arrow = $( this );
-					if ( $arrow.hasClass( 'arrow-disabled' ) || event.which !== 1 ) {
+					if ( $arrow.hasClass( 'mw-arrow-disabled' ) || event.which !== 1 ) {
 						return;
 					}
-					$arrow.addClass( 'arrow-active' );
+					$arrow.addClass( 'mw-arrow-active' );
 				} )
 				.mouseup( function ( event ) {
 					var $arrow = $( this );
-					if ( $arrow.hasClass( 'arrow-disabled' ) || event.which !== 1 ) {
+					if ( $arrow.hasClass( 'mw-arrow-disabled' ) || event.which !== 1 ) {
 						return;
 					}
-					$arrow.removeClass( 'arrow-active' );
+					$arrow.removeClass( 'mw-arrow-active' );
 				} );
 
-			$slider.find( '.pointer' ).draggable( {
+			$slider.find( '.mw-pointer' ).draggable( {
 				axis: 'x',
 				grid: [ this.revisionWidth, null ],
-				containment: '.pointer-container',
+				containment: '.mw-pointer-container',
 				stop: function () {
 					var $p = $( this ),
 						pointer = self.whichPointer( $p ),
@@ -152,9 +153,9 @@
 				}
 			} );
 
-			$slider.find( '.revision-wrapper' ).click( function ( e ) {
+			$slider.find( '.mw-revision-wrapper' ).click( function ( e ) {
 				var $revWrap = $( this ),
-					$clickedRev = $revWrap.find( '.revision' ),
+					$clickedRev = $revWrap.find( '.mw-revision' ),
 					hasClickedTop = e.pageY - $revWrap.offset().top < $revWrap.height() / 2,
 					pOld = self.getOldRevPointer(),
 					pNew = self.getNewRevPointer();
@@ -178,7 +179,7 @@
 				self.alignPointers();
 			} );
 
-			this.slider.setRevisionsPerWindow( $slider.find( '.revisions-container' ).width() / this.revisionWidth );
+			this.slider.setRevisionsPerWindow( $slider.find( '.mw-revisions-container' ).width() / this.revisionWidth );
 
 			this.initializePointers( this.getOldRevElement( $revisions ), this.getNewRevElement( $revisions ) );
 			this.resetRevisionStylesBasedOnPointerPosition( $revisions );
@@ -207,15 +208,15 @@
 		},
 
 		getRevElementAtPosition: function ( $revs, pos ) {
-			return $revs.find( 'div.revision[data-pos=\'' + pos + '\']' );
+			return $revs.find( 'div.mw-revision[data-pos="' + pos + '"]' );
 		},
 
 		getOldRevElement: function ( $revs ) {
-			return $revs.find( 'div.revision[data-revid=\'' + mw.config.values.extRevisionSliderOldRev + '\']' );
+			return $revs.find( 'div.mw-revision[data-revid="' + mw.config.values.extRevisionSliderOldRev + '"]' );
 		},
 
 		getNewRevElement: function ( $revs ) {
-			return $revs.find( 'div.revision[data-revid=\'' + mw.config.values.extRevisionSliderNewRev + '\']' );
+			return $revs.find( 'div.mw-revision[data-revid="' + mw.config.values.extRevisionSliderNewRev + '"]' );
 		},
 
 		initializePointers: function ( $oldRevElement, $newRevElement ) {
@@ -230,19 +231,19 @@
 
 		resetPointerColorsBasedOnValues: function ( p1, p2 ) {
 			if ( p1 > p2 ) {
-				this.pointerOne.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
-				this.pointerTwo.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
+				this.pointerOne.getView().getElement().removeClass( 'mw-oldid-pointer' ).addClass( 'mw-newid-pointer' );
+				this.pointerTwo.getView().getElement().removeClass( 'mw-newid-pointer' ).addClass( 'mw-oldid-pointer' );
 			} else {
-				this.pointerOne.getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' );
-				this.pointerTwo.getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' );
+				this.pointerOne.getView().getElement().removeClass( 'mw-newid-pointer' ).addClass( 'mw-oldid-pointer' );
+				this.pointerTwo.getView().getElement().removeClass( 'mw-oldid-pointer' ).addClass( 'mw-newid-pointer' );
 			}
 		},
 
 		resetPointerStylesBasedOnPosition: function () {
-			this.getNewRevPointer().getView().getElement().removeClass( 'oldid-pointer' ).addClass( 'newid-pointer' )
-				.removeClass( 'lower-pointer' ).addClass( 'upper-pointer' );
-			this.getOldRevPointer().getView().getElement().removeClass( 'newid-pointer' ).addClass( 'oldid-pointer' )
-				.removeClass( 'upper-pointer' ).addClass( 'lower-pointer' );
+			this.getNewRevPointer().getView().getElement().removeClass( 'mw-oldid-pointer' ).addClass( 'mw-newid-pointer' )
+				.removeClass( 'mw-lower-pointer' ).addClass( 'mw-upper-pointer' );
+			this.getOldRevPointer().getView().getElement().removeClass( 'mw-newid-pointer' ).addClass( 'mw-oldid-pointer' )
+				.removeClass( 'mw-upper-pointer' ).addClass( 'mw-lower-pointer' );
 		},
 
 		resetRevisionStylesBasedOnPointerPosition: function ( $revisions ) {
@@ -250,13 +251,13 @@
 				newerRevPosition = this.getNewRevPointer().getPosition(),
 				positionIndex = olderRevPosition + 1;
 
-			$revisions.find( 'div.revision' )
-				.removeClass( 'revision-intermediate revision-old revision-new' );
+			$revisions.find( 'div.mw-revision' )
+				.removeClass( 'mw-revision-intermediate mw-revision-old mw-revision-new' );
 
-			this.getRevElementAtPosition( $revisions, olderRevPosition ).addClass( 'revision-old' );
-			this.getRevElementAtPosition( $revisions, newerRevPosition ).addClass( 'revision-new' );
+			this.getRevElementAtPosition( $revisions, olderRevPosition ).addClass( 'mw-revision-old' );
+			this.getRevElementAtPosition( $revisions, newerRevPosition ).addClass( 'mw-revision-new' );
 			while ( positionIndex < newerRevPosition ) {
-				this.getRevElementAtPosition( $revisions, positionIndex ).addClass( 'revision-intermediate' );
+				this.getRevElementAtPosition( $revisions, positionIndex ).addClass( 'mw-revision-intermediate' );
 				positionIndex++;
 			}
 		},
@@ -277,17 +278,17 @@
 			self.pointerTwo.getView().getElement().draggable( 'disable' );
 
 			if ( this.slider.isAtStart() ) {
-				$( '.arrow-left' ).removeClass( 'arrow-enabled' ).removeClass( 'arrow-hovered' ).addClass( 'arrow-disabled' );
+				$( '.mw-arrow-left' ).removeClass( 'mw-arrow-enabled mw-arrow-hovered' ).addClass( 'mw-arrow-disabled' );
 			} else {
-				$( '.arrow-left' ).removeClass( 'arrow-disabled' ).addClass( 'arrow-enabled' );
+				$( '.mw-arrow-left' ).removeClass( 'mw-arrow-disabled' ).addClass( 'mw-arrow-enabled' );
 			}
 			if ( this.slider.isAtEnd() ) {
-				$( '.arrow-right' ).removeClass( 'arrow-enabled' ).removeClass( 'arrow-hovered' ).addClass( 'arrow-disabled' );
+				$( '.mw-arrow-right' ).removeClass( 'mw-arrow-enabled mw-arrow-hovered' ).addClass( 'mw-arrow-disabled' );
 			} else {
-				$( '.arrow-right' ).removeClass( 'arrow-disabled' ).addClass( 'arrow-enabled' );
+				$( '.mw-arrow-right' ).removeClass( 'mw-arrow-disabled' ).addClass( 'mw-arrow-enabled' );
 			}
 
-			this.$element.find( '.revisions-container' ).animate(
+			this.$element.find( '.mw-revisions-container' ).animate(
 				{ scrollLeft: this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth },
 				duration,
 				null,
@@ -316,7 +317,7 @@
 		},
 
 		whichPointer: function ( $e ) {
-			return $e.attr( 'id' ) === 'revslider-pointer-one' ? this.pointerOne : this.pointerTwo;
+			return $e.attr( 'id' ) === 'mw-revslider-pointer-one' ? this.pointerOne : this.pointerTwo;
 		}
 	} );
 

@@ -1,10 +1,10 @@
-.revision {
+.mw-revision {
     position: absolute;
     margin-top: 70px;
     background-color: #e3e3e3;
     border-color: #e3e3e3;
 }
-.revision:hover {
+.mw-revision:hover {
     background-color: #cccccc;
     border-color: #cccccc;
     transition: all ease 0.2s;
@@ -12,47 +12,47 @@
     -moz-transition: all ease 0.2s;
     -o-transition: all ease 0.2s;
 }
-.revision-up {
+.mw-revision-up {
     border-bottom-width: 2px;
     border-bottom-style: solid;
 }
-.revision-down {
+.mw-revision-down {
     border-top-width: 2px;
     border-top-style: solid;
 }
 
-.revision-old {
+.mw-revision-old {
     background-color: #fee6a8;
     border-color: #e8bd4f;
 }
-.revision-old:hover {
+.mw-revision-old:hover {
     background-color: #fdc44b;
     border-color: #dda000;
 }
-.revision-new {
+.mw-revision-new {
     background-color: #c3e2ff;
     border-color: #1e6db8;
 }
-.revision-new:hover {
+.mw-revision-new:hover {
     background-color: #45a6ff;
     border-color: #065cad;
 }
-.revision-intermediate {
+.mw-revision-intermediate {
     background-color: #bcbcbc;
     border-color: #989898;
 }
-.revision-intermediate:hover {
+.mw-revision-intermediate:hover {
     background-color: #a6a6a6;
     border-color: #828282;
 }
 
-.revision-wrapper {
+.mw-revision-wrapper {
     position: absolute;
     cursor: pointer;
     z-index: 10;
     height: 140px;
 }
-.revision-wrapper:hover {
+.mw-revision-wrapper:hover {
     background-color: #f2f2f2;
     transition: all ease 0.2s;
     -webkit-transition: all ease 0.2s;
@@ -60,60 +60,60 @@
     -o-transition: all ease 0.2s;
 }
 
-.revision-border-box {
+.mw-revision-border-box {
     height: 100%;
     width: 100%;
     border-left: solid 1px white;
 }
 
-.revision-tooltip {
+.mw-revision-tooltip {
     text-align: center;
 }
-.revision-tooltip .tipsy-inner {
+.mw-revision-tooltip .tipsy-inner {
     max-width: none;
 }
 
-.revisions {
+.mw-revisions {
     height: 140px;
 }
-.revisions-container {
+.mw-revisions-container {
     width: 90%;
     position: relative;
     overflow: hidden;
 }
-.revisions-container, .arrow {
+.mw-revisions-container, .mw-arrow {
     float: left;
 }
-.arrow {
+.mw-arrow {
     width: 20px;
     height: 140px;
     background-position: center center;
     background-repeat: no-repeat;
 }
-.arrow-left {
+.mw-arrow-left {
     margin-right: 30px;
 }
-.arrow-right {
+.mw-arrow-right {
     margin-left: 30px;
 }
-.arrow-enabled, .arrow-disabled {
+.mw-arrow-enabled, .mw-arrow-disabled {
     border: #ddd solid 2px;
 }
-.arrow-hovered {
+.mw-arrow-hovered {
     border: #ddd solid 2px;
     background-color: #e5e5e5;
     cursor: pointer;
 }
-.arrow-active {
+.mw-arrow-active {
     border: #ccc solid 2px;
 }
 
-.revision-slider {
+.mw-revision-slider {
     position: relative;
     margin: auto;
 }
 
-.pointer-container {
+.mw-pointer-container {
     position: absolute;
     clear: both;
     height: 1px;
@@ -122,10 +122,10 @@
     margin: auto;
     z-index: 10;
 }
-.lower-pointer {
+.mw-lower-pointer {
     top: 15px;
 }
-.pointer {
+.mw-pointer {
     position: absolute !important;
     z-index: 11;
     width: 18px;
@@ -133,14 +133,14 @@
     background-repeat: no-repeat;
 }
 
-.revisions-older {
+.mw-revisions-older {
     float:left;
 }
-.revisions-newer {
+.mw-revisions-newer {
     float:right;
 }
 
-#revision-slider-darkness {
+#mw-revision-slider-darkness {
     background-color: white;
     filter:alpha(opacity=50); /* IE 5-7 */
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */

@@ -4,7 +4,7 @@
 	QUnit.module( 'ext.RevisionSlider.Pointer' );
 
 	QUnit.test( 'Initialize Pointer', function ( assert ) {
-		assert.ok( ( new Pointer( 'revslider-pointer' ) ).getView().render().hasClass( 'pointer' ) );
+		assert.ok( ( new Pointer( 'mw-revslider-pointer' ) ).getView().render().hasClass( 'mw-pointer' ) );
 	} );
 
 	QUnit.test( 'Set and get position', function ( assert ) {

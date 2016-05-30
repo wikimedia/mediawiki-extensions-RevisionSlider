@@ -4,8 +4,10 @@
 
 	$.extend( DiffPage.prototype, {
 		refresh: function ( revId1, revId2 ) {
-			$( 'table.diff[data-mw=\'interface\']' )
-				.append( '<tr><td><div id="revision-slider-darkness"></div></td></tr>' );
+			$( 'table.diff[data-mw="interface"]' )
+				.append( $( '<tr>' ) )
+				.append( $( '<td>' ) )
+				.append( $( '<div>' ).attr( 'id', 'mw-revision-slider-darkness' ) );
 			$.ajax( {
 				url: mw.util.wikiScript( 'index' ),
 				data: {
@@ -15,14 +17,14 @@
 				tryCount: 0,
 				retryLimit: 2,
 				success: function ( data ) {
-					var $container = $( '#revision-slider-container' ),
-						scrollLeft = $container.find( '.revisions-container' ).scrollLeft();
+					var $container = $( '#mw-revision-slider-container' ),
+						scrollLeft = $container.find( '.mw-revisions-container' ).scrollLeft();
 
 					data = $( data );
-					data.find( '#revision-slider-container' )
+					data.find( '#mw-revision-slider-container' )
 						.replaceWith( $container );
 					$( '#mw-content-text' ).html( data.find( '#mw-content-text' ) )
-						.find( '.revisions-container' ).scrollLeft( scrollLeft );
+						.find( '.mw-revisions-container' ).scrollLeft( scrollLeft );
 				},
 				error: function ( err ) {
 					this.tryCount++;

@@ -20,7 +20,7 @@
 		$html: null,
 
 		initialize: function () {
-			this.$html = $( '<div id="' + this.id + '" class="pointer" />' );
+			this.$html = $( '<div>' ).attr( 'id', this.id ).addClass( 'mw-pointer' );
 		},
 
 		/**
@@ -39,7 +39,7 @@
 		},
 
 		isUpperPointer: function () {
-			return this.getElement().hasClass( 'upper-pointer' );
+			return this.getElement().hasClass( 'mw-upper-pointer' );
 		},
 
 		getOffset: function () {
