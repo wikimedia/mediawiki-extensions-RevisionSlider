@@ -56,9 +56,11 @@
 			var $tooltip = $( '<div>' )
 				.append(
 					$( '<p>' ).append( $( '<b>' ).text( rev.getFormattedDate() ) ),
-					$( '<bdi>' ).append( $( '<p>' ).text(
-						mw.msg( 'revisionslider-label-user', mw.html.escape( rev.getUser() ) )
-					) ),
+					rev.getUser() ?
+						$( '<bdi>' ).append( $( '<p>' ).text(
+							mw.msg( 'revisionslider-label-user', mw.html.escape( rev.getUser() ) )
+						) )
+						: '',
 					rev.getComment() ?
 						$( '<bdi>' ).append(
 							$( '<p>' ).append( $( '<i>' ).text(
