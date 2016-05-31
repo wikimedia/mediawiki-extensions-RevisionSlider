@@ -1,12 +1,11 @@
 ( function ( mw ) {
 	var Slider = mw.libs.revisionSlider.Slider,
 		RevisionList = mw.libs.revisionSlider.RevisionList,
-		Revision = mw.libs.revisionSlider.Revision,
 		makeNRevisions = function ( n ) {
 			var revs = [],
 				i;
 			for ( i = 0; i < n; i++ ) {
-				revs.push( new Revision( { user: 'Fooo' } ) );
+				revs.push( { user: 'Fooo' } );
 			}
 			return new RevisionList( revs );
 		};
@@ -14,7 +13,7 @@
 	QUnit.module( 'ext.RevisionSlider.Slider' );
 
 	QUnit.test( 'has revisions', function ( assert ) {
-		var revs = new RevisionList( [ new Revision( {} ), new Revision( {} ) ] ),
+		var revs = new RevisionList( [ {}, {} ] ),
 			slider = new Slider( revs );
 
 		assert.equal( slider.getRevisions(), revs );
