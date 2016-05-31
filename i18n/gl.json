@@ -8,6 +8,7 @@
 	"revisionslider-desc": "Mostra un control deslizante que permite a selección e comparación das revisións nunha páxina de diferenzas",
 	"revisionslider-beta-feature-message": "Deslizador de revisións",
 	"revisionslider-beta-feature-description": "Mostra un control deslizante cando se compara dúas versións dunha páxina.",
+	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|byte|bytes}}",
 	"revisionslider-label-article-size": "Tamaño do artigo: $1",
 	"revisionslider-label-comment": "Comentario: $1",
 	"revisionslider-label-user": "Usuario: $1",

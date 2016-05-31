@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"revisionslider-label-comment": "Commende: $1",
+	"revisionslider-label-user": "Utende: $1",
+	"revisionslider-arrow-tooltip-older": "'Ndruche le revisiune cchiù vicchije"
+}
