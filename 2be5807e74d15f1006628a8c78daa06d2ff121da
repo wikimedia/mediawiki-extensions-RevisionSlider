@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e6b43fd_36fb1813",
+        "filename": "tests/RevisionSlider.SliderView.test.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-05-31T11:09:41Z",
+      "side": 1,
+      "message": "Could use assert.equal here and below for nicer messages on failures.",
+      "revId": "2be5807e74d15f1006628a8c78daa06d2ff121da",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
