@@ -43,6 +43,9 @@
 			],
 			"position": "top"
 		},
+		"ext.RevisionSlider.noscript": {
+			"styles": "modules/ext.RevisionSlider.noscript.css"
+		},
 		"ext.RevisionSlider.fetchRevisions": {
 			"scripts": [
 				"modules/ext.RevisionSlider.fetchRevisions.js"

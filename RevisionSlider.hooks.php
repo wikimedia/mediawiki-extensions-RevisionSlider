@@ -38,6 +38,7 @@ class RevisionSliderHooks {
 
 		$out = RequestContext::getMain()->getOutput();
 		$out->addModules( 'ext.RevisionSlider.init' );
+		$out->addModuleStyles( 'ext.RevisionSlider.noscript' );
 		$out->addJsConfigVars( 'extRevisionSliderOldRev', $oldRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderNewRev', $newRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderTimeOffset', intval( $timeOffset ) );
@@ -55,15 +56,6 @@ class RevisionSliderHooks {
 						'style' => 'text-align: center',
 					],
 					( new Message( 'revisionslider-loading-placeholder' ) )->parse()
-				) .
-				Html::rawElement(
-					'noscript',
-					[],
-					Html::element(
-						'p',
-						[ 'style' => 'text-align: center' ],
-						( new Message( 'revisionslider-loading-noscript' ) )->parse()
-					)
 				)
 			)
 		);
