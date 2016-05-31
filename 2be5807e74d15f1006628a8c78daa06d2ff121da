@@ -16,6 +16,24 @@
       "revId": "2be5807e74d15f1006628a8c78daa06d2ff121da",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e68cf02_b5f440cd",
+        "filename": "tests/RevisionSlider.SliderView.test.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-05-31T12:59:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e6b43fd_36fb1813",
+      "revId": "2be5807e74d15f1006628a8c78daa06d2ff121da",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
