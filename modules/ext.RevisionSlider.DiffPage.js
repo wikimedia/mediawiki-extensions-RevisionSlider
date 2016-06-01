@@ -67,7 +67,7 @@
 				sliderView.slide( 0 );
 				sliderView.resetPointerStylesBasedOnPosition();
 				sliderView.resetRevisionStylesBasedOnPointerPosition(
-					sliderView.$element.find( 'div.revisions' )
+					sliderView.$element.find( 'div.mw-revisions' )
 				);
 				self.refresh( event.state.revid1, event.state.revid2 );
 			} );
