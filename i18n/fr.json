@@ -18,7 +18,6 @@
 	"revisionslider-loading-placeholder": "L’ascenseur des révisions se charge.",
 	"revisionslider-loading-failed": "Impossible de charger le curseur de révision.",
 	"revisionslider-loading-out-of-range": "Le chargement du curseur de révision a échoué car les révisions demandées ne figurent pas parmi les 500 dernières versions de la page.",
-	"revisionslider-loading-noscript": "Comme vous avez désactivé JavaScript, l’ascenseur des révisions ne pourra pas se charger.",
 	"revisionslider-arrow-tooltip-newer": "Voir les nouvelles versions",
 	"revisionslider-arrow-tooltip-older": "Voir les révisions antérieures"
 }

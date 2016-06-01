@@ -13,7 +13,6 @@
 	"revisionslider-label-comment": "Comentario: $1",
 	"revisionslider-label-user": "Usuario: $1",
 	"revisionslider-loading-placeholder": "O deslizador de revisións está a cargarse.",
-	"revisionslider-loading-noscript": "Como ten desactivado JavaScript, o deslizador de revisións non se vai cargar.",
 	"revisionslider-arrow-tooltip-newer": "Ver revisións máis recentes",
 	"revisionslider-arrow-tooltip-older": "Ver revisións máis vellas"
 }

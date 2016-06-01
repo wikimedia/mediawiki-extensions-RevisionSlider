@@ -15,7 +15,6 @@
 	"revisionslider-loading-placeholder": "修订滑块正在加载。",
 	"revisionslider-loading-failed": "修订滑块无法加载。",
 	"revisionslider-loading-out-of-range": "由于请求的修订不在页面的前500个版本中，修订滑块加载失败。",
-	"revisionslider-loading-noscript": "由于您禁用了JavaScript，修订滑块将无法加载。",
 	"revisionslider-arrow-tooltip-newer": "查看更新修订版本",
 	"revisionslider-arrow-tooltip-older": "查看更旧修订版本"
 }
