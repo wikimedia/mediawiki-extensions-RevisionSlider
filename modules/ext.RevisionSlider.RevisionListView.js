@@ -71,6 +71,9 @@
 					$( '<p>' ).text(
 						mw.msg( 'revisionslider-label-article-size', mw.msg( 'revisionslider-revision-bytes', rev.getSize() ) )
 					),
+					$( '<p>' ).text(
+						mw.msg( 'revisionslider-label-change-size', mw.msg( 'revisionslider-revision-bytes', rev.getRelativeSize() ) )
+					),
 					rev.isMinor() ? $( '<p>' ).text( mw.message( 'minoredit' ).text() ) : '' );
 
 			return $tooltip.html();
