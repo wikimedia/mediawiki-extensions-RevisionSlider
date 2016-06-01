@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e68cf02_dec75499",
+        "filename": "modules/ext.RevisionSlider.Revision.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-01T08:41:39Z",
+      "side": 1,
+      "message": "I am a bit confused by the name of the function. So trivial here means containing both a marker of section edit, and some edit summary text?\nThat might be fine but then when looking at what the function actually checked it turns out that non-trivial comment is the one containing anything else than latin letters or numbers (e.g. two words in comment make it already non-trivial).",
+      "revId": "5871ead4c5ef8a5e9c151fc15e52bc8e073b8ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e68cf02_fe2cd091",
+        "filename": "modules/ext.RevisionSlider.Revision.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-01T08:41:39Z",
+      "side": 1,
+      "message": "Couldn\u0027t this regex also be \\W+?\nAlso I am not sure if the \u0027i\u0027 match flag is actually needed. \\w already stands for upper and lower case a-z. This remark about a possible not needed use of \u0027i\u0027 applies to several other regex matches in this class, so it might be a thing to decide on in another patch, though.\n\nDon\u0027t know if this is important here but does \\w or \\W also catch non-latin characters? According to https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp#character-classes they don\u0027t",
+      "revId": "5871ead4c5ef8a5e9c151fc15e52bc8e073b8ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e68cf02_9ea95cdf",
+        "filename": "modules/ext.RevisionSlider.Revision.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-01T08:41:39Z",
+      "side": 1,
+      "message": "Wouldn\u0027t this also drop stuff that sticks to close to the section comment?\nI mean, this would change \"/* Foo Section */Bar baz\" into: \"baz\", right?\nShouldn\u0027t this rather return \"Bar baz\"?\n\nThen again, if I remember right normally \"section edit comment\" part of the comment (ugh, I find this naming a bit confusing, as what is comment here is also often called summary) is added in a way so there is this extra space, so maybe it is not that crucial.",
+      "revId": "5871ead4c5ef8a5e9c151fc15e52bc8e073b8ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e68cf02_bec41896",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-01T08:41:39Z",
+      "side": 1,
+      "message": "So the one-word comment with latin-only characters won\u0027t get wrapped in \u003cbdi\u003e\u003cp\u003e\u003ci\u003e combo. Is this intended?",
+      "revId": "5871ead4c5ef8a5e9c151fc15e52bc8e073b8ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e68cf02_fe433041",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-01T08:41:39Z",
+      "side": 1,
+      "message": "not sure if not having it inlined (ie. have a proper if statement etc) wouldn\u0027t make this a bit more readable.\nNow you\u0027re getting both a section and a \"comment only\" twice, plus there is this a bit odd concatenation with an empty string.\nIf not inlined there might be 5 lines instead of 3 but the general clarity fo what\u0027s going on here might improve.\nIn the end it is a really any huge operation what happens here, so it might not matter that much how it\u0027s done. But I\u0027m just in a nitpicking mode now :)",
+      "revId": "5871ead4c5ef8a5e9c151fc15e52bc8e073b8ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
