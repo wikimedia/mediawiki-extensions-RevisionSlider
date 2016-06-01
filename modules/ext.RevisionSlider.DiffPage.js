@@ -41,17 +41,20 @@
 		},
 
 		pushState: function ( revId1, revId2, sliderView ) {
-			history.pushState(
-				{
-					revid1: revId1,
-					revid2: revId2,
-					leftPos: sliderView.pointerOne.getPosition(),
-					rightPos: sliderView.pointerTwo.getPosition(),
-					sliderPos: sliderView.slider.getFirstVisibleRevisionIndex()
-				},
-				$( document ).find( 'title' ).text(),
-				mw.util.wikiScript( 'index' ) + '?diff=' + Math.max( revId1, revId2 ) + '&oldid=' + Math.min( revId1, revId2 )
-			);
+			// IE8 and IE9 do not have history.pushState()
+			if ( typeof history.pushState === 'function' ) {
+				history.pushState(
+					{
+						revid1: revId1,
+						revid2: revId2,
+						leftPos: sliderView.pointerOne.getPosition(),
+						rightPos: sliderView.pointerTwo.getPosition(),
+						sliderPos: sliderView.slider.getFirstVisibleRevisionIndex()
+					},
+					$( document ).find( 'title' ).text(),
+					mw.util.wikiScript( 'index' ) + '?diff=' + Math.max( revId1, revId2 ) + '&oldid=' + Math.min( revId1, revId2 )
+				);
+			}
 		},
 
 		initOnPopState: function ( sliderView ) {
