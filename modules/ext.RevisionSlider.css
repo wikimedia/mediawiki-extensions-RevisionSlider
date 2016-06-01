@@ -66,9 +66,6 @@
     border-left: solid 1px white;
 }
 
-.mw-revision-tooltip {
-    text-align: center;
-}
 .mw-revision-tooltip .tipsy-inner {
     max-width: none;
 }
