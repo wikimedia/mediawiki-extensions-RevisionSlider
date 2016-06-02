@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_2c5f4fea",
+        "filename": "modules/ext.RevisionSlider.Revision.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-06-02T09:47:32Z",
+      "side": 1,
+      "message": "fixed in PS6 - changed method completely and added tests",
+      "parentUuid": "6e68cf02_dec75499",
+      "revId": "5871ead4c5ef8a5e9c151fc15e52bc8e073b8ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e68cf02_fe2cd091",
         "filename": "modules/ext.RevisionSlider.Revision.js",
         "patchSetId": 3
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_8c547bcb",
+        "filename": "modules/ext.RevisionSlider.Revision.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-06-02T09:47:32Z",
+      "side": 1,
+      "message": "removed in PS5",
+      "parentUuid": "6e68cf02_9ea95cdf",
+      "revId": "5871ead4c5ef8a5e9c151fc15e52bc8e073b8ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e68cf02_bec41896",
         "filename": "modules/ext.RevisionSlider.RevisionListView.js",
         "patchSetId": 3
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_ac6a1f7c",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-06-02T09:47:32Z",
+      "side": 1,
+      "message": "changed in PS6",
+      "parentUuid": "6e68cf02_bec41896",
+      "revId": "5871ead4c5ef8a5e9c151fc15e52bc8e073b8ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e68cf02_fe433041",
         "filename": "modules/ext.RevisionSlider.RevisionListView.js",
         "patchSetId": 3
@@ -81,6 +135,24 @@
       "writtenOn": "2016-06-01T08:41:39Z",
       "side": 1,
       "message": "not sure if not having it inlined (ie. have a proper if statement etc) wouldn\u0027t make this a bit more readable.\nNow you\u0027re getting both a section and a \"comment only\" twice, plus there is this a bit odd concatenation with an empty string.\nIf not inlined there might be 5 lines instead of 3 but the general clarity fo what\u0027s going on here might improve.\nIn the end it is a really any huge operation what happens here, so it might not matter that much how it\u0027s done. But I\u0027m just in a nitpicking mode now :)",
+      "revId": "5871ead4c5ef8a5e9c151fc15e52bc8e073b8ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_ec6427b1",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-06-02T09:47:32Z",
+      "side": 1,
+      "message": "changed in PS5",
+      "parentUuid": "6e68cf02_fe433041",
       "revId": "5871ead4c5ef8a5e9c151fc15e52bc8e073b8ac9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
