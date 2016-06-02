@@ -55,7 +55,7 @@ class RevisionSliderHooks {
 						'id' => 'mw-revision-slider-placeholder',
 						'style' => 'text-align: center',
 					],
-					( new Message( 'revisionslider-loading-placeholder' ) )->parse()
+					( new Message( 'revisionslider-loading-placeholder' ) )->text()
 				)
 			)
 		);
