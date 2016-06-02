@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_c1280c99",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-02T08:18:51Z",
+      "side": 1,
+      "message": "Isn\u0027t it also the case for IE9?",
+      "revId": "ddfc545380ad68b0b436a233027bf50b435bd4cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
