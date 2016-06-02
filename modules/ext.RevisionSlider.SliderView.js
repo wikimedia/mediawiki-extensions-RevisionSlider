@@ -40,8 +40,8 @@
 				$slider = $( '<div>' ).addClass( 'mw-revision-slider' ),
 				self = this;
 
-			this.pointerOne = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-one', -this.revisionWidth );
-			this.pointerTwo = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-two', 0 );
+			this.pointerOne = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-one' );
+			this.pointerTwo = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-two' );
 
 			$slider.css( {
 					width: ( containerWidth + this.containerMargin ) + 'px'
