@@ -66,24 +66,6 @@
 		assert.equal( rev.isMinor(), true );
 	} );
 
-	QUnit.test( 'get Revision with section', function ( assert ) {
-		var data = {
-				comment: '/* section */ comment'
-			},
-			rev = new mw.libs.revisionSlider.Revision( data );
-
-		assert.equal( rev.getSection(), 'section' );
-	} );
-
-	QUnit.test( 'get Revision without section', function ( assert ) {
-		var data = {
-				comment: 'no section comment'
-			},
-			rev = new mw.libs.revisionSlider.Revision( data );
-
-		assert.equal( rev.getSection(), '' );
-	} );
-
 	QUnit.test( 'get and set relative size', function ( assert ) {
 		var size = 5,
 			rev = new mw.libs.revisionSlider.Revision( {} );
@@ -122,6 +104,30 @@
 		mw.config.values.extRevisionSliderTimeOffset = 60;
 
 		assert.equal( rev.getFormattedDate(), '12:27, 26 Apr 2016' );
+	} );
+
+	QUnit.test( 'hasEmptyComment comment with whitespaces', function ( assert ) {
+		var rev = new mw.libs.revisionSlider.Revision( {
+			comment: '   '
+		} );
+
+		assert.ok( rev.hasEmptyComment() );
+	} );
+
+	QUnit.test( 'hasEmptyComment comment with chars', function ( assert ) {
+		var rev = new mw.libs.revisionSlider.Revision( {
+			comment: ' comment '
+		} );
+
+		assert.notOk( rev.hasEmptyComment() );
+	} );
+
+	QUnit.test( 'hasEmptyComment comment with unicode chars', function ( assert ) {
+		var rev = new mw.libs.revisionSlider.Revision( {
+			comment: 'ברוכים'
+		} );
+
+		assert.notOk( rev.hasEmptyComment() );
 	} );
 
 } )( mediaWiki );

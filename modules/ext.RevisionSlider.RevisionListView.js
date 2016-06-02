@@ -61,13 +61,7 @@
 							mw.msg( 'revisionslider-label-user', mw.html.escape( rev.getUser() ) )
 						) )
 						: '',
-					rev.getComment() ?
-						$( '<bdi>' ).append(
-							$( '<p>' ).append( $( '<i>' ).text(
-								mw.msg( 'revisionslider-label-comment', mw.html.escape( rev.getComment() ) )
-							) )
-						)
-						: '',
+					this.makeCommentLine( rev ),
 					$( '<p>' ).text(
 						mw.msg( 'revisionslider-label-article-size', mw.msg( 'revisionslider-revision-bytes', rev.getSize() ) )
 					),
@@ -77,6 +71,19 @@
 					rev.isMinor() ? $( '<p>' ).text( mw.message( 'minoredit' ).text() ) : '' );
 
 			return $tooltip.html();
+		},
+
+		makeCommentLine: function ( rev ) {
+			if ( rev.hasEmptyComment() ) {
+				return '';
+			}
+
+			return $( '<bdi>' ).append(
+				$( '<p>' ).append(
+					$( '<i>' ).html(
+						mw.msg( 'revisionslider-label-comment', rev.getParsedComment() )
+					) )
+			);
 		}
 	} );
 
