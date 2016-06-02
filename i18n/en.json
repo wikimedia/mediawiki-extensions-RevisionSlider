@@ -10,6 +10,7 @@
     "revisionslider-beta-feature-description": "Show a revision slider when comparing two revisions of a page.",
     "revisionslider-revision-bytes": "$1 {{PLURAL:$1|byte|bytes}}",
     "revisionslider-label-article-size": "Article size: $1",
+    "revisionslider-label-change-size": "Change size: $1",
     "revisionslider-label-comment": "Comment: $1",
     "revisionslider-label-user": "User: $1",
     "revisionslider-loading-placeholder": "The revision slider is loading.",

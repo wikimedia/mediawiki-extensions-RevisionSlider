@@ -11,6 +11,7 @@
 	"revisionslider-beta-feature-description": "Description for the revision slider Beta Feature, describing the feature that will be enabled.",
 	"revisionslider-revision-bytes": "Label describing the amount of bytes changed in this revision.\nParameters:\n* $1 - Revision size in bytes.",
 	"revisionslider-label-article-size": "Label describing the size of this revision.\nParameters:\n* $1 - Revision size.",
+	"revisionslider-label-change-size": "Label describing the size of the change compared to the revision before.\nParameters:\n* $1 - Change size.",
 	"revisionslider-label-comment": "Label showing the edit summary of a revision.\nParameters:\n* $1 - The revision's edit summary.",
 	"revisionslider-label-user": "Label showing this revision's author's username.\nParameters:\n* $1 - Username.\n{{Identical|User}}",
 	"revisionslider-loading-placeholder": "Message shown while the RevisionSlider is still loading on a diff page. Once loaded the message is removed.",
