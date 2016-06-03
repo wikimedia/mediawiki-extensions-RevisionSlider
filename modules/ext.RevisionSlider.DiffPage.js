@@ -18,13 +18,16 @@
 				retryLimit: 2,
 				success: function ( data ) {
 					var $container = $( '#mw-revision-slider-container' ),
+						$contentText = $( '#mw-content-text' ),
 						scrollLeft = $container.find( '.mw-revisions-container' ).scrollLeft();
 
 					data = $( data );
 					data.find( '#mw-revision-slider-container' )
 						.replaceWith( $container );
-					$( '#mw-content-text' ).html( data.find( '#mw-content-text' ) )
+					$contentText.html( data.find( '#mw-content-text' ) )
 						.find( '.mw-revisions-container' ).scrollLeft( scrollLeft );
+
+					mw.hook( 'wikipage.content' ).fire( $contentText );
 				},
 				error: function ( err ) {
 					this.tryCount++;
