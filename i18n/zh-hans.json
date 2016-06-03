@@ -10,6 +10,7 @@
 	"revisionslider-beta-feature-description": "在比较页面的两个修订版本时显示修订滑块。",
 	"revisionslider-revision-bytes": "$1{{PLURAL:$1|字节}}",
 	"revisionslider-label-article-size": "条目大小：$1",
+	"revisionslider-label-change-size": "更改大小：$1",
 	"revisionslider-label-comment": "评论：$1",
 	"revisionslider-label-user": "用户：$1",
 	"revisionslider-loading-placeholder": "修订滑块正在加载。",

@@ -13,7 +13,7 @@
 	"revisionslider-beta-feature-description": "Afficher un curseur de révision lorsque deux versions d'une page sont comparées.",
 	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|octet|octets}}",
 	"revisionslider-label-article-size": "Taille de l'article : $1",
-	"revisionslider-label-change-size": "Taille des modifications: $1",
+	"revisionslider-label-change-size": "Évolution de la taille : $1",
 	"revisionslider-label-comment": "Commentaire : $1",
 	"revisionslider-label-user": "Utilisateur : $1",
 	"revisionslider-loading-placeholder": "L’ascenseur des révisions se charge.",

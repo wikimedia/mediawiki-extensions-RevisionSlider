@@ -4,5 +4,6 @@
 			"Aftabuzzaman"
 		]
 	},
-	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|বাইট}}"
+	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|বাইট}}",
+	"revisionslider-label-change-size": "পরিবর্তনের আকার: $1"
 }

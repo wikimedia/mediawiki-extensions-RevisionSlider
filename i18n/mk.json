@@ -10,6 +10,7 @@
 	"revisionslider-beta-feature-description": "Прикажува лизгач на преработки при споредбата на две преработки на една страница.",
 	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|бајт|бајти}}",
 	"revisionslider-label-article-size": "Големина на податотеката: $1",
+	"revisionslider-label-change-size": "Големина на промената: $1",
 	"revisionslider-label-comment": "Коментар: $1",
 	"revisionslider-label-user": "Корисник: $1",
 	"revisionslider-loading-placeholder": "Лизгачот на преработки се вчитува.",

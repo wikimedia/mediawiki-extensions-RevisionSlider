@@ -10,6 +10,7 @@
 	"revisionslider-beta-feature-description": "Zeigt beim Vergleichen zweier Seitenversionen einen Versionsschieber an.",
 	"revisionslider-revision-bytes": "{{PLURAL:$1|Ein Byte|$1 Bytes}}",
 	"revisionslider-label-article-size": "Artikelgröße: $1",
+	"revisionslider-label-change-size": "Größe der Änderung: $1",
 	"revisionslider-label-comment": "Kommentar: $1",
 	"revisionslider-label-user": "Benutzer: $1",
 	"revisionslider-loading-placeholder": "Der Versionsschieber wird geladen.",
