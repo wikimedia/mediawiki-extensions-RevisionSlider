@@ -126,6 +126,9 @@
 				axis: 'x',
 				grid: [ this.revisionWidth, null ],
 				containment: '.mw-pointer-container',
+				start: function () {
+					$( '.mw-revision-wrapper' ).addClass( 'mw-pointer-cursor' );
+				},
 				stop: function () {
 					var $p = $( this ),
 						pointer = self.whichPointer( $p ),
@@ -142,6 +145,8 @@
 
 					self.diffPage.refresh( revId1, revId2 );
 					self.diffPage.pushState( revId1, revId2, self );
+
+					$( '.mw-revision-wrapper' ).removeClass( 'mw-pointer-cursor' );
 				},
 				drag: function ( event, ui ) {
 					var newestVisibleRevisionLeftPos = containerWidth - self.revisionWidth;

@@ -20,7 +20,9 @@
 		$html: null,
 
 		initialize: function () {
-			this.$html = $( '<div>' ).attr( 'id', this.id ).addClass( 'mw-pointer' );
+			this.$html = $( '<div>' )
+				.attr( 'id', this.id )
+				.addClass( 'mw-pointer mw-pointer-cursor' );
 		},
 
 		/**

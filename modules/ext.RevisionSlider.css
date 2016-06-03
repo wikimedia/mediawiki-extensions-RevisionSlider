@@ -129,6 +129,9 @@
     height: 13px;
     background-repeat: no-repeat;
 }
+.mw-pointer-cursor {
+    cursor:ew-resize;
+}
 
 .mw-revisions-older {
     float:left;
