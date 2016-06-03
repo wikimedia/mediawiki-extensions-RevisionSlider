@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_edfd3e3a",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-06-03T09:12:09Z",
+      "side": 1,
+      "message": "An evil newline snuck in!!",
+      "revId": "5eb40cd4b3f642182b0483c62368023a5cc63fea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
