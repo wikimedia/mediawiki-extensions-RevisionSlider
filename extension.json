@@ -82,6 +82,7 @@
 				"modules/ext.RevisionSlider.SliderView.js"
 			],
 			"dependencies": [
+				"jquery.ui.draggable",
 				"ext.RevisionSlider.DiffPage",
 				"ext.RevisionSlider.Pointer"
 			],
@@ -117,6 +118,9 @@
 				"revisionslider-label-change-size",
 				"revisionslider-label-user",
 				"revisionslider-label-comment"
+			],
+			"dependencies": [
+				"jquery.tipsy"
 			]
 		},
 		"ext.RevisionSlider.arrows.left": {
