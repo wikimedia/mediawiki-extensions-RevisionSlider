@@ -11,7 +11,7 @@
 	"revisionslider-beta-feature-description": "Mostrar una deslizador de revisiones al comparar dos revisiones de una página.",
 	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|byte|bytes}}",
 	"revisionslider-label-article-size": "Tamaño del artículo: $1",
-	"revisionslider-label-change-size": "Cambiar tamaño: $1",
+	"revisionslider-label-change-size": "Tamaño del cambio: $1",
 	"revisionslider-label-comment": "Comentario: $1",
 	"revisionslider-label-user": "Usuario: $1",
 	"revisionslider-loading-placeholder": "El deslizador de revisiones se está cargando.",

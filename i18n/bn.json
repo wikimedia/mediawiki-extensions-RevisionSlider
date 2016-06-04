@@ -5,5 +5,8 @@
 		]
 	},
 	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|বাইট}}",
-	"revisionslider-label-change-size": "পরিবর্তনের আকার: $1"
+	"revisionslider-label-article-size": "নিবন্ধের আকার: $1",
+	"revisionslider-label-change-size": "পরিবর্তনের আকার: $1",
+	"revisionslider-label-comment": "মন্তব্য: $1",
+	"revisionslider-label-user": "ব্যবহারকারী: $1"
 }

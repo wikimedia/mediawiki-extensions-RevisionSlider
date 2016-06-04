@@ -7,6 +7,7 @@
 	"revisionslider": "מחוון הגרסה",
 	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|בייט|בייטים}}",
 	"revisionslider-label-article-size": "גודל הדף: $1",
+	"revisionslider-label-change-size": "השינוי בגודל הדף: $1",
 	"revisionslider-label-comment": "תקציר עריכה: $1",
 	"revisionslider-label-user": "משתמש: $1",
 	"revisionslider-loading-placeholder": "מחוון הגרסה נמצא בטעינה.",
