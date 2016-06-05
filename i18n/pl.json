@@ -6,6 +6,7 @@
 	},
 	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|bajt|bajty|bajtów}}",
 	"revisionslider-label-article-size": "Wielkość artykuł: $1",
+	"revisionslider-label-change-size": "Wielkość zmiany: $1",
 	"revisionslider-label-user": "Użytkownik: $1",
 	"revisionslider-arrow-tooltip-newer": "Zobacz nowsze wersje",
 	"revisionslider-arrow-tooltip-older": "Zobacz starsze wersje"
