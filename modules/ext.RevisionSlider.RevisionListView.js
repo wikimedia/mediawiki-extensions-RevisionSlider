@@ -58,7 +58,7 @@
 					$( '<p>' ).append( $( '<b>' ).text( rev.getFormattedDate() ) ),
 					rev.getUser() ?
 						$( '<bdi>' ).append( $( '<p>' ).text(
-							mw.msg( 'revisionslider-label-user', mw.html.escape( rev.getUser() ) )
+							mw.msg( 'revisionslider-label-edited-by', mw.html.escape( rev.getUser() ) )
 						) )
 						: '',
 					this.makeCommentLine( rev ),

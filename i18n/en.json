@@ -12,7 +12,7 @@
     "revisionslider-label-article-size": "Article size: $1",
     "revisionslider-label-change-size": "Change size: $1",
     "revisionslider-label-comment": "Comment: $1",
-    "revisionslider-label-user": "User: $1",
+    "revisionslider-label-edited-by": "Edited by: $1",
     "revisionslider-loading-placeholder": "The revision slider is loading.",
     "revisionslider-loading-failed": "The revision slider failed to load.",
     "revisionslider-loading-out-of-range": "The revision slider failed to load as the requested revisions are not in the top 500 versions of the page.",

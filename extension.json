@@ -119,7 +119,7 @@
 				"revisionslider-revision-bytes",
 				"revisionslider-label-article-size",
 				"revisionslider-label-change-size",
-				"revisionslider-label-user",
+				"revisionslider-label-edited-by",
 				"revisionslider-label-comment"
 			],
 			"dependencies": [
