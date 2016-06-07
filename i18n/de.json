@@ -12,7 +12,7 @@
 	"revisionslider-label-article-size": "Artikelgröße: $1",
 	"revisionslider-label-change-size": "Größe der Änderung: $1",
 	"revisionslider-label-comment": "Kommentar: $1",
-	"revisionslider-label-user": "Benutzer: $1",
+	"revisionslider-label-edited-by": "Bearbeitet von: $1",
 	"revisionslider-loading-placeholder": "Der Versionsschieber wird geladen.",
 	"revisionslider-loading-failed": "Der Versionsschieber konnte nicht geladen werden.",
 	"revisionslider-loading-out-of-range": "Der Versionsschieber konnte nicht geladen werden, da die angeforderten Versionen nicht in den letzten 500 Versionen der Seite sind.",

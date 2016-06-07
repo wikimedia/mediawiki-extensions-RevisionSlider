@@ -15,7 +15,7 @@
 	"revisionslider-label-article-size": "Taille de l'article : $1",
 	"revisionslider-label-change-size": "Évolution de la taille : $1",
 	"revisionslider-label-comment": "Commentaire : $1",
-	"revisionslider-label-user": "Utilisateur : $1",
+	"revisionslider-label-edited-by": "Modifié par : $1",
 	"revisionslider-loading-placeholder": "L’ascenseur des révisions se charge.",
 	"revisionslider-loading-failed": "Impossible de charger le curseur de révision.",
 	"revisionslider-loading-out-of-range": "Le chargement du curseur de révision a échoué car les révisions demandées ne figurent pas parmi les 500 dernières versions de la page.",

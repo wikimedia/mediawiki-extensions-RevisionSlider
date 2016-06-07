@@ -6,7 +6,6 @@
 	},
 	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|bitoko|bitokoj}}",
 	"revisionslider-label-comment": "Komento: $1",
-	"revisionslider-label-user": "Uzanto: $1",
 	"revisionslider-arrow-tooltip-newer": "Vidi pli novajn reviziojn",
 	"revisionslider-arrow-tooltip-older": "Vidi pli malnovajn reviziojn"
 }
