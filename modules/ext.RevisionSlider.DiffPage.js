@@ -50,8 +50,8 @@
 					{
 						revid1: revId1,
 						revid2: revId2,
-						leftPos: sliderView.pointerOne.getPosition(),
-						rightPos: sliderView.pointerTwo.getPosition(),
+						pointerOlderPos: sliderView.pointerOlder.getPosition(),
+						pointerNewerPos: sliderView.pointerNewer.getPosition(),
 						sliderPos: sliderView.slider.getFirstVisibleRevisionIndex()
 					},
 					$( document ).find( 'title' ).text(),
@@ -67,8 +67,8 @@
 					return;
 				}
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.historyChange' );
-				sliderView.pointerOne.setPosition( event.state.leftPos );
-				sliderView.pointerTwo.setPosition( event.state.rightPos );
+				sliderView.pointerOlder.setPosition( event.state.pointerOlderPos );
+				sliderView.pointerNewer.setPosition( event.state.pointerNewerPos );
 				sliderView.slider.setFirstVisibleRevisionIndex( event.state.sliderPos );
 				sliderView.slide( 0 );
 				sliderView.resetPointerStylesBasedOnPosition();

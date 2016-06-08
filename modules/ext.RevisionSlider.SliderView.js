@@ -27,28 +27,57 @@
 		/**
 		 * @type {Pointer}
 		 */
-		pointerOne: null,
+		pointerOlder: null,
 
 		/**
 		 * @type {Pointer}
 		 */
-		pointerTwo: null,
+		pointerNewer: null,
+
+		/**
+		 * @type {string}
+		 *
+		 * Value of scrollLeft property when in RTL mode varies between browser. This identifies
+		 * an implementation used by user's browser:
+		 * - 'default': 0 is the left-most position, values increase when scrolling right (same as scrolling from left to right in LTR mode)
+		 * - 'negative': 0 is right-most position, values decrease when scrolling left (ie. all values except 0 are negative)
+		 * - 'reverse': 0 is right-most position, values incrase when scrolling left
+		 */
+		rtlScrollLeftType: 'default',
 
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
+				pointerContainerPosition = 55,
+				pointerContainerWidth = containerWidth + this.revisionWidth - 1,
+				pointerContainerStyle,
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
-				$slider = $( '<div>' ).addClass( 'mw-revision-slider' ),
+				$slider = $( '<div>' )
+					.addClass( 'mw-revision-slider' )
+					.css( { direction: $container.css( 'direction' ) } ),
 				self = this;
 
-			this.pointerOne = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-one' );
-			this.pointerTwo = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-two' );
+			if ( $slider.css( 'direction' ) === 'rtl' ) {
+				this.rtlScrollLeftType = this.determineRtlScrollType();
+			}
 
+			this.pointerOlder = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-older' );
+			this.pointerNewer = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-newer' );
+
+			pointerContainerStyle = { left: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
+			if ( $slider.css( 'direction' ) === 'rtl' ) {
+				// Due to properly limit dragging a pointer on the right side of the screen,
+				// there must some extra space added to the right of the revision bar container
+				// For this reason right position of the pointer container in the RTL mode is
+				// a bit moved off right compared to its left position in the LTR mode
+				pointerContainerPosition = pointerContainerPosition - this.revisionWidth + 1;
+				pointerContainerStyle = { right: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
+			}
 			$slider.css( {
 					width: ( containerWidth + this.containerMargin ) + 'px'
 				} )
 				.append(
 					$( '<a> ' )
-						.addClass( 'mw-arrow mw-arrow-left' )
+						.addClass( 'mw-arrow mw-arrow-backwards' )
 						.attr( 'data-dir', '-1' )
 						.tipsy( {
 							title: function () {
@@ -65,11 +94,15 @@
 						} )
 						.append( $revisions ),
 					$( '<a> ' )
-						.addClass( 'mw-arrow mw-arrow-right' )
+						.addClass( 'mw-arrow mw-arrow-forwards' )
 						.attr( 'data-dir', '1' )
 						.tipsy( {
 							gravity: function () {
-								return Math.abs( window.innerWidth - this.getBoundingClientRect().right ) > 90 ? 'n' : 'ne';
+								if ( $slider.css( 'direction' ) === 'ltr' ) {
+									return Math.abs( window.innerWidth - this.getBoundingClientRect().right ) > 90 ? 'n' : 'ne';
+								} else {
+									return this.getBoundingClientRect().left > 90 ? 'n' : 'nw';
+								}
 							},
 							title: function () {
 								if ( $( this ).hasClass( 'mw-arrow-disabled' ) ) {
@@ -81,9 +114,17 @@
 					$( '<div>' ).css( { clear: 'both' } ),
 					$( '<div>' )
 						.addClass( 'mw-pointer-container' )
-						.css( { width: containerWidth + this.revisionWidth - 1 + 'px' } )
-						.append( this.pointerOne.getView().render(), this.pointerTwo.getView().render() )
+						.css( pointerContainerStyle )
+						.append( this.pointerOlder.getView().render(), this.pointerNewer.getView().render() )
 				);
+
+			if ( $slider.css( 'direction' ) === 'ltr' ) {
+				$slider.find( '.mw-arrow-backwards' ).addClass( 'mw-arrow-left' );
+				$slider.find( '.mw-arrow-forwards' ).addClass( 'mw-arrow-right' );
+			} else {
+				$slider.find( '.mw-arrow-backwards' ).addClass( 'mw-arrow-right' );
+				$slider.find( '.mw-arrow-forwards' ).addClass( 'mw-arrow-left' );
+			}
 
 			$slider.find( '.mw-arrow' ).click( function () {
 					var $arrow = $( this );
@@ -133,15 +174,16 @@
 					var $p = $( this ),
 						pointer = self.whichPointer( $p ),
 						pos = parseInt( $p.css( 'left' ), 10 ),
-						relativeIndex = Math.ceil( ( pos + self.revisionWidth / 2 ) / self.revisionWidth ),
+						adjustedPos = $p.offsetParent().css( 'direction' ) === 'rtl' ? pointer.getView().getAdjustedLeftPositionWhenRtl( pos ) : pos,
+						relativeIndex = Math.ceil( ( adjustedPos + self.revisionWidth / 2 ) / self.revisionWidth ),
 						revId1, revId2;
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
 					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + relativeIndex );
 					self.resetPointerStylesBasedOnPosition();
 					self.resetRevisionStylesBasedOnPointerPosition( $revisions );
 
-					revId1 = self.getRevElementAtPosition( $revisions, self.pointerOne.getPosition() ).data( 'revid' );
-					revId2 = self.getRevElementAtPosition( $revisions, self.pointerTwo.getPosition() ).data( 'revid' );
+					revId1 = self.getRevElementAtPosition( $revisions, self.pointerOlder.getPosition() ).data( 'revid' );
+					revId2 = self.getRevElementAtPosition( $revisions, self.pointerNewer.getPosition() ).data( 'revid' );
 
 					self.diffPage.refresh( revId1, revId2 );
 					self.diffPage.pushState( revId1, revId2, self );
@@ -151,10 +193,17 @@
 				drag: function ( event, ui ) {
 					var newestVisibleRevisionLeftPos = containerWidth - self.revisionWidth;
 					ui.position.left = Math.min( ui.position.left, newestVisibleRevisionLeftPos );
-					self.resetPointerColorsBasedOnValues(
-						self.pointerOne.getView().getElement().offset().left,
-						self.pointerTwo.getView().getElement().offset().left
-					);
+					if ( $( this ).css( 'direction' ) === 'ltr' ) {
+						self.resetPointerColorsBasedOnValues(
+							self.pointerOlder.getView().getElement().offset().left,
+							self.pointerNewer.getView().getElement().offset().left
+						);
+					} else {
+						self.resetPointerColorsBasedOnValues(
+							self.pointerNewer.getView().getElement().offset().left,
+							self.pointerOlder.getView().getElement().offset().left
+						);
+					}
 				}
 			} );
 
@@ -179,7 +228,7 @@
 					pOld.setPosition( $clickedRev.data( 'pos' ) );
 				}
 
-				self.resetPointerColorsBasedOnValues( self.pointerOne.getPosition(), self.pointerTwo.getPosition() );
+				self.resetPointerColorsBasedOnValues( self.pointerOlder.getPosition(), self.pointerNewer.getPosition() );
 				self.resetRevisionStylesBasedOnPointerPosition( $revisions );
 				self.alignPointers();
 			} );
@@ -192,17 +241,17 @@
 			this.$element = $slider;
 			$container.html( $slider );
 
-			this.slide( Math.floor( ( this.pointerTwo.getPosition() - 1 ) / this.slider.getRevisionsPerWindow() ), 0 );
+			this.slide( Math.floor( ( this.pointerNewer.getPosition() - 1 ) / this.slider.getRevisionsPerWindow() ), 0 );
 			this.diffPage.pushState( mw.config.values.extRevisionSliderOldRev, mw.config.values.extRevisionSliderNewRev, this );
 			this.diffPage.initOnPopState( this );
 		},
 
 		getOldRevPointer: function () {
-			return this.pointerOne.getPosition() <= this.pointerTwo.getPosition() ? this.pointerOne : this.pointerTwo;
+			return this.pointerOlder.getPosition() <= this.pointerNewer.getPosition() ? this.pointerOlder : this.pointerNewer;
 		},
 
 		getNewRevPointer: function () {
-			return this.pointerOne.getPosition() > this.pointerTwo.getPosition() ? this.pointerOne : this.pointerTwo;
+			return this.pointerOlder.getPosition() > this.pointerNewer.getPosition() ? this.pointerOlder : this.pointerNewer;
 		},
 
 		refreshRevisions: function ( revId1, revId2 ) {
@@ -229,18 +278,18 @@
 				// Note: this is currently caught in init.js
 				throw 'RS-rev-out-of-range';
 			}
-			this.pointerOne.setPosition( $oldRevElement.data( 'pos' ) );
-			this.pointerTwo.setPosition( $newRevElement.data( 'pos' ) );
+			this.pointerOlder.setPosition( $oldRevElement.data( 'pos' ) );
+			this.pointerNewer.setPosition( $newRevElement.data( 'pos' ) );
 			this.resetPointerStylesBasedOnPosition();
 		},
 
 		resetPointerColorsBasedOnValues: function ( p1, p2 ) {
 			if ( p1 > p2 ) {
-				this.pointerOne.getView().getElement().removeClass( 'mw-oldid-pointer' ).addClass( 'mw-newid-pointer' );
-				this.pointerTwo.getView().getElement().removeClass( 'mw-newid-pointer' ).addClass( 'mw-oldid-pointer' );
+				this.pointerOlder.getView().getElement().removeClass( 'mw-oldid-pointer' ).addClass( 'mw-newid-pointer' );
+				this.pointerNewer.getView().getElement().removeClass( 'mw-newid-pointer' ).addClass( 'mw-oldid-pointer' );
 			} else {
-				this.pointerOne.getView().getElement().removeClass( 'mw-newid-pointer' ).addClass( 'mw-oldid-pointer' );
-				this.pointerTwo.getView().getElement().removeClass( 'mw-oldid-pointer' ).addClass( 'mw-newid-pointer' );
+				this.pointerOlder.getView().getElement().removeClass( 'mw-newid-pointer' ).addClass( 'mw-oldid-pointer' );
+				this.pointerNewer.getView().getElement().removeClass( 'mw-oldid-pointer' ).addClass( 'mw-newid-pointer' );
 			}
 		},
 
@@ -276,45 +325,86 @@
 		},
 
 		slide: function ( direction, duration ) {
-			var self = this;
+			var animateObj,
+				$animatedElement = this.$element.find( '.mw-revisions-container' ),
+				self = this;
 
 			this.slider.slide( direction );
-			self.pointerOne.getView().getElement().draggable( 'disable' );
-			self.pointerTwo.getView().getElement().draggable( 'disable' );
+			this.pointerOlder.getView().getElement().draggable( 'disable' );
+			this.pointerNewer.getView().getElement().draggable( 'disable' );
 
 			if ( this.slider.isAtStart() ) {
-				$( '.mw-arrow-left' ).removeClass( 'mw-arrow-enabled mw-arrow-hovered' ).addClass( 'mw-arrow-disabled' );
+				$( '.mw-arrow-backwards' ).removeClass( 'mw-arrow-enabled mw-arrow-hovered' ).addClass( 'mw-arrow-disabled' );
 			} else {
-				$( '.mw-arrow-left' ).removeClass( 'mw-arrow-disabled' ).addClass( 'mw-arrow-enabled' );
+				$( '.mw-arrow-backwards' ).removeClass( 'mw-arrow-disabled' ).addClass( 'mw-arrow-enabled' );
 			}
 			if ( this.slider.isAtEnd() ) {
-				$( '.mw-arrow-right' ).removeClass( 'mw-arrow-enabled mw-arrow-hovered' ).addClass( 'mw-arrow-disabled' );
+				$( '.mw-arrow-forwards' ).removeClass( 'mw-arrow-enabled mw-arrow-hovered' ).addClass( 'mw-arrow-disabled' );
 			} else {
-				$( '.mw-arrow-right' ).removeClass( 'mw-arrow-disabled' ).addClass( 'mw-arrow-enabled' );
+				$( '.mw-arrow-forwards' ).removeClass( 'mw-arrow-disabled' ).addClass( 'mw-arrow-enabled' );
 			}
 
-			this.$element.find( '.mw-revisions-container' ).animate(
-				{ scrollLeft: this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth },
+			animateObj = { scrollLeft: this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth };
+			if ( this.$element.css( 'direction' ) === 'rtl' ) {
+				animateObj.scrollLeft = this.getRtlScrollLeft( $animatedElement, animateObj.scrollLeft );
+			}
+
+			$animatedElement.animate(
+				animateObj,
 				duration,
 				null,
 				function () {
-					self.pointerOne.getView().getElement().draggable( 'enable' );
-					self.pointerTwo.getView().getElement().draggable( 'enable' );
+					self.pointerOlder.getView().getElement().draggable( 'enable' );
+					self.pointerNewer.getView().getElement().draggable( 'enable' );
 				}
 			);
 
 			this.alignPointers( duration );
 		},
 
+		// Based on jQuery RTL Scroll Type Detector plugin by othree: https://github.com/othree/jquery.rtl-scroll-type
+		determineRtlScrollType: function () {
+			var $dummy = $( '<div>' )
+				.css( {
+					dir: 'rtl',
+					width: '1px',
+					height: '1px',
+					position: 'absolute',
+					top: '-1000px',
+					overflow: 'scroll'
+				} )
+				.text( 'A' )
+				.appendTo( 'body' )[ 0 ];
+			if ( $dummy.scrollLeft > 0 ) {
+				return 'default';
+			} else {
+				$dummy.scrollLeft = 1;
+				if ( $dummy.scrollLeft === 0 ) {
+					return 'negative';
+				}
+			}
+			return 'reverse';
+		},
+
+		getRtlScrollLeft: function ( $element, scrollLeft ) {
+			if ( this.rtlScrollLeftType === 'reverse' ) {
+				return scrollLeft;
+			}
+			if ( this.rtlScrollLeftType === 'negative' ) {
+				return -scrollLeft;
+			}
+			return $element.prop( 'scrollWidth' ) - $element.width() - scrollLeft;
+		},
+
 		alignPointers: function ( duration ) {
 			var self = this;
 
-			this.pointerOne.getView()
+			this.pointerOlder.getView()
 				.slideToSideOrPosition( this.slider, duration )
 				.promise().done( function () {
 					self.resetPointerStylesBasedOnPosition();
 				} );
-			this.pointerTwo.getView()
+			this.pointerNewer.getView()
 				.slideToSideOrPosition( this.slider, duration )
 				.promise().done( function () {
 					self.resetPointerStylesBasedOnPosition();
@@ -322,7 +412,7 @@
 		},
 
 		whichPointer: function ( $e ) {
-			return $e.attr( 'id' ) === 'mw-revslider-pointer-one' ? this.pointerOne : this.pointerTwo;
+			return $e.attr( 'id' ) === 'mw-revslider-pointer-older' ? this.pointerOlder : this.pointerNewer;
 		}
 	} );
 
