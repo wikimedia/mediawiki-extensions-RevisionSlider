@@ -12,6 +12,7 @@
 	"revisionslider-label-article-size": "条目大小：$1",
 	"revisionslider-label-change-size": "更改大小：$1",
 	"revisionslider-label-comment": "评论：$1",
+	"revisionslider-label-edited-by": "编辑者：$1",
 	"revisionslider-loading-placeholder": "修订滑块正在加载。",
 	"revisionslider-loading-failed": "修订滑块无法加载。",
 	"revisionslider-loading-out-of-range": "由于请求的修订不在页面的前500个版本中，修订滑块加载失败。",

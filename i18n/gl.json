@@ -12,6 +12,7 @@
 	"revisionslider-label-article-size": "Tamaño do artigo: $1",
 	"revisionslider-label-change-size": "Tamaño da modificación: $1",
 	"revisionslider-label-comment": "Comentario: $1",
+	"revisionslider-label-edited-by": "Modificado por: $1",
 	"revisionslider-loading-placeholder": "O deslizador de revisións está a cargarse.",
 	"revisionslider-loading-failed": "O deslizador de revisións non se puido cargar.",
 	"revisionslider-loading-out-of-range": "O deslizador de revisións non se puido cargar xa que as revisións solicitadas non están entre as primeiras 500 versións da páxina.",
