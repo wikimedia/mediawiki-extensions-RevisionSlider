@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_f2704ba5",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-13T16:16:49Z",
+      "side": 1,
+      "message": "Not going to argue about it but \"User:\" would fine here, wouldn\u0027t i",
+      "revId": "9a7456db11abeabd1dd2121a9fce2a28555be7d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
