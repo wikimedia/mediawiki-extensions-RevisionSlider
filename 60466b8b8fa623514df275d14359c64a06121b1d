@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_77472d23",
+        "filename": "modules/ext.RevisionSlider.HelpDialog.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-13T14:59:49Z",
+      "side": 1,
+      "message": "This is not extremely critical here but per https://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript#Creating_elements this might also be $( \u0027\u003cdiv\u003e\u0027 ).addClass( \u0027mw-help-dialog-image-landscape mw-help-d\nialog-slide-1\" ), and $( \u0027\u003cp\u003e\u0027 ).text( \u0027foo\u0027 ) below",
+      "revId": "60466b8b8fa623514df275d14359c64a06121b1d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_f7d4bd4d",
+        "filename": "modules/ext.RevisionSlider.HelpDialog.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-13T14:59:49Z",
+      "side": 1,
+      "message": "Is this using of switch more clear than doing if ( action \u003d\u003d\u003d \u0027next\u0027 ), elseif ( action \u003d\u003d\u003d \u0027previous\u0027 ) ?\nJust asking, I am not sure how this part of code is going to look like at the end (is there more going to happen when clicking the buttons etc)",
+      "revId": "60466b8b8fa623514df275d14359c64a06121b1d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
