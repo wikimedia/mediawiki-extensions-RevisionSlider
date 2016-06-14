@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_be968940",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-14T14:35:09Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it make sense to have a single message for the contents of the third slide, and put paragraphs into en.json, instead of assuming there must always be three paragraphs?",
+      "revId": "6cbf889677d5dbdd2e3aa8adcb617af43317950d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_decd4d8b",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-14T14:35:09Z",
+      "side": 1,
+      "message": "empty line not needed",
+      "revId": "6cbf889677d5dbdd2e3aa8adcb617af43317950d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_fecdb163",
+        "filename": "modules/ext.RevisionSlider.HelpDialog.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-14T14:35:09Z",
+      "side": 1,
+      "message": "mw-left-column becomes a right column when in RTL language version :)\n\nCSSJanus flips float settings, so it looks fine but how about avoiding words left and right in CSS class names, and use, let\u0027s say, first-column and second-column instead?",
+      "revId": "6cbf889677d5dbdd2e3aa8adcb617af43317950d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_3ed8d921",
+        "filename": "modules/ext.RevisionSlider.HelpDialog.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-14T14:35:09Z",
+      "side": 1,
+      "message": "this switch still here :)",
+      "revId": "6cbf889677d5dbdd2e3aa8adcb617af43317950d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_1ebcf5b0",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-14T14:35:09Z",
+      "side": 1,
+      "message": "How about including word \"hide\" in the name of the user property?\n\nFor example Visual Editor seems to use \"visualeditor-hidebetawelcome\". \"betawelcome\" seems a bit too verbose too me but I think generally it is good to make it clear the option is about hiding the help window.\nCurrently having this option set to 1/true in the DB, I\u0027d assume it means the user will be shown a help info, which is contrary to what actually happens.",
+      "revId": "6cbf889677d5dbdd2e3aa8adcb617af43317950d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
