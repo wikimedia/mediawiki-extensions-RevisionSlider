@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_b396c240",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-06-14T11:15:28Z",
+      "side": 1,
+      "message": "I see no reason to split the messages here like this and hard-code the word order.\n\n\u003cstrong\u003e is okay inside the message if you use parse or parseDom (mediawiki.jqueryMsg).",
+      "parentUuid": "0efd9372_30a7684e",
+      "revId": "cc33940cc458a8b4d72e8135f4135800bb2396ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_93fbbedd",
         "filename": "modules/ext.RevisionSlider.RevisionListView.js",
         "patchSetId": 1
@@ -64,6 +82,41 @@
       "writtenOn": "2016-06-14T10:17:23Z",
       "side": 1,
       "message": "Oh, this is getting even more tricky if we wanted bold label, number with special CSS styling, and then properly inflected \"bytes\".\n\nTo have this a single message, the message in en.json would probably look something like this:\n\"revisionslider-label-change-size\": \"\u003cspan class\u003d\\\"mw-tooltip-label\\\"\u003eChange size\u003cspan\u003e: \u003cspan id\u003d\\\"mw-tooltip-changesize\\\"\u003e$1\u003c/span\u003e {{Plural:$1|byte|bytes}}\"\nand a class of \"#mw-tooltip-changesize\" would be set by JS code. But this seems hacky.\nOr:\n\"revisionslider-label-change-size\": \"\u003cspan class\u003d\\\"mw-tooltip-label\\\"\u003eChange size\u003cspan\u003e: \u003cspan class\u003d\\\"$2\\\"\u003e$1\u003c/span\u003e {{Plural:$1|byte|bytes}}\"\nbut this seems even worse!\n\nMy understanding is that in this case we don\u0027t want to allow things like German \"Ein Byte\", ie. always print a number.\n\nWhat could possibly make it simpler would be omitting the unit for the change size. Article size shown a line above already mentions bytes, so maybe it is clear enough?\nIn such case a span with desired CSS class containing a number could be simply passed as a parameter to:\n\"revisionslider-label-change-size\": \"\u003cspan class\u003d\\\"mw-tooltip-label\\\"\u003eChange size\u003cspan\u003e: $1\"\nwith $1 being something like above $( \u0027\u003cspan\u003e\u0027 ).text( rev.getRelativeSize() ).addClass( changeSizeClass )",
+      "revId": "cc33940cc458a8b4d72e8135f4135800bb2396ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_33c13234",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-06-14T11:15:28Z",
+      "side": 1,
+      "message": "You should be able to do something like this:\n\nmsg: \"\u003cstrong\u003eChange size:\u003c/strong\u003e $1 {{PLURAL:$2|byte|bytes}}\"\n\n$change \u003d $( \u0027\u003cspan\u003e\u0027 ).addClass( ... ).text( number );\n\n$( \u0027\u003cp\u003e\u0027 ).append( mw.message( \u0027msg\u0027, $change, number ).parseDom() );",
+      "parentUuid": "0efd9372_f3c84aac",
+      "revId": "cc33940cc458a8b4d72e8135f4135800bb2396ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_53ddd616",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-06-14T11:15:28Z",
+      "side": 1,
+      "message": "Messages should be escaped properly.",
       "revId": "cc33940cc458a8b4d72e8135f4135800bb2396ac",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
