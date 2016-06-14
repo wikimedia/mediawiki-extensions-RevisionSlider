@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_d0241cc3",
+        "filename": "modules/ext.RevisionSlider.HelpDialog.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-06-14T09:00:47Z",
+      "side": 1,
+      "message": "Good point. I\u0027ll clean that up with the next patch.",
+      "parentUuid": "0efd9372_77472d23",
+      "revId": "60466b8b8fa623514df275d14359c64a06121b1d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_f7d4bd4d",
         "filename": "modules/ext.RevisionSlider.HelpDialog.js",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-13T14:59:49Z",
       "side": 1,
       "message": "Is this using of switch more clear than doing if ( action \u003d\u003d\u003d \u0027next\u0027 ), elseif ( action \u003d\u003d\u003d \u0027previous\u0027 ) ?\nJust asking, I am not sure how this part of code is going to look like at the end (is there more going to happen when clicking the buttons etc)",
+      "revId": "60466b8b8fa623514df275d14359c64a06121b1d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_f029609b",
+        "filename": "modules/ext.RevisionSlider.HelpDialog.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-06-14T09:00:47Z",
+      "side": 1,
+      "message": "Yup, I thought it looked cleaner than the if-statement although I guess with just two cases it doesn\u0027t make a big difference.",
+      "parentUuid": "0efd9372_f7d4bd4d",
       "revId": "60466b8b8fa623514df275d14359c64a06121b1d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
