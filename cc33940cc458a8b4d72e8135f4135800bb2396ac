@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_30a7684e",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-14T10:17:23Z",
+      "side": 1,
+      "message": "Such a enforcing of English-specific spacing etc as done here is no good i18n-wise.\nI think we should rather keep translatable message in a \"complete\" form, ie. have a \"label\" and a \"value\" (passed in as a parameter) in a single message.\nTo have a label formatting included we could probably put \u003cb\u003e (wouldn\u0027t usage of \u003cstrong\u003e be even better?) to a message, ie. have things like in en.json:\n\"revisionslider-label-article-size\": \"\u003cstrong\u003eArticle size:\u003c/strong\u003e $1\"\nor maybe even\n\"revisionslider-label-article-size\": \"\u003cspan class\u003d\"mw-tooltip-label\"\u003eArticle size:\u003c/span\u003e $1\"\nor something like this\n\nI am not sure, though, how bad is it to put HTML to messages",
+      "revId": "cc33940cc458a8b4d72e8135f4135800bb2396ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_93fbbedd",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-14T10:17:23Z",
+      "side": 1,
+      "message": "making revisionslider-revision-bytes only be a form of word \"bytes\" seems a bit wrong too. For example if the size of page was 1 byte, current German translation would print Ein Byte. After this change this would probably should be something like \"1 Byte\".\nThat might not be such a big deal in case of German but I guess there are language where it is important to \"translate\" both number and the unit, so splitting this seems wrong.",
+      "revId": "cc33940cc458a8b4d72e8135f4135800bb2396ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_f0620005",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-14T10:17:23Z",
+      "side": 1,
+      "message": "what about change size zero? Core uses gray (#aaa) color for those",
+      "revId": "cc33940cc458a8b4d72e8135f4135800bb2396ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_f3c84aac",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-14T10:17:23Z",
+      "side": 1,
+      "message": "Oh, this is getting even more tricky if we wanted bold label, number with special CSS styling, and then properly inflected \"bytes\".\n\nTo have this a single message, the message in en.json would probably look something like this:\n\"revisionslider-label-change-size\": \"\u003cspan class\u003d\\\"mw-tooltip-label\\\"\u003eChange size\u003cspan\u003e: \u003cspan id\u003d\\\"mw-tooltip-changesize\\\"\u003e$1\u003c/span\u003e {{Plural:$1|byte|bytes}}\"\nand a class of \"#mw-tooltip-changesize\" would be set by JS code. But this seems hacky.\nOr:\n\"revisionslider-label-change-size\": \"\u003cspan class\u003d\\\"mw-tooltip-label\\\"\u003eChange size\u003cspan\u003e: \u003cspan class\u003d\\\"$2\\\"\u003e$1\u003c/span\u003e {{Plural:$1|byte|bytes}}\"\nbut this seems even worse!\n\nMy understanding is that in this case we don\u0027t want to allow things like German \"Ein Byte\", ie. always print a number.\n\nWhat could possibly make it simpler would be omitting the unit for the change size. Article size shown a line above already mentions bytes, so maybe it is clear enough?\nIn such case a span with desired CSS class containing a number could be simply passed as a parameter to:\n\"revisionslider-label-change-size\": \"\u003cspan class\u003d\\\"mw-tooltip-label\\\"\u003eChange size\u003cspan\u003e: $1\"\nwith $1 being something like above $( \u0027\u003cspan\u003e\u0027 ).text( rev.getRelativeSize() ).addClass( changeSizeClass )",
+      "revId": "cc33940cc458a8b4d72e8135f4135800bb2396ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_5052ec3f",
+        "filename": "modules/ext.RevisionSlider.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-14T10:17:23Z",
+      "side": 1,
+      "message": "I\u0027m fine with that color, although core\u0027s mw-plusminus-neg uses #8b0000. Just mentioning this, not saying to change it here",
+      "revId": "cc33940cc458a8b4d72e8135f4135800bb2396ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
