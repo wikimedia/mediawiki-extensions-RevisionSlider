@@ -118,8 +118,8 @@
 				"modules/ext.RevisionSlider.RevisionListView.js"
 			],
 			"messages": [
-				"revisionslider-revision-bytes",
-				"revisionslider-label-article-size",
+				"revisionslider-label-date",
+				"revisionslider-label-page-size",
 				"revisionslider-label-change-size",
 				"revisionslider-label-edited-by",
 				"revisionslider-label-comment"

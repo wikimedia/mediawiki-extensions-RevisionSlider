@@ -66,19 +66,19 @@
 		makeTooltip: function ( rev ) {
 			var $tooltip = $( '<div>' )
 				.append(
-					$( '<p>' ).append( $( '<b>' ).text( rev.getFormattedDate() ) ),
+					$( '<p>' ).append(
+						mw.message( 'revisionslider-label-date', rev.getFormattedDate() ).parseDom()
+					),
 					rev.getUser() ?
-						$( '<bdi>' ).append( $( '<p>' ).text(
-							mw.msg( 'revisionslider-label-edited-by', mw.html.escape( rev.getUser() ) )
+						$( '<bdi>' ).append( $( '<p>' ).append(
+							mw.message( 'revisionslider-label-edited-by', mw.html.escape( rev.getUser() ) ).parseDom()
 						) )
 						: '',
 					this.makeCommentLine( rev ),
-					$( '<p>' ).text(
-						mw.msg( 'revisionslider-label-article-size', mw.msg( 'revisionslider-revision-bytes', rev.getSize() ) )
+					$( '<p>' ).append(
+						mw.message( 'revisionslider-label-page-size', mw.language.convertNumber( rev.getSize() ), rev.getSize() ).parseDom()
 					),
-					$( '<p>' ).text(
-						mw.msg( 'revisionslider-label-change-size', mw.msg( 'revisionslider-revision-bytes', rev.getRelativeSize() ) )
-					),
+					this.makeChangeSizeLine( rev ),
 					rev.isMinor() ? $( '<p>' ).text( mw.message( 'minoredit' ).text() ) : '' );
 
 			return $tooltip.html();
@@ -97,9 +97,32 @@
 
 			return $( '<bdi>' ).append(
 				$( '<p>' ).append(
-					$( '<i>' ).html(
-						mw.msg( 'revisionslider-label-comment', rev.getParsedComment() )
-					) )
+					$( '<strong>' ).text( mw.message( 'revisionslider-label-comment' ).text() ),
+					$( '<em>' ).append(
+						rev.getParsedComment()
+					)
+				)
+			);
+		},
+
+		makeChangeSizeLine: function ( rev ) {
+			var changeSizeClass = 'mw-no-change',
+				leadingSign = '',
+				$changeNumber;
+
+			if ( rev.getRelativeSize() > 0 ) {
+				changeSizeClass = 'mw-positive-change';
+				leadingSign = '+';
+			} else if ( rev.getRelativeSize() < 0 ) {
+				changeSizeClass = 'mw-negative-change';
+			}
+
+			$changeNumber = $( '<span>' )
+				.addClass( changeSizeClass )
+				.text( leadingSign + mw.language.convertNumber( rev.getRelativeSize() ) );
+
+			return $( '<p>' ).append(
+				mw.message( 'revisionslider-label-change-size', $changeNumber, rev.getRelativeSize() ).parseDom()
 			);
 		}
 	} );
