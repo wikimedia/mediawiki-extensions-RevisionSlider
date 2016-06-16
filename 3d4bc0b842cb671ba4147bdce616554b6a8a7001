@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_fb1655f5",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-16T15:27:38Z",
+      "side": 1,
+      "message": "global $wgExtensionAssetsPath is missing",
+      "revId": "3d4bc0b842cb671ba4147bdce616554b6a8a7001",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
