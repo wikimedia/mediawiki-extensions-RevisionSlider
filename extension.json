@@ -31,11 +31,13 @@
 				"ext.RevisionSlider.Slider",
 				"ext.RevisionSlider.Revision",
 				"ext.RevisionSlider.RevisionList",
+				"ext.RevisionSlider.HelpDialog",
 				"ext.RevisionSlider.fetchRevisions",
 				"ext.RevisionSlider.arrows.left",
 				"ext.RevisionSlider.arrows.right",
 				"ext.RevisionSlider.pointers.lower",
-				"ext.RevisionSlider.pointers.upper"
+				"ext.RevisionSlider.pointers.upper",
+				"mediawiki.api.options"
 			],
 			"messages": [
 				"revisionslider-loading-out-of-range",
@@ -162,6 +164,36 @@
 			"images": {
 				"oldid": "resources/ext.RevisionSlider.pointers/pointer-upper-old.svg",
 				"newid": "resources/ext.RevisionSlider.pointers/pointer-upper-new.svg"
+			}
+		},
+		"ext.RevisionSlider.HelpDialog": {
+			"scripts": [
+				"modules/ext.RevisionSlider.HelpDialog.js"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.RevisionSlider.dialogImages"
+			],
+			"messages": [
+				"revisionslider-help-dialog-slide1",
+				"revisionslider-help-dialog-slide2",
+				"revisionslider-help-dialog-slide3",
+				"revisionslider-help-dialog-slide4",
+				"revisionslider-tutorial",
+				"revisionslider-previous-dialog",
+				"revisionslider-next-dialog",
+				"revisionslider-close-dialog"
+			]
+		},
+		"ext.RevisionSlider.dialogImages": {
+			"position": "top",
+			"class": "ResourceLoaderImageModule",
+			"selector": ".mw-help-dialog-slide-{name}",
+			"images": {
+				"1": "resources/ext.RevisionSlider.helpDialog/slide1.svg",
+				"2": "resources/ext.RevisionSlider.helpDialog/slide2.svg",
+				"3": "resources/ext.RevisionSlider.helpDialog/slide3.svg",
+				"4": "resources/ext.RevisionSlider.helpDialog/slide4.svg"
 			}
 		}
 	},

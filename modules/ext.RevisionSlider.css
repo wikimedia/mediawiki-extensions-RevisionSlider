@@ -161,3 +161,28 @@
     top: 0;
     left: 0;
 }
+
+.mw-help-dialog-image-landscape {
+    height: 160px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.mw-help-dialog-image-portrait {
+    height: 180px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.mw-image-column {
+    width: 50%;
+    float: left;
+}
+.mw-text-column {
+    width: 50%;
+    float: right;
+}
+.mw-help-dialog-text {
+    font-size: 15px;
+    font-size: 1rem;
+}
