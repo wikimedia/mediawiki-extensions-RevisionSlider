@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_52bc9ed5",
+        "filename": "i18n/en.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-17T08:51:01Z",
+      "side": 1,
+      "message": "Not a huge problem but according to a design suggestion, \"community wish\" should be a link to Meta page with a wish description",
+      "revId": "5f6b3c85560e619365e6fb292d9ccd27622d19d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_72b9e2e5",
+        "filename": "modules/ext.RevisionSlider.HelpDialog.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-17T08:51:01Z",
+      "side": 1,
+      "message": "I believe this should have been html( mw.message( \u0027foo\u0027 ).parse() )\nRaw HTML messages should be avoided",
+      "revId": "5f6b3c85560e619365e6fb292d9ccd27622d19d9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
