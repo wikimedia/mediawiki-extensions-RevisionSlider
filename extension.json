@@ -190,10 +190,25 @@
 			"class": "ResourceLoaderImageModule",
 			"selector": ".mw-help-dialog-slide-{name}",
 			"images": {
-				"1": "resources/ext.RevisionSlider.helpDialog/slide1.svg",
+				"1": {
+					"file": {
+						"ltr": "resources/ext.RevisionSlider.helpDialog/slide1-ltr.svg",
+						"rtl": "resources/ext.RevisionSlider.helpDialog/slide1-rtl.svg"
+					}
+				},
 				"2": "resources/ext.RevisionSlider.helpDialog/slide2.svg",
-				"3": "resources/ext.RevisionSlider.helpDialog/slide3.svg",
-				"4": "resources/ext.RevisionSlider.helpDialog/slide4.svg"
+				"3": {
+					"file": {
+						"ltr": "resources/ext.RevisionSlider.helpDialog/slide3-ltr.svg",
+						"rtl": "resources/ext.RevisionSlider.helpDialog/slide3-rtl.svg"
+					}
+				},
+				"4": {
+					"file": {
+						"ltr": "resources/ext.RevisionSlider.helpDialog/slide4-ltr.svg",
+						"rtl": "resources/ext.RevisionSlider.helpDialog/slide4-rtl.svg"
+					}
+				}
 			}
 		}
 	},
