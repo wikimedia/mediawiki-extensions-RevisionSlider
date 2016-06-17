@@ -46,7 +46,7 @@
 				)
 				.append(
 					$( '<p>' ).addClass( 'mw-help-dialog-text' )
-						.text( mw.msg( 'revisionslider-help-dialog-slide1' ) )
+						.html( mw.message( 'revisionslider-help-dialog-slide1' ).parse() )
 				);
 
 			return slide;
