@@ -4,7 +4,8 @@
 	/**
 	 * Fetches up to 500 revisions at a time
 	 *
-	 * @param {{}} options - Options containing success /error callback, pageName and startId
+	 * @param {Object} options - Options containing callbacks for `success` and `error` as well as fields for
+	 * `pageName` and `startId`
 	 */
 	mw.libs.revisionSlider.fetchRevisions = function ( options ) {
 		$.ajax( {

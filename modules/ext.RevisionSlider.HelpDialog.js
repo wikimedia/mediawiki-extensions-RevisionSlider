@@ -2,6 +2,12 @@
 	// JSHint does not like OOJS' usage of "static" and "super"
 	/*jshint -W024 */
 
+	/**
+	 * Module containing the RevisionSlider tutorial
+	 *
+	 * @param {Object} config
+	 * @constructor
+	 */
 	var HelpDialog = function ( config ) {
 		HelpDialog.super.call( this, config );
 	};
@@ -22,7 +28,14 @@
 	];
 
 	$.extend( HelpDialog.prototype, {
+		/**
+		 * @type {OO.ui.PanelLayout[]}
+		 */
 		slides: [],
+
+		/**
+		 * @type {number}
+		 */
 		slidePointer: 0,
 
 		initialize: function () {
@@ -37,6 +50,9 @@
 			this.$body.append( this.stackLayout.$element );
 		},
 
+		/**
+		 * @return {OO.ui.PanelLayout}
+		 */
 		getSlide1: function () {
 			var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
@@ -52,6 +68,9 @@
 			return slide;
 		},
 
+		/**
+		 * @return {OO.ui.PanelLayout}
+		 */
 		getSlide2: function () {
 			var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
@@ -65,6 +84,9 @@
 			return slide;
 		},
 
+		/**
+		 * @return {OO.ui.PanelLayout}
+		 */
 		getSlide3: function () {
 			var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
@@ -79,6 +101,9 @@
 			return slide;
 		},
 
+		/**
+		 * @return {OO.ui.PanelLayout}
+		 */
 		getSlide4: function () {
 			var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
@@ -92,6 +117,10 @@
 			return slide;
 		},
 
+		/**
+		 * @param {string} action
+		 * @return {OO.ui.Process}
+		 */
 		getActionProcess: function ( action ) {
 			if ( action === 'next' ) {
 				this.stackLayout.setItem( this.slides[ ++this.slidePointer ] );
@@ -121,13 +150,16 @@
 		/**
 		 * Needed to set the initial height of the dialog
 		 *
-		 * @return {int}
+		 * @return {number}
 		 */
 		getBodyHeight: function () {
 			return this.slides[ this.slidePointer ].$element.outerHeight( true );
 		}
 	} );
 
+	/**
+	 * Shows the help dialog
+	 */
 	HelpDialog.show = function () {
 		var windowManager = new OO.ui.WindowManager(),
 			dialogue = new HelpDialog( { size: 'medium' } );

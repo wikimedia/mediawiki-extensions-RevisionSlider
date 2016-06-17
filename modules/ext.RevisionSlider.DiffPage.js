@@ -1,8 +1,19 @@
 ( function ( mw, $ ) {
+	/**
+	 * Module handling diff page reloading and the RevisionSlider browser history
+	 *
+	 * @constructor
+	 */
 	var DiffPage = function () {
 	};
 
 	$.extend( DiffPage.prototype, {
+		/**
+		 * Refreshes the diff view with two given revision IDs
+		 *
+		 * @param {number} revId1
+		 * @param {number} revId2
+		 */
 		refresh: function ( revId1, revId2 ) {
 			$( 'table.diff[data-mw="interface"]' )
 				.append( $( '<tr>' ) )
@@ -43,6 +54,13 @@
 			} );
 		},
 
+		/**
+		 * Pushes the current state onto the history stack
+		 *
+		 * @param {number} revId1
+		 * @param {number} revId2
+		 * @param {SliderView} sliderView
+		 */
 		pushState: function ( revId1, revId2, sliderView ) {
 			// IE8 and IE9 do not have history.pushState()
 			if ( typeof history.pushState === 'function' ) {
@@ -60,6 +78,9 @@
 			}
 		},
 
+		/**
+		 * @param {SliderView} sliderView
+		 */
 		initOnPopState: function ( sliderView ) {
 			var self = this;
 			window.addEventListener( 'popstate', function ( event ) {

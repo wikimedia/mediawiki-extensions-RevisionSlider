@@ -1,4 +1,10 @@
 ( function ( mw, $ ) {
+	/**
+	 * Module handling the view logic of the RevisionSlider slider
+	 *
+	 * @param {Slider} slider
+	 * @constructor
+	 */
 	var SliderView = function ( slider ) {
 		this.slider = slider;
 		this.diffPage = new mw.libs.revisionSlider.DiffPage( this.slider.getRevisions() );
@@ -246,14 +252,30 @@
 			this.diffPage.initOnPopState( this );
 		},
 
+		/**
+		 * Returns the pointer that points to the older revision
+		 *
+		 * @return {Pointer}
+		 */
 		getOldRevPointer: function () {
 			return this.pointerOlder.getPosition() <= this.pointerNewer.getPosition() ? this.pointerOlder : this.pointerNewer;
 		},
 
+		/**
+		 * Returns the pointer that points to the newer revision
+		 *
+		 * @return {Pointer}
+		 */
 		getNewRevPointer: function () {
 			return this.pointerOlder.getPosition() > this.pointerNewer.getPosition() ? this.pointerOlder : this.pointerNewer;
 		},
 
+		/**
+		 * Refreshes the diff page to show the diff for the specified revisions
+		 *
+		 * @param {number} revId1
+		 * @param {number} revId2
+		 */
 		refreshRevisions: function ( revId1, revId2 ) {
 			var oldRev = Math.min( revId1, revId2 ),
 				newRev = Math.max( revId1, revId2 );
@@ -261,18 +283,41 @@
 			this.diffPage.pushState( oldRev, newRev, this );
 		},
 
+		/**
+		 * @param {jQuery} $revs
+		 * @param {number} pos
+		 * @return {jQuery}
+		 */
 		getRevElementAtPosition: function ( $revs, pos ) {
 			return $revs.find( 'div.mw-revision[data-pos="' + pos + '"]' );
 		},
 
+		/**
+		 * Gets the jQuery element of the older selected revision
+		 *
+		 * @param {jQuery} $revs
+		 * @return {jQuery}
+		 */
 		getOldRevElement: function ( $revs ) {
 			return $revs.find( 'div.mw-revision[data-revid="' + mw.config.values.extRevisionSliderOldRev + '"]' );
 		},
 
+		/**
+		 * Gets the jQuery element of the newer selected revision
+		 *
+		 * @param {jQuery} $revs
+		 * @return {jQuery}
+		 */
 		getNewRevElement: function ( $revs ) {
 			return $revs.find( 'div.mw-revision[data-revid="' + mw.config.values.extRevisionSliderNewRev + '"]' );
 		},
 
+		/**
+		 * Initializes the Pointer objects based on the selected revisions
+		 *
+		 * @param {jQuery} $oldRevElement
+		 * @param {jQuery} $newRevElement
+		 */
 		initializePointers: function ( $oldRevElement, $newRevElement ) {
 			if ( $oldRevElement.length === 0 || $newRevElement.length === 0 ) {
 				// Note: this is currently caught in init.js
@@ -283,6 +328,13 @@
 			this.resetPointerStylesBasedOnPosition();
 		},
 
+		/**
+		 * Adjusts the colors of the pointers without changing the upper/lower property based on values `p1` and `p2`.
+		 * Used e.g. when pointers get dragged past one another.
+		 *
+		 * @param {number} p1
+		 * @param {number} p2
+		 */
 		resetPointerColorsBasedOnValues: function ( p1, p2 ) {
 			if ( p1 > p2 ) {
 				this.pointerOlder.getView().getElement().removeClass( 'mw-oldid-pointer' ).addClass( 'mw-newid-pointer' );
@@ -293,6 +345,9 @@
 			}
 		},
 
+		/**
+		 * Resets the pointer styles (upper/lower, blue/yellow) based on their position.
+		 */
 		resetPointerStylesBasedOnPosition: function () {
 			this.getNewRevPointer().getView().getElement().removeClass( 'mw-oldid-pointer' ).addClass( 'mw-newid-pointer' )
 				.removeClass( 'mw-lower-pointer' ).addClass( 'mw-upper-pointer' );
@@ -300,6 +355,11 @@
 				.removeClass( 'mw-upper-pointer' ).addClass( 'mw-lower-pointer' );
 		},
 
+		/**
+		 * Highlights revisions between the pointers
+		 *
+		 * @param {jQuery} $revisions
+		 */
 		resetRevisionStylesBasedOnPointerPosition: function ( $revisions ) {
 			var olderRevPosition = this.getOldRevPointer().getPosition(),
 				newerRevPosition = this.getNewRevPointer().getPosition(),
@@ -316,10 +376,18 @@
 			}
 		},
 
+		/**
+		 * Determines how many revisions fit onto the screen at once depending on the browser window width
+		 *
+		 * @return {number}
+		 */
 		calculateRevisionsPerWindow: function () {
 			return Math.floor( ( $( '#mw-content-text' ).width() - this.containerMargin ) / this.revisionWidth );
 		},
 
+		/**
+		 * @return {number}
+		 */
 		calculateSliderContainerWidth: function () {
 			return Math.min( this.slider.getRevisions().getLength(), this.calculateRevisionsPerWindow() ) * this.revisionWidth;
 		},
@@ -362,7 +430,11 @@
 			this.alignPointers( duration );
 		},
 
-		// Based on jQuery RTL Scroll Type Detector plugin by othree: https://github.com/othree/jquery.rtl-scroll-type
+		/**
+		 * Based on jQuery RTL Scroll Type Detector plugin by othree: https://github.com/othree/jquery.rtl-scroll-type
+		 *
+		 * @return {string} - 'default', 'negative' or 'reverse'
+		 */
 		determineRtlScrollType: function () {
 			var $dummy = $( '<div>' )
 				.css( {
@@ -386,6 +458,11 @@
 			return 'reverse';
 		},
 
+		/**
+		 * @param {jQuery} $element
+		 * @param {number} scrollLeft
+		 * @return {number}
+		 */
 		getRtlScrollLeft: function ( $element, scrollLeft ) {
 			if ( this.rtlScrollLeftType === 'reverse' ) {
 				return scrollLeft;
@@ -411,6 +488,12 @@
 				} );
 		},
 
+		/**
+		 * Returns the Pointer object that belongs to the passed element
+		 *
+		 * @param {jQuery} $e
+		 * @return {Pointer}
+		 */
 		whichPointer: function ( $e ) {
 			return $e.attr( 'id' ) === 'mw-revslider-pointer-older' ? this.pointerOlder : this.pointerNewer;
 		}
