@@ -29,6 +29,15 @@
 					mw.libs.revisionSlider.HelpDialog.show();
 					( new mw.Api() ).saveOption( 'userjs-revslider-hidehelp', true );
 				}
+
+				$container.append(
+					$( '<button>' )
+						.click( function () {
+							mw.libs.revisionSlider.HelpDialog.show();
+						} )
+						.text( '?' )
+						.addClass( 'mw-show-help' )
+				);
 			} catch ( err ) {
 				if ( err === 'RS-rev-out-of-range' ) {
 					$( '#mw-revision-slider-placeholder' )
