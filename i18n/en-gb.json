@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sampablokuper"
+		]
+	},
+	"revisionslider-help-dialog-slide3": "<p>To compare certain revisions, select the revisions using the yellow and blue pointer.</p><p>The blue pointer controls the newer revision, the yellow pointer maps to the older revision.</p><p>Move the pointers by drag and drop, or click on a bar.</p>",
+	"revisionslider-previous-dialog": "Previous",
+	"revisionslider-next-dialog": "Next"
+}
