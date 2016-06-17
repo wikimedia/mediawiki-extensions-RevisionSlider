@@ -72,7 +72,7 @@
 				.append( $( '<div>' ).addClass( 'mw-help-dialog-image-portrait mw-help-dialog-slide-3 mw-image-column' ) )
 				.append(
 					$( '<div>' ).addClass( 'mw-text-column mw-help-dialog-text' )
-						.html( mw.msg( 'revisionslider-help-dialog-slide3' ) )
+						.html( mw.message( 'revisionslider-help-dialog-slide3' ).parse() )
 				)
 				.append( $( '<div>' ).css( 'clear', 'both' ) );
 
