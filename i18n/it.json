@@ -12,5 +12,8 @@
 	"revisionslider-label-comment": "Commento: $1",
 	"revisionslider-label-edited-by": "Modificato da: $1",
 	"revisionslider-arrow-tooltip-newer": "Vedi le versioni più recenti",
-	"revisionslider-arrow-tooltip-older": "Vedi le versioni meno recenti"
+	"revisionslider-arrow-tooltip-older": "Vedi le versioni meno recenti",
+	"revisionslider-previous-dialog": "Precedente",
+	"revisionslider-next-dialog": "Successivo",
+	"revisionslider-close-dialog": "Chiudi"
 }

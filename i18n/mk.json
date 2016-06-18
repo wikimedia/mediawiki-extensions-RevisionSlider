@@ -17,5 +17,9 @@
 	"revisionslider-loading-failed": "Лизгачот на преработки не се вчита.",
 	"revisionslider-loading-out-of-range": "Лизгачот на преработки не се вчита бидејќи бараните преработки не се во последните 500.",
 	"revisionslider-arrow-tooltip-newer": "Погл. понови преработки",
-	"revisionslider-arrow-tooltip-older": "Погл. постари преработки"
+	"revisionslider-arrow-tooltip-older": "Погл. постари преработки",
+	"revisionslider-tutorial": "Упатство",
+	"revisionslider-previous-dialog": "Претходно",
+	"revisionslider-next-dialog": "Следно",
+	"revisionslider-close-dialog": "Затвори"
 }

@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"Vitorvicentevalente"
 		]
 	},
-	"revisionslider-label-comment": "Comentário: $1"
+	"revisionslider-label-comment": "Comentário: $1",
+	"revisionslider-label-edited-by": "Editada por: $1",
+	"revisionslider-previous-dialog": "Anterior",
+	"revisionslider-next-dialog": "Seguinte",
+	"revisionslider-close-dialog": "Fechar"
 }

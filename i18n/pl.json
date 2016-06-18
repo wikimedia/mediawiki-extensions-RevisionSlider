@@ -9,5 +9,8 @@
 	"revisionslider-label-change-size": "Wielkość zmiany: $1",
 	"revisionslider-label-edited-by": "Edytowane przez: $1",
 	"revisionslider-arrow-tooltip-newer": "Zobacz nowsze wersje",
-	"revisionslider-arrow-tooltip-older": "Zobacz starsze wersje"
+	"revisionslider-arrow-tooltip-older": "Zobacz starsze wersje",
+	"revisionslider-previous-dialog": "Poprzedni",
+	"revisionslider-next-dialog": "Następny",
+	"revisionslider-close-dialog": "Zamknij"
 }

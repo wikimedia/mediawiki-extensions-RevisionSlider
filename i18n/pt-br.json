@@ -4,5 +4,7 @@
 			"LucyDiniz"
 		]
 	},
-	"revisionslider-previous-dialog": "Anterior"
+	"revisionslider-help-dialog-slide3": "<p>Para comparar determinadas revisões, selecione-as utilizando o ponteiro amarelo e azul.</p>\n<p>O ponteiro azul controla a revisão mais recente, o ponteiro amarelo mapeia a revisão mais antiga.</p>\n<p>Mova os ponteiros arrastando-os ou clique em uma barra.</p>",
+	"revisionslider-previous-dialog": "Anterior",
+	"revisionslider-next-dialog": "Próximo"
 }

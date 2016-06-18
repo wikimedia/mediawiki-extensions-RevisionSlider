@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hindustanilanguage"
+			"Hindustanilanguage",
+			"امین اکبر"
 		]
 	},
-	"revisionslider-label-comment": "تبصرہ:$1"
+	"revisionslider-label-comment": "تبصرہ:$1",
+	"revisionslider-previous-dialog": "پچھلا",
+	"revisionslider-next-dialog": "اگلا",
+	"revisionslider-close-dialog": "بند کرو"
 }

@@ -24,7 +24,7 @@
 	"revisionslider-help-dialog-slide3": "Text shown on the third slide of the help dialog.",
 	"revisionslider-help-dialog-slide4": "Text shown on the fourth slide of the help dialog.",
 	"revisionslider-tutorial": "Text shown above the revision slider tutorial.",
-	"revisionslider-previous-dialog": "Label of the button to go to the previous tutorial slide.",
-	"revisionslider-next-dialog": "Label of the button to go to the next tutorial slide.",
-	"revisionslider-close-dialog": "Label of the button to close the RevisionSlider tutorial."
+	"revisionslider-previous-dialog": "Label of the button to go to the previous tutorial slide.\n{{Identical|Previous}}",
+	"revisionslider-next-dialog": "Label of the button to go to the next tutorial slide.\n{{Identical|Next}}",
+	"revisionslider-close-dialog": "Label of the button to close the RevisionSlider tutorial.\n{{Identical|Close}}"
 }

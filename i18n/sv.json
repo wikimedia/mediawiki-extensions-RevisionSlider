@@ -4,5 +4,9 @@
 			"WikiPhoenix"
 		]
 	},
-	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|byte}}"
+	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|byte}}",
+	"revisionslider-label-change-size": "Ändra storlek: $1",
+	"revisionslider-previous-dialog": "Föregående",
+	"revisionslider-next-dialog": "Nästa",
+	"revisionslider-close-dialog": "Stäng"
 }
