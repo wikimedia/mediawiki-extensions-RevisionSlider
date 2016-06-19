@@ -20,5 +20,10 @@
 	"revisionslider-loading-failed": "Impossible de charger le curseur de révision.",
 	"revisionslider-loading-out-of-range": "Le chargement du curseur de révision a échoué car les révisions demandées ne figurent pas parmi les 500 dernières versions de la page.",
 	"revisionslider-arrow-tooltip-newer": "Voir les nouvelles versions",
-	"revisionslider-arrow-tooltip-older": "Voir les révisions antérieures"
+	"revisionslider-arrow-tooltip-older": "Voir les révisions antérieures",
+	"revisionslider-help-dialog-slide3": "<p>Pour comparer certaines modifications, sélectionnez les révisions à l'aide du pointeur jaune et bleu.</p><p>Le pointeur bleu contrôle la révision la plus récente, le jaune la révision plus ancienne.</p><p>Déplacez les pointeurs par glisser-déposer ou cliquez sur une barre.</p>",
+	"revisionslider-tutorial": "Tutoriel du curseur de révision",
+	"revisionslider-previous-dialog": "Précédent",
+	"revisionslider-next-dialog": "Suivant",
+	"revisionslider-close-dialog": "Fermer"
 }
