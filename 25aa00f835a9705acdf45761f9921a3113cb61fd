@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_2eb6ced7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-20T08:22:15Z",
+      "side": 1,
+      "message": "two different colours are not that colorful if asking me :)\nMaybe colour-coded?",
+      "revId": "25aa00f835a9705acdf45761f9921a3113cb61fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_4eb352e8",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-20T08:22:15Z",
+      "side": 1,
+      "message": "This is still hardcoding the word order, unlike any other line of the tooltip.\n\nI believe I understand why it is done like this but I still find it a bit problematic.\n\nI couldn\u0027t think of way that will not assume English word order (ie. have both \"label\" and \"value\" in the message) other than having a message like before, ie.\n\"revisionslider-label-comment\": \"\u003cb\u003eComment:\u003c/b\u003e $1\"\n\nand adding it to the page with something like\n\n$( \u0027\u003cbdi\u003e\u0027 ).append(\n    $( \u0027\u003cp\u003e\u0027 ).append(\n        mw.message( \u0027revisionslider-label-comment\u0027, rev.getParsedComment() ).plain()\n    )\n)\n\nMessage.plain() does not do any extra HTML escaping so I am not sure if this is right approach from security point of view.\nOTOH what is being passed as a parameter to the message is value fetched as a parsed comment from the DB. This should already have a HTML tags escaped, external links removed etc. So not doing extra escaping might be fine in this case.\n\nIt would be great if someone who is more familiar with this matter comments on this!",
+      "revId": "25aa00f835a9705acdf45761f9921a3113cb61fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_678f6d27",
+        "filename": "modules/ext.RevisionSlider.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-20T08:22:15Z",
+      "side": 1,
+      "message": "please add semicolons after the value, here and below",
+      "revId": "25aa00f835a9705acdf45761f9921a3113cb61fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
