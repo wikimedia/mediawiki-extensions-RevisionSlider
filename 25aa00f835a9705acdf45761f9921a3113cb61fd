@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_aec8fe51",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-06-20T08:38:47Z",
+      "side": 1,
+      "message": "I would also be happier with the including approach. I am just unsure with the security issue there. So yeah lets wait for comments.",
+      "parentUuid": "0efd9372_4eb352e8",
+      "revId": "25aa00f835a9705acdf45761f9921a3113cb61fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_678f6d27",
         "filename": "modules/ext.RevisionSlider.css",
         "patchSetId": 1
