@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_49a06cf1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-20T11:05:14Z",
+      "side": 1,
+      "message": "you meant simple not simply, dude",
+      "revId": "14d6c7f196cf9b0c329c7ab629f0e3b5970c15b8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_095f8414",
+        "filename": "jsduck.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-20T11:05:14Z",
+      "side": 1,
+      "message": "OO.ui.Process might be also added if the parent patch adds it as a type of the value returned by HelpDialog.getActionProcess",
+      "revId": "14d6c7f196cf9b0c329c7ab629f0e3b5970c15b8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
