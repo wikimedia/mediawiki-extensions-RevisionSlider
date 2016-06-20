@@ -17,5 +17,9 @@
 	"revisionslider-loading-failed": "O deslizador de revisións non se puido cargar.",
 	"revisionslider-loading-out-of-range": "O deslizador de revisións non se puido cargar xa que as revisións solicitadas non están entre as primeiras 500 versións da páxina.",
 	"revisionslider-arrow-tooltip-newer": "Ver revisións máis recentes",
-	"revisionslider-arrow-tooltip-older": "Ver revisións máis vellas"
+	"revisionslider-arrow-tooltip-older": "Ver revisións máis vellas",
+	"revisionslider-help-dialog-slide3": "<p>Para comparar certas revisións, seleccióneas utilizando o punteiro amarelo e o azul.</p><p>O punteiro azul controla a revisión máis recente, o punteiro amarelo controla a revisión máis vella.</p><p>Mova os punteiros arrastrando e soltando ou prema nunha barra.</p>",
+	"revisionslider-previous-dialog": "Anterior",
+	"revisionslider-next-dialog": "Seguinte",
+	"revisionslider-close-dialog": "Pechar"
 }
