@@ -2,6 +2,7 @@
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 
 	/**
+	 * @member RevisionSlider
 	 * Fetches up to 500 revisions at a time
 	 *
 	 * @param {Object} options - Options containing callbacks for `success` and `error` as well as fields for
