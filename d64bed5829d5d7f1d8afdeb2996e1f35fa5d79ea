@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_6faf2ddf",
+        "filename": "modules/ext.RevisionSlider.fetchRevisions.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-06-21T11:21:59Z",
+      "side": 1,
+      "message": "This indenting seems odd??",
+      "revId": "d64bed5829d5d7f1d8afdeb2996e1f35fa5d79ea",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
