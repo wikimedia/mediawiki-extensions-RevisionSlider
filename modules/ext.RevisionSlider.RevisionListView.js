@@ -1,4 +1,8 @@
 ( function ( mw, $ ) {
+	/**
+	 * @param {RevisionList} revisionList
+	 * @constructor
+	 */
 	var RevisionListView = function ( revisionList ) {
 		this.revisionList = revisionList;
 	};
@@ -9,6 +13,10 @@
 		 */
 		revisionList: null,
 
+		/**
+		 * @param {number} revisionTickWidth
+		 * @return {jQuery}
+		 */
 		render: function ( revisionTickWidth ) {
 			var $html = $( '<div>' ).addClass( 'mw-revisions' ),
 				revs = this.revisionList.getRevisions(),
@@ -49,6 +57,12 @@
 			return $html;
 		},
 
+		/**
+		 * Generates the HTML for a tooltip that appears on hover above each revision on the slider
+		 *
+		 * @param {Revision} rev
+		 * @return {string}
+		 */
 		makeTooltip: function ( rev ) {
 			var $tooltip = $( '<div>' )
 				.append(
@@ -70,6 +84,12 @@
 			return $tooltip.html();
 		},
 
+		/**
+		 * Generates the HTML for the comment label
+		 *
+		 * @param {Revision} rev
+		 * @return {string|jQuery}
+		 */
 		makeCommentLine: function ( rev ) {
 			if ( rev.hasEmptyComment() ) {
 				return '';

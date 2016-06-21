@@ -1,4 +1,8 @@
 ( function ( mw, $ ) {
+	/**
+	 * @param {Revision[]} revs
+	 * @constructor
+	 */
 	var RevisionList = function ( revs ) {
 		this.revisions = [];
 		this.initialize( revs );
@@ -16,6 +20,11 @@
 		 */
 		view: null,
 
+		/**
+		 * Inititializes the RevisionList from a list of Revisions
+		 *
+		 * @param {Revision[]} revs
+		 */
 		initialize: function ( revs ) {
 			var i, rev;
 
@@ -27,6 +36,9 @@
 			}
 		},
 
+		/**
+		 * @return {number}
+		 */
 		getBiggestChangeSize: function () {
 			var max = 0,
 				i;
@@ -38,14 +50,23 @@
 			return max;
 		},
 
+		/**
+		 * @return {Revision[]}
+		 */
 		getRevisions: function () {
 			return this.revisions;
 		},
 
+		/**
+		 * @return {number}
+		 */
 		getLength: function () {
 			return this.revisions.length;
 		},
 
+		/**
+		 * @return {RevisionListView}
+		 */
 		getView: function () {
 			return this.view;
 		}
