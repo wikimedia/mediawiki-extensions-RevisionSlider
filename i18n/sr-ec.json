@@ -5,5 +5,7 @@
 		]
 	},
 	"revisionslider-label-comment": "Коментар: $1",
-	"revisionslider-label-user": "Корисник: $1"
+	"revisionslider-previous-dialog": "Претходно",
+	"revisionslider-next-dialog": "Следеће",
+	"revisionslider-close-dialog": "Затвори"
 }
