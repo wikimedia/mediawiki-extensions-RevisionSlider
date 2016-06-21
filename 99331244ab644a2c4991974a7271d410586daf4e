@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_af43d541",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-06-21T11:15:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0efd9372_ed4df3e1",
+      "revId": "99331244ab644a2c4991974a7271d410586daf4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_4e923201",
         "filename": "modules/ext.RevisionSlider.DiffPage.js",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-20T10:38:33Z",
       "side": 1,
       "message": "According to https://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript#Types and https://github.com/senchalabs/jsduck/wiki/Type-Definitions#type-names this should rather be {number}\nUnless there\u0027s a way to tell JSDuck to take {int} and be happy.\n\nI am only mentioning this potential issue here, not going to repeat under each occurence of {int}",
+      "revId": "99331244ab644a2c4991974a7271d410586daf4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_0f72e1ab",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-06-21T11:15:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0efd9372_4e923201",
       "revId": "99331244ab644a2c4991974a7271d410586daf4e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_ef74bd98",
+        "filename": "modules/ext.RevisionSlider.HelpDialog.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-06-21T11:15:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0efd9372_4eb99277",
+      "revId": "99331244ab644a2c4991974a7271d410586daf4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_4e7eb2e2",
         "filename": "modules/ext.RevisionSlider.HelpDialog.js",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2016-06-20T10:38:33Z",
       "side": 1,
       "message": "this is an array, so probably OO.ui.PanelLayout[] ?",
+      "revId": "99331244ab644a2c4991974a7271d410586daf4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_4f6ce9cc",
+        "filename": "modules/ext.RevisionSlider.HelpDialog.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-06-21T11:15:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0efd9372_4e7eb2e2",
       "revId": "99331244ab644a2c4991974a7271d410586daf4e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_2f6fe5c1",
+        "filename": "modules/ext.RevisionSlider.HelpDialog.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-06-21T11:15:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0efd9372_0e34aaf0",
+      "revId": "99331244ab644a2c4991974a7271d410586daf4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_ee8a06bf",
         "filename": "modules/ext.RevisionSlider.Revision.js",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2016-06-20T10:38:33Z",
       "side": 1,
       "message": "type of this parameter should be an Object, I guess?",
+      "revId": "99331244ab644a2c4991974a7271d410586daf4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_8f6531e0",
+        "filename": "modules/ext.RevisionSlider.Revision.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-06-21T11:15:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0efd9372_ee8a06bf",
       "revId": "99331244ab644a2c4991974a7271d410586daf4e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_6f60cdcc",
+        "filename": "modules/ext.RevisionSlider.Slider.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-06-21T11:15:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0efd9372_ae80fea0",
+      "revId": "99331244ab644a2c4991974a7271d410586daf4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_0e902af0",
         "filename": "modules/ext.RevisionSlider.SliderView.js",
         "patchSetId": 1
@@ -132,6 +258,24 @@
       "writtenOn": "2016-06-20T10:38:33Z",
       "side": 1,
       "message": "No class description for this class",
+      "revId": "99331244ab644a2c4991974a7271d410586daf4e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_cf5f3912",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-06-21T11:15:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0efd9372_0e902af0",
       "revId": "99331244ab644a2c4991974a7271d410586daf4e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
