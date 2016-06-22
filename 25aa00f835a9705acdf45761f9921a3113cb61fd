@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_2e336e60",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-06-22T16:11:30Z",
+      "side": 1,
+      "message": "With the grey its even 3 colors!!!1",
+      "parentUuid": "0efd9372_2eb6ced7",
+      "revId": "25aa00f835a9705acdf45761f9921a3113cb61fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_fbc75f13",
         "filename": "i18n/en.json",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-22T11:15:59Z",
       "side": 1,
       "message": "We have standardized to using \u003cstrong\u003e instead of \u003cb\u003e, and \u003cem\u003e instead if \u003ci\u003e (or wikimarkup for either).\n\nThis also goes for the 3 messages below that use \u003cb\u003e.",
+      "revId": "25aa00f835a9705acdf45761f9921a3113cb61fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_1044bd6d",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-06-22T16:11:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0efd9372_fbc75f13",
       "revId": "25aa00f835a9705acdf45761f9921a3113cb61fd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_702a6990",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-06-22T16:11:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0efd9372_9bd8d3f5",
+      "revId": "25aa00f835a9705acdf45761f9921a3113cb61fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_5b3b0b37",
         "filename": "i18n/qqq.json",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2016-06-22T10:23:50Z",
       "side": 1,
       "message": "creation date",
+      "revId": "25aa00f835a9705acdf45761f9921a3113cb61fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_c3ff0dfb",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-06-22T16:11:30Z",
+      "side": 1,
+      "message": "Since we use uppercase and dots in all other cases as well, would you recommend have everything lowercase without dots or the other way around?",
+      "parentUuid": "0efd9372_5b3b0b37",
       "revId": "25aa00f835a9705acdf45761f9921a3113cb61fd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -116,6 +188,24 @@
       "writtenOn": "2016-06-20T08:22:15Z",
       "side": 1,
       "message": "please add semicolons after the value, here and below",
+      "revId": "25aa00f835a9705acdf45761f9921a3113cb61fd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_8e3a5a31",
+        "filename": "modules/ext.RevisionSlider.css",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-06-22T16:11:30Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "0efd9372_678f6d27",
       "revId": "25aa00f835a9705acdf45761f9921a3113cb61fd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
