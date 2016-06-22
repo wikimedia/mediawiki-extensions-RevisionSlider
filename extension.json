@@ -122,7 +122,7 @@
 				"revisionslider-label-date",
 				"revisionslider-label-page-size",
 				"revisionslider-label-change-size",
-				"revisionslider-label-edited-by",
+				"revisionslider-label-username",
 				"revisionslider-label-comment"
 			],
 			"dependencies": [

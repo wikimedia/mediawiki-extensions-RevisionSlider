@@ -140,7 +140,7 @@
 					),
 					rev.getUser() ?
 						$( '<bdi>' ).append( $( '<p>' ).append(
-							mw.message( 'revisionslider-label-edited-by', mw.html.escape( rev.getUser() ) ).parseDom()
+							mw.message( 'revisionslider-label-username', mw.html.escape( rev.getUser() ) ).parseDom()
 						) )
 						: '',
 					this.makeCommentLine( rev ),
