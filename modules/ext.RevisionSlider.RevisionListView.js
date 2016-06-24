@@ -14,6 +14,16 @@
 		revisionList: null,
 
 		/**
+		 * @type {number}
+		 */
+		tooltipTimeout: -1,
+
+		/**
+		 * @type {jQuery}
+		 */
+		currentTooltip: null,
+
+		/**
 		 * @param {number} revisionTickWidth
 		 * @return {jQuery}
 		 */
@@ -21,7 +31,15 @@
 			var $html = $( '<div>' ).addClass( 'mw-revisions' ),
 				revs = this.revisionList.getRevisions(),
 				maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() ),
-				i, diffSize, tooltip, relativeChangeSize;
+				self = this,
+				i, diffSize, tooltip, relativeChangeSize,
+				showTooltip = function () {
+					self.showTooltip( $( this ) );
+					$( this ).tipsy( 'show' );
+				},
+				hideTooltip = function () {
+					self.hideTooltip( $( this ) );
+				};
 
 			for ( i = 0; i < revs.length; i++ ) {
 				diffSize = revs[ i ].getRelativeSize();
@@ -36,7 +54,7 @@
 						.tipsy( {
 							gravity: 's',
 							html: true,
-							fade: true,
+							trigger: 'manual',
 							className: 'mw-revision-tooltip'
 						} )
 						.append( $( '<div>' )
@@ -51,10 +69,61 @@
 							.addClass( diffSize > 0 ? 'mw-revision-up' : 'mw-revision-down' )
 							.append( $( '<div>' ).addClass( 'mw-revision-border-box' ) )
 						)
+						.mouseover( showTooltip )
+						.mouseout( hideTooltip )
 					);
 			}
 
+			this.keepTooltipsOnHover();
+
 			return $html;
+		},
+
+		/**
+		 * Hides the current tooltip immediately
+		 */
+		hideCurrentTooltip: function () {
+			if ( this.tooltipTimeout !== -1 ) {
+				window.clearTimeout( this.tooltipTimeout );
+				this.currentTooltip.tipsy( 'hide' );
+			}
+		},
+
+		/**
+		 * Hides the tooltip after 500ms
+		 *
+		 * @param {jQuery} $rev
+		 */
+		hideTooltip: function ( $rev ) {
+			this.tooltipTimeout = window.setTimeout( function () {
+				$rev.tipsy( 'hide' );
+			}, 500 );
+		},
+
+		/**
+		 * Hides the previous tooltip and shows the new one
+		 *
+		 * @param {jQuery} $rev
+		 */
+		showTooltip: function ( $rev ) {
+			this.hideCurrentTooltip();
+			$rev.tipsy( 'show' );
+			this.currentTooltip = $rev;
+		},
+
+		/**
+		 * Sets event handlers on tooltips so they do not disappear when hovering over them
+		 */
+		keepTooltipsOnHover: function () {
+			var self = this;
+
+			$( document )
+				.on( 'mouseover', '.mw-revision-tooltip', function () {
+					window.clearTimeout( self.tooltipTimeout );
+				} )
+				.on( 'mouseout', '.mw-revision-tooltip', function () {
+					self.hideTooltip( self.currentTooltip );
+				} );
 		},
 
 		/**
