@@ -10,5 +10,8 @@
 	"revisionslider-label-comment": "의견: $1",
 	"revisionslider-label-edited-by": "다음 사람이 편집함: $1",
 	"revisionslider-arrow-tooltip-newer": "새로운 판 보기",
-	"revisionslider-arrow-tooltip-older": "과거 판 보기"
+	"revisionslider-arrow-tooltip-older": "과거 판 보기",
+	"revisionslider-previous-dialog": "이전",
+	"revisionslider-next-dialog": "다음",
+	"revisionslider-close-dialog": "닫기"
 }

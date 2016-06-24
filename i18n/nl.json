@@ -5,5 +5,7 @@
 		]
 	},
 	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|byte|bytes}}",
-	"revisionslider-label-user": "Gebruiker: $1"
+	"revisionslider-previous-dialog": "Vorige",
+	"revisionslider-next-dialog": "Volgende",
+	"revisionslider-close-dialog": "Sluiten"
 }
