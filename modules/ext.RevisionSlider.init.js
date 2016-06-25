@@ -35,7 +35,7 @@
 						.click( function () {
 							mw.libs.revisionSlider.HelpDialog.show();
 						} )
-						.text( '?' )
+						.text( mw.message( 'revisionslider-show-help' ).text() )
 						.addClass( 'mw-show-help' )
 				);
 			} catch ( err ) {
