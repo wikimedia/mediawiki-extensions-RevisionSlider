@@ -76,6 +76,18 @@
     max-width: none;
 }
 
+.mw-revision-tooltip .mw-positive-change {
+    color: #006400;
+}
+
+.mw-revision-tooltip .mw-negative-change {
+    color: #8b0000;
+}
+
+.mw-revision-tooltip .mw-no-change {
+    color: #aaaaaa;
+}
+
 .mw-revisions {
     height: 140px;
     white-space: nowrap;
