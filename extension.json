@@ -1,8 +1,12 @@
 {
 	"name": "RevisionSlider",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"author": [
-		"WMDE"
+		"TCB team (Wikimedia Deutschland)",
+		"Christoph Fischer",
+		"Leszek Manicki",
+		"Adam Shorland",
+		"Jakob Warkotsch"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:RevisionSlider",
 	"namemsg": "revisionslider",
