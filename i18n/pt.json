@@ -5,10 +5,8 @@
 			"Vitorvicentevalente"
 		]
 	},
-	"revisionslider-label-article-size": "Tamanho do artigo: $1",
 	"revisionslider-label-change-size": "Tamanho da alteração: $1",
 	"revisionslider-label-comment": "Comentário: $1",
-	"revisionslider-label-edited-by": "Editada por: $1",
 	"revisionslider-arrow-tooltip-newer": "Ver revisões mais recentes",
 	"revisionslider-arrow-tooltip-older": "Ver revisões mais antigas",
 	"revisionslider-previous-dialog": "Anterior",

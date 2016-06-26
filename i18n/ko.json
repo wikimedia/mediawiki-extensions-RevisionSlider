@@ -6,10 +6,8 @@
 		]
 	},
 	"revisionslider-beta-feature-description": "문서의 두 판을 비교할 때 판 슬라이더를 보여줍니다.",
-	"revisionslider-label-article-size": "문서 크기: $1",
 	"revisionslider-label-change-size": "변경된 크기: $1",
 	"revisionslider-label-comment": "의견: $1",
-	"revisionslider-label-edited-by": "다음 사람이 편집함: $1",
 	"revisionslider-arrow-tooltip-newer": "새로운 판 보기",
 	"revisionslider-arrow-tooltip-older": "과거 판 보기",
 	"revisionslider-previous-dialog": "이전",

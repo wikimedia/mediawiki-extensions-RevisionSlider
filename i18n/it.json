@@ -6,11 +6,8 @@
 			"Macofe"
 		]
 	},
-	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|byte}}",
-	"revisionslider-label-article-size": "Dimensione voce: $1",
 	"revisionslider-label-change-size": "Dimensione della modifica: $1",
 	"revisionslider-label-comment": "Commento: $1",
-	"revisionslider-label-edited-by": "Modificato da: $1",
 	"revisionslider-arrow-tooltip-newer": "Vedi le versioni più recenti",
 	"revisionslider-arrow-tooltip-older": "Vedi le versioni meno recenti",
 	"revisionslider-previous-dialog": "Precedente",

@@ -1,11 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Josve05a"
 		]
 	},
-	"revisionslider-revision-bytes": "$1 {{PLURAL:$1|byte}}",
+	"revisionslider-label-date": "<strong>Datum:</strong> $1",
 	"revisionslider-label-change-size": "Ändra storlek: $1",
+	"revisionslider-label-comment": "Kommentar:",
+	"revisionslider-label-username": "<strong>Användarnamn:</strong> $1",
 	"revisionslider-previous-dialog": "Föregående",
 	"revisionslider-next-dialog": "Nästa",
 	"revisionslider-close-dialog": "Stäng"

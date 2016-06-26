@@ -4,11 +4,8 @@
 			"Purodha"
 		]
 	},
-	"revisionslider-revision-bytes": "$1&nbsp;<i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Binary Digit\">{{PLURAL:$1|Byte|Bytes|Byte}}</i>",
-	"revisionslider-label-article-size": "Ömvang: $1",
-	"revisionslider-label-change-size": "Ömvang verändert öm: $1",
-	"revisionslider-label-comment": "Kommäntah: $1",
-	"revisionslider-label-edited-by": "Be'ärbeidt vum „$1“",
+	"revisionslider-label-change-size": "<strong>Ömvang verändert öm:</strong> $1 {{PLURAL:$1|eij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>|$1 <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Bytes</i>|keij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>}}",
+	"revisionslider-label-comment": "Kommäntah:",
 	"revisionslider-arrow-tooltip-newer": "Neujere Väsjohne aanzeije",
 	"revisionslider-arrow-tooltip-older": "Ällder Väsjohne aanzeije",
 	"revisionslider-previous-dialog": "Vörijje",

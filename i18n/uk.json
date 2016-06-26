@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ата"
+		]
+	},
+	"revisionslider": "RevisionSlider",
+	"revisionslider-desc": "Показує повзунок для вибору і порівняння версій на сторінці порівняння версій",
+	"revisionslider-beta-feature-message": "Revision Slider",
+	"revisionslider-beta-feature-description": "Показати повзунок версій при порівнянні двох версій сторінки.",
+	"revisionslider-label-date": "<strong>Дата:</strong> $1",
+	"revisionslider-label-page-size": "<strong>Розмір сторінки:</strong> $1 {{PLURAL:$2|байт|байти|байтів}}",
+	"revisionslider-label-change-size": "<strong>Розмір зміни:</strong> $1 {{PLURAL:$2|байт|байти|байтів}}",
+	"revisionslider-label-comment": "Коментар:",
+	"revisionslider-label-username": "<strong>Ім'я користувача:</strong> $1",
+	"revisionslider-loading-placeholder": "Повзунок версій завантажується.",
+	"revisionslider-loading-failed": "Не вдалося завантажити повзунок версій.",
+	"revisionslider-loading-out-of-range": "Не вдалося завантажити повзунок версій, оскільки запитані версії не належать до 500 останніх версій сторінки.",
+	"revisionslider-arrow-tooltip-newer": "Дивитися новіші версії",
+	"revisionslider-arrow-tooltip-older": "Дивитися старіші версії",
+	"revisionslider-help-dialog-slide1": "RevisionSlider допомагає в навігації і порівнянні версій. Він базується на [[m:WMDE_Technical_Wishes/Revision_Slider|побажанні спільноти]] зі списку технічних побажань німецькомовної спільноти.",
+	"revisionslider-help-dialog-slide2": "Кожна панель є версією статті. Панелі угорі показують збільшення розміру статті, панелі внизу — зменшення. На зображенні версія 1 показує доданий вміст, тоді як версія 2 показує вилучення вмісту."
+}
