@@ -18,7 +18,6 @@
 	"revisionslider-minoredit": "Text labeling a minor edit.",
 	"revisionslider-loading-placeholder": "Message shown while the RevisionSlider is still loading on a diff page. Once loaded the message is removed.",
 	"revisionslider-loading-failed": "Message shown if the RevisionSlider fails to initially load.",
-	"revisionslider-loading-out-of-range": "Message shown if the RevisionSlider fails to initially load due to revisions being requested that are not in the most recent 500 revisions.",
 	"revisionslider-arrow-tooltip-newer": "Text shown after hovering the button scrolling to newer revisions.",
 	"revisionslider-arrow-tooltip-older": "Text shown after hovering the button scrolling to older revisions.",
 	"revisionslider-show-help": "A symbol shown in the \"Show help\" button.",

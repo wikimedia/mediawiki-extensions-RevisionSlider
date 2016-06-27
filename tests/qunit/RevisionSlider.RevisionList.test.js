@@ -27,66 +27,129 @@
 		assert.equal( revs.getRevisions()[ 2 ].getRelativeSize(), -8 );
 	} );
 
-	QUnit.test( 'getUserNames returns a list of unique names', function ( assert ) {
+	QUnit.test( 'getUserGenders', function ( assert ) {
 		var revs = new RevisionList( [
-			new Revision( { revid: 1, user: 'User1' } ),
+			new Revision( { revid: 1, user: 'User1', userGender: 'female' } ),
 			new Revision( { revid: 2, user: 'User2' } ),
-			new Revision( { revid: 3, user: 'User1' } )
+			new Revision( { revid: 3, user: 'User3', userGender: 'male' } )
+		] );
+
+		assert.deepEqual( revs.getUserGenders(), { User1: 'female', User2: '', User3: 'male' } );
+	} );
+
+	QUnit.test( 'Push appends revisions to the end of the list', function ( assert ) {
+		var list = new RevisionList( [
+			new Revision( { revid: 1, size: 5 } ),
+			new Revision( { revid: 2, size: 21 } ),
+			new Revision( { revid: 3, size: 13 } )
 		] ),
-			userNames = revs.getUserNames();
+			revisions;
+		list.push( [
+			new Revision( { revid: 6, size: 19 } ),
+			new Revision( { revid: 8, size: 25 } )
+		] );
 
-		assert.deepEqual( userNames, [ 'User1', 'User2' ] );
+		revisions = list.getRevisions();
+		assert.equal( list.getLength(), 5 );
+		assert.equal( revisions[ 0 ].getId(), 1 );
+		assert.equal( revisions[ 0 ].getRelativeSize(), 5 );
+		assert.equal( revisions[ 1 ].getId(), 2 );
+		assert.equal( revisions[ 1 ].getRelativeSize(), 16 );
+		assert.equal( revisions[ 2 ].getId(), 3 );
+		assert.equal( revisions[ 2 ].getRelativeSize(), -8 );
+		assert.equal( revisions[ 3 ].getId(), 6 );
+		assert.equal( revisions[ 3 ].getRelativeSize(), 6 );
+		assert.equal( revisions[ 4 ].getId(), 8 );
+		assert.equal( revisions[ 4 ].getRelativeSize(), 6 );
 	} );
 
-	QUnit.test( 'getUserNames skips revisions without user specified', function ( assert ) {
-		var revs = new RevisionList( [
-				new Revision( { revid: 1, user: 'User1' } ),
-				new Revision( { revid: 2 } )
+	QUnit.test( 'Unshift prepends revisions to the beginning of the list', function ( assert ) {
+		var list = new RevisionList( [
+				new Revision( { revid: 5, size: 5 } ),
+				new Revision( { revid: 6, size: 21 } ),
+				new Revision( { revid: 7, size: 13 } )
 			] ),
-			userNames = revs.getUserNames();
+			revisions;
+		list.unshift( [
+			new Revision( { revid: 2, size: 19 } ),
+			new Revision( { revid: 4, size: 25 } )
+		] );
 
-		assert.deepEqual( userNames, [ 'User1' ] );
+		revisions = list.getRevisions();
+		assert.equal( list.getLength(), 5 );
+		assert.equal( revisions[ 0 ].getId(), 2 );
+		assert.equal( revisions[ 0 ].getRelativeSize(), 19 );
+		assert.equal( revisions[ 1 ].getId(), 4 );
+		assert.equal( revisions[ 1 ].getRelativeSize(), 6 );
+		assert.equal( revisions[ 2 ].getId(), 5 );
+		assert.equal( revisions[ 2 ].getRelativeSize(), -20 );
+		assert.equal( revisions[ 3 ].getId(), 6 );
+		assert.equal( revisions[ 3 ].getRelativeSize(), 16 );
+		assert.equal( revisions[ 4 ].getId(), 7 );
+		assert.equal( revisions[ 4 ].getRelativeSize(), -8 );
 	} );
 
-	QUnit.test( 'setUserGenders adjusts revision data', function ( assert ) {
-		var revs = new RevisionList( [
-				new Revision( { revid: 1, user: 'User1' } ),
-				new Revision( { revid: 2, user: 'User2' } ),
-				new Revision( { revid: 3, user: 'User3' } )
+	QUnit.test( 'Unshift considers the size of the preceding revision if specified', function ( assert ) {
+		var list = new RevisionList( [
+				new Revision( { revid: 5, size: 5 } ),
+				new Revision( { revid: 6, size: 21 } ),
+				new Revision( { revid: 7, size: 13 } )
 			] ),
-			genders = { User1: 'female', User2: 'male', User3: 'unknown' };
+			revisions;
+		list.unshift(
+			[
+				new Revision( { revid: 2, size: 19 } ),
+				new Revision( { revid: 4, size: 25 } )
+			],
+			12
+		);
 
-		assert.equal( revs.getRevisions()[ 0 ].getUserGender(), '' );
-		assert.equal( revs.getRevisions()[ 1 ].getUserGender(), '' );
-		assert.equal( revs.getRevisions()[ 2 ].getUserGender(), '' );
-
-		revs.setUserGenders( genders );
-
-		assert.equal( revs.getRevisions()[ 0 ].getUserGender(), 'female' );
-		assert.equal( revs.getRevisions()[ 1 ].getUserGender(), 'male' );
-		assert.equal( revs.getRevisions()[ 2 ].getUserGender(), 'unknown' );
+		revisions = list.getRevisions();
+		assert.equal( list.getLength(), 5 );
+		assert.equal( revisions[ 0 ].getId(), 2 );
+		assert.equal( revisions[ 0 ].getRelativeSize(), 7 );
 	} );
 
-	QUnit.test( 'setUserGenders no gender for a user', function ( assert ) {
-		var revs = new RevisionList( [
-				new Revision( { revid: 1, user: 'User1' } ),
-				new Revision( { revid: 2, user: 'User2' } )
+	QUnit.test( 'Slice returns a subset of the list', function ( assert ) {
+		var list = new RevisionList( [
+				new Revision( { revid: 1, size: 5 } ),
+				new Revision( { revid: 2, size: 21 } ),
+				new Revision( { revid: 3, size: 13 } ),
+				new Revision( { revid: 6, size: 19 } ),
+				new Revision( { revid: 8, size: 25 } )
+		] ),
+			slicedList = list.slice( 1, 3 ),
+			revisions = slicedList.getRevisions();
+
+		assert.equal( slicedList.getLength(), 2 );
+		assert.equal( revisions[ 0 ].getId(), 2 );
+		assert.equal( revisions[ 0 ].getRelativeSize(), 16 );
+		assert.equal( revisions[ 1 ].getId(), 3 );
+		assert.equal( revisions[ 1 ].getRelativeSize(), -8 );
+	} );
+
+	QUnit.test( 'Slice returns a subset of the list, end param omitted', function ( assert ) {
+		var list = new RevisionList( [
+				new Revision( { revid: 1, size: 5 } ),
+				new Revision( { revid: 2, size: 21 } ),
+				new Revision( { revid: 3, size: 13 } ),
+				new Revision( { revid: 6, size: 19 } ),
+				new Revision( { revid: 8, size: 25 } )
 			] ),
-			genders = { User1: 'female' };
+			slicedList = list.slice( 1 ),
+			revisions = slicedList.getRevisions();
 
-		assert.equal( revs.getRevisions()[ 0 ].getUserGender(), '' );
-		assert.equal( revs.getRevisions()[ 1 ].getUserGender(), '' );
-
-		revs.setUserGenders( genders );
-
-		assert.equal( revs.getRevisions()[ 0 ].getUserGender(), 'female' );
-		assert.equal( revs.getRevisions()[ 1 ].getUserGender(), '' );
+		assert.equal( slicedList.getLength(), 4 );
+		assert.equal( revisions[ 0 ].getId(), 2 );
+		assert.equal( revisions[ 1 ].getId(), 3 );
+		assert.equal( revisions[ 2 ].getId(), 6 );
+		assert.equal( revisions[ 3 ].getId(), 8 );
 	} );
 
 	QUnit.test( 'makeRevisions converts revision data into list of Revision objects', function ( assert ) {
 		var revs = [
-			{ revid: 1, size: 5 },
-			{ revid: 2, size: 21 },
+			{ revid: 1, size: 5, userGender: 'female' },
+			{ revid: 2, size: 21, userGender: 'unknown' },
 			{ revid: 3, size: 13 }
 		],
 			revisions = makeRevisions( revs );

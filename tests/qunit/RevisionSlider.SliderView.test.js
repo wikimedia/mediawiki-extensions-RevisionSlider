@@ -40,26 +40,6 @@
 		assert.equal( $revisionNew.attr( 'data-revid' ), 37 );
 	} );
 
-	QUnit.test( 'render throws an exception when selected revision not in available range', function ( assert ) {
-		var $container = $( '<div>' ),
-			view = new SliderView( new Slider( new RevisionList( [
-				new Revision( { revid: 3, size: 21, comment: 'Comment2', user: 'User2' } ),
-				new Revision( { revid: 37, size: 13, comment: 'Comment3', user: 'User3' } )
-			] ) ) );
-
-		mw.config.values.extRevisionSliderOldRev = 1;
-		mw.config.values.extRevisionSliderNewRev = 37;
-
-		assert.throws(
-			function () {
-				view.render( $container );
-			},
-			function ( e ) {
-				return e === 'RS-rev-out-of-range';
-			}
-		);
-	} );
-
 	QUnit.test( 'render throws an exception when no selected revisions provided', function ( assert ) {
 		var $container = $( '<div>' ),
 			view = new SliderView( new Slider( new RevisionList( [

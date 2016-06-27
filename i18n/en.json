@@ -16,7 +16,6 @@
     "revisionslider-minoredit": "This is a minor edit",
     "revisionslider-loading-placeholder": "The RevisionSlider is loading...",
     "revisionslider-loading-failed": "The RevisionSlider failed to load.",
-    "revisionslider-loading-out-of-range": "The RevisionSlider failed to load as the requested revisions are not in the top 500 versions of the page.",
     "revisionslider-arrow-tooltip-newer": "See newer revisions",
     "revisionslider-arrow-tooltip-older": "See older revisions",
     "revisionslider-show-help": "?",

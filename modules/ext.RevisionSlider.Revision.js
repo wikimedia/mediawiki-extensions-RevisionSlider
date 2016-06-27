@@ -19,6 +19,9 @@
 		}
 		if ( typeof data.user !== 'undefined' ) {
 			this.user = data.user;
+			if ( typeof data.userGender !== 'undefined' ) {
+				this.userGender = data.userGender;
+			}
 		}
 	};
 
@@ -135,13 +138,6 @@
 		 */
 		getUser: function () {
 			return this.user;
-		},
-
-		/**
-		 * @param {string} gender
-		 */
-		setUserGender: function ( gender ) {
-			this.userGender = gender;
 		},
 
 		/**
