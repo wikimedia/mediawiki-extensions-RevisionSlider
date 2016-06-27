@@ -80,12 +80,12 @@ class RevisionSliderHooks {
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
 		$testModules['qunit']['ext.RevisionSlider.tests'] = [
 			'scripts' => [
-				'tests/RevisionSlider.Revision.test.js',
-				'tests/RevisionSlider.Pointer.test.js',
-				'tests/RevisionSlider.PointerView.test.js',
-				'tests/RevisionSlider.Slider.test.js',
-				'tests/RevisionSlider.SliderView.test.js',
-				'tests/RevisionSlider.RevisionList.test.js',
+				'tests/qunit/RevisionSlider.Revision.test.js',
+				'tests/qunit/RevisionSlider.Pointer.test.js',
+				'tests/qunit/RevisionSlider.PointerView.test.js',
+				'tests/qunit/RevisionSlider.Slider.test.js',
+				'tests/qunit/RevisionSlider.SliderView.test.js',
+				'tests/qunit/RevisionSlider.RevisionList.test.js',
 			],
 			'dependencies' => [
 				'ext.RevisionSlider.Revision',
