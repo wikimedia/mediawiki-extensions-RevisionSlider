@@ -6,6 +6,7 @@
 		]
 	},
 	"revisionslider-label-date": "<strong>Datum:</strong> $1",
+	"revisionslider-label-page-size": "<strong>Sidstorlek:</strong> $1 {{PLURAL:$2|byte|bytes}}",
 	"revisionslider-label-change-size": "Ändra storlek: $1",
 	"revisionslider-label-comment": "Kommentar:",
 	"revisionslider-label-username": "<strong>Användarnamn:</strong> $1",

@@ -4,8 +4,11 @@
 			"Purodha"
 		]
 	},
-	"revisionslider-label-change-size": "<strong>Ömvang verändert öm:</strong> $1 {{PLURAL:$1|eij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>|$1 <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Bytes</i>|keij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>}}",
+	"revisionslider-label-date": "<strong>Dattom:</strong> $1",
+	"revisionslider-label-page-size": "<strong>Ömfang vun dä Sigg:</strong> $1 {{PLURAL:$2|eij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>|$2 <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Bytes</i>|keij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>}}",
+	"revisionslider-label-change-size": "<strong>Ömvang verändert öm:</strong> $1 {{PLURAL:$2|eij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>|$2 <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Bytes</i>|keij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>}}",
 	"revisionslider-label-comment": "Kommäntah:",
+	"revisionslider-label-username": "<strong>Metmaacher_Nahme:</strong> $1",
 	"revisionslider-arrow-tooltip-newer": "Neujere Väsjohne aanzeije",
 	"revisionslider-arrow-tooltip-older": "Ällder Väsjohne aanzeije",
 	"revisionslider-previous-dialog": "Vörijje",

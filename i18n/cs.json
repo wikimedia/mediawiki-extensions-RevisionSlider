@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dvorapa"
+		]
+	},
+	"revisionslider-label-date": "<strong>Datum:</strong> $1",
+	"revisionslider-label-comment": "Komentář:",
+	"revisionslider-previous-dialog": "Předchozí",
+	"revisionslider-next-dialog": "Další",
+	"revisionslider-close-dialog": "Zavřít"
+}
