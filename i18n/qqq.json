@@ -14,6 +14,7 @@
 	"revisionslider-label-change-size": "Label describing the size of the change compared to the revision before.\nParameters:\n* $1 - Formatted change size colored with markup.\n* $2 - Change size as raw number.",
 	"revisionslider-label-comment": "Label showing the edit summary of a revision.\n{{Identical|Comment}}",
 	"revisionslider-label-username": "Label for the revision's author's username.\n{{doc-important|<nowiki>{{</nowiki>[[Gender|GENDER]]<nowiki>}}</nowiki> is '''NOT''' supported.}}\n\nParameters:\n* $1 - Username.\n\n{{Identical|Username}}",
+	"revisionslider-minoredit": "Text labeling a minor edit.",
 	"revisionslider-loading-placeholder": "Message shown while the RevisionSlider is still loading on a diff page. Once loaded the message is removed.",
 	"revisionslider-loading-failed": "Message shown if the RevisionSlider fails to initially load.",
 	"revisionslider-loading-out-of-range": "Message shown if the RevisionSlider fails to initially load due to revisions being requested that are not in the most recent 500 revisions.",
