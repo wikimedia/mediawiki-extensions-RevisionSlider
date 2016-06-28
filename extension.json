@@ -113,9 +113,6 @@
 			"dependencies": [
 				"ext.RevisionSlider.Revision",
 				"ext.RevisionSlider.RevisionListView"
-			],
-			"messages": [
-				"minoredit"
 			]
 		},
 		"ext.RevisionSlider.RevisionListView": {
@@ -127,7 +124,8 @@
 				"revisionslider-label-page-size",
 				"revisionslider-label-change-size",
 				"revisionslider-label-username",
-				"revisionslider-label-comment"
+				"revisionslider-label-comment",
+				"revisionslider-minoredit"
 			],
 			"dependencies": [
 				"jquery.tipsy"

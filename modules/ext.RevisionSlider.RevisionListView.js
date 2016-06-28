@@ -148,7 +148,7 @@
 						mw.message( 'revisionslider-label-page-size', mw.language.convertNumber( rev.getSize() ), rev.getSize() ).parseDom()
 					),
 					this.makeChangeSizeLine( rev ),
-					rev.isMinor() ? $( '<p>' ).text( mw.message( 'minoredit' ).text() ) : '' );
+					rev.isMinor() ? $( '<p>' ).text( mw.message( 'revisionslider-minoredit' ).text() ) : '' );
 
 			return $tooltip.html();
 		},
