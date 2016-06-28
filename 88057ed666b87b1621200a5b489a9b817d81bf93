@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_dc66b54d",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-28T13:09:19Z",
+      "side": 1,
+      "message": "Change the second occurrence of \"article\" too, please!",
+      "revId": "88057ed666b87b1621200a5b489a9b817d81bf93",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
