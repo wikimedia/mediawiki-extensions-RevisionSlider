@@ -86,6 +86,9 @@ class RevisionSliderHooks {
 				'tests/qunit/RevisionSlider.Slider.test.js',
 				'tests/qunit/RevisionSlider.SliderView.test.js',
 				'tests/qunit/RevisionSlider.RevisionList.test.js',
+				'tests/qunit/RevisionSlider.RevisionListView.test.js',
+				'tests/qunit/RevisionSlider.DiffPage.test.js',
+				'tests/qunit/RevisionSlider.HelpDialog.test.js',
 			],
 			'dependencies' => [
 				'ext.RevisionSlider.Revision',
@@ -94,9 +97,13 @@ class RevisionSliderHooks {
 				'ext.RevisionSlider.Slider',
 				'ext.RevisionSlider.SliderView',
 				'ext.RevisionSlider.RevisionList',
+				'ext.RevisionSlider.RevisionListView',
+				'ext.RevisionSlider.DiffPage',
+				'ext.RevisionSlider.HelpDialog',
 				'jquery.ui.draggable',
 				'jquery.ui.tooltip',
 				'jquery.tipsy',
+				'oojs-ui'
 			],
 			'localBasePath' => __DIR__,
 		];

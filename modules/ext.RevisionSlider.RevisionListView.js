@@ -141,18 +141,12 @@
 					$( '<p>' ).append(
 						mw.message( 'revisionslider-label-date', rev.getFormattedDate() ).parseDom()
 					),
-					rev.getUser() ?
-						$( '<bdi>' ).append( $( '<p>' ).append(
-							mw.message( 'revisionslider-label-username', mw.html.escape( rev.getUser() ), this.getUserPage( rev.getUser() ) ).parseDom()
-						) )
-						: '',
+					this.makeUserLine( rev.getUser() ),
 					this.makeCommentLine( rev ),
-					$( '<p>' ).append(
-						mw.message( 'revisionslider-label-page-size', mw.language.convertNumber( rev.getSize() ), rev.getSize() ).parseDom()
-					),
-					this.makeChangeSizeLine( rev ),
-					rev.isMinor() ? $( '<p>' ).text( mw.message( 'revisionslider-minoredit' ).text() ) : '' );
-
+					this.makePageSizeLine( rev.getSize() ),
+					this.makeChangeSizeLine( rev.getRelativeSize() ),
+					rev.isMinor() ? $( '<p>' ).text( mw.message( 'revisionslider-minoredit' ).text() ) : ''
+				);
 			return $tooltip.html();
 		},
 
@@ -164,6 +158,22 @@
 		 */
 		getUserPage: function ( user ) {
 			return ( mw.util.isIPAddress( user, false ) ? 'Special:Contributions/' : 'User:' ) + mw.html.escape( user );
+		},
+
+		/**
+		 * Generates the HTML for the user label
+		 *
+		 * @param {string} userString
+		 * @return {string|jQuery}
+		 */
+		makeUserLine: function ( userString ) {
+			if ( !userString ) {
+				return '';
+			}
+
+			return $( '<bdi>' ).append( $( '<p>' ).append(
+				mw.message( 'revisionslider-label-username', mw.html.escape( userString ), this.getUserPage( userString ) ).parseDom()
+			) );
 		},
 
 		/**
@@ -187,24 +197,42 @@
 			);
 		},
 
-		makeChangeSizeLine: function ( rev ) {
+		/**
+		 * Generates the HTML for the page size label
+		 *
+		 * @param {int} size
+		 * @return {jQuery}
+		 */
+		makePageSizeLine: function ( size ) {
+			return $( '<p>' ).append(
+				mw.message( 'revisionslider-label-page-size', mw.language.convertNumber( size ), size ).parseDom()
+			);
+		},
+
+		/**
+		 * Generates the HTML for the change size label
+		 *
+		 * @param {int} relativeSize
+		 * @return {jQuery}
+		 */
+		makeChangeSizeLine: function ( relativeSize ) {
 			var changeSizeClass = 'mw-no-change',
 				leadingSign = '',
 				$changeNumber;
 
-			if ( rev.getRelativeSize() > 0 ) {
+			if ( relativeSize > 0 ) {
 				changeSizeClass = 'mw-positive-change';
 				leadingSign = '+';
-			} else if ( rev.getRelativeSize() < 0 ) {
+			} else if ( relativeSize < 0 ) {
 				changeSizeClass = 'mw-negative-change';
 			}
 
 			$changeNumber = $( '<span>' )
 				.addClass( changeSizeClass )
-				.text( leadingSign + mw.language.convertNumber( rev.getRelativeSize() ) );
+				.text( leadingSign + mw.language.convertNumber( relativeSize ) );
 
 			return $( '<p>' ).append(
-				mw.message( 'revisionslider-label-change-size', $changeNumber, rev.getRelativeSize() ).parseDom()
+				mw.message( 'revisionslider-label-change-size', $changeNumber, relativeSize ).parseDom()
 			);
 		}
 	} );
