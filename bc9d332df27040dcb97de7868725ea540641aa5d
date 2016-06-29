@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_18e5e206",
+        "filename": "tests/browser/features/help.feature",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2016-06-29T13:33:07Z",
+      "side": 1,
+      "message": "I would probably also move this step to the very beginning of the scenario.",
+      "revId": "bc9d332df27040dcb97de7868725ea540641aa5d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_d8deba43",
+        "filename": "tests/browser/features/help.feature",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2016-06-29T13:33:07Z",
+      "side": 1,
+      "message": "I would move this step down to the scenario.",
+      "revId": "bc9d332df27040dcb97de7868725ea540641aa5d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
