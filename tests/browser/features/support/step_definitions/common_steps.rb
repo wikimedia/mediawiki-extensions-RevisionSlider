@@ -11,6 +11,12 @@ Given(/^The page "(.+)" has the following edits:$/) do |page, table|
   table.rows.each { |(text)| api.edit(title: page, text: text) }
 end
 
+Given(/^I refresh the page$/) do
+  on(ArticlePage) do |page|
+    page.refresh
+  end
+end
+
 Given(/^The RevisionSlider has loaded$/) do
   on(DiffPage).wait_for_slider_to_load
 end
