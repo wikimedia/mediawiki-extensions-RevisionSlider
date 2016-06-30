@@ -23,8 +23,6 @@
 				slider = new mw.libs.revisionSlider.Slider( revisionList );
 				slider.getView().render( $container );
 
-				$( '#mw-revision-slider-placeholder' ).remove();
-
 				if ( !mw.user.options.get( 'userjs-revslider-hidehelp' ) ) {
 					mw.libs.revisionSlider.HelpDialog.show();
 					( new mw.Api() ).saveOption( 'userjs-revslider-hidehelp', true );
@@ -45,6 +43,8 @@
 							}
 						} )
 				);
+
+				$( '#mw-revision-slider-placeholder' ).remove();
 			} catch ( err ) {
 				if ( err === 'RS-rev-out-of-range' ) {
 					$( '#mw-revision-slider-placeholder' )
