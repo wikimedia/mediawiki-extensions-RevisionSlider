@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_df07b983",
+        "filename": "tests/browser/README.mediawiki",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-06-30T13:27:09Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "0efd9372_04ed748a",
+      "revId": "d8168e28ae5e8ff4850b8b88648301fdbc8fa562",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_bf459549",
         "filename": "tests/browser/README.mediawiki",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-30T13:20:35Z",
       "side": 1,
       "message": "this doesn\u0027t work for me. I don\u0027t know if I am missing some preliminary step or is just copied over from somewhere and does not apply for the Revision Slider?",
+      "revId": "d8168e28ae5e8ff4850b8b88648301fdbc8fa562",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_3ff9a57e",
+        "filename": "tests/browser/README.mediawiki",
+        "patchSetId": 10
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-06-30T13:27:09Z",
+      "side": 1,
+      "message": "this also didnt work for me, but I assumed it was a windows vs nix thing.\nI\u0027ll rewrite this bit.",
+      "parentUuid": "0efd9372_bf459549",
       "revId": "d8168e28ae5e8ff4850b8b88648301fdbc8fa562",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
