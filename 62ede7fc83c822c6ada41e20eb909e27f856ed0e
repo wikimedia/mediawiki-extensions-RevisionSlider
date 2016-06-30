@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_6498c07b",
+        "filename": "tests/qunit/RevisionSlider.DiffPage.test.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-06-30T10:26:52Z",
+      "side": 1,
+      "message": "Missing space",
+      "revId": "62ede7fc83c822c6ada41e20eb909e27f856ed0e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_647f2011",
+        "filename": "tests/qunit/RevisionSlider.DiffPage.test.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-06-30T10:26:52Z",
+      "side": 1,
+      "message": "This is a bit strange, but I guess it doesn\u0027t hurt.",
+      "revId": "62ede7fc83c822c6ada41e20eb909e27f856ed0e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_c4ca4c70",
+        "filename": "tests/qunit/RevisionSlider.RevisionListView.test.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-06-30T10:26:52Z",
+      "side": 1,
+      "message": "find returns an empty list which will not cause assert.ok to fail if the element is not there. I think .find(\u0027...\u0027).length works but there might be a better way.",
+      "revId": "62ede7fc83c822c6ada41e20eb909e27f856ed0e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
