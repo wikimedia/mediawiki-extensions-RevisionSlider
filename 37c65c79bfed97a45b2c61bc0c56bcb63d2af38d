@@ -16,6 +16,24 @@
       "revId": "37c65c79bfed97a45b2c61bc0c56bcb63d2af38d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_dff17967",
+        "filename": "tests/browser/features/help.feature",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-06-30T13:48:01Z",
+      "side": 1,
+      "message": "They were up there but Tobi suggested moving them down ;)",
+      "parentUuid": "0efd9372_5f42a9b1",
+      "revId": "37c65c79bfed97a45b2c61bc0c56bcb63d2af38d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
