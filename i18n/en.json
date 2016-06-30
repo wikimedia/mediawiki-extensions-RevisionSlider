@@ -12,7 +12,7 @@
     "revisionslider-label-page-size": "<strong>Page size:</strong> $1 {{PLURAL:$2|byte|bytes}}",
     "revisionslider-label-change-size": "<strong>Change size:</strong> $1 {{PLURAL:$2|byte|bytes}}",
     "revisionslider-label-comment": "Comment: ",
-    "revisionslider-label-username": "<strong>Username:</strong> $1",
+    "revisionslider-label-username": "<strong>Username:</strong> [[$2|$1]]",
     "revisionslider-minoredit": "This is a minor edit",
     "revisionslider-loading-placeholder": "The revision slider is loading.",
     "revisionslider-loading-failed": "The revision slider failed to load.",

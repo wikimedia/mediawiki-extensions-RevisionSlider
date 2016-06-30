@@ -143,7 +143,7 @@
 					),
 					rev.getUser() ?
 						$( '<bdi>' ).append( $( '<p>' ).append(
-							mw.message( 'revisionslider-label-username', this.getUserLink( mw.html.escape( rev.getUser() ) ) ).parseDom()
+							mw.message( 'revisionslider-label-username', mw.html.escape( rev.getUser() ), this.getUserPage( rev.getUser() ) ).parseDom()
 						) )
 						: '',
 					this.makeCommentLine( rev ),
@@ -156,13 +156,14 @@
 			return $tooltip.html();
 		},
 
-		getUserLink: function ( user ) {
-			return $( '<a>' )
-				.attr( 'href', mw.util.getUrl(
-					( mw.util.isIPAddress( user, false ) ? 'Special:Contributions/' : 'User:' ) + user
-				) )
-				.addClass( 'mw-userlink' )
-				.text( user );
+		/**
+		 * Generates a link to user page or to contributions page for IP addresses
+		 *
+		 * @param {string} user
+		 * @return {string}
+		 */
+		getUserPage: function ( user ) {
+			return ( mw.util.isIPAddress( user, false ) ? 'Special:Contributions/' : 'User:' ) + mw.html.escape( user );
 		},
 
 		/**
