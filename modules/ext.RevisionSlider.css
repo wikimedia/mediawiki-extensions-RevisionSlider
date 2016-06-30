@@ -1,216 +1,246 @@
+/* stylelint-disable selector-no-id */
+/* TODO: No need to use IDs, they should be replaced with classes */
 #mw-revision-slider-container {
-    /* This will flip with CSSJanus in case */
-    /* the interface is in RTL */
-    direction: ltr;
-    position: relative;
+	/* This will flip with CSSJanus in case */
+	/* the interface is in RTL */
+	direction: ltr;
+	position: relative;
 }
+
 .mw-revision {
-    position: relative;
-    margin-top: 70px;
-    background-color: #e3e3e3;
-    border-color: #e3e3e3;
+	position: relative;
+	margin-top: 70px;
+	background-color: #e3e3e3;
+	border-color: #e3e3e3;
 }
+
 .mw-revision:hover {
-    background-color: #cccccc;
-    border-color: #cccccc;
-    transition: all ease 0.2s;
-    -webkit-transition: all ease 0.2s;
-    -moz-transition: all ease 0.2s;
-    -o-transition: all ease 0.2s;
+	background-color: #ccc;
+	border-color: #ccc;
+	transition: all ease 0.2s;
+	-webkit-transition: all ease 0.2s;
+	-moz-transition: all ease 0.2s;
+	-o-transition: all ease 0.2s;
 }
+
 .mw-revision-up {
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
 }
+
 .mw-revision-down {
-    border-top-width: 2px;
-    border-top-style: solid;
+	border-top-width: 2px;
+	border-top-style: solid;
 }
 
 .mw-revision-old {
-    background-color: #fee6a8;
-    border-color: #e8bd4f;
+	background-color: #fee6a8;
+	border-color: #e8bd4f;
 }
+
 .mw-revision-old:hover {
-    background-color: #fdc44b;
-    border-color: #dda000;
+	background-color: #fdc44b;
+	border-color: #dda000;
 }
+
 .mw-revision-new {
-    background-color: #c3e2ff;
-    border-color: #1e6db8;
+	background-color: #c3e2ff;
+	border-color: #1e6db8;
 }
+
 .mw-revision-new:hover {
-    background-color: #45a6ff;
-    border-color: #065cad;
+	background-color: #45a6ff;
+	border-color: #065cad;
 }
+
 .mw-revision-intermediate {
-    background-color: #bcbcbc;
-    border-color: #989898;
+	background-color: #bcbcbc;
+	border-color: #989898;
 }
+
 .mw-revision-intermediate:hover {
-    background-color: #a6a6a6;
-    border-color: #828282;
+	background-color: #a6a6a6;
+	border-color: #828282;
 }
 
 .mw-revision-wrapper {
-    display: inline-block;
-    cursor: pointer;
-    z-index: 10;
-    height: 140px;
+	display: inline-block;
+	cursor: pointer;
+	z-index: 10;
+	height: 140px;
 }
-.mw-revision-wrapper:hover, .mw-revision-wrapper-hovered {
-    background-color: #f2f2f2;
-    transition: all ease 0.2s;
-    -webkit-transition: all ease 0.2s;
-    -moz-transition: all ease 0.2s;
-    -o-transition: all ease 0.2s;
+
+.mw-revision-wrapper:hover,
+.mw-revision-wrapper-hovered {
+	background-color: #f2f2f2;
+	transition: all ease 0.2s;
+	-webkit-transition: all ease 0.2s;
+	-moz-transition: all ease 0.2s;
+	-o-transition: all ease 0.2s;
 }
 
 .mw-revision-border-box {
-    height: 100%;
-    width: 100%;
-    border-left: solid 1px white;
+	height: 100%;
+	width: 100%;
+	border-left: solid 1px #fff;
 }
 
 .mw-revision-tooltip .tipsy-inner {
-    max-width: none;
+	max-width: none;
 }
 
 .mw-revision-tooltip .mw-positive-change {
-    color: #006400;
+	color: #006400;
 }
 
 .mw-revision-tooltip .mw-negative-change {
-    color: #8b0000;
+	color: #8b0000;
 }
 
 .mw-revision-tooltip .mw-no-change {
-    color: #aaaaaa;
+	color: #aaa;
 }
 
 .mw-revisions {
-    height: 140px;
-    white-space: nowrap;
+	height: 140px;
+	white-space: nowrap;
 }
 .mw-revisions-container {
-    width: 90%;
-    position: relative;
-    overflow: hidden;
+	width: 90%;
+	position: relative;
+	overflow: hidden;
 }
-.mw-revisions-container, .mw-arrow {
-    float: left;
-}
+
+.mw-revisions-container,
 .mw-arrow {
-    width: 20px;
-    height: 140px;
-    background-position: center center;
-    background-repeat: no-repeat;
+	float: left;
 }
+
+.mw-arrow {
+	width: 20px;
+	height: 140px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
 .mw-arrow-backwards {
-    margin-right: 30px;
+	margin-right: 30px;
 }
+
 .mw-arrow-forwards {
-    margin-left: 30px;
+	margin-left: 30px;
 }
-.mw-arrow-enabled, .mw-arrow-disabled {
-    border: #ddd solid 2px;
+
+.mw-arrow-enabled,
+.mw-arrow-disabled {
+	border: #ddd solid 2px;
 }
+
 .mw-arrow-hovered {
-    border: #ddd solid 2px;
-    background-color: #e5e5e5;
-    cursor: pointer;
+	border: #ddd solid 2px;
+	background-color: #e5e5e5;
+	cursor: pointer;
 }
+
 .mw-arrow-active {
-    border: #ccc solid 2px;
+	border: #ccc solid 2px;
 }
 
 .mw-revision-slider {
-    position: relative;
-    margin: auto;
+	position: relative;
+	margin: auto;
 }
 
 .mw-pointer-container {
-    position: absolute;
-    clear: both;
-    height: 1px;
-    top: 57px;
-    margin: auto;
-    z-index: 10;
+	position: absolute;
+	clear: both;
+	height: 1px;
+	top: 57px;
+	margin: auto;
+	z-index: 10;
 }
 .mw-lower-pointer {
-    top: 15px;
+	top: 15px;
 }
+
 .mw-pointer {
-    position: absolute !important;
-    z-index: 11;
-    width: 18px;
-    height: 13px;
-    background-repeat: no-repeat;
+	position: absolute !important; /* stylelint-disable-line declaration-no-important */
+	z-index: 11;
+	width: 18px;
+	height: 13px;
+	background-repeat: no-repeat;
 }
+
 .mw-pointer-cursor {
-    cursor:ew-resize;
+	cursor: ew-resize;
 }
 
 .mw-revisions-older {
-    float:left;
+	float: left;
 }
+
 .mw-revisions-newer {
-    float:right;
+	float: right;
 }
 
 #mw-revision-slider-darkness {
-    background-color: white;
-    filter:alpha(opacity=50); /* IE 5-7 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 8 */
-    -khtml-opacity: 0.5; /* Safari 1.x */
-    -moz-opacity:0.50; /* Netscape */
-    opacity: 0.5; /* Good browsers */
-    z-index: 200000;
-    height: 100%;
-    width: 100%;
-    background-repeat:no-repeat;
-    background-position:center;
-    position:absolute;
-    top: 0;
-    left: 0;
+	background-color: #fff;
+	filter: alpha( opacity=50 ); /* IE 5-7 */
+	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)'; /* IE 8 */
+	-khtml-opacity: 0.5; /* Safari 1.x */
+	-moz-opacity: 0.5; /* Netscape */
+	opacity: 0.5; /* Good browsers */
+	z-index: 200000;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .mw-help-dialog-image-landscape {
-    height: 160px;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+	height: 160px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
 }
+
 .mw-help-dialog-image-portrait {
-    height: 180px;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+	height: 180px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
 }
+
 .mw-image-column {
-    width: 50%;
-    float: left;
+	width: 50%;
+	float: left;
 }
+
 .mw-text-column {
-    width: 50%;
-    float: right;
+	width: 50%;
+	float: right;
 }
+
 .mw-help-dialog-text {
-    font-size: 15px;
-    font-size: 1rem;
+	font-size: 15px;
+	font-size: 1rem;
 }
+
 .mw-show-help {
-    position: absolute;
-    right: -18px;
-    bottom: 7px;
-    color: #347bff;
-    border: 2px solid #347bff;
-    padding: 0;
-    background: #fff;
-    font-size: 15px;
-    line-height: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    height: 25px;
-    width: 25px;
+	position: absolute;
+	right: -18px;
+	bottom: 7px;
+	color: #347bff;
+	border: 2px solid #347bff;
+	padding: 0;
+	background: #fff;
+	font-size: 15px;
+	line-height: 15px;
+	font-weight: bold;
+	cursor: pointer;
+	height: 25px;
+	width: 25px;
 }
