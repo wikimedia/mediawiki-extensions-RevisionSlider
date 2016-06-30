@@ -37,6 +37,13 @@
 						} )
 						.text( mw.message( 'revisionslider-show-help' ).text() )
 						.addClass( 'mw-show-help' )
+						.tipsy( {
+							gravity: $( 'body' ).hasClass( 'ltr' ) ? 'se' : 'sw',
+							offset: 15,
+							title: function () {
+								return mw.msg( 'revisionslider-show-help-tooltip' );
+							}
+						} )
 				);
 			} catch ( err ) {
 				if ( err === 'RS-rev-out-of-range' ) {
