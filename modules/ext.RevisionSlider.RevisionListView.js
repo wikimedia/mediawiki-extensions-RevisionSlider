@@ -143,7 +143,7 @@
 					),
 					rev.getUser() ?
 						$( '<bdi>' ).append( $( '<p>' ).append(
-							mw.message( 'revisionslider-label-username', mw.html.escape( rev.getUser() ) ).parseDom()
+							mw.message( 'revisionslider-label-username', this.getUserLink( mw.html.escape( rev.getUser() ) ) ).parseDom()
 						) )
 						: '',
 					this.makeCommentLine( rev ),
@@ -154,6 +154,15 @@
 					rev.isMinor() ? $( '<p>' ).text( mw.message( 'revisionslider-minoredit' ).text() ) : '' );
 
 			return $tooltip.html();
+		},
+
+		getUserLink: function ( user ) {
+			return $( '<a>' )
+				.attr( 'href', mw.util.getUrl(
+					( mw.util.isIPAddress( user, false ) ? 'Special:Contributions/' : 'User:' ) + user
+				) )
+				.addClass( 'mw-userlink' )
+				.text( user );
 		},
 
 		/**
