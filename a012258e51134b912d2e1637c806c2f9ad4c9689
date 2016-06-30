@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_bf1475ee",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-30T12:58:02Z",
+      "side": 1,
+      "message": "this is fine for LTR languages but should be \u0027sw\u0027 while in RTL mode",
+      "revId": "a012258e51134b912d2e1637c806c2f9ad4c9689",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
