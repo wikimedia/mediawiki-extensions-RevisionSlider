@@ -86,6 +86,7 @@
 			if ( this.tooltipTimeout !== -1 ) {
 				window.clearTimeout( this.tooltipTimeout );
 				this.currentTooltip.tipsy( 'hide' );
+				this.currentTooltip.removeClass( 'mw-revision-wrapper-hovered' );
 			}
 		},
 
@@ -97,6 +98,7 @@
 		hideTooltip: function ( $rev ) {
 			this.tooltipTimeout = window.setTimeout( function () {
 				$rev.tipsy( 'hide' );
+				$rev.removeClass( 'mw-revision-wrapper-hovered' );
 			}, 500 );
 		},
 
@@ -108,6 +110,7 @@
 		showTooltip: function ( $rev ) {
 			this.hideCurrentTooltip();
 			$rev.tipsy( 'show' );
+			$rev.addClass( 'mw-revision-wrapper-hovered' );
 			this.currentTooltip = $rev;
 		},
 
