@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee011f3e_b1c7209a",
+        "filename": "tests/qunit/RevisionSlider.DiffPage.test.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-30T15:56:09Z",
+      "side": 1,
+      "message": "this seems to be actually finding some nasty feature of Slider",
+      "revId": "f7ae734b9945bd38f4076a82311a5b626948eeb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_f1bc081d",
+        "filename": "tests/qunit/RevisionSlider.RevisionListView.test.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-30T15:56:09Z",
+      "side": 1,
+      "message": "this, as several other lines in this class are English-specific and will fail on local wiki with language setting other than English.\nThose tests should either set language/locale explicitly to English, or make them use mw methods generating locale-specific dates, number, translated messages etc.",
+      "revId": "f7ae734b9945bd38f4076a82311a5b626948eeb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_d1b9042b",
+        "filename": "tests/qunit/RevisionSlider.RevisionListView.test.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-30T15:56:09Z",
+      "side": 1,
+      "message": "this check is English-specific",
+      "revId": "f7ae734b9945bd38f4076a82311a5b626948eeb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_3186906b",
+        "filename": "tests/qunit/RevisionSlider.RevisionListView.test.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-30T15:56:09Z",
+      "side": 1,
+      "message": "this check is English-specific",
+      "revId": "f7ae734b9945bd38f4076a82311a5b626948eeb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_118b8c73",
+        "filename": "tests/qunit/RevisionSlider.RevisionListView.test.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-30T15:56:09Z",
+      "side": 1,
+      "message": "this check is English-specific",
+      "revId": "f7ae734b9945bd38f4076a82311a5b626948eeb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_b1e0c026",
+        "filename": "tests/qunit/RevisionSlider.RevisionListView.test.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-30T15:56:09Z",
+      "side": 1,
+      "message": "this check is English-specific",
+      "revId": "f7ae734b9945bd38f4076a82311a5b626948eeb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_f1ea4804",
+        "filename": "tests/qunit/RevisionSlider.RevisionListView.test.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-06-30T15:56:09Z",
+      "side": 1,
+      "message": "this check is English-specific",
+      "revId": "f7ae734b9945bd38f4076a82311a5b626948eeb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
