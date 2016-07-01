@@ -106,6 +106,7 @@ class RevisionSliderHooks {
 				'oojs-ui'
 			],
 			'localBasePath' => __DIR__,
+			'remoteExtPath' => 'RevisionSlider',
 		];
 
 		return true;
