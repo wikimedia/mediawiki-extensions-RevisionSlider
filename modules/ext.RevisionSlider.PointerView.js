@@ -33,7 +33,7 @@
 		initialize: function () {
 			this.$html = $( '<div>' )
 				.attr( 'id', this.id )
-				.addClass( 'mw-pointer mw-pointer-cursor' );
+				.addClass( 'mw-revslider-pointer mw-revslider-pointer-cursor' );
 		},
 
 		/**
@@ -57,7 +57,7 @@
 		 * @return {boolean}
 		 */
 		isUpperPointer: function () {
-			return this.getElement().hasClass( 'mw-upper-pointer' );
+			return this.getElement().hasClass( 'mw-revslider-pointer-upper' );
 		},
 
 		/**

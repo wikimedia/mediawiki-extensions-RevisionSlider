@@ -19,7 +19,7 @@
 				revs.reverse();
 
 				revisionList = new mw.libs.revisionSlider.RevisionList( revs );
-				$container = $( '#mw-revision-slider-container' );
+				$container = $( '#mw-revslider-container' );
 				slider = new mw.libs.revisionSlider.Slider( revisionList );
 				slider.getView().render( $container );
 
@@ -34,7 +34,7 @@
 							mw.libs.revisionSlider.HelpDialog.show();
 						} )
 						.text( mw.message( 'revisionslider-show-help' ).text() )
-						.addClass( 'mw-show-help' )
+						.addClass( 'mw-revslider-show-help' )
 						.tipsy( {
 							gravity: $( 'body' ).hasClass( 'ltr' ) ? 'se' : 'sw',
 							offset: 15,
@@ -44,15 +44,15 @@
 						} )
 				);
 
-				$( '#mw-revision-slider-placeholder' ).remove();
+				$( '#mw-revslider-placeholder' ).remove();
 			} catch ( err ) {
 				if ( err === 'RS-rev-out-of-range' ) {
-					$( '#mw-revision-slider-placeholder' )
+					$( '#mw-revslider-placeholder' )
 						.text( mw.message( 'revisionslider-loading-out-of-range' ).text() );
 					console.log( err );
 					mw.track( 'counter.MediaWiki.RevisionSlider.error.outOfRange' );
 				} else {
-					$( '#mw-revision-slider-placeholder' )
+					$( '#mw-revslider-placeholder' )
 						.text( mw.message( 'revisionslider-loading-failed' ).text() );
 					console.log( err );
 					mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
@@ -61,7 +61,7 @@
 
 		},
 		error: function ( err ) {
-			$( '#mw-revision-slider-placeholder' )
+			$( '#mw-revslider-placeholder' )
 				.text( mw.message( 'revisionslider-loading-failed' ).text() );
 			console.log( err );
 			mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );

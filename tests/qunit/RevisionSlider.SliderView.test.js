@@ -30,9 +30,9 @@
 
 		view.render( $container );
 
-		assert.ok( $container.find( '.mw-revision-slider' ).length > 0 );
-		$revisionOld = $container.find( '.mw-revision-old' );
-		$revisionNew = $container.find( '.mw-revision-new' );
+		assert.ok( $container.find( '.mw-revslider-revision-slider' ).length > 0 );
+		$revisionOld = $container.find( '.mw-revslider-revision-old' );
+		$revisionNew = $container.find( '.mw-revslider-revision-new' );
 		assert.ok( $revisionOld.length > 0 );
 		assert.equal( $revisionOld.attr( 'data-revid' ), 1 );
 		assert.ok( $revisionNew.length > 0 );

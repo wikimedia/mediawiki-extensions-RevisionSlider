@@ -14,16 +14,16 @@
 			$resultHtml, $revisionWrapperDivs, $revisionDivs;
 
 		$resultHtml = revisionListView.render( 11 );
-		$revisionWrapperDivs = $resultHtml.find( '.mw-revision-wrapper' );
-		$revisionDivs = $resultHtml.find( '.mw-revision' );
+		$revisionWrapperDivs = $resultHtml.find( '.mw-revslider-revision-wrapper' );
+		$revisionDivs = $resultHtml.find( '.mw-revslider-revision' );
 
 		assert.equal( $revisionWrapperDivs.length, 3 );
 		assert.equal( $( $revisionDivs[ 0 ] ).attr( 'data-revid' ), 1 );
 		assert.equal( $( $revisionDivs[ 2 ] ).attr( 'data-revid' ), 37 );
 		assert.equal( $( $revisionDivs[ 1 ] ).css( 'width' ), '11px' );
 		assert.equal( $( $revisionDivs[ 1 ] ).css( 'height' ), '70px' ); // max relative size
-		assert.ok( $( $revisionDivs[ 1 ] ).hasClass( 'mw-revision-up' ) );
-		assert.ok( $( $revisionDivs[ 2 ] ).hasClass( 'mw-revision-down' ) );
+		assert.ok( $( $revisionDivs[ 1 ] ).hasClass( 'mw-revslider-revision-up' ) );
+		assert.ok( $( $revisionDivs[ 2 ] ).hasClass( 'mw-revslider-revision-down' ) );
 	} );
 
 	QUnit.test( 'tool tip is composed correctly', function ( assert ) {
@@ -112,8 +112,8 @@
 
 		$changeSizeLineHtml = revisionListView.makeChangeSizeLine( 9 );
 
-		assert.equal( $changeSizeLineHtml.find( '.mw-positive-change' ).length, 1 );
-		assert.equal( $changeSizeLineHtml.find( '.mw-positive-change' ).text(), '+9' );
+		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).length, 1 );
+		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).text(), '+9' );
 	} );
 
 	QUnit.test( 'negative change is composed correctly', function ( assert ) {
@@ -122,8 +122,8 @@
 
 		$changeSizeLineHtml = revisionListView.makeChangeSizeLine( -9 );
 
-		assert.equal( $changeSizeLineHtml.find( '.mw-negative-change' ).length, 1 );
-		assert.equal( $changeSizeLineHtml.find( '.mw-negative-change' ).text(), '-9' );
+		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-negative' ).length, 1 );
+		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-negative' ).text(), '-9' );
 	} );
 
 	QUnit.test( 'neutral change is composed correctly', function ( assert ) {
@@ -132,8 +132,8 @@
 
 		$changeSizeLineHtml = revisionListView.makeChangeSizeLine( 0 );
 
-		assert.equal( $changeSizeLineHtml.find( '.mw-no-change' ).length, 1 );
-		assert.equal( $changeSizeLineHtml.find( '.mw-no-change' ).text(), '0' );
+		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-none' ).length, 1 );
+		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-none' ).text(), '0' );
 	} );
 
 	QUnit.test( 'big change number is formatted correctly', function ( assert ) {
@@ -142,7 +142,7 @@
 
 		$changeSizeLineHtml = revisionListView.makeChangeSizeLine( 1000 );
 
-		assert.equal( $changeSizeLineHtml.find( '.mw-positive-change' ).text(), '+1,000' );
+		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).text(), '+1,000' );
 	} );
 
 	QUnit.test( 'page size is formatted correctly', function ( assert ) {

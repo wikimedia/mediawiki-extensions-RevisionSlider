@@ -135,7 +135,7 @@
 		"ext.RevisionSlider.arrows.left": {
 			"position": "top",
 			"class": "ResourceLoaderImageModule",
-			"selector": ".mw-arrow-left.mw-arrow-{name}",
+			"selector": ".mw-revslider-arrow-left.mw-revslider-arrow-{name}",
 			"images": {
 				"enabled": "resources/ext.RevisionSlider.arrows/arrow-left-enabled.svg",
 				"hovered": "resources/ext.RevisionSlider.arrows/arrow-left-hovered.svg",
@@ -145,7 +145,7 @@
 		"ext.RevisionSlider.arrows.right": {
 			"position": "top",
 			"class": "ResourceLoaderImageModule",
-			"selector": ".mw-arrow-right.mw-arrow-{name}",
+			"selector": ".mw-revslider-arrow-right.mw-revslider-arrow-{name}",
 			"images": {
 				"enabled": "resources/ext.RevisionSlider.arrows/arrow-right-enabled.svg",
 				"hovered": "resources/ext.RevisionSlider.arrows/arrow-right-hovered.svg",
@@ -155,7 +155,7 @@
 		"ext.RevisionSlider.pointers.lower": {
 			"position": "top",
 			"class": "ResourceLoaderImageModule",
-			"selector": ".mw-lower-pointer.mw-{name}-pointer",
+			"selector": ".mw-revslider-pointer-lower.mw-revslider-pointer-{name}",
 			"images": {
 				"oldid": "resources/ext.RevisionSlider.pointers/pointer-lower-old.svg",
 				"newid": "resources/ext.RevisionSlider.pointers/pointer-lower-new.svg"
@@ -164,7 +164,7 @@
 		"ext.RevisionSlider.pointers.upper": {
 			"position": "top",
 			"class": "ResourceLoaderImageModule",
-			"selector": ".mw-upper-pointer.mw-{name}-pointer",
+			"selector": ".mw-revslider-pointer-upper.mw-revslider-pointer-{name}",
 			"images": {
 				"oldid": "resources/ext.RevisionSlider.pointers/pointer-upper-old.svg",
 				"newid": "resources/ext.RevisionSlider.pointers/pointer-upper-new.svg"
@@ -192,7 +192,7 @@
 		"ext.RevisionSlider.dialogImages": {
 			"position": "top",
 			"class": "ResourceLoaderImageModule",
-			"selector": ".mw-help-dialog-slide-{name}",
+			"selector": ".mw-revslider-help-dialog-slide-{name}",
 			"images": {
 				"1": {
 					"file": {

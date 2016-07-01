@@ -58,10 +58,10 @@
 
 			slide.$element
 				.append(
-					$( '<div>' ).addClass( 'mw-help-dialog-image-landscape mw-help-dialog-slide-1' )
+					$( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape mw-revslider-help-dialog-slide-1' )
 				)
 				.append(
-					$( '<p>' ).addClass( 'mw-help-dialog-text' )
+					$( '<p>' ).addClass( 'mw-revslider-help-dialog-text' )
 						.html( mw.message( 'revisionslider-help-dialog-slide1' ).parse() )
 				);
 
@@ -75,9 +75,9 @@
 			var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
 			slide.$element
-				.append( $( '<div>' ).addClass( 'mw-help-dialog-image-landscape mw-help-dialog-slide-2' ) )
+				.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape mw-revslider-help-dialog-slide-2' ) )
 				.append(
-					$( '<p>' ).addClass( 'mw-help-dialog-text' )
+					$( '<p>' ).addClass( 'mw-revslider-help-dialog-text' )
 						.text( mw.msg( 'revisionslider-help-dialog-slide2' ) )
 				);
 
@@ -91,9 +91,9 @@
 			var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
 			slide.$element
-				.append( $( '<div>' ).addClass( 'mw-help-dialog-image-portrait mw-help-dialog-slide-3 mw-image-column' ) )
+				.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-portrait mw-revslider-help-dialog-slide-3 mw-revslider-column-image' ) )
 				.append(
-					$( '<div>' ).addClass( 'mw-text-column mw-help-dialog-text' )
+					$( '<div>' ).addClass( 'mw-revslider-column-text mw-revslider-help-dialog-text' )
 						.html( mw.message( 'revisionslider-help-dialog-slide3' ).parse() )
 				)
 				.append( $( '<div>' ).css( 'clear', 'both' ) );
@@ -108,9 +108,9 @@
 			var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
 			slide.$element
-				.append( $( '<div>' ).addClass( 'mw-help-dialog-image-landscape mw-help-dialog-slide-4' ) )
+				.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape mw-revslider-help-dialog-slide-4' ) )
 				.append(
-					$( '<p>' ).addClass( 'mw-help-dialog-text' )
+					$( '<p>' ).addClass( 'mw-revslider-help-dialog-text' )
 						.text( mw.msg( 'revisionslider-help-dialog-slide4' ) )
 				);
 

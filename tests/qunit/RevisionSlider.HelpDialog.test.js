@@ -8,7 +8,7 @@
 			windowManager = new OO.ui.WindowManager();
 
 		function getSlideTextHtml( slide ) {
-			return slide.$element.find( '.mw-help-dialog-text' ).html();
+			return slide.$element.find( '.mw-revslider-help-dialog-text' ).html();
 		}
 
 		$( 'body' ).append( windowManager.$element );

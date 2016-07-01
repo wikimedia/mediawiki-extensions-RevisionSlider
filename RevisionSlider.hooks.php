@@ -46,13 +46,13 @@ class RevisionSliderHooks {
 			Html::rawElement(
 				'div',
 				[
-					'id' => 'mw-revision-slider-container',
+					'id' => 'mw-revslider-container',
 					'style' => 'min-height: 150px;',
 				],
 				Html::element(
 					'p',
 					[
-						'id' => 'mw-revision-slider-placeholder',
+						'id' => 'mw-revslider-placeholder',
 						'style' => 'text-align: center',
 					],
 					( new Message( 'revisionslider-loading-placeholder' ) )->text()
