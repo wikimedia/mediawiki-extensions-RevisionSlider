@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"Macofe"
 		]
 	},
-	"revisionslider-label-comment": "تبصره: $1"
+	"revisionslider-label-comment": "تبصره:"
 }

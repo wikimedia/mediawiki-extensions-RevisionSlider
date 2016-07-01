@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"Macofe"
 		]
 	},
-	"revisionslider-label-comment": "Коментар: $1",
+	"revisionslider-label-comment": "Коментар:",
 	"revisionslider-previous-dialog": "Претходно",
 	"revisionslider-next-dialog": "Следеће",
 	"revisionslider-close-dialog": "Затвори"

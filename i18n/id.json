@@ -1,13 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Rachmat.Wahidi"
+			"Rachmat.Wahidi",
+			"Macofe"
 		]
 	},
-	"revisionslider-label-article-size": "Ukuran artikel: $1",
 	"revisionslider-label-change-size": "Ukuran berubah: $1",
-	"revisionslider-label-comment": "Komentar: $1",
-	"revisionslider-label-edited-by": "Disunting oleh: $1",
+	"revisionslider-label-comment": "Komentar:",
 	"revisionslider-arrow-tooltip-newer": "Lihat revisi terbaru",
 	"revisionslider-arrow-tooltip-older": "Lihat revisi lama"
 }

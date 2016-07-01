@@ -9,6 +9,7 @@
 	"revisionslider-label-change-size": "<strong>Gréisst vun der Ännerung:<strong> $1 {{PLURAL:$2|Byte|Byten}}",
 	"revisionslider-label-comment": "Bemierkung:",
 	"revisionslider-label-username": "<strong>Benotzernumm:</strong> $1",
+	"revisionslider-minoredit": "Dëst ass eng kleng Ännerung",
 	"revisionslider-arrow-tooltip-newer": "Méi nei Versioune weisen",
 	"revisionslider-arrow-tooltip-older": "Méi al Versioune weisen",
 	"revisionslider-previous-dialog": "Vireg",

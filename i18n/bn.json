@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Aftabuzzaman"
+			"Aftabuzzaman",
+			"Macofe"
 		]
 	},
 	"revisionslider-label-change-size": "পরিবর্তনের আকার: $1",
-	"revisionslider-label-comment": "মন্তব্য: $1",
+	"revisionslider-label-comment": "মন্তব্য:",
 	"revisionslider-previous-dialog": "পূর্ববর্তী",
 	"revisionslider-next-dialog": "পরবর্তী",
 	"revisionslider-close-dialog": "বন্ধ"

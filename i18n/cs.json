@@ -5,7 +5,11 @@
 		]
 	},
 	"revisionslider-label-date": "<strong>Datum:</strong> $1",
+	"revisionslider-label-page-size": "<strong>Velikost stránky:</strong> $1 {{PLURAL:$2|bajt|bajty|bajtů}}",
+	"revisionslider-label-change-size": "<strong>Velikost změny:</strong> $1 {{PLURAL:$2|bajt|bajty|bajtů}}",
 	"revisionslider-label-comment": "Komentář:",
+	"revisionslider-label-username": "<strong>Uživatelské jméno:</strong> [[$2|$1]]",
+	"revisionslider-minoredit": "Toto je malá editace",
 	"revisionslider-previous-dialog": "Předchozí",
 	"revisionslider-next-dialog": "Další",
 	"revisionslider-close-dialog": "Zavřít"

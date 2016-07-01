@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Hindustanilanguage",
-			"امین اکبر"
+			"امین اکبر",
+			"Macofe"
 		]
 	},
-	"revisionslider-label-comment": "تبصرہ:$1",
+	"revisionslider-label-comment": "تبصرہ:",
 	"revisionslider-previous-dialog": "پچھلا",
 	"revisionslider-next-dialog": "اگلا",
 	"revisionslider-close-dialog": "بند کرو"

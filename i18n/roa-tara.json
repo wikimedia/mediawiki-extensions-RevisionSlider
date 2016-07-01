@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Joetaras"
+			"Joetaras",
+			"Macofe"
 		]
 	},
-	"revisionslider-label-comment": "Commende: $1",
+	"revisionslider-label-comment": "Commende:",
 	"revisionslider-arrow-tooltip-older": "'Ndruche le revisiune cchiù vicchije"
 }

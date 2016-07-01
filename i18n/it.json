@@ -3,7 +3,8 @@
 		"authors": [
 			"Beta16",
 			"Matteocng",
-			"Macofe"
+			"Macofe",
+			"Ferdi2005"
 		]
 	},
 	"revisionslider-label-date": "<strong>Data:</strong> $1",
@@ -11,6 +12,7 @@
 	"revisionslider-label-change-size": "<strong>Dimensione della modifica:</strong> $1 {{PLURAL:$2|byte}}",
 	"revisionslider-label-comment": "Commento:",
 	"revisionslider-label-username": "<strong>Nome utente:</strong> $1",
+	"revisionslider-minoredit": "Questa è una modifica minore",
 	"revisionslider-arrow-tooltip-newer": "Vedi le versioni più recenti",
 	"revisionslider-arrow-tooltip-older": "Vedi le versioni meno recenti",
 	"revisionslider-previous-dialog": "Precedente",

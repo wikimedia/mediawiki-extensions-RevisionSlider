@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"The Discoverer"
+			"The Discoverer",
+			"Macofe"
 		]
 	},
-	"revisionslider-label-article-size": "Lekhacho akar: $1",
-	"revisionslider-label-comment": "Shero: $1"
+	"revisionslider-label-comment": "Shero:"
 }

@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Termininja"
+			"Termininja",
+			"Macofe"
 		]
 	},
-	"revisionslider-label-article-size": "Размер на статията: $1",
-	"revisionslider-label-comment": "Коментар: $1"
+	"revisionslider-label-comment": "Коментар:"
 }

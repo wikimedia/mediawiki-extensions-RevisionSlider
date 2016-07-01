@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Papuass"
+			"Papuass",
+			"Macofe"
 		]
 	},
-	"revisionslider-label-article-size": "Raksta izmērs: $1",
-	"revisionslider-label-comment": "Komentārs: $1",
+	"revisionslider-label-comment": "Komentārs:",
 	"revisionslider-close-dialog": "Aizvērt"
 }
