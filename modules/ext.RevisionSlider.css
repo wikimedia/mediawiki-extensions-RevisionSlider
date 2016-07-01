@@ -1,20 +1,20 @@
 /* stylelint-disable selector-no-id */
 /* TODO: No need to use IDs, they should be replaced with classes */
-#mw-revision-slider-container {
+#mw-revslider-container {
 	/* This will flip with CSSJanus in case */
 	/* the interface is in RTL */
 	direction: ltr;
 	position: relative;
 }
 
-.mw-revision {
+.mw-revslider-revision {
 	position: relative;
 	margin-top: 70px;
 	background-color: #e3e3e3;
 	border-color: #e3e3e3;
 }
 
-.mw-revision:hover {
+.mw-revslider-revision:hover {
 	background-color: #ccc;
 	border-color: #ccc;
 	transition: all ease 0.2s;
@@ -23,55 +23,55 @@
 	-o-transition: all ease 0.2s;
 }
 
-.mw-revision-up {
+.mw-revslider-revision-up {
 	border-bottom-width: 2px;
 	border-bottom-style: solid;
 }
 
-.mw-revision-down {
+.mw-revslider-revision-down {
 	border-top-width: 2px;
 	border-top-style: solid;
 }
 
-.mw-revision-old {
+.mw-revslider-revision-old {
 	background-color: #fee6a8;
 	border-color: #e8bd4f;
 }
 
-.mw-revision-old:hover {
+.mw-revslider-revision-old:hover {
 	background-color: #fdc44b;
 	border-color: #dda000;
 }
 
-.mw-revision-new {
+.mw-revslider-revision-new {
 	background-color: #c3e2ff;
 	border-color: #1e6db8;
 }
 
-.mw-revision-new:hover {
+.mw-revslider-revision-new:hover {
 	background-color: #45a6ff;
 	border-color: #065cad;
 }
 
-.mw-revision-intermediate {
+.mw-revslider-revision-intermediate {
 	background-color: #bcbcbc;
 	border-color: #989898;
 }
 
-.mw-revision-intermediate:hover {
+.mw-revslider-revision-intermediate:hover {
 	background-color: #a6a6a6;
 	border-color: #828282;
 }
 
-.mw-revision-wrapper {
+.mw-revslider-revision-wrapper {
 	display: inline-block;
 	cursor: pointer;
 	z-index: 10;
 	height: 140px;
 }
 
-.mw-revision-wrapper:hover,
-.mw-revision-wrapper-hovered {
+.mw-revslider-revision-wrapper:hover,
+.mw-revslider-revision-wrapper-hovered {
 	background-color: #f2f2f2;
 	transition: all ease 0.2s;
 	-webkit-transition: all ease 0.2s;
@@ -79,79 +79,80 @@
 	-o-transition: all ease 0.2s;
 }
 
-.mw-revision-border-box {
+.mw-revslider-revision-border-box {
 	height: 100%;
 	width: 100%;
 	border-left: solid 1px #fff;
 }
 
-.mw-revision-tooltip .tipsy-inner {
+.mw-revslider-revision-tooltip .tipsy-inner {
 	max-width: none;
 }
 
-.mw-revision-tooltip .mw-positive-change {
+.mw-revslider-revision-tooltip .mw-revslider-change-positive {
 	color: #006400;
 }
 
-.mw-revision-tooltip .mw-negative-change {
+.mw-revslider-revision-tooltip .mw-revslider-change-negative {
 	color: #8b0000;
 }
 
-.mw-revision-tooltip .mw-no-change {
+.mw-revslider-revision-tooltip .mw-revslider-change-none {
 	color: #aaa;
 }
 
-.mw-revisions {
+.mw-revslider-revisions {
 	height: 140px;
 	white-space: nowrap;
 }
-.mw-revisions-container {
+
+.mw-revslider-revisions-container {
 	width: 90%;
 	position: relative;
 	overflow: hidden;
 }
 
-.mw-revisions-container,
-.mw-arrow {
+.mw-revslider-revisions-container,
+.mw-revslider-arrow {
 	float: left;
 }
 
-.mw-arrow {
+.mw-revslider-arrow {
 	width: 20px;
 	height: 140px;
 	background-position: center center;
 	background-repeat: no-repeat;
 }
 
-.mw-arrow-backwards {
+.mw-revslider-arrow-backwards {
 	margin-right: 30px;
 }
 
-.mw-arrow-forwards {
+.mw-revslider-arrow-forwards {
 	margin-left: 30px;
 }
 
-.mw-arrow-enabled,
-.mw-arrow-disabled {
+.mw-revslider-arrow-enabled,
+.mw-revslider-arrow-disabled {
 	border: #ddd solid 2px;
 }
 
-.mw-arrow-hovered {
+.mw-revslider-arrow-hovered {
 	border: #ddd solid 2px;
 	background-color: #e5e5e5;
 	cursor: pointer;
 }
 
-.mw-arrow-active {
+.mw-revslider-arrow-active {
 	border: #ccc solid 2px;
 }
 
-.mw-revision-slider {
+.mw-revslider-revision-slider {
 	position: relative;
 	margin: auto;
 }
 
-.mw-pointer-container {
+.mw-revslider-pointer-container {
 	position: absolute;
 	clear: both;
 	height: 1px;
@@ -159,11 +160,12 @@
 	margin: auto;
 	z-index: 10;
 }
-.mw-lower-pointer {
+
+.mw-revslider-pointer-lower {
 	top: 15px;
 }
 
-.mw-pointer {
+.mw-revslider-pointer {
 	position: absolute !important; /* stylelint-disable-line declaration-no-important */
 	z-index: 11;
 	width: 18px;
@@ -171,19 +173,19 @@
 	background-repeat: no-repeat;
 }
 
-.mw-pointer-cursor {
+.mw-revslider-pointer-cursor {
 	cursor: ew-resize;
 }
 
-.mw-revisions-older {
+.mw-revslider-revisions-older {
 	float: left;
 }
 
-.mw-revisions-newer {
+.mw-revslider-revisions-newer {
 	float: right;
 }
 
-#mw-revision-slider-darkness {
+#mw-revslider-darkness {
 	background-color: #fff;
 	filter: alpha( opacity=50 ); /* IE 5-7 */
 	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)'; /* IE 8 */
@@ -200,36 +202,36 @@
 	left: 0;
 }
 
-.mw-help-dialog-image-landscape {
+.mw-revslider-help-dialog-image-landscape {
 	height: 160px;
 	width: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-.mw-help-dialog-image-portrait {
+.mw-revslider-help-dialog-image-portrait {
 	height: 180px;
 	width: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
 }
 
-.mw-image-column {
+.mw-revslider-column-image {
 	width: 50%;
 	float: left;
 }
 
-.mw-text-column {
+.mw-revslider-column-text {
 	width: 50%;
 	float: right;
 }
 
-.mw-help-dialog-text {
+.mw-revslider-help-dialog-text {
 	font-size: 15px;
 	font-size: 1rem;
 }
 
-.mw-show-help {
+.mw-revslider-show-help {
 	position: absolute;
 	right: -18px;
 	bottom: 7px;

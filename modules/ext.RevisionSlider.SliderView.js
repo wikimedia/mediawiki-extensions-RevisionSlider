@@ -58,7 +58,7 @@
 				pointerContainerStyle,
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
 				$slider = $( '<div>' )
-					.addClass( 'mw-revision-slider' )
+					.addClass( 'mw-revslider-revision-slider' )
 					.css( { direction: $container.css( 'direction' ) } ),
 				self = this;
 
@@ -83,24 +83,24 @@
 				} )
 				.append(
 					$( '<a> ' )
-						.addClass( 'mw-arrow mw-arrow-backwards' )
+						.addClass( 'mw-revslider-arrow mw-revslider-arrow-backwards' )
 						.attr( 'data-dir', '-1' )
 						.tipsy( {
 							title: function () {
-								if ( $( this ).hasClass( 'mw-arrow-disabled' ) ) {
+								if ( $( this ).hasClass( 'mw-revslider-arrow-disabled' ) ) {
 									return '';
 								}
 								return mw.message( 'revisionslider-arrow-tooltip-older' ).text();
 							}
 						} ),
 					$( '<div>' )
-						.addClass( 'mw-revisions-container' )
+						.addClass( 'mw-revslider-revisions-container' )
 						.css( {
 							width: containerWidth + 'px'
 						} )
 						.append( $revisions ),
 					$( '<a> ' )
-						.addClass( 'mw-arrow mw-arrow-forwards' )
+						.addClass( 'mw-revslider-arrow mw-revslider-arrow-forwards' )
 						.attr( 'data-dir', '1' )
 						.tipsy( {
 							gravity: function () {
@@ -111,7 +111,7 @@
 								}
 							},
 							title: function () {
-								if ( $( this ).hasClass( 'mw-arrow-disabled' ) ) {
+								if ( $( this ).hasClass( 'mw-revslider-arrow-disabled' ) ) {
 									return '';
 								}
 								return mw.message( 'revisionslider-arrow-tooltip-newer' ).text();
@@ -119,22 +119,22 @@
 						} ),
 					$( '<div>' ).css( { clear: 'both' } ),
 					$( '<div>' )
-						.addClass( 'mw-pointer-container' )
+						.addClass( 'mw-revslider-pointer-container' )
 						.css( pointerContainerStyle )
 						.append( this.pointerOlder.getView().render(), this.pointerNewer.getView().render() )
 				);
 
 			if ( $slider.css( 'direction' ) === 'ltr' ) {
-				$slider.find( '.mw-arrow-backwards' ).addClass( 'mw-arrow-left' );
-				$slider.find( '.mw-arrow-forwards' ).addClass( 'mw-arrow-right' );
+				$slider.find( '.mw-revslider-arrow-backwards' ).addClass( 'mw-revslider-arrow-left' );
+				$slider.find( '.mw-revslider-arrow-forwards' ).addClass( 'mw-revslider-arrow-right' );
 			} else {
-				$slider.find( '.mw-arrow-backwards' ).addClass( 'mw-arrow-right' );
-				$slider.find( '.mw-arrow-forwards' ).addClass( 'mw-arrow-left' );
+				$slider.find( '.mw-revslider-arrow-backwards' ).addClass( 'mw-revslider-arrow-right' );
+				$slider.find( '.mw-revslider-arrow-forwards' ).addClass( 'mw-revslider-arrow-left' );
 			}
 
-			$slider.find( '.mw-arrow' ).click( function () {
+			$slider.find( '.mw-revslider-arrow' ).click( function () {
 					var $arrow = $( this );
-					if ( $arrow.hasClass( 'mw-arrow-disabled' ) ) {
+					if ( $arrow.hasClass( 'mw-revslider-arrow-disabled' ) ) {
 						return;
 					}
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.arrowClick' );
@@ -142,39 +142,39 @@
 				} )
 				.mouseenter( function () {
 					var $arrow = $( this );
-					if ( $arrow.hasClass( 'mw-arrow-disabled' ) ) {
+					if ( $arrow.hasClass( 'mw-revslider-arrow-disabled' ) ) {
 						return;
 					}
-					$arrow.removeClass( 'mw-arrow-enabled' ).addClass( 'mw-arrow-hovered' );
+					$arrow.removeClass( 'mw-revslider-arrow-enabled' ).addClass( 'mw-revslider-arrow-hovered' );
 				} )
 				.mouseleave( function () {
 					var $arrow = $( this );
-					if ( $arrow.hasClass( 'mw-arrow-disabled' ) ) {
+					if ( $arrow.hasClass( 'mw-revslider-arrow-disabled' ) ) {
 						return;
 					}
-					$arrow.removeClass( 'mw-arrow-hovered' ).addClass( 'mw-arrow-enabled' );
+					$arrow.removeClass( 'mw-revslider-arrow-hovered' ).addClass( 'mw-revslider-arrow-enabled' );
 				} )
 				.mousedown( function ( event ) {
 					var $arrow = $( this );
-					if ( $arrow.hasClass( 'mw-arrow-disabled' ) || event.which !== 1 ) {
+					if ( $arrow.hasClass( 'mw-revslider-arrow-disabled' ) || event.which !== 1 ) {
 						return;
 					}
-					$arrow.addClass( 'mw-arrow-active' );
+					$arrow.addClass( 'mw-revslider-arrow-active' );
 				} )
 				.mouseup( function ( event ) {
 					var $arrow = $( this );
-					if ( $arrow.hasClass( 'mw-arrow-disabled' ) || event.which !== 1 ) {
+					if ( $arrow.hasClass( 'mw-revslider-arrow-disabled' ) || event.which !== 1 ) {
 						return;
 					}
-					$arrow.removeClass( 'mw-arrow-active' );
+					$arrow.removeClass( 'mw-revslider-arrow-active' );
 				} );
 
-			$slider.find( '.mw-pointer' ).draggable( {
+			$slider.find( '.mw-revslider-pointer' ).draggable( {
 				axis: 'x',
 				grid: [ this.revisionWidth, null ],
-				containment: '.mw-pointer-container',
+				containment: '.mw-revslider-pointer-container',
 				start: function () {
-					$( '.mw-revision-wrapper' ).addClass( 'mw-pointer-cursor' );
+					$( '.mw-revslider-revision-wrapper' ).addClass( 'mw-revslider-pointer-cursor' );
 				},
 				stop: function () {
 					var $p = $( this ),
@@ -194,7 +194,7 @@
 					self.diffPage.refresh( revId1, revId2 );
 					self.diffPage.pushState( revId1, revId2, self );
 
-					$( '.mw-revision-wrapper' ).removeClass( 'mw-pointer-cursor' );
+					$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-pointer-cursor' );
 				},
 				drag: function ( event, ui ) {
 					var newestVisibleRevisionLeftPos = containerWidth - self.revisionWidth;
@@ -213,9 +213,9 @@
 				}
 			} );
 
-			$slider.find( '.mw-revision-wrapper' ).click( function ( e ) {
+			$slider.find( '.mw-revslider-revision-wrapper' ).click( function ( e ) {
 				var $revWrap = $( this ),
-					$clickedRev = $revWrap.find( '.mw-revision' ),
+					$clickedRev = $revWrap.find( '.mw-revslider-revision' ),
 					hasClickedTop = e.pageY - $revWrap.offset().top < $revWrap.height() / 2,
 					pOld = self.getOldRevPointer(),
 					pNew = self.getNewRevPointer();
@@ -239,7 +239,7 @@
 				self.alignPointers();
 			} );
 
-			this.slider.setRevisionsPerWindow( $slider.find( '.mw-revisions-container' ).width() / this.revisionWidth );
+			this.slider.setRevisionsPerWindow( $slider.find( '.mw-revslider-revisions-container' ).width() / this.revisionWidth );
 
 			this.initializePointers( this.getOldRevElement( $revisions ), this.getNewRevElement( $revisions ) );
 			this.resetRevisionStylesBasedOnPointerPosition( $revisions );
@@ -289,7 +289,7 @@
 		 * @return {jQuery}
 		 */
 		getRevElementAtPosition: function ( $revs, pos ) {
-			return $revs.find( 'div.mw-revision[data-pos="' + pos + '"]' );
+			return $revs.find( 'div.mw-revslider-revision[data-pos="' + pos + '"]' );
 		},
 
 		/**
@@ -299,7 +299,7 @@
 		 * @return {jQuery}
 		 */
 		getOldRevElement: function ( $revs ) {
-			return $revs.find( 'div.mw-revision[data-revid="' + mw.config.values.extRevisionSliderOldRev + '"]' );
+			return $revs.find( 'div.mw-revslider-revision[data-revid="' + mw.config.values.extRevisionSliderOldRev + '"]' );
 		},
 
 		/**
@@ -309,7 +309,7 @@
 		 * @return {jQuery}
 		 */
 		getNewRevElement: function ( $revs ) {
-			return $revs.find( 'div.mw-revision[data-revid="' + mw.config.values.extRevisionSliderNewRev + '"]' );
+			return $revs.find( 'div.mw-revslider-revision[data-revid="' + mw.config.values.extRevisionSliderNewRev + '"]' );
 		},
 
 		/**
@@ -337,11 +337,11 @@
 		 */
 		resetPointerColorsBasedOnValues: function ( p1, p2 ) {
 			if ( p1 > p2 ) {
-				this.pointerOlder.getView().getElement().removeClass( 'mw-oldid-pointer' ).addClass( 'mw-newid-pointer' );
-				this.pointerNewer.getView().getElement().removeClass( 'mw-newid-pointer' ).addClass( 'mw-oldid-pointer' );
+				this.pointerOlder.getView().getElement().removeClass( 'mw-revslider-pointer-oldid' ).addClass( 'mw-revslider-pointer-newid' );
+				this.pointerNewer.getView().getElement().removeClass( 'mw-revslider-pointer-newid' ).addClass( 'mw-revslider-pointer-oldid' );
 			} else {
-				this.pointerOlder.getView().getElement().removeClass( 'mw-newid-pointer' ).addClass( 'mw-oldid-pointer' );
-				this.pointerNewer.getView().getElement().removeClass( 'mw-oldid-pointer' ).addClass( 'mw-newid-pointer' );
+				this.pointerOlder.getView().getElement().removeClass( 'mw-revslider-pointer-newid' ).addClass( 'mw-revslider-pointer-oldid' );
+				this.pointerNewer.getView().getElement().removeClass( 'mw-revslider-pointer-oldid' ).addClass( 'mw-revslider-pointer-newid' );
 			}
 		},
 
@@ -349,10 +349,10 @@
 		 * Resets the pointer styles (upper/lower, blue/yellow) based on their position.
 		 */
 		resetPointerStylesBasedOnPosition: function () {
-			this.getNewRevPointer().getView().getElement().removeClass( 'mw-oldid-pointer' ).addClass( 'mw-newid-pointer' )
-				.removeClass( 'mw-lower-pointer' ).addClass( 'mw-upper-pointer' );
-			this.getOldRevPointer().getView().getElement().removeClass( 'mw-newid-pointer' ).addClass( 'mw-oldid-pointer' )
-				.removeClass( 'mw-upper-pointer' ).addClass( 'mw-lower-pointer' );
+			this.getNewRevPointer().getView().getElement().removeClass( 'mw-revslider-pointer-oldid' ).addClass( 'mw-revslider-pointer-newid' )
+				.removeClass( 'mw-revslider-pointer-lower' ).addClass( 'mw-revslider-pointer-upper' );
+			this.getOldRevPointer().getView().getElement().removeClass( 'mw-revslider-pointer-newid' ).addClass( 'mw-revslider-pointer-oldid' )
+				.removeClass( 'mw-revslider-pointer-upper' ).addClass( 'mw-revslider-pointer-lower' );
 		},
 
 		/**
@@ -365,13 +365,13 @@
 				newerRevPosition = this.getNewRevPointer().getPosition(),
 				positionIndex = olderRevPosition + 1;
 
-			$revisions.find( 'div.mw-revision' )
-				.removeClass( 'mw-revision-intermediate mw-revision-old mw-revision-new' );
+			$revisions.find( 'div.mw-revslider-revision' )
+				.removeClass( 'mw-revslider-revision-intermediate mw-revslider-revision-old mw-revslider-revision-new' );
 
-			this.getRevElementAtPosition( $revisions, olderRevPosition ).addClass( 'mw-revision-old' );
-			this.getRevElementAtPosition( $revisions, newerRevPosition ).addClass( 'mw-revision-new' );
+			this.getRevElementAtPosition( $revisions, olderRevPosition ).addClass( 'mw-revslider-revision-old' );
+			this.getRevElementAtPosition( $revisions, newerRevPosition ).addClass( 'mw-revslider-revision-new' );
 			while ( positionIndex < newerRevPosition ) {
-				this.getRevElementAtPosition( $revisions, positionIndex ).addClass( 'mw-revision-intermediate' );
+				this.getRevElementAtPosition( $revisions, positionIndex ).addClass( 'mw-revslider-revision-intermediate' );
 				positionIndex++;
 			}
 		},
@@ -394,7 +394,7 @@
 
 		slide: function ( direction, duration ) {
 			var animateObj,
-				$animatedElement = this.$element.find( '.mw-revisions-container' ),
+				$animatedElement = this.$element.find( '.mw-revslider-revisions-container' ),
 				self = this;
 
 			this.slider.slide( direction );
@@ -402,14 +402,14 @@
 			this.pointerNewer.getView().getElement().draggable( 'disable' );
 
 			if ( this.slider.isAtStart() ) {
-				$( '.mw-arrow-backwards' ).removeClass( 'mw-arrow-enabled mw-arrow-hovered' ).addClass( 'mw-arrow-disabled' );
+				$( '.mw-revslider-arrow-backwards' ).removeClass( 'mw-revslider-arrow-enabled mw-revslider-arrow-hovered' ).addClass( 'mw-revslider-arrow-disabled' );
 			} else {
-				$( '.mw-arrow-backwards' ).removeClass( 'mw-arrow-disabled' ).addClass( 'mw-arrow-enabled' );
+				$( '.mw-revslider-arrow-backwards' ).removeClass( 'mw-revslider-arrow-disabled' ).addClass( 'mw-revslider-arrow-enabled' );
 			}
 			if ( this.slider.isAtEnd() ) {
-				$( '.mw-arrow-forwards' ).removeClass( 'mw-arrow-enabled mw-arrow-hovered' ).addClass( 'mw-arrow-disabled' );
+				$( '.mw-revslider-arrow-forwards' ).removeClass( 'mw-revslider-arrow-enabled mw-revslider-arrow-hovered' ).addClass( 'mw-revslider-arrow-disabled' );
 			} else {
-				$( '.mw-arrow-forwards' ).removeClass( 'mw-arrow-disabled' ).addClass( 'mw-arrow-enabled' );
+				$( '.mw-revslider-arrow-forwards' ).removeClass( 'mw-revslider-arrow-disabled' ).addClass( 'mw-revslider-arrow-enabled' );
 			}
 
 			animateObj = { scrollLeft: this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth };

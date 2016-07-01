@@ -1,5 +1,5 @@
 /* stylelint-disable selector-no-id */
 /* TODO: No need to use IDs, they should be replaced with classes */
-.client-nojs #mw-revision-slider-container {
+.client-nojs #mw-revslider-container {
 	display: none;
 }

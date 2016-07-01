@@ -18,7 +18,7 @@
 			$( 'table.diff[data-mw="interface"]' )
 				.append( $( '<tr>' ) )
 				.append( $( '<td>' ) )
-				.append( $( '<div>' ).attr( 'id', 'mw-revision-slider-darkness' ) );
+				.append( $( '<div>' ).attr( 'id', 'mw-revslider-darkness' ) );
 			$.ajax( {
 				url: mw.util.wikiScript( 'index' ),
 				data: {
@@ -28,15 +28,15 @@
 				tryCount: 0,
 				retryLimit: 2,
 				success: function ( data ) {
-					var $container = $( '#mw-revision-slider-container' ),
+					var $container = $( '#mw-revslider-container' ),
 						$contentText = $( '#mw-content-text' ),
-						scrollLeft = $container.find( '.mw-revisions-container' ).scrollLeft();
+						scrollLeft = $container.find( '.mw-revslider-revisions-container' ).scrollLeft();
 
 					data = $( data );
-					data.find( '#mw-revision-slider-container' )
+					data.find( '#mw-revslider-container' )
 						.replaceWith( $container );
 					$contentText.html( data.find( '#mw-content-text' ) )
-						.find( '.mw-revisions-container' ).scrollLeft( scrollLeft );
+						.find( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
 
 					mw.hook( 'wikipage.content' ).fire( $contentText );
 				},
@@ -94,7 +94,7 @@
 				sliderView.slide( 0 );
 				sliderView.resetPointerStylesBasedOnPosition();
 				sliderView.resetRevisionStylesBasedOnPointerPosition(
-					sliderView.$element.find( 'div.mw-revisions' )
+					sliderView.$element.find( 'div.mw-revslider-revisions' )
 				);
 				self.refresh( event.state.revid1, event.state.revid2 );
 			} );

@@ -28,7 +28,7 @@
 		 * @return {jQuery}
 		 */
 		render: function ( revisionTickWidth ) {
-			var $html = $( '<div>' ).addClass( 'mw-revisions' ),
+			var $html = $( '<div>' ).addClass( 'mw-revslider-revisions' ),
 				revs = this.revisionList.getRevisions(),
 				maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() ),
 				self = this,
@@ -48,17 +48,17 @@
 
 				$html
 					.append( $( '<div>' )
-						.addClass( 'mw-revision-wrapper' )
+						.addClass( 'mw-revslider-revision-wrapper' )
 						.attr( 'title', tooltip )
 						.width( revisionTickWidth )
 						.tipsy( {
 							gravity: 's',
 							html: true,
 							trigger: 'manual',
-							className: 'mw-revision-tooltip'
+							className: 'mw-revslider-revision-tooltip'
 						} )
 						.append( $( '<div>' )
-							.addClass( 'mw-revision' )
+							.addClass( 'mw-revslider-revision' )
 							.attr( 'data-revid', revs[ i ].getId() )
 							.attr( 'data-pos', i + 1 )
 							.css( {
@@ -66,8 +66,8 @@
 								width: revisionTickWidth + 'px',
 								top: diffSize > 0 ? '-' + relativeChangeSize + 'px' : 0
 							} )
-							.addClass( diffSize > 0 ? 'mw-revision-up' : 'mw-revision-down' )
-							.append( $( '<div>' ).addClass( 'mw-revision-border-box' ) )
+							.addClass( diffSize > 0 ? 'mw-revslider-revision-up' : 'mw-revslider-revision-down' )
+							.append( $( '<div>' ).addClass( 'mw-revslider-revision-border-box' ) )
 						)
 						.mouseover( showTooltip )
 						.mouseout( hideTooltip )
@@ -86,7 +86,7 @@
 			if ( this.tooltipTimeout !== -1 ) {
 				window.clearTimeout( this.tooltipTimeout );
 				this.currentTooltip.tipsy( 'hide' );
-				this.currentTooltip.removeClass( 'mw-revision-wrapper-hovered' );
+				this.currentTooltip.removeClass( 'mw-revslider-revision-wrapper-hovered' );
 			}
 		},
 
@@ -98,7 +98,7 @@
 		hideTooltip: function ( $rev ) {
 			this.tooltipTimeout = window.setTimeout( function () {
 				$rev.tipsy( 'hide' );
-				$rev.removeClass( 'mw-revision-wrapper-hovered' );
+				$rev.removeClass( 'mw-revslider-revision-wrapper-hovered' );
 			}, 500 );
 		},
 
@@ -110,7 +110,7 @@
 		showTooltip: function ( $rev ) {
 			this.hideCurrentTooltip();
 			$rev.tipsy( 'show' );
-			$rev.addClass( 'mw-revision-wrapper-hovered' );
+			$rev.addClass( 'mw-revslider-revision-wrapper-hovered' );
 			this.currentTooltip = $rev;
 		},
 
@@ -121,10 +121,10 @@
 			var self = this;
 
 			$( document )
-				.on( 'mouseover', '.mw-revision-tooltip', function () {
+				.on( 'mouseover', '.mw-revslider-revision-tooltip', function () {
 					window.clearTimeout( self.tooltipTimeout );
 				} )
-				.on( 'mouseout', '.mw-revision-tooltip', function () {
+				.on( 'mouseout', '.mw-revslider-revision-tooltip', function () {
 					self.hideTooltip( self.currentTooltip );
 				} );
 		},
@@ -216,15 +216,15 @@
 		 * @return {jQuery}
 		 */
 		makeChangeSizeLine: function ( relativeSize ) {
-			var changeSizeClass = 'mw-no-change',
+			var changeSizeClass = 'mw-revslider-change-none',
 				leadingSign = '',
 				$changeNumber;
 
 			if ( relativeSize > 0 ) {
-				changeSizeClass = 'mw-positive-change';
+				changeSizeClass = 'mw-revslider-change-positive';
 				leadingSign = '+';
 			} else if ( relativeSize < 0 ) {
-				changeSizeClass = 'mw-negative-change';
+				changeSizeClass = 'mw-revslider-change-negative';
 			}
 
 			$changeNumber = $( '<span>' )

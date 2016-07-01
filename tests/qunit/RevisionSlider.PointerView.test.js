@@ -4,7 +4,7 @@
 	QUnit.module( 'ext.RevisionSlider.PointerView' );
 
 	QUnit.test( 'Initialize PointerView', function ( assert ) {
-		assert.ok( ( new PointerView( null, 'mw-revslider-pointer' ) ).render().hasClass( 'mw-pointer' ) );
+		assert.ok( ( new PointerView( null, 'mw-revslider-pointer' ) ).render().hasClass( 'mw-revslider-pointer' ) );
 	} );
 
 	QUnit.test( 'Is upper pointer', function ( assert ) {
@@ -12,7 +12,7 @@
 		pv.render();
 		assert.notOk( pv.isUpperPointer() );
 
-		pv.getElement().addClass( 'mw-upper-pointer' );
+		pv.getElement().addClass( 'mw-revslider-pointer-upper' );
 		assert.ok( pv.isUpperPointer() );
 	} );
 
@@ -21,7 +21,7 @@
 		pv.render();
 		assert.equal( pv.getOffset(), 0 );
 
-		pv.getElement().addClass( 'mw-upper-pointer' );
+		pv.getElement().addClass( 'mw-revslider-pointer-upper' );
 		assert.equal( pv.getOffset(), 16 );
 	} );
 } )( mediaWiki );
