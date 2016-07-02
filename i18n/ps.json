@@ -5,5 +5,11 @@
 			"Macofe"
 		]
 	},
-	"revisionslider-label-comment": "تبصره:"
+	"revisionslider-label-date": "<strong>نېټه:</strong> $1",
+	"revisionslider-label-comment": "تبصره:",
+	"revisionslider-label-username": "<strong>کارن-نوم:</strong> [[$2|$1]]",
+	"revisionslider-minoredit": "دا يو وړوکی سمون دی",
+	"revisionslider-show-help-tooltip": "لارښود متن ښکاره کول",
+	"revisionslider-next-dialog": "راتلونکی",
+	"revisionslider-close-dialog": "تړل"
 }

@@ -5,8 +5,15 @@
 			"Macofe"
 		]
 	},
-	"revisionslider-label-change-size": "পরিবর্তনের আকার: $1",
+	"revisionslider-label-date": "<strong>তারিখ:</strong> $1",
+	"revisionslider-label-page-size": "<strong>পাতার আকার:</strong> $1 {{PLURAL:$2|বাইট}}",
+	"revisionslider-label-change-size": "<strong>পরিবর্তনের আকার:</strong> $1 {{PLURAL:$2|বাইট}}",
 	"revisionslider-label-comment": "মন্তব্য:",
+	"revisionslider-label-username": "<strong>ব্যবহারকারী নাম:</strong> [[$2|$1]]",
+	"revisionslider-minoredit": "এটি একটি অনুল্লেখিত সম্পাদনা",
+	"revisionslider-arrow-tooltip-newer": "নতুন সংস্করণ দেখুন",
+	"revisionslider-arrow-tooltip-older": "পুরনো সংস্করণ দেখুন",
+	"revisionslider-show-help-tooltip": "সাহায্য পাঠ্য দেখান",
 	"revisionslider-previous-dialog": "পূর্ববর্তী",
 	"revisionslider-next-dialog": "পরবর্তী",
 	"revisionslider-close-dialog": "বন্ধ"

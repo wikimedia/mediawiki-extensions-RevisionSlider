@@ -1,16 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Purodha"
+			"Purodha",
+			"Macofe"
 		]
 	},
 	"revisionslider-label-date": "<strong>Dattom:</strong> $1",
 	"revisionslider-label-page-size": "<strong>Ömfang vun dä Sigg:</strong> $1 {{PLURAL:$2|eij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>|$2 <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Bytes</i>|keij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>}}",
 	"revisionslider-label-change-size": "<strong>Ömvang verändert öm:</strong> $1 {{PLURAL:$2|eij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>|$2 <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Bytes</i>|keij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>}}",
 	"revisionslider-label-comment": "Kommäntah:",
-	"revisionslider-label-username": "<strong>Metmaacher_Nahme:</strong> $1",
+	"revisionslider-label-username": "<strong>Metmaacher_Nahme:</strong> [[$2|$1]]",
+	"revisionslider-minoredit": "Heh dat es en klein Mini-Änderong",
 	"revisionslider-arrow-tooltip-newer": "Neujere Väsjohne aanzeije",
 	"revisionslider-arrow-tooltip-older": "Ällder Väsjohne aanzeije",
+	"revisionslider-show-help-tooltip": "Donn ene Täx met Hölp un mih Ennfommazjuhne aanzeije",
 	"revisionslider-previous-dialog": "Vörijje",
 	"revisionslider-next-dialog": "Vörahn",
 	"revisionslider-close-dialog": "Zohmaache"
