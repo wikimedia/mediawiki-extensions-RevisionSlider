@@ -68,7 +68,6 @@ class RevisionSliderHooks {
 			'button' => $button,
 			'labelElement' => $label,
 			'iconElement' => $icon,
-			'id' => 'mw-revslider-slider-toggle',
 			'classes' => [ 'mw-revslider-toggle-button' ],
 			'infusable' => true,
 			'framed' => false,
@@ -80,20 +79,20 @@ class RevisionSliderHooks {
 			Html::rawElement(
 				'div',
 				[
-					'id' => 'mw-revslider-container',
+					'class' => 'mw-revslider-container',
 					'style' => 'border: 1px solid #cccccc;'
 				],
 				$toggleButton .
 				Html::rawElement(
 					'div',
 					[
-						'id' => 'mw-revslider-slider-wrapper',
+						'class' => 'mw-revslider-slider-wrapper',
 						'style' => 'min-height: 142px; display: none; border-top: 1px solid #cccccc;',
 					],
 					Html::element(
 						'p',
 						[
-							'id' => 'mw-revslider-placeholder',
+							'class' => 'mw-revslider-placeholder',
 							'style' => 'text-align: center',
 						],
 						( new Message( 'revisionslider-loading-placeholder' ) )->text()

@@ -567,7 +567,7 @@
 		 * @return {Pointer}
 		 */
 		whichPointer: function ( $e ) {
-			return $e.attr( 'id' ) === 'mw-revslider-pointer-older' ? this.pointerOlder : this.pointerNewer;
+			return $e.hasClass( 'mw-revslider-pointer-older' ) ? this.pointerOlder : this.pointerNewer;
 		},
 
 		/**

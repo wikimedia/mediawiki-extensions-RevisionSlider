@@ -2,7 +2,7 @@
 	var expanded = false,
 		initialized = false,
 		/*jshint -W024 */
-		toggleButton = OO.ui.ButtonWidget.static.infuse( 'mw-revslider-slider-toggle' ),
+		toggleButton = OO.ui.ButtonWidget.static.infuse( $( '.mw-revslider-toggle-button' ) ),
 		/*jshint +W024 */
 		initialize = function () {
 			var startTime = mw.now(),
@@ -29,7 +29,7 @@
 
 						revisionList = new mw.libs.revisionSlider.RevisionList( mw.libs.revisionSlider.makeRevisions( revs ) );
 
-						$container = $( '#mw-revslider-slider-wrapper' );
+						$container = $( '.mw-revslider-slider-wrapper' );
 						slider = new mw.libs.revisionSlider.Slider( revisionList );
 						slider.getView().render( $container );
 
@@ -38,10 +38,10 @@
 							( new mw.Api() ).saveOption( 'userjs-revslider-hidehelp', true );
 						}
 
-						$( '#mw-revslider-placeholder' ).remove();
+						$( '.mw-revslider-placeholder' ).remove();
 						mw.track( 'timing.MediaWiki.RevisionSlider.timing.init', mw.now() - startTime );
 					} catch ( err ) {
-						$( '#mw-revslider-placeholder' )
+						$( '.mw-revslider-placeholder' )
 							.text( mw.message( 'revisionslider-loading-failed' ).text() );
 						console.log( err );
 						mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
@@ -50,7 +50,7 @@
 					initialized = true;
 				},
 				error: function ( err ) {
-					$( '#mw-revslider-placeholder' )
+					$( '.mw-revslider-placeholder' )
 						.text( mw.message( 'revisionslider-loading-failed' ).text() );
 					console.log( err );
 					mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
@@ -63,7 +63,7 @@
 	toggleButton.connect( this, {
 		click: function () {
 			expanded = !expanded;
-			$( '#mw-revslider-slider-wrapper' ).toggle();
+			$( '.mw-revslider-slider-wrapper' ).toggle();
 			if ( expanded ) {
 				toggleButton.setIcon( 'collapse' ).setTitle( mw.message( 'revisionslider-toggle-title-collapse' ).text() );
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.expand' );
