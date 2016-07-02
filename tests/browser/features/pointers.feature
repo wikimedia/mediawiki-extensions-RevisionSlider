@@ -13,31 +13,31 @@ Feature: RevisionSlider pointers
 
   Scenario: RevisionSlider pointers move then revision bars are clicked
     Given I click on revision 3
-    And the darkness has faded
+    And the diff has loaded
     Then the lower pointer should be on revision 3
     And revision 3 should be loaded on the left of the diff
     Given I click on revision 4
-    And the darkness has faded
+    And the diff has loaded
     Then the upper pointer should be on revision 4
     And revision 4 should be loaded on the right of the diff
 
   Scenario: RevisionSlider pointers can be dragged
     Given I drag the lower pointer to revision 3
-    And the darkness has faded
+    And the diff has loaded
     Then the lower pointer should be on revision 3
     And revision 3 should be loaded on the left of the diff
     Given I drag the upper pointer to revision 4
-    And the darkness has faded
+    And the diff has loaded
     Then the upper pointer should be on revision 4
     And revision 4 should be loaded on the right of the diff
 
   Scenario: RevisionSlider pointers switch when crossed over
     Given I drag the upper pointer to revision 3
-    And the darkness has faded
+    And the diff has loaded
     Then the lower pointer should be on revision 3
     And the upper pointer should be on revision 4
     And revision 3 should be loaded on the left of the diff
     Given I drag the lower pointer to revision 5
-    And the darkness has faded
+    And the diff has loaded
     Then the upper pointer should be on revision 5
     And revision 5 should be loaded on the right of the diff

@@ -13,15 +13,15 @@ Feature: RevisionSlider history
 
   Scenario: RevisionSlider history can be accessed using browser back and forward buttons after clicking on a revision
     Given I click on revision 1
-    And the darkness has faded
+    And the diff has loaded
     And I click the browser back button
-    And the darkness has faded
+    And the diff has loaded
     Then the lower pointer should be on revision 3
     And the lower pointer should be on revision 4
     And revision 3 should be loaded on the left of the diff
     And revision 4 should be loaded on the right of the diff
     Given I click the browser forward button
-    And the darkness has faded
+    And the diff has loaded
     Then the lower pointer should be on revision 1
     And the lower pointer should be on revision 4
     And revision 1 should be loaded on the left of the diff
@@ -29,15 +29,15 @@ Feature: RevisionSlider history
 
   Scenario: RevisionSlider history can be accessed using browser back and forward buttons after dragging to a revision
     Given I drag the lower pointer to revision 1
-    And the darkness has faded
+    And the diff has loaded
     And I click the browser back button
-    And the darkness has faded
+    And the diff has loaded
     Then the lower pointer should be on revision 3
     And the lower pointer should be on revision 4
     And revision 3 should be loaded on the left of the diff
     And revision 4 should be loaded on the right of the diff
     Given I click the browser forward button
-    And the darkness has faded
+    And the diff has loaded
     Then the lower pointer should be on revision 1
     And the lower pointer should be on revision 4
     And revision 1 should be loaded on the left of the diff

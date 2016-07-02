@@ -4,7 +4,7 @@ class DiffPage
   p(:revisionslider_placeholder, css: '.mw-revslider-placeholder')
   div(:revisionslider_wrapper, css: '.mw-revslider-slider-wrapper')
   div(:revisionslider_toggle_button, css: '.mw-revslider-toggle-button')
-  div(:revisionslider_darkness, css: '.mw-revslider-darkness')
+  table(:revisionslider_loading, css: '.mw-revslider-diff-loading')
 
   div(:revisionslider_help_dialog, css: '.revisionslider-help-dialog')
   button(:revisionslider_help, css: '.mw-revision-slider-container > button')
@@ -37,9 +37,9 @@ class DiffPage
     end
   end
 
-  def wait_for_darkness_to_leave
+  def wait_for_diff_to_load
     wait_until do
-      !revisionslider_darkness?
+      !revisionslider_loading?
     end
   end
 
