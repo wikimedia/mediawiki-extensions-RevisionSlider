@@ -200,7 +200,7 @@
 		/**
 		 * Generates the HTML for the page size label
 		 *
-		 * @param {int} size
+		 * @param {number} size
 		 * @return {jQuery}
 		 */
 		makePageSizeLine: function ( size ) {
@@ -212,7 +212,7 @@
 		/**
 		 * Generates the HTML for the change size label
 		 *
-		 * @param {int} relativeSize
+		 * @param {number} relativeSize
 		 * @return {jQuery}
 		 */
 		makeChangeSizeLine: function ( relativeSize ) {
