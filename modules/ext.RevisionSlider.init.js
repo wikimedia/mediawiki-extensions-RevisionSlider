@@ -18,7 +18,7 @@
 				}
 				revs.reverse();
 
-				revisionList = new mw.libs.revisionSlider.RevisionList( revs );
+				revisionList = new mw.libs.revisionSlider.RevisionList( mw.libs.revisionSlider.makeRevisions( revs ) );
 				$container = $( '#mw-revslider-container' );
 				slider = new mw.libs.revisionSlider.Slider( revisionList );
 				slider.getView().render( $container );

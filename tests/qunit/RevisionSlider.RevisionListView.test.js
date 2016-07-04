@@ -7,9 +7,9 @@
 
 	QUnit.test( 'render adds revisions', function ( assert ) {
 		var revisionListView = new RevisionListView( new RevisionList( [
-				{ revid: 1, size: 5, comment: '' },
-				{ revid: 3, size: 213, comment: '' },
-				{ revid: 37, size: 100, comment: '' }
+				new Revision( { revid: 1, size: 5, comment: '' } ),
+				new Revision( { revid: 3, size: 213, comment: '' } ),
+				new Revision( { revid: 37, size: 100, comment: '' } )
 			] ) ),
 			$resultHtml, $revisionWrapperDivs, $revisionDivs;
 

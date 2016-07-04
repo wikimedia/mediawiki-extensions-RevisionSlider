@@ -29,8 +29,8 @@
 			var i, rev;
 
 			for ( i = 0; i < revs.length; i++ ) {
-				rev = new mw.libs.revisionSlider.Revision( revs[ i ] );
-				rev.setRelativeSize( i > 0 ? revs[ i ].size - revs[ i - 1 ].size : revs[ i ].size );
+				rev = revs[ i ];
+				rev.setRelativeSize( i > 0 ? rev.getSize() - revs[ i - 1 ].getSize() : rev.getSize() );
 
 				this.revisions.push( rev );
 			}
@@ -74,4 +74,17 @@
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 	mw.libs.revisionSlider.RevisionList = RevisionList;
+
+	/**
+	 * Transforms an array of revision data returned by MediaWiki API into
+	 * an array of Revision objects
+	 *
+	 * @param {Array} revs
+	 * @return {Revision[]}
+	 */
+	mw.libs.revisionSlider.makeRevisions = function ( revs ) {
+		return revs.map( function ( revData ) {
+			return new mw.libs.revisionSlider.Revision( revData );
+		} );
+	};
 }( mediaWiki, jQuery ) );

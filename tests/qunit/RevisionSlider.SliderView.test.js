@@ -2,6 +2,7 @@
 	var SliderView = mw.libs.revisionSlider.SliderView,
 		Slider = mw.libs.revisionSlider.Slider,
 		RevisionList = mw.libs.revisionSlider.RevisionList,
+		Revision = mw.libs.revisionSlider.Revision,
 		startHistoryState, startHref;
 
 	QUnit.module( 'ext.RevisionSlider.SliderView' );
@@ -18,9 +19,9 @@
 	QUnit.test( 'render adds the slider view with defined revisions selected', function ( assert ) {
 		var $container = $( '<div>' ),
 			view = new SliderView( new Slider( new RevisionList( [
-				{ revid: 1, size: 5, comment: 'Comment1', user: 'User1' },
-				{ revid: 3, size: 21, comment: 'Comment2', user: 'User2' },
-				{ revid: 37, size: 13, comment: 'Comment3', user: 'User3' }
+				new Revision( { revid: 1, size: 5, comment: 'Comment1', user: 'User1' } ),
+				new Revision( { revid: 3, size: 21, comment: 'Comment2', user: 'User2' } ),
+				new Revision( { revid: 37, size: 13, comment: 'Comment3', user: 'User3' } )
 			] ) ) ),
 			$revisionOld,
 			$revisionNew;
@@ -42,8 +43,8 @@
 	QUnit.test( 'render throws an exception when selected revision not in available range', function ( assert ) {
 		var $container = $( '<div>' ),
 			view = new SliderView( new Slider( new RevisionList( [
-				{ revid: 3, size: 21, comment: 'Comment2', user: 'User2' },
-				{ revid: 37, size: 13, comment: 'Comment3', user: 'User3' }
+				new Revision( { revid: 3, size: 21, comment: 'Comment2', user: 'User2' } ),
+				new Revision( { revid: 37, size: 13, comment: 'Comment3', user: 'User3' } )
 			] ) ) );
 
 		mw.config.values.extRevisionSliderOldRev = 1;
@@ -62,9 +63,9 @@
 	QUnit.test( 'render throws an exception when no selected revisions provided', function ( assert ) {
 		var $container = $( '<div>' ),
 			view = new SliderView( new Slider( new RevisionList( [
-				{ revid: 1, size: 5, comment: 'Comment1', user: 'User1' },
-				{ revid: 3, size: 21, comment: 'Comment2', user: 'User2' },
-				{ revid: 37, size: 13, comment: 'Comment3', user: 'User3' }
+				new Revision( { revid: 1, size: 5, comment: 'Comment1', user: 'User1' } ),
+				new Revision( { revid: 3, size: 21, comment: 'Comment2', user: 'User2' } ),
+				new Revision( { revid: 37, size: 13, comment: 'Comment3', user: 'User3' } )
 			] ) ) );
 
 		mw.config.values.extRevisionSliderOldRev = null;
