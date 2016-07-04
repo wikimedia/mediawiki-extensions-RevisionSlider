@@ -16,6 +16,24 @@
       "revId": "48956c91e172b156d36995918a82b3d758d76328",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_7f2291a3",
+        "filename": "tests/browser/features/timeline.feature",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-07-04T17:23:28Z",
+      "side": 1,
+      "message": "Will do!",
+      "parentUuid": "ee011f3e_bf051916",
+      "revId": "48956c91e172b156d36995918a82b3d758d76328",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
