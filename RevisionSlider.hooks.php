@@ -80,6 +80,7 @@ class RevisionSliderHooks {
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
 		$testModules['qunit']['ext.RevisionSlider.tests'] = [
 			'scripts' => [
+				'tests/qunit/QUnit.revisionSlider.testOrSkip.js',
 				'tests/qunit/RevisionSlider.Revision.test.js',
 				'tests/qunit/RevisionSlider.Pointer.test.js',
 				'tests/qunit/RevisionSlider.PointerView.test.js',
