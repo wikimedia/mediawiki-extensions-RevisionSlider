@@ -30,7 +30,7 @@
 		var revisionListView = new RevisionListView(),
 			revision = new Revision( {
 				revid: 1,
-				size: 1230,
+				size: 230,
 				comment: 'Hello',
 				parsedcomment: '<strong>Hello</strong>',
 				timestamp: '2016-04-26T10:27:14Z', // 10:27, 26 Apr 2016
@@ -39,19 +39,44 @@
 			} ),
 			$tooltipHtml;
 
-		revision.setRelativeSize( 3210 );
+		revision.setRelativeSize( 210 );
 
 		mw.libs.revisionSlider.userOffset = 0;
 
 		$tooltipHtml = revisionListView.makeTooltip( revision );
 
-		assert.ok( $tooltipHtml.match( /10:27, 26 Apr 2016/ ), 'Test the date.' );
 		assert.ok( $tooltipHtml.match( /User1/ ), 'Test the user.' );
 		assert.ok( $tooltipHtml.match( /Hello/ ), 'Test the comment.' );
-		assert.ok( $tooltipHtml.match( /1,230/ ), 'Test the page size.' );
-		assert.ok( $tooltipHtml.match( /\+3,210/ ), 'Test the change size.' );
-		assert.ok( $tooltipHtml.match( /This is a minor edit/ ), 'Test for minor edit.' );
+		assert.ok( $tooltipHtml.match( /230/ ), 'Test the page size.' );
+		assert.ok( $tooltipHtml.match( /\+210/ ), 'Test the change size.' );
 	} );
+
+	QUnit.revisionSlider.testOrSkip( 'tool tip is composed correctly with en lang', function ( assert ) {
+		var revisionListView = new RevisionListView(),
+			revision = new Revision( {
+				revid: 1,
+				size: 2300,
+				comment: 'Hello',
+				parsedcomment: '<strong>Hello</strong>',
+				timestamp: '2016-04-26T10:27:14Z', // 10:27, 26 Apr 2016
+				user: 'User1',
+				minor: true
+			} ),
+			$tooltipHtml;
+
+		revision.setRelativeSize( 2100 );
+
+		mw.libs.revisionSlider.userOffset = 0;
+
+		$tooltipHtml = revisionListView.makeTooltip( revision );
+
+		assert.ok( $tooltipHtml.match( /User1/ ), 'Test the user.' );
+		assert.ok( $tooltipHtml.match( /Hello/ ), 'Test the comment.' );
+		assert.ok( $tooltipHtml.match( /2,300/ ), 'Test the page size.' );
+		assert.ok( $tooltipHtml.match( /\+2,100/ ), 'Test the change size.' );
+		assert.ok( $tooltipHtml.match( /10:27, 26 Apr 2016/ ), 'Test the date.' );
+		assert.ok( $tooltipHtml.match( /minor/ ), 'Test minor.' );
+	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
 	QUnit.test( 'empty user leads to no user line', function ( assert ) {
 		var revisionListView = new RevisionListView(),
@@ -138,18 +163,24 @@
 
 	QUnit.test( 'big change number is formatted correctly', function ( assert ) {
 		var revisionListView = new RevisionListView(),
+			originalUserLangSetting = mw.config.get( 'wgUserLanguage' ),
 			$changeSizeLineHtml;
 
+		mw.config.set( 'wgUserLanguage', 'en' );
 		$changeSizeLineHtml = revisionListView.makeChangeSizeLine( 1000 );
+		mw.config.set( 'wgUserLanguage', originalUserLangSetting );
 
 		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).text(), '+1,000' );
 	} );
 
 	QUnit.test( 'page size is formatted correctly', function ( assert ) {
 		var revisionListView = new RevisionListView(),
+			originalUserLangSetting = mw.config.get( 'wgUserLanguage' ),
 			$pageSizeLineHtml;
 
+		mw.config.set( 'wgUserLanguage', 'en' );
 		$pageSizeLineHtml = revisionListView.makePageSizeLine( 1337 );
+		mw.config.set( 'wgUserLanguage', originalUserLangSetting );
 
 		assert.ok( $pageSizeLineHtml.text().match( /1,337/ ) );
 	} );
