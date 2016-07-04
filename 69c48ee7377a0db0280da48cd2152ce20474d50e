@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee011f3e_df545d59",
+        "filename": "tests/browser/features/support/step_definitions/timeline.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-07-04T19:44:56Z",
+      "side": 1,
+      "message": ":-D I also tried it with when_visible first. But that does not do the trick in that case. You really have to do the check for the help dialog visibility.",
+      "revId": "69c48ee7377a0db0280da48cd2152ce20474d50e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
