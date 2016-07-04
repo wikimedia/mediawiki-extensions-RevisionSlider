@@ -4,6 +4,10 @@
 			"V.narsikar"
 		]
 	},
+	"revisionslider-label-date": "<strong>दिनांक:</strong> $1",
+	"revisionslider-label-username": "<strong>सदस्यनाव:</strong> [[$2|$1]]",
+	"revisionslider-minoredit": "हे एक किरकोळ संपादन आहे",
+	"revisionslider-show-help-tooltip": "साहाय्य मजकूर दाखवा",
 	"revisionslider-previous-dialog": "मागील",
 	"revisionslider-next-dialog": "पुढील",
 	"revisionslider-close-dialog": "बंद करा"
