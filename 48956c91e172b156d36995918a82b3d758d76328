@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee011f3e_bf051916",
+        "filename": "tests/browser/features/timeline.feature",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-07-04T17:18:32Z",
+      "side": 1,
+      "message": "When running locally the help dialog does not hide quick enough and the arrows are not yet clickable. \n\nYou could add another step checking that the dialog is gone with something like.\n\n  def wait_for_help_dialog_to_hide\n    wait_until do\n      revisionslider_help_dialog_element.visible? \u003d\u003d false\n    end\n  end",
+      "revId": "48956c91e172b156d36995918a82b3d758d76328",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
