@@ -1,14 +1,15 @@
-Given(/^I am on the "(.*?)" page$/) do |page|
-  visit(ArticlePage, using_params: { article_name: page })
+Given(/^I am on the page$/) do
+  visit(ArticlePage, using_params: { article_name: "RevisionSlider-#{@random_string}" })
 end
 
-Given(/^I am on the "(.*?)" diff page$/) do |page|
-  visit(ArticlePage, using_params: { article_name: page, query: 'type=revision&diff=' })
+Given(/^I am on the diff page$/) do
+  visit(ArticlePage, using_params: { article_name: "RevisionSlider-#{@random_string}", query: 'type=revision&diff=' })
 end
 
-Given(/^The page "(.+)" has the following edits:$/) do |page, table|
-  page = page.gsub(' ', '_')
-  table.rows.each { |(text)| api.edit(title: page, text: text) }
+Given(/^a page with (\d+) revision\(s\) exists$/) do |number_of_revisions|
+  (1..number_of_revisions.to_i).each do |i|
+    api.edit(title: "RevisionSlider-#{@random_string}", text: "Text-#{i}")
+  end
 end
 
 Given(/^I refresh the page$/) do
