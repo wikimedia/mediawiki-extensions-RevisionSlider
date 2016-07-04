@@ -8,7 +8,7 @@ end
 
 Given(/^a page with (\d+) revision\(s\) exists$/) do |number_of_revisions|
   (1..number_of_revisions.to_i).each do |i|
-    api.edit(title: "RevisionSlider-#{@random_string}", text: "Text-#{i}")
+    api.edit(title: "RevisionSlider-#{@random_string}", text: "RS-Text-#{i}", summary: "RS-Summary-#{i}")
   end
 end
 

@@ -55,7 +55,7 @@
 							gravity: 's',
 							html: true,
 							trigger: 'manual',
-							className: 'mw-revslider-revision-tooltip'
+							className: 'mw-revslider-revision-tooltip mw-revslider-revision-tooltip-' + ( i + 1 )
 						} )
 						.append( $( '<div>' )
 							.addClass( 'mw-revslider-revision' )
