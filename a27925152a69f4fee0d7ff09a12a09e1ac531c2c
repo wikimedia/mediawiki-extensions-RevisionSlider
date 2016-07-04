@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee011f3e_1fa6e650",
+        "filename": "tests/qunit/RevisionSlider.RevisionListView.test.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-07-04T16:53:36Z",
+      "side": 1,
+      "message": "change to this and relative size seem to be rather hacky solution :)\nWhat in case user locale would make 230 be printed in some other way? Probably not very likely compared to differences in printing number higher than 999 but still makes me leave a moany comment.",
+      "revId": "a27925152a69f4fee0d7ff09a12a09e1ac531c2c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
