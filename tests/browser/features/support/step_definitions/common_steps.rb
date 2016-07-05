@@ -18,6 +18,14 @@ Given(/^I refresh the page$/) do
   end
 end
 
+When(/^I click the browser back button$/) do
+  on(ArticlePage).back
+end
+
+When(/^I click the browser forward button$/) do
+  on(ArticlePage).forward
+end
+
 Given(/^The RevisionSlider has loaded$/) do
   on(DiffPage).wait_for_slider_to_load
 end
