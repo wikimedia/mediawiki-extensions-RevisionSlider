@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee011f3e_f3299ae3",
+        "filename": "tests/browser/features/history.feature",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-07-05T16:10:50Z",
+      "side": 1,
+      "message": "You dont really test the forward button here :-)",
+      "revId": "3693a0168f754495e20f4aa70bcdef3c3d77e671",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_f3707a09",
+        "filename": "tests/browser/features/history.feature",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-07-05T16:10:50Z",
+      "side": 1,
+      "message": "Testing once that the back button works is fine IMO. \nI would add another test to test the forward functionality",
+      "revId": "3693a0168f754495e20f4aa70bcdef3c3d77e671",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
