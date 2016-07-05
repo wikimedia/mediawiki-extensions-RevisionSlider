@@ -16,6 +16,24 @@
       "revId": "69c48ee7377a0db0280da48cd2152ce20474d50e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_c5facc72",
+        "filename": "tests/browser/features/support/step_definitions/timeline.rb",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-07-05T09:14:15Z",
+      "side": 1,
+      "message": "Well, as far as I remember from previous tests the help dialog visibility always returns as true. :/\nI\u0027ll try and dig into this some more.",
+      "parentUuid": "ee011f3e_df545d59",
+      "revId": "69c48ee7377a0db0280da48cd2152ce20474d50e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
