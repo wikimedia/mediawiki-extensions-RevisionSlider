@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee011f3e_135b7e27",
+        "filename": "tests/browser/features/history.feature",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2016-07-05T14:57:56Z",
+      "side": 1,
+      "message": "I think this scenario is doing too much things. In general, all given and setup steps should always be in the beginning of a scenario and the only followed by steps that are checking several conditions.\nSo in this case the scenario could be split into 3 or more independent scenarios. The downside is that it would require more execution time, but if then one of the scenarios is failing, one will know more precise why the failure happened.",
+      "revId": "11d11c7094fa7bd2b0c36b00a6e1abfa9482b821",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
