@@ -22,6 +22,10 @@ Given(/^The RevisionSlider has loaded$/) do
   on(DiffPage).wait_for_slider_to_load
 end
 
+Given(/^The window size is (\d+) by (\d+)$/) do |width,height|
+  browser.window.resize_to(width.to_i, height.to_i)
+end
+
 Then(/^RevisionSlider is enabled as a beta feature$/) do
   visit(SpecialPreferencesPage).enable_revisionslider
 end
