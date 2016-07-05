@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee011f3e_48eef1b2",
+        "filename": "tests/browser/features/support/step_definitions/pointers.rb",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-07-05T13:17:35Z",
+      "side": 1,
+      "message": "Nice thing! But you dont need the _element.element. just _element.drag_and_drop works for me.",
+      "revId": "590742edd89c1057d04fda54cdbba87d3d0b73b9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_28ebada1",
+        "filename": "tests/browser/features/support/step_definitions/pointers.rb",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-07-05T13:17:35Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "590742edd89c1057d04fda54cdbba87d3d0b73b9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
