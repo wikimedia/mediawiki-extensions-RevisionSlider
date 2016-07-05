@@ -2,7 +2,8 @@
 	var DiffPage = mw.libs.revisionSlider.DiffPage,
 		SliderView = mw.libs.revisionSlider.SliderView,
 		Slider = mw.libs.revisionSlider.Slider,
-		RevisionList = mw.libs.revisionSlider.RevisionList;
+		RevisionList = mw.libs.revisionSlider.RevisionList,
+		Revision = mw.libs.revisionSlider.Revision;
 
 	QUnit.module( 'ext.RevisionSlider.DiffPage' );
 
@@ -14,9 +15,9 @@
 		var histLength,
 			diffPage = new DiffPage(),
 			sliderView = new SliderView( new Slider( new RevisionList( [
-				{ revid: 1, comment: '' },
-				{ revid: 3, comment: '' },
-				{ revid: 37, comment: '' }
+				new Revision( { revid: 1, comment: '' } ),
+				new Revision( { revid: 3, comment: '' } ),
+				new Revision( { revid: 37, comment: '' } )
 			] ) )
 			);
 		mw.config.values.extRevisionSliderOldRev = 1;
