@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee011f3e_484d51e0",
+        "filename": "tests/browser/features/support/step_definitions/pointers.rb",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-07-05T13:19:27Z",
+      "side": 1,
+      "message": "_element.drag_and_drop results in a deprecation warning.\n\n*** DEPRECATION WARNING\n*** You are calling a method named drag_and_drop_on at C:/git/gerrit/mediawiki/extensions/RevisionSlider/tests/browser/features/support/step_definitions/pointers.rb:6:in `block in \u003ctop (required)\u003e\u0027.\n*** This method does not exist in page-object so it is being passed to the driver.\n*** This feature will be removed in the near future.\n*** Please change your code to call the correct page-object method.\n*** If you are using functionality that does not exist in page-object please request it be added.\n\nAfter a google I read something about adding .element which solved that!",
+      "parentUuid": "ee011f3e_48eef1b2",
+      "revId": "590742edd89c1057d04fda54cdbba87d3d0b73b9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee011f3e_28ebada1",
         "filename": "tests/browser/features/support/step_definitions/pointers.rb",
         "patchSetId": 4
