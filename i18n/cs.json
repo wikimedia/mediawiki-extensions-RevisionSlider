@@ -10,6 +10,7 @@
 	"revisionslider-label-comment": "Komentář:",
 	"revisionslider-label-username": "<strong>Uživatelské jméno:</strong> [[$2|$1]]",
 	"revisionslider-minoredit": "Toto je malá editace",
+	"revisionslider-show-help-tooltip": "Zobrazit text nápovědy",
 	"revisionslider-previous-dialog": "Předchozí",
 	"revisionslider-next-dialog": "Další",
 	"revisionslider-close-dialog": "Zavřít"
