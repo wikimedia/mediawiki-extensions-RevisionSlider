@@ -24,7 +24,7 @@ class DiffPage
 
   def wait_for_slider_to_load
     wait_until do
-      revisionslider_placeholder? == false
+      !revisionslider_placeholder?
     end
   end
 
@@ -42,7 +42,7 @@ class DiffPage
 
   def wait_for_help_dialog_to_hide
     wait_until do
-      revisionslider_help_dialog_element.visible? == false
+      !revisionslider_help_dialog_element.visible?
     end
   end
 end
