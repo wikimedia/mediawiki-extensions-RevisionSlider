@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee011f3e_b38264cb",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-07-07T11:20:11Z",
+      "side": 1,
+      "message": "This method should be in RevisionListView in my opinion.",
+      "revId": "22fd8604bbf70cb75ce94125aeb8fdb6170f14ba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
