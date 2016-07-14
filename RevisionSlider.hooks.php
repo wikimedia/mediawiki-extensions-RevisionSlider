@@ -15,15 +15,13 @@ class RevisionSliderHooks {
 		Revision $oldRev,
 		Revision $newRev
 	) {
-		global $wgUser;
-
 		/**
 		 * If this extension is deployed with the BetaFeatures extension then require the
 		 * current user to have it enabled as a BetaFeature.
 		 */
 		if (
 			class_exists( BetaFeatures::class ) &&
-			!BetaFeatures::isFeatureEnabled( $wgUser, 'revisionslider' ) )
+			!BetaFeatures::isFeatureEnabled( $diff->getUser(), 'revisionslider' ) )
 		{
 			return true;
 		}
