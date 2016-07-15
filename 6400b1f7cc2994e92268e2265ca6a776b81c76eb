@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eed2fc9_d9464626",
+        "filename": "modules/ext.RevisionSlider.Revision.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 33
+      },
+      "writtenOn": "2016-07-15T02:05:00Z",
+      "side": 1,
+      "message": "\"Comments and usernames...\"?",
+      "revId": "6400b1f7cc2994e92268e2265ca6a776b81c76eb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
