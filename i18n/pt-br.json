@@ -1,10 +1,32 @@
 {
 	"@metadata": {
 		"authors": [
-			"LucyDiniz"
+			"LucyDiniz",
+			"TheEduGobi"
 		]
 	},
-	"revisionslider-help-dialog-slide3": "<p>Para comparar determinadas revisões, selecione-as utilizando o ponteiro amarelo e azul.</p>\n<p>O ponteiro azul controla a revisão mais recente, o ponteiro amarelo mapeia a revisão mais antiga.</p>\n<p>Mova os ponteiros arrastando-os ou clique em uma barra.</p>",
+	"revisionslider": "Deslizador de Revisões",
+	"revisionslider-desc": "Exibe um deslizador, permitindo a seleção e comparação de revisões numa página de dif",
+	"revisionslider-beta-feature-message": "Deslizador de Revisões",
+	"revisionslider-beta-feature-description": "Exibe um deslizador de revisões ao comparar duas revisões de uma página.",
+	"revisionslider-label-date": "<strong>Data:</strong> $1",
+	"revisionslider-label-page-size": "<strong>Tamanho da página:</strong> $1 {{PLURAL:$2|byte|bytes}}",
+	"revisionslider-label-change-size": "<strong>Tamanho da mudança:</strong> $1 {{PLURAL:$2|byte|bytes}}",
+	"revisionslider-label-comment": "Comentário:",
+	"revisionslider-label-username": "<strong>Nome de usuário(a):</strong> [[$2|$1]]",
+	"revisionslider-minoredit": "Esta é uma edição menor",
+	"revisionslider-loading-placeholder": "O deslizador de revisões está sendo carregado.",
+	"revisionslider-loading-failed": "O deslizador de revisões não pôde ser carregado.",
+	"revisionslider-loading-out-of-range": "O deslizador de revisões não pôde ser carregado pois as revisões solicitadas da página não estão entre as 500 mais recentes.",
+	"revisionslider-arrow-tooltip-newer": "Ver revisões posteriores",
+	"revisionslider-arrow-tooltip-older": "Ver revisões anteriores",
+	"revisionslider-show-help-tooltip": "Mostrar texto de ajuda",
+	"revisionslider-help-dialog-slide1": "O Deslizador de Revisões ajuda você a navegar e comparar revisões na página de dif. Baseia-se num [[m:WMDE_Technical_Wishes/Revision_Slider|desejo]] vindo da lista de desejos da comunidade técnica alemã.",
+	"revisionslider-help-dialog-slide2": "Cada barra representa uma revisão da página. As barras na parte de cima mostram o crescimento do tamanho da página, as de baixo, a redução. Na imagem, a revisão 1 representa o conteúdo adicionado, enquanto a revisão 2 representa o conteúdo removido.",
+	"revisionslider-help-dialog-slide3": "<p>Para comparar determinadas revisões, selecione-as utilizando o ponteiro amarelo e azul.</p><p>O ponteiro azul controla a revisão mais recente, o ponteiro amarelo mapeia a revisão mais antiga.</p><p>Mova os ponteiros arrastando-os ou clique em uma barra.</p>",
+	"revisionslider-help-dialog-slide4": "Use as setas de voltar e avançar para mover-se pelo histórico de revisões, mostrando revisões novas e antigas.",
+	"revisionslider-tutorial": "Tutorial do Deslizador de Revisões",
 	"revisionslider-previous-dialog": "Anterior",
-	"revisionslider-next-dialog": "Próximo"
+	"revisionslider-next-dialog": "Próximo",
+	"revisionslider-close-dialog": "Fechar"
 }
