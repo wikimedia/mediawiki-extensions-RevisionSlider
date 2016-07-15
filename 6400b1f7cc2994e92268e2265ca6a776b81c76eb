@@ -16,6 +16,23 @@
       "revId": "6400b1f7cc2994e92268e2265ca6a776b81c76eb",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eed2fc9_d97f6610",
+        "filename": "modules/ext.RevisionSlider.Revision.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-07-15T07:17:02Z",
+      "side": 1,
+      "message": "I believe this could be even simplified to something like\nif ( comment is not undefined and parsedComment is not undefined) {\nthis.comment \u003d comment;\nthis.aprsedcomment \u003d parsedComment;\n}\n\nas I am guessing if the comment is suppressed both comment fields will be empty/undefined.\nAnd also the way those two Revision object fields are used in the extension code sort of leads to the assumption that if one of them is empty the other should also be.\n\nBut still the current code also looks fine! I could not think of \"real\" situation when comment is empty but parsed comment is not. Any thoughts?",
+      "revId": "6400b1f7cc2994e92268e2265ca6a776b81c76eb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
