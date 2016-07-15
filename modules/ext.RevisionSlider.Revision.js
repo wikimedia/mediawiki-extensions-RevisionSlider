@@ -7,11 +7,19 @@
 	var Revision = function ( data ) {
 		this.id = data.revid;
 		this.size = data.size;
-		this.comment = data.comment;
-		this.parsedComment = data.parsedcomment;
 		this.timestamp = data.timestamp;
-		this.user = data.user;
 		this.minor = data.hasOwnProperty( 'minor' ) && ( data.minor || data.minor === '' );
+
+		// Comments and users can be suppressed thus we must check if they exist
+		if ( typeof data.comment !== 'undefined' ) {
+			this.comment = data.comment;
+		}
+		if ( typeof data.parsedcomment !== 'undefined' ) {
+			this.parsedComment = data.parsedcomment;
+		}
+		if ( typeof data.user !== 'undefined' ) {
+			this.user = data.user;
+		}
 	};
 
 	$.extend( Revision.prototype, {
