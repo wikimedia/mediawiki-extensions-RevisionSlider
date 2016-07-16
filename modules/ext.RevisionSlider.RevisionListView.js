@@ -229,6 +229,9 @@
 
 			$changeNumber = $( '<span>' )
 				.addClass( changeSizeClass )
+				.attr( {
+					dir: 'ltr' // Make sure that minus/plus is on the left
+				} )
 				.text( leadingSign + mw.language.convertNumber( relativeSize ) );
 
 			return $( '<p>' ).append(
