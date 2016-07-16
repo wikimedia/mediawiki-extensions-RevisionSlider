@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"WMDE",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Purodha"
 		]
 	},
-	"revisionslider": "Revision Slider",
+	"revisionslider": "Revision Slider, see https://www.mediawiki.org/wiki/Extension:RevisionSlider",
 	"revisionslider-desc": "{{desc|name=RevisionSlider|url=https://www.mediawiki.org/wiki/Extension:RevisionSlider}}",
 	"revisionslider-beta-feature-message": "Label for the revision slider Beta Feature.",
 	"revisionslider-beta-feature-description": "Description for the revision slider Beta Feature, describing the feature that will be enabled.",

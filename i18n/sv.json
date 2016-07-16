@@ -12,6 +12,7 @@
 	"revisionslider-label-comment": "Kommentar:",
 	"revisionslider-label-username": "<strong>Användarnamn:</strong> [[$2|$1]]",
 	"revisionslider-minoredit": "Detta är en mindre ändring",
+	"revisionslider-show-help-tooltip": "Visa hjälptext",
 	"revisionslider-previous-dialog": "Föregående",
 	"revisionslider-next-dialog": "Nästa",
 	"revisionslider-close-dialog": "Stäng"

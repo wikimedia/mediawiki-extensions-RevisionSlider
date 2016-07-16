@@ -5,6 +5,7 @@
 			"Macofe"
 		]
 	},
+	"revisionslider": "Väsjohne-Schihber",
 	"revisionslider-label-date": "<strong>Dattom:</strong> $1",
 	"revisionslider-label-page-size": "<strong>Ömfang vun dä Sigg:</strong> $1 {{PLURAL:$2|eij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>|$2 <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Bytes</i>|keij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>}}",
 	"revisionslider-label-change-size": "<strong>Ömvang verändert öm:</strong> $1 {{PLURAL:$2|eij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>|$2 <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Bytes</i>|keij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>}}",
