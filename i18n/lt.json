@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eitvys200"
+		]
+	},
+	"revisionslider-label-date": "<strong>Data:</strong> $1",
+	"revisionslider-label-page-size": "<strong>Puslapio dydis:</strong> $1 {{PLURAL:$2|baitas|baitų}}",
+	"revisionslider-label-change-size": "<strong>Keisti dydį:</strong> $1 {{PLURAL:$2|baitas|baitai}}",
+	"revisionslider-label-comment": "Komentaras:",
+	"revisionslider-label-username": "<strong>Vartotojo vardas:</strong> [[$2|$1]]",
+	"revisionslider-minoredit": "Tai smulkus pakeitimas",
+	"revisionslider-show-help-tooltip": "Rodyti pagalbinį tekstą"
+}
