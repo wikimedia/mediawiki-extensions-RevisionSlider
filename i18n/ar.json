@@ -1,10 +1,33 @@
 {
 	"@metadata": {
 		"authors": [
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Leszek Manicki (WMDE)",
+			"زكريا"
 		]
 	},
+	"revisionslider": "مقارن النسخ",
+	"revisionslider-desc": "إظهار مقارن النسخ لمقارنة نسختين من الصفحة",
+	"revisionslider-beta-feature-message": "مقارن النسخ",
+	"revisionslider-beta-feature-description": "إظهار مقارنة للفرق بين نسختين من الصفحة.",
+	"revisionslider-label-date": "<strong>التاريخ:</strong> $1",
+	"revisionslider-label-page-size": "<strong>حجم الصفحة:</strong> {{PLURAL:$2|بايت $1|بايتان $1|$1 بايتات|$1 بايتا|$1 بايت}}",
+	"revisionslider-label-change-size": "<strong>حجم التغيير:</strong> {{PLURAL:$2|بايت $1|بايتان $1|$1 بايتات|$1 بايتا|$1 بايت}}",
+	"revisionslider-label-comment": "التعليق:",
+	"revisionslider-label-username": "<strong>المستخدم:</strong> [[$2|$1]]",
+	"revisionslider-minoredit": "هذا تعديل طفيف",
+	"revisionslider-loading-placeholder": "تحميل مقارن النسخ.",
+	"revisionslider-loading-failed": "لم يحمل مقارن النسخ.",
+	"revisionslider-loading-out-of-range": "لم يحمل مقارن النسخ لأن النسختين المطلوبتين ليستا من بين النسخ ال‍500 الأولى من الصفح.",
+	"revisionslider-arrow-tooltip-newer": "إظهار نسخ أحدث",
+	"revisionslider-arrow-tooltip-older": "إظهار نسخ أقدم",
+	"revisionslider-show-help": "؟",
 	"revisionslider-show-help-tooltip": "أظهر نص المساعدة",
+	"revisionslider-help-dialog-slide1": "يسهل مقارن النسخ تصفح النسخ ومقارنتها في صفحة الفرق. ([[m:WMDE_Technical_Wishes/Revision_Slider|الطلب]])",
+	"revisionslider-help-dialog-slide2": "يمثل كل عمود نسخة من الصفحة. الأعمدة فوق الخط عبارة عن التعديلات زيادة المحتوى والتي تحت الخط تعبر عن نقصان المحتوى. تظهر الصورة 1 الزيادة و2 النقصان.",
+	"revisionslider-help-dialog-slide3": "<p>اختر النسختين المراد مقارنتهما مستعملا المؤشر الأصفر والأزرق</p><p>\nالأزرق للنسخ الأحدث والأصفر للأقدم.</p><p>حرك المؤشر بإبقاء الضغط عليه وتحريكه أو بالنقر على العمود.</p>",
+	"revisionslider-help-dialog-slide4": "استعمل الأسهم المتجهة يمينا ويسارا لتصفح تاريخ الصفحة وعرض النسخ الأقدم والأحدث.",
+	"revisionslider-tutorial": "شرح مقارن النسخ",
 	"revisionslider-previous-dialog": "السابق",
 	"revisionslider-next-dialog": "التالي",
 	"revisionslider-close-dialog": "أغلق"

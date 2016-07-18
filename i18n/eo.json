@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Robin van der Vliet",
-			"Macofe"
+			"Macofe",
+			"Orikrin1998"
 		]
 	},
 	"revisionslider-label-comment": "Komento:",
+	"revisionslider-minoredit": "Ĉi tiu ŝanĝo estas redakteto",
 	"revisionslider-arrow-tooltip-newer": "Vidi pli novajn reviziojn",
 	"revisionslider-arrow-tooltip-older": "Vidi pli malnovajn reviziojn"
 }
