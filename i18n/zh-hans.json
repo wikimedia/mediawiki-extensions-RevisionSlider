@@ -14,7 +14,7 @@
 	"revisionslider-label-comment": "注释：",
 	"revisionslider-label-username": "<strong>用户名：</strong>[[$2|$1]]",
 	"revisionslider-minoredit": "这是一个小编辑",
-	"revisionslider-loading-placeholder": "修订滑块正在加载。",
+	"revisionslider-loading-placeholder": "修订滑块正在加载...",
 	"revisionslider-loading-failed": "修订滑块无法加载。",
 	"revisionslider-loading-out-of-range": "由于请求的修订不在页面的前500个版本中，修订滑块加载失败。",
 	"revisionslider-arrow-tooltip-newer": "查看更新修订版本",

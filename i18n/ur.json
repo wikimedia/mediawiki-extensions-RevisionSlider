@@ -3,11 +3,29 @@
 		"authors": [
 			"Hindustanilanguage",
 			"امین اکبر",
-			"Macofe"
+			"Macofe",
+			"Muhammad Shuaib"
 		]
 	},
+	"revisionslider": "نظرثانی موازنہ کنندہ",
+	"revisionslider-desc": "صفحات کی نظرثانیوں کو منتخب کرنے اور ان میں موازنہ کرنے کی سہولت بہم پہنچاتا ہے",
+	"revisionslider-beta-feature-message": "نظرثانی موازنہ کنندہ",
+	"revisionslider-beta-feature-description": "صفحے کی دو نظرثانیوں کے درمیان فرق کا موازنہ دکھاتا ہے۔",
+	"revisionslider-label-date": "<strong>تاریخ:</strong> $1",
+	"revisionslider-label-page-size": "<strong>صفحے کا حجم:</strong> $1 {{PLURAL:$2|بائٹ}}",
+	"revisionslider-label-change-size": "<strong>تبدیلی کا حجم:</strong> $1 {{PLURAL:$2|بائٹ}}",
 	"revisionslider-label-comment": "تبصرہ:",
+	"revisionslider-label-username": "<strong>صارف نام:</strong> [[$2|$1]]",
+	"revisionslider-minoredit": "یہ ایک معمولی ترمیم ہے",
+	"revisionslider-loading-placeholder": "نظرثانی موازنہ کنندہ لد رہا ہے۔۔۔",
+	"revisionslider-loading-failed": "نظرثانی موازنہ کنندہ لد نہیں سکا۔",
+	"revisionslider-loading-out-of-range": "نظرثانی موازنہ کنندہ لد نہیں سکا کیوں کہ درخواست شدہ نظرثانیاں صفحے کے پہلے پانسو نسخوں میں موجود نہیں ہیں۔",
+	"revisionslider-arrow-tooltip-newer": "جدید نظرثانیاں دکھائیں",
+	"revisionslider-arrow-tooltip-older": "قدیم نظرثانیاں دکھائیں",
+	"revisionslider-show-help-tooltip": "متنِ معاونت دکھائیں",
+	"revisionslider-help-dialog-slide1": "نظرثانی موازنہ کنندہ کے ذریعہ کای صفحے کی متفرق نظرثانیوں کو دیکھنا اور ان میں موازنہ کرنا آسان ہو جاتا ہے۔ ([[m:WMDE_Technical_Wishes/Revision_Slider|درخواست]])",
+	"revisionslider-tutorial": "نظرثانی موازنہ کنندہ کی تشریح",
 	"revisionslider-previous-dialog": "پچھلا",
 	"revisionslider-next-dialog": "اگلا",
-	"revisionslider-close-dialog": "بند کرو"
+	"revisionslider-close-dialog": "بند کریں"
 }

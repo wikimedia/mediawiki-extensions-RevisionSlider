@@ -15,7 +15,7 @@
 	"revisionslider-label-comment": "Kommentar:",
 	"revisionslider-label-username": "<strong>Benutzername:</strong> [[$2|$1]]",
 	"revisionslider-minoredit": "Dies ist eine kleine Bearbeitung",
-	"revisionslider-loading-placeholder": "Der Versionsblätterer wird geladen.",
+	"revisionslider-loading-placeholder": "Der Versionsblätterer wird geladen …",
 	"revisionslider-loading-failed": "Der Versionsblätterer konnte nicht geladen werden.",
 	"revisionslider-loading-out-of-range": "Der Versionsblätterer konnte nicht geladen werden, da die angeforderten Versionen nicht in den letzten 500 Versionen der Seite sind.",
 	"revisionslider-arrow-tooltip-newer": "Neuere Versionen ansehen",

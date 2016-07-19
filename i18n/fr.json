@@ -17,7 +17,7 @@
 	"revisionslider-label-comment": "Commentaire :",
 	"revisionslider-label-username": "<strong>Nom d'utilisateur :</strong> [[$2|$1]]",
 	"revisionslider-minoredit": "Ceci est une modification mineure",
-	"revisionslider-loading-placeholder": "L’ascenseur des révisions se charge.",
+	"revisionslider-loading-placeholder": "Le curseur des révisions se charge…",
 	"revisionslider-loading-failed": "Impossible de charger le curseur de révision.",
 	"revisionslider-loading-out-of-range": "Le chargement du curseur de révision a échoué car les révisions demandées ne figurent pas parmi les 500 dernières versions de la page.",
 	"revisionslider-arrow-tooltip-newer": "Voir les nouvelles versions",

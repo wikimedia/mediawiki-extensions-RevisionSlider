@@ -15,7 +15,7 @@
 	"revisionslider-label-comment": "Коментар:",
 	"revisionslider-label-username": "<strong>Корисничко име:</strong> [[$2|$1]]",
 	"revisionslider-minoredit": "Ова е ситна промена",
-	"revisionslider-loading-placeholder": "Лизгачот на преработки се вчитува.",
+	"revisionslider-loading-placeholder": "Лизгачот на преработки се вчитува...",
 	"revisionslider-loading-failed": "Лизгачот на преработки не се вчита.",
 	"revisionslider-loading-out-of-range": "Лизгачот на преработки не се вчита бидејќи бараните преработки не се во последните 500.",
 	"revisionslider-arrow-tooltip-newer": "Погл. понови преработки",
