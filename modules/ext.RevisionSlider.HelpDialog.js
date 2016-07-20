@@ -66,6 +66,8 @@
 						.html( mw.message( 'revisionslider-help-dialog-slide1' ).parse() )
 				);
 
+			slide.$element.find( 'a' ).attr( 'target', '_blank' );
+
 			return slide;
 		},
 
