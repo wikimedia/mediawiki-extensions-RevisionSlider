@@ -4,9 +4,9 @@
 			"AryanSogd"
 		]
 	},
-	"revisionslider-label-article-size": "Андозаи мақола: $1",
+	"revisionslider-beta-feature-message": "Вироишҳои слайдер",
 	"revisionslider-label-comment": "Тавзеҳ аз тарафи $1",
-	"revisionslider-label-user": "Корбар:$1",
 	"revisionslider-arrow-tooltip-newer": "Бингар вироишҳои нав",
-	"revisionslider-arrow-tooltip-older": "Бингар нусхаҳои гузашта"
+	"revisionslider-arrow-tooltip-older": "Бингар нусхаҳои гузашта",
+	"revisionslider-tutorial": "Вироишҳои слайдер, воситаҳои ёдгирӣ"
 }

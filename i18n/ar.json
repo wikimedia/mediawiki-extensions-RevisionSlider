@@ -23,7 +23,7 @@
 	"revisionslider-arrow-tooltip-older": "إظهار نسخ أقدم",
 	"revisionslider-show-help": "؟",
 	"revisionslider-show-help-tooltip": "أظهر نص المساعدة",
-	"revisionslider-help-dialog-slide1": "يسهل مقارن النسخ تصفح النسخ ومقارنتها في صفحة الفرق. ([[m:WMDE_Technical_Wishes/Revision_Slider|الطلب]])",
+	"revisionslider-help-dialog-slide1": "يسهل مقارن النسخ تصفح النسخ ومقارنتها في صفحة الفرق. ([[m:WMDE_Technical_Wishes/RevisionSlider|الطلب]])",
 	"revisionslider-help-dialog-slide2": "يمثل كل عمود نسخة من الصفحة. الأعمدة فوق الخط عبارة عن التعديلات زيادة المحتوى والتي تحت الخط تعبر عن نقصان المحتوى. تظهر الصورة 1 الزيادة و2 النقصان.",
 	"revisionslider-help-dialog-slide3": "<p>اختر النسختين المراد مقارنتهما مستعملا المؤشر الأصفر والأزرق</p><p>\nالأزرق للنسخ الأحدث والأصفر للأقدم.</p><p>حرك المؤشر بإبقاء الضغط عليه وتحريكه أو بالنقر على العمود.</p>",
 	"revisionslider-help-dialog-slide4": "استعمل الأسهم المتجهة يمينا ويسارا لتصفح تاريخ الصفحة وعرض النسخ الأقدم والأحدث.",

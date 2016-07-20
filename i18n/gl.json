@@ -21,7 +21,7 @@
 	"revisionslider-arrow-tooltip-newer": "Ver revisións máis recentes",
 	"revisionslider-arrow-tooltip-older": "Ver revisións máis vellas",
 	"revisionslider-show-help-tooltip": "Mostrar o texto de axuda",
-	"revisionslider-help-dialog-slide1": "O Deslizador de revisións axúdao a navegar e comparar revisións na páxina de diferenzas. Está baseado nunha [[m:WMDE_Technical_Wishes/Revision_Slider|solicitude comunitaria]] da lista de solicitudes técnicas da comunidade xermanoparlante.",
+	"revisionslider-help-dialog-slide1": "O Deslizador de revisións axúdao a navegar e comparar revisións na páxina de diferenzas. Está baseado nunha [[m:WMDE_Technical_Wishes/RevisionSlider|solicitude comunitaria]] da lista de solicitudes técnicas da comunidade xermanoparlante.",
 	"revisionslider-help-dialog-slide2": "Cada barra representa a revisión dunha páxina. As barras de arriba mostran un crecemento no tamaño da páxina, as barras de abaixo mostran unha redución. Na imaxe, a revisión 1 representa o contido engadido, mentres que a revisión 2 representa a eliminación de contido.",
 	"revisionslider-help-dialog-slide3": "<p>Para comparar certas revisións, seleccióneas utilizando o punteiro amarelo e o azul.</p><p>O punteiro azul controla a revisión máis recente, o punteiro amarelo controla a revisión máis vella.</p><p>Mova os punteiros arrastrando e soltando ou prema nunha barra.</p>",
 	"revisionslider-help-dialog-slide4": "Use as frechas de avanzar e retroceder para moverse no historial de revisións e mostrar revisións máis novas e máis antigas.",

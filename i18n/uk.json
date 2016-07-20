@@ -20,6 +20,6 @@
 	"revisionslider-loading-out-of-range": "Не вдалося завантажити повзунок версій, оскільки запитані версії не належать до 500 останніх версій сторінки.",
 	"revisionslider-arrow-tooltip-newer": "Дивитися новіші версії",
 	"revisionslider-arrow-tooltip-older": "Дивитися старіші версії",
-	"revisionslider-help-dialog-slide1": "RevisionSlider допомагає в навігації і порівнянні версій. Він базується на [[m:WMDE_Technical_Wishes/Revision_Slider|побажанні спільноти]] зі списку технічних побажань німецькомовної спільноти.",
+	"revisionslider-help-dialog-slide1": "RevisionSlider допомагає в навігації і порівнянні версій. Він базується на [[m:WMDE_Technical_Wishes/RevisionSlider|побажанні спільноти]] зі списку технічних побажань німецькомовної спільноти.",
 	"revisionslider-help-dialog-slide2": "Кожна панель є версією сторінки. Панелі угорі показують збільшення розміру сторінки, панелі внизу — зменшення. На зображенні версія 1 показує доданий вміст, тоді як версія 2 показує вилучення вмісту."
 }
