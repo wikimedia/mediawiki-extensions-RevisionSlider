@@ -6,7 +6,7 @@
     },
     "revisionslider": "RevisionSlider",
     "revisionslider-desc": "Shows a slider allowing selecting and comparing of revisions on a diff page",
-    "revisionslider-beta-feature-message": "Revision Slider",
+    "revisionslider-beta-feature-message": "RevisionSlider",
     "revisionslider-beta-feature-description": "Show a revision slider when comparing two revisions of a page.",
     "revisionslider-label-date": "<strong>Date:</strong> $1",
     "revisionslider-label-page-size": "<strong>Page size:</strong> $1 {{PLURAL:$2|byte|bytes}}",
@@ -25,7 +25,7 @@
     "revisionslider-help-dialog-slide2": "Each bar represents a page revision. Bars on the top show growth in size of the page, bars on the bottom show a reduction. In the image, revision 1 represents added content, while revision 2 represents removal of content.",
     "revisionslider-help-dialog-slide3": "<p>To compare certain revisions, select the revisions using the yellow and blue pointer.</p><p>The blue pointer controls the newer revision, the yellow pointer maps to the older revision.</p><p>Move the pointers by drag and drop or click on a bar.</p>",
     "revisionslider-help-dialog-slide4": "Use the backward and forward arrows to move through revision history and show older and newer revisions.",
-    "revisionslider-tutorial": "Revision Slider Tutorial",
+    "revisionslider-tutorial": "RevisionSlider Tutorial",
     "revisionslider-previous-dialog": "Previous",
     "revisionslider-next-dialog": "Next",
     "revisionslider-close-dialog": "Close"
