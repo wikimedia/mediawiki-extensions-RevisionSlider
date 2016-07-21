@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"BHARATHESHA ALASANDEMAJALU"
+			"BHARATHESHA ALASANDEMAJALU",
+			"Vishwanatha Badikana"
 		]
 	},
-	"revisionslider-label-comment": "ಅಭಿಪ್ರಾಯೊ:",
-	"revisionslider-show-help-tooltip": "ಸಹಾಯೋ ಪದೊಕುಲೆನ್ ತೋಜಾಲೇ",
+	"revisionslider-label-comment": "ಅಬಿಪ್ರಾಯೊ:",
+	"revisionslider-show-help-tooltip": "ಸಕಾಯೊ ಪದೊಕುಲೆನ್ ತೋಜಾಲೆ",
 	"revisionslider-previous-dialog": "ದುಂಬುದ",
-	"revisionslider-next-dialog": "ನನತಾ",
+	"revisionslider-next-dialog": "ನಾನೊತ",
 	"revisionslider-close-dialog": "ಮುಚ್ಚಿಲೆ"
 }

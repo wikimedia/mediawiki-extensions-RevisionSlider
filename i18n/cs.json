@@ -4,13 +4,17 @@
 			"Dvorapa"
 		]
 	},
+	"revisionslider-beta-feature-message": "Časová osa historie",
 	"revisionslider-label-date": "<strong>Datum:</strong> $1",
 	"revisionslider-label-page-size": "<strong>Velikost stránky:</strong> $1 {{PLURAL:$2|bajt|bajty|bajtů}}",
 	"revisionslider-label-change-size": "<strong>Velikost změny:</strong> $1 {{PLURAL:$2|bajt|bajty|bajtů}}",
 	"revisionslider-label-comment": "Komentář:",
 	"revisionslider-label-username": "<strong>Uživatelské jméno:</strong> [[$2|$1]]",
 	"revisionslider-minoredit": "Toto je malá editace",
+	"revisionslider-loading-placeholder": "Časová osa se načítá...",
 	"revisionslider-show-help-tooltip": "Zobrazit text nápovědy",
+	"revisionslider-help-dialog-slide1": "Časová osa historie pomáhá najít nebo porovnávat revize v rozdílu verzí. Je založena na [[m:WMDE_Technical_Wishes/RevisionSlider|přání německy mluvící komunity]].",
+	"revisionslider-tutorial": "Průvodce časovou osou historie",
 	"revisionslider-previous-dialog": "Předchozí",
 	"revisionslider-next-dialog": "Další",
 	"revisionslider-close-dialog": "Zavřít"

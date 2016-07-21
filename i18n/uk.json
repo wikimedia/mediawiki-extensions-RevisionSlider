@@ -3,7 +3,8 @@
 		"authors": [
 			"Ата",
 			"Green Zero",
-			"Macofe"
+			"Macofe",
+			"Base"
 		]
 	},
 	"revisionslider": "RevisionSlider",
@@ -15,11 +16,19 @@
 	"revisionslider-label-change-size": "<strong>Розмір зміни:</strong> $1 {{PLURAL:$2|байт|байти|байтів}}",
 	"revisionslider-label-comment": "Коментар:",
 	"revisionslider-label-username": "<strong>Ім'я користувача:</strong> [[$2|$1]]",
-	"revisionslider-loading-placeholder": "Повзунок версій завантажується.",
+	"revisionslider-minoredit": "Це незначна зміна",
+	"revisionslider-loading-placeholder": "Повзунок версій завантажується…",
 	"revisionslider-loading-failed": "Не вдалося завантажити повзунок версій.",
 	"revisionslider-loading-out-of-range": "Не вдалося завантажити повзунок версій, оскільки запитані версії не належать до 500 останніх версій сторінки.",
 	"revisionslider-arrow-tooltip-newer": "Дивитися новіші версії",
 	"revisionslider-arrow-tooltip-older": "Дивитися старіші версії",
+	"revisionslider-show-help-tooltip": "Показати текст довідки",
 	"revisionslider-help-dialog-slide1": "RevisionSlider допомагає в навігації і порівнянні версій. Він базується на [[m:WMDE_Technical_Wishes/RevisionSlider|побажанні спільноти]] зі списку технічних побажань німецькомовної спільноти.",
-	"revisionslider-help-dialog-slide2": "Кожна панель є версією сторінки. Панелі угорі показують збільшення розміру сторінки, панелі внизу — зменшення. На зображенні версія 1 показує доданий вміст, тоді як версія 2 показує вилучення вмісту."
+	"revisionslider-help-dialog-slide2": "Кожна панель є версією сторінки. Панелі угорі показують збільшення розміру сторінки, панелі внизу — зменшення. На зображенні версія 1 показує доданий вміст, тоді як версія 2 показує вилучення вмісту.",
+	"revisionslider-help-dialog-slide3": "<p>Для порівняння певних версій, оберіть версії використовуючи жовтий та блакитний вказівник.</p><p>Блакитний вказівник контролює новішу версію, тоді як жовтий вказівник вказує положення новішої версії.</p><p>Пересувайте вказівники перетягуючи їх, або натискаючи на відповідну панель.</p>",
+	"revisionslider-help-dialog-slide4": "Використовуйте стрілки назад та вперед для пересування по історії та показу старіших та новіших версій.",
+	"revisionslider-tutorial": "Настанови по використанню Слайдера версій",
+	"revisionslider-previous-dialog": "Попередня",
+	"revisionslider-next-dialog": "Наступна",
+	"revisionslider-close-dialog": "Закрити"
 }
