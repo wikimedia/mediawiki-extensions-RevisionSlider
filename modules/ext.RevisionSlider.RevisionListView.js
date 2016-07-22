@@ -39,6 +39,26 @@
 				},
 				hideTooltip = function () {
 					self.hideTooltip( $( this ) );
+				},
+				tooltipGravity = function () {
+					// Returns a function setting a gravity of the tooltip so that it will be entirely visible
+					// Based on tipsy's own $.fn.tipsy.autoBounds, with considering the width of the
+					// inner contents of the tooltip, and assuming the gravity always starts with 'n'
+					return function () {
+						var dir = 'n',
+							$this = $( this ),
+							$tip = $this.tipsy( true ).$tip,
+							boundLeft = $( document ).scrollLeft() + $tip.outerWidth();
+
+						if ( $this.offset().left < boundLeft ) {
+							dir += 'w';
+						}
+						if ( $( window ).width() + $( document ).scrollLeft() - $this.offset().left < 0 ) {
+							dir += 'e';
+						}
+
+						return dir;
+					};
 				};
 
 			for ( i = 0; i < revs.length; i++ ) {
@@ -52,7 +72,7 @@
 						.attr( 'title', tooltip )
 						.width( revisionTickWidth )
 						.tipsy( {
-							gravity: 's',
+							gravity: tooltipGravity(),
 							html: true,
 							trigger: 'manual',
 							className: 'mw-revslider-revision-tooltip mw-revslider-revision-tooltip-' + ( i + 1 )
