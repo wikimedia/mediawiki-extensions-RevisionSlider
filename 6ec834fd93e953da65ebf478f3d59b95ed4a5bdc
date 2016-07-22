@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e1983c1_6f86611a",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-07-22T15:28:45Z",
+      "side": 1,
+      "message": "Since we only use it once, \"tooltipGravity\" doesn\u0027t need to be a higher order function.",
+      "revId": "6ec834fd93e953da65ebf478f3d59b95ed4a5bdc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
