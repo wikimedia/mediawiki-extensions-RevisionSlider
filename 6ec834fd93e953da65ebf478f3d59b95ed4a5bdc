@@ -16,6 +16,24 @@
       "revId": "6ec834fd93e953da65ebf478f3d59b95ed4a5bdc",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aed9e73f_85a00640",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-07-25T15:26:10Z",
+      "side": 1,
+      "message": "Hmm, I might be just not getting the point, or it just because it was early morning when I looked at your comment but it seems to me it does not work as expected when I pass a simple string-returning function to tipsy (as a gravity param).\nIn such case the function gets called for each revision at the point the slider is loaded, not only at the point of actually hovering the related revision. Also in this case this trying to get a $tip of the related tooltip (ie. the actual tooltip content) fails. The latter issue I find actually more problematic - idea here is to know the actual size of the tooltip.\n\nOr maybe I just mixed up too many things here. I will check this again once I figure out why browser tests started to fail on Jenkins.",
+      "parentUuid": "8e1983c1_6f86611a",
+      "revId": "6ec834fd93e953da65ebf478f3d59b95ed4a5bdc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
