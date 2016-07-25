@@ -59,6 +59,11 @@
 		user: '',
 
 		/**
+		 * @type {string}
+		 */
+		userGender: '',
+
+		/**
 		 * @type {number}
 		 */
 		relativeSize: 0,
@@ -130,6 +135,20 @@
 		 */
 		getUser: function () {
 			return this.user;
+		},
+
+		/**
+		 * @param {string} gender
+		 */
+		setUserGender: function ( gender ) {
+			this.userGender = gender;
+		},
+
+		/**
+		 * @return {string}
+		 */
+		getUserGender: function () {
+			return this.userGender;
 		},
 
 		/**
