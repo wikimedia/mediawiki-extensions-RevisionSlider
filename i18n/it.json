@@ -7,12 +7,15 @@
 			"Ferdi2005"
 		]
 	},
+	"revisionslider-beta-feature-message": "RevisionSlider",
 	"revisionslider-label-date": "<strong>Data:</strong> $1",
 	"revisionslider-label-page-size": "<strong>Dimensione della pagina:</strong> $1 {{PLURAL:$2|byte}}",
 	"revisionslider-label-change-size": "<strong>Dimensione della modifica:</strong> $1 {{PLURAL:$2|byte}}",
 	"revisionslider-label-comment": "Commento:",
 	"revisionslider-label-username": "<strong>Nome utente:</strong> [[$2|$1]]",
 	"revisionslider-minoredit": "Questa è una modifica minore",
+	"revisionslider-loading-placeholder": "RevisionSlider in caricamento...",
+	"revisionslider-loading-failed": "Errore durante il caricamento di RevisionSlider.",
 	"revisionslider-arrow-tooltip-newer": "Vedi le versioni più recenti",
 	"revisionslider-arrow-tooltip-older": "Vedi le versioni meno recenti",
 	"revisionslider-show-help-tooltip": "Mostra testo di aiuto",
