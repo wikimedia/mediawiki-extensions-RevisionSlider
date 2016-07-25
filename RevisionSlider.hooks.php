@@ -26,6 +26,14 @@ class RevisionSliderHooks {
 			return true;
 		}
 
+		/**
+		 * Do not show the RevisionSlider on special pages that use a Diff view for example
+		 * Special:ComparePages
+		 */
+		if ( $diff->getTitle()->getNamespace() === NS_SPECIAL ) {
+			return true;
+		}
+
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$timeOffset = $config->get( 'LocalTZoffset' );
 		if ( is_null( $config->get( 'Localtimezone' ) ) ) {
