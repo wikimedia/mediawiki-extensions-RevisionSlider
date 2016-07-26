@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aed9e73f_3e5ae0f9",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-07-26T07:27:50Z",
+      "side": 1,
+      "message": "This didn\u0027t work for me one tried with a language distincting between masculine and feminine names. Did it work for you?\n\nReason is that GENDER works a bit different for client-side code. Namely, what should be passed to the GENDER is not the username but either a string (\u0027male\u0027, \u0027female\u0027 or \u0027unknown\u0027), or the mw.User object instance (which represent the current user so it is not really applicable here).\nSee more at: https://www.mediawiki.org/wiki/Manual:Messages_API#GENDER_in_JavaScript",
+      "revId": "8bdc2653db3e32bc01a54bd7d33825715f5d0dd3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
