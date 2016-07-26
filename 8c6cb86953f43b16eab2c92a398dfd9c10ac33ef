@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aed9e73f_810b91d8",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 54
+      },
+      "writtenOn": "2016-07-26T11:06:40Z",
+      "side": 1,
+      "message": "It would be far better not to use any markup in translatable messages—neither \u003cstrong\u003e nor \u003cbdi\u003e. See https://www.mediawiki.org/wiki/Localisation#Avoid_untranslated_HTML_markup_in_messages\n\nThe wiki syntax [[$2|$1]] is not needed either.\n\nThe message should be just \"Username:\" (including the colon), and the rest can be inserted in the code.",
+      "range": {
+        "startLine": 15,
+        "startChar": 45,
+        "endLine": 15,
+        "endChar": 46
+      },
+      "revId": "8c6cb86953f43b16eab2c92a398dfd9c10ac33ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
