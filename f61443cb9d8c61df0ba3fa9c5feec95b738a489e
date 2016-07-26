@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aed9e73f_c1f4b9ce",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2016-07-26T11:07:27Z",
+      "side": 1,
+      "message": "-\u003einNamespace( NS_SPECIAL ) is better.",
+      "range": {
+        "startLine": 33,
+        "startChar": 26,
+        "endLine": 33,
+        "endChar": 38
+      },
+      "revId": "f61443cb9d8c61df0ba3fa9c5feec95b738a489e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
