@@ -157,7 +157,7 @@
 		 * @return {string}
 		 */
 		getUserPage: function ( user ) {
-			return ( mw.util.isIPAddress( user, false ) ? 'Special:Contributions/' : 'User:' ) + mw.html.escape( user );
+			return ( mw.util.isIPAddress( user, false ) ? 'Special:Contributions/' : 'User:' ) + this.stripInvalidCharacters( user );
 		},
 
 		/**
@@ -172,8 +172,16 @@
 			}
 
 			return $( '<bdi>' ).append( $( '<p>' ).append(
-				mw.message( 'revisionslider-label-username', mw.html.escape( userString ), this.getUserPage( userString ) ).parseDom()
+				mw.message( 'revisionslider-label-username', this.stripInvalidCharacters( userString ), this.getUserPage( userString ) ).parseDom()
 			) );
+		},
+
+		/**
+		 * @param {string} s
+		 * @return {string}
+		 */
+		stripInvalidCharacters: function ( s ) {
+			return s.replace( /[<>&]/g, '' );
 		},
 
 		/**
