@@ -13,7 +13,7 @@
 	"revisionslider-label-page-size": "<strong>גודל הדף:</strong> {{PLURAL:$2|בייט אחד|$1 בייטים}}",
 	"revisionslider-label-change-size": "<strong>השינוי בגודל הדף:</strong> $1 בייטים",
 	"revisionslider-label-comment": "תקציר העריכה:&nbsp;",
-	"revisionslider-label-username": "<strong>משתמש:</strong> [[$2|$1]]",
+	"revisionslider-label-username": "<strong>משתמש:</strong> [[$3|$1]]",
 	"revisionslider-minoredit": "זוהי עריכה משנית",
 	"revisionslider-loading-placeholder": "טוען את סרגל הגרסאות...",
 	"revisionslider-loading-failed": "לא ניתן היה לטעון את סרגל הגרסאות.",

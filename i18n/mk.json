@@ -13,7 +13,7 @@
 	"revisionslider-label-page-size": "<strong>Големина на страницата:</strong> $1 {{PLURAL:$2|бајт|бајти}}",
 	"revisionslider-label-change-size": "Големина на промената: $1 {{PLURAL:$2|бајт|бајти}}",
 	"revisionslider-label-comment": "Коментар:",
-	"revisionslider-label-username": "<strong>Корисничко име:</strong> [[$2|$1]]",
+	"revisionslider-label-username": "<strong>Корисничко име:</strong> [[$3|$1]]",
 	"revisionslider-minoredit": "Ова е ситна промена",
 	"revisionslider-loading-placeholder": "Лизгачот на преработки се вчитува...",
 	"revisionslider-loading-failed": "Лизгачот на преработки не се вчита.",

@@ -15,7 +15,7 @@
 	"revisionslider-label-page-size": "<strong>Розмір сторінки:</strong> $1 {{PLURAL:$2|байт|байти|байтів}}",
 	"revisionslider-label-change-size": "<strong>Розмір зміни:</strong> $1 {{PLURAL:$2|байт|байти|байтів}}",
 	"revisionslider-label-comment": "Коментар:",
-	"revisionslider-label-username": "<strong>Ім'я користувача:</strong> [[$2|$1]]",
+	"revisionslider-label-username": "<strong>Ім'я користувача:</strong> [[$3|$1]]",
 	"revisionslider-minoredit": "Це незначна зміна",
 	"revisionslider-loading-placeholder": "Повзунок версій завантажується…",
 	"revisionslider-loading-failed": "Не вдалося завантажити повзунок версій.",

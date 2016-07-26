@@ -12,7 +12,7 @@
 	"revisionslider-label-page-size": "<strong>Dimensione della pagina:</strong> $1 {{PLURAL:$2|byte}}",
 	"revisionslider-label-change-size": "<strong>Dimensione della modifica:</strong> $1 {{PLURAL:$2|byte}}",
 	"revisionslider-label-comment": "Commento:",
-	"revisionslider-label-username": "<strong>Nome utente:</strong> [[$2|$1]]",
+	"revisionslider-label-username": "<strong>Nome utente:</strong> [[$3|$1]]",
 	"revisionslider-minoredit": "Questa è una modifica minore",
 	"revisionslider-loading-placeholder": "RevisionSlider in caricamento...",
 	"revisionslider-loading-failed": "Errore durante il caricamento di RevisionSlider.",

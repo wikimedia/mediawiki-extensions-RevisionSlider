@@ -9,7 +9,7 @@
 	"revisionslider-label-page-size": "<strong>Velikost stránky:</strong> $1 {{PLURAL:$2|bajt|bajty|bajtů}}",
 	"revisionslider-label-change-size": "<strong>Velikost změny:</strong> $1 {{PLURAL:$2|bajt|bajty|bajtů}}",
 	"revisionslider-label-comment": "Komentář:",
-	"revisionslider-label-username": "<strong>Uživatelské jméno:</strong> [[$2|$1]]",
+	"revisionslider-label-username": "<strong>Uživatelské jméno:</strong> [[$3|$1]]",
 	"revisionslider-minoredit": "Toto je malá editace",
 	"revisionslider-loading-placeholder": "Časová osa se načítá...",
 	"revisionslider-show-help-tooltip": "Zobrazit text nápovědy",

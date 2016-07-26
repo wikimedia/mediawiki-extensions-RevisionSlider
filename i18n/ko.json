@@ -11,7 +11,7 @@
 	"revisionslider-label-page-size": "<strong>용지 크기:</strong> $1 {{PLURAL:$2|바이트}}",
 	"revisionslider-label-change-size": "<strong>변경된 크기:</strong> $1 {{PLURAL:$2|바이트|바이트}}",
 	"revisionslider-label-comment": "의견:",
-	"revisionslider-label-username": "<strong>사용자 이름:</strong> [[$2|$1]]",
+	"revisionslider-label-username": "<strong>사용자 이름:</strong> [[$3|$1]]",
 	"revisionslider-minoredit": "사소한 편집입니다",
 	"revisionslider-arrow-tooltip-newer": "새로운 판 보기",
 	"revisionslider-arrow-tooltip-older": "과거 판 보기",

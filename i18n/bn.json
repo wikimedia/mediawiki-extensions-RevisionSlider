@@ -9,7 +9,7 @@
 	"revisionslider-label-page-size": "<strong>পাতার আকার:</strong> $1 {{PLURAL:$2|বাইট}}",
 	"revisionslider-label-change-size": "<strong>পরিবর্তনের আকার:</strong> $1 {{PLURAL:$2|বাইট}}",
 	"revisionslider-label-comment": "মন্তব্য:",
-	"revisionslider-label-username": "<strong>ব্যবহারকারী নাম:</strong> [[$2|$1]]",
+	"revisionslider-label-username": "<strong>ব্যবহারকারী নাম:</strong> [[$3|$1]]",
 	"revisionslider-minoredit": "এটি একটি অনুল্লেখিত সম্পাদনা",
 	"revisionslider-arrow-tooltip-newer": "নতুন সংস্করণ দেখুন",
 	"revisionslider-arrow-tooltip-older": "পুরনো সংস্করণ দেখুন",

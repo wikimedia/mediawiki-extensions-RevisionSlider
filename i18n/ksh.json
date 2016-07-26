@@ -11,7 +11,7 @@
 	"revisionslider-label-page-size": "<strong>Ömfang vun dä Sigg:</strong> $1 {{PLURAL:$2|eij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>|$2 <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Bytes</i>|keij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>}}",
 	"revisionslider-label-change-size": "<strong>Ömvang verändert öm:</strong> $1 {{PLURAL:$2|eij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>|$2 <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Bytes</i>|keij <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\">Byte</i>}}",
 	"revisionslider-label-comment": "Kommäntah:",
-	"revisionslider-label-username": "<strong>Metmaacher_Nahme:</strong> [[$2|$1]]",
+	"revisionslider-label-username": "<strong>Metmaacher_Nahme:</strong> [[$3|$1]]",
 	"revisionslider-minoredit": "Heh dat es en klein Mini-Änderong",
 	"revisionslider-loading-placeholder": "Der Väsjohne-Schihber weed jelahde&nbsp;&hellip;",
 	"revisionslider-loading-failed": "Mer kunnte der Väsjohne-Schihber it lahde.",

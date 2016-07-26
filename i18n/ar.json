@@ -14,7 +14,7 @@
 	"revisionslider-label-page-size": "<strong>حجم الصفحة:</strong> {{PLURAL:$2|بايت $1|بايتان $1|$1 بايتات|$1 بايتا|$1 بايت}}",
 	"revisionslider-label-change-size": "<strong>حجم التغيير:</strong> {{PLURAL:$2|بايت $1|بايتان $1|$1 بايتات|$1 بايتا|$1 بايت}}",
 	"revisionslider-label-comment": "التعليق:",
-	"revisionslider-label-username": "<strong>المستخدم:</strong> [[$2|$1]]",
+	"revisionslider-label-username": "<strong>المستخدم:</strong> [[$3|$1]]",
 	"revisionslider-minoredit": "هذا تعديل طفيف",
 	"revisionslider-loading-placeholder": "تحميل مقارن النسخ.",
 	"revisionslider-loading-failed": "لم يحمل مقارن النسخ.",

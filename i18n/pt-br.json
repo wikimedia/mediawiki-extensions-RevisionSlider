@@ -13,7 +13,7 @@
 	"revisionslider-label-page-size": "<strong>Tamanho da página:</strong> $1 {{PLURAL:$2|byte|bytes}}",
 	"revisionslider-label-change-size": "<strong>Tamanho da mudança:</strong> $1 {{PLURAL:$2|byte|bytes}}",
 	"revisionslider-label-comment": "Comentário:",
-	"revisionslider-label-username": "<strong>Nome de usuário(a):</strong> [[$2|$1]]",
+	"revisionslider-label-username": "<strong>Nome de usuário(a):</strong> [[$3|$1]]",
 	"revisionslider-minoredit": "Esta é uma edição menor",
 	"revisionslider-loading-placeholder": "O deslizador de revisões está sendo carregado.",
 	"revisionslider-loading-failed": "O deslizador de revisões não pôde ser carregado.",
