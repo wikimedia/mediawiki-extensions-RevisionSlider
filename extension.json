@@ -121,6 +121,9 @@
 				"modules/ext.RevisionSlider.RevisionListView.js"
 			],
 			"messages": [
+				"colon-separator",
+				"word-separator",
+				"revisionslider-bytes",
 				"revisionslider-label-date",
 				"revisionslider-label-page-size",
 				"revisionslider-label-change-size",

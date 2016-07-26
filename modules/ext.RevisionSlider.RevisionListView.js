@@ -139,7 +139,8 @@
 			var $tooltip = $( '<div>' )
 				.append(
 					$( '<p>' ).append(
-						mw.message( 'revisionslider-label-date', rev.getFormattedDate() ).parseDom()
+						$( '<strong>' ).text( mw.msg( 'revisionslider-label-date' ) + mw.msg( 'colon-separator' ) ),
+						rev.getFormattedDate()
 					),
 					this.makeUserLine( rev.getUser(), rev.getUserGender() ),
 					this.makeCommentLine( rev ),
@@ -176,7 +177,8 @@
 				userGender = 'unknown';
 			}
 			return $( '<bdi>' ).append( $( '<p>' ).append(
-				mw.message( 'revisionslider-label-username', this.stripInvalidCharacters( userString ), userGender, this.getUserPage( userString ) ).parseDom()
+				$( '<strong>' ).text( mw.msg( 'revisionslider-label-username', userGender ) + mw.msg( 'colon-separator' ) ),
+				$( '<a>' ).addClass( 'mw-userlink' ).attr( 'href', mw.util.getUrl( this.getUserPage( userString ) ) ).text( this.stripInvalidCharacters( userString ) )
 			) );
 		},
 
@@ -201,7 +203,7 @@
 
 			return $( '<bdi>' ).append(
 				$( '<p>' ).append(
-					$( '<strong>' ).text( mw.message( 'revisionslider-label-comment' ).text() ),
+					$( '<strong>' ).text( mw.msg( 'revisionslider-label-comment' ) + mw.msg( 'colon-separator' ) ),
 					$( '<em>' ).append(
 						rev.getParsedComment()
 					)
@@ -217,7 +219,10 @@
 		 */
 		makePageSizeLine: function ( size ) {
 			return $( '<p>' ).append(
-				mw.message( 'revisionslider-label-page-size', mw.language.convertNumber( size ), size ).parseDom()
+				$( '<strong>' ).text( mw.msg( 'revisionslider-label-page-size' ) + mw.msg( 'colon-separator' ) ),
+				mw.language.convertNumber( size ),
+				mw.msg( 'word-separator' ),
+				mw.msg( 'revisionslider-bytes', size )
 			);
 		},
 
@@ -247,7 +252,10 @@
 				.text( leadingSign + mw.language.convertNumber( relativeSize ) );
 
 			return $( '<p>' ).append(
-				mw.message( 'revisionslider-label-change-size', $changeNumber, relativeSize ).parseDom()
+				$( '<strong>' ).text( mw.msg( 'revisionslider-label-change-size' ) + mw.msg( 'colon-separator' ) ),
+				$changeNumber,
+				mw.msg( 'word-separator' ),
+				mw.msg( 'revisionslider-bytes', relativeSize )
 			);
 		}
 	} );
