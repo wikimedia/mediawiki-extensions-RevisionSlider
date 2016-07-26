@@ -176,10 +176,12 @@
 			if ( !userGender ) {
 				userGender = 'unknown';
 			}
-			return $( '<bdi>' ).append( $( '<p>' ).append(
+			return $( '<p>' ).append(
 				$( '<strong>' ).text( mw.msg( 'revisionslider-label-username', userGender ) + mw.msg( 'colon-separator' ) ),
-				$( '<a>' ).addClass( 'mw-userlink' ).attr( 'href', mw.util.getUrl( this.getUserPage( userString ) ) ).text( this.stripInvalidCharacters( userString ) )
-			) );
+				$( '<bdi>' ).append(
+					$( '<a>' ).addClass( 'mw-userlink' ).attr( 'href', mw.util.getUrl( this.getUserPage( userString ) ) ).text( this.stripInvalidCharacters( userString ) )
+				)
+			);
 		},
 
 		/**
@@ -201,10 +203,10 @@
 				return '';
 			}
 
-			return $( '<bdi>' ).append(
-				$( '<p>' ).append(
-					$( '<strong>' ).text( mw.msg( 'revisionslider-label-comment' ) + mw.msg( 'colon-separator' ) ),
-					$( '<em>' ).append(
+			return $( '<p>' ).append(
+				$( '<strong>' ).text( mw.msg( 'revisionslider-label-comment' ) + mw.msg( 'colon-separator' ) ),
+				$( '<em>' ).append(
+					$( '<bdi>' ).append(
 						rev.getParsedComment()
 					)
 				)
