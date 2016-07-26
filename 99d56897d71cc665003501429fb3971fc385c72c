@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aed9e73f_e139bdcc",
+        "filename": "modules/ext.RevisionSlider.Api.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-07-26T10:29:51Z",
+      "side": 1,
+      "message": "It might make sense to have a single method in this class that will fetch revision data with suer gender data included (ie. it would do those two API calls .\nAt least it seems those two methods here are going to be always used together.\n\nWhat do reviewers say?",
+      "revId": "99d56897d71cc665003501429fb3971fc385c72c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
