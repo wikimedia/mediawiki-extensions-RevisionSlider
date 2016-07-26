@@ -1,4 +1,6 @@
 ( function ( mw ) {
+	var Revision = mw.libs.revisionSlider.Revision;
+
 	QUnit.module( 'ext.RevisionSlider.Revision' );
 
 	QUnit.test( 'create Revision', function ( assert ) {
@@ -9,7 +11,7 @@
 				timestamp: '2016-04-26T10:27:14Z', // 10:27, 26 Apr 2016
 				user: 'meh'
 			},
-			rev = new mw.libs.revisionSlider.Revision( data );
+			rev = new Revision( data );
 
 		mw.libs.revisionSlider.userOffset = 0;
 
@@ -17,6 +19,7 @@
 		assert.equal( rev.getComment(), data.comment );
 		assert.equal( rev.getParsedComment(), data.parsedcomment );
 		assert.equal( rev.getUser(), data.user );
+		assert.equal( rev.getUserGender(), '' );
 		assert.equal( rev.isMinor(), false );
 
 		if ( mw.config.get( 'wgUserLanguage' ) === 'en' ) {
@@ -25,7 +28,7 @@
 	} );
 
 	QUnit.test( 'isMinor with minor empty string', function ( assert ) {
-		var rev = new mw.libs.revisionSlider.Revision( {
+		var rev = new Revision( {
 			minor: ''
 		} );
 
@@ -33,7 +36,7 @@
 	} );
 
 	QUnit.test( 'isMinor with minor true', function ( assert ) {
-		var rev = new mw.libs.revisionSlider.Revision( {
+		var rev = new Revision( {
 			minor: true
 		} );
 
@@ -42,13 +45,13 @@
 
 	QUnit.test( 'get and set relative size', function ( assert ) {
 		var size = 5,
-			rev = new mw.libs.revisionSlider.Revision( {} );
+			rev = new Revision( {} );
 		rev.setRelativeSize( size );
 		assert.equal( rev.getRelativeSize(), size );
 	} );
 
 	QUnit.revisionSlider.testOrSkip( 'getFormattedDate, offset: 0', function ( assert ) {
-		var rev = new mw.libs.revisionSlider.Revision( {
+		var rev = new Revision( {
 			timestamp: '2016-04-26T10:27:14Z' // 10:27, 26 Apr 2016
 		} );
 
@@ -58,7 +61,7 @@
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
 	QUnit.revisionSlider.testOrSkip( 'getFormattedDate, offset: 120 (treat as hours, +2h)', function ( assert ) {
-		var rev = new mw.libs.revisionSlider.Revision( {
+		var rev = new Revision( {
 			timestamp: '2016-04-26T10:27:14Z' // 10:27, 26 Apr 2016
 		} );
 
@@ -69,7 +72,7 @@
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
 	QUnit.revisionSlider.testOrSkip( 'getFormattedDate, negative offset: -420 (treat as hours, -7h)', function ( assert ) {
-		var rev = new mw.libs.revisionSlider.Revision( {
+		var rev = new Revision( {
 			timestamp: '2016-04-26T10:27:14Z' // 10:27, 26 Apr 2016
 		} );
 
@@ -80,7 +83,7 @@
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
 	QUnit.test( 'hasEmptyComment comment with whitespaces', function ( assert ) {
-		var rev = new mw.libs.revisionSlider.Revision( {
+		var rev = new Revision( {
 			comment: '   '
 		} );
 
@@ -88,7 +91,7 @@
 	} );
 
 	QUnit.test( 'hasEmptyComment comment with chars', function ( assert ) {
-		var rev = new mw.libs.revisionSlider.Revision( {
+		var rev = new Revision( {
 			comment: ' comment '
 		} );
 
@@ -96,11 +99,21 @@
 	} );
 
 	QUnit.test( 'hasEmptyComment comment with unicode chars', function ( assert ) {
-		var rev = new mw.libs.revisionSlider.Revision( {
+		var rev = new Revision( {
 			comment: 'ברוכים'
 		} );
 
 		assert.notOk( rev.hasEmptyComment() );
+	} );
+
+	QUnit.test( 'setUserGender adjusts a gender', function ( assert ) {
+		var rev = new Revision( { user: 'Foo' } );
+
+		assert.equal( rev.getUserGender(), '' );
+
+		rev.setUserGender( 'female' );
+
+		assert.equal( rev.getUserGender(), 'female' );
 	} );
 
 } )( mediaWiki );

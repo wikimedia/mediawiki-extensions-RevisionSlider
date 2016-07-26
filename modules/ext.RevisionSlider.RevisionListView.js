@@ -141,7 +141,7 @@
 					$( '<p>' ).append(
 						mw.message( 'revisionslider-label-date', rev.getFormattedDate() ).parseDom()
 					),
-					this.makeUserLine( rev.getUser() ),
+					this.makeUserLine( rev.getUser(), rev.getUserGender() ),
 					this.makeCommentLine( rev ),
 					this.makePageSizeLine( rev.getSize() ),
 					this.makeChangeSizeLine( rev.getRelativeSize() ),
@@ -164,15 +164,19 @@
 		 * Generates the HTML for the user label
 		 *
 		 * @param {string} userString
+		 * @param {string} userGender
 		 * @return {string|jQuery}
 		 */
-		makeUserLine: function ( userString ) {
+		makeUserLine: function ( userString, userGender ) {
 			if ( !userString ) {
 				return '';
 			}
 
+			if ( !userGender ) {
+				userGender = 'unknown';
+			}
 			return $( '<bdi>' ).append( $( '<p>' ).append(
-				mw.message( 'revisionslider-label-username', this.stripInvalidCharacters( userString ), this.getUserPage( userString ) ).parseDom()
+				mw.message( 'revisionslider-label-username', this.stripInvalidCharacters( userString ), userGender, this.getUserPage( userString ) ).parseDom()
 			) );
 		},
 

@@ -65,6 +65,29 @@
 		},
 
 		/**
+		 * @return {string[]}
+		 */
+		getUserNames: function () {
+			var allUsers = this.revisions.map( function ( revision ) {
+				return revision.getUser();
+			} );
+			return allUsers.filter( function ( value, index, array ) {
+				return value !== '' && array.indexOf( value ) === index;
+			} );
+		},
+
+		/**
+		 * @param {Object} userGenderData
+		 */
+		setUserGenders: function ( userGenderData ) {
+			this.revisions.forEach( function ( revision ) {
+				if ( revision.getUser() !== '' && typeof userGenderData[ revision.getUser() ] !== 'undefined' ) {
+					revision.setUserGender( userGenderData[ revision.getUser() ] );
+				}
+			} );
+		},
+
+		/**
 		 * @return {RevisionListView}
 		 */
 		getView: function () {

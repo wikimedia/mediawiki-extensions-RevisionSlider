@@ -36,7 +36,7 @@
 				"ext.RevisionSlider.Revision",
 				"ext.RevisionSlider.RevisionList",
 				"ext.RevisionSlider.HelpDialog",
-				"ext.RevisionSlider.fetchRevisions",
+				"ext.RevisionSlider.Api",
 				"ext.RevisionSlider.arrows.left",
 				"ext.RevisionSlider.arrows.right",
 				"ext.RevisionSlider.pointers.lower",
@@ -54,9 +54,9 @@
 		"ext.RevisionSlider.noscript": {
 			"styles": "modules/ext.RevisionSlider.noscript.css"
 		},
-		"ext.RevisionSlider.fetchRevisions": {
+		"ext.RevisionSlider.Api": {
 			"scripts": [
-				"modules/ext.RevisionSlider.fetchRevisions.js"
+				"modules/ext.RevisionSlider.Api.js"
 			]
 		},
 		"ext.RevisionSlider.Revision": {
