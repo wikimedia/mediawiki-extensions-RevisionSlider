@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aed9e73f_57494769",
+        "filename": "tests/qunit/RevisionSlider.RevisionList.test.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-07-26T15:20:27Z",
+      "side": 1,
+      "message": "that\u0027s irrelevant comment here",
+      "revId": "e66240da06574273c7b7527fc6dddd836c10a3ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
