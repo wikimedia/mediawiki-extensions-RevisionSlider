@@ -22,6 +22,30 @@
       "revId": "8c6cb86953f43b16eab2c92a398dfd9c10ac33ef",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8edee325_21d4884b",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-07-27T09:31:15Z",
+      "side": 1,
+      "message": "Good point. I am trying to get rid of HTML in messages and build all necessary HTML markup in code in https://gerrit.wikimedia.org/r/#/c/301338/ (first patchset is probably not perfect yet, though)\n\nI will rebase this patch on top of the other one. Fixing the usage of \u003cbdi\u003e could probably be also done in the other patch but I\u0027d keep it separate to make reviewing easier.\n\nAs you might notice, I\u0027ve decided to not include a colon in messages and use the \"colon-separator\" message from code instead, inserted right after the actual message. \nWhat punctuation is used after and before the colon varies between languages. E.g. if space after the colon is needed, it would then should also be a part of the message (this is the way we actually been doing so far) but then it gets easily missed by the translator. For instance current German translation of \"Comment: \" has no trailing space and we already got some reports from users it does not look good.\nUsing \"colon-separator\" seems like a remedy to this problem, although I am not sure yet if it would really work for all languages.",
+      "parentUuid": "aed9e73f_810b91d8",
+      "range": {
+        "startLine": 15,
+        "startChar": 45,
+        "endLine": 15,
+        "endChar": 46
+      },
+      "revId": "8c6cb86953f43b16eab2c92a398dfd9c10ac33ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
