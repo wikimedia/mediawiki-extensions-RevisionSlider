@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8edee325_278bb81c",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-07-27T15:49:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8edee325_444e0274",
+      "range": {
+        "startLine": 561,
+        "startChar": 4,
+        "endLine": 561,
+        "endChar": 113
+      },
+      "revId": "4f4d5a63919deb4588be596d0d5ab793168c0eb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8edee325_a43c26be",
         "filename": "modules/ext.RevisionSlider.SliderView.js",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2016-07-27T12:06:37Z",
       "side": 1,
       "message": "This could be refactored into an extra method since its also used below.",
+      "range": {
+        "startLine": 615,
+        "startChar": 0,
+        "endLine": 622,
+        "endChar": 5
+      },
+      "revId": "4f4d5a63919deb4588be596d0d5ab793168c0eb1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8edee325_c7c93457",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-07-27T15:49:13Z",
+      "side": 1,
+      "message": "Gonna be a small method but done!",
+      "parentUuid": "8edee325_a43c26be",
       "range": {
         "startLine": 615,
         "startChar": 0,
