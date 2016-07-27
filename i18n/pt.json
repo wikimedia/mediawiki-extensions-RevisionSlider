@@ -5,11 +5,12 @@
 			"Vitorvicentevalente"
 		]
 	},
-	"revisionslider-label-date": "<strong>Data:</strong> $1",
-	"revisionslider-label-page-size": "<strong>Tamanho da página:</strong> $1 {{PLURAL:$2|byte|bytes}}",
-	"revisionslider-label-change-size": "<strong>Tamanho da alteração:</strong> $1 {{PLURAL:$2|byte|bytes}}",
-	"revisionslider-label-comment": "Comentário:",
-	"revisionslider-label-username": "<strong>Nome de utilizador(a):</strong> [[$3|$1]]",
+	"revisionslider-bytes": "{{PLURAL:$1|byte|bytes}}",
+	"revisionslider-label-date": "Data",
+	"revisionslider-label-page-size": "Tamanho da página",
+	"revisionslider-label-change-size": "Tamanho da alteração",
+	"revisionslider-label-comment": "Comentário",
+	"revisionslider-label-username": "Nome de {{GENDER:$1|utilizador|utilizadora|utilizador(a)}}",
 	"revisionslider-minoredit": "Esta é uma edição menor",
 	"revisionslider-arrow-tooltip-newer": "Ver revisões mais recentes",
 	"revisionslider-arrow-tooltip-older": "Ver revisões mais antigas",

@@ -15,7 +15,7 @@
 	"revisionslider-label-page-size": "<strong>Longueur de la page :</strong> $1 {{PLURAL:$2|octet|octets}}",
 	"revisionslider-label-change-size": "<strong>Évolution de la taille :</strong> $1 {{PLURAL:$2|octet|octets}}",
 	"revisionslider-label-comment": "Commentaire :",
-	"revisionslider-label-username": "<strong>Nom d'utilisateur :</strong> [[$3|$1]]",
+	"revisionslider-label-username": "<strong>Nom d’{{GENDER:$2|utilisateur|utilisatrice}} :</strong> [[$3|$1]]",
 	"revisionslider-minoredit": "Ceci est une modification mineure",
 	"revisionslider-loading-placeholder": "Le curseur des révisions se charge…",
 	"revisionslider-loading-failed": "Impossible de charger le curseur de révision.",
