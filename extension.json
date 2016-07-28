@@ -121,8 +121,8 @@
 			],
 			"messages": [
 				"colon-separator",
-				"word-separator",
-				"revisionslider-bytes",
+				"revisionslider-page-size",
+				"revisionslider-change-size",
 				"revisionslider-label-date",
 				"revisionslider-label-page-size",
 				"revisionslider-label-change-size",

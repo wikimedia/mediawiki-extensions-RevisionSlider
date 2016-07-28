@@ -260,9 +260,7 @@
 		makePageSizeLine: function ( size ) {
 			return $( '<p>' ).append(
 				$( '<strong>' ).text( mw.msg( 'revisionslider-label-page-size' ) + mw.msg( 'colon-separator' ) ),
-				mw.language.convertNumber( size ),
-				mw.msg( 'word-separator' ),
-				mw.msg( 'revisionslider-bytes', size )
+				mw.msg( 'revisionslider-page-size', mw.language.convertNumber( size ), size )
 			);
 		},
 
@@ -293,9 +291,7 @@
 
 			return $( '<p>' ).append(
 				$( '<strong>' ).text( mw.msg( 'revisionslider-label-change-size' ) + mw.msg( 'colon-separator' ) ),
-				$changeNumber,
-				mw.msg( 'word-separator' ),
-				mw.msg( 'revisionslider-bytes', relativeSize )
+				mw.message( 'revisionslider-change-size', $changeNumber, relativeSize, Math.abs( relativeSize ) ).parse()
 			);
 		}
 	} );
