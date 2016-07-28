@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"AryanSogd"
+			"AryanSogd",
+			"Macofe"
 		]
 	},
 	"revisionslider-beta-feature-message": "Вироишҳои слайдер",
-	"revisionslider-label-comment": "Тавзеҳ аз тарафи $1",
+	"revisionslider-label-comment": "Тавзеҳ аз тарафи",
 	"revisionslider-arrow-tooltip-newer": "Бингар вироишҳои нав",
 	"revisionslider-arrow-tooltip-older": "Бингар нусхаҳои гузашта",
 	"revisionslider-tutorial": "Вироишҳои слайдер, воситаҳои ёдгирӣ"

@@ -5,11 +5,12 @@
 			"Macofe"
 		]
 	},
-	"revisionslider-label-date": "<strong>Datum:</strong> $1",
-	"revisionslider-label-page-size": "<strong>Gréisst vun der Säit:<strong> $1 {{PLURAL:$2|Byte|Byten}}",
-	"revisionslider-label-change-size": "<strong>Gréisst vun der Ännerung:<strong> $1 {{PLURAL:$2|Byte|Byten}}",
-	"revisionslider-label-comment": "Bemierkung:",
-	"revisionslider-label-username": "<strong>Benotzernumm:</strong> [[$3|$1]]",
+	"revisionslider-bytes": "{{PLURAL:$1|Byte|Byten}}",
+	"revisionslider-label-date": "Datum",
+	"revisionslider-label-page-size": "Gréisst vun der Säit",
+	"revisionslider-label-change-size": "Gréisst vun der Ännerung",
+	"revisionslider-label-comment": "Bemierkung",
+	"revisionslider-label-username": "{{GENDER:$1|Benotzernumm}}",
 	"revisionslider-minoredit": "Dëst ass eng kleng Ännerung",
 	"revisionslider-arrow-tooltip-newer": "Méi nei Versioune weisen",
 	"revisionslider-arrow-tooltip-older": "Méi al Versioune weisen",

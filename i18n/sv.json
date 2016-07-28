@@ -6,10 +6,10 @@
 			"Macofe"
 		]
 	},
-	"revisionslider-label-date": "<strong>Datum:</strong> $1",
-	"revisionslider-label-page-size": "<strong>Sidstorlek:</strong> $1 {{PLURAL:$2|byte|bytes}}",
-	"revisionslider-label-change-size": "<strong>Ändra storlek:</strong> $1 {{PLURAL:$2|byte}}",
-	"revisionslider-label-comment": "Kommentar:",
+	"revisionslider-label-date": "Datum",
+	"revisionslider-label-page-size": "Sidstorlek",
+	"revisionslider-label-change-size": "Ändra storlek",
+	"revisionslider-label-comment": "Kommentar",
 	"revisionslider-label-username": "<strong>{{GENDER:$2|Användarnamn}}:</strong> [[$3|$1]]",
 	"revisionslider-minoredit": "Detta är en mindre ändring",
 	"revisionslider-show-help-tooltip": "Visa hjälptext",

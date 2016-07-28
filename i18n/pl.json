@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"Leszek Manicki (WMDE)"
+			"Leszek Manicki (WMDE)",
+			"Macofe"
 		]
 	},
-	"revisionslider-label-date": "<strong>Data:</strong> $1",
-	"revisionslider-label-page-size": "<strong>Rozmiar strony:</strong> $1 {{PLURAL:$2|bajt|bajty|bajtów}}",
-	"revisionslider-label-change-size": "<strong>Wielkość zmiany:</strong> $1 {{PLURAL:$2|bajt|bajty|bajtów}}",
-	"revisionslider-label-comment": "Komentarz:",
+	"revisionslider-label-date": "Data",
+	"revisionslider-label-page-size": "Rozmiar strony",
+	"revisionslider-label-change-size": "Wielkość zmiany",
+	"revisionslider-label-comment": "Komentarz",
 	"revisionslider-label-username": "<strong>Nazwa użytkownika:</strong> [[$3|$1]]",
 	"revisionslider-minoredit": "To jest drobna zmiana",
 	"revisionslider-arrow-tooltip-newer": "Zobacz nowsze wersje",

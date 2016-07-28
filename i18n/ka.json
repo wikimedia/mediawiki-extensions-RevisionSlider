@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"MIKHEIL"
+			"MIKHEIL",
+			"Macofe"
 		]
 	},
-	"revisionslider-label-comment": "კომენტარი:",
+	"revisionslider-label-comment": "კომენტარი",
 	"revisionslider-minoredit": "ეს არის მცირე რედაქტირება",
 	"revisionslider-show-help-tooltip": "იხილეთ დახმარების ტექსტი"
 }

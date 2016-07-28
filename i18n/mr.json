@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"V.narsikar"
+			"V.narsikar",
+			"Macofe"
 		]
 	},
-	"revisionslider-label-date": "<strong>दिनांक:</strong> $1",
+	"revisionslider-label-date": "दिनांक",
 	"revisionslider-label-username": "<strong>सदस्यनाव:</strong> [[$3|$1]]",
 	"revisionslider-minoredit": "हे एक किरकोळ संपादन आहे",
 	"revisionslider-show-help-tooltip": "साहाय्य मजकूर दाखवा",

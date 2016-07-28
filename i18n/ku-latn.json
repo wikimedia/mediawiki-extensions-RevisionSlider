@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"George Animal"
+			"George Animal",
+			"Macofe"
 		]
 	},
-	"revisionslider-label-comment": "Şîrove:",
+	"revisionslider-label-comment": "Şîrove",
 	"revisionslider-minoredit": "Ev guhertineke biçûk e",
 	"revisionslider-close-dialog": "Bigre"
 }
