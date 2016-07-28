@@ -9,7 +9,8 @@
 				comment: 'hello',
 				parsedcomment: '<b>hello</b>',
 				timestamp: '2016-04-26T10:27:14Z', // 10:27, 26 Apr 2016
-				user: 'meh'
+				user: 'meh',
+				userGender: 'female'
 			},
 			rev = new Revision( data );
 
@@ -19,7 +20,7 @@
 		assert.equal( rev.getComment(), data.comment );
 		assert.equal( rev.getParsedComment(), data.parsedcomment );
 		assert.equal( rev.getUser(), data.user );
-		assert.equal( rev.getUserGender(), '' );
+		assert.equal( rev.getUserGender(), 'female' );
 		assert.equal( rev.isMinor(), false );
 
 		if ( mw.config.get( 'wgUserLanguage' ) === 'en' ) {
@@ -104,16 +105,6 @@
 		} );
 
 		assert.notOk( rev.hasEmptyComment() );
-	} );
-
-	QUnit.test( 'setUserGender adjusts a gender', function ( assert ) {
-		var rev = new Revision( { user: 'Foo' } );
-
-		assert.equal( rev.getUserGender(), '' );
-
-		rev.setUserGender( 'female' );
-
-		assert.equal( rev.getUserGender(), 'female' );
 	} );
 
 } )( mediaWiki );

@@ -25,9 +25,10 @@
 
 		/**
 		 * @param {number} revisionTickWidth
+		 * @param {number} positionOffset
 		 * @return {jQuery}
 		 */
-		render: function ( revisionTickWidth ) {
+		render: function ( revisionTickWidth, positionOffset ) {
 			var $html = $( '<div>' ).addClass( 'mw-revslider-revisions' ),
 				revs = this.revisionList.getRevisions(),
 				maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() ),
@@ -61,6 +62,8 @@
 					};
 				};
 
+			positionOffset = positionOffset || 0;
+
 			for ( i = 0; i < revs.length; i++ ) {
 				diffSize = revs[ i ].getRelativeSize();
 				relativeChangeSize = diffSize !== 0 ? Math.ceil( 65.0 * Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) + 5 : 0;
@@ -80,7 +83,7 @@
 						.append( $( '<div>' )
 							.addClass( 'mw-revslider-revision' )
 							.attr( 'data-revid', revs[ i ].getId() )
-							.attr( 'data-pos', i + 1 )
+							.attr( 'data-pos', positionOffset + i + 1 )
 							.css( {
 								height: relativeChangeSize + 'px',
 								width: revisionTickWidth + 'px',
@@ -97,6 +100,23 @@
 			this.keepTooltipsOnHover();
 
 			return $html;
+		},
+
+		/**
+		 * @param {jQuery} $renderedList
+		 */
+		adjustRevisionSizes: function ( $renderedList ) {
+			var revs = this.revisionList.getRevisions(),
+				maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() ),
+				i, diffSize, relativeChangeSize;
+			for ( i = 0; i < revs.length; i++ ) {
+				diffSize = revs[ i ].getRelativeSize();
+				relativeChangeSize = diffSize !== 0 ? Math.ceil( 65.0 * Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) + 5 : 0;
+				$renderedList.find( '.mw-revslider-revision[data-pos="' + ( i + 1 ) + '"]' ).css( {
+					height: relativeChangeSize + 'px',
+					top: diffSize > 0 ? '-' + relativeChangeSize + 'px' : 0
+				} );
+			}
 		},
 
 		/**

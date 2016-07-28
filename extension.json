@@ -46,7 +46,6 @@
 			"messages": [
 				"revisionslider-show-help",
 				"revisionslider-show-help-tooltip",
-				"revisionslider-loading-out-of-range",
 				"revisionslider-loading-failed"
 			],
 			"position": "top"

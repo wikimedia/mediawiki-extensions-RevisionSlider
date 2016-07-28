@@ -51,6 +51,16 @@
 		 */
 		rtlScrollLeftType: 'default',
 
+		/**
+		 * @type {boolean}
+		 */
+		noMoreNewerRevisions: false,
+
+		/**
+		 * @type {boolean}
+		 */
+		noMoreOlderRevisions: false,
+
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
 				pointerContainerPosition = 55,
@@ -197,7 +207,7 @@
 					$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-pointer-cursor' );
 				},
 				drag: function ( event, ui ) {
-					var newestVisibleRevisionLeftPos = containerWidth - self.revisionWidth;
+					var newestVisibleRevisionLeftPos = $( '.mw-revslider-revisions-container' ).width() - self.revisionWidth;
 					ui.position.left = Math.min( ui.position.left, newestVisibleRevisionLeftPos );
 					if ( $( this ).css( 'direction' ) === 'ltr' ) {
 						self.resetPointerColorsBasedOnValues(
@@ -213,31 +223,7 @@
 				}
 			} );
 
-			$slider.find( '.mw-revslider-revision-wrapper' ).click( function ( e ) {
-				var $revWrap = $( this ),
-					$clickedRev = $revWrap.find( '.mw-revslider-revision' ),
-					hasClickedTop = e.pageY - $revWrap.offset().top < $revWrap.height() / 2,
-					pOld = self.getOldRevPointer(),
-					pNew = self.getNewRevPointer();
-
-				if ( hasClickedTop ) {
-					self.refreshRevisions(
-						self.getRevElementAtPosition( $revisions, pOld.getPosition() ).data( 'revid' ),
-						$clickedRev.data( 'revid' )
-					);
-					pNew.setPosition( $clickedRev.data( 'pos' ) );
-				} else {
-					self.refreshRevisions(
-						$clickedRev.data( 'revid' ),
-						self.getRevElementAtPosition( $revisions, pNew.getPosition() ).data( 'revid' )
-					);
-					pOld.setPosition( $clickedRev.data( 'pos' ) );
-				}
-
-				self.resetPointerColorsBasedOnValues( self.pointerOlder.getPosition(), self.pointerNewer.getPosition() );
-				self.resetRevisionStylesBasedOnPointerPosition( $revisions );
-				self.alignPointers();
-			} );
+			$slider.find( '.mw-revslider-revision-wrapper' ).on( 'click', null, { view: self, revisionsDom: $revisions }, this.revisionWrapperClickHandler );
 
 			this.slider.setRevisionsPerWindow( $slider.find( '.mw-revslider-revisions-container' ).width() / this.revisionWidth );
 
@@ -250,6 +236,34 @@
 			this.slide( Math.floor( ( this.pointerNewer.getPosition() - 1 ) / this.slider.getRevisionsPerWindow() ), 0 );
 			this.diffPage.pushState( mw.config.values.extRevisionSliderOldRev, mw.config.values.extRevisionSliderNewRev, this );
 			this.diffPage.initOnPopState( this );
+		},
+
+		revisionWrapperClickHandler: function ( e ) {
+			var $revWrap = $( this ),
+				view = e.data.view,
+				$revisions = e.data.revisionsDom,
+				$clickedRev = $revWrap.find( '.mw-revslider-revision' ),
+				hasClickedTop = e.pageY - $revWrap.offset().top < $revWrap.height() / 2,
+				pOld = view.getOldRevPointer(),
+				pNew = view.getNewRevPointer();
+
+			if ( hasClickedTop ) {
+				view.refreshRevisions(
+					view.getRevElementAtPosition( $revisions, pOld.getPosition() ).data( 'revid' ),
+					$clickedRev.data( 'revid' )
+				);
+				pNew.setPosition( parseInt( $clickedRev.attr( 'data-pos' ), 10 ) );
+			} else {
+				view.refreshRevisions(
+					$clickedRev.data( 'revid' ),
+					view.getRevElementAtPosition( $revisions, pNew.getPosition() ).data( 'revid' )
+				);
+				pOld.setPosition( parseInt( $clickedRev.attr( 'data-pos' ), 10 ) ) ;
+			}
+
+			view.resetPointerColorsBasedOnValues( view.pointerOlder.getPosition(), view.pointerNewer.getPosition() );
+			view.resetRevisionStylesBasedOnPointerPosition( $revisions );
+			view.alignPointers();
 		},
 
 		/**
@@ -319,11 +333,15 @@
 		 * @param {jQuery} $newRevElement
 		 */
 		initializePointers: function ( $oldRevElement, $newRevElement ) {
-			if ( $oldRevElement.length === 0 || $newRevElement.length === 0 ) {
+			if ( $oldRevElement.length === 0 && $newRevElement.length === 0 ) {
 				// Note: this is currently caught in init.js
-				throw 'RS-rev-out-of-range';
+				throw 'RS-revs-not-specified';
 			}
-			this.pointerOlder.setPosition( $oldRevElement.data( 'pos' ) );
+			if ( $oldRevElement.length !== 0 ) {
+				this.pointerOlder.setPosition( $oldRevElement.data( 'pos' ) );
+			} else {
+				this.pointerOlder.setPosition( -1 );
+			}
 			this.pointerNewer.setPosition( $newRevElement.data( 'pos' ) );
 			this.resetPointerStylesBasedOnPosition();
 		},
@@ -377,19 +395,13 @@
 		},
 
 		/**
-		 * Determines how many revisions fit onto the screen at once depending on the browser window width
-		 *
-		 * @return {number}
-		 */
-		calculateRevisionsPerWindow: function () {
-			return Math.floor( ( $( '#mw-content-text' ).width() - this.containerMargin ) / this.revisionWidth );
-		},
-
-		/**
 		 * @return {number}
 		 */
 		calculateSliderContainerWidth: function () {
-			return Math.min( this.slider.getRevisions().getLength(), this.calculateRevisionsPerWindow() ) * this.revisionWidth;
+			return Math.min(
+					this.slider.getRevisions().getLength(),
+					mw.libs.revisionSlider.calculateRevisionsPerWindow( this.containerMargin, this.revisionWidth )
+				) * this.revisionWidth;
 		},
 
 		slide: function ( direction, duration ) {
@@ -424,6 +436,13 @@
 				function () {
 					self.pointerOlder.getView().getElement().draggable( 'enable' );
 					self.pointerNewer.getView().getElement().draggable( 'enable' );
+
+					if ( self.slider.isAtStart() && !self.noMoreOlderRevisions ) {
+						self.addOlderRevisionsIfNeeded( $( '.mw-revslider-revision-slider' ) );
+					}
+					if ( self.slider.isAtEnd() && !self.noMoreNewerRevisions ) {
+						self.addNewerRevisionsIfNeeded( $( '.mw-revslider-revision-slider' ) );
+					}
 				}
 			);
 
@@ -496,9 +515,236 @@
 		 */
 		whichPointer: function ( $e ) {
 			return $e.attr( 'id' ) === 'mw-revslider-pointer-older' ? this.pointerOlder : this.pointerNewer;
+		},
+
+		/**
+		 * @param {jQuery} $slider
+		 */
+		addNewerRevisionsIfNeeded: function ( $slider ) {
+			var api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) ),
+				self = this,
+				revisions = this.slider.getRevisions().getRevisions(),
+				revisionCount = mw.libs.revisionSlider.calculateRevisionsPerWindow( this.containerMargin, this.revisionWidth ),
+				revs;
+			if ( this.noMoreNewerRevisions || !this.slider.isAtEnd() ) {
+				return;
+			}
+			api.fetchRevisionData( mw.config.get( 'wgPageName' ), {
+				startId: revisions[ revisions.length - 1 ].getId(),
+				dir: 'newer',
+				limit: revisionCount + 1,
+				knownUserGenders: this.slider.getRevisions().getUserGenders(),
+				success: function ( data ) {
+					revs = data.revisions.slice( 1 );
+					if ( revs.length === 0 ) {
+						self.noMoreNewerRevisions = true;
+						return;
+					}
+
+					self.addRevisionsAtEnd( $slider, revs );
+
+					/*jshint -W024 */
+					if ( data.continue === undefined ) {
+						self.noMoreNewerRevisions = true;
+					}
+					/*jshint +W024 */
+				}
+			} );
+		},
+
+		/**
+		 * @param {jQuery} $slider
+		 */
+		addOlderRevisionsIfNeeded: function ( $slider ) {
+			var api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) ),
+				self = this,
+				revisions = this.slider.getRevisions().getRevisions(),
+				revisionCount = mw.libs.revisionSlider.calculateRevisionsPerWindow( this.containerMargin, this.revisionWidth ),
+				revs,
+				precedingRevisionSize = 0;
+			if ( this.noMoreOlderRevisions || !this.slider.isAtStart() ) {
+				return;
+			}
+			api.fetchRevisionData( mw.config.get( 'wgPageName' ), {
+				startId: revisions[ 0 ].getId(),
+				dir: 'older',
+				// fetch an extra revision if there are more older revision than the current "window",
+				// this makes it possible to correctly set a size of the bar related to the oldest revision to add
+				limit: revisionCount + 2,
+				knownUserGenders: this.slider.getRevisions().getUserGenders(),
+				success: function ( data ) {
+					revs = data.revisions.slice( 1 ).reverse();
+					if ( revs.length === 0 ) {
+						self.noMoreOlderRevisions = true;
+						return;
+					}
+
+					if ( revs.length === revisionCount + 1 ) {
+						precedingRevisionSize = revs[ 0 ].size;
+						revs = revs.slice( 1 );
+					}
+					self.addRevisionsAtStart( $slider, revs, precedingRevisionSize );
+
+					/*jshint -W024 */
+					if ( data.continue === undefined ) {
+						self.noMoreOlderRevisions = true;
+					}
+					/*jshint +W024 */
+				}
+			} );
+		},
+
+		/**
+		 * @param {jQuery} $slider
+		 * @param {Array} revs
+		 */
+		addRevisionsAtEnd: function ( $slider, revs ) {
+			var revPositionOffset = this.slider.getRevisions().getLength(),
+				$revisions = $slider.find( '.mw-revslider-revisions-container .mw-revslider-revisions' ),
+				revisionsToRender,
+				$addedRevisions;
+
+			this.slider.getRevisions().push( mw.libs.revisionSlider.makeRevisions( revs ) );
+
+			// Pushed revisions have their relative sizes set correctly with regard to the last previously
+			// loaded revision. This should be taken into account when rendering newly loaded revisions (tooltip)
+			revisionsToRender = this.slider.getRevisions().slice( revPositionOffset );
+
+			$addedRevisions = new mw.libs.revisionSlider.RevisionListView( revisionsToRender ).render( this.revisionWidth, revPositionOffset );
+
+			this.addClickHandlerToRevisions( $addedRevisions, $revisions, this.revisionWrapperClickHandler );
+
+			$addedRevisions.find( '.mw-revslider-revision-wrapper' ).each( function () {
+				$revisions.append( $( this ) );
+			} );
+
+			if ( this.shouldExpandSlider( $slider ) ) {
+				this.expandSlider( $slider );
+			}
+
+			this.slider.getRevisions().getView().adjustRevisionSizes( $slider );
+
+			if ( !this.slider.isAtEnd() ) {
+				$slider.find( '.mw-revslider-arrow-forwards' ).removeClass( 'mw-revslider-arrow-disabled' ).addClass( 'mw-revslider-arrow-enabled' );
+			}
+		},
+
+		/**
+		 * @param {jQuery} $slider
+		 * @param {Array} revs
+		 * @param {number} precedingRevisionSize optional size of the revision preceding the first of revs,
+		 *                                        used to correctly determine first revision's relative size
+		 */
+		addRevisionsAtStart: function ( $slider, revs, precedingRevisionSize ) {
+			var self = this,
+				$revisions = $slider.find( '.mw-revslider-revisions-container .mw-revslider-revisions' ),
+				$revisionContainer = $slider.find( '.mw-revslider-revisions-container' ),
+				revisionsToRender,
+				$addedRevisions,
+				pOld, pNew,
+				revisionStyleResetRequired = false,
+				$oldRevElement,
+				scrollLeft;
+
+			this.slider.getRevisions().unshift( mw.libs.revisionSlider.makeRevisions( revs ), precedingRevisionSize );
+
+			$slider.find( '.mw-revslider-revision' ).each( function () {
+				$( this ).attr( 'data-pos', parseInt( $( this ).attr( 'data-pos' ), 10 ) + revs.length );
+			} );
+
+			// Pushed (unshifted) revisions have their relative sizes set correctly with regard to the last previously
+			// loaded revision. This should be taken into account when rendering newly loaded revisions (tooltip)
+			revisionsToRender = this.slider.getRevisions().slice( 0, revs.length );
+
+			$addedRevisions = new mw.libs.revisionSlider.RevisionListView( revisionsToRender ).render( this.revisionWidth );
+
+			pOld = this.getOldRevPointer();
+			pNew = this.getNewRevPointer();
+
+			if ( pOld.getPosition() !== -1 ) {
+				pOld.setPosition( pOld.getPosition() + revisionsToRender.getLength() );
+			} else {
+				// Special case: old revision has been previously not loaded, need to initialize correct position
+				$oldRevElement = this.getOldRevElement( $addedRevisions );
+				if ( $oldRevElement.length !== 0 ) {
+					pOld.setPosition( $oldRevElement.data( 'pos' ) );
+					revisionStyleResetRequired = true;
+				}
+
+			}
+			pNew.setPosition( pNew.getPosition() + revisionsToRender.getLength() );
+
+			this.addClickHandlerToRevisions( $addedRevisions, $revisions, this.revisionWrapperClickHandler );
+
+			$( $addedRevisions.find( '.mw-revslider-revision-wrapper' ).get().reverse() ).each( function () { // TODO: this is horrible
+				$revisions.prepend( $( this ) );
+			} );
+
+			if ( revisionStyleResetRequired ) {
+				this.resetRevisionStylesBasedOnPointerPosition( $slider );
+			}
+
+			this.slider.setFirstVisibleRevisionIndex( this.slider.getFirstVisibleRevisionIndex() + revisionsToRender.getLength() );
+
+			scrollLeft = this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth;
+			$revisionContainer.scrollLeft( scrollLeft );
+			if ( this.$element.css( 'direction' ) === 'rtl' ) {
+				$revisionContainer.scrollLeft( self.getRtlScrollLeft( $revisionContainer, scrollLeft ) );
+			}
+
+			this.slider.getRevisions().getView().adjustRevisionSizes( $slider );
+
+			$slider.find( '.mw-revslider-arrow-backwards' ).removeClass( 'mw-revslider-arrow-disabled' ).addClass( 'mw-revslider-arrow-enabled' );
+		},
+
+		/**
+		 * @param {jQuery} $revisions
+		 * @param {jQuery} $allRevisions
+		 * @param {Function} clickHandler
+		 */
+		addClickHandlerToRevisions: function ( $revisions, $allRevisions, clickHandler ) {
+			var self = this;
+			$revisions.find( '.mw-revslider-revision-wrapper' ).on(
+				'click',
+				null,
+				{ view: self, revisionsDom: $allRevisions },
+				clickHandler
+			);
+		},
+
+		/**
+		 * @param {jQuery} $slider
+		 */
+		shouldExpandSlider: function ( $slider ) {
+			var sliderWidth = parseInt( $slider.css( 'width' ), 10 ),
+				maxAvailableWidth = this.calculateSliderContainerWidth() + this.containerMargin;
+
+			return !this.noMoreNewerRevisions && sliderWidth < maxAvailableWidth;
+		},
+
+		/**
+		 * @param {jQuery} $slider
+		 */
+		expandSlider: function ( $slider ) {
+			var containerWidth = this.calculateSliderContainerWidth();
+
+			$slider.css( { width: ( containerWidth + this.containerMargin ) + 'px' } );
+			$slider.find( '.mw-revslider-revisions-container' ).css( { width: containerWidth + 'px' } );
+			$slider.find( '.mw-revslider-pointer-container' ).css( { width: containerWidth + this.revisionWidth - 1 + 'px' } );
+
+			if ( $slider.css( 'direction' ) === 'rtl' ) {
+				this.alignPointers( 0 );
+			}
+
+			this.slider.setRevisionsPerWindow( $slider.find( '.mw-revslider-revisions-container' ).width() / this.revisionWidth );
 		}
+
 	} );
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 	mw.libs.revisionSlider.SliderView = SliderView;
+
+	mw.libs.revisionSlider.calculateRevisionsPerWindow = function ( containerMargin, revisionWidth ) {
+		return Math.floor( ( $( '#mw-content-text' ).width() - containerMargin ) / revisionWidth );
+	};
 }( mediaWiki, jQuery ) );

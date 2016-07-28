@@ -65,33 +65,73 @@
 		},
 
 		/**
-		 * @return {string[]}
-		 */
-		getUserNames: function () {
-			var allUsers = this.revisions.map( function ( revision ) {
-				return revision.getUser();
-			} );
-			return allUsers.filter( function ( value, index, array ) {
-				return value !== '' && array.indexOf( value ) === index;
-			} );
-		},
-
-		/**
-		 * @param {Object} userGenderData
-		 */
-		setUserGenders: function ( userGenderData ) {
-			this.revisions.forEach( function ( revision ) {
-				if ( revision.getUser() !== '' && typeof userGenderData[ revision.getUser() ] !== 'undefined' ) {
-					revision.setUserGender( userGenderData[ revision.getUser() ] );
-				}
-			} );
-		},
-
-		/**
 		 * @return {RevisionListView}
 		 */
 		getView: function () {
 			return this.view;
+		},
+
+		getUserGenders: function () {
+			var userGenders = {};
+			this.revisions.forEach( function ( revision ) {
+				if ( revision.getUser() ) {
+					userGenders[ revision.getUser() ] = revision.getUserGender();
+				}
+			} );
+			return userGenders;
+		},
+
+		/**
+		 * Adds revisions to the end of the list.
+		 *
+		 * @param {Revision[]} revs
+		 */
+		push: function ( revs ) {
+			var i, rev;
+			for ( i = 0; i < revs.length; i++ ) {
+				rev = revs[ i ];
+				rev.setRelativeSize(
+					i > 0 ?
+						rev.getSize() - revs[ i - 1 ].getSize() :
+						rev.getSize() - this.revisions[ this.revisions.length - 1 ].getSize()
+				);
+
+				this.revisions.push( rev );
+			}
+		},
+
+		/**
+		 * Adds revisions to the beginning of the list.
+		 *
+		 * @param {Revision[]} revs
+		 * @param {number} sizeBefore optional size of the revision preceding the first of revs, defaults to 0
+		 */
+		unshift: function ( revs, sizeBefore ) {
+			var originalFirstRev = this.revisions[ 0 ],
+				i, rev;
+			sizeBefore = sizeBefore || 0;
+
+			originalFirstRev.setRelativeSize( originalFirstRev.getSize() - revs[ revs.length - 1 ].getSize() );
+			for ( i = revs.length - 1; i >= 0; i-- ) {
+				rev = revs[ i ];
+				rev.setRelativeSize( i > 0 ? rev.getSize() - revs[ i - 1 ].getSize() : rev.getSize() - sizeBefore );
+
+				this.revisions.unshift( rev );
+			}
+		},
+
+		/**
+		 * Returns a subset of the list.
+		 *
+		 * @param {number} begin
+		 * @param {number} end
+		 * @return {RevisionList}
+		 */
+		slice: function ( begin, end ) {
+			var slicedList = new mw.libs.revisionSlider.RevisionList( [] );
+			slicedList.view = new mw.libs.revisionSlider.RevisionListView( slicedList );
+			slicedList.revisions = this.revisions.slice( begin, end );
+			return slicedList;
 		}
 	} );
 
@@ -99,7 +139,7 @@
 	mw.libs.revisionSlider.RevisionList = RevisionList;
 
 	/**
-	 * Transforms an array of revision data returned by MediaWiki API into
+	 * Transforms an array of revision data returned by MediaWiki API (including user gender information) into
 	 * an array of Revision objects
 	 *
 	 * @param {Array} revs
