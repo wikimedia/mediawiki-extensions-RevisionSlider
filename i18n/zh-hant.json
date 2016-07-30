@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Cwlin0416"
 		]
 	},
-	"revisionslider-label-username": "<strong>{{GENDER:$2|使用者名稱}}:</strong> [[$3|$1]]"
+	"revisionslider-label-username": "{{GENDER:$1|使用者名稱}}"
 }

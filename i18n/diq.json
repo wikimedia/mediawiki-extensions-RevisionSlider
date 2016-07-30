@@ -5,5 +5,10 @@
 			"Macofe"
 		]
 	},
-	"revisionslider-label-comment": "Mışewre"
+	"revisionslider-bytes": "$1 {{PLURAL:$1|bayt|bayti}}",
+	"revisionslider-label-date": "Dem",
+	"revisionslider-label-page-size": "Ebadê pele",
+	"revisionslider-label-change-size": "Ebati bıvurnê",
+	"revisionslider-label-comment": "Mışewre",
+	"revisionslider-label-username": "{{GENDER:$1|Nameyê karberi}}"
 }

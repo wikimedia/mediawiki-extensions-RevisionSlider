@@ -15,7 +15,7 @@
 	"revisionslider-label-change-size": "更改大小",
 	"revisionslider-label-comment": "注释",
 	"revisionslider-label-username": "{{GENDER:$1|用户名}}",
-	"revisionslider-minoredit": "这是一个小修改",
+	"revisionslider-minoredit": "这是一个小编辑",
 	"revisionslider-loading-placeholder": "修订滑块正在加载...",
 	"revisionslider-loading-failed": "修订滑块无法加载。",
 	"revisionslider-arrow-tooltip-newer": "查看更新修订版本",

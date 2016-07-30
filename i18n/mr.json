@@ -6,7 +6,7 @@
 		]
 	},
 	"revisionslider-label-date": "दिनांक",
-	"revisionslider-label-username": "<strong>सदस्यनाव:</strong> [[$3|$1]]",
+	"revisionslider-label-username": "{{GENDER:$1|सदस्यनाम}}",
 	"revisionslider-minoredit": "हे एक किरकोळ संपादन आहे",
 	"revisionslider-show-help-tooltip": "साहाय्य मजकूर दाखवा",
 	"revisionslider-previous-dialog": "मागील",

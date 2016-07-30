@@ -5,6 +5,9 @@
 			"Macofe"
 		]
 	},
+	"revisionslider-label-date": "თარიღი",
+	"revisionslider-label-page-size": "გვერდის ზომა",
+	"revisionslider-label-change-size": "ზომის შეცვლა",
 	"revisionslider-label-comment": "კომენტარი",
 	"revisionslider-minoredit": "ეს არის მცირე რედაქტირება",
 	"revisionslider-show-help-tooltip": "იხილეთ დახმარების ტექსტი"

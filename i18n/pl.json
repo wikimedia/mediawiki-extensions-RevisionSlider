@@ -6,11 +6,12 @@
 			"Macofe"
 		]
 	},
+	"revisionslider-bytes": "{{PLURAL:$1|bajt|bajty|bajtów}}",
 	"revisionslider-label-date": "Data",
 	"revisionslider-label-page-size": "Rozmiar strony",
 	"revisionslider-label-change-size": "Wielkość zmiany",
 	"revisionslider-label-comment": "Komentarz",
-	"revisionslider-label-username": "<strong>Nazwa użytkownika:</strong> [[$3|$1]]",
+	"revisionslider-label-username": "Nazwa {{GENDER:$1|użytkownika|użytkowniczki}}",
 	"revisionslider-minoredit": "To jest drobna zmiana",
 	"revisionslider-arrow-tooltip-newer": "Zobacz nowsze wersje",
 	"revisionslider-arrow-tooltip-older": "Zobacz starsze wersje",
