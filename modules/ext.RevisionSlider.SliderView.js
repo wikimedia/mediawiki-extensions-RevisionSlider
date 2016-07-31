@@ -233,7 +233,7 @@
 			$container.html( $slider );
 
 			this.slide( Math.floor( ( this.pointerNewer.getPosition() - 1 ) / this.slider.getRevisionsPerWindow() ), 0 );
-			this.diffPage.pushState( mw.config.values.extRevisionSliderOldRev, mw.config.values.extRevisionSliderNewRev, this );
+			this.diffPage.replaceState( mw.config.values.extRevisionSliderOldRev, mw.config.values.extRevisionSliderNewRev, this );
 			this.diffPage.initOnPopState( this );
 		},
 

@@ -55,6 +55,24 @@
 		},
 
 		/**
+		 * Replaces the current state in the history stack
+		 *
+		 * @param {number} revId1
+		 * @param {number} revId2
+		 * @param {SliderView} sliderView
+		 */
+		replaceState: function ( revId1, revId2, sliderView ) {
+			// IE8 and IE9 do not have history.pushState()
+			if ( typeof history.replaceState === 'function' ) {
+				history.replaceState(
+					this.getStateObject( revId1, revId2, sliderView ),
+					$( document ).find( 'title' ).text(),
+					this.getStateUrl( revId1, revId2 )
+				);
+			}
+		},
+
+		/**
 		 * Pushes the current state onto the history stack
 		 *
 		 * @param {number} revId1
@@ -65,17 +83,38 @@
 			// IE8 and IE9 do not have history.pushState()
 			if ( typeof history.pushState === 'function' ) {
 				history.pushState(
-					{
-						revid1: revId1,
-						revid2: revId2,
-						pointerOlderPos: sliderView.pointerOlder.getPosition(),
-						pointerNewerPos: sliderView.pointerNewer.getPosition(),
-						sliderPos: sliderView.slider.getFirstVisibleRevisionIndex()
-					},
+					this.getStateObject( revId1, revId2, sliderView ),
 					$( document ).find( 'title' ).text(),
-					mw.util.wikiScript( 'index' ) + '?diff=' + Math.max( revId1, revId2 ) + '&oldid=' + Math.min( revId1, revId2 )
+					this.getStateUrl( revId1, revId2 )
 				);
 			}
+		},
+
+		/**
+		 * Gets a state object to be used with history.replaceState and history.pushState
+		 *
+		 * @param {number} revId1
+		 * @param {number} revId2
+		 * @param {SliderView} sliderView
+		 */
+		getStateObject: function ( revId1, revId2, sliderView ) {
+			return {
+				revid1: revId1,
+				revid2: revId2,
+				pointerOlderPos: sliderView.pointerOlder.getPosition(),
+				pointerNewerPos: sliderView.pointerNewer.getPosition(),
+				sliderPos: sliderView.slider.getFirstVisibleRevisionIndex()
+			};
+		},
+
+		/**
+		 * Gets a URL to be used with history.replaceState and history.pushState
+		 *
+		 * @param {number} revId1
+		 * @param {number} revId2
+		 */
+		getStateUrl: function ( revId1, revId2 ) {
+			return mw.util.wikiScript( 'index' ) + '?diff=' + Math.max( revId1, revId2 ) + '&oldid=' + Math.min( revId1, revId2 );
 		},
 
 		/**
