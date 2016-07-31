@@ -201,8 +201,7 @@
 					revId1 = self.getRevElementAtPosition( $revisions, self.pointerOlder.getPosition() ).data( 'revid' );
 					revId2 = self.getRevElementAtPosition( $revisions, self.pointerNewer.getPosition() ).data( 'revid' );
 
-					self.diffPage.refresh( revId1, revId2 );
-					self.diffPage.pushState( revId1, revId2, self );
+					self.refreshRevisions( revId1, revId2 );
 
 					$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-pointer-cursor' );
 				},
