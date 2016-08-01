@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aeb2c7f3_e3f0dd90",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-08-01T13:51:20Z",
+      "side": 1,
+      "message": "see comment below about passing all url params through?",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 9
+      },
+      "revId": "761dd7ef6d6b63eb442db69ae258d64c0077b82b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aeb2c7f3_6305ad7c",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-08-01T13:51:20Z",
+      "side": 1,
+      "message": "I wonder if this should be more general than uselang.\nThis could simply carry over all params (except for oldid \u0026 diff which we want to set)\nThis would avoid us running into the same issue with other params that we have not considered.",
+      "range": {
+        "startLine": 124,
+        "startChar": 15,
+        "endLine": 124,
+        "endChar": 16
+      },
+      "revId": "761dd7ef6d6b63eb442db69ae258d64c0077b82b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
