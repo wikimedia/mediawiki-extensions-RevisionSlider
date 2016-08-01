@@ -22,6 +22,30 @@
       "revId": "11790b95622f3d2a5ffdf55b3defac719984b3e2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aeb2c7f3_03687183",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-08-01T12:55:08Z",
+      "side": 1,
+      "message": "1. Thanks for making a comment here. This made me double check the case user setting for language version is not the same language as the wiki\u0027s default version and there is no uselang specified. I\u0027ve noticed the making a call to API with empty uselang value in line 27 leads to API respond with content in the wiki default language not user\u0027s default. In turn when there is no uselang in the API call at, user\u0027s default language is used. So I\u0027ve changed that part.\n\n2. (to your actual comment) I am not sure what cookie you mean.",
+      "parentUuid": "aeb2c7f3_83a9e1de",
+      "range": {
+        "startLine": 119,
+        "startChar": 4,
+        "endLine": 119,
+        "endChar": 11
+      },
+      "revId": "11790b95622f3d2a5ffdf55b3defac719984b3e2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
