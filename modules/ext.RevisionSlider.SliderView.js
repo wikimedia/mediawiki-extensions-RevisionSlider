@@ -247,17 +247,17 @@
 				pNew = view.getNewRevPointer();
 
 			if ( hasClickedTop ) {
+				pNew.setPosition( parseInt( $clickedRev.attr( 'data-pos' ), 10 ) );
 				view.refreshRevisions(
 					view.getRevElementAtPosition( $revisions, pOld.getPosition() ).data( 'revid' ),
 					$clickedRev.data( 'revid' )
 				);
-				pNew.setPosition( parseInt( $clickedRev.attr( 'data-pos' ), 10 ) );
 			} else {
+				pOld.setPosition( parseInt( $clickedRev.attr( 'data-pos' ), 10 ) ) ;
 				view.refreshRevisions(
 					$clickedRev.data( 'revid' ),
 					view.getRevElementAtPosition( $revisions, pNew.getPosition() ).data( 'revid' )
 				);
-				pOld.setPosition( parseInt( $clickedRev.attr( 'data-pos' ), 10 ) ) ;
 			}
 
 			view.resetPointerColorsBasedOnValues( view.pointerOlder.getPosition(), view.pointerNewer.getPosition() );
@@ -641,6 +641,7 @@
 				revisionsToRender,
 				$addedRevisions,
 				pOld, pNew,
+				revIdOld, revIdNew,
 				revisionStyleResetRequired = false,
 				$oldRevElement,
 				scrollLeft;
@@ -684,6 +685,9 @@
 			}
 
 			this.slider.setFirstVisibleRevisionIndex( this.slider.getFirstVisibleRevisionIndex() + revisionsToRender.getLength() );
+			revIdOld = self.getRevElementAtPosition( $revisions, pOld.getPosition() ).data( 'revid' );
+			revIdNew = self.getRevElementAtPosition( $revisions, pNew.getPosition() ).data( 'revid' );
+			this.diffPage.replaceState( revIdOld, revIdNew, this );
 
 			scrollLeft = this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth;
 			$revisionContainer.scrollLeft( scrollLeft );
