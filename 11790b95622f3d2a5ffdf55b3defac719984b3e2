@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aeb2c7f3_83a9e1de",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-08-01T11:59:09Z",
+      "side": 1,
+      "message": "mw.config.get( \u0027wgUserLanguage\u0027 ); should be used here. The language can be set via get parameter but could also be loaded from a cookie.",
+      "range": {
+        "startLine": 119,
+        "startChar": 4,
+        "endLine": 119,
+        "endChar": 11
+      },
+      "revId": "11790b95622f3d2a5ffdf55b3defac719984b3e2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
