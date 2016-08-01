@@ -45,6 +45,30 @@
       "revId": "761dd7ef6d6b63eb442db69ae258d64c0077b82b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aeb2c7f3_035cf14d",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-08-01T15:11:52Z",
+      "side": 1,
+      "message": "This seems to be a right approach (I believe).\nUpdated the patch (PS5, as PS4 was a premature submission). I believe it might still make sense to remove some more params, e.g. action.",
+      "parentUuid": "aeb2c7f3_6305ad7c",
+      "range": {
+        "startLine": 124,
+        "startChar": 15,
+        "endLine": 124,
+        "endChar": 16
+      },
+      "revId": "761dd7ef6d6b63eb442db69ae258d64c0077b82b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
