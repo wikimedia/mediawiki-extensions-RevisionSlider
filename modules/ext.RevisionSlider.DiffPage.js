@@ -15,16 +15,21 @@
 		 * @param {number} revId2
 		 */
 		refresh: function ( revId1, revId2 ) {
+			var data = {
+				diff: Math.max( revId1, revId2 ),
+				oldid: Math.min( revId1, revId2 )
+			},
+				params = this.getExtraDiffPageParams();
+			if ( Object.keys( params ).length > 0 ) {
+				$.extend( data, params );
+			}
 			$( 'table.diff[data-mw="interface"]' )
 				.append( $( '<tr>' ) )
 				.append( $( '<td>' ) )
 				.append( $( '<div>' ).attr( 'id', 'mw-revslider-darkness' ) );
 			$.ajax( {
 				url: mw.util.wikiScript( 'index' ),
-				data: {
-					diff: Math.max( revId1, revId2 ),
-					oldid: Math.min( revId1, revId2 )
-				},
+				data: data,
 				tryCount: 0,
 				retryLimit: 2,
 				success: function ( data ) {
@@ -114,7 +119,32 @@
 		 * @param {number} revId2
 		 */
 		getStateUrl: function ( revId1, revId2 ) {
-			return mw.util.wikiScript( 'index' ) + '?diff=' + Math.max( revId1, revId2 ) + '&oldid=' + Math.min( revId1, revId2 );
+			var url = mw.util.wikiScript( 'index' ) + '?diff=' + Math.max( revId1, revId2 ) + '&oldid=' + Math.min( revId1, revId2 ),
+				params = this.getExtraDiffPageParams();
+			if ( Object.keys( params ).length > 0 ) {
+				Object.keys( params ).forEach( function ( key ) {
+					url += '&' + key + '=' + params[ key ];
+				} );
+			}
+			return url;
+		},
+
+		/**
+		 * Returns an object containing all possible parameters that should be included in diff URLs
+		 * when selected revisions change, e.g. uselang
+		 *
+		 * @return {Object}
+		 */
+		getExtraDiffPageParams: function () {
+			var params = {},
+				paramArray = location.search.substr( 1 ).split( '&' ).filter( function ( elem ) {
+					return elem.indexOf( '=' ) > 0 && elem.match( /^(diff|oldid)=/ ) === null;
+				} );
+			paramArray.forEach( function ( elem ) {
+				var pair = elem.split( '=', 2 );
+				params[ pair[ 0 ] ] = pair[ 1 ];
+			} );
+			return params;
 		},
 
 		/**
