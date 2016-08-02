@@ -1,5 +1,6 @@
 ( function ( mw, $ ) {
-	var api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) );
+	var startTime = mw.now(),
+		api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) );
 
 	mw.track( 'counter.MediaWiki.RevisionSlider.event.init' );
 	mw.libs.revisionSlider.userOffset = mw.user.options.values.timecorrection ? mw.user.options.values.timecorrection.split( '|' )[ 1 ] : mw.config.values.extRevisionSliderTimeOffset;
@@ -13,6 +14,8 @@
 				revisionList,
 				$container,
 				slider;
+
+			mw.track( 'timing.MediaWiki.RevisionSlider.timing.initFetchRevisionData', mw.now() - startTime );
 
 			try {
 				revs = data.revisions;
@@ -46,6 +49,7 @@
 				);
 
 				$( '#mw-revslider-placeholder' ).remove();
+				mw.track( 'timing.MediaWiki.RevisionSlider.timing.init', mw.now() - startTime );
 			} catch ( err ) {
 				$( '#mw-revslider-placeholder' )
 					.text( mw.message( 'revisionslider-loading-failed' ).text() );
