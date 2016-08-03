@@ -71,6 +71,9 @@
 					.addClass( 'mw-revslider-revision-slider' )
 					.css( { direction: $container.css( 'direction' ) } ),
 				helpButton,
+				helpPopup,
+				backwardArrowPopup,
+				forwardArrowPopup,
 				self = this;
 
 			if ( $slider.css( 'direction' ) === 'rtl' ) {
@@ -79,6 +82,13 @@
 
 			this.pointerOlder = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-older' );
 			this.pointerNewer = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-newer' );
+
+			helpPopup = new OO.ui.PopupWidget( {
+				$content: $( '<p>' ).text( mw.msg( 'revisionslider-show-help-tooltip' ) ),
+				padded: true,
+				width: 200,
+				classes: [ 'mw-revslider-tooltip', 'mw-revslider-help-tooltip' ]
+			} );
 
 			helpButton = new OO.ui.ButtonWidget( {
 				icon: 'help',
@@ -89,13 +99,22 @@
 				.click( function () {
 					mw.libs.revisionSlider.HelpDialog.show();
 				} )
-				.tipsy( {
-					gravity: $( 'body' ).hasClass( 'ltr' ) ? 'se' : 'sw',
-					offset: 15,
-					title: function () {
-						return mw.msg( 'revisionslider-show-help-tooltip' );
-					}
-				} );
+				.mouseover( { popup: helpPopup }, this.showPopup )
+				.mouseout( function () { helpPopup.toggle( false ); } );
+
+			backwardArrowPopup = new OO.ui.PopupWidget( {
+				$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-older' ) ),
+				padded: true,
+				width: 200,
+				classes: [ 'mw-revslider-tooltip', 'mw-revslider-arrow-tooltip' ]
+			} );
+			forwardArrowPopup = new OO.ui.PopupWidget( {
+				$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-newer' ) ),
+				padded: true,
+				width: 200,
+				classes: [ 'mw-revslider-tooltip', 'mw-revslider-arrow-tooltip' ]
+			} );
+			$( 'body' ).append( backwardArrowPopup.$element, forwardArrowPopup.$element, helpPopup.$element );
 
 			pointerContainerStyle = { left: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
 			if ( $slider.css( 'direction' ) === 'rtl' ) {
@@ -113,14 +132,8 @@
 					$( '<a> ' )
 						.addClass( 'mw-revslider-arrow mw-revslider-arrow-backwards' )
 						.attr( 'data-dir', '-1' )
-						.tipsy( {
-							title: function () {
-								if ( $( this ).hasClass( 'mw-revslider-arrow-disabled' ) ) {
-									return '';
-								}
-								return mw.message( 'revisionslider-arrow-tooltip-older' ).text();
-							}
-						} ),
+						.mouseover( { popup: backwardArrowPopup }, this.showPopup )
+						.mouseout( { popup: backwardArrowPopup }, this.hidePopup ),
 					$( '<div>' )
 						.addClass( 'mw-revslider-revisions-container' )
 						.css( {
@@ -130,21 +143,8 @@
 					$( '<a> ' )
 						.addClass( 'mw-revslider-arrow mw-revslider-arrow-forwards' )
 						.attr( 'data-dir', '1' )
-						.tipsy( {
-							gravity: function () {
-								if ( $slider.css( 'direction' ) === 'ltr' ) {
-									return Math.abs( window.innerWidth - this.getBoundingClientRect().right ) > 90 ? 'n' : 'ne';
-								} else {
-									return this.getBoundingClientRect().left > 90 ? 'n' : 'nw';
-								}
-							},
-							title: function () {
-								if ( $( this ).hasClass( 'mw-revslider-arrow-disabled' ) ) {
-									return '';
-								}
-								return mw.message( 'revisionslider-arrow-tooltip-newer' ).text();
-							}
-						} ),
+						.mouseover( { popup: forwardArrowPopup }, this.showPopup )
+						.mouseout( { popup: forwardArrowPopup }, this.hidePopup ),
 					helpButton.$element,
 					$( '<div>' ).css( { clear: 'both' } ),
 					$( '<div>' )
@@ -254,6 +254,23 @@
 			this.slide( Math.floor( ( this.pointerNewer.getPosition() - 1 ) / this.slider.getRevisionsPerWindow() ), 0 );
 			this.diffPage.replaceState( mw.config.values.extRevisionSliderOldRev, mw.config.values.extRevisionSliderNewRev, this );
 			this.diffPage.initOnPopState( this );
+		},
+
+		showPopup: function ( e ) {
+			var popup = e.data.popup;
+			if ( $( this ).hasClass( 'mw-revslider-arrow-disabled' ) ) {
+				return;
+			}
+			popup.$element.css( {
+				left: $( this ).offset().left + $( this ).outerWidth() / 2 + 'px',
+				top: $( this ).offset().top + $( this ).outerHeight() + 'px'
+			} );
+			popup.toggle( true );
+		},
+
+		hidePopup: function ( e ) {
+			var popup = e.data.popup;
+			popup.toggle( false );
 		},
 
 		revisionWrapperClickHandler: function ( e ) {

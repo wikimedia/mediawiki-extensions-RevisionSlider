@@ -133,7 +133,7 @@
 				"revisionslider-minoredit"
 			],
 			"dependencies": [
-				"jquery.tipsy"
+				"oojs-ui"
 			]
 		},
 		"ext.RevisionSlider.arrows.left": {
