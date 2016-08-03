@@ -11,7 +11,6 @@
 	"revisionslider-desc": "הצגת סרגל המאפשר לבחור ולהשוות גרסאות ישירות בתוך דף השוואת הגרסאות",
 	"revisionslider-beta-feature-message": "סרגל הגרסאות",
 	"revisionslider-beta-feature-description": "הצגת סרגל ניווט בעת השוואת שתי גרסאות של דף.",
-	"revisionslider-bytes": "{{PLURAL:$1|בייטים}}",
 	"revisionslider-label-date": "תאריך",
 	"revisionslider-label-page-size": "גודל הדף",
 	"revisionslider-label-change-size": "השינוי בגודל הדף",

@@ -12,7 +12,6 @@
 	"revisionslider-desc": "Affiche un curseur permettant de sélectionner et comparer les révisions d’une page de diff",
 	"revisionslider-beta-feature-message": "Curseur de révision",
 	"revisionslider-beta-feature-description": "Afficher un curseur de révision lorsque deux versions d'une page sont comparées.",
-	"revisionslider-bytes": "{{PLURAL:$1|octet|octets}}",
 	"revisionslider-label-date": "Date",
 	"revisionslider-label-page-size": "Longueur de la page",
 	"revisionslider-label-change-size": "Évolution de la taille",

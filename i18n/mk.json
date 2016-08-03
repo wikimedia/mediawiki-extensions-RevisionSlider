@@ -9,7 +9,6 @@
 	"revisionslider-desc": "Покажува лизгач за избирање и споредување на преработки на страница со разлики",
 	"revisionslider-beta-feature-message": "Лизгач на преработки",
 	"revisionslider-beta-feature-description": "Прикажува лизгач на преработки при споредбата на две преработки на една страница.",
-	"revisionslider-bytes": "{{PLURAL:$1|бајт|бајти}}",
 	"revisionslider-label-date": "Датум",
 	"revisionslider-label-page-size": "Големина на страницата",
 	"revisionslider-label-change-size": "Големина на промената",

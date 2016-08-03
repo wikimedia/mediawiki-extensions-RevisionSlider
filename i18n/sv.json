@@ -6,6 +6,8 @@
 			"Macofe"
 		]
 	},
+	"revisionslider-page-size": "$1 {{PLURAL:$2|byte}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|byte}}",
 	"revisionslider-label-date": "Datum",
 	"revisionslider-label-page-size": "Sidstorlek",
 	"revisionslider-label-change-size": "Ändra storlek",

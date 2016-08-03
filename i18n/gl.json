@@ -9,7 +9,6 @@
 	"revisionslider-desc": "Mostra un control deslizante que permite a selección e comparación das revisións nunha páxina de diferenzas",
 	"revisionslider-beta-feature-message": "Deslizador de revisións",
 	"revisionslider-beta-feature-description": "Mostra un control deslizante cando se compara dúas versións dunha páxina.",
-	"revisionslider-bytes": "{{PLURAL:$1|byte|bytes}}",
 	"revisionslider-label-date": "Data",
 	"revisionslider-label-page-size": "Tamaño de páxina",
 	"revisionslider-label-change-size": "Tamaño da modificación",

@@ -2,8 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
-			"Cwlin0416"
+			"Cwlin0416",
+			"一個正常人"
 		]
 	},
+	"revisionslider-label-date": "日期",
+	"revisionslider-label-page-size": "頁面大小",
+	"revisionslider-label-change-size": "變更大小",
 	"revisionslider-label-username": "{{GENDER:$1|使用者名稱}}"
 }
