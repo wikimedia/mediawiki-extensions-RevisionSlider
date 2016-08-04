@@ -6,6 +6,8 @@
 			"一個正常人"
 		]
 	},
+	"revisionslider-page-size": "$1 {{PLURAL:$2|位元組|位元組}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|位元組|位元組}}",
 	"revisionslider-label-date": "日期",
 	"revisionslider-label-page-size": "頁面大小",
 	"revisionslider-label-change-size": "變更大小",

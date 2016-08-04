@@ -5,13 +5,16 @@
 			"Leszek Manicki (WMDE)",
 			"Macofe",
 			"Tar Lócesilion",
-			"Doctore"
+			"Doctore",
+			"Sethakill"
 		]
 	},
 	"revisionslider": "Suwak wersji",
 	"revisionslider-desc": "Pokazuje suwak, pozwalając wybrać i porównywać wersje zmian na stronie",
 	"revisionslider-beta-feature-message": "Suwak wersji",
 	"revisionslider-beta-feature-description": "Pokaż suwak wersji przy porównaniu dwóch wersji strony.",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|bajt|bajty|bajtów}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|bajt|bajty|bajtów}}",
 	"revisionslider-label-date": "Data",
 	"revisionslider-label-page-size": "Rozmiar strony",
 	"revisionslider-label-change-size": "Wielkość zmiany",

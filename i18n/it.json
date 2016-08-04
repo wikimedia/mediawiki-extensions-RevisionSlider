@@ -8,6 +8,8 @@
 		]
 	},
 	"revisionslider-beta-feature-message": "RevisionSlider",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|byte}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|byte}}",
 	"revisionslider-label-date": "Data",
 	"revisionslider-label-page-size": "Dimensione della pagina",
 	"revisionslider-label-change-size": "Dimensione della modifica",

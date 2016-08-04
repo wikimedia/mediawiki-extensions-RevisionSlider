@@ -12,7 +12,7 @@
 	"revisionslider-label-page-size": "Sidstorlek",
 	"revisionslider-label-change-size": "Ändra storlek",
 	"revisionslider-label-comment": "Kommentar",
-	"revisionslider-label-username": "<strong>{{GENDER:$2|Användarnamn}}:</strong> [[$3|$1]]",
+	"revisionslider-label-username": "{{GENDER:$1|Användarnamn}}",
 	"revisionslider-minoredit": "Detta är en mindre ändring",
 	"revisionslider-show-help-tooltip": "Visa hjälptext",
 	"revisionslider-previous-dialog": "Föregående",
