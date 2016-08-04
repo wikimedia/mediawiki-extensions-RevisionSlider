@@ -93,7 +93,9 @@
 			],
 			"dependencies": [
 				"jquery.ui.draggable",
+				"oojs-ui",
 				"ext.RevisionSlider.DiffPage",
+				"ext.RevisionSlider.HelpDialog",
 				"ext.RevisionSlider.Pointer"
 			],
 			"messages": [

@@ -7,7 +7,7 @@
 
 	api.fetchRevisionData( mw.config.get( 'wgPageName' ), {
 		startId: mw.config.values.extRevisionSliderNewRev,
-		limit: mw.libs.revisionSlider.calculateRevisionsPerWindow( 120, 16 ),
+		limit: mw.libs.revisionSlider.calculateRevisionsPerWindow( 140, 16 ),
 
 		success: function ( data ) {
 			var revs,
@@ -31,22 +31,6 @@
 					mw.libs.revisionSlider.HelpDialog.show();
 					( new mw.Api() ).saveOption( 'userjs-revslider-hidehelp', true );
 				}
-
-				$container.append(
-					$( '<button>' )
-						.click( function () {
-							mw.libs.revisionSlider.HelpDialog.show();
-						} )
-						.text( mw.message( 'revisionslider-show-help' ).text() )
-						.addClass( 'mw-revslider-show-help' )
-						.tipsy( {
-							gravity: $( 'body' ).hasClass( 'ltr' ) ? 'se' : 'sw',
-							offset: 15,
-							title: function () {
-								return mw.msg( 'revisionslider-show-help-tooltip' );
-							}
-						} )
-				);
 
 				$( '#mw-revslider-placeholder' ).remove();
 				mw.track( 'timing.MediaWiki.RevisionSlider.timing.init', mw.now() - startTime );

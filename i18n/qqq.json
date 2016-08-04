@@ -22,7 +22,6 @@
 	"revisionslider-loading-failed": "Message shown if the RevisionSlider fails to initially load.",
 	"revisionslider-arrow-tooltip-newer": "Text shown after hovering the button scrolling to newer revisions.",
 	"revisionslider-arrow-tooltip-older": "Text shown after hovering the button scrolling to older revisions.",
-	"revisionslider-show-help": "A symbol shown in the \"Show help\" button.",
 	"revisionslider-show-help-tooltip": "Text shown in a tooltip for the \"Show help\" button.",
 	"revisionslider-help-dialog-slide1": "Text shown on the first slide of the help dialog.",
 	"revisionslider-help-dialog-slide2": "Text shown on the second slide of the help dialog.",

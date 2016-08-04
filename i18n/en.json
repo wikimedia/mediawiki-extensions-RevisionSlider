@@ -20,7 +20,6 @@
     "revisionslider-loading-failed": "The RevisionSlider failed to load.",
     "revisionslider-arrow-tooltip-newer": "See newer revisions",
     "revisionslider-arrow-tooltip-older": "See older revisions",
-    "revisionslider-show-help": "?",
     "revisionslider-show-help-tooltip": "Show help text",
     "revisionslider-help-dialog-slide1": "The RevisionSlider helps you to navigate and compare revisions on the diff page. It is based on a [[m:WMDE_Technical_Wishes/RevisionSlider|community wish]] from the German-speaking community technical wishlist.",
     "revisionslider-help-dialog-slide2": "Each bar represents a page revision. Bars on the top show growth in size of the page, bars on the bottom show a reduction. In the image, revision 1 represents added content, while revision 2 represents removal of content.",
