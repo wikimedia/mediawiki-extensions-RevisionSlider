@@ -8,6 +8,7 @@ Feature: RevisionSlider timeline
   Scenario: RevisionSlider timeline arrows to be disabled with 3 revisions
     Given a page with 3 revision(s) exists
     And I am on the diff page
+    And I click on the expand button
     And The RevisionSlider has loaded
     And I have closed the help dialog at the start
     Then The backward arrow should be disabled
@@ -17,6 +18,7 @@ Feature: RevisionSlider timeline
     Given a page with 30 revision(s) exists
     And The window size is 800 by 600
     And I am on the diff page
+    And I click on the expand button
     And The RevisionSlider has loaded
     And I have closed the help dialog at the start
     And The help dialog is hidden
