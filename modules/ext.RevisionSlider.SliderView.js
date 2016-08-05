@@ -15,6 +15,8 @@
 
 		containerMargin: 140,
 
+		outerMargin: 20,
+
 		/**
 		 * @type {jQuery}
 		 */
@@ -451,7 +453,7 @@
 		calculateSliderContainerWidth: function () {
 			return Math.min(
 					this.slider.getRevisions().getLength(),
-					mw.libs.revisionSlider.calculateRevisionsPerWindow( this.containerMargin, this.revisionWidth )
+					mw.libs.revisionSlider.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth )
 				) * this.revisionWidth;
 		},
 
@@ -575,7 +577,7 @@
 			var api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) ),
 				self = this,
 				revisions = this.slider.getRevisions().getRevisions(),
-				revisionCount = mw.libs.revisionSlider.calculateRevisionsPerWindow( this.containerMargin, this.revisionWidth ),
+				revisionCount = mw.libs.revisionSlider.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth ),
 				revs;
 			if ( this.noMoreNewerRevisions || !this.slider.isAtEnd() ) {
 				return;
@@ -610,7 +612,7 @@
 			var api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) ),
 				self = this,
 				revisions = this.slider.getRevisions().getRevisions(),
-				revisionCount = mw.libs.revisionSlider.calculateRevisionsPerWindow( this.containerMargin, this.revisionWidth ),
+				revisionCount = mw.libs.revisionSlider.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth ),
 				revs,
 				precedingRevisionSize = 0;
 			if ( this.noMoreOlderRevisions || !this.slider.isAtStart() ) {
@@ -799,7 +801,7 @@
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 	mw.libs.revisionSlider.SliderView = SliderView;
 
-	mw.libs.revisionSlider.calculateRevisionsPerWindow = function ( containerMargin, revisionWidth ) {
-		return Math.floor( ( $( '#mw-content-text' ).width() - containerMargin ) / revisionWidth );
+	mw.libs.revisionSlider.calculateRevisionsPerWindow = function ( margin, revisionWidth ) {
+		return Math.floor( ( $( '#mw-content-text' ).width() - margin ) / revisionWidth );
 	};
 }( mediaWiki, jQuery ) );

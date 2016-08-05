@@ -7,10 +7,9 @@ Feature: RevisionSlider betafeature
   Scenario: RevisionSlider is not loaded when feature disabled
     Given RevisionSlider is disabled as a beta feature
     And I am on the diff page
-    Then There should not be a RevisionSlider placeholder
+    Then There should not be a RevisionSlider expand button
 
   Scenario: RevisionSlider is loaded when feature enabled
     Given RevisionSlider is enabled as a beta feature
     And I am on the diff page
-    And The RevisionSlider has loaded
-    Then There should be a RevisionSlider container
+    Then There should be a RevisionSlider expand button

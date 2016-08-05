@@ -2,7 +2,8 @@ class DiffPage
   include PageObject
 
   p(:revisionslider_placeholder, id: 'mw-revslider-placeholder')
-  div(:revisionslider_container, id: 'mw-revslider-container')
+  div(:revisionslider_wrapper, id: 'mw-revslider-slider-wrapper')
+  div(:revisionslider_toggle_button, id: 'mw-revslider-slider-toggle')
   div(:revisionslider_darkness, id: 'mw-revslider-darkness')
 
   div(:revisionslider_help_dialog, id: 'revisionslider-help-dialog')

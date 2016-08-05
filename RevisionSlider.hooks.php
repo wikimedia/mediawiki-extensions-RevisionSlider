@@ -48,20 +48,56 @@ class RevisionSliderHooks {
 		$out->addJsConfigVars( 'extRevisionSliderOldRev', $oldRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderNewRev', $newRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderTimeOffset', intval( $timeOffset ) );
+		$out->enableOOUI();
+
+		// FIXME: this really not nice to inject those elements to ButtonWidget like that
+		// but this is only done to have inline styles set for those elements, so they are
+		// rendered as intended before RL loads all CSS styles (avoid jumping after CSS is loaded).
+		// Some better and more future-proof solution (what if ButtonWidget switches to use other tags?)
+		// should be used if possible.
+		$button = new OOUI\Tag( 'a' );
+		$label = new OOUI\Tag( 'span' );
+		$icon = new OOUI\Tag( 'span' );
+		$button->setAttributes( [ 'style' => 'width: 100%;' ] );
+		$label->setAttributes( [ 'style' => 'line-height: 1.875em;' ] );
+		$icon->setAttributes( [ 'style' => 'float: right;' ] );
+
+		$toggleButton = new OOUI\ButtonWidget( [
+			'label' => ( new Message( 'revisionslider-toggle-label' ) )->text(),
+			'icon' => 'expand',
+			'button' => $button,
+			'labelElement' => $label,
+			'iconElement' => $icon,
+			'id' => 'mw-revslider-slider-toggle',
+			'classes' => [ 'mw-revslider-toggle-button' ],
+			'infusable' => true,
+			'framed' => false,
+			'title' => ( new Message( 'revisionslider-toggle-title-expand' ) )->text(),
+		] );
+		$toggleButton->setAttributes( [ 'style' => 'width: 100%; text-align: center;' ] );
+
 		$out->addHTML(
 			Html::rawElement(
 				'div',
 				[
 					'id' => 'mw-revslider-container',
-					'style' => 'min-height: 150px;',
+					'style' => 'border: 1px solid #cccccc;'
 				],
-				Html::element(
-					'p',
+				$toggleButton .
+				Html::rawElement(
+					'div',
 					[
-						'id' => 'mw-revslider-placeholder',
-						'style' => 'text-align: center',
+						'id' => 'mw-revslider-slider-wrapper',
+						'style' => 'min-height: 142px; display: none; border-top: 1px solid #cccccc;',
 					],
-					( new Message( 'revisionslider-loading-placeholder' ) )->text()
+					Html::element(
+						'p',
+						[
+							'id' => 'mw-revslider-placeholder',
+							'style' => 'text-align: center',
+						],
+						( new Message( 'revisionslider-loading-placeholder' ) )->text()
+					)
 				)
 			)
 		);
