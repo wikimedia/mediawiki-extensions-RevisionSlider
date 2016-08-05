@@ -12,8 +12,8 @@ class DiffPage
   a(:revisionslider_help_close_start, css: '#revisionslider-help-close-start > a')
   a(:revisionslider_help_close_end, css: '#revisionslider-help-close-end > a')
 
-  a(:revisionslider_timeline_backwards, css: '#mw-revslider-container > div > a.mw-revslider-arrow.mw-revslider-arrow-backwards')
-  a(:revisionslider_timeline_forwards, css: '#mw-revslider-container > div > a.mw-revslider-arrow.mw-revslider-arrow-forwards')
+  div(:revisionslider_timeline_backwards, css: '.mw-revslider-arrow.mw-revslider-arrow-backwards')
+  div(:revisionslider_timeline_forwards, css: '.mw-revslider-arrow.mw-revslider-arrow-forwards')
 
   div(:revisionslider_pointer_lower, css: '.mw-revslider-pointer-lower')
   div(:revisionslider_pointer_upper, css: '.mw-revslider-pointer-upper')
