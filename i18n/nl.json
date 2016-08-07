@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"MrLeopold"
 		]
 	},
+	"revisionslider-page-size": "$1 {{PLURAL:$2|byte|bytes}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|byte|bytes}}",
 	"revisionslider-minoredit": "Dit is een kleine bewerking",
 	"revisionslider-previous-dialog": "Vorige",
 	"revisionslider-next-dialog": "Volgende",

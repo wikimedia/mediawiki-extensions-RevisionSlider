@@ -11,6 +11,8 @@
 	"revisionslider-desc": "Показує повзунок для вибору і порівняння версій на сторінці порівняння версій",
 	"revisionslider-beta-feature-message": "Revision Slider",
 	"revisionslider-beta-feature-description": "Показати повзунок версій при порівнянні двох версій сторінки.",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|байт|байти|байтів}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|байт|байти|байтів}}",
 	"revisionslider-label-date": "Дата",
 	"revisionslider-label-page-size": "Розмір сторінки",
 	"revisionslider-label-change-size": "Розмір зміни",

@@ -5,6 +5,8 @@
 			"Macofe"
 		]
 	},
+	"revisionslider-page-size": "$1{{PLURAL:$2|バイト}}",
+	"revisionslider-change-size": "$1{{PLURAL:$3|バイト}}",
 	"revisionslider-label-date": "データ",
 	"revisionslider-label-page-size": "ページのサイズ",
 	"revisionslider-label-change-size": "変更されたサイズ",
