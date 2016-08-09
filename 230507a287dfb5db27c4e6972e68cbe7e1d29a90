@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee9d9f70_e2c7e698",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-08-09T08:22:00Z",
+      "side": 1,
+      "message": "That wouldnt work...?",
+      "range": {
+        "startLine": 79,
+        "startChar": 21,
+        "endLine": 79,
+        "endChar": 54
+      },
+      "revId": "230507a287dfb5db27c4e6972e68cbe7e1d29a90",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_42bfd2f6",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-08-09T08:22:00Z",
+      "side": 1,
+      "message": "We could also time the load, although that is generally going to be super speedy so there may be no need to...",
+      "range": {
+        "startLine": 61,
+        "startChar": 1,
+        "endLine": 61,
+        "endChar": 59
+      },
+      "revId": "230507a287dfb5db27c4e6972e68cbe7e1d29a90",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_6233f6c0",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-08-09T08:22:00Z",
+      "side": 1,
+      "message": "I would remove the todo.\nExpand !\u003d\u003d init.\nWould it be possible to split this track call into one for expanding and one for collapsing?",
+      "range": {
+        "startLine": 72,
+        "startChar": 3,
+        "endLine": 72,
+        "endChar": 63
+      },
+      "revId": "230507a287dfb5db27c4e6972e68cbe7e1d29a90",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
