@@ -123,10 +123,26 @@
 }
 
 .mw-revslider-arrow {
-	width: 20px;
+	width: 22px;
+	height: 142px;
+}
+
+.mw-revslider-arrow .oo-ui-buttonElement-button {
 	height: 140px;
-	background-position: center center;
-	background-repeat: no-repeat;
+	width: 20px;
+	padding: 0;
+}
+
+.mw-revslider-arrow .oo-ui-iconElement-icon {
+	width: 20px;
+	height: 20px;
+	min-width: inherit;
+	min-height: inherit;
+}
+
+.mw-revslider-arrow.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
+	left: 0;
+	top: 61px;
 }
 
 .mw-revslider-arrow-backwards {
@@ -135,21 +151,6 @@
 
 .mw-revslider-arrow-forwards {
 	margin-left: 30px;
-}
-
-.mw-revslider-arrow-enabled,
-.mw-revslider-arrow-disabled {
-	border: #ddd solid 2px;
-}
-
-.mw-revslider-arrow-hovered {
-	border: #ddd solid 2px;
-	background-color: #e5e5e5;
-	cursor: pointer;
-}
-
-.mw-revslider-arrow-active {
-	border: #ccc solid 2px;
 }
 
 .mw-revslider-revision-slider {

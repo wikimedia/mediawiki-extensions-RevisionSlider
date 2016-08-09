@@ -41,6 +41,16 @@
 		pointerNewer: null,
 
 		/**
+		 * @type {OO.ui.ButtonWidget}
+		 */
+		backwardArrowButton: null,
+
+		/**
+		 * @type {OO.ui.ButtonWidget}
+		 */
+		forwardArrowButton: null,
+
+		/**
 		 * @type {string}
 		 *
 		 * Value of scrollLeft property when in RTL mode varies between browser. This identifies
@@ -63,7 +73,7 @@
 
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
-				pointerContainerPosition = 55,
+				pointerContainerPosition = 53,
 				pointerContainerWidth = containerWidth + this.revisionWidth - 1,
 				pointerContainerStyle,
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
@@ -116,6 +126,38 @@
 			} );
 			$( 'body' ).append( backwardArrowPopup.$element, forwardArrowPopup.$element, helpPopup.$element );
 
+			this.backwardArrowButton = new OO.ui.ButtonWidget( {
+				icon: 'previous',
+				width: 20,
+				height: 140,
+				framed: true,
+				classes: [ 'mw-revslider-arrow', 'mw-revslider-arrow-backwards' ]
+			} );
+			this.backwardArrowButton.connect( this, {
+				click: [ 'arrowClickHandler', this.backwardArrowButton ]
+			} );
+			this.backwardArrowButton.$element
+				.attr( 'data-dir', -1 )
+				.mouseover( { button: this.backwardArrowButton, popup: backwardArrowPopup }, this.showPopup )
+				.mouseout( { popup: backwardArrowPopup }, this.hidePopup )
+				.focusin( { button: this.backwardArrowButton }, this.arrowFocusHandler );
+
+			this.forwardArrowButton = new OO.ui.ButtonWidget( {
+				icon: 'next',
+				width: 20,
+				height: 140,
+				framed: true,
+				classes: [ 'mw-revslider-arrow', 'mw-revslider-arrow-forwards' ]
+			} );
+			this.forwardArrowButton.connect( this, {
+				click: [ 'arrowClickHandler', this.forwardArrowButton ]
+			} );
+			this.forwardArrowButton.$element
+				.attr( 'data-dir', 1 )
+				.mouseover( { button: this.forwardArrowButton, popup: forwardArrowPopup }, this.showPopup )
+				.mouseout( { popup: forwardArrowPopup }, this.hidePopup )
+				.focusin( { button: this.forwardArrowButton }, this.arrowFocusHandler );
+
 			pointerContainerStyle = { left: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
 			if ( $slider.css( 'direction' ) === 'rtl' ) {
 				// Due to properly limit dragging a pointer on the right side of the screen,
@@ -129,22 +171,14 @@
 					width: ( containerWidth + this.containerMargin ) + 'px'
 				} )
 				.append(
-					$( '<a> ' )
-						.addClass( 'mw-revslider-arrow mw-revslider-arrow-backwards' )
-						.attr( 'data-dir', '-1' )
-						.mouseover( { popup: backwardArrowPopup }, this.showPopup )
-						.mouseout( { popup: backwardArrowPopup }, this.hidePopup ),
+					this.backwardArrowButton.$element,
 					$( '<div>' )
 						.addClass( 'mw-revslider-revisions-container' )
 						.css( {
 							width: containerWidth + 'px'
 						} )
 						.append( $revisions ),
-					$( '<a> ' )
-						.addClass( 'mw-revslider-arrow mw-revslider-arrow-forwards' )
-						.attr( 'data-dir', '1' )
-						.mouseover( { popup: forwardArrowPopup }, this.showPopup )
-						.mouseout( { popup: forwardArrowPopup }, this.hidePopup ),
+					this.forwardArrowButton.$element,
 					helpButton.$element,
 					$( '<div>' ).css( { clear: 'both' } ),
 					$( '<div>' )
@@ -152,51 +186,6 @@
 						.css( pointerContainerStyle )
 						.append( this.pointerOlder.getView().render(), this.pointerNewer.getView().render() )
 				);
-
-			if ( $slider.css( 'direction' ) === 'ltr' ) {
-				$slider.find( '.mw-revslider-arrow-backwards' ).addClass( 'mw-revslider-arrow-left' );
-				$slider.find( '.mw-revslider-arrow-forwards' ).addClass( 'mw-revslider-arrow-right' );
-			} else {
-				$slider.find( '.mw-revslider-arrow-backwards' ).addClass( 'mw-revslider-arrow-right' );
-				$slider.find( '.mw-revslider-arrow-forwards' ).addClass( 'mw-revslider-arrow-left' );
-			}
-
-			$slider.find( '.mw-revslider-arrow' ).click( function () {
-					var $arrow = $( this );
-					if ( $arrow.hasClass( 'mw-revslider-arrow-disabled' ) ) {
-						return;
-					}
-					mw.track( 'counter.MediaWiki.RevisionSlider.event.arrowClick' );
-					self.slide( $arrow.data( 'dir' ) );
-				} )
-				.mouseenter( function () {
-					var $arrow = $( this );
-					if ( $arrow.hasClass( 'mw-revslider-arrow-disabled' ) ) {
-						return;
-					}
-					$arrow.removeClass( 'mw-revslider-arrow-enabled' ).addClass( 'mw-revslider-arrow-hovered' );
-				} )
-				.mouseleave( function () {
-					var $arrow = $( this );
-					if ( $arrow.hasClass( 'mw-revslider-arrow-disabled' ) ) {
-						return;
-					}
-					$arrow.removeClass( 'mw-revslider-arrow-hovered' ).addClass( 'mw-revslider-arrow-enabled' );
-				} )
-				.mousedown( function ( event ) {
-					var $arrow = $( this );
-					if ( $arrow.hasClass( 'mw-revslider-arrow-disabled' ) || event.which !== 1 ) {
-						return;
-					}
-					$arrow.addClass( 'mw-revslider-arrow-active' );
-				} )
-				.mouseup( function ( event ) {
-					var $arrow = $( this );
-					if ( $arrow.hasClass( 'mw-revslider-arrow-disabled' ) || event.which !== 1 ) {
-						return;
-					}
-					$arrow.removeClass( 'mw-revslider-arrow-active' );
-				} );
 
 			$slider.find( '.mw-revslider-pointer' ).draggable( {
 				axis: 'x',
@@ -257,8 +246,9 @@
 		},
 
 		showPopup: function ( e ) {
-			var popup = e.data.popup;
-			if ( $( this ).hasClass( 'mw-revslider-arrow-disabled' ) ) {
+			var button = e.data.button,
+				popup = e.data.popup;
+			if ( typeof button !== 'undefined' && button.isDisabled() ) {
 				return;
 			}
 			popup.$element.css( {
@@ -271,6 +261,32 @@
 		hidePopup: function ( e ) {
 			var popup = e.data.popup;
 			popup.toggle( false );
+		},
+
+		/**
+		 * @param {OO.ui.ButtonWidget} button
+		 */
+		arrowClickHandler: function ( button ) {
+			if ( button.isDisabled() ) {
+				return;
+			}
+			mw.track( 'counter.MediaWiki.RevisionSlider.event.arrowClick' );
+			this.slide( button.$element.data( 'dir' ) );
+		},
+
+		/**
+		 * Disabled oo.ui.ButtonWidgets get focused when clicked. In particular cases
+		 * (arrow gets clicked when disabled, none other elements gets focus meanwhile, the other arrow is clicked)
+		 * previously disabled arrow button still has focus and has OOjs-ui focused button styles
+		 * applied (blue border) which is not what is wanted. And generally setting a focus on disabled
+		 * buttons does not seem right in case of RevisionSlider's arrow buttons.
+		 * This method removes focus from the disabled button if such case happens.
+		 */
+		arrowFocusHandler: function ( e ) {
+			var button = e.data.button;
+			if ( button.isDisabled() ) {
+				button.$element.find( 'a.oo-ui-buttonElement-button' ).blur();
+			}
 		},
 
 		revisionWrapperClickHandler: function ( e ) {
@@ -449,14 +465,14 @@
 			this.pointerNewer.getView().getElement().draggable( 'disable' );
 
 			if ( this.slider.isAtStart() ) {
-				$( '.mw-revslider-arrow-backwards' ).removeClass( 'mw-revslider-arrow-enabled mw-revslider-arrow-hovered' ).addClass( 'mw-revslider-arrow-disabled' );
+				this.backwardArrowButton.setDisabled( true );
 			} else {
-				$( '.mw-revslider-arrow-backwards' ).removeClass( 'mw-revslider-arrow-disabled' ).addClass( 'mw-revslider-arrow-enabled' );
+				this.backwardArrowButton.setDisabled( false );
 			}
 			if ( this.slider.isAtEnd() ) {
-				$( '.mw-revslider-arrow-forwards' ).removeClass( 'mw-revslider-arrow-enabled mw-revslider-arrow-hovered' ).addClass( 'mw-revslider-arrow-disabled' );
+				this.forwardArrowButton.setDisabled( true );
 			} else {
-				$( '.mw-revslider-arrow-forwards' ).removeClass( 'mw-revslider-arrow-disabled' ).addClass( 'mw-revslider-arrow-enabled' );
+				this.forwardArrowButton.setDisabled( false );
 			}
 
 			animateObj = { scrollLeft: this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth };
@@ -660,7 +676,7 @@
 			this.slider.getRevisions().getView().adjustRevisionSizes( $slider );
 
 			if ( !this.slider.isAtEnd() ) {
-				$slider.find( '.mw-revslider-arrow-forwards' ).removeClass( 'mw-revslider-arrow-disabled' ).addClass( 'mw-revslider-arrow-enabled' );
+				this.forwardArrowButton.setDisabled( false );
 			}
 		},
 
@@ -733,7 +749,7 @@
 
 			this.slider.getRevisions().getView().adjustRevisionSizes( $slider );
 
-			$slider.find( '.mw-revslider-arrow-backwards' ).removeClass( 'mw-revslider-arrow-disabled' ).addClass( 'mw-revslider-arrow-enabled' );
+			this.backwardArrowButton.setDisabled( false );
 		},
 
 		/**
