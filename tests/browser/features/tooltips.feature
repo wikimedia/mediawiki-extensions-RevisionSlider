@@ -6,7 +6,6 @@ Feature: RevisionSlider tooltips
     And RevisionSlider is enabled as a beta feature
     And a page with 4 revision(s) exists
     And I am on the diff page
-    And I click on the expand button
     And The RevisionSlider has loaded
     And I have closed the help dialog at the start
 

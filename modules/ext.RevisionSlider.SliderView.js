@@ -13,7 +13,7 @@
 	$.extend( SliderView.prototype, {
 		revisionWidth: 16,
 
-		containerMargin: 160,
+		containerMargin: 140,
 
 		/**
 		 * @type {jQuery}

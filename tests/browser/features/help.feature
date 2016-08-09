@@ -6,14 +6,12 @@ Feature: RevisionSlider help
     And I have reset my preferences
     And RevisionSlider is enabled as a beta feature
     And I am on the diff page
-    And I click on the expand button
 
   Scenario: RevisionSlider tutorial is present on first load only
     Given The RevisionSlider has loaded
     Then The help dialog should be visible
     When I have closed the help dialog at the start
     And I refresh the page
-    And I click on the expand button
     And The RevisionSlider has loaded
     Then The help dialog should not be present
 
@@ -25,6 +23,5 @@ Feature: RevisionSlider help
     And I have moved to the next step
     And I have closed the help dialog at the end
     And I refresh the page
-    And I click on the expand button
     And The RevisionSlider has loaded
     Then The help dialog should not be present
