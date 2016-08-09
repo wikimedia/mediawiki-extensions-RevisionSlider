@@ -26,7 +26,7 @@ class DiffPage
   end
 
   def revisionslider_tooltip(index = 1)
-    element('div', css: '.mw-revslider-revision-tooltip-' + index.to_s)
+    element('div', id: 'mw-revslider-revision-tooltip-' + index.to_s)
 
   end
 

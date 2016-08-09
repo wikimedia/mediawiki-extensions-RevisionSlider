@@ -26,7 +26,7 @@
 		assert.ok( $( $revisionDivs[ 2 ] ).hasClass( 'mw-revslider-revision-down' ) );
 	} );
 
-	QUnit.test( 'tool tip is composed correctly', function ( assert ) {
+	QUnit.test( 'tooltip is composed correctly', function ( assert ) {
 		var revisionListView = new RevisionListView(),
 			revision = new Revision( {
 				revid: 1,
@@ -37,21 +37,23 @@
 				user: 'User1',
 				minor: true
 			} ),
-			$tooltipHtml;
+			tooltip,
+			tooltipHtml;
 
 		revision.setRelativeSize( 210 );
 
 		mw.libs.revisionSlider.userOffset = 0;
 
-		$tooltipHtml = revisionListView.makeTooltip( revision );
+		tooltip = revisionListView.makeTooltip( revision );
+		tooltipHtml = tooltip.$element.html();
 
-		assert.ok( $tooltipHtml.match( /User1/ ), 'Test the user.' );
-		assert.ok( $tooltipHtml.match( /Hello/ ), 'Test the comment.' );
-		assert.ok( $tooltipHtml.match( /230/ ), 'Test the page size.' );
-		assert.ok( $tooltipHtml.match( /\+210/ ), 'Test the change size.' );
+		assert.ok( tooltipHtml.match( /User1/ ), 'Test the user.' );
+		assert.ok( tooltipHtml.match( /Hello/ ), 'Test the comment.' );
+		assert.ok( tooltipHtml.match( /230/ ), 'Test the page size.' );
+		assert.ok( tooltipHtml.match( /\+210/ ), 'Test the change size.' );
 	} );
 
-	QUnit.revisionSlider.testOrSkip( 'tool tip is composed correctly with en lang', function ( assert ) {
+	QUnit.revisionSlider.testOrSkip( 'tooltip is composed correctly with en lang', function ( assert ) {
 		var revisionListView = new RevisionListView(),
 			revision = new Revision( {
 				revid: 1,
@@ -62,20 +64,22 @@
 				user: 'User1',
 				minor: true
 			} ),
-			$tooltipHtml;
+			tooltip,
+			tooltipHtml;
 
 		revision.setRelativeSize( 2100 );
 
 		mw.libs.revisionSlider.userOffset = 0;
 
-		$tooltipHtml = revisionListView.makeTooltip( revision );
+		tooltip = revisionListView.makeTooltip( revision );
+		tooltipHtml = tooltip.$element.html();
 
-		assert.ok( $tooltipHtml.match( /User1/ ), 'Test the user.' );
-		assert.ok( $tooltipHtml.match( /Hello/ ), 'Test the comment.' );
-		assert.ok( $tooltipHtml.match( /2,300/ ), 'Test the page size.' );
-		assert.ok( $tooltipHtml.match( /\+2,100/ ), 'Test the change size.' );
-		assert.ok( $tooltipHtml.match( /10:27, 26 Apr 2016/ ), 'Test the date.' );
-		assert.ok( $tooltipHtml.match( /minor/ ), 'Test minor.' );
+		assert.ok( tooltipHtml.match( /User1/ ), 'Test the user.' );
+		assert.ok( tooltipHtml.match( /Hello/ ), 'Test the comment.' );
+		assert.ok( tooltipHtml.match( /2,300/ ), 'Test the page size.' );
+		assert.ok( tooltipHtml.match( /\+2,100/ ), 'Test the change size.' );
+		assert.ok( tooltipHtml.match( /10:27, 26 Apr 2016/ ), 'Test the date.' );
+		assert.ok( tooltipHtml.match( /minor/ ), 'Test minor.' );
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
 	QUnit.test( 'empty user leads to no user line', function ( assert ) {

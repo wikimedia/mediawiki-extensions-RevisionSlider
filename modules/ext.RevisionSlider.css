@@ -85,8 +85,8 @@
 	border-left: solid 1px #fff;
 }
 
-.mw-revslider-revision-tooltip .tipsy-inner {
-	max-width: none;
+.mw-revslider-tooltip {
+	font-size: 0.8em;
 }
 
 .mw-revslider-revision-tooltip .mw-revslider-change-positive {
@@ -99,6 +99,11 @@
 
 .mw-revslider-revision-tooltip .mw-revslider-change-none {
 	color: #aaa;
+}
+
+.mw-revslider-arrow-tooltip,
+.mw-revslider-help-tooltip {
+	text-align: center;
 }
 
 .mw-revslider-revisions {

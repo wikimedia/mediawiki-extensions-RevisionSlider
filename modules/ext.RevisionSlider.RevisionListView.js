@@ -16,12 +16,22 @@
 		/**
 		 * @type {number}
 		 */
+		revisionWidth: 16,
+
+		/**
+		 * @type {number}
+		 */
 		tooltipTimeout: -1,
+
+		/**
+		 * @type {OO.ui.PopupWidget}
+		 */
+		currentTooltip: null,
 
 		/**
 		 * @type {jQuery}
 		 */
-		currentTooltip: null,
+		$highlightedRevisionWrapper: null,
 
 		/**
 		 * @param {number} revisionTickWidth
@@ -33,60 +43,32 @@
 				revs = this.revisionList.getRevisions(),
 				maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() ),
 				self = this,
-				i, diffSize, tooltip, relativeChangeSize,
+				i, diffSize, relativeChangeSize,
 				showTooltip = function () {
 					self.showTooltip( $( this ) );
-					$( this ).tipsy( 'show' );
 				},
 				hideTooltip = function () {
 					self.hideTooltip( $( this ) );
-				},
-				tooltipGravity = function () {
-					// Returns a function setting a gravity of the tooltip so that it will be entirely visible
-					// Based on tipsy's own $.fn.tipsy.autoBounds, with considering the width of the
-					// inner contents of the tooltip, and assuming the gravity always starts with 'n'
-					return function () {
-						var dir = 'n',
-							$this = $( this ),
-							$tip = $this.tipsy( true ).$tip,
-							boundLeft = $( document ).scrollLeft() + $tip.outerWidth();
-
-						if ( $this.offset().left < boundLeft ) {
-							dir += 'w';
-						}
-						if ( $( window ).width() + $( document ).scrollLeft() - $this.offset().left < 0 ) {
-							dir += 'e';
-						}
-
-						return dir;
-					};
 				};
 
 			positionOffset = positionOffset || 0;
+			this.revisionWidth = revisionTickWidth;
 
 			for ( i = 0; i < revs.length; i++ ) {
 				diffSize = revs[ i ].getRelativeSize();
 				relativeChangeSize = diffSize !== 0 ? Math.ceil( 65.0 * Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) + 5 : 0;
-				tooltip = this.makeTooltip( revs[ i ] );
 
 				$html
 					.append( $( '<div>' )
 						.addClass( 'mw-revslider-revision-wrapper' )
-						.attr( 'title', tooltip )
-						.width( revisionTickWidth )
-						.tipsy( {
-							gravity: tooltipGravity(),
-							html: true,
-							trigger: 'manual',
-							className: 'mw-revslider-revision-tooltip mw-revslider-revision-tooltip-' + ( i + 1 )
-						} )
+						.width( this.revisionWidth )
 						.append( $( '<div>' )
 							.addClass( 'mw-revslider-revision' )
 							.attr( 'data-revid', revs[ i ].getId() )
 							.attr( 'data-pos', positionOffset + i + 1 )
 							.css( {
 								height: relativeChangeSize + 'px',
-								width: revisionTickWidth + 'px',
+								width: this.revisionWidth + 'px',
 								top: diffSize > 0 ? '-' + relativeChangeSize + 'px' : 0
 							} )
 							.addClass( diffSize > 0 ? 'mw-revslider-revision-up' : 'mw-revslider-revision-down' )
@@ -123,10 +105,11 @@
 		 * Hides the current tooltip immediately
 		 */
 		hideCurrentTooltip: function () {
-			if ( this.tooltipTimeout !== -1 ) {
+			if ( this.tooltipTimeout !== -1 && this.$highlightedRevisionWrapper !== null ) {
 				window.clearTimeout( this.tooltipTimeout );
-				this.currentTooltip.tipsy( 'hide' );
-				this.currentTooltip.removeClass( 'mw-revslider-revision-wrapper-hovered' );
+				this.$highlightedRevisionWrapper.removeClass( 'mw-revslider-revision-wrapper-hovered' );
+				this.currentTooltip.toggle( false );
+				this.currentTooltip.$element.remove();
 			}
 		},
 
@@ -136,9 +119,15 @@
 		 * @param {jQuery} $rev
 		 */
 		hideTooltip: function ( $rev ) {
+			var self = this;
 			this.tooltipTimeout = window.setTimeout( function () {
-				$rev.tipsy( 'hide' );
-				$rev.removeClass( 'mw-revslider-revision-wrapper-hovered' );
+				if ( $rev !== null ) {
+					$rev.removeClass( 'mw-revslider-revision-wrapper-hovered' );
+				}
+				if ( self.currentTooltip !== null && self.currentTooltip.isVisible() ) {
+					self.currentTooltip.toggle( false );
+					self.currentTooltip.$element.remove();
+				}
 			}, 500 );
 		},
 
@@ -148,10 +137,40 @@
 		 * @param {jQuery} $rev
 		 */
 		showTooltip: function ( $rev ) {
+			var pos = parseInt( $rev.find( '.mw-revslider-revision' ).attr( 'data-pos' ), 10 ),
+				revId = parseInt( $rev.find( '.mw-revslider-revision' ).attr( 'data-revid' ), 10 ),
+				revision =  this.getRevisionWithId( revId ),
+				tooltip;
+			if ( revision === null ) {
+				return;
+			}
+			tooltip = this.makeTooltip( revision );
+			tooltip.$element.css( {
+				left: $rev.offset().left + this.revisionWidth / 2 + 'px',
+				top: $rev.offset().top + $rev.outerHeight() + 'px'
+			} );
+			tooltip.$element.attr( 'id', 'mw-revslider-revision-tooltip-' + pos );
+			$( 'body' ).append( tooltip.$element );
+			tooltip.toggle( true );
+
 			this.hideCurrentTooltip();
-			$rev.tipsy( 'show' );
 			$rev.addClass( 'mw-revslider-revision-wrapper-hovered' );
-			this.currentTooltip = $rev;
+			this.$highlightedRevisionWrapper = $rev;
+			this.currentTooltip = tooltip;
+		},
+
+		/**
+		 * @param {number} revId
+		 * @return {Revision|null}
+		 */
+		getRevisionWithId: function ( revId ) {
+			var matchedRevision = null;
+			this.revisionList.revisions.forEach( function ( revision ) {
+				if ( revision.getId() === revId ) {
+					matchedRevision = revision;
+				}
+			} );
+			return matchedRevision;
 		},
 
 		/**
@@ -165,7 +184,7 @@
 					window.clearTimeout( self.tooltipTimeout );
 				} )
 				.on( 'mouseout', '.mw-revslider-revision-tooltip', function () {
-					self.hideTooltip( self.currentTooltip );
+					self.hideTooltip( self.$highlightedRevisionWrapper );
 				} );
 		},
 
@@ -173,7 +192,7 @@
 		 * Generates the HTML for a tooltip that appears on hover above each revision on the slider
 		 *
 		 * @param {Revision} rev
-		 * @return {string}
+		 * @return {OO.ui.PopupWidget}
 		 */
 		makeTooltip: function ( rev ) {
 			var $tooltip = $( '<div>' )
@@ -188,7 +207,11 @@
 					this.makeChangeSizeLine( rev.getRelativeSize() ),
 					rev.isMinor() ? $( '<p>' ).text( mw.message( 'revisionslider-minoredit' ).text() ) : ''
 				);
-			return $tooltip.html();
+			return new OO.ui.PopupWidget( {
+				$content: $tooltip,
+				padded: true,
+				classes: [ 'mw-revslider-tooltip', 'mw-revslider-revision-tooltip' ]
+			} );
 		},
 
 		/**
