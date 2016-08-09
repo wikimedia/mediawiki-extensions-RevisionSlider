@@ -140,6 +140,30 @@
       "revId": "230507a287dfb5db27c4e6972e68cbe7e1d29a90",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_c2b4a2e7",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-08-09T08:59:51Z",
+      "side": 1,
+      "message": "I think it should probably record all expands \u0026 collapses.",
+      "parentUuid": "ee9d9f70_c227425e",
+      "range": {
+        "startLine": 72,
+        "startChar": 3,
+        "endLine": 72,
+        "endChar": 63
+      },
+      "revId": "230507a287dfb5db27c4e6972e68cbe7e1d29a90",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
