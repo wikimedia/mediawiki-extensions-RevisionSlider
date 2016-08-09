@@ -10,7 +10,6 @@
 	"revisionslider-desc": "{{desc|name=RevisionSlider|url=https://www.mediawiki.org/wiki/Extension:RevisionSlider}}",
 	"revisionslider-beta-feature-message": "Label for the RevisionSlider Beta Feature.",
 	"revisionslider-beta-feature-description": "Description for the RevisionSlider Beta Feature, describing the feature that will be enabled.",
-	"revisionslider-toggle-label": "Label of the button toggling the visibility of RevisionSlider",
 	"revisionslider-page-size": "Page size after the revision.\n\nParameters:\n$1 - number of bytes formatted for output (with mw.language.converNumber)\n$2 - number of bytes, could be used with PLURAL\n{{Identical|Byte}}",
 	"revisionslider-change-size": "Change size, ie. number of bytes added or removed in the revision.\n\nParameters:\n$1 - change size formatted for output (colour-coded HTML element, including plus or minus sign)\n$2 - change size (in bytes), can be negative\n$3 - change size (in bytes) without a sign\n{{Identical|Byte}}",
 	"revisionslider-label-date": "Label for the creation date of the revision.\n{{Identical|Date}}",
