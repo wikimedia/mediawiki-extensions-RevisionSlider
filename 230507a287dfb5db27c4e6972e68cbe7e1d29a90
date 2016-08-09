@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ee9d9f70_e21b661f",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-08-09T08:37:37Z",
+      "side": 1,
+      "message": "oh, please ignore that. I left this comment for myself and forgot to remove it before submitting the patch to review",
+      "parentUuid": "ee9d9f70_e2c7e698",
+      "range": {
+        "startLine": 79,
+        "startChar": 21,
+        "endLine": 79,
+        "endChar": 54
+      },
+      "revId": "230507a287dfb5db27c4e6972e68cbe7e1d29a90",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee9d9f70_42bfd2f6",
         "filename": "modules/ext.RevisionSlider.init.js",
         "patchSetId": 3
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "ee9d9f70_026b0a83",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-08-09T08:37:37Z",
+      "side": 1,
+      "message": "yes, that would rather seem like benchmarking RL as before expanding the slider this whole JS code doesn\u0027t really do anything special.",
+      "parentUuid": "ee9d9f70_42bfd2f6",
+      "range": {
+        "startLine": 61,
+        "startChar": 1,
+        "endLine": 61,
+        "endChar": 59
+      },
+      "revId": "230507a287dfb5db27c4e6972e68cbe7e1d29a90",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee9d9f70_6233f6c0",
         "filename": "modules/ext.RevisionSlider.init.js",
         "patchSetId": 3
@@ -59,6 +107,30 @@
       "writtenOn": "2016-08-09T08:22:00Z",
       "side": 1,
       "message": "I would remove the todo.\nExpand !\u003d\u003d init.\nWould it be possible to split this track call into one for expanding and one for collapsing?",
+      "range": {
+        "startLine": 72,
+        "startChar": 3,
+        "endLine": 72,
+        "endChar": 63
+      },
+      "revId": "230507a287dfb5db27c4e6972e68cbe7e1d29a90",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_c227425e",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-08-09T08:37:37Z",
+      "side": 1,
+      "message": "Agreed on expand !\u003d\u003d init. This would then probably only need some specific description on grafana side so people analyzing results dont get confused. Not our problem in any case.\n\nI was also thinking about tracking collapsing the slider. Will add it. I believe it should only track first expansion and first collapsing? So it does not accumulate hits when somebody just expands and collapses the thing 50 times for lolz. Or do we want to have such details too?",
+      "parentUuid": "ee9d9f70_6233f6c0",
       "range": {
         "startLine": 72,
         "startChar": 3,
