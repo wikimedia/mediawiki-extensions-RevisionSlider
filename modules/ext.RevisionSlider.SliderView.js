@@ -13,7 +13,7 @@
 	$.extend( SliderView.prototype, {
 		revisionWidth: 16,
 
-		containerMargin: 120,
+		containerMargin: 140,
 
 		/**
 		 * @type {jQuery}
@@ -70,6 +70,7 @@
 				$slider = $( '<div>' )
 					.addClass( 'mw-revslider-revision-slider' )
 					.css( { direction: $container.css( 'direction' ) } ),
+				helpButton,
 				self = this;
 
 			if ( $slider.css( 'direction' ) === 'rtl' ) {
@@ -78,6 +79,23 @@
 
 			this.pointerOlder = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-older' );
 			this.pointerNewer = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-newer' );
+
+			helpButton = new OO.ui.ButtonWidget( {
+				icon: 'help',
+				framed: false,
+				classes: [ 'mw-revslider-show-help' ]
+			} );
+			helpButton.$element
+				.click( function () {
+					mw.libs.revisionSlider.HelpDialog.show();
+				} )
+				.tipsy( {
+					gravity: $( 'body' ).hasClass( 'ltr' ) ? 'se' : 'sw',
+					offset: 15,
+					title: function () {
+						return mw.msg( 'revisionslider-show-help-tooltip' );
+					}
+				} );
 
 			pointerContainerStyle = { left: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
 			if ( $slider.css( 'direction' ) === 'rtl' ) {
@@ -127,6 +145,7 @@
 								return mw.message( 'revisionslider-arrow-tooltip-newer' ).text();
 							}
 						} ),
+					helpButton.$element,
 					$( '<div>' ).css( { clear: 'both' } ),
 					$( '<div>' )
 						.addClass( 'mw-revslider-pointer-container' )
