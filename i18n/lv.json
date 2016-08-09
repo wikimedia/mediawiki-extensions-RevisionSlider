@@ -5,6 +5,8 @@
 			"Macofe"
 		]
 	},
+	"revisionslider-page-size": "$1 {{PLURAL:$2|baitu|baits|baitu}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|baitu|baits|baitu}}",
 	"revisionslider-label-date": "Datums",
 	"revisionslider-label-change-size": "Mainīt izmēru",
 	"revisionslider-label-comment": "Komentārs",
