@@ -11,5 +11,6 @@
 	"revisionslider-label-date": "日期",
 	"revisionslider-label-page-size": "頁面大小",
 	"revisionslider-label-change-size": "變更大小",
+	"revisionslider-label-comment": "注釋",
 	"revisionslider-label-username": "{{GENDER:$1|使用者名稱}}"
 }

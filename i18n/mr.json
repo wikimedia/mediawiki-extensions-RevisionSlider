@@ -5,6 +5,8 @@
 			"Macofe"
 		]
 	},
+	"revisionslider-page-size": "$1 {{PLURAL:$2|बाइट|बाइटस्}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|बाइट|बाइटस्}}",
 	"revisionslider-label-date": "दिनांक",
 	"revisionslider-label-username": "{{GENDER:$1|सदस्यनाम}}",
 	"revisionslider-minoredit": "हे एक किरकोळ संपादन आहे",
