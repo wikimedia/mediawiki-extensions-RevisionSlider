@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee9d9f70_c2d72c27",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 658
+      },
+      "writtenOn": "2016-08-11T21:00:32Z",
+      "side": 1,
+      "message": "Hopefully with JS browsers tests we wouldn\u0027t need to address them by CSS at all. Using an IDs at all within your module means it can never be used twice on a page (theoretically a good thing).",
+      "parentUuid": "ee9d9f70_f3ceccb8",
+      "revId": "f6a44f43feadad6868469bce9c0a9234354408d4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee9d9f70_13435018",
         "filename": "modules/ext.RevisionSlider.init.js",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-11T08:19:08Z",
       "side": 1,
       "message": "Good to know it could be done like this!\n\nI\u0027ve blindly followed what https://www.mediawiki.org/w/index.php?title\u003dOOjs_UI/PHP_examples\u0026oldid\u003d1748909 said in the \"Adding JavaScript behaviors\" section about id being mandatory to have the widget infusable.\n\nI will update the docs with I\u0027ve just learned then",
+      "revId": "f6a44f43feadad6868469bce9c0a9234354408d4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_22be38cf",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 658
+      },
+      "writtenOn": "2016-08-11T21:00:32Z",
+      "side": 1,
+      "message": "Thanks!",
+      "parentUuid": "ee9d9f70_13435018",
       "revId": "f6a44f43feadad6868469bce9c0a9234354408d4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
