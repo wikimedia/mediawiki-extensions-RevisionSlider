@@ -17,7 +17,6 @@
     "revisionslider-label-comment": "Comment",
     "revisionslider-label-username": "{{GENDER:$1|Username}}",
     "revisionslider-minoredit": "This is a minor edit",
-    "revisionslider-loading-placeholder": "The revision slider is loading...",
     "revisionslider-loading-failed": "The revision slider failed to load.",
     "revisionslider-toggle-title-expand": "Open revision slider",
     "revisionslider-toggle-title-collapse": "Collapse revision slider",

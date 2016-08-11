@@ -19,7 +19,6 @@
 	"revisionslider-label-comment": "Label for the edit summary of the revision.\n{{Identical|Comment}}",
 	"revisionslider-label-username": "Label for the revision's author's username.\n\nParameters:\n$1 - Gender as in user preferences (suitable for GENDER)\n{{Identical|Username}}",
 	"revisionslider-minoredit": "Text labeling a minor edit.",
-	"revisionslider-loading-placeholder": "Message shown while the RevisionSlider is still loading on a diff page. Once loaded the message is removed.",
 	"revisionslider-loading-failed": "Message shown if the RevisionSlider fails to initially load.",
 	"revisionslider-toggle-title-expand": "Message shown as a \"title\" of the exand button",
 	"revisionslider-toggle-title-collapse": "Message shown as a \"title\" of the collapse button",
