@@ -8,6 +8,7 @@
 		]
 	},
 	"revisionslider-beta-feature-message": "RevisionSlider",
+	"revisionslider-toggle-label": "RevisionSlider",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte}}",
 	"revisionslider-label-date": "Data",
@@ -18,6 +19,7 @@
 	"revisionslider-minoredit": "Questa è una modifica minore",
 	"revisionslider-loading-placeholder": "RevisionSlider in caricamento...",
 	"revisionslider-loading-failed": "Errore durante il caricamento di RevisionSlider.",
+	"revisionslider-toggle-title-expand": "Apri RevisionSlider",
 	"revisionslider-arrow-tooltip-newer": "Vedi le versioni più recenti",
 	"revisionslider-arrow-tooltip-older": "Vedi le versioni meno recenti",
 	"revisionslider-show-help-tooltip": "Mostra testo di aiuto",

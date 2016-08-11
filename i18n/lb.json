@@ -5,6 +5,7 @@
 			"Macofe"
 		]
 	},
+	"revisionslider-toggle-label": "RevisionSlider",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|Byte|Byten}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|Byte|Byten}}",
 	"revisionslider-label-date": "Datum",
@@ -13,9 +14,14 @@
 	"revisionslider-label-comment": "Bemierkung",
 	"revisionslider-label-username": "{{GENDER:$1|Benotzernumm}}",
 	"revisionslider-minoredit": "Dëst ass eng kleng Ännerung",
+	"revisionslider-loading-placeholder": "De RevisionSlider gëtt gelueden...",
+	"revisionslider-loading-failed": "De RevisionSlider konnt net geluede ginn.",
+	"revisionslider-toggle-title-expand": "RevisionSlider opmaachen",
+	"revisionslider-toggle-title-collapse": "RevisionSlider zesummeklappen",
 	"revisionslider-arrow-tooltip-newer": "Méi nei Versioune weisen",
 	"revisionslider-arrow-tooltip-older": "Méi al Versioune weisen",
 	"revisionslider-show-help-tooltip": "Hëllefstext weisen",
+	"revisionslider-tutorial": "Guide vum RevisionSlider",
 	"revisionslider-previous-dialog": "Vireg",
 	"revisionslider-next-dialog": "Nächst",
 	"revisionslider-close-dialog": "Zoumaachen"
