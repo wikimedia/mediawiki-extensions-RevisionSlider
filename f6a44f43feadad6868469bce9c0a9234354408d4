@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee9d9f70_f3ceccb8",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-08-11T08:19:08Z",
+      "side": 1,
+      "message": "I am not very convinced by this being changed.\n\nAs far as I can tell this ID has not been used for style/design at all but rather to refer to a particular tooltip/popup in browser test (a bit weak reason to introduce id, I admit). Making possibly hundreds if thousands of CSS classes (each only for a very single element) that have nothing to do with style does not seem right. At least it seems quite unlikely that at some point there are different styles applied for the 2nd popup, different for 35th etc.\n\nMaybe we would rather re-think the need of this particular id, and if possible just ditch it? I will have a look.",
+      "revId": "f6a44f43feadad6868469bce9c0a9234354408d4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_13435018",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-08-11T08:19:08Z",
+      "side": 1,
+      "message": "Good to know it could be done like this!\n\nI\u0027ve blindly followed what https://www.mediawiki.org/w/index.php?title\u003dOOjs_UI/PHP_examples\u0026oldid\u003d1748909 said in the \"Adding JavaScript behaviors\" section about id being mandatory to have the widget infusable.\n\nI will update the docs with I\u0027ve just learned then",
+      "revId": "f6a44f43feadad6868469bce9c0a9234354408d4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
