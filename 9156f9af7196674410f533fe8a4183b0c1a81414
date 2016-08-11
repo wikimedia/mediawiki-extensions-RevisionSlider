@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee9d9f70_d31b88d2",
+        "filename": "tests/browser/features/support/pages/diff_page.rb",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-08-11T10:17:23Z",
+      "side": 1,
+      "message": "this should be now table not div\n\nI believe this is the reason of failing browser tests (strangely enough not all tests were failing but rather they seem to have been failing at random)",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 5
+      },
+      "revId": "9156f9af7196674410f533fe8a4183b0c1a81414",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
