@@ -12,5 +12,8 @@
 	"revisionslider-label-page-size": "頁面大小",
 	"revisionslider-label-change-size": "變更大小",
 	"revisionslider-label-comment": "注釋",
-	"revisionslider-label-username": "{{GENDER:$1|使用者名稱}}"
+	"revisionslider-label-username": "{{GENDER:$1|使用者名稱}}",
+	"revisionslider-previous-dialog": "上一個",
+	"revisionslider-next-dialog": "下一個",
+	"revisionslider-close-dialog": "關閉"
 }
