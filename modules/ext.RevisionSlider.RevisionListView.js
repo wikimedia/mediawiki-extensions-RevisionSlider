@@ -148,8 +148,7 @@
 			tooltip.$element.css( {
 				left: $rev.offset().left + this.revisionWidth / 2 + 'px',
 				top: $rev.offset().top + $rev.outerHeight() + 'px'
-			} );
-			tooltip.$element.attr( 'id', 'mw-revslider-revision-tooltip-' + pos );
+			} ).addClass( 'mw-revslider-revision-tooltip-' + pos );
 			$( 'body' ).append( tooltip.$element );
 			tooltip.toggle( true );
 

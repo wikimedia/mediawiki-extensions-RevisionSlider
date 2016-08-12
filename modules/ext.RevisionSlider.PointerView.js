@@ -3,19 +3,19 @@
 	 * Module containing presentation logic for the revision pointers
 	 *
 	 * @param {Pointer} pointer
-	 * @param {string} id
+	 * @param {string} name
 	 * @constructor
 	 */
-	var PointerView = function ( pointer, id ) {
+	var PointerView = function ( pointer, name ) {
 		this.pointer = pointer;
-		this.id = id;
+		this.name = name;
 	};
 
 	$.extend( PointerView.prototype, {
 		/**
 		 * @type {string}
 		 */
-		id: '',
+		name: '',
 
 		/**
 		 * @type {Pointer}
@@ -32,8 +32,7 @@
 		 */
 		initialize: function () {
 			this.$html = $( '<div>' )
-				.attr( 'id', this.id )
-				.addClass( 'mw-revslider-pointer mw-revslider-pointer-cursor' );
+				.addClass( 'mw-revslider-pointer mw-revslider-pointer-cursor ' + this.name );
 		},
 
 		/**

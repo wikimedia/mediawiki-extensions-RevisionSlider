@@ -1,13 +1,11 @@
-/* stylelint-disable selector-no-id */
-/* TODO: No need to use IDs, they should be replaced with classes */
-#mw-revslider-container {
+.mw-revslider-container {
 	/* This will flip with CSSJanus in case */
 	/* the interface is in RTL */
 	direction: ltr;
 	position: relative;
 }
 
-#mw-revslider-slider-wrapper {
+.mw-revslider-slider-wrapper {
 	padding: 10px;
 }
 
@@ -213,7 +211,7 @@
 	float: right;
 }
 
-#mw-revslider-darkness {
+.mw-revslider-darkness {
 	background-color: #fff;
 	filter: alpha( opacity=50 ); /* IE 5-7 */
 	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=50)'; /* IE 8 */

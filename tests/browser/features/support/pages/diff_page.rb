@@ -1,17 +1,17 @@
 class DiffPage
   include PageObject
 
-  p(:revisionslider_placeholder, id: 'mw-revslider-placeholder')
-  div(:revisionslider_wrapper, id: 'mw-revslider-slider-wrapper')
-  div(:revisionslider_toggle_button, id: 'mw-revslider-slider-toggle')
-  div(:revisionslider_darkness, id: 'mw-revslider-darkness')
+  p(:revisionslider_placeholder, css: '.mw-revslider-placeholder')
+  div(:revisionslider_wrapper, css: '.mw-revslider-slider-wrapper')
+  div(:revisionslider_toggle_button, css: '.mw-revslider-toggle-button')
+  div(:revisionslider_darkness, css: '.mw-revslider-darkness')
 
-  div(:revisionslider_help_dialog, id: 'revisionslider-help-dialog')
-  button(:revisionslider_help, css: '#mw-revision-slider-container > button')
-  a(:revisionslider_help_next, css: '#revisionslider-help-next > a')
-  a(:revisionslider_help_previous, css: '#revisionslider-help-previous > a')
-  a(:revisionslider_help_close_start, css: '#revisionslider-help-close-start > a')
-  a(:revisionslider_help_close_end, css: '#revisionslider-help-close-end > a')
+  div(:revisionslider_help_dialog, css: '.revisionslider-help-dialog')
+  button(:revisionslider_help, css: '.mw-revision-slider-container > button')
+  a(:revisionslider_help_next, css: '.revisionslider-help-next > a')
+  a(:revisionslider_help_previous, css: '.revisionslider-help-previous > a')
+  a(:revisionslider_help_close_start, css: '.revisionslider-help-close-start > a')
+  a(:revisionslider_help_close_end, css: '.revisionslider-help-close-end > a')
 
   div(:revisionslider_timeline_backwards, css: '.mw-revslider-arrow.mw-revslider-arrow-backwards')
   div(:revisionslider_timeline_forwards, css: '.mw-revslider-arrow.mw-revslider-arrow-forwards')
@@ -27,7 +27,7 @@ class DiffPage
   end
 
   def revisionslider_tooltip(index = 1)
-    element('div', id: 'mw-revslider-revision-tooltip-' + index.to_s)
+    element('div', css: '.mw-revslider-revision-tooltip-' + index.to_s)
 
   end
 

@@ -2,11 +2,11 @@
 	/**
 	 * Module containing logic for the revision pointers
 	 *
-	 * @param {string} id
+	 * @param {string} name
 	 * @constructor
 	 */
-	var Pointer = function ( id ) {
-		this.view = new mw.libs.revisionSlider.PointerView( this, id );
+	var Pointer = function ( name ) {
+		this.view = new mw.libs.revisionSlider.PointerView( this, name );
 	};
 
 	$.extend( Pointer.prototype, {

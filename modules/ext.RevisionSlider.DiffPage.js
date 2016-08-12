@@ -26,19 +26,19 @@
 			$( 'table.diff[data-mw="interface"]' )
 				.append( $( '<tr>' ) )
 				.append( $( '<td>' ) )
-				.append( $( '<div>' ).attr( 'id', 'mw-revslider-darkness' ) );
+				.append( $( '<div>' ).addClass( 'mw-revslider-darkness' ) );
 			$.ajax( {
 				url: mw.util.wikiScript( 'index' ),
 				data: data,
 				tryCount: 0,
 				retryLimit: 2,
 				success: function ( data ) {
-					var $container = $( '#mw-revslider-container' ),
+					var $container = $( '.mw-revslider-container' ),
 						$contentText = $( '#mw-content-text' ),
 						scrollLeft = $container.find( '.mw-revslider-revisions-container' ).scrollLeft();
 
 					data = $( data );
-					data.find( '#mw-revslider-container' )
+					data.find( '.mw-revslider-container' )
 						.replaceWith( $container );
 					$contentText.html( data.find( '#mw-content-text' ) )
 						.find( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
