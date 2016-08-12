@@ -22,6 +22,30 @@
       "revId": "9156f9af7196674410f533fe8a4183b0c1a81414",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee9d9f70_421c1c19",
+        "filename": "tests/browser/features/support/pages/diff_page.rb",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 658
+      },
+      "writtenOn": "2016-08-12T18:58:04Z",
+      "side": 1,
+      "message": "Yes. It would be a race condition. If the table loaded quickly enough it doesn\u0027t matter if you wait or not.",
+      "parentUuid": "ee9d9f70_d31b88d2",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 5
+      },
+      "revId": "9156f9af7196674410f533fe8a4183b0c1a81414",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
