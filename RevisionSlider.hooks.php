@@ -34,6 +34,9 @@ class RevisionSliderHooks {
 			return true;
 		}
 
+		$stats = MediaWikiServices::getInstance()->getStatsdDataFactory();
+		$stats->increment( 'RevisionSlider.event.hookinit' );
+
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$timeOffset = $config->get( 'LocalTZoffset' );
 		if ( is_null( $config->get( 'Localtimezone' ) ) ) {
