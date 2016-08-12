@@ -23,6 +23,8 @@
 	"revisionslider-loading-failed": "Message shown if the RevisionSlider fails to initially load.",
 	"revisionslider-toggle-title-expand": "Message shown as a \"title\" of the exand button",
 	"revisionslider-toggle-title-collapse": "Message shown as a \"title\" of the collapse button",
+	"revisionslider-turn-on-auto-expand-title": "Message shown as a \"title\" of the \"Expand automatically\" button",
+	"revisionslider-turn-off-auto-expand-title": "Message shown as a \"title\" of the \"Do not expand automatically\" button",
 	"revisionslider-arrow-tooltip-newer": "Text shown after hovering the button scrolling to newer revisions.",
 	"revisionslider-arrow-tooltip-older": "Text shown after hovering the button scrolling to older revisions.",
 	"revisionslider-show-help-tooltip": "Text shown in a tooltip for the \"Show help\" button.",

@@ -37,6 +37,7 @@
 				"ext.RevisionSlider.RevisionList",
 				"ext.RevisionSlider.HelpDialog",
 				"ext.RevisionSlider.Api",
+				"ext.RevisionSlider.icons",
 				"ext.RevisionSlider.pointers.lower",
 				"ext.RevisionSlider.pointers.upper",
 				"mediawiki.api.options"
@@ -45,7 +46,9 @@
 				"revisionslider-show-help-tooltip",
 				"revisionslider-loading-failed",
 				"revisionslider-toggle-title-expand",
-				"revisionslider-toggle-title-collapse"
+				"revisionslider-toggle-title-collapse",
+				"revisionslider-turn-on-auto-expand-title",
+				"revisionslider-turn-off-auto-expand-title"
 			],
 			"position": "top"
 		},
@@ -134,6 +137,21 @@
 			"dependencies": [
 				"oojs-ui"
 			]
+		},
+		"ext.RevisionSlider.icons": {
+			"position": "top",
+			"class": "ResourceLoaderImageModule",
+			"selectorWithoutVariant": ".mw-revslider-{name}-button .oo-ui-iconElement-icon",
+			"selectorWithVariant": ".mw-revslider-{name}-button .oo-ui-iconElement-icon.oo-ui-image-invert",
+			"variants": {
+				"invert": {
+					"color": "#ffffff",
+					"global": true
+				}
+			},
+			"images": {
+				"auto-expand": "resources/ext.RevisionSlider.icons/pin.svg"
+			}
 		},
 		"ext.RevisionSlider.pointers.lower": {
 			"position": "top",
