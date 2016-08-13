@@ -18,7 +18,7 @@
 	"revisionslider-label-page-size": "حجم الصفحة",
 	"revisionslider-label-change-size": "حجم التغيير",
 	"revisionslider-label-comment": "التعليق",
-	"revisionslider-label-username": "{{GENDER:$1|اسم المستخدم|اسم المستخدمة}}:",
+	"revisionslider-label-username": "{{GENDER:$1|اسم المستخدم|اسم المستخدمة}}",
 	"revisionslider-minoredit": "هذا تعديل طفيف",
 	"revisionslider-loading-placeholder": "جارٍ تحميل مقارن النسخ...",
 	"revisionslider-loading-failed": "لم يحمل مقارن النسخ.",
