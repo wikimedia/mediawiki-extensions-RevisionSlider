@@ -7,6 +7,7 @@
 		]
 	},
 	"revisionslider-beta-feature-description": "문서의 두 판을 비교할 때 판 슬라이더를 보여줍니다.",
+	"revisionslider-toggle-label": "판 슬라이더",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|바이트}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|바이트}}",
 	"revisionslider-label-date": "날짜",
@@ -15,9 +16,14 @@
 	"revisionslider-label-comment": "의견",
 	"revisionslider-label-username": "{{GENDER:$1|사용자 이름}}",
 	"revisionslider-minoredit": "사소한 편집입니다",
+	"revisionslider-loading-placeholder": "판 슬라이더를 불러옵니다...",
+	"revisionslider-loading-failed": "판 슬라이더의 불러오기를 실패했습니다.",
+	"revisionslider-toggle-title-expand": "판 슬라이더 열기",
+	"revisionslider-toggle-title-collapse": "판 슬라이더 접기",
 	"revisionslider-arrow-tooltip-newer": "새로운 판 보기",
 	"revisionslider-arrow-tooltip-older": "과거 판 보기",
 	"revisionslider-show-help-tooltip": "도움말 텍스트 보기",
+	"revisionslider-tutorial": "판 슬라이더 강좌",
 	"revisionslider-previous-dialog": "이전",
 	"revisionslider-next-dialog": "다음",
 	"revisionslider-close-dialog": "닫기"
