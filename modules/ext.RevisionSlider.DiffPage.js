@@ -5,6 +5,7 @@
 	 * @constructor
 	 */
 	var DiffPage = function () {
+		this.lastRequest = null;
 	};
 
 	$.extend( DiffPage.prototype, {
@@ -13,45 +14,58 @@
 		 *
 		 * @param {number} revId1
 		 * @param {number} revId2
+		 * @param {number} [retryAttempt=0]
 		 */
-		refresh: function ( revId1, revId2 ) {
-			var data = {
-				diff: Math.max( revId1, revId2 ),
-				oldid: Math.min( revId1, revId2 )
-			},
+		refresh: function ( revId1, revId2, retryAttempt ) {
+			var self = this,
+				retryLimit = 2,
+				data = {
+					diff: Math.max( revId1, revId2 ),
+					oldid: Math.min( revId1, revId2 )
+				},
 				params = this.getExtraDiffPageParams();
+
+			retryAttempt = retryAttempt || 0;
+
 			if ( Object.keys( params ).length > 0 ) {
 				$.extend( data, params );
 			}
+
+			if ( this.lastRequest ) {
+				this.lastRequest.abort();
+			}
+
 			$( 'table.diff[data-mw="interface"]' )
 				.append( $( '<tr>' ) )
 				.append( $( '<td>' ) )
 				.append( $( '<div>' ).addClass( 'mw-revslider-darkness' ) );
-			$.ajax( {
+
+			this.lastRequest = $.ajax( {
 				url: mw.util.wikiScript( 'index' ),
 				data: data,
-				tryCount: 0,
-				retryLimit: 2,
-				success: function ( data ) {
-					var $container = $( '.mw-revslider-container' ),
-						$contentText = $( '#mw-content-text' ),
-						scrollLeft = $container.find( '.mw-revslider-revisions-container' ).scrollLeft();
+				tryCount: 0
+			} );
+			// Don't chain, so lastRequest is a jQuery.jqXHR object
+			this.lastRequest.then( function ( data ) {
+				var $data,
+					$container = $( '.mw-revslider-container' ),
+					$contentText = $( '#mw-content-text' ),
+					scrollLeft = $container.find( '.mw-revslider-revisions-container' ).scrollLeft();
 
-					data = $( data );
-					data.find( '.mw-revslider-container' )
-						.replaceWith( $container );
-					$contentText.html( data.find( '#mw-content-text' ) )
-						.find( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
+				$data = $( data );
+				$data.find( '.mw-revslider-container' ).replaceWith( $container );
+				$contentText.html( $data.find( '#mw-content-text' ) )
+					.find( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
 
-					mw.hook( 'wikipage.content' ).fire( $contentText );
-				},
-				error: function ( err ) {
+				mw.hook( 'wikipage.content' ).fire( $contentText );
+			}, function ( xhr ) {
+				$( 'table.diff[data-mw="interface"] .mw-revslider-darkness' ).remove();
+				if ( xhr.statusText !== 'abort' ) {
 					this.tryCount++;
-					console.log( err );
 					mw.track( 'counter.MediaWiki.RevisionSlider.error.refresh' );
-					if ( this.tryCount <= this.retryLimit ) {
+					if ( retryAttempt <= retryLimit ) {
 						console.log( 'Retrying request' );
-						$.ajax( this );
+						self.refresh( revId1, revId2, retryAttempt + 1 );
 					}
 					// TODO notify the user that we failed to update the diff?
 					// This could also attempt to reload the page with the correct diff loaded without ajax?
