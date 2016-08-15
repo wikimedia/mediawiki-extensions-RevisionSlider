@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aea727be_8ff3b59b",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-08-15T16:28:51Z",
+      "side": 1,
+      "message": "this nested divs pretending to be table just to have progress bar\u0027s div centered vertically and horizontally is horrible.\nHow to do this better?",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 135,
+        "endChar": 6
+      },
+      "revId": "2e43a22d0c2161ec2a4f4feee4318670a0060ddc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
