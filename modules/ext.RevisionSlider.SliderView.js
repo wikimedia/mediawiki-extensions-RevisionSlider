@@ -92,8 +92,8 @@
 				this.rtlScrollLeftType = this.determineRtlScrollType();
 			}
 
-			this.pointerOlder = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-older' );
-			this.pointerNewer = new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-newer' );
+			this.pointerOlder = this.pointerOlder || new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-older' );
+			this.pointerNewer = this.pointerNewer || new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-newer' );
 
 			helpPopup = new OO.ui.PopupWidget( {
 				$content: $( '<p>' ).text( mw.msg( 'revisionslider-show-help-tooltip' ) ),
@@ -386,6 +386,9 @@
 		 * @param {jQuery} $newRevElement
 		 */
 		initializePointers: function ( $oldRevElement, $newRevElement ) {
+			if ( this.pointerOlder.getPosition() !== 0 || this.pointerNewer.getPosition() !== 0 ) {
+				return;
+			}
 			if ( $oldRevElement.length === 0 && $newRevElement.length === 0 ) {
 				// Note: this is currently caught in init.js
 				throw 'RS-revs-not-specified';
