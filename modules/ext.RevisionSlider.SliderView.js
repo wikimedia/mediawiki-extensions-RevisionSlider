@@ -586,22 +586,21 @@
 				startId: revisions[ revisions.length - 1 ].getId(),
 				dir: 'newer',
 				limit: revisionCount + 1,
-				knownUserGenders: this.slider.getRevisions().getUserGenders(),
-				success: function ( data ) {
-					revs = data.revisions.slice( 1 );
-					if ( revs.length === 0 ) {
-						self.noMoreNewerRevisions = true;
-						return;
-					}
-
-					self.addRevisionsAtEnd( $slider, revs );
-
-					/*jshint -W024 */
-					if ( data.continue === undefined ) {
-						self.noMoreNewerRevisions = true;
-					}
-					/*jshint +W024 */
+				knownUserGenders: this.slider.getRevisions().getUserGenders()
+			} ).then( function ( data ) {
+				revs = data.revisions.slice( 1 );
+				if ( revs.length === 0 ) {
+					self.noMoreNewerRevisions = true;
+					return;
 				}
+
+				self.addRevisionsAtEnd( $slider, revs );
+
+				/*jshint -W024 */
+				if ( data.continue === undefined ) {
+					self.noMoreNewerRevisions = true;
+				}
+				/*jshint +W024 */
 			} );
 		},
 
@@ -624,26 +623,25 @@
 				// fetch an extra revision if there are more older revision than the current "window",
 				// this makes it possible to correctly set a size of the bar related to the oldest revision to add
 				limit: revisionCount + 2,
-				knownUserGenders: this.slider.getRevisions().getUserGenders(),
-				success: function ( data ) {
-					revs = data.revisions.slice( 1 ).reverse();
-					if ( revs.length === 0 ) {
-						self.noMoreOlderRevisions = true;
-						return;
-					}
-
-					if ( revs.length === revisionCount + 1 ) {
-						precedingRevisionSize = revs[ 0 ].size;
-						revs = revs.slice( 1 );
-					}
-					self.addRevisionsAtStart( $slider, revs, precedingRevisionSize );
-
-					/*jshint -W024 */
-					if ( data.continue === undefined ) {
-						self.noMoreOlderRevisions = true;
-					}
-					/*jshint +W024 */
+				knownUserGenders: this.slider.getRevisions().getUserGenders()
+			} ).then( function ( data ) {
+				revs = data.revisions.slice( 1 ).reverse();
+				if ( revs.length === 0 ) {
+					self.noMoreOlderRevisions = true;
+					return;
 				}
+
+				if ( revs.length === revisionCount + 1 ) {
+					precedingRevisionSize = revs[ 0 ].size;
+					revs = revs.slice( 1 );
+				}
+				self.addRevisionsAtStart( $slider, revs, precedingRevisionSize );
+
+				/*jshint -W024 */
+				if ( data.continue === undefined ) {
+					self.noMoreOlderRevisions = true;
+				}
+				/*jshint +W024 */
 			} );
 		},
 

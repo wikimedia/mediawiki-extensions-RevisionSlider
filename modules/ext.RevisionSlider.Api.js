@@ -14,19 +14,27 @@
 		 * Fetches a batch of revision data, including a gender setting for users who edited the revision
 		 *
 		 * @param {string} pageName
-		 * @param {Object} options - Options containing callbacks for `success` and `error` as well as
-		 * optional fields for: `dir (defaults to `older`), `limit` (defaults to 500), `startId`, `endId`,
-		 * `knownUserGenders`
+		 * @param {Object} options Options
+		 * @param {string} [options.dir='older'] Sort direction
+		 * @param {number} [options.limit=500] Result limit
+		 * @param {number} [options.startId] Start ID
+		 * @param {number} [options.endId] End ID
+		 * @param {Object} [options.knownUserGenders] Known user genders
 		 */
 		fetchRevisionData: function ( pageName, options ) {
-			var self = this;
-			this.fetchRevisions( pageName, options )
+			var xhr, userXhr,
+				deferred = $.Deferred(),
+				self = this;
+
+			options = options || {};
+
+			xhr = this.fetchRevisions( pageName, options )
 				.done( function ( data ) {
 					var revs = data.query.pages[ 0 ].revisions,
 						/*jshint -W024 */
 						revContinue = data.continue,
 						/*jshint +W024 */
-						genderData = typeof options.knownUserGenders !== 'undefined' ? options.knownUserGenders : {},
+						genderData = options.knownUserGenders || {},
 						userNames;
 
 					if ( !revs ) {
@@ -35,7 +43,7 @@
 
 					userNames = self.getUserNames( revs, genderData );
 
-					self.fetchUserGenderData( userNames )
+					userXhr = self.fetchUserGenderData( userNames )
 						.done( function ( data ) {
 							var users = typeof data !== 'undefined' ? data.query.users : [];
 
@@ -49,34 +57,49 @@
 								}
 							} );
 
-							options.success( { revisions: revs, 'continue': revContinue } );
+							deferred.resolve( { revisions: revs, 'continue': revContinue } );
 						} )
-						.fail( options.error );
+						.fail( deferred.reject );
 				} )
-				.fail( options.error );
+				.fail( deferred.reject );
+
+			return deferred.promise( {
+				abort: function () {
+					xhr.abort();
+					if ( userXhr ) {
+						userXhr.abort();
+					}
+				}
+			} );
 		},
 
 		/**
 		 * Fetches up to 500 revisions at a time
 		 *
 		 * @param {string} pageName
-		 * @param {Object} options object containing optional options, fields: `dir` (defaults to `older`),
-		 * `limit` (defaults to 500), `startId`, `endId`
-		 * @return {jQuery}
+		 * @param {Object} [options] Options
+		 * @param {string} [options.dir='older'] Sort direction
+		 * @param {number} [options.limit=500] Result limit
+		 * @param {number} [options.startId] Start ID
+		 * @param {number} [options.endId] End ID
+		 * @return {jQuery.jqXHR}
 		 */
 		fetchRevisions: function ( pageName, options ) {
-			var dir = options.dir !== undefined ? options.dir : 'older',
-				data = {
-					action: 'query',
-					prop: 'revisions',
-					format: 'json',
-					rvprop: 'ids|timestamp|user|comment|parsedcomment|size|flags',
-					titles: pageName,
-					formatversion: 2,
-					'continue': '',
-					rvlimit: 500,
-					rvdir: dir
-				};
+			var dir, data;
+
+			options = options || {};
+			dir = options.dir !== undefined ? options.dir : 'older';
+			data = {
+				action: 'query',
+				prop: 'revisions',
+				format: 'json',
+				rvprop: 'ids|timestamp|user|comment|parsedcomment|size|flags',
+				titles: pageName,
+				formatversion: 2,
+				'continue': '',
+				rvlimit: 500,
+				rvdir: dir
+			};
 
 			if ( options.startId !== undefined ) {
 				data.rvstartid = options.startId;
@@ -98,7 +121,7 @@
 		 * Fetches gender data for up to 500 user names
 		 *
 		 * @param {string[]} users
-		 * @return {jQuery}
+		 * @return {jQuery.jqXHR}
 		 */
 		fetchUserGenderData: function ( users ) {
 			if ( users.length === 0 ) {
@@ -118,7 +141,7 @@
 		},
 
 		/**
-		 * @param {Array} revs
+		 * @param {Object[]} revs
 		 * @param {Object} knownUserGenders
 		 * @return {string[]}
 		 */
@@ -132,7 +155,7 @@
 		},
 
 		/**
-		 * @param {Array} data
+		 * @param {Object[]} data
 		 * @return {Object}
 		 */
 		getUserGenderData: function ( data ) {

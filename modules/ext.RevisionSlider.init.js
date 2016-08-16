@@ -13,48 +13,45 @@
 
 			api.fetchRevisionData( mw.config.get( 'wgPageName' ), {
 				startId: mw.config.values.extRevisionSliderNewRev,
-				limit: mw.libs.revisionSlider.calculateRevisionsPerWindow( 160, 16 ),
+				limit: mw.libs.revisionSlider.calculateRevisionsPerWindow( 160, 16 )
+			} ).then( function ( data ) {
+				var revs,
+					revisionList,
+					$container,
+					slider;
 
-				success: function ( data ) {
-					var revs,
-						revisionList,
-						$container,
-						slider;
+				mw.track( 'timing.MediaWiki.RevisionSlider.timing.initFetchRevisionData', mw.now() - startTime );
 
-					mw.track( 'timing.MediaWiki.RevisionSlider.timing.initFetchRevisionData', mw.now() - startTime );
+				try {
+					revs = data.revisions;
+					revs.reverse();
 
-					try {
-						revs = data.revisions;
-						revs.reverse();
+					revisionList = new mw.libs.revisionSlider.RevisionList( mw.libs.revisionSlider.makeRevisions( revs ) );
 
-						revisionList = new mw.libs.revisionSlider.RevisionList( mw.libs.revisionSlider.makeRevisions( revs ) );
+					$container = $( '.mw-revslider-slider-wrapper' );
+					slider = new mw.libs.revisionSlider.Slider( revisionList );
+					slider.getView().render( $container );
 
-						$container = $( '.mw-revslider-slider-wrapper' );
-						slider = new mw.libs.revisionSlider.Slider( revisionList );
-						slider.getView().render( $container );
-
-						if ( !mw.user.options.get( 'userjs-revslider-hidehelp' ) ) {
-							mw.libs.revisionSlider.HelpDialog.show();
-							( new mw.Api() ).saveOption( 'userjs-revslider-hidehelp', true );
-						}
-
-						$( '.mw-revslider-placeholder' ).remove();
-						mw.track( 'timing.MediaWiki.RevisionSlider.timing.init', mw.now() - startTime );
-					} catch ( err ) {
-						$( '.mw-revslider-placeholder' )
-							.text( mw.message( 'revisionslider-loading-failed' ).text() );
-						console.log( err );
-						mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
+					if ( !mw.user.options.get( 'userjs-revslider-hidehelp' ) ) {
+						mw.libs.revisionSlider.HelpDialog.show();
+						( new mw.Api() ).saveOption( 'userjs-revslider-hidehelp', true );
 					}
 
-					initialized = true;
-				},
-				error: function ( err ) {
+					$( '.mw-revslider-placeholder' ).remove();
+					mw.track( 'timing.MediaWiki.RevisionSlider.timing.init', mw.now() - startTime );
+				} catch ( err ) {
 					$( '.mw-revslider-placeholder' )
 						.text( mw.message( 'revisionslider-loading-failed' ).text() );
 					console.log( err );
 					mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
 				}
+
+				initialized = true;
+			}, function ( err ) {
+				$( '.mw-revslider-placeholder' )
+					.text( mw.message( 'revisionslider-loading-failed' ).text() );
+				console.log( err );
+				mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
 			} );
 		};
 
