@@ -10,8 +10,8 @@ Given(/^I drag the upper pointer to revision (\d+)$/) do |index|
   on(DiffPage).revisionslider_pointer_upper_element.element.drag_and_drop_on on(DiffPage).revisionslider_rev(index.to_i).element
 end
 
-Given(/^the darkness has faded$/) do
-  on(DiffPage).wait_for_darkness_to_leave
+Given(/^the diff has loaded$/) do
+  on(DiffPage).wait_for_diff_to_load
 end
 
 Then(/^revision (\d+) should be loaded on the left of the diff$/) do |index|

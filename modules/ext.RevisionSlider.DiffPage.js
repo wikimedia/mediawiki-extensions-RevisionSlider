@@ -35,10 +35,7 @@
 				this.lastRequest.abort();
 			}
 
-			$( 'table.diff[data-mw="interface"]' )
-				.append( $( '<tr>' ) )
-				.append( $( '<td>' ) )
-				.append( $( '<div>' ).addClass( 'mw-revslider-darkness' ) );
+			$( 'table.diff[data-mw="interface"]' ).addClass( 'mw-revslider-diff-loading' );
 
 			this.lastRequest = $.ajax( {
 				url: mw.util.wikiScript( 'index' ),
@@ -59,7 +56,7 @@
 
 				mw.hook( 'wikipage.content' ).fire( $contentText );
 			}, function ( xhr ) {
-				$( 'table.diff[data-mw="interface"] .mw-revslider-darkness' ).remove();
+				$( 'table.diff[data-mw="interface"]' ).removeClass( 'mw-revslider-diff-loading' );
 				if ( xhr.statusText !== 'abort' ) {
 					this.tryCount++;
 					mw.track( 'counter.MediaWiki.RevisionSlider.error.refresh' );
