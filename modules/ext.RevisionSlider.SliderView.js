@@ -740,6 +740,7 @@
 			}
 
 			this.slider.setFirstVisibleRevisionIndex( this.slider.getFirstVisibleRevisionIndex() + revisionsToRender.getLength() );
+
 			revIdOld = self.getRevElementAtPosition( $revisions, pOld.getPosition() ).data( 'revid' );
 			revIdNew = self.getRevElementAtPosition( $revisions, pNew.getPosition() ).data( 'revid' );
 			this.diffPage.replaceState( revIdOld, revIdNew, this );
@@ -748,6 +749,10 @@
 			$revisionContainer.scrollLeft( scrollLeft );
 			if ( this.$element.css( 'direction' ) === 'rtl' ) {
 				$revisionContainer.scrollLeft( self.getRtlScrollLeft( $revisionContainer, scrollLeft ) );
+			}
+
+			if ( this.shouldExpandSlider( $slider ) ) {
+				this.expandSlider( $slider );
 			}
 
 			this.slider.getRevisions().getView().adjustRevisionSizes( $slider );
@@ -777,24 +782,24 @@
 			var sliderWidth = parseInt( $slider.css( 'width' ), 10 ),
 				maxAvailableWidth = this.calculateSliderContainerWidth() + this.containerMargin;
 
-			return !this.noMoreNewerRevisions && sliderWidth < maxAvailableWidth;
+			return !( this.noMoreNewerRevisions && this.noMoreOlderRevisions ) && sliderWidth < maxAvailableWidth;
 		},
 
 		/**
 		 * @param {jQuery} $slider
 		 */
 		expandSlider: function ( $slider ) {
-			var containerWidth = this.calculateSliderContainerWidth();
+			var containerWidth = this.calculateSliderContainerWidth(),
+				expandedRevisionWindowCapacity;
 
 			$slider.css( { width: ( containerWidth + this.containerMargin ) + 'px' } );
 			$slider.find( '.mw-revslider-revisions-container' ).css( { width: containerWidth + 'px' } );
 			$slider.find( '.mw-revslider-pointer-container' ).css( { width: containerWidth + this.revisionWidth - 1 + 'px' } );
 
-			if ( $slider.css( 'direction' ) === 'rtl' ) {
-				this.alignPointers( 0 );
-			}
+			expandedRevisionWindowCapacity = $slider.find( '.mw-revslider-revisions-container' ).width() / this.revisionWidth;
+			this.slider.setRevisionsPerWindow( expandedRevisionWindowCapacity );
 
-			this.slider.setRevisionsPerWindow( $slider.find( '.mw-revslider-revisions-container' ).width() / this.revisionWidth );
+			this.slide( Math.floor( ( this.pointerNewer.getPosition() - 1 ) / expandedRevisionWindowCapacity ), 0 );
 		}
 
 	} );
