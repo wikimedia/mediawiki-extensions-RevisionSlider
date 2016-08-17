@@ -32,6 +32,10 @@
 					slider = new mw.libs.revisionSlider.Slider( revisionList );
 					slider.getView().render( $container );
 
+					window.addEventListener( 'resize', function () {
+						slider.getView().render( $container );
+					} );
+
 					if ( !mw.user.options.get( 'userjs-revslider-hidehelp' ) ) {
 						mw.libs.revisionSlider.HelpDialog.show();
 						( new mw.Api() ).saveOption( 'userjs-revslider-hidehelp', true );
