@@ -16,6 +16,24 @@
       "revId": "039523b258ea09eaf2202345f4f26266ebba7288",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e89af39_0f3093e4",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-08-18T11:04:29Z",
+      "side": 1,
+      "message": "Right, I just saw that the height is set in em, not px. So I guess the 2016 way would be margin-top: calc(71px - 0.5em) but then probably there are still lots of silly browsers around.\nI\u0027m ok with the current solution if that works in all the browsers that we want to support.",
+      "parentUuid": "6e89af39_2433b60b",
+      "revId": "039523b258ea09eaf2202345f4f26266ebba7288",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
