@@ -42,7 +42,6 @@
 				"mediawiki.api.options"
 			],
 			"messages": [
-				"revisionslider-show-help",
 				"revisionslider-show-help-tooltip",
 				"revisionslider-loading-failed",
 				"revisionslider-toggle-title-expand",
