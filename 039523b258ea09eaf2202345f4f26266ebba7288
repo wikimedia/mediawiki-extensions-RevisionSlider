@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e89af39_2433b60b",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-08-18T10:50:09Z",
+      "side": 1,
+      "message": "Aren\u0027t the height of the placeholder and the progress bar fixed? If that\u0027s the case we could just set a fixed margin-top on the progress bar and then we don\u0027t need the table-cell thing anymore?",
+      "revId": "039523b258ea09eaf2202345f4f26266ebba7288",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
