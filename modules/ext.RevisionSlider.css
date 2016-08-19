@@ -92,10 +92,6 @@
 .mw-revslider-revision-wrapper:hover,
 .mw-revslider-revision-wrapper-hovered {
 	background-color: #f2f2f2;
-	transition: all ease 0.2s;
-	-webkit-transition: all ease 0.2s;
-	-moz-transition: all ease 0.2s;
-	-o-transition: all ease 0.2s;
 }
 
 .mw-revslider-revision-border-box {
