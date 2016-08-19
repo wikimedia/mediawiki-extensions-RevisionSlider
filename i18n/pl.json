@@ -13,6 +13,7 @@
 	"revisionslider-desc": "Pokazuje suwak, pozwalając wybrać i porównywać wersje zmian na stronie",
 	"revisionslider-beta-feature-message": "Suwak wersji",
 	"revisionslider-beta-feature-description": "Pokaż suwak wersji przy porównaniu dwóch wersji strony.",
+	"revisionslider-toggle-label": "Suwak wersji",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bajt|bajty|bajtów}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bajt|bajty|bajtów}}",
 	"revisionslider-label-date": "Data",
