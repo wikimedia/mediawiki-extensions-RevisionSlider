@@ -181,7 +181,6 @@
 .mw-revslider-pointer-container {
 	position: absolute;
 	clear: both;
-	height: 1px;
 	top: 57px;
 	margin: auto;
 	z-index: 10;
