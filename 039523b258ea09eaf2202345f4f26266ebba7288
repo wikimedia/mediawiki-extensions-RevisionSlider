@@ -34,6 +34,24 @@
       "revId": "039523b258ea09eaf2202345f4f26266ebba7288",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e89af39_9aef5e82",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-08-19T08:10:25Z",
+      "side": 1,
+      "message": "According to the internets using calc would only be a problem in IE 8 and lower, which are not versions we support afaik, so this could actually work.\n\nBut then I am not sure do we really want/need to have vertically-centered with 100% accuracy. The text was not centered vertically at all. So I thought I\u0027d put it from some distance from the top edge (see PS3), and this would hopefully look quite good on all screens. Or am I missing some edge cases?",
+      "parentUuid": "6e89af39_0f3093e4",
+      "revId": "039523b258ea09eaf2202345f4f26266ebba7288",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
