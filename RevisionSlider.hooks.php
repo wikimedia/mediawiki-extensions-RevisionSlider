@@ -106,7 +106,7 @@ class RevisionSliderHooks {
 		return true;
 	}
 
-	public static function getBetaFeaturePreferences( $user, &$prefs ) {
+	public static function getBetaFeaturePreferences( User $user, array &$prefs ) {
 		global $wgExtensionAssetsPath;
 
 		$prefs['revisionslider'] = [
