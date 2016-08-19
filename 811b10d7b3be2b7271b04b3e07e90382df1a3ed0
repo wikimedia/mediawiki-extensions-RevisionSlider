@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e89af39_ddd2c0d4",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-08-19T11:30:49Z",
+      "side": 1,
+      "message": "Fixed margin-top is fine with me!\nBeing nitpicky: On my screen 60px looks better than 50. Not sure if we\u0027re trying to center on mw-revslider-slider-wrapper or mw-revslider-container though.",
+      "range": {
+        "startLine": 131,
+        "startChar": 51,
+        "endLine": 131,
+        "endChar": 53
+      },
+      "revId": "811b10d7b3be2b7271b04b3e07e90382df1a3ed0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
