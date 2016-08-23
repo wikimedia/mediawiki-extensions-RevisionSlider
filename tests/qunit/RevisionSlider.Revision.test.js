@@ -24,7 +24,7 @@
 		assert.equal( rev.isMinor(), false );
 
 		if ( mw.config.get( 'wgUserLanguage' ) === 'en' ) {
-			assert.equal( rev.getFormattedDate(), '10:27, 26 Apr 2016' );
+			assert.equal( rev.getFormattedDate(), '26 April 2016 10:27 AM' );
 		}
 	} );
 
@@ -58,7 +58,7 @@
 
 		mw.libs.revisionSlider.userOffset = 0;
 
-		assert.equal( rev.getFormattedDate(), '10:27, 26 Apr 2016' );
+		assert.equal( rev.getFormattedDate(), '26 April 2016 10:27 AM' );
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
 	QUnit.revisionSlider.testOrSkip( 'getFormattedDate, offset: 120 (treat as hours, +2h)', function ( assert ) {
@@ -69,7 +69,7 @@
 		// Berlin = 120
 		mw.libs.revisionSlider.userOffset = 120;
 
-		assert.equal( rev.getFormattedDate(), '12:27, 26 Apr 2016' );
+		assert.equal( rev.getFormattedDate(), '26 April 2016 12:27 PM' );
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
 	QUnit.revisionSlider.testOrSkip( 'getFormattedDate, negative offset: -420 (treat as hours, -7h)', function ( assert ) {
@@ -80,7 +80,7 @@
 		// San Francisco = -420
 		mw.libs.revisionSlider.userOffset = -420;
 
-		assert.equal( rev.getFormattedDate(), '03:27, 26 Apr 2016' );
+		assert.equal( rev.getFormattedDate(), '26 April 2016 3:27 AM' );
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
 	QUnit.test( 'hasEmptyComment comment with whitespaces', function ( assert ) {

@@ -78,7 +78,7 @@
 		assert.ok( tooltipHtml.match( /Hello/ ), 'Test the comment.' );
 		assert.ok( tooltipHtml.match( /2,300/ ), 'Test the page size.' );
 		assert.ok( tooltipHtml.match( /\+2,100/ ), 'Test the change size.' );
-		assert.ok( tooltipHtml.match( /10:27, 26 Apr 2016/ ), 'Test the date.' );
+		assert.ok( tooltipHtml.match( /26 April 2016 10:27 AM/ ), 'Test the date.' );
 		assert.ok( tooltipHtml.match( /minor/ ), 'Test minor.' );
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
