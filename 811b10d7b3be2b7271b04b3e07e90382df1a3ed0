@@ -22,6 +22,30 @@
       "revId": "811b10d7b3be2b7271b04b3e07e90382df1a3ed0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e96ab59_5554fec9",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-08-24T13:03:25Z",
+      "side": 1,
+      "message": "I was thinking about the former.\nAnd it also looked to me that 60px is slightly better. The only reason I went with 50px was that I thought maybe if the browser is using rather big font sizes, having top margin of 60 pixels might make the text rather pushed down.\nBut I think let\u0027s go with 60, it should be fine!",
+      "parentUuid": "6e89af39_ddd2c0d4",
+      "range": {
+        "startLine": 131,
+        "startChar": 51,
+        "endLine": 131,
+        "endChar": 53
+      },
+      "revId": "811b10d7b3be2b7271b04b3e07e90382df1a3ed0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
