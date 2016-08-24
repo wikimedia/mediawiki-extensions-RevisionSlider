@@ -5,7 +5,7 @@
 			"Macofe"
 		]
 	},
-	"revisionslider-toggle-label": "RevisionSlider",
+	"revisionslider-toggle-label": "An de Versioune sichen",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|Byte|Byten}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|Byte|Byten}}",
 	"revisionslider-label-date": "Datum",

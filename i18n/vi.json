@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Minh Nguyen"
+		]
+	},
+	"revisionslider": "Con trượt phiên bản",
+	"revisionslider-desc": "Hiển thị con trượt cho phép lựa chọn và so sánh các phiên bản của một trang",
+	"revisionslider-beta-feature-message": "Con trượt phiên bản",
+	"revisionslider-beta-feature-description": "Hiển thị con trượt cho phép lựa chọn và so sánh các phiên bản của một trang.",
+	"revisionslider-toggle-label": "Duyệt lịch sử",
+	"revisionslider-page-size": "$1 {{PLURAL:$2}}byte",
+	"revisionslider-change-size": "$1 {{PLURAL:$3}}byte",
+	"revisionslider-label-date": "Ngày tháng",
+	"revisionslider-label-page-size": "Kích thước trang",
+	"revisionslider-label-change-size": "Kích thước thay đổi",
+	"revisionslider-label-comment": "Tóm lược",
+	"revisionslider-label-username": "{{GENDER:$1}}Tên người dùng",
+	"revisionslider-minoredit": "Đây là một sửa đổi nhỏ",
+	"revisionslider-loading-placeholder": "Đang tải con trượt phiên bản…",
+	"revisionslider-loading-failed": "Thất bại khi tải con trượt phiên bản.",
+	"revisionslider-toggle-title-expand": "Mở con trượt phiên bản",
+	"revisionslider-toggle-title-collapse": "Đóng con trượt phiên bản",
+	"revisionslider-arrow-tooltip-newer": "Xem phiên bản mới hơn",
+	"revisionslider-arrow-tooltip-older": "Xem phiên bản cũ hơn",
+	"revisionslider-show-help-tooltip": "Xem văn bản trợ giúp",
+	"revisionslider-tutorial": "Hướng dẫn con trượt phiên bản",
+	"revisionslider-previous-dialog": "Trước",
+	"revisionslider-next-dialog": "Tiếp",
+	"revisionslider-close-dialog": "Đóng"
+}

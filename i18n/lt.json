@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Eitvys200",
-			"Macofe"
+			"Macofe",
+			"Zygimantus"
 		]
 	},
+	"revisionslider-toggle-label": "Naršyti istoriją",
 	"revisionslider-label-date": "Data",
 	"revisionslider-label-page-size": "Puslapio dydis",
 	"revisionslider-label-change-size": "Keisti dydį",

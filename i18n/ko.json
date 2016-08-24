@@ -7,7 +7,7 @@
 		]
 	},
 	"revisionslider-beta-feature-description": "문서의 두 판을 비교할 때 판 슬라이더를 보여줍니다.",
-	"revisionslider-toggle-label": "판 슬라이더",
+	"revisionslider-toggle-label": "역사 찾아보기",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|바이트}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|바이트}}",
 	"revisionslider-label-date": "날짜",
