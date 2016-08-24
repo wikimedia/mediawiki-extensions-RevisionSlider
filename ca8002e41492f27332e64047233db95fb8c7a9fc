@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4e96ab59_f5becaf9",
+        "filename": "extension.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-08-24T12:58:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e89af39_f0bc1eb4",
+      "revId": "ca8002e41492f27332e64047233db95fb8c7a9fc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e89af39_10d9aa2c",
         "filename": "modules/ext.RevisionSlider.init.js",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-16T10:31:50Z",
       "side": 1,
       "message": "Can\u0027t we just use a boolean here?",
+      "revId": "ca8002e41492f27332e64047233db95fb8c7a9fc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e89af39_703e6e28",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-08-24T12:58:15Z",
+      "side": 1,
+      "message": "user options map seems to only store strings, so I\u0027d rather have \u00271\u0027 and \u00270\u0027 stored (and compared against when reading the option value) than \u0027true\u0027 and \u0027false\u0027.\n\nBut I would be glad to change this if suggested to do so!",
+      "parentUuid": "6e89af39_10d9aa2c",
       "revId": "ca8002e41492f27332e64047233db95fb8c7a9fc",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
