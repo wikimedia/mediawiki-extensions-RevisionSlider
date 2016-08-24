@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e96ab59_d5a2aea3",
+        "filename": "tests/browser/features/autoexpand.feature",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-08-24T13:38:32Z",
+      "side": 1,
+      "message": "this is nasty, I admit. I\u0027ve only added it as mw.Api.saveOption call after clicking the button is asynchronous, so when the page is refreshed too fast the option is not saved yet, and tests might fail and be unreliable.\n\nI will be happy to change one-second sleep with something nicer, suggestions welcome!",
+      "revId": "834dea7a921d77a0bd014db9ab8540562ff2bd49",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
