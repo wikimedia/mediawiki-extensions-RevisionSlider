@@ -49,11 +49,13 @@
 					$contentText = $( '#mw-content-text' ),
 					$sidePanel = $( '#mw-panel' ),
 					$navigation = $( '#p-views' ),
+					$catLinks = $( '#catlinks' ),
 					scrollLeft = $container.find( '.mw-revslider-revisions-container' ).scrollLeft();
 
 				$data = $( data );
 				$data.find( '.mw-revslider-container' ).replaceWith( $container );
 				$navigation.replaceWith( $data.find( '#p-views' ) );
+				$catLinks.replaceWith( $data.find( '#catlinks' ) );
 				$sidePanel.replaceWith( $data.find( '#mw-panel' ) );
 				$contentText.html( $data.find( '#mw-content-text' ) )
 					.find( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
