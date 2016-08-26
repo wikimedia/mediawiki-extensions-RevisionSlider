@@ -5,6 +5,7 @@
 			"Macofe"
 		]
 	},
+	"revisionslider-toggle-label": "ইতিহাস ব্রাউজ করুন",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|বাইট}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|বাইট}}",
 	"revisionslider-label-date": "তারিখ",

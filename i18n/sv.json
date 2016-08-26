@@ -6,6 +6,7 @@
 			"Macofe"
 		]
 	},
+	"revisionslider-toggle-label": "Bläddra i historiken",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte}}",
 	"revisionslider-label-date": "Datum",
