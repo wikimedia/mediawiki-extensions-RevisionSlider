@@ -1,3 +1,9 @@
+@media print {
+	.mw-revslider-container {
+		display: none;
+	}
+}
+
 .mw-revslider-container {
 	/* This will flip with CSSJanus in case */
 	/* the interface is in RTL */
