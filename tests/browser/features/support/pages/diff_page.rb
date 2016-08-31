@@ -56,18 +56,6 @@ class DiffPage
     end
   end
 
-  def wait_for_tooltip(index = 1)
-    wait_until do
-      revisionslider_tooltip(index).visible?
-    end
-  end
-
-  def wait_for_no_tooltip(index = 1)
-    wait_until do
-      !revisionslider_tooltip(index).visible?
-    end
-  end
-
   def wait_for_help_dialog_to_hide
     wait_until do
       !revisionslider_help_dialog_element.visible?
