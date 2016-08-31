@@ -56,12 +56,6 @@ class DiffPage
     end
   end
 
-  def wait_for_auto_expand_button_to_become_visible
-    wait_until do
-      revisionslider_auto_expand_button_element.visible?
-    end
-  end
-
   def wait_for_tooltip(index = 1)
     wait_until do
       revisionslider_tooltip(index).visible?
