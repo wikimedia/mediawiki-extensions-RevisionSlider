@@ -34,12 +34,28 @@ Given(/^The window size is (\d+) by (\d+)$/) do |width,height|
   browser.window.resize_to(width.to_i, height.to_i)
 end
 
+Given(/^The auto expand button is visible/) do
+  expect(on(DiffPage).revisionslider_auto_expand_button_element.when_visible).to be_visible
+end
+
+Given(/^I wait for the setting to be saved$/) do
+  on(DiffPage).wait_for_ajax_calls
+end
+
 Then(/^RevisionSlider is enabled as a beta feature$/) do
   visit(SpecialPreferencesPage).enable_revisionslider
 end
 
 Then(/^RevisionSlider is disabled as a beta feature$/) do
   visit(SpecialPreferencesPage).disable_revisionslider
+end
+
+Then(/^The auto expand button should be off/) do
+  expect(on(DiffPage).revisionslider_auto_expand_button_element.class_name).to match 'oo-ui-toggleWidget-off'
+end
+
+Then(/^The auto expand button should be on/) do
+  expect(on(DiffPage).revisionslider_auto_expand_button_element.class_name).to match 'oo-ui-toggleWidget-on'
 end
 
 Then(/^There should be a RevisionSlider expand button/) do
@@ -56,6 +72,10 @@ end
 
 Then(/^RevisionSlider wrapper should be visible/) do
   on(DiffPage).revisionslider_wrapper_element.visible?.should be_truthy
+end
+
+Given(/^I click on the auto expand button/) do
+  on(DiffPage).revisionslider_auto_expand_button_element.when_visible.click
 end
 
 Given(/^I click on the expand button/) do

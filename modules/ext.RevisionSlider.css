@@ -5,10 +5,6 @@
 	position: relative;
 }
 
-.mw-revslider-slider-wrapper {
-	padding: 10px;
-}
-
 .mw-revslider-toggle-button {
 	width: 100%;
 	text-align: center;
@@ -24,6 +20,26 @@
 
 .mw-revslider-toggle-button .oo-ui-iconElement-icon {
 	float: right;
+}
+
+.mw-revslider-auto-expand-button {
+	position: absolute;
+	top: 0;
+	right: 1.875em;
+}
+
+/* This is a bit hacky way, the goal being to have a framed toggle button widget with some styles
+of the frameless one (to fit the size of the toggle button */
+.mw-revslider-auto-expand-button .oo-ui-buttonElement-button {
+	z-index: 10;
+	padding: 0;
+	box-sizing: border-box;
+	width: 1.875em;
+	height: 1.875em;
+}
+
+.mw-revslider-button-active {
+	background-color: #999;
 }
 
 .mw-revslider-revision {
@@ -152,11 +168,21 @@
 	padding: 0;
 }
 
+.mw-revslider-auto-expand-button.oo-ui-buttonElement > .oo-ui-buttonElement-button {
+	border-color: #fff;
+}
+
 .mw-revslider-arrow .oo-ui-iconElement-icon {
 	width: 20px;
 	height: 20px;
 	min-width: inherit;
 	min-height: inherit;
+}
+
+.mw-revslider-auto-expand-button.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
+	position: static;
+	left: auto;
+	top: auto;
 }
 
 .mw-revslider-arrow.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {

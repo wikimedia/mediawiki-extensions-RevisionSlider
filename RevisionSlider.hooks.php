@@ -45,6 +45,8 @@ class RevisionSliderHooks {
 			$timeOffset = 0;
 		}
 
+		$autoExpand = $diff->getUser()->getBoolOption( 'userjs-revslider-autoexpand' );
+
 		$out = RequestContext::getMain()->getOutput();
 		$out->addModules( 'ext.RevisionSlider.init' );
 		$out->addModuleStyles( 'ext.RevisionSlider.noscript' );
@@ -67,7 +69,7 @@ class RevisionSliderHooks {
 
 		$toggleButton = new OOUI\ButtonWidget( [
 			'label' => ( new Message( 'revisionslider-toggle-label' ) )->text(),
-			'icon' => 'expand',
+			'icon' => $autoExpand ? 'collapse' : 'expand',
 			'button' => $button,
 			'labelElement' => $label,
 			'iconElement' => $icon,
@@ -90,7 +92,8 @@ class RevisionSliderHooks {
 					'div',
 					[
 						'class' => 'mw-revslider-slider-wrapper',
-						'style' => 'min-height: 142px; display: none; border-top: 1px solid #cccccc;',
+						'style' => 'min-height: 142px; border-top: 1px solid #cccccc; padding: 10px;' .
+							( !$autoExpand ? ' display: none;' : '' ),
 					],
 					Html::element(
 						'p',
