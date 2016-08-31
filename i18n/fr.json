@@ -5,7 +5,8 @@
 			"Yasten",
 			"Wladek92",
 			"Trial",
-			"Macofe"
+			"Macofe",
+			"Mabroukb"
 		]
 	},
 	"revisionslider": "RevisionSlider",
@@ -25,6 +26,8 @@
 	"revisionslider-loading-failed": "Impossible de charger le curseur de révision.",
 	"revisionslider-toggle-title-expand": "Ouvrir RevisionSlider",
 	"revisionslider-toggle-title-collapse": "Réduire RevisionSlider",
+	"revisionslider-turn-on-auto-expand-title": "Étendre automatiquement le curseur de révision",
+	"revisionslider-turn-off-auto-expand-title": "Ne pas développez automatiquement le curseur de révision",
 	"revisionslider-arrow-tooltip-newer": "Voir les nouvelles versions",
 	"revisionslider-arrow-tooltip-older": "Voir les révisions antérieures",
 	"revisionslider-show-help-tooltip": "Afficher le texte d’aide",

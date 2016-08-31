@@ -22,6 +22,8 @@
 	"revisionslider-loading-failed": "Der Versionsblätterer konnte nicht geladen werden.",
 	"revisionslider-toggle-title-expand": "Versionsblätterer öffnen",
 	"revisionslider-toggle-title-collapse": "Versionsblätterer einklappen",
+	"revisionslider-turn-on-auto-expand-title": "Versionsblätterer automatisch expandieren",
+	"revisionslider-turn-off-auto-expand-title": "Versionsblätterer nicht automatisch expandieren",
 	"revisionslider-arrow-tooltip-newer": "Neuere Versionen ansehen",
 	"revisionslider-arrow-tooltip-older": "Ältere Versionen ansehen",
 	"revisionslider-show-help-tooltip": "Hilfetext anzeigen",

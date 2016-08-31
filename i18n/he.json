@@ -24,6 +24,8 @@
 	"revisionslider-loading-failed": "לא ניתן היה לטעון את סרגל הגרסאות.",
 	"revisionslider-toggle-title-expand": "פתיחת סרגל הגרסאות",
 	"revisionslider-toggle-title-collapse": "סגירת סרגל הגרסאות",
+	"revisionslider-turn-on-auto-expand-title": "לפתוח את סרגל הגרסאות באופן אוטומטי",
+	"revisionslider-turn-off-auto-expand-title": "לא לפתוח את סרגל הגרסאות באופן אוטומטי",
 	"revisionslider-arrow-tooltip-newer": "הצגת גרסאות חדשות יותר",
 	"revisionslider-arrow-tooltip-older": "הצגת גרסאות ישנות יותר",
 	"revisionslider-show-help-tooltip": "הצגת עזרה",
