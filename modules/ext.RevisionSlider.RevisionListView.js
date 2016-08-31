@@ -70,6 +70,7 @@
 			}
 
 			this.keepTooltipsOnHover();
+			this.closeTooltipsOnClick();
 
 			return $html;
 		},
@@ -178,6 +179,21 @@
 				} )
 				.on( 'mouseleave', '.mw-revslider-revision-tooltip', function () {
 					self.hideTooltip( $( '.mw-revslider-revision-wrapper-hovered' ) );
+				} );
+		},
+
+		/**
+		 * Sets an event handler to close tooltips when clicking somewhere outside
+		 */
+		closeTooltipsOnClick: function () {
+			var self = this;
+
+			$( document )
+				.on( 'click', function ( event ) {
+					if ( $( event.target ).closest( '.mw-revslider-revision-tooltip' ).length === 0 &&
+						$( event.target ).closest( '.mw-revslider-revisions-container' ).length === 0 ) {
+						self.hideCurrentTooltip();
+					}
 				} );
 		},
 
