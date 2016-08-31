@@ -15,9 +15,9 @@ Then(/^The backward arrow should be enabled/) do
 end
 
 Given(/^I click on the forward arrow$/) do
-  on(DiffPage).revisionslider_timeline_forwards_element.click
+  on(DiffPage).revisionslider_timeline_forwards_element.when_visible.click
 end
 
 Given(/^I click on the backward arrow$/) do
-  on(DiffPage).revisionslider_timeline_backwards_element.click
+  on(DiffPage).revisionslider_timeline_backwards_element.when_visible.click
 end
