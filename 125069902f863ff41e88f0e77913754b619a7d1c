@@ -69,6 +69,24 @@
       "revId": "125069902f863ff41e88f0e77913754b619a7d1c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_6daccc85",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-09-01T12:38:30Z",
+      "side": 1,
+      "message": "Yes but this only removes element from DOM, not the whole related OO object. That\u0027s what I meant.",
+      "parentUuid": "2e93376b_6d1ccc6b",
+      "revId": "125069902f863ff41e88f0e77913754b619a7d1c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
