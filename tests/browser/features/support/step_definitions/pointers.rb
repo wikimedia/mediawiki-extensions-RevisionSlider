@@ -1,5 +1,5 @@
 Given(/^I click on revision (\d+)$/) do |index|
-  on(DiffPage).revisionslider_rev(index.to_i).click
+  on(DiffPage).revisionslider_rev(index.to_i).when_visible.click
 end
 
 Given(/^I drag the lower pointer to revision (\d+)$/) do |index|

@@ -59,19 +59,19 @@ Then(/^The auto expand button should be on/) do
 end
 
 Then(/^There should be a RevisionSlider expand button/) do
-  expect{ on(DiffPage).revisionslider_toggle_button }.not_to raise_error
+  expect(on(DiffPage).revisionslider_toggle_button_element.when_visible).to be_visible
 end
 
 Then(/^There should not be a RevisionSlider expand button/) do
-  expect{ on(DiffPage).revisionslider_toggle_button }.to raise_error
+  expect(on(DiffPage).revisionslider_toggle_button_element.when_not_visible).not_to be_visible
 end
 
 Then(/^RevisionSlider wrapper should be hidden/) do
-  on(DiffPage).revisionslider_wrapper_element.visible?.should be_falsey
+  expect(on(DiffPage).revisionslider_wrapper_element.when_not_visible).not_to be_visible
 end
 
 Then(/^RevisionSlider wrapper should be visible/) do
-  on(DiffPage).revisionslider_wrapper_element.visible?.should be_truthy
+  expect(on(DiffPage).revisionslider_wrapper_element.when_visible).to be_visible
 end
 
 Given(/^I click on the auto expand button/) do
@@ -79,5 +79,5 @@ Given(/^I click on the auto expand button/) do
 end
 
 Given(/^I click on the expand button/) do
-  on(DiffPage).revisionslider_toggle_button_element.click
+  on(DiffPage).revisionslider_toggle_button_element.when_visible.click
 end
