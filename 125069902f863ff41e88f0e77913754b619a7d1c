@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e93376b_0abdeead",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-09-01T08:33:49Z",
+      "side": 1,
+      "message": "I am not sure if this should not be $highlightedRevisionWrapper.length !\u003d\u003d 0 now\nSame for the $currentTooltip condition",
+      "revId": "125069902f863ff41e88f0e77913754b619a7d1c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_cac92657",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-09-01T08:33:49Z",
+      "side": 1,
+      "message": "This seems to work OK in that sense it indeed removes tooltips even they\u0027re part of \"two different\" revision list views.\nI am just wondering doesn\u0027t it leave some objects not removed from memory or so. This only removes the jquery node related to OO.ui.PopupWidget instance (and leaves it in visible state).\n\nThis might work for now but I think we should definitely consider fixing the whole think so there only one RevisionListView instance. Then it can remember its tooltip state and removed the whole object when not needed (hidden)",
+      "revId": "125069902f863ff41e88f0e77913754b619a7d1c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
