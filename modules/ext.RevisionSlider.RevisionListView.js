@@ -74,8 +74,8 @@
 							.addClass( diffSize > 0 ? 'mw-revslider-revision-up' : 'mw-revslider-revision-down' )
 							.append( $( '<div>' ).addClass( 'mw-revslider-revision-border-box' ) )
 						)
-						.mouseover( showTooltip )
-						.mouseout( hideTooltip )
+						.mouseenter( showTooltip )
+						.mouseleave( hideTooltip )
 					);
 			}
 
@@ -105,9 +105,13 @@
 		 * Hides the current tooltip immediately
 		 */
 		hideCurrentTooltip: function () {
-			if ( this.tooltipTimeout !== -1 && this.$highlightedRevisionWrapper !== null ) {
+			if ( this.tooltipTimeout !== -1 ) {
 				window.clearTimeout( this.tooltipTimeout );
+			}
+			if ( this.$highlightedRevisionWrapper !== null ) {
 				this.$highlightedRevisionWrapper.removeClass( 'mw-revslider-revision-wrapper-hovered' );
+			}
+			if ( this.currentTooltip !== null ) {
 				this.currentTooltip.toggle( false );
 				this.currentTooltip.$element.remove();
 			}
@@ -124,7 +128,7 @@
 				if ( $rev !== null ) {
 					$rev.removeClass( 'mw-revslider-revision-wrapper-hovered' );
 				}
-				if ( self.currentTooltip !== null && self.currentTooltip.isVisible() ) {
+				if ( self.currentTooltip !== null ) {
 					self.currentTooltip.toggle( false );
 					self.currentTooltip.$element.remove();
 				}
@@ -144,6 +148,9 @@
 			if ( revision === null ) {
 				return;
 			}
+
+			this.hideCurrentTooltip();
+
 			tooltip = this.makeTooltip( revision );
 			tooltip.$element.css( {
 				left: $rev.offset().left + this.revisionWidth / 2 + 'px',
@@ -152,7 +159,6 @@
 			$( 'body' ).append( tooltip.$element );
 			tooltip.toggle( true );
 
-			this.hideCurrentTooltip();
 			$rev.addClass( 'mw-revslider-revision-wrapper-hovered' );
 			this.$highlightedRevisionWrapper = $rev;
 			this.currentTooltip = tooltip;
@@ -179,10 +185,10 @@
 			var self = this;
 
 			$( document )
-				.on( 'mouseover', '.mw-revslider-revision-tooltip', function () {
+				.on( 'mouseenter', '.mw-revslider-revision-tooltip', function () {
 					window.clearTimeout( self.tooltipTimeout );
 				} )
-				.on( 'mouseout', '.mw-revslider-revision-tooltip', function () {
+				.on( 'mouseleave', '.mw-revslider-revision-tooltip', function () {
 					self.hideTooltip( self.$highlightedRevisionWrapper );
 				} );
 		},
