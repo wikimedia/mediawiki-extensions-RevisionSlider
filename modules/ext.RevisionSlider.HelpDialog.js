@@ -1,6 +1,7 @@
 ( function ( mw, $ ) {
+	/* eslint-disable dot-notation */
 	// JSHint does not like OOJS' usage of "static" and "super"
-	/*jshint -W024 */
+	/* jshint -W024 */
 
 	/**
 	 * Module containing the RevisionSlider tutorial

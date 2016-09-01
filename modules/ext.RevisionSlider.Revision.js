@@ -1,5 +1,5 @@
 ( function ( mw, $ ) {
-	/*global moment:false */
+	/* global moment:false */
 	/**
 	 * @param {Object} data - Containing keys `id`, `size`, `comment`, `parsedcomment`, `timestamp`, `user` and `minor`
 	 * @constructor

@@ -39,10 +39,10 @@
 
 	QUnit.test( 'Push appends revisions to the end of the list', function ( assert ) {
 		var list = new RevisionList( [
-			new Revision( { revid: 1, size: 5 } ),
-			new Revision( { revid: 2, size: 21 } ),
-			new Revision( { revid: 3, size: 13 } )
-		] ),
+				new Revision( { revid: 1, size: 5 } ),
+				new Revision( { revid: 2, size: 21 } ),
+				new Revision( { revid: 3, size: 13 } )
+			] ),
 			revisions;
 		list.push( [
 			new Revision( { revid: 6, size: 19 } ),
@@ -117,7 +117,7 @@
 				new Revision( { revid: 3, size: 13 } ),
 				new Revision( { revid: 6, size: 19 } ),
 				new Revision( { revid: 8, size: 25 } )
-		] ),
+			] ),
 			slicedList = list.slice( 1, 3 ),
 			revisions = slicedList.getRevisions();
 
@@ -148,10 +148,10 @@
 
 	QUnit.test( 'makeRevisions converts revision data into list of Revision objects', function ( assert ) {
 		var revs = [
-			{ revid: 1, size: 5, userGender: 'female' },
-			{ revid: 2, size: 21, userGender: 'unknown' },
-			{ revid: 3, size: 13 }
-		],
+				{ revid: 1, size: 5, userGender: 'female' },
+				{ revid: 2, size: 21, userGender: 'unknown' },
+				{ revid: 3, size: 13 }
+			],
 			revisions = makeRevisions( revs );
 
 		assert.equal( revisions[ 0 ].getId(), 1 );
@@ -161,4 +161,4 @@
 		assert.equal( revisions[ 2 ].getId(), 3 );
 		assert.equal( revisions[ 2 ].getSize(), 13 );
 	} );
-} )( mediaWiki );
+}( mediaWiki ) );

@@ -189,4 +189,4 @@
 		assert.ok( $pageSizeLineHtml.text().match( /1,337/ ) );
 	} );
 
-} )( mediaWiki );
+}( mediaWiki ) );

@@ -15,9 +15,9 @@
 
 	QUnit.test( 'has revisions', function ( assert ) {
 		var revs = new RevisionList( [
-			new Revision( { revid: 1 } ),
-			new Revision( { revid: 2 } )
-		] ),
+				new Revision( { revid: 1 } ),
+				new Revision( { revid: 2 } )
+			] ),
 			slider = new Slider( revs );
 
 		assert.equal( slider.getRevisions(), revs );
@@ -54,4 +54,4 @@
 		assert.equal( slider.getFirstVisibleRevisionIndex(), 0 );
 	} );
 
-} )( mediaWiki );
+}( mediaWiki ) );

@@ -20,6 +20,7 @@
 		 * @param {number} [options.startId] Start ID
 		 * @param {number} [options.endId] End ID
 		 * @param {Object} [options.knownUserGenders] Known user genders
+		 * @return {jQuery.Promise}
 		 */
 		fetchRevisionData: function ( pageName, options ) {
 			var xhr, userXhr,
@@ -31,9 +32,11 @@
 			xhr = this.fetchRevisions( pageName, options )
 				.done( function ( data ) {
 					var revs = data.query.pages[ 0 ].revisions,
-						/*jshint -W024 */
+						/* eslint-disable dot-notation */
+						/* jshint -W024 */
 						revContinue = data.continue,
-						/*jshint +W024 */
+						/* jshint +W024 */
+						/* eslint-enable dot-notation */
 						genderData = options.knownUserGenders || {},
 						userNames;
 

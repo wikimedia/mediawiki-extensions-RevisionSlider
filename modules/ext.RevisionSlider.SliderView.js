@@ -170,8 +170,8 @@
 				pointerContainerStyle = { right: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
 			}
 			$slider.css( {
-					width: ( containerWidth + this.containerMargin ) + 'px'
-				} )
+				width: ( containerWidth + this.containerMargin ) + 'px'
+			} )
 				.append(
 					this.backwardArrowButton.$element,
 					$( '<div>' )
@@ -283,6 +283,8 @@
 		 * applied (blue border) which is not what is wanted. And generally setting a focus on disabled
 		 * buttons does not seem right in case of RevisionSlider's arrow buttons.
 		 * This method removes focus from the disabled button if such case happens.
+		 *
+		 * @param {jQuery.Event} e
 		 */
 		arrowFocusHandler: function ( e ) {
 			var button = e.data.button;
@@ -307,7 +309,7 @@
 					$clickedRev.data( 'revid' )
 				);
 			} else {
-				pOld.setPosition( parseInt( $clickedRev.attr( 'data-pos' ), 10 ) ) ;
+				pOld.setPosition( parseInt( $clickedRev.attr( 'data-pos' ), 10 ) );
 				view.refreshRevisions(
 					$clickedRev.data( 'revid' ),
 					view.getRevElementAtPosition( $revisions, pNew.getPosition() ).data( 'revid' )
@@ -599,11 +601,11 @@
 
 				self.addRevisionsAtEnd( $slider, revs );
 
-				/*jshint -W024 */
-				if ( data.continue === undefined ) {
+				/* jshint -W024 */
+				if ( data.continue === undefined ) { // eslint-disable-line dot-notation
 					self.noMoreNewerRevisions = true;
 				}
-				/*jshint +W024 */
+				/* jshint +W024 */
 			} );
 		},
 
@@ -640,11 +642,11 @@
 				}
 				self.addRevisionsAtStart( $slider, revs, precedingRevisionSize );
 
-				/*jshint -W024 */
-				if ( data.continue === undefined ) {
+				/* jshint -W024 */
+				if ( data.continue === undefined ) { // eslint-disable-line dot-notation
 					self.noMoreOlderRevisions = true;
 				}
-				/*jshint +W024 */
+				/* jshint +W024 */
 			} );
 		},
 
@@ -777,6 +779,7 @@
 
 		/**
 		 * @param {jQuery} $slider
+		 * @return {boolean}
 		 */
 		shouldExpandSlider: function ( $slider ) {
 			var sliderWidth = parseInt( $slider.css( 'width' ), 10 ),

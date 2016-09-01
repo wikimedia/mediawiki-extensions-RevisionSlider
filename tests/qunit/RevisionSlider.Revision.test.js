@@ -107,5 +107,5 @@
 		assert.notOk( rev.hasEmptyComment() );
 	} );
 
-} )( mediaWiki );
+}( mediaWiki ) );
 

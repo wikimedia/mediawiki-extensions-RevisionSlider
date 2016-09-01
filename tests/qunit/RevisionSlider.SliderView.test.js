@@ -51,11 +51,11 @@
 		mw.config.values.extRevisionSliderOldRev = null;
 		mw.config.values.extRevisionSliderNewRev = null;
 
-		assert.throws(
+		assert.throws( // eslint-disable-line dot-notation
 			function () {
 				view.render( $container );
 			}
 		);
 	} );
 
-} )( mediaWiki );
+}( mediaWiki ) );

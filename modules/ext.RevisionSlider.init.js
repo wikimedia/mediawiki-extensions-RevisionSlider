@@ -3,9 +3,11 @@
 		expanded = autoExpand,
 		initialized = false,
 		autoExpandButton,
-		/*jshint -W024 */
+		/* eslint-disable dot-notation */
+		/* jshint -W024 */
 		toggleButton = OO.ui.ButtonWidget.static.infuse( $( '.mw-revslider-toggle-button' ) ),
-		/*jshint +W024 */
+		/* jshint +W024 */
+		/* eslint-enable dot-notation */
 		initialize = function () {
 			var startTime = mw.now(),
 				api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) );

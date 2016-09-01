@@ -24,4 +24,4 @@
 		pv.getElement().addClass( 'mw-revslider-pointer-upper' );
 		assert.equal( pv.getOffset(), 16 );
 	} );
-} )( mediaWiki );
+}( mediaWiki ) );

@@ -15,4 +15,4 @@
 		assert.equal( pointer.getPosition(), pos );
 	} );
 
-} )( mediaWiki );
+}( mediaWiki ) );

@@ -120,6 +120,7 @@
 		 * @param {number} revId1
 		 * @param {number} revId2
 		 * @param {SliderView} sliderView
+		 * @return {Object}
 		 */
 		getStateObject: function ( revId1, revId2, sliderView ) {
 			return {
@@ -136,6 +137,7 @@
 		 *
 		 * @param {number} revId1
 		 * @param {number} revId2
+		 * @return {string}
 		 */
 		getStateUrl: function ( revId1, revId2 ) {
 			var url = mw.util.wikiScript( 'index' ) + '?diff=' + Math.max( revId1, revId2 ) + '&oldid=' + Math.min( revId1, revId2 ),
