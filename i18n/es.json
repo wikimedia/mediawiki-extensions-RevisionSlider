@@ -18,7 +18,6 @@
 	"revisionslider-label-comment": "Comentario",
 	"revisionslider-label-username": "Nombre de {{GENDER:$1|usuario|usuaria}}",
 	"revisionslider-minoredit": "Esta es una edición menor",
-	"revisionslider-loading-placeholder": "El deslizador de revisiones se está cargando...",
 	"revisionslider-loading-failed": "El deslizador de revisiones no se pudo cargar.",
 	"revisionslider-toggle-title-expand": "Abrir el deslizador de revisiones",
 	"revisionslider-toggle-title-collapse": "Ocultar el deslizador de revisiones",

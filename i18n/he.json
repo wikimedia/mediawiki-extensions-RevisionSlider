@@ -20,7 +20,6 @@
 	"revisionslider-label-comment": "תקציר העריכה",
 	"revisionslider-label-username": "{{GENDER:$1|משתמש|משתמשת}}",
 	"revisionslider-minoredit": "זוהי עריכה משנית",
-	"revisionslider-loading-placeholder": "טוען את סרגל הגרסאות...",
 	"revisionslider-loading-failed": "לא ניתן היה לטעון את סרגל הגרסאות.",
 	"revisionslider-toggle-title-expand": "פתיחת סרגל הגרסאות",
 	"revisionslider-toggle-title-collapse": "סגירת סרגל הגרסאות",

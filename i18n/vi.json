@@ -17,7 +17,6 @@
 	"revisionslider-label-comment": "Tóm lược",
 	"revisionslider-label-username": "{{GENDER:$1}}Tên người dùng",
 	"revisionslider-minoredit": "Đây là một sửa đổi nhỏ",
-	"revisionslider-loading-placeholder": "Đang tải con trượt phiên bản…",
 	"revisionslider-loading-failed": "Thất bại khi tải con trượt phiên bản.",
 	"revisionslider-toggle-title-expand": "Mở con trượt phiên bản",
 	"revisionslider-toggle-title-collapse": "Đóng con trượt phiên bản",

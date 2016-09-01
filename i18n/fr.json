@@ -22,7 +22,6 @@
 	"revisionslider-label-comment": "Commentaire",
 	"revisionslider-label-username": "Nom d’{{GENDER:$1|utilisateur|utilisatrice}}",
 	"revisionslider-minoredit": "Ceci est une modification mineure",
-	"revisionslider-loading-placeholder": "Le curseur des révisions se charge…",
 	"revisionslider-loading-failed": "Impossible de charger le curseur de révision.",
 	"revisionslider-toggle-title-expand": "Ouvrir RevisionSlider",
 	"revisionslider-toggle-title-collapse": "Réduire RevisionSlider",

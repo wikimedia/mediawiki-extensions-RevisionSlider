@@ -18,7 +18,6 @@
 	"revisionslider-label-comment": "Kommentar",
 	"revisionslider-label-username": "{{GENDER:$1|Benutzername}}",
 	"revisionslider-minoredit": "Dies ist eine kleine Bearbeitung",
-	"revisionslider-loading-placeholder": "Der Versionsblätterer wird geladen …",
 	"revisionslider-loading-failed": "Der Versionsblätterer konnte nicht geladen werden.",
 	"revisionslider-toggle-title-expand": "Versionsblätterer öffnen",
 	"revisionslider-toggle-title-collapse": "Versionsblätterer einklappen",

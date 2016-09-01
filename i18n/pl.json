@@ -22,7 +22,6 @@
 	"revisionslider-label-comment": "Komentarz",
 	"revisionslider-label-username": "Nazwa {{GENDER:$1|użytkownika|użytkowniczki}}",
 	"revisionslider-minoredit": "To jest drobna zmiana",
-	"revisionslider-loading-placeholder": "Suwak wersji ładuje się...",
 	"revisionslider-loading-failed": "Nie udało się uruchomić suwaka wersji.",
 	"revisionslider-arrow-tooltip-newer": "Zobacz nowsze wersje",
 	"revisionslider-arrow-tooltip-older": "Zobacz starsze wersje",
