@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e93376b_8aff1e62",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-09-01T08:49:05Z",
+      "side": 1,
+      "message": "should this rather be mw-revslider-revisions-container?\n\nmw-revslider-revisions might be a bit \"scrolled\" on a side when you move arrows. At least my browser seems to show so. It might not be that harmful,though. Still I believe you might have meant mw-revslider-revisions-container here\n\nAlso, I personally would be more happy to see $foo.length \u003d\u003d\u003d 0 than !$foo.length in those checks but I am not going to require this. The way it is now is still fine, I think",
+      "revId": "60c518df7e20d4ecf09ecbc17e3f30ad9cf09a21",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
