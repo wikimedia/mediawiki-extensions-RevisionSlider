@@ -50,6 +50,7 @@
 					$sidePanel = $( '#mw-panel' ),
 					$navigation = $( '#p-views' ),
 					$catLinks = $( '#catlinks' ),
+					$printFooter =  $( '.printfooter' ),
 					scrollLeft = $container.find( '.mw-revslider-revisions-container' ).scrollLeft();
 
 				$data = $( data );
@@ -57,6 +58,7 @@
 				$navigation.replaceWith( $data.find( '#p-views' ) );
 				$catLinks.replaceWith( $data.find( '#catlinks' ) );
 				$sidePanel.replaceWith( $data.find( '#mw-panel' ) );
+				$printFooter.replaceWith( $data.find( '.printfooter' ) );
 				$contentText.html( $data.find( '#mw-content-text' ) )
 					.find( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
 
