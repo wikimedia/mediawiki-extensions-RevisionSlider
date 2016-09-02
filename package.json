@@ -1,6 +1,12 @@
 {
   "name": "RevisionSlider",
   "version": "1.0.0",
+  "homepage": "https://www.mediawiki.org/wiki/Extension:RevisionSlider",
+  "repository": {
+    "type": "git",
+    "url": "https://phabricator.wikimedia.org/diffusion/ERSL/RevisionSlider.git"
+  },
+  "license": "GPL-2.0+",
   "scripts": {
     "test": "grunt test"
   },
