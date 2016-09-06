@@ -74,6 +74,11 @@
 					self.reInitWikEdDiff();
 				}
 
+				// Following code is deprecated and will be removed soon. Revision Slider should
+				// trigger general (core) hook instead of its own hook. Extensions do not have to
+				// be aware of Revision Slider to interact properly with it.
+				mw.hook( 'revslider.diffreload' ).fire( $contentText );
+
 			}, function ( xhr ) {
 				$( 'table.diff[data-mw="interface"]' ).removeClass( 'mw-revslider-diff-loading' );
 				if ( xhr.statusText !== 'abort' ) {
