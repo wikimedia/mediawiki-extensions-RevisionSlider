@@ -59,8 +59,8 @@
 				$catLinks.replaceWith( $data.find( '#catlinks' ) );
 				$sidePanel.replaceWith( $data.find( '#mw-panel' ) );
 				$printFooter.replaceWith( $data.find( '.printfooter' ) );
-				$contentText.html( $data.find( '#mw-content-text' ) )
-					.find( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
+				$contentText.replaceWith( $data.find( '#mw-content-text' ) );
+				$contentText.find( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
 
 				mw.hook( 'wikipage.content' ).fire( $contentText );
 			}, function ( xhr ) {
