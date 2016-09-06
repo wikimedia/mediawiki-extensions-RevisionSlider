@@ -73,7 +73,7 @@
 		// and the extra space added on the right side of the pointer container used for correct
 		// restricting the pointer dragging area
 		getAdjustedLeftPositionWhenRtl: function ( pos ) {
-			return this.getElement().offsetParent().width() - pos - 16 - 15;
+			return this.getElement().offsetParent().width() - pos - 16 - 18;
 		},
 
 		/**
