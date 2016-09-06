@@ -19,6 +19,7 @@ Feature: RevisionSlider auto expand
     And I wait for the setting to be saved
     Then The auto expand button should be on
     Given I refresh the page
+    And The auto expand button is visible
     Then The auto expand button should be on
     And RevisionSlider wrapper should be visible
     And The RevisionSlider has loaded
@@ -32,5 +33,6 @@ Feature: RevisionSlider auto expand
     And I wait for the setting to be saved
     Then The auto expand button should be off
     Given I refresh the page
+    And The auto expand button is visible
     Then The auto expand button should be off
     And RevisionSlider wrapper should be hidden
