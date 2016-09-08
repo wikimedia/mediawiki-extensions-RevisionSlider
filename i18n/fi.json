@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lebiega"
+		]
+	},
+	"revisionslider-page-size": "$1 {{PLURAL:$2|tavu|tavua}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|tavu|tavua}}",
+	"revisionslider-label-date": "Päiväys",
+	"revisionslider-label-page-size": "Sivun koko",
+	"revisionslider-label-username": "{{GENDER:$1|Käyttäjätunnus}}"
+}

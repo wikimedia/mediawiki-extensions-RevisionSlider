@@ -6,7 +6,8 @@
 			"Macofe",
 			"Tar Lócesilion",
 			"Doctore",
-			"Sethakill"
+			"Sethakill",
+			"Lebiega"
 		]
 	},
 	"revisionslider": "Suwak wersji",
@@ -23,10 +24,14 @@
 	"revisionslider-label-username": "Nazwa {{GENDER:$1|użytkownika|użytkowniczki}}",
 	"revisionslider-minoredit": "To jest drobna zmiana",
 	"revisionslider-loading-failed": "Nie udało się uruchomić suwaka wersji.",
+	"revisionslider-toggle-title-expand": "Otwórz suwak wersji",
+	"revisionslider-toggle-title-collapse": "Zwiń suwak wersji",
+	"revisionslider-turn-on-auto-expand-title": "Rozwijaj suwak wersji automatycznie",
+	"revisionslider-turn-off-auto-expand-title": "Nie rozwijaj suwaka wersji automatycznie",
 	"revisionslider-arrow-tooltip-newer": "Zobacz nowsze wersje",
 	"revisionslider-arrow-tooltip-older": "Zobacz starsze wersje",
 	"revisionslider-show-help-tooltip": "Pokaż tekst pomocy",
-	"revisionslider-help-dialog-slide1": "Suwak wersji pomaga nawigować i porównywać zmiany wykonane na stronie. Został opracowany [[m:WMDE_Technical_Wishes/RevisionSlider|na prośbę]] niemieckojęzycznej społeczności.",
+	"revisionslider-help-dialog-slide1": "Suwak wersji pomaga nawigować i porównywać zmiany wykonane na stronie. Został opracowany [[m:WMDE_Technical_Wishes/RevisionSlider|na prośbę]] niemieckojęzycznej społeczności. Będziemy wdzięczni za opinie na [[mw:Extension_talk:RevisionSlider|stronie dyskusji]].",
 	"revisionslider-help-dialog-slide2": "Każdy słupek odpowiada wersji strony. Słupki na górze pokazują wzrost rozmiaru strony, słupki na dole pokazują wartości malejące. Na ilustracji wersja 1 oznacza dodaną zawartość, wersja 2 - usuniętą.",
 	"revisionslider-help-dialog-slide3": "<p>Aby porównać wybrane wersje, zaznacz je za pomocą żółtego i niebieskiego wskaźnika.</p><p>Niebieski wskaźnik wskazuje nowszą wersję, a żółty wskaźnik starszą.</p><p>Przesuń wskaźniki, przeciągając je i upuszczając, lub kliknij odpowiedni słupek.</p>",
 	"revisionslider-help-dialog-slide4": "Użyj strzałek do przodu i do tyłu, aby poruszać się po historii zmian wersji i wyświetlać nowsze i starsze zmiany.",
