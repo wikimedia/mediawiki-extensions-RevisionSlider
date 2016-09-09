@@ -40,7 +40,8 @@
 				"ext.RevisionSlider.icons",
 				"ext.RevisionSlider.pointers.lower",
 				"ext.RevisionSlider.pointers.upper",
-				"mediawiki.api.options"
+				"mediawiki.api.options",
+				"mediawiki.util"
 			],
 			"messages": [
 				"revisionslider-show-help-tooltip",
@@ -95,6 +96,7 @@
 			],
 			"dependencies": [
 				"jquery.ui.draggable",
+				"mediawiki.util",
 				"oojs-ui",
 				"ext.RevisionSlider.DiffPage",
 				"ext.RevisionSlider.HelpDialog",
@@ -116,7 +118,8 @@
 			],
 			"dependencies": [
 				"ext.RevisionSlider.Revision",
-				"ext.RevisionSlider.RevisionListView"
+				"ext.RevisionSlider.RevisionListView",
+				"mediawiki.util"
 			]
 		},
 		"ext.RevisionSlider.RevisionListView": {
@@ -135,6 +138,8 @@
 				"revisionslider-minoredit"
 			],
 			"dependencies": [
+				"mediawiki.language",
+				"mediawiki.util",
 				"oojs-ui"
 			]
 		},
