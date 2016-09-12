@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Srdjan m"
+		]
+	},
+	"revisionslider": "Klizač izmjena",
+	"revisionslider-desc": "Prikazuje klizač koji Vam dozvoljava da izaberete i uporedite izmjene pri pregledu razlika neke izmjene",
+	"revisionslider-beta-feature-message": "Klizač izmjena",
+	"revisionslider-beta-feature-description": "Prikaži klizač izmjena pri upoređivanju dvije izmjene stranice.",
+	"revisionslider-toggle-label": "Pregled historije",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|bajt|bajtova}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|bajt|bajtova}}",
+	"revisionslider-label-date": "Datum",
+	"revisionslider-label-page-size": "Veličina stranice",
+	"revisionslider-label-change-size": "Promjena veličine",
+	"revisionslider-label-comment": "Komentar",
+	"revisionslider-label-username": "{{GENDER:$1|Korisničko ime}}",
+	"revisionslider-minoredit": "Ovo je manja izmjena",
+	"revisionslider-loading-failed": "Klizač izmjena nije se uspio učitati.",
+	"revisionslider-toggle-title-expand": "Otvori klizač izmjena",
+	"revisionslider-toggle-title-collapse": "Sklopi klizač izmjena",
+	"revisionslider-turn-on-auto-expand-title": "Automatski raširi klizač izmjena",
+	"revisionslider-turn-off-auto-expand-title": "Ne raširuj klizač izmjena automatski",
+	"revisionslider-arrow-tooltip-newer": "Pogledajte novije izmjene",
+	"revisionslider-arrow-tooltip-older": "Pogledajte starije verzije",
+	"revisionslider-show-help-tooltip": "Prikaži pomoć",
+	"revisionslider-help-dialog-slide1": "Klizač izmjena pomaže Vam da pregledate i uporedite izmjene stranice. Bio je [[m:WMDE_Technical_Wishes/RevisionSlider|želja zajednice]] Wikipedije na njemačkom jeziku. Povratne informacije možete ostaviti [[mw:Extension_talk:RevisionSlider|ovdje]].",
+	"revisionslider-help-dialog-slide2": "Svaka traka predstavlja izmjenu stranice. Trake koje su na vrhu predstavljaju povećanje, a one na dnu smanjenje veličine stranice. Na gornjoj slici, izmjena 1 predstavlja izmjenu u kojoj je dodan sadržaj, a izmjena 2 izmjenu u kojoj je uklonjen sadržaj.",
+	"revisionslider-help-dialog-slide3": "<p>Izaberite izmjene koje želite uporediti koristeći žuti i plavi pokazivač.</p><p>Plavi pokazivač upravlja novijom, a žuti starijom izmjenom.</p><p>Pokazivače možete pomjeriti tako što će te ih prevući s jedne izmjene na drugu ili jednostavno možete kliknuti na bilo koju traku.</p>",
+	"revisionslider-help-dialog-slide4": "Koristite lijevu strelicu za prikaz prethodnih, a desnu za prikaz novijih izmjena.",
+	"revisionslider-tutorial": "Vodič za korištenje",
+	"revisionslider-previous-dialog": "Prethodno",
+	"revisionslider-next-dialog": "Sljedeće",
+	"revisionslider-close-dialog": "Zatvori"
+}

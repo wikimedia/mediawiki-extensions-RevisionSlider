@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Njardarlogar"
+		]
+	},
+	"revisionslider-page-size": "$1 {{PLURAL:$2|byte}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|byte}}",
+	"revisionslider-label-date": "Dato",
+	"revisionslider-label-page-size": "Sidestorleik",
+	"revisionslider-label-change-size": "Endringsstorleik",
+	"revisionslider-label-comment": "Endringssamandrag",
+	"revisionslider-label-username": "{{GENDER:$1|Brukarnamn}}",
+	"revisionslider-minoredit": "Endringa er småplukk",
+	"revisionslider-previous-dialog": "Førre",
+	"revisionslider-next-dialog": "Neste",
+	"revisionslider-close-dialog": "Lat att"
+}
