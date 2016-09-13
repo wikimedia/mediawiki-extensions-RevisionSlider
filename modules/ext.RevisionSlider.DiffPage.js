@@ -65,19 +65,17 @@
 					.find( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
 
 				mw.hook( 'wikipage.content' ).fire( $contentText );
+				mw.hook( 'wikipage.diff' ).fire( $contentText.find( 'table.diff' ) );
 
 				// In order to correctly interact with third-party code (extensions and gadgets)
 				// Revision slider should trigger some general (core) hook that other parties listen too
 				// Following wikEdDiff.js-specific code is deprecated and will be removed in the future.
 				// WikEdDiff should be updated to use a hook.
 				if ( self.wikEdDiffDetected() ) {
-					self.reInitWikEdDiff();
+					console.log( 'You are running WikEdDiff & your copy of the code may need to be updated to work with the RevisionSlider.' );
+					console.log( 'Please see: https://phabricator.wikimedia.org/T143199#2631963' );
+					console.log( 'If WikEdDiff is still working while using the RevisonSlider then the code change has already been done.' );
 				}
-
-				// Following code is deprecated and will be removed soon. Revision Slider should
-				// trigger general (core) hook instead of its own hook. Extensions do not have to
-				// be aware of Revision Slider to interact properly with it.
-				mw.hook( 'revslider.diffreload' ).fire( $contentText );
 
 			}, function ( xhr ) {
 				$( 'table.diff[data-mw="interface"]' ).removeClass( 'mw-revslider-diff-loading' );
@@ -96,12 +94,6 @@
 
 		wikEdDiffDetected: function () {
 			return typeof wikEd !== 'undefined' && $( 'meta[name=wikEdDiffSetupFlag]' ).length !== 0;
-		},
-
-		reInitWikEdDiff: function () {
-			$( 'meta[name=wikEdDiffSetupFlag]' ).remove();
-			$( 'meta[name=wikEdDiffStartupFlag]' ).remove();
-			wikEd.DiffSetup();
 		},
 
 		/**
