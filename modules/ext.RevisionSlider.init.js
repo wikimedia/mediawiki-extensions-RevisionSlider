@@ -61,6 +61,14 @@
 				console.log( err );
 				mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
 			} );
+		},
+
+		expandAndIntitialize = function () {
+			$( '.mw-revslider-slider-wrapper' ).show();
+			expanded = true;
+			if ( !initialized ) {
+				initialize();
+			}
 		};
 
 	mw.track( 'counter.MediaWiki.RevisionSlider.event.load' );
@@ -82,6 +90,7 @@
 				( new mw.Api() ).saveOption( 'userjs-revslider-autoexpand', autoExpand ? '1' : '0' );
 				if ( autoExpand ) {
 					autoExpandButton.setTitle( mw.message( 'revisionslider-turn-off-auto-expand-title' ).text() );
+					expandAndIntitialize();
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand.on' );
 				} else {
 					autoExpandButton.setTitle( mw.message( 'revisionslider-turn-on-auto-expand-title' ).text() );
@@ -94,24 +103,21 @@
 	}
 
 	if ( autoExpand ) {
-		initialize();
+		expandAndIntitialize();
 	}
 
 	toggleButton.connect( this, {
 		click: function () {
 			expanded = !expanded;
-			$( '.mw-revslider-slider-wrapper' ).toggle();
 			if ( expanded ) {
+				expandAndIntitialize();
 				toggleButton.setIcon( 'collapse' ).setTitle( mw.message( 'revisionslider-toggle-title-collapse' ).text() );
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.expand' );
 			} else {
+				$( '.mw-revslider-slider-wrapper' ).hide();
 				toggleButton.setIcon( 'expand' ).setTitle( mw.message( 'revisionslider-toggle-title-expand' ).text() );
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.collapse' );
 			}
-			if ( initialized ) {
-				return;
-			}
-			initialize();
 		}
 	} );
 }( mediaWiki, jQuery ) );
