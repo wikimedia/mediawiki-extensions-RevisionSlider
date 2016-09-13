@@ -41,6 +41,7 @@
 				"ext.RevisionSlider.pointers.lower",
 				"ext.RevisionSlider.pointers.upper",
 				"mediawiki.api.options",
+				"mediawiki.user",
 				"mediawiki.util"
 			],
 			"messages": [
