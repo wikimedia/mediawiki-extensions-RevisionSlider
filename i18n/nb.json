@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Danmichaelo"
+		]
+	},
+	"revisionslider-page-size": "$1 {{PLURAL:$2|byte}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|byte}}",
+	"revisionslider-label-date": "Dato",
+	"revisionslider-label-page-size": "Sidestørrelse",
+	"revisionslider-label-change-size": "Endringsstørrelse",
+	"revisionslider-label-comment": "Kommentar",
+	"revisionslider-label-username": "{{GENDER:$1|Brukernavn}}",
+	"revisionslider-minoredit": "Dette er en mindre redigering",
+	"revisionslider-previous-dialog": "Forrige",
+	"revisionslider-next-dialog": "Neste",
+	"revisionslider-close-dialog": "Lukk"
+}

@@ -4,10 +4,14 @@
 			"Beta16",
 			"Matteocng",
 			"Macofe",
-			"Ferdi2005"
+			"Ferdi2005",
+			"Valepert"
 		]
 	},
+	"revisionslider": "Cursore delle versioni",
+	"revisionslider-desc": "Mostra un cursore che permette la selezione e il confronto tra le versioni di una pagina delle differenze",
 	"revisionslider-beta-feature-message": "RevisionSlider",
+	"revisionslider-beta-feature-description": "Mostra un cursore quando si confrontano due versioni di una pagina.",
 	"revisionslider-toggle-label": "Naviga nella cronologia",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte}}",
@@ -17,9 +21,11 @@
 	"revisionslider-label-comment": "Commento",
 	"revisionslider-label-username": "{{GENDER:$1|Nome utente}}",
 	"revisionslider-minoredit": "Questa è una modifica minore",
-	"revisionslider-loading-placeholder": "RevisionSlider in caricamento...",
 	"revisionslider-loading-failed": "Errore durante il caricamento di RevisionSlider.",
 	"revisionslider-toggle-title-expand": "Apri RevisionSlider",
+	"revisionslider-toggle-title-collapse": "Nascondi cursore delle versioni",
+	"revisionslider-turn-on-auto-expand-title": "Mostra automaticamente il cursore delle versioni",
+	"revisionslider-turn-off-auto-expand-title": "Non mostrare automaticamente il cursore delle versioni",
 	"revisionslider-arrow-tooltip-newer": "Vedi le versioni più recenti",
 	"revisionslider-arrow-tooltip-older": "Vedi le versioni meno recenti",
 	"revisionslider-show-help-tooltip": "Mostra testo di aiuto",
