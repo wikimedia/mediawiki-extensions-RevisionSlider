@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e93376b_8dfb66dd",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-09-13T13:33:16Z",
+      "side": 1,
+      "message": "This would read better with show() instead of toggle( true ) since we\u0027re not actually toggling anything here.",
+      "revId": "65734edeac101201160b6a71c23ec98a7660cf1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_ade1022b",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-09-13T13:33:16Z",
+      "side": 1,
+      "message": "Same as above. This should be hide() instead of toggle( false ).",
+      "revId": "65734edeac101201160b6a71c23ec98a7660cf1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
