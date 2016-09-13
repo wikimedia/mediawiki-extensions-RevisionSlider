@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e93376b_2830a052",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1786
+      },
+      "writtenOn": "2016-09-13T15:56:26Z",
+      "side": 1,
+      "message": "ಠ_ಠ",
+      "revId": "297527764adb865930e48459d66c4886c2a2a41e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
