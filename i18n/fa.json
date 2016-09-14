@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"فلورانس"
+		]
+	},
+	"revisionslider": "RevisionSlider",
+	"revisionslider-desc": "یک نوار لغزنده را نشان داده و اجازه انتخاب و مقایسه برای تجدید نظر در صفحه تفاوت را نشان می‌دهد",
+	"revisionslider-beta-feature-message": "RevisionSlider",
+	"revisionslider-beta-feature-description": "نمایش یک نوار لغزنده نسخه هنگام مقایسه دو تجدید نظر در یک صفحه.",
+	"revisionslider-toggle-label": "نمایش تاریخچه",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|byte|بایت}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|byte|بایت}}",
+	"revisionslider-label-date": "تاریخ",
+	"revisionslider-label-page-size": "حجم صفحه",
+	"revisionslider-label-change-size": "تغییر اندازه",
+	"revisionslider-label-comment": "خلاصه ویرایش",
+	"revisionslider-label-username": "{{GENDER:$1|نام کاربری}}:",
+	"revisionslider-minoredit": "این ویرایش، جزئی است",
+	"revisionslider-loading-failed": "نوار لغزنده نسخه در بارگذاری شکست خورد",
+	"revisionslider-toggle-title-expand": "گسترش نوار لغزنده نسخه",
+	"revisionslider-toggle-title-collapse": "بستن کشویی نوار لغزنده",
+	"revisionslider-turn-on-auto-expand-title": "به طور خودکار کشویی تجدید نظر گسترش یابد",
+	"revisionslider-turn-off-auto-expand-title": "هنوز کشویی تجدید نظر به طور خودکار گسترش نیافته",
+	"revisionslider-arrow-tooltip-newer": "مشاهده نسخه های جدیدتر",
+	"revisionslider-arrow-tooltip-older": "مشاهده نسخه های قدیمی تر",
+	"revisionslider-show-help-tooltip": "نمایش متن راهنما",
+	"revisionslider-help-dialog-slide1": "نوار لغزنده نسخه کمک می کند تا شما را به حرکت و مقایسه تجدید نظر در صفحه تفاوت است. این است که در بر اساس [[m:WMDE_Technical_Wishes/RevisionSlider|community wish]] از لیست علاقه مندی های فنی جامعه آلمانی زبان. بازخورد بسیار قدردانی [[mw:Extension_talk:RevisionSlider|اینجا]].",
+	"revisionslider-help-dialog-slide2": "هر نوار نشان دهنده یک ویرایش از این صفحه. میله بر رشد نشان می‌دهد بالا در اندازه صفحه، کافه‌ها در پایین نشان می‌دهد کاهش. در تصویر، تجدید نظر ۱ نشان دهنده محتوای اضافه شده است، در حالی که نسخه ۲ نشان دهنده حذف محتوا.",
+	"revisionslider-help-dialog-slide3": "<p> برای مقایسه تجدید نظر خاص، تجدید نظر با استفاده از اشاره گر زرد و آبی را انتخاب کنید. </P> <P> اشاره گر آبی کنترل نسخه جدیدتر، نقشه اشاره گر زرد به نسخه قدیمیتر. </P> <P> حرکت اشاره گر با کشیدن و رها کردن و یا بر روی یک نوار کلیک کنید. </P>",
+	"revisionslider-help-dialog-slide4": "استفاده از فلش رو به عقب و جلو به طول تاریخ تجدید نظر حرکت و نشان می دهد نسخه های قدیمی تر و جدیدتر.",
+	"revisionslider-tutorial": "آموزش های های اسلایدر تجدیدنظر",
+	"revisionslider-previous-dialog": "قبلی",
+	"revisionslider-next-dialog": "بعدی",
+	"revisionslider-close-dialog": "بستن"
+}
