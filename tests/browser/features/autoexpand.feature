@@ -18,6 +18,8 @@ Feature: RevisionSlider auto expand
     And I click on the auto expand button
     And I wait for the setting to be saved
     Then The auto expand button should be on
+    And RevisionSlider wrapper should be visible
+    And The RevisionSlider has loaded
     Given I refresh the page
     And The auto expand button is visible
     Then The auto expand button should be on
@@ -28,6 +30,8 @@ Feature: RevisionSlider auto expand
     Given I am on the diff page
     And I click on the auto expand button
     And I wait for the setting to be saved
+    And I have closed the help dialog at the start
+    And The help dialog is hidden
     Then The auto expand button should be on
     Given I click on the auto expand button
     And I wait for the setting to be saved
