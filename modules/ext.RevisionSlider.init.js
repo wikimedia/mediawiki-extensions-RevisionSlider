@@ -15,6 +15,8 @@
 			mw.track( 'counter.MediaWiki.RevisionSlider.event.init' );
 			mw.libs.revisionSlider.userOffset = mw.user.options.values.timecorrection ? mw.user.options.values.timecorrection.split( '|' )[ 1 ] : mw.config.values.extRevisionSliderTimeOffset;
 
+			mw.libs.revisionSlider.HelpDialog.init();
+
 			api.fetchRevisionData( mw.config.get( 'wgPageName' ), {
 				startId: mw.config.values.extRevisionSliderNewRev,
 				limit: mw.libs.revisionSlider.calculateRevisionsPerWindow( 160, 16 )

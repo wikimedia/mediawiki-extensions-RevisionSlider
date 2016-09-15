@@ -162,15 +162,31 @@
 	} );
 
 	/**
-	 * Shows the help dialog
+	 * Initializes the help dialog
 	 */
-	HelpDialog.show = function () {
+	HelpDialog.init = function () {
 		var windowManager = new OO.ui.WindowManager(),
-			dialogue = new HelpDialog( { size: 'medium', classes: [ 'revisionslider-help-dialog' ] } );
+			dialogue;
 
-		$( 'body' ).append( windowManager.$element );
-		windowManager.addWindows( [ dialogue ] );
-		windowManager.openWindow( dialogue );
+		$( 'body' )
+			.append( windowManager.$element )
+			.click( function ( event ) {
+				if ( $( event.target ).hasClass( 'revisionslider-help-dialog' ) ) {
+					HelpDialog.hide();
+				}
+			} );
+
+		HelpDialog.show = function () {
+			dialogue = new HelpDialog( { size: 'medium', classes: [ 'revisionslider-help-dialog' ] } );
+			windowManager.addWindows( [ dialogue ] );
+			windowManager.openWindow( dialogue );
+		};
+
+		HelpDialog.hide = function () {
+			if ( windowManager.hasWindow( dialogue ) ) {
+				windowManager.closeWindow( dialogue );
+			}
+		};
 	};
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
