@@ -34,16 +34,6 @@
 	right: 1.875em;
 }
 
-/* This is a bit hacky way, the goal being to have a framed toggle button widget with some styles
-of the frameless one (to fit the size of the toggle button */
-.mw-revslider-auto-expand-button .oo-ui-buttonElement-button {
-	z-index: 10;
-	padding: 0;
-	box-sizing: border-box;
-	width: 1.875em;
-	height: 1.875em;
-}
-
 .mw-revslider-button-active {
 	background-color: #999;
 }
@@ -183,6 +173,18 @@ of the frameless one (to fit the size of the toggle button */
 	height: 20px;
 	min-width: inherit;
 	min-height: inherit;
+}
+
+/* This is a bit hacky way, the goal being to have a framed toggle button widget with some styles
+of the frameless one (to fit the size of the toggle button */
+.mw-revslider-container .mw-revslider-auto-expand-button .oo-ui-buttonElement-button {
+	z-index: 10;
+	padding: 0;
+	box-sizing: border-box;
+	width: 1.875em;
+	height: 1.875em;
+	background-color: transparent;
+	border: 0;
 }
 
 .mw-revslider-auto-expand-button.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
