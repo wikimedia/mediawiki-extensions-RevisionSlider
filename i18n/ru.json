@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"Putnik"
+		]
+	},
+	"revisionslider": "RevisionSlider",
+	"revisionslider-desc": "Показывает слайдер для выбора и сравнения версий на странице разницы версий",
+	"revisionslider-beta-feature-message": "RevisionSlider",
+	"revisionslider-beta-feature-description": "Показать слайдер версий при сравнении двух версий страницы.",
+	"revisionslider-toggle-label": "Навигация по истории",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|байт|байта|байт}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|байт|байта|байт}}",
+	"revisionslider-label-date": "Дата",
+	"revisionslider-label-page-size": "Размер страницы",
+	"revisionslider-label-change-size": "Размер изменения",
+	"revisionslider-label-comment": "Комментарий",
+	"revisionslider-label-username": "{{GENDER:$1|Участник|Участница}}",
+	"revisionslider-minoredit": "Это малая правка",
+	"revisionslider-loading-failed": "Не получилось загрузить слайдер версий.",
+	"revisionslider-toggle-title-expand": "Открыть слайдер версий",
+	"revisionslider-toggle-title-collapse": "Свернуть слайдер версий",
+	"revisionslider-turn-on-auto-expand-title": "Автоматически разворачивать слайдер версий",
+	"revisionslider-turn-off-auto-expand-title": "Не разворачивать слайдер версий автоматически",
+	"revisionslider-arrow-tooltip-newer": "Смотреть более новые версии",
+	"revisionslider-arrow-tooltip-older": "Смотреть более старые версии",
+	"revisionslider-show-help-tooltip": "Показать текст справки",
+	"revisionslider-help-dialog-slide1": "Слайдер версий помогает вам перемещаться и сравнивать версии на странице сравнения версий. Он основывается на ([[m:WMDE_Technical_Wishes/RevisionSlider|пожелании сообщества]]) из списка технических пожеланий немецкоязычного сообщества. Ждём обратную связь [[mw:Extension_talk:RevisionSlider|здесь]].",
+	"revisionslider-help-dialog-slide2": "Каждый столбец представляет версию страницы. Столбцы выше линии показывают увеличение размера страницы, столбцы ниже линии показывают уменьшение. На рисунке редакция 1 показывет добавление содержимого, а редакция 2 показывает удаление.",
+	"revisionslider-help-dialog-slide3": "<p>Чтобы сравнить определенные версии, выберите их, используя желтый и синий указатели.</p><p>Синий указатель контролирует более новую редакцию, желтый указатель — более старую версию.</p><p>Перемещайте указатели перетаскиванием или кликая на столбцы.</p>",
+	"revisionslider-help-dialog-slide4": "Используйте стрелки вправо и влево для перемещения по истории страницы и просмотра более ранних и более поздних версий страницы.",
+	"revisionslider-tutorial": "Руководство по слайдеру версий",
+	"revisionslider-previous-dialog": "Предыдущая",
+	"revisionslider-next-dialog": "Следующая",
+	"revisionslider-close-dialog": "Закрыть"
+}

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Elisardojm",
-			"Macofe"
+			"Macofe",
+			"Banjo"
 		]
 	},
 	"revisionslider": "RevisionSlider",
@@ -18,10 +19,11 @@
 	"revisionslider-label-comment": "Comentario",
 	"revisionslider-label-username": "Nome de {{GENDER:$1|usuario|usuaria}}",
 	"revisionslider-minoredit": "Esta é unha edición pequena",
-	"revisionslider-loading-placeholder": "O deslizador de revisións está a cargarse...",
 	"revisionslider-loading-failed": "O deslizador de revisións non se puido cargar.",
 	"revisionslider-toggle-title-expand": "Abrir RevisionSlider",
 	"revisionslider-toggle-title-collapse": "Pechar RevisionSlider",
+	"revisionslider-turn-on-auto-expand-title": "Expandir o cronograma de revisións automáticamente",
+	"revisionslider-turn-off-auto-expand-title": "Non expandir o cronograma de revisións automáticamente",
 	"revisionslider-arrow-tooltip-newer": "Ver revisións máis recentes",
 	"revisionslider-arrow-tooltip-older": "Ver revisións máis vellas",
 	"revisionslider-show-help-tooltip": "Mostrar o texto de axuda",

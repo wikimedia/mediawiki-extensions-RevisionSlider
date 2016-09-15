@@ -24,7 +24,7 @@
 	"revisionslider-loading-failed": "Errore durante il caricamento di RevisionSlider.",
 	"revisionslider-toggle-title-expand": "Apri RevisionSlider",
 	"revisionslider-toggle-title-collapse": "Nascondi cursore delle versioni",
-	"revisionslider-turn-on-auto-expand-title": "Mostra automaticamente il cursore delle versioni",
+	"revisionslider-turn-on-auto-expand-title": "Mostra sempre il cursore delle versioni",
 	"revisionslider-turn-off-auto-expand-title": "Non mostrare automaticamente il cursore delle versioni",
 	"revisionslider-arrow-tooltip-newer": "Vedi le versioni più recenti",
 	"revisionslider-arrow-tooltip-older": "Vedi le versioni meno recenti",

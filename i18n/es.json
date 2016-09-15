@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Macofe",
-			"Rubentl134"
+			"Rubentl134",
+			"Dgstranz"
 		]
 	},
 	"revisionslider": "Deslizador de revisiones",
 	"revisionslider-desc": "Muestra un control deslizante que permite la selección y comparación de las revisiones en una página de diferencias",
 	"revisionslider-beta-feature-message": "Deslizador de revisiones",
-	"revisionslider-beta-feature-description": "Mostrar una deslizador de revisiones al comparar dos revisiones de una página.",
+	"revisionslider-beta-feature-description": "Mostrar un deslizador de revisiones al comparar dos revisiones de una página.",
 	"revisionslider-toggle-label": "Explorar historial",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte|bytes}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte|bytes}}",
@@ -21,6 +22,8 @@
 	"revisionslider-loading-failed": "El deslizador de revisiones no se pudo cargar.",
 	"revisionslider-toggle-title-expand": "Abrir el deslizador de revisiones",
 	"revisionslider-toggle-title-collapse": "Ocultar el deslizador de revisiones",
+	"revisionslider-turn-on-auto-expand-title": "Expandir siempre el deslizador de revisiones",
+	"revisionslider-turn-off-auto-expand-title": "No expandir automáticamente el deslizador de revisiones",
 	"revisionslider-arrow-tooltip-newer": "Ver revisiones más recientes",
 	"revisionslider-arrow-tooltip-older": "Ver revisiones anteriores",
 	"revisionslider-show-help-tooltip": "Mostrar el texto de ayuda",
