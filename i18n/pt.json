@@ -21,6 +21,8 @@
 	"revisionslider-loading-failed": "A barra de revisões falhou ao carregar.",
 	"revisionslider-toggle-title-expand": "Abrir barra de revisões",
 	"revisionslider-toggle-title-collapse": "Fechar barra de revisões",
+	"revisionslider-turn-on-auto-expand-title": "Expandir sempre a barra de revisões",
+	"revisionslider-turn-off-auto-expand-title": "Não expandir automaticamente a barra de revisões",
 	"revisionslider-arrow-tooltip-newer": "Ver revisões mais recentes",
 	"revisionslider-arrow-tooltip-older": "Ver revisões mais antigas",
 	"revisionslider-show-help-tooltip": "Mostrar texto de ajuda",

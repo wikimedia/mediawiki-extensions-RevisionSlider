@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ильнар"
+		]
+	},
+	"revisionslider": "Юрамалар гизгече",
+	"revisionslider-beta-feature-message": "Юрамалар гизгече",
+	"revisionslider-toggle-label": "Тарих буенча карау",
+	"revisionslider-label-comment": "Аңлатма",
+	"revisionslider-label-username": "{{GENDER:$1|Кулланучы}}",
+	"revisionslider-loading-failed": "Юрамалар гизгечен ачып булмады.",
+	"revisionslider-toggle-title-expand": "Юрамалар гизгечен ачу",
+	"revisionslider-toggle-title-collapse": "Юрамалар гизгечен ябу",
+	"revisionslider-help-dialog-slide1": "Юрамалар гизгече сезгә битнең юрамаларында булган аермалыкларны ачыклауда һәм ул аермалыклар арасында күчеш ясарга ярдәм итәчәк. Гизгеч – Алман [[m:WMDE_Technical_Wishes/RevisionSlider|кулланучылар берлеге соравы]] буенча тормышка ашырыла. Теләкләрегезне [[mw:Extension_talk:RevisionSlider|монда]] җибәрә аласыз.",
+	"revisionslider-tutorial": "Юрамалар гизгечен куллану",
+	"revisionslider-next-dialog": "Алга",
+	"revisionslider-close-dialog": "Ябу"
+}
