@@ -2,13 +2,27 @@
 	"@metadata": {
 		"authors": [
 			"MIKHEIL",
-			"Macofe"
+			"Macofe",
+			"David1010"
 		]
 	},
+	"revisionslider": "ვერსიის სლაიდერი",
+	"revisionslider-beta-feature-message": "ვერსიის სლაიდერი",
+	"revisionslider-toggle-label": "ისტორიის გადახედვა",
 	"revisionslider-label-date": "თარიღი",
 	"revisionslider-label-page-size": "გვერდის ზომა",
 	"revisionslider-label-change-size": "ზომის შეცვლა",
 	"revisionslider-label-comment": "კომენტარი",
 	"revisionslider-minoredit": "ეს არის მცირე რედაქტირება",
-	"revisionslider-show-help-tooltip": "იხილეთ დახმარების ტექსტი"
+	"revisionslider-loading-failed": "ვერსიის სლაიდერის ჩატვირთვა ვერ მოხერხდა.",
+	"revisionslider-toggle-title-expand": "ვერსიის სლაიდერის გახსნა",
+	"revisionslider-toggle-title-collapse": "ვერსიის სლაიდერის დახურვა",
+	"revisionslider-arrow-tooltip-newer": "ახალი ვერსიების ხილვა",
+	"revisionslider-arrow-tooltip-older": "ძველი ვერსიების ხილვა",
+	"revisionslider-show-help-tooltip": "იხილეთ დახმარების ტექსტი",
+	"revisionslider-help-dialog-slide1": "ვერსიის სლაიდერი გეხმარებათ ნავიგაციაში და საშუალებას გაძლევთ შეადაროთ გვერდის ვერსიები. ის დაფუძნებულია გერმანულენოვანი საზოგადოების ტექნიკური თხოვნების სიაში არსებულ [[m:WMDE_Technical_Wishes/RevisionSlider|საზოგადოებრივ მოთხოვნებზე]]. გამოხმაურებისთვის მოგვწერეთ [[mw:Extension_talk:RevisionSlider|აქ]].",
+	"revisionslider-help-dialog-slide2": "თითოეული სვეტი გვერდის ერთ ვერსიას შეესაბამება. ხაზის ზემოთ მოცემული სვეტები გვერდის ზომის ზრდას აჩვენებენ, ხოლო ხაზის ქვემოთ კი კლებას. ნახატზე, ვერსია 1 აჩვენებს შიგთავსის დამატებას, ხოლო ვერსია 2 შიგთავსის წაშლას.",
+	"revisionslider-help-dialog-slide3": "<p>განსაზღვრული ვერსიების შესადარებლად, გამოიყენეთ ყვითელი და ლურჯი სანიშნები.</p><p>ლურჯი სანიშნი აკონტროლებს უფრო ახალ ვერიას, ხოლო ყვითელი კი უფრო ძველს.</p><p>სანიშნების გადასაადგილებლად გადაათრიეთ ისინი ან დააწკაპუნეთ სვეტზე.</p>",
+	"revisionslider-help-dialog-slide4": "გვერდის ისტორიაში გადასაადგილებლად ან გვერდის უფრო ძველი და ახალი ვერსიების სანახავად გამოიყენეთ მარცხენა და მარჯვენა ისრები.",
+	"revisionslider-tutorial": "ვერსიის სლაიდერის სახელმძღვანელო"
 }

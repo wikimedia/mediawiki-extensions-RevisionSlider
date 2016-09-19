@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"فلورانس"
+			"فلورانس",
+			"MohammadtheEditor"
 		]
 	},
 	"revisionslider": "RevisionSlider",
@@ -29,7 +30,7 @@
 	"revisionslider-help-dialog-slide2": "هر نوار نشان دهنده یک ویرایش از این صفحه. میله بر رشد نشان می‌دهد بالا در اندازه صفحه، کافه‌ها در پایین نشان می‌دهد کاهش. در تصویر، تجدید نظر ۱ نشان دهنده محتوای اضافه شده است، در حالی که نسخه ۲ نشان دهنده حذف محتوا.",
 	"revisionslider-help-dialog-slide3": "<p> برای مقایسه تجدید نظر خاص، تجدید نظر با استفاده از اشاره گر زرد و آبی را انتخاب کنید. </P> <P> اشاره گر آبی کنترل نسخه جدیدتر، نقشه اشاره گر زرد به نسخه قدیمیتر. </P> <P> حرکت اشاره گر با کشیدن و رها کردن و یا بر روی یک نوار کلیک کنید. </P>",
 	"revisionslider-help-dialog-slide4": "استفاده از فلش رو به عقب و جلو به طول تاریخ تجدید نظر حرکت و نشان می دهد نسخه های قدیمی تر و جدیدتر.",
-	"revisionslider-tutorial": "آموزش های های اسلایدر تجدیدنظر",
+	"revisionslider-tutorial": "آموزش های های اسلایدر نسخه‌ها",
 	"revisionslider-previous-dialog": "قبلی",
 	"revisionslider-next-dialog": "بعدی",
 	"revisionslider-close-dialog": "بستن"

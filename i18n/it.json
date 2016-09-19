@@ -5,7 +5,8 @@
 			"Matteocng",
 			"Macofe",
 			"Ferdi2005",
-			"Valepert"
+			"Valepert",
+			"Nastoshka"
 		]
 	},
 	"revisionslider": "Cursore delle versioni",
@@ -29,6 +30,11 @@
 	"revisionslider-arrow-tooltip-newer": "Vedi le versioni più recenti",
 	"revisionslider-arrow-tooltip-older": "Vedi le versioni meno recenti",
 	"revisionslider-show-help-tooltip": "Mostra testo di aiuto",
+	"revisionslider-help-dialog-slide1": "Revision Slider ti consente di navigare e confrontare diverse versioni di una pagina (diff). È stata creata per realizzare una [[m:WMDE_Technical_Wishes/RevisionSlider|proposta]] espressa dalla comunità germanofona tra le richieste tecniche della comunità. Ogni commento sarà il benvenuto [[mw:Extension_talk:RevisionSlider|su questa pagina]].",
+	"revisionslider-help-dialog-slide2": "Ogni barra rappresenta una diversa versione della pagina. Le barre che sporgono verso l'alto mostrano un aumento della grandezza della pagina, le barre verso il basso, invece, una riduzione. Nell'immagine, la modifica 1 rappresenta un aggiunta di contenuti, mentre la modifica 2 una rimozione di contenuti.",
+	"revisionslider-help-dialog-slide3": "<p>Per confrontare determinate modifiche ad una pagina seleziona le versioni usando i puntatori giallo e blu.</p><p>Il puntatore blu indica la più recente delle modifiche da controllare, quello giallo la più vecchia.</p><p> Sposta i puntatori trascinandoli o cliccando su una barra.</p>",
+	"revisionslider-help-dialog-slide4": "Usa le frecce avanti e indietro per muoverti tra la cronologia e mostrare versioni più vecchie o più recenti.",
+	"revisionslider-tutorial": "Tutorial del Revision slider",
 	"revisionslider-previous-dialog": "Precedente",
 	"revisionslider-next-dialog": "Successivo",
 	"revisionslider-close-dialog": "Chiudi"
