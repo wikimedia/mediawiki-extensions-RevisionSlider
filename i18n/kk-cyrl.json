@@ -4,10 +4,10 @@
 			"Arystanbek"
 		]
 	},
-	"revisionslider": "RevisionSlider",
-	"revisionslider-desc": "Беттің айырмашылығын \nБеттегі таңдалған және салыстырылған нұсқалар айырмашылығын слайт түрінде көрсетеді",
-	"revisionslider-beta-feature-message": "RevisionSlider",
-	"revisionslider-beta-feature-description": "Беттің екі нұсқасын салыстырғанда revision slider көрсету",
+	"revisionslider": "Нұсқа слайдері",
+	"revisionslider-desc": "Беттің айырмашылығын беттегі таңдалған және салыстырылған нұсқалар айырмашылығын слайт түрінде көрсетеді",
+	"revisionslider-beta-feature-message": "Нұсқа слайдері",
+	"revisionslider-beta-feature-description": "Беттің екі нұсқасын салыстырғанда нұсқа слайдерін көрсету",
 	"revisionslider-toggle-label": "Тарихын шолу",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|байт|байт}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|байт|байт}}",

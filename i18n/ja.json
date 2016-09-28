@@ -2,9 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Otokoume",
-			"Macofe"
+			"Macofe",
+			"にょきにょき"
 		]
 	},
+	"revisionslider": "リビジョンスライダー",
+	"revisionslider-desc": "版間の差分を表示する際にスライダーを使って版の選択ができるようになります。",
+	"revisionslider-beta-feature-message": "リビジョンスライダー",
+	"revisionslider-toggle-label": "履歴の閲覧",
 	"revisionslider-page-size": "$1{{PLURAL:$2|バイト}}",
 	"revisionslider-change-size": "$1{{PLURAL:$3|バイト}}",
 	"revisionslider-label-date": "データ",
@@ -12,6 +17,14 @@
 	"revisionslider-label-change-size": "変更されたサイズ",
 	"revisionslider-label-comment": "コメント",
 	"revisionslider-label-username": "{{GENDER:$1|利用者名}}",
+	"revisionslider-minoredit": "細部の編集",
+	"revisionslider-toggle-title-expand": "リビジョンスライダーを開く",
+	"revisionslider-toggle-title-collapse": "リビジョンスライダーを閉じる",
+	"revisionslider-turn-on-auto-expand-title": "常にリビジョンスライダーを開いておく",
+	"revisionslider-turn-off-auto-expand-title": "自動的にリビジョンスライダーが開かないようにする",
+	"revisionslider-arrow-tooltip-newer": "新しい履歴の表示",
+	"revisionslider-arrow-tooltip-older": "古い履歴の表示",
+	"revisionslider-show-help-tooltip": "ヘルプを見る",
 	"revisionslider-help-dialog-slide3": "<p>特定の版同士を比較するには、黄色と青のポインタを使用して版を選択します。</p><p>青のポインタは新しい版を選択し、黄色のポインタは古い版を選択してください。</p><p>ポインタは、ドラッグアンドドロップするか、バーをクリックすることで移動できます。</p>",
 	"revisionslider-previous-dialog": "前へ",
 	"revisionslider-next-dialog": "次へ",
