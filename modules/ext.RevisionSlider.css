@@ -122,6 +122,10 @@
 	word-wrap: break-word;
 }
 
+.mw-revslider-revision-tooltip .oo-ui-popupWidget-body {
+	padding-right: 19px;
+}
+
 .mw-revslider-revision-tooltip .mw-revslider-change-positive {
 	color: #006400;
 }
