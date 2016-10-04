@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"فلورانس",
-			"MohammadtheEditor"
+			"MohammadtheEditor",
+			"Ebraminio"
 		]
 	},
 	"revisionslider": "RevisionSlider",
 	"revisionslider-desc": "یک نوار لغزنده را نشان داده و اجازه انتخاب و مقایسه برای تجدید نظر در صفحه تفاوت را نشان می‌دهد",
-	"revisionslider-beta-feature-message": "RevisionSlider",
+	"revisionslider-beta-feature-message": "لغزش‌کنندهٔ نسخه‌ها",
 	"revisionslider-beta-feature-description": "نمایش یک نوار لغزنده نسخه هنگام مقایسه دو تجدید نظر در یک صفحه.",
 	"revisionslider-toggle-label": "نمایش تاریخچه",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte|بایت}}",
