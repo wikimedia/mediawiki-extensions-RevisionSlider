@@ -27,10 +27,9 @@ class RevisionSliderHooks {
 		}
 
 		/**
-		 * Do not show the RevisionSlider on special pages that use a Diff view for example
-		 * Special:ComparePages
+		 * Do not show the RevisionSlider when revisions from two different pages are being compared
 		 */
-		if ( $diff->getTitle()->inNamespace( NS_SPECIAL ) ) {
+		if ( !$oldRev->getTitle()->equals( $newRev->getTitle() ) ) {
 			return true;
 		}
 
