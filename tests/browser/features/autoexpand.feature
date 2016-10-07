@@ -8,35 +8,39 @@ Feature: RevisionSlider auto expand
 
   Scenario: Revision slider does not automatically expand by default
     Given I am on the diff page
-    And The auto expand button is visible
-    Then The auto expand button should be off
+    Then The auto expand button should be visible
+    And The auto expand button should be off
     And There should be a RevisionSlider expand button
     And RevisionSlider wrapper should be hidden
 
-  Scenario: Revision slider expands automatically when auto expand is on
+  Scenario: Revision slider expands automatically when clicking auto expand
     Given I am on the diff page
-    And I click on the auto expand button
+    When I click on the auto expand button
     And I wait for the setting to be saved
-    Then The auto expand button should be on
+    Then The auto expand button should be visible
+    And The auto expand button should be on
     And RevisionSlider wrapper should be visible
     And The RevisionSlider has loaded
-    Given I refresh the page
-    And The auto expand button is visible
-    Then The auto expand button should be on
+
+  Scenario: Revision slider expands automatically when auto expand is on
+    Given I am on the diff page
+    When I click on the auto expand button
+    And I wait for the setting to be saved
+    And I refresh the page
+    Then The auto expand button should be visible
+    And The auto expand button should be on
     And RevisionSlider wrapper should be visible
     And The RevisionSlider has loaded
 
   Scenario: Revision slider does not expand automatically when auto expand is off
     Given I am on the diff page
-    And I click on the auto expand button
+    When I click on the auto expand button
     And I wait for the setting to be saved
     And I have closed the help dialog at the start
     And The help dialog is hidden
-    Then The auto expand button should be on
-    Given I click on the auto expand button
+    And I click on the auto expand button
     And I wait for the setting to be saved
-    Then The auto expand button should be off
-    Given I refresh the page
-    And The auto expand button is visible
-    Then The auto expand button should be off
+    And I refresh the page
+    Then The auto expand button should be visible
+    And The auto expand button should be off
     And RevisionSlider wrapper should be hidden

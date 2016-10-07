@@ -26,7 +26,7 @@ When(/^I click the browser forward button$/) do
   on(ArticlePage).forward
 end
 
-Given(/^The RevisionSlider has loaded$/) do
+Then(/^The RevisionSlider has loaded$/) do
   on(DiffPage).wait_for_slider_to_load
 end
 
@@ -34,7 +34,7 @@ Given(/^The window size is (\d+) by (\d+)$/) do |width,height|
   browser.window.resize_to(width.to_i, height.to_i)
 end
 
-Given(/^The auto expand button is visible/) do
+Then(/^The auto expand button should be visible/) do
   expect(on(DiffPage).revisionslider_auto_expand_button_element.when_visible).to be_visible
 end
 
