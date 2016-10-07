@@ -8,7 +8,7 @@ Feature: RevisionSlider pointers
     And I am on the diff page
     And I click on the expand button
     And The RevisionSlider has loaded
-    And I have closed the help dialog at the start
+    And I have dismissed the help dialog
     And The help dialog is hidden
 
   Scenario: RevisionSlider pointers move then revision bars are clicked

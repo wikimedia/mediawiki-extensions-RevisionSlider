@@ -10,7 +10,7 @@ Feature: RevisionSlider timeline
     And I am on the diff page
     And I click on the expand button
     And The RevisionSlider has loaded
-    And I have closed the help dialog at the start
+    And I have dismissed the help dialog
     Then The backward arrow should be disabled
     And The forward arrow should be disabled
 
@@ -20,7 +20,7 @@ Feature: RevisionSlider timeline
     And I am on the diff page
     And I click on the expand button
     And The RevisionSlider has loaded
-    And I have closed the help dialog at the start
+    And I have dismissed the help dialog
     And The help dialog is hidden
     Then The backward arrow should be enabled
     And The forward arrow should be disabled

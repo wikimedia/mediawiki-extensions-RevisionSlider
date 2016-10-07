@@ -21,5 +21,6 @@ Feature: RevisionSlider expand
     Given I am on the diff page
     When I click on the expand button
     And I wait until the RevisionSlider has loaded
+    And I have dismissed the help dialog
     And I click on the expand button
     Then RevisionSlider wrapper should be hidden

@@ -36,7 +36,7 @@ Feature: RevisionSlider auto expand
     Given I am on the diff page
     When I click on the auto expand button
     And I wait for the setting to be saved
-    And I have closed the help dialog at the start
+    And I have dismissed the help dialog
     And The help dialog is hidden
     And I click on the auto expand button
     And I wait for the setting to be saved

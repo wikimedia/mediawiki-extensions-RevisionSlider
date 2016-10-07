@@ -8,7 +8,7 @@ Feature: RevisionSlider tooltips
     And I am on the diff page
     And I click on the expand button
     And The RevisionSlider has loaded
-    And I have closed the help dialog at the start
+    And I have dismissed the help dialog
 
   Scenario: RevisionSlider revision tooltip appears on hover
     Given I hover over revision 1
