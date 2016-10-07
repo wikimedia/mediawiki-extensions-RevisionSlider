@@ -13,16 +13,13 @@ Feature: RevisionSlider expand
 
   Scenario: RevisionSlider loads after expanding
     Given I am on the diff page
-    And I click on the expand button
+    When I click on the expand button
     Then RevisionSlider wrapper should be visible
     And The RevisionSlider has loaded
 
   Scenario: RevisionSlider hides after collapsing
     Given I am on the diff page
+    When I click on the expand button
+    And I wait until the RevisionSlider has loaded
     And I click on the expand button
-    Then RevisionSlider wrapper should be visible
-    And The RevisionSlider has loaded
-    And I have closed the help dialog at the start
-    And The help dialog is hidden
-    Given I click on the expand button
     Then RevisionSlider wrapper should be hidden

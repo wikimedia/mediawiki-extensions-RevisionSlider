@@ -26,6 +26,10 @@ When(/^I click the browser forward button$/) do
   on(ArticlePage).forward
 end
 
+When(/^I wait until the RevisionSlider has loaded$/) do
+  step 'The RevisionSlider has loaded'
+end
+
 Then(/^The RevisionSlider has loaded$/) do
   on(DiffPage).wait_for_slider_to_load
 end
