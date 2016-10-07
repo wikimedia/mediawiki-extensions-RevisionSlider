@@ -27,9 +27,18 @@ class DiffPage
     element('div', css: '.mw-revslider-revision[data-pos="' + index.to_s + '"]')
   end
 
+  def click_revision_lower(index = 1)
+    revbar = revisionslider_rev(index).element.wd
+    browser.driver.action.move_to(revbar, 1, revbar.size.height - 1).click.perform
+  end
+
+  def click_revision_upper(index = 1)
+    revbar = revisionslider_rev(index).element.wd
+    browser.driver.action.move_to(revbar, 1, 0).click.perform
+  end
+
   def revisionslider_tooltip(index = 1)
     element('div', css: '.mw-revslider-revision-tooltip-' + index.to_s)
-
   end
 
   def wait_for_slider_to_load

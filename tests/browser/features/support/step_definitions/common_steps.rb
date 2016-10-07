@@ -30,6 +30,12 @@ When(/^I wait until the RevisionSlider has loaded$/) do
   step 'The RevisionSlider has loaded'
 end
 
+When(/^I have loaded the RevisionSlider and dismissed the help dialog$/) do
+  step 'I click on the expand button'
+  step 'I wait until the RevisionSlider has loaded'
+  step 'I have dismissed the help dialog'
+end
+
 Then(/^The RevisionSlider has loaded$/) do
   on(DiffPage).wait_for_slider_to_load
 end
