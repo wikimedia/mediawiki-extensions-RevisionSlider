@@ -26,6 +26,7 @@
 	"revisionslider-arrow-tooltip-newer": "Nieuwere versies weergeven",
 	"revisionslider-arrow-tooltip-older": "Oudere versies weergeven",
 	"revisionslider-show-help-tooltip": "Hulptekst weergeven",
+	"revisionslider-help-dialog-slide1": "De paginageschiedenisbalk helpt bij het navigeren door en het vergelijken van versies van een pagina. Het is ontwikkeld op [[m:WMDE_Technical_Wishes/RevisionSlider|wens]] van de Duitstalige gemeenschap. Terugkoppeling is zeer welkom en kan [[mw:Extension_talk:RevisionSlider|hier]] worden achtergelaten.",
 	"revisionslider-tutorial": "Paginageschiedenisbalk-handleiding",
 	"revisionslider-previous-dialog": "Vorige",
 	"revisionslider-next-dialog": "Volgende",
