@@ -213,6 +213,8 @@
 
 					self.refreshRevisions( revId1, revId2 );
 
+					self.updatePointerPositionAttributes();
+
 					$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-pointer-cursor' );
 				},
 				drag: function ( event, ui ) {
@@ -319,6 +321,7 @@
 			view.resetPointerColorsBasedOnValues( view.pointerOlder.getPosition(), view.pointerNewer.getPosition() );
 			view.resetRevisionStylesBasedOnPointerPosition( $revisions );
 			view.alignPointers();
+			view.updatePointerPositionAttributes();
 		},
 
 		/**
@@ -402,6 +405,7 @@
 			}
 			this.pointerNewer.setPosition( $newRevElement.data( 'pos' ) );
 			this.resetPointerStylesBasedOnPosition();
+			this.updatePointerPositionAttributes();
 		},
 
 		/**
@@ -450,6 +454,21 @@
 				this.getRevElementAtPosition( $revisions, positionIndex ).addClass( 'mw-revslider-revision-intermediate' );
 				positionIndex++;
 			}
+		},
+
+		/**
+		 * Updates value of pointers' position data attribute
+		 */
+		updatePointerPositionAttributes: function () {
+			this.getNewRevPointer().getView().getElement().attr(
+				'data-pos',
+				this.getNewRevPointer().getPosition()
+			);
+
+			this.getOldRevPointer().getView().getElement().attr(
+				'data-pos',
+				this.getOldRevPointer().getPosition()
+			);
 		},
 
 		/**

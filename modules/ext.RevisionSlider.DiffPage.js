@@ -204,6 +204,7 @@
 				sliderView.resetRevisionStylesBasedOnPointerPosition(
 					sliderView.$element.find( 'div.mw-revslider-revisions' )
 				);
+				sliderView.updatePointerPositionAttributes();
 				self.refresh( event.state.revid1, event.state.revid2 );
 			} );
 		}
