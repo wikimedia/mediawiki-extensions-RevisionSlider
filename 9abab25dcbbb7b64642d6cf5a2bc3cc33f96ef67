@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e6f8b3b_35912ffc",
+        "filename": "tests/browser/features/history.feature",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-10-11T12:36:34Z",
+      "side": 1,
+      "message": "And I drag...",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 9
+      },
+      "revId": "9abab25dcbbb7b64642d6cf5a2bc3cc33f96ef67",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
