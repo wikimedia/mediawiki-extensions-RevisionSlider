@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e6f8b3b_6b0663d3",
+        "filename": "tests/browser/features/support/step_definitions/pointers.rb",
+        "patchSetId": 11
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2016-10-12T09:48:47Z",
+      "side": 1,
+      "message": "I saw this pattern (having two identical steps, one as \"given\" and one as \"when\") a few times in your patches. Is this a migration path, or are the two supposed to stay?",
+      "revId": "722242a6007496d294bb6511e075e25478948458",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
