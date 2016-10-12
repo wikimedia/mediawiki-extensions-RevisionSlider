@@ -52,6 +52,24 @@
       "revId": "c2f4b64a3af3aea4de2852a69a1a843f482122d6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e6f8b3b_eb189325",
+        "filename": "tests/browser/features/pointers.feature",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2016-10-12T09:53:00Z",
+      "side": 1,
+      "message": "Indeed, I\u0027ve found one obsolete step and removed it here: https://gerrit.wikimedia.org/r/#/c/315483/",
+      "parentUuid": "4e6f8b3b_cb467726",
+      "revId": "c2f4b64a3af3aea4de2852a69a1a843f482122d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
