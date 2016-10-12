@@ -37,7 +37,6 @@ Feature: RevisionSlider auto expand
     When I click on the auto expand button
     And I wait for the setting to be saved
     And I have dismissed the help dialog
-    And The help dialog is hidden
     And I click on the auto expand button
     And I wait for the setting to be saved
     And I refresh the page
