@@ -16,6 +16,24 @@
       "revId": "c2f4b64a3af3aea4de2852a69a1a843f482122d6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e6f8b3b_2b91cb9c",
+        "filename": "tests/browser/features/pointers.feature",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2016-10-12T09:30:16Z",
+      "side": 1,
+      "message": "You\u0027re right Thiemo - this was fixed later on in https://gerrit.wikimedia.org/r/#/c/314706/",
+      "parentUuid": "4e6f8b3b_909bca1a",
+      "revId": "c2f4b64a3af3aea4de2852a69a1a843f482122d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
