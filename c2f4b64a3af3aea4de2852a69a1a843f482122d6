@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e6f8b3b_909bca1a",
+        "filename": "tests/browser/features/pointers.feature",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2016-10-12T09:10:28Z",
+      "side": 1,
+      "message": "This \"help dialog is hidden\" is of no value any more, because this step is already included in the previous \"dismissed\" step. Is this a mistake?\n\nSame in other places with the new \"dismissed\" step.",
+      "revId": "c2f4b64a3af3aea4de2852a69a1a843f482122d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
