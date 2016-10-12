@@ -306,12 +306,14 @@
 
 			if ( hasClickedTop ) {
 				pNew.setPosition( parseInt( $clickedRev.attr( 'data-pos' ), 10 ) );
+				view.updatePointerPositionAttributes();
 				view.refreshRevisions(
 					view.getRevElementAtPosition( $revisions, pOld.getPosition() ).data( 'revid' ),
 					$clickedRev.data( 'revid' )
 				);
 			} else {
 				pOld.setPosition( parseInt( $clickedRev.attr( 'data-pos' ), 10 ) );
+				view.updatePointerPositionAttributes();
 				view.refreshRevisions(
 					$clickedRev.data( 'revid' ),
 					view.getRevElementAtPosition( $revisions, pNew.getPosition() ).data( 'revid' )
@@ -321,7 +323,6 @@
 			view.resetPointerColorsBasedOnValues( view.pointerOlder.getPosition(), view.pointerNewer.getPosition() );
 			view.resetRevisionStylesBasedOnPointerPosition( $revisions );
 			view.alignPointers();
-			view.updatePointerPositionAttributes();
 		},
 
 		/**
