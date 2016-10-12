@@ -34,6 +34,24 @@
       "revId": "c2f4b64a3af3aea4de2852a69a1a843f482122d6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e6f8b3b_cb467726",
+        "filename": "tests/browser/features/pointers.feature",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2016-10-12T09:42:58Z",
+      "side": 1,
+      "message": "I do see many occurrences of\n\n And I have dismissed the help dialog\n And The help dialog is hidden\n\nin this patch, but I see only one removed in the patch you are mentioning. I suggest to do a global search for these two lines.",
+      "parentUuid": "4e6f8b3b_2b91cb9c",
+      "revId": "c2f4b64a3af3aea4de2852a69a1a843f482122d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
