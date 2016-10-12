@@ -16,6 +16,24 @@
       "revId": "9063ec118bf64b63ca0c54ab4d596eddc3c18ea6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e6f8b3b_bd397e40",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2016-10-12T14:18:38Z",
+      "side": 1,
+      "message": "You\u0027re right! Sorry, my fault.",
+      "parentUuid": "4e6f8b3b_ddff1a61",
+      "revId": "9063ec118bf64b63ca0c54ab4d596eddc3c18ea6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
