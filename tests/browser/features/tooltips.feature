@@ -5,23 +5,21 @@ Feature: RevisionSlider tooltips
     And I have reset my preferences
     And RevisionSlider is enabled as a beta feature
     And a page with 4 revision(s) exists
-    And I am on the diff page
-    And I click on the expand button
-    And The RevisionSlider has loaded
-    And I have dismissed the help dialog
 
   Scenario: RevisionSlider revision tooltip appears on hover
-    Given I hover over revision 1
-    Then a tooltip should be present for revision 1
-    Given I hover over revision 2
+    Given I am on the diff page
+    When I have loaded the RevisionSlider and dismissed the help dialog
+    And I hover over revision 1
+    And I hover over revision 2
     Then a tooltip should be present for revision 2
     And no tooltip should be present for revision 1
 
   Scenario: RevisionSlider revision tooltip appears and remains on hover
-    Given I hover over revision 1
-    Then a tooltip should be present for revision 1
-    Given I hover over the revision 1 tooltip
-    Then a tooltip should be present for revision 1
-    Given I hover over revision 2
+    Given I am on the diff page
+    When I have loaded the RevisionSlider and dismissed the help dialog
+    And I hover over revision 1
+    And I hover over the revision 1 tooltip
+    And I hover over revision 2
+    And I hover over the revision 2 tooltip
     Then a tooltip should be present for revision 2
     And no tooltip should be present for revision 1
