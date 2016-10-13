@@ -16,6 +16,24 @@
       "revId": "62832f3ed779895634cf38e05f58780e910f319e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e6c1747_986dc199",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-10-13T14:53:12Z",
+      "side": 1,
+      "message": "Done and rebased",
+      "parentUuid": "2e6c1747_1d1c637c",
+      "revId": "62832f3ed779895634cf38e05f58780e910f319e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
