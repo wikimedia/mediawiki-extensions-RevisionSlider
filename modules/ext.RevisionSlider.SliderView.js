@@ -83,6 +83,7 @@
 				pointerContainerPosition = 53,
 				pointerContainerWidth = containerWidth + this.revisionWidth - 1,
 				pointerContainerStyle,
+				lastValidLeftPos,
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
 				$slider = $( '<div>' )
 					.addClass( 'mw-revslider-revision-slider' )
@@ -226,18 +227,24 @@
 					$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-pointer-cursor' );
 				},
 				drag: function ( event, ui ) {
-					var newestVisibleRevisionLeftPos = $( '.mw-revslider-revisions-container' ).width() - self.revisionWidth;
+					var olderLeftPos, newerLeftPos,
+						isNew = $( this ).hasClass( 'mw-revslider-pointer-newer' ),
+						newestVisibleRevisionLeftPos = $( '.mw-revslider-revisions-container' ).width() - self.revisionWidth;
+
 					ui.position.left = Math.min( ui.position.left, newestVisibleRevisionLeftPos );
-					if ( self.dir === 'ltr' ) {
-						self.resetPointerColorsBasedOnValues(
-							self.pointerOlder.getView().getElement().offset().left,
-							self.pointerNewer.getView().getElement().offset().left
-						);
+
+					olderLeftPos = self.pointerOlder.getView().getElement().position().left;
+					newerLeftPos = self.pointerNewer.getView().getElement().position().left;
+
+					if ( ui.position.left === ( isNew ? olderLeftPos : newerLeftPos ) ) {
+						ui.position.left = lastValidLeftPos;
 					} else {
-						self.resetPointerColorsBasedOnValues(
-							self.pointerNewer.getView().getElement().offset().left,
-							self.pointerOlder.getView().getElement().offset().left
-						);
+						lastValidLeftPos = ui.position.left;
+						if ( self.dir === 'ltr' ) {
+							self.resetPointerColorsBasedOnValues( olderLeftPos, newerLeftPos );
+						} else {
+							self.resetPointerColorsBasedOnValues( newerLeftPos, olderLeftPos );
+						}
 					}
 				}
 			} );
@@ -304,30 +311,28 @@
 		},
 
 		revisionWrapperClickHandler: function ( e ) {
-			var $revWrap = $( this ),
+			var pClicked, pOther,
+				$revWrap = $( this ),
 				view = e.data.view,
 				$revisions = e.data.revisionsDom,
 				$clickedRev = $revWrap.find( '.mw-revslider-revision' ),
 				hasClickedTop = e.pageY - $revWrap.offset().top < $revWrap.height() / 2,
 				pOld = view.getOldRevPointer(),
-				pNew = view.getNewRevPointer();
+				pNew = view.getNewRevPointer(),
+				targetPos = +$clickedRev.attr( 'data-pos' );
 
-			if ( hasClickedTop ) {
-				pNew.setPosition( +$clickedRev.attr( 'data-pos' ) );
-				view.updatePointerPositionAttributes();
-				view.refreshRevisions(
-					view.getRevElementAtPosition( $revisions, pOld.getPosition() ).data( 'revid' ),
-					$clickedRev.data( 'revid' )
-				);
-			} else {
-				pOld.setPosition( +$clickedRev.attr( 'data-pos' ) );
-				view.updatePointerPositionAttributes();
-				view.refreshRevisions(
-					$clickedRev.data( 'revid' ),
-					view.getRevElementAtPosition( $revisions, pNew.getPosition() ).data( 'revid' )
-				);
+			pClicked = hasClickedTop ? pNew : pOld;
+			pOther = hasClickedTop ? pOld : pNew;
+
+			if ( targetPos === pOther.getPosition() ) {
+				return false;
 			}
-
+			pClicked.setPosition( targetPos );
+			view.updatePointerPositionAttributes();
+			view.refreshRevisions(
+				+view.getRevElementAtPosition( $revisions, pOther.getPosition() ).data( 'revid' ),
+				+$clickedRev.data( 'revid' )
+			);
 			view.resetPointerColorsBasedOnValues( view.pointerOlder.getPosition(), view.pointerNewer.getPosition() );
 			view.resetRevisionStylesBasedOnPointerPosition( $revisions );
 			view.alignPointers();
