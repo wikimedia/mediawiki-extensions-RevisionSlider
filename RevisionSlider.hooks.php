@@ -120,8 +120,8 @@ class RevisionSliderHooks {
 			'label-message' => 'revisionslider-beta-feature-message',
 			'desc-message' => 'revisionslider-beta-feature-description',
 			'screenshot' => [
-				'ltr' => "$wgExtensionAssetsPath/RevisionSlider/resources/RevisionSlider-beta-features-ltr.png",
-				'rtl' => "$wgExtensionAssetsPath/RevisionSlider/resources/RevisionSlider-beta-features-rtl.png",
+				'ltr' => "$wgExtensionAssetsPath/RevisionSlider/resources/RevisionSlider-beta-features-ltr.svg",
+				'rtl' => "$wgExtensionAssetsPath/RevisionSlider/resources/RevisionSlider-beta-features-rtl.svg",
 			],
 			'info-link' => 'https://www.mediawiki.org/wiki/Extension:RevisionSlider',
 			'discussion-link' => 'https://www.mediawiki.org/wiki/Extension_talk:RevisionSlider',
