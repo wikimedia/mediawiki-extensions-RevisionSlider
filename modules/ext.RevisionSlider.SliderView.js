@@ -205,15 +205,15 @@
 						revId1, revId2;
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
 					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + relativeIndex );
+					self.updatePointerPositionAttributes();
 					self.resetPointerStylesBasedOnPosition();
 					self.resetRevisionStylesBasedOnPointerPosition( $revisions );
 
 					revId1 = self.getRevElementAtPosition( $revisions, self.pointerOlder.getPosition() ).data( 'revid' );
+
 					revId2 = self.getRevElementAtPosition( $revisions, self.pointerNewer.getPosition() ).data( 'revid' );
 
 					self.refreshRevisions( revId1, revId2 );
-
-					self.updatePointerPositionAttributes();
 
 					$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-pointer-cursor' );
 				},
