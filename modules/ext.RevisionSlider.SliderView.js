@@ -73,6 +73,11 @@
 		 */
 		noMoreOlderRevisions: false,
 
+		/**
+		 * @type {string}
+		 */
+		dir: null,
+
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
 				pointerContainerPosition = 53,
@@ -88,7 +93,9 @@
 				forwardArrowPopup,
 				self = this;
 
-			if ( $slider.css( 'direction' ) === 'rtl' ) {
+			this.dir = $container.css( 'direction' ) || 'ltr';
+
+			if ( this.dir === 'rtl' ) {
 				this.rtlScrollLeftType = this.determineRtlScrollType();
 			}
 
@@ -161,7 +168,7 @@
 				.focusin( { button: this.forwardArrowButton }, this.arrowFocusHandler );
 
 			pointerContainerStyle = { left: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
-			if ( $slider.css( 'direction' ) === 'rtl' ) {
+			if ( this.dir === 'rtl' ) {
 				// Due to properly limit dragging a pointer on the right side of the screen,
 				// there must some extra space added to the right of the revision bar container
 				// For this reason right position of the pointer container in the RTL mode is
@@ -200,7 +207,7 @@
 					var $p = $( this ),
 						pointer = self.whichPointer( $p ),
 						pos = parseInt( $p.css( 'left' ), 10 ),
-						adjustedPos = $p.offsetParent().css( 'direction' ) === 'rtl' ? pointer.getView().getAdjustedLeftPositionWhenRtl( pos ) : pos,
+						adjustedPos = self.dir === 'rtl' ? pointer.getView().getAdjustedLeftPositionWhenRtl( pos ) : pos,
 						relativeIndex = Math.ceil( ( adjustedPos + self.revisionWidth / 2 ) / self.revisionWidth ),
 						revId1, revId2;
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
@@ -220,7 +227,7 @@
 				drag: function ( event, ui ) {
 					var newestVisibleRevisionLeftPos = $( '.mw-revslider-revisions-container' ).width() - self.revisionWidth;
 					ui.position.left = Math.min( ui.position.left, newestVisibleRevisionLeftPos );
-					if ( $( this ).css( 'direction' ) === 'ltr' ) {
+					if ( self.dir === 'ltr' ) {
 						self.resetPointerColorsBasedOnValues(
 							self.pointerOlder.getView().getElement().offset().left,
 							self.pointerNewer.getView().getElement().offset().left
@@ -503,7 +510,7 @@
 			}
 
 			animateObj = { scrollLeft: this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth };
-			if ( this.$element.css( 'direction' ) === 'rtl' ) {
+			if ( this.dir === 'rtl' ) {
 				animateObj.scrollLeft = this.getRtlScrollLeft( $animatedElement, animateObj.scrollLeft );
 			}
 
@@ -769,7 +776,7 @@
 
 			scrollLeft = this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth;
 			$revisionContainer.scrollLeft( scrollLeft );
-			if ( this.$element.css( 'direction' ) === 'rtl' ) {
+			if ( this.dir === 'rtl' ) {
 				$revisionContainer.scrollLeft( self.getRtlScrollLeft( $revisionContainer, scrollLeft ) );
 			}
 
