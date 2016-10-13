@@ -132,9 +132,9 @@
 		 * @param {jQuery} $rev
 		 */
 		showTooltip: function ( $rev ) {
-			var pos = parseInt( $rev.find( '.mw-revslider-revision' ).attr( 'data-pos' ), 10 ),
-				revId = parseInt( $rev.find( '.mw-revslider-revision' ).attr( 'data-revid' ), 10 ),
-				revision =  this.getRevisionWithId( revId ),
+			var pos = +$rev.find( '.mw-revslider-revision' ).attr( 'data-pos' ),
+				revId = +$rev.find( '.mw-revslider-revision' ).attr( 'data-revid' ),
+				revision = this.getRevisionWithId( revId ),
 				tooltip;
 			if ( revision === null ) {
 				return;

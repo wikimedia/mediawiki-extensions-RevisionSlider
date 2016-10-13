@@ -206,10 +206,11 @@
 				stop: function () {
 					var $p = $( this ),
 						pointer = self.whichPointer( $p ),
-						pos = parseInt( $p.css( 'left' ), 10 ),
+						pos = $p.position().left,
 						adjustedPos = self.dir === 'rtl' ? pointer.getView().getAdjustedLeftPositionWhenRtl( pos ) : pos,
 						relativeIndex = Math.ceil( ( adjustedPos + self.revisionWidth / 2 ) / self.revisionWidth ),
 						revId1, revId2;
+
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
 					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + relativeIndex );
 					self.resetPointerStylesBasedOnPosition();
@@ -312,14 +313,14 @@
 				pNew = view.getNewRevPointer();
 
 			if ( hasClickedTop ) {
-				pNew.setPosition( parseInt( $clickedRev.attr( 'data-pos' ), 10 ) );
+				pNew.setPosition( +$clickedRev.attr( 'data-pos' ) );
 				view.updatePointerPositionAttributes();
 				view.refreshRevisions(
 					view.getRevElementAtPosition( $revisions, pOld.getPosition() ).data( 'revid' ),
 					$clickedRev.data( 'revid' )
 				);
 			} else {
-				pOld.setPosition( parseInt( $clickedRev.attr( 'data-pos' ), 10 ) );
+				pOld.setPosition( +$clickedRev.attr( 'data-pos' ) );
 				view.updatePointerPositionAttributes();
 				view.refreshRevisions(
 					$clickedRev.data( 'revid' ),
@@ -809,7 +810,7 @@
 		 * @return {boolean}
 		 */
 		shouldExpandSlider: function ( $slider ) {
-			var sliderWidth = parseInt( $slider.css( 'width' ), 10 ),
+			var sliderWidth = $slider.width(),
 				maxAvailableWidth = this.calculateSliderContainerWidth() + this.containerMargin;
 
 			return !( this.noMoreNewerRevisions && this.noMoreOlderRevisions ) && sliderWidth < maxAvailableWidth;
