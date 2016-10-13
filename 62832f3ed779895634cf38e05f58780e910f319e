@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e6c1747_1d1c637c",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2016-10-13T13:49:15Z",
+      "side": 1,
+      "message": "We could even move this further up immediately after the setPosition",
+      "revId": "62832f3ed779895634cf38e05f58780e910f319e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
