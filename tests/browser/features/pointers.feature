@@ -37,6 +37,7 @@ Feature: RevisionSlider pointers
     And I wait until the diff has loaded
     And I click on revision 1 to move the upper pointer
     And I wait until the diff has loaded
+    And I wait until the pointers stopped moving
     Then the lower pointer should be on revision 1
     And the upper pointer should be on revision 3
     And revision 1 should be loaded on the left of the diff

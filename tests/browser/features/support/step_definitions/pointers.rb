@@ -26,6 +26,10 @@ When(/^I wait until the diff has loaded$/) do
   step 'the diff has loaded'
 end
 
+When(/^I wait until the pointers stopped moving$/) do
+  on(DiffPage).wait_for_animations
+end
+
 Then(/^revision (\d+) should be loaded on the left of the diff$/) do |index|
   expect(on(DiffPage).revisionslider_left_summary_element.text).to include "RS-Summary-" + index.to_s
 end

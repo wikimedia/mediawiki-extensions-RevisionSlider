@@ -59,6 +59,18 @@ class DiffPage
     true
   end
 
+  def wait_for_animations
+    sleep_period = 0.25
+    max_timeout_seconds = 2
+    timeout_loops = (max_timeout_seconds / sleep_period).to_i
+
+    while execute_script('return $(\':animated\').length') != 0 && timeout_loops > 0
+      sleep(sleep_period)
+      timeout_loops -= 1
+    end
+    true
+  end
+
   def wait_for_diff_to_load
     wait_until do
       !revisionslider_loading?
