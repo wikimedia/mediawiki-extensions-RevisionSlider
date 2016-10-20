@@ -35,6 +35,7 @@
 			],
 			"dependencies": [
 				"mediawiki.jqueryMsg",
+				"ext.RevisionSlider.Settings",
 				"ext.RevisionSlider.Slider",
 				"ext.RevisionSlider.Revision",
 				"ext.RevisionSlider.RevisionList",
@@ -63,6 +64,15 @@
 		"ext.RevisionSlider.Api": {
 			"scripts": [
 				"modules/ext.RevisionSlider.Api.js"
+			]
+		},
+		"ext.RevisionSlider.Settings": {
+			"scripts": [
+				"modules/ext.RevisionSlider.Settings.js"
+			],
+			"dependencies": [
+				"mediawiki.storage",
+				"mediawiki.cookie"
 			]
 		},
 		"ext.RevisionSlider.Revision": {

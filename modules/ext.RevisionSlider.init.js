@@ -1,5 +1,6 @@
 ( function ( mw, $ ) {
-	var autoExpand = mw.user.options.get( 'userjs-revslider-autoexpand' ) === '1',
+	var settings = new mw.libs.revisionSlider.Settings(),
+		autoExpand = settings.shouldAutoExpand(),
 		expanded = autoExpand,
 		initialized = false,
 		autoExpandButton,
@@ -42,9 +43,9 @@
 						slider.getView().render( $container );
 					}, 250 ) );
 
-					if ( !mw.user.options.get( 'userjs-revslider-hidehelp' ) ) {
+					if ( !settings.shouldHideHelpDialogue() ) {
 						mw.libs.revisionSlider.HelpDialog.show();
-						( new mw.Api() ).saveOption( 'userjs-revslider-hidehelp', true );
+						settings.setHideHelpDialogue( true );
 					}
 
 					$( '.mw-revslider-placeholder' ).remove();
@@ -75,34 +76,32 @@
 
 	mw.track( 'counter.MediaWiki.RevisionSlider.event.load' );
 
-	if ( !mw.user.isAnon() ) {
-		autoExpandButton = new OO.ui.ToggleButtonWidget( {
-			icon: 'pin',
-			classes: [ 'mw-revslider-auto-expand-button' ],
-			title: mw.message( autoExpand ?
-				'revisionslider-turn-off-auto-expand-title' :
-				'revisionslider-turn-on-auto-expand-title'
-			).text(),
-			value: autoExpand
-		} );
+	autoExpandButton = new OO.ui.ToggleButtonWidget( {
+		icon: 'pin',
+		classes: [ 'mw-revslider-auto-expand-button' ],
+		title: mw.message( autoExpand ?
+			'revisionslider-turn-off-auto-expand-title' :
+			'revisionslider-turn-on-auto-expand-title'
+		).text(),
+		value: autoExpand
+	} );
 
-		autoExpandButton.connect( this, {
-			click: function () {
-				autoExpand = !autoExpand;
-				( new mw.Api() ).saveOption( 'userjs-revslider-autoexpand', autoExpand ? '1' : '0' );
-				if ( autoExpand ) {
-					autoExpandButton.setTitle( mw.message( 'revisionslider-turn-off-auto-expand-title' ).text() );
-					expandAndIntitialize();
-					mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand.on' );
-				} else {
-					autoExpandButton.setTitle( mw.message( 'revisionslider-turn-on-auto-expand-title' ).text() );
-					mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand.off' );
-				}
+	autoExpandButton.connect( this, {
+		click: function () {
+			autoExpand = !autoExpand;
+			settings.setAutoExpand( autoExpand );
+			if ( autoExpand ) {
+				autoExpandButton.setTitle( mw.message( 'revisionslider-turn-off-auto-expand-title' ).text() );
+				expandAndIntitialize();
+				mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand.on' );
+			} else {
+				autoExpandButton.setTitle( mw.message( 'revisionslider-turn-on-auto-expand-title' ).text() );
+				mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand.off' );
 			}
-		} );
+		}
+	} );
 
-		$( '.mw-revslider-container' ).append( autoExpandButton.$element );
-	}
+	$( '.mw-revslider-container' ).append( autoExpandButton.$element );
 
 	if ( autoExpand ) {
 		expandAndIntitialize();
