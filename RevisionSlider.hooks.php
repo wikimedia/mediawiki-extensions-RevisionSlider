@@ -15,14 +15,17 @@ class RevisionSliderHooks {
 		Revision $oldRev,
 		Revision $newRev
 	) {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+
 		/**
-		 * If this extension is deployed with the BetaFeatures extension then require the
-		 * current user to have it enabled as a BetaFeature.
+		 * If this extension is configured to be a beta feature, and the BetaFeatures extension
+		 * is loaded then require the current user to have the feature enabled.
 		 */
 		if (
+			$config->get( 'RevisionSliderBetaFeature' ) &&
 			class_exists( BetaFeatures::class ) &&
-			!BetaFeatures::isFeatureEnabled( $diff->getUser(), 'revisionslider' ) )
-		{
+			!BetaFeatures::isFeatureEnabled( $diff->getUser(), 'revisionslider' )
+		) {
 			return true;
 		}
 
@@ -36,7 +39,6 @@ class RevisionSliderHooks {
 		$stats = MediaWikiServices::getInstance()->getStatsdDataFactory();
 		$stats->increment( 'RevisionSlider.event.hookinit' );
 
-		$config = MediaWikiServices::getInstance()->getMainConfig();
 		$timeOffset = $config->get( 'LocalTZoffset' );
 		if ( is_null( $config->get( 'Localtimezone' ) ) ) {
 			$timeOffset = 0;
