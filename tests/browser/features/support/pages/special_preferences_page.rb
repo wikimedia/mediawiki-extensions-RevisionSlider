@@ -3,7 +3,7 @@ class SpecialPreferencesPage
   page_url 'Special:Preferences'
 
   a(:beta_features_tab, css: '#preftab-betafeatures')
-  text_field(:revisionslider_checkbox, css: '#mw-input-wprevisionslider')
+  text_field(:revisionslider_checkbox, css: '[name=wprevisionslider]')
   button(:submit_button, css: '#prefcontrol')
 
   def enable_revisionslider
