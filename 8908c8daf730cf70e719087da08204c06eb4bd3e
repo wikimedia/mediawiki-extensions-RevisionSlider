@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aea567c8_0222cca2",
+        "filename": "modules/ext.RevisionSlider.Settings.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2016-10-24T13:03:44Z",
+      "side": 1,
+      "message": "Think we need an additional check for mw.setting here, since it seems to be undefined if I e.g. set \"Block sites from setting any data\". RevisionSlider should just continue functioning in that case but just not store any state.",
+      "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
