@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aea567c8_df26fbb4",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-10-24T09:18:41Z",
+      "side": 1,
+      "message": "ithe? :-D",
+      "range": {
+        "startLine": 22,
+        "startChar": 53,
+        "endLine": 22,
+        "endChar": 57
+      },
+      "revId": "5a035d7c0deadf74f335c82bcd0d656939d329e6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
