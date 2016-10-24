@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "aea567c8_e5f13200",
+        "filename": "modules/ext.RevisionSlider.Settings.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-10-24T14:48:50Z",
+      "side": 1,
+      "message": "Done. Introduced new methods to save and load booleans.",
+      "parentUuid": "aea567c8_82801cfb",
+      "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aea567c8_22a6f0a7",
         "filename": "modules/ext.RevisionSlider.Settings.js",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "aea567c8_22071021",
+        "filename": "modules/ext.RevisionSlider.Settings.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-10-24T14:48:50Z",
+      "side": 1,
+      "message": "ups, yeah, I new there was a reason for the WIP just overlooked it.",
+      "parentUuid": "aea567c8_22a6f0a7",
+      "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aea567c8_02b2cce4",
         "filename": "modules/ext.RevisionSlider.Settings.js",
         "patchSetId": 9
@@ -47,6 +83,24 @@
       "writtenOn": "2016-10-24T13:45:33Z",
       "side": 1,
       "message": "As above. Please remove.",
+      "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aea567c8_05fbf612",
+        "filename": "modules/ext.RevisionSlider.Settings.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-10-24T14:48:50Z",
+      "side": 1,
+      "message": "*duck*",
+      "parentUuid": "aea567c8_02b2cce4",
       "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -82,6 +136,24 @@
       "side": 1,
       "message": "Are you confusing \"storage\" and \"setting\"?\n\nAs far as I understood *not* having to do such checks is the whole purpose of mw.storage.get. It does all this for you and returns null if the user disabled the browser feature.",
       "parentUuid": "aea567c8_0222cca2",
+      "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aea567c8_a2432067",
+        "filename": "modules/ext.RevisionSlider.Settings.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-10-24T14:48:50Z",
+      "side": 1,
+      "message": "Oh noes, mw.storage really seems to fail here. At least on Chromium. I just tested it there. ... Looks like the implementation is not bullet-proof there. o.O\n\nI will look into it...",
+      "parentUuid": "aea567c8_42a334a9",
       "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
