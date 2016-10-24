@@ -55,14 +55,18 @@
 					$printFooter =  $( '.printfooter' ),
 					scrollLeft = $container.find( '.mw-revslider-revisions-container' ).scrollLeft();
 
+				// Add our current rendered slider into the newly loaded container
 				$data = $( data );
 				$data.find( '.mw-revslider-container' ).replaceWith( $container );
+
+				// Replace the elements on the page with the newly loaded elements
 				$navigation.replaceWith( $data.find( '#p-views' ) );
 				$catLinks.replaceWith( $data.find( '#catlinks' ) );
 				$sidePanel.replaceWith( $data.find( '#mw-panel' ) );
 				$printFooter.replaceWith( $data.find( '.printfooter' ) );
-				$contentText.html( $data.find( '#mw-content-text' ) )
-					.find( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
+				$contentText.replaceWith( $data.find( '#mw-content-text' ) );
+
+				$( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
 
 				mw.hook( 'wikipage.content' ).fire( $contentText );
 				mw.hook( 'wikipage.diff' ).fire( $contentText.find( 'table.diff' ) );
