@@ -157,6 +157,24 @@
       "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aea567c8_530ae42a",
+        "filename": "modules/ext.RevisionSlider.Settings.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-10-24T19:04:26Z",
+      "side": 1,
+      "message": "Looks like a bug ... https://phabricator.wikimedia.org/T148998",
+      "parentUuid": "aea567c8_a2432067",
+      "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
