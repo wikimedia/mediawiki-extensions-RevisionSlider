@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "aea567c8_82801cfb",
+        "filename": "modules/ext.RevisionSlider.Settings.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2016-10-24T13:45:33Z",
+      "side": 1,
+      "message": "At the moment this is not a boolean, but a string containing \"0\" and \"1\".\n\nI suggest to change this so that this *is* a boolean, and the string conversion is only done when calling the save and load functions.",
+      "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aea567c8_22a6f0a7",
+        "filename": "modules/ext.RevisionSlider.Settings.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2016-10-24T13:45:33Z",
+      "side": 1,
+      "message": "A method called \"loadSettings\", returning a not declared \"id\" property that is documented as a number? This looks like a copy paste mistake. Please remove.",
+      "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aea567c8_02b2cce4",
+        "filename": "modules/ext.RevisionSlider.Settings.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2016-10-24T13:45:33Z",
+      "side": 1,
+      "message": "As above. Please remove.",
+      "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aea567c8_0222cca2",
         "filename": "modules/ext.RevisionSlider.Settings.js",
         "patchSetId": 9
@@ -13,6 +64,24 @@
       "writtenOn": "2016-10-24T13:03:44Z",
       "side": 1,
       "message": "Think we need an additional check for mw.setting here, since it seems to be undefined if I e.g. set \"Block sites from setting any data\". RevisionSlider should just continue functioning in that case but just not store any state.",
+      "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aea567c8_42a334a9",
+        "filename": "modules/ext.RevisionSlider.Settings.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2016-10-24T13:45:33Z",
+      "side": 1,
+      "message": "Are you confusing \"storage\" and \"setting\"?\n\nAs far as I understood *not* having to do such checks is the whole purpose of mw.storage.get. It does all this for you and returns null if the user disabled the browser feature.",
+      "parentUuid": "aea567c8_0222cca2",
       "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
