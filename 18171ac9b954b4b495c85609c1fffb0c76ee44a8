@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aea567c8_9f6e33c3",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-10-24T09:27:05Z",
+      "side": 1,
+      "message": "option name should not change as it is already used and in the db.",
+      "range": {
+        "startLine": 47,
+        "startChar": 50,
+        "endLine": 47,
+        "endChar": 78
+      },
+      "revId": "18171ac9b954b4b495c85609c1fffb0c76ee44a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
