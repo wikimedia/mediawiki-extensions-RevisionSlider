@@ -116,18 +116,21 @@ class RevisionSliderHooks {
 	}
 
 	public static function getBetaFeaturePreferences( User $user, array &$prefs ) {
-		global $wgExtensionAssetsPath;
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$extensionAssetsPath = $config->get( 'ExtensionAssetsPath' );
 
-		$prefs['revisionslider'] = [
-			'label-message' => 'revisionslider-beta-feature-message',
-			'desc-message' => 'revisionslider-beta-feature-description',
-			'screenshot' => [
-				'ltr' => "$wgExtensionAssetsPath/RevisionSlider/resources/RevisionSlider-beta-features-ltr.svg",
-				'rtl' => "$wgExtensionAssetsPath/RevisionSlider/resources/RevisionSlider-beta-features-rtl.svg",
-			],
-			'info-link' => 'https://www.mediawiki.org/wiki/Extension:RevisionSlider',
-			'discussion-link' => 'https://www.mediawiki.org/wiki/Extension_talk:RevisionSlider',
-		];
+		if ( $config->get( 'RevisionSliderBetaFeature' ) ) {
+			$prefs['revisionslider'] = [
+				'label-message' => 'revisionslider-beta-feature-message',
+				'desc-message' => 'revisionslider-beta-feature-description',
+				'screenshot' => [
+					'ltr' => "$extensionAssetsPath/RevisionSlider/resources/RevisionSlider-beta-features-ltr.svg",
+					'rtl' => "$extensionAssetsPath/RevisionSlider/resources/RevisionSlider-beta-features-rtl.svg",
+				],
+				'info-link' => 'https://www.mediawiki.org/wiki/Extension:RevisionSlider',
+				'discussion-link' => 'https://www.mediawiki.org/wiki/Extension_talk:RevisionSlider',
+			];
+		}
 	}
 
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
