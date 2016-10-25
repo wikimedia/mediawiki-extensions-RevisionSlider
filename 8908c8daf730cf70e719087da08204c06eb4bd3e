@@ -175,6 +175,24 @@
       "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aea567c8_8b27100d",
+        "filename": "modules/ext.RevisionSlider.Settings.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-10-25T07:27:55Z",
+      "side": 1,
+      "message": "There\u0027s now a patch in core to fix this: https://gerrit.wikimedia.org/r/#/c/317712/",
+      "parentUuid": "aea567c8_530ae42a",
+      "revId": "8908c8daf730cf70e719087da08204c06eb4bd3e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
