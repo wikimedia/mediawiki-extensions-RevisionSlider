@@ -18,6 +18,7 @@
 
 .mw-revslider-toggle-button .oo-ui-buttonElement-button {
 	width: 100%;
+	padding-bottom: 0.06em;
 }
 
 .mw-revslider-toggle-button .oo-ui-labelElement-label {
@@ -187,16 +188,19 @@ of the frameless one (to fit the size of the toggle button */
 	z-index: 10;
 	padding: 0;
 	box-sizing: border-box;
-	width: 1.875em;
-	height: 1.875em;
+	width: 1.775em;
+	height: 1.775em;
 	background-color: transparent;
 	border: 0;
+	margin-top: 0.06em;
 }
 
 .mw-revslider-auto-expand-button.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
 	position: static;
 	left: auto;
 	top: auto;
+	width: 1.775em;
+	height: 1.775em;
 }
 
 .mw-revslider-arrow.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
