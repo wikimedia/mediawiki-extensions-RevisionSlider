@@ -61,12 +61,9 @@ class RevisionSliderHooks {
 		// rendered as intended before RL loads all CSS styles (avoid jumping after CSS is loaded).
 		// Some better and more future-proof solution (what if ButtonWidget switches to use other tags?)
 		// should be used if possible.
-		$button = new OOUI\Tag( 'a' );
-		$label = new OOUI\Tag( 'span' );
-		$icon = new OOUI\Tag( 'span' );
-		$button->setAttributes( [ 'style' => 'width: 100%;' ] );
-		$label->setAttributes( [ 'style' => 'line-height: 1.875em;' ] );
-		$icon->setAttributes( [ 'style' => 'float: right;' ] );
+		$button = ( new OOUI\Tag( 'a' ) )->setAttributes( [ 'style' => 'width: 100%;' ] );
+		$label = ( new OOUI\Tag( 'span' ) )->setAttributes( [ 'style' => 'line-height: 1.875em;' ] );
+		$icon = ( new OOUI\Tag( 'span' ) )->setAttributes( [ 'style' => 'float: right;' ] );
 
 		$toggleButton = new OOUI\ButtonWidget( [
 			'label' => ( new Message( 'revisionslider-toggle-label' ) )->text(),
