@@ -194,7 +194,8 @@
 					$( '<div>' )
 						.addClass( 'mw-revslider-pointer-container' )
 						.css( pointerContainerStyle )
-						.append( this.pointerOlder.getView().render(), this.pointerNewer.getView().render() )
+						.append( this.pointerOlder.getView().render(), this.pointerNewer.getView().render() ),
+					this.pointerOlder.getLine().render(), this.pointerNewer.getLine().render()
 				);
 
 			$slider.find( '.mw-revslider-pointer' ).draggable( {
@@ -223,6 +224,8 @@
 					revId2 = self.getRevElementAtPosition( $revisions, self.pointerNewer.getPosition() ).data( 'revid' );
 
 					self.refreshRevisions( revId1, revId2 );
+
+					self.redrawPointerLines();
 
 					$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-pointer-cursor' );
 				},
@@ -486,6 +489,16 @@
 		},
 
 		/**
+		 * Redraws the lines for the pointers
+		 */
+		redrawPointerLines: function () {
+			$( '.mw-revslider-pointer-line-upper, .mw-revslider-pointer-line-lower' )
+				.removeClass( 'mw-revslider-bottom-line mw-revslider-left-line mw-revslider-right-line' );
+			this.pointerOlder.getLine().drawLine();
+			this.pointerNewer.getLine().drawLine();
+		},
+
+		/**
 		 * @return {number}
 		 */
 		calculateSliderContainerWidth: function () {
@@ -590,11 +603,13 @@
 				.slideToSideOrPosition( this.slider, duration )
 				.promise().done( function () {
 					self.resetPointerStylesBasedOnPosition();
+					self.redrawPointerLines();
 				} );
 			this.pointerNewer.getView()
 				.slideToSideOrPosition( this.slider, duration )
 				.promise().done( function () {
 					self.resetPointerStylesBasedOnPosition();
+					self.redrawPointerLines();
 				} );
 		},
 

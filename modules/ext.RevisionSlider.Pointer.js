@@ -7,6 +7,7 @@
 	 */
 	var Pointer = function ( name ) {
 		this.view = new mw.libs.revisionSlider.PointerView( this, name );
+		this.line = new mw.libs.revisionSlider.PointerLine( this, name );
 	};
 
 	$.extend( Pointer.prototype, {
@@ -19,6 +20,11 @@
 		 * @type {PointerView}
 		 */
 		view: null,
+
+		/**
+		 * @type {PointerLine}
+		 */
+		line: null,
 
 		/**
 		 * @param {number} p
@@ -39,6 +45,13 @@
 		 */
 		getView: function () {
 			return this.view;
+		},
+
+		/**
+		 * @return {PointerLine}
+		 */
+		getLine: function () {
+			return this.line;
 		}
 	} );
 

@@ -88,12 +88,18 @@
 				"modules/ext.RevisionSlider.Pointer.js"
 			],
 			"dependencies": [
-				"ext.RevisionSlider.PointerView"
+				"ext.RevisionSlider.PointerView",
+				"ext.RevisionSlider.PointerLine"
 			]
 		},
 		"ext.RevisionSlider.PointerView": {
 			"scripts": [
 				"modules/ext.RevisionSlider.PointerView.js"
+			]
+		},
+		"ext.RevisionSlider.PointerLine": {
+			"scripts": [
+				"modules/ext.RevisionSlider.PointerLine.js"
 			]
 		},
 		"ext.RevisionSlider.Slider": {

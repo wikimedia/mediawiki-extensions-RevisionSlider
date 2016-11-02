@@ -114,10 +114,12 @@
 				expandAndIntitialize();
 				toggleButton.setIcon( 'collapse' ).setTitle( mw.message( 'revisionslider-toggle-title-collapse' ).text() );
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.expand' );
+				mw.hook( 'revslider.expand' ).fire();
 			} else {
 				$( '.mw-revslider-slider-wrapper' ).hide();
 				toggleButton.setIcon( 'expand' ).setTitle( mw.message( 'revisionslider-toggle-title-expand' ).text() );
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.collapse' );
+				mw.hook( 'revslider.collapse' ).fire();
 			}
 		}
 	} );

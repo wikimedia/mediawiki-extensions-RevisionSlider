@@ -9,6 +9,7 @@
 	/* the interface is in RTL */
 	direction: ltr;
 	position: relative;
+	z-index: 8;
 }
 
 .mw-revslider-toggle-button {
@@ -304,4 +305,61 @@ of the frameless one (to fit the size of the toggle button */
 	right: 0;
 	bottom: 0;
 	margin-right: 0;
+}
+
+.mw-revslider-pointer-line {
+	position: absolute;
+	top: 73px;
+	z-index: -1;
+}
+
+.mw-revslider-pointer-line-upper,
+.mw-revslider-pointer-line-lower {
+	border: 0 solid transparent;
+}
+
+/* @noflip */
+.mw-revslider-pointer-line .mw-revslider-left-line {
+	border-left-width: 2px;
+}
+
+/* @noflip */
+.mw-revslider-pointer-line .mw-revslider-right-line {
+	border-right-width: 2px;
+}
+
+.mw-revslider-pointer-line .mw-revslider-bottom-line {
+	border-bottom-width: 2px;
+}
+
+.mw-revslider-pointer-line .mw-revslider-lower-color {
+	border-color: #e8bd4f;
+}
+
+.mw-revslider-pointer-line .mw-revslider-upper-color {
+	border-color: #1e6db8;
+}
+
+.mw-revslider-pointer-older .mw-revslider-pointer-line-upper {
+	height: 81px;
+}
+
+.mw-revslider-pointer-older .mw-revslider-pointer-line-lower {
+	height: 7px;
+}
+
+.mw-revslider-pointer-newer  .mw-revslider-pointer-line-upper {
+	height: 71px;
+}
+
+.mw-revslider-pointer-newer .mw-revslider-pointer-line-lower {
+	height: 17px;
+}
+
+.mw-revslider-older-diff-column {
+	border-top: 2px solid #e8bd4f;
+}
+
+.mw-revslider-newer-diff-column {
+	border-top: 2px solid #1e6db8;
 }
