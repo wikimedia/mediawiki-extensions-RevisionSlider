@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4eb4ebfb_89480162",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-11-07T12:13:13Z",
+      "side": 1,
+      "message": "Solved. This method is now directly setting the CSS. No need to have an output. The name fits now better I hope :-)",
+      "parentUuid": "4eb4ebfb_4e01df70",
+      "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4eb4ebfb_8ed80724",
         "filename": "modules/ext.RevisionSlider.PointerLine.js",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2016-11-07T10:09:45Z",
       "side": 1,
       "message": "In this particular case you could also elaborate more what keys the result object contain (as this is always the same set of keys), plus say what false means when it is returned.",
+      "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_69437544",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-11-07T12:13:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4eb4ebfb_8ed80724",
       "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "4eb4ebfb_ce596f92",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-11-07T12:13:13Z",
+      "side": 1,
+      "message": "The pointers have ( for some reason ) a negative left-margin. That seems to be the reason why just taking the offset position / 2 would not give me the horizontal center of the pointer. But I might explain that a bit better in the comment.",
+      "parentUuid": "4eb4ebfb_4e8d5f35",
+      "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4eb4ebfb_0efbd778",
         "filename": "modules/ext.RevisionSlider.PointerLine.js",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2016-11-07T10:09:45Z",
       "side": 1,
       "message": "Once this is returned \"rightFromSource\" is a bit mysterious to the caller, I think. Below it reads settings.rightFromSource. This does not really seem clear to me it means \"according to setting the target of the line if far right then the source\".\nActually, looking at the code using this flag - wouldn\u0027t it be cleaner to put the code checking this condition in own boolean-returning function?\nWhat I mean is widthToSet and leftToSet are related to the position/size of the line dom element, whereas rightFromSource is determining what CSS styles to use to some of the elements inside this line element. Those two parts are actually related to slightly different things, so maybe it is worth it to separate those?",
+      "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_29744d95",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-11-07T12:13:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4eb4ebfb_0efbd778",
       "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "4eb4ebfb_ce2bafda",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-11-07T12:13:13Z",
+      "side": 1,
+      "message": "Your right if the target for the line ( meaning the column here ) is right from the source ( the pointer ) the upper part of the div gets a line on the left and the lower on on the right. \n\nsource\n| \u003c- left border\n|__________________\n                   |\n   right border -\u003e |\n                   target ( right from source )\n\nRTL did render the lines the other way around thats why I had to alter the condition in the way done here.\n\nWith the noflip comment this is avoided so I need no \"bool-magic\" here. Thanks for that!",
+      "parentUuid": "4eb4ebfb_2edd7317",
+      "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4eb4ebfb_8eaa476c",
         "filename": "modules/ext.RevisionSlider.css",
         "patchSetId": 8
@@ -98,6 +188,24 @@
       "writtenOn": "2016-11-07T10:09:45Z",
       "side": 1,
       "message": "I don\u0027t have a good idea how to improve it so just leaving a note: when used in RTL UI, CSSJanus switches the CSS attribute to be \"border-right-width\". In this case calling this a \"left-line\" seems a bit odd.\nBut yes, this will be only noticed when inspecting the final generated CSS.\n\nIf this selector (\"mw-revslider-left-line\") ought to really stand for an element with border-left-width you could add a /* @noflip */ comment to prevent the flipping. But doing that you then should adjust the JS code too.",
+      "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_ae3f431f",
+        "filename": "modules/ext.RevisionSlider.css",
+        "patchSetId": 8
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-11-07T12:13:13Z",
+      "side": 1,
+      "message": "Done. Nice, thanks. Did not really know about the RTL magic here. So setting the noflip here and I can avoid some magic in the JS.",
+      "parentUuid": "4eb4ebfb_8eaa476c",
       "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
