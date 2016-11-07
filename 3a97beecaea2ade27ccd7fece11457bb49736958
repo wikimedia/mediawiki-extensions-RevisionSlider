@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4eb4ebfb_4e01df70",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-11-07T10:09:45Z",
+      "side": 1,
+      "message": "Hmm, does this description really say what this function does. It reads the offset etc of elements that will be connected but what it calculates is the position and width of the line element, right?\nAlso, forgive me complaining about names all over the place, but I believe \"settings\" is not the best name for the object this returns. You cannot (or at least shouldn\u0027t) really influence (ie. set)  those \"settings\" once they\u0027re calculated for the particular situation.\n\nIt would be probably easier to come up with a nice name for the object if it only contained a position/offset and a width. But there is also this boolean flag saying something about the relative positions of the column and a pointer, which makes it more difficult. But to my ear at least calling this triple \"properties\" would be more accurate than \"settings\".",
+      "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_8ed80724",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-11-07T10:09:45Z",
+      "side": 1,
+      "message": "In this particular case you could also elaborate more what keys the result object contain (as this is always the same set of keys), plus say what false means when it is returned.",
+      "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_4e8d5f35",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-11-07T10:09:45Z",
+      "side": 1,
+      "message": "I don\u0027t get what does this comment mean.\nWhat this 6px stands for/where does it come from? And how does it \"mess with calculation\"? Does it fix some issues or introduce some?",
+      "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_0efbd778",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-11-07T10:09:45Z",
+      "side": 1,
+      "message": "Once this is returned \"rightFromSource\" is a bit mysterious to the caller, I think. Below it reads settings.rightFromSource. This does not really seem clear to me it means \"according to setting the target of the line if far right then the source\".\nActually, looking at the code using this flag - wouldn\u0027t it be cleaner to put the code checking this condition in own boolean-returning function?\nWhat I mean is widthToSet and leftToSet are related to the position/size of the line dom element, whereas rightFromSource is determining what CSS styles to use to some of the elements inside this line element. Those two parts are actually related to slightly different things, so maybe it is worth it to separate those?",
+      "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_2edd7317",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-11-07T10:09:45Z",
+      "side": 1,
+      "message": "This whole block below seems going into direction of \"magic\".\n\nSo as I get the idea here is that when the pointer is above (ie. further from the left edge of the screen/window) than the column, the \"upper\" part of line should get a \"left-line\" style, and the \"lower\" part the \"right-line\" style. Or something like that.\n\n\"rightFromSource\" might not be the best name for the flag describing this situation but it is not that bad in the end. But then you\u0027re comparing one boolean flag with some other, this is gettng a bit tricky too follow. Wouldn\u0027t actually the \"noflip\" comment I mentioned in the comment in the CSS file solve the problem of \"left-line\" meaning something else in LTR and RTL UIs?",
+      "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_8eaa476c",
+        "filename": "modules/ext.RevisionSlider.css",
+        "patchSetId": 8
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-11-07T10:09:45Z",
+      "side": 1,
+      "message": "I don\u0027t have a good idea how to improve it so just leaving a note: when used in RTL UI, CSSJanus switches the CSS attribute to be \"border-right-width\". In this case calling this a \"left-line\" seems a bit odd.\nBut yes, this will be only noticed when inspecting the final generated CSS.\n\nIf this selector (\"mw-revslider-left-line\") ought to really stand for an element with border-left-width you could add a /* @noflip */ comment to prevent the flipping. But doing that you then should adjust the JS code too.",
+      "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
