@@ -95,7 +95,7 @@ class RevisionSliderHooks {
 					'div',
 					[
 						'class' => 'mw-revslider-slider-wrapper',
-						'style' => 'min-height: 142px; border-top: 1px solid #cccccc; padding: 10px;' .
+						'style' => 'min-height: 142px; border-top: 1px solid #cccccc; padding: 20px 10px;' .
 							( !$autoExpand ? ' display: none;' : '' ),
 					],
 					Html::rawElement(

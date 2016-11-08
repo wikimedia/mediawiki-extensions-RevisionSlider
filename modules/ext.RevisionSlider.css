@@ -345,7 +345,7 @@ of the frameless one (to fit the size of the toggle button */
 }
 
 .mw-revslider-pointer-older .mw-revslider-pointer-line-lower {
-	height: 7px;
+	height: 17px;
 }
 
 .mw-revslider-pointer-newer  .mw-revslider-pointer-line-upper {
@@ -353,7 +353,7 @@ of the frameless one (to fit the size of the toggle button */
 }
 
 .mw-revslider-pointer-newer .mw-revslider-pointer-line-lower {
-	height: 17px;
+	height: 27px;
 }
 
 .mw-revslider-older-diff-column {
