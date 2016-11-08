@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4eb4ebfb_c0fa5340",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-11-08T12:54:56Z",
+      "side": 1,
+      "message": "haha now six became a four",
+      "range": {
+        "startLine": 50,
+        "startChar": 6,
+        "endLine": 50,
+        "endChar": 7
+      },
+      "revId": "df9d94ca6015dfc14d1481949abc1657980153b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
