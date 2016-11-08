@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4eb4ebfb_2620f0f1",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-11-08T15:00:23Z",
+      "side": 1,
+      "message": "I guess increasing the top padding too is intended, right? For symmetry or so?",
+      "revId": "a8a129d62751261954306dcf77e786d859672bd2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
