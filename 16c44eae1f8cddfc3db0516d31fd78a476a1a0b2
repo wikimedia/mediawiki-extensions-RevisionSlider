@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4eb4ebfb_25546900",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-11-08T08:12:25Z",
+      "side": 1,
+      "message": "redrawn",
+      "range": {
+        "startLine": 10,
+        "startChar": 40,
+        "endLine": 10,
+        "endChar": 48
+      },
+      "revId": "16c44eae1f8cddfc3db0516d31fd78a476a1a0b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_05572d06",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-11-08T08:12:25Z",
+      "side": 1,
+      "message": "coloured or colored (per the spelling the code in PointerLine class uses rather \"colored\")",
+      "range": {
+        "startLine": 11,
+        "startChar": 14,
+        "endLine": 11,
+        "endChar": 21
+      },
+      "revId": "16c44eae1f8cddfc3db0516d31fd78a476a1a0b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_c53265ef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-11-08T08:12:25Z",
+      "side": 1,
+      "message": "I am not sure it is the thing worth mentioning in the commit message. Saying what happens when a pointer moves beyond the current \"window\" seems good thing to mention but referring to who knows how long available mock seems a bit iffy to me. Such things should probably rather be discussed in the ticket on Phabricator (which is actually happening already).",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 24
+      },
+      "revId": "16c44eae1f8cddfc3db0516d31fd78a476a1a0b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_251d8966",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-11-08T08:12:25Z",
+      "side": 1,
+      "message": "Actually, if I see right, this checks if the diff column element has an offset defined.\nBTW: isn\u0027t it about the whole diff-ntitle element not being there (ie. in QUnit tests) not really about the offset?",
+      "range": {
+        "startLine": 32,
+        "startChar": 53,
+        "endLine": 32,
+        "endChar": 60
+      },
+      "revId": "16c44eae1f8cddfc3db0516d31fd78a476a1a0b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_05204d95",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-11-08T08:12:25Z",
+      "side": 1,
+      "message": "\u003cgrumpy old man mode\u003eWhat is the entity distance?\u003c/grumpy old man mode\u003e\nWouldn\u0027t simply calculateDistance be clear enough?",
+      "range": {
+        "startLine": 48,
+        "startChar": 2,
+        "endLine": 48,
+        "endChar": 25
+      },
+      "revId": "16c44eae1f8cddfc3db0516d31fd78a476a1a0b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
