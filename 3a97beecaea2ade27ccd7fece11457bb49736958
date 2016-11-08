@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "4eb4ebfb_a51ab971",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-11-08T08:12:25Z",
+      "side": 1,
+      "message": "Ah, ok. I would then vote for mentioning in the comment that pointers have a six-pixel negative margin, so adding 6 to pointer\u0027s width to balance this (or something like this).\nIt is morning again when I look at this patch but I still find \"+6 left-margin messes with calculation\" less clear than the explanation you gave in this comment",
+      "parentUuid": "4eb4ebfb_ce596f92",
+      "revId": "3a97beecaea2ade27ccd7fece11457bb49736958",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4eb4ebfb_0efbd778",
         "filename": "modules/ext.RevisionSlider.PointerLine.js",
         "patchSetId": 8
