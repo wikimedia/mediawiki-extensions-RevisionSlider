@@ -16,6 +16,24 @@
       "revId": "a8a129d62751261954306dcf77e786d859672bd2",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_89f59781",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-11-08T16:59:40Z",
+      "side": 1,
+      "message": "Yes and for symmetry. :-)",
+      "parentUuid": "4eb4ebfb_2620f0f1",
+      "revId": "a8a129d62751261954306dcf77e786d859672bd2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
