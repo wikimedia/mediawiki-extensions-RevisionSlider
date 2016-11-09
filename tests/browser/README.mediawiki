@@ -31,13 +31,13 @@ Tests that use the "Given I create a random page using the API" step need to set
 the MEDIAWIKI_API_URL environment variable, e.g.
 export MEDIAWIKI_API_URL=http://en.wikipedia.beta.wmflabs.org/w/api.php
 
-Run the tests from the RevisionSlider tests/browser directory with:
+Run the tests from the RevisionSlider/tests/browser directory with:
 
   bundle exec cucumber
 
 If you want to run a single set of tests, go to the tests/browser directory and
 call 'bundle exec cucumber' with the path to the test file. For example, to run
-only the watchlist tests:
+only the betafeature tests:
 
   bundle exec cucumber features/betafeature.feature
 
