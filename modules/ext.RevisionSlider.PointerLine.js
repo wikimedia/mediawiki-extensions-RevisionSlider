@@ -110,7 +110,7 @@
 			if ( this.pointer.getView().isUpperPointer() ) {
 				$lowerLineDiv.removeClass( 'mw-revslider-lower-color' ).addClass( 'mw-revslider-upper-color' );
 				$upperLineDiv.removeClass( 'mw-revslider-lower-color' ).addClass( 'mw-revslider-upper-color' );
-				$targetColumn =  $( '.diff-ntitle' );
+				$targetColumn = $( '.diff-ntitle' );
 			} else {
 				$lowerLineDiv.removeClass( 'mw-revslider-upper-color' ).addClass( 'mw-revslider-lower-color' );
 				$upperLineDiv.removeClass( 'mw-revslider-upper-color' ).addClass( 'mw-revslider-lower-color' );
@@ -121,7 +121,7 @@
 
 			$upperLineDiv.addClass( 'mw-revslider-bottom-line' );
 
-			if ( this.targetColumnIsRightFromPointer(  $sourcePointer, $targetColumn ) ) {
+			if ( this.targetColumnIsRightFromPointer( $sourcePointer, $targetColumn ) ) {
 				$upperLineDiv.addClass( 'mw-revslider-left-line' );
 				$lowerLineDiv.addClass( 'mw-revslider-right-line' );
 			} else {

@@ -52,7 +52,7 @@
 					$sidePanel = $( '#mw-panel' ),
 					$navigation = $( '#p-views' ),
 					$catLinks = $( '#catlinks' ),
-					$printFooter =  $( '.printfooter' ),
+					$printFooter = $( '.printfooter' ),
 					scrollLeft = $container.find( '.mw-revslider-revisions-container' ).scrollLeft();
 
 				// Add our current rendered slider into the newly loaded container
@@ -76,9 +76,11 @@
 				// Following wikEdDiff.js-specific code is deprecated and will be removed in the future.
 				// WikEdDiff should be updated to use a hook.
 				if ( self.wikEdDiffDetected() ) {
+					/* eslint-disable no-console */
 					console.log( 'You are running WikEdDiff & your copy of the code may need to be updated to work with the RevisionSlider.' );
 					console.log( 'Please see: https://phabricator.wikimedia.org/T143199#2631963' );
 					console.log( 'If WikEdDiff is still working while using the RevisonSlider then the code change has already been done.' );
+					/* eslint-enable no-console */
 				}
 
 			}, function ( xhr ) {
@@ -87,6 +89,8 @@
 					this.tryCount++;
 					mw.track( 'counter.MediaWiki.RevisionSlider.error.refresh' );
 					if ( retryAttempt <= retryLimit ) {
+						// TODO Remove this debugging code?
+						// eslint-disable-next-line no-console
 						console.log( 'Retrying request' );
 						self.refresh( revId1, revId2, retryAttempt + 1 );
 					}

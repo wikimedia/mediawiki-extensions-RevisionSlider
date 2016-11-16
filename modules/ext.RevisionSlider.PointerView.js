@@ -115,7 +115,7 @@
 			if ( posBeforeSlider ) {
 				return this.animateTo( this.getOffset() - 2 * slider.getView().revisionWidth, duration );
 			} else {
-				return this.animateTo( slider.getRevisionsPerWindow()  * slider.getView().revisionWidth + this.getOffset(), duration );
+				return this.animateTo( slider.getRevisionsPerWindow() * slider.getView().revisionWidth + this.getOffset(), duration );
 			}
 		},
 
