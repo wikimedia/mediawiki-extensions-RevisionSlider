@@ -53,9 +53,7 @@
 				} catch ( err ) {
 					$( '.mw-revslider-placeholder' )
 						.text( mw.message( 'revisionslider-loading-failed' ).text() );
-					// TODO: Replace with mw.log.error?
-					// eslint-disable-next-line no-console
-					console.log( err );
+					mw.log.error( err );
 					mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
 				}
 
@@ -63,9 +61,7 @@
 			}, function ( err ) {
 				$( '.mw-revslider-placeholder' )
 					.text( mw.message( 'revisionslider-loading-failed' ).text() );
-				// TODO: Replace with mw.log.error?
-				// eslint-disable-next-line no-console
-				console.log( err );
+				mw.log.error( err );
 				mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
 			} );
 		},
