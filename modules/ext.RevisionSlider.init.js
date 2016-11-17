@@ -93,6 +93,7 @@
 			if ( autoExpand ) {
 				autoExpandButton.setTitle( mw.message( 'revisionslider-turn-off-auto-expand-title' ).text() );
 				expandAndIntitialize();
+				toggleButton.setIcon( 'collapse' ).setTitle( mw.message( 'revisionslider-toggle-title-collapse' ).text() );
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand.on' );
 			} else {
 				autoExpandButton.setTitle( mw.message( 'revisionslider-turn-on-auto-expand-title' ).text() );
@@ -105,6 +106,7 @@
 
 	if ( autoExpand ) {
 		expandAndIntitialize();
+		toggleButton.setIcon( 'collapse' ).setTitle( mw.message( 'revisionslider-toggle-title-collapse' ).text() );
 	}
 
 	toggleButton.connect( this, {
