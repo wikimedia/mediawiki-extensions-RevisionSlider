@@ -76,7 +76,9 @@ class RevisionSliderHooks {
 			'framed' => false,
 			'title' => ( new Message( 'revisionslider-toggle-title-expand' ) )->text(),
 		] );
-		$toggleButton->setAttributes( [ 'style' => 'width: 100%; text-align: center;' ] );
+		$toggleButton->setAttributes(
+			[ 'style' => 'width: 100%; text-align: center; padding-bottom: 0.06em; padding-top: 0.06em' ]
+		);
 
 		$progressBar = new OOUI\ProgressBarWidget( [ 'progress' => false ] );
 		$progressBar->setAttributes( [
