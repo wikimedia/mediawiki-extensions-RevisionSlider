@@ -94,10 +94,10 @@
 				autoExpandButton.setTitle( mw.message( 'revisionslider-turn-off-auto-expand-title' ).text() );
 				expandAndIntitialize();
 				toggleButton.setIcon( 'collapse' ).setTitle( mw.message( 'revisionslider-toggle-title-collapse' ).text() );
-				mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand.on' );
+				mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand_on' );
 			} else {
 				autoExpandButton.setTitle( mw.message( 'revisionslider-turn-on-auto-expand-title' ).text() );
-				mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand.off' );
+				mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand_off' );
 			}
 		}
 	} );
