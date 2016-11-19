@@ -649,11 +649,9 @@
 
 				self.addRevisionsAtEnd( $slider, revs );
 
-				/* jshint -W024 */
-				if ( data.continue === undefined ) { // eslint-disable-line dot-notation
+				if ( data.continue === undefined ) {
 					self.noMoreNewerRevisions = true;
 				}
-				/* jshint +W024 */
 			} );
 		},
 
@@ -690,11 +688,9 @@
 				}
 				self.addRevisionsAtStart( $slider, revs, precedingRevisionSize );
 
-				/* jshint -W024 */
-				if ( data.continue === undefined ) { // eslint-disable-line dot-notation
+				if ( data.continue === undefined ) {
 					self.noMoreOlderRevisions = true;
 				}
-				/* jshint +W024 */
 			} );
 		},
 
