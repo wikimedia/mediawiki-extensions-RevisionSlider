@@ -4,11 +4,12 @@
 			"Macofe",
 			"Vitorvicentevalente",
 			"He7d3r",
-			"Mansil"
+			"Mansil",
+			"Hamilton Abreu"
 		]
 	},
 	"revisionslider": "Barra de revisões",
-	"revisionslider-desc": "Mostra um controle deslizante que permite a seleção e comparação de revisões na página de diferença entre edições",
+	"revisionslider-desc": "Mostra um controlo deslizante que permite a seleção e comparação de revisões numa página de diferenças entre edições",
 	"revisionslider-beta-feature-message": "Barra de revisões",
 	"revisionslider-beta-feature-description": "Mostra uma barra deslizante de revisão ao comparar duas versões de uma página.",
 	"revisionslider-toggle-label": "Explorar histórico",
