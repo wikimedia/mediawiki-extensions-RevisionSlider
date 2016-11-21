@@ -32,11 +32,7 @@
 			xhr = this.fetchRevisions( pageName, options )
 				.done( function ( data ) {
 					var revs = data.query.pages[ 0 ].revisions,
-						/* eslint-disable dot-notation */
-						/* jshint -W024 */
 						revContinue = data.continue,
-						/* jshint +W024 */
-						/* eslint-enable dot-notation */
 						genderData = options.knownUserGenders || {},
 						userNames;
 

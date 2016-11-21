@@ -51,7 +51,7 @@
 		mw.config.values.extRevisionSliderOldRev = null;
 		mw.config.values.extRevisionSliderNewRev = null;
 
-		assert.throws( // eslint-disable-line dot-notation
+		assert.throws(
 			function () {
 				view.render( $container );
 			}
