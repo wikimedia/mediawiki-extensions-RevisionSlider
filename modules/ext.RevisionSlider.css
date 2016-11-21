@@ -69,13 +69,13 @@
 }
 
 .mw-revslider-revision-old {
-	background-color: #fee6a8;
-	border-color: #e8bd4f;
+	background-color: #fee9a8;
+	border-color: #fc3;
 }
 
 .mw-revslider-revision-old:hover,
 .mw-revslider-revision-wrapper-hovered .mw-revslider-revision-old {
-	background-color: #fdc44b;
+	background-color: #fc3;
 	border-color: #dda000;
 }
 
@@ -334,7 +334,7 @@ of the frameless one (to fit the size of the toggle button */
 }
 
 .mw-revslider-pointer-line .mw-revslider-lower-color {
-	border-color: #e8bd4f;
+	border-color: #fc3;
 }
 
 .mw-revslider-pointer-line .mw-revslider-upper-color {
@@ -358,7 +358,7 @@ of the frameless one (to fit the size of the toggle button */
 }
 
 .mw-revslider-older-diff-column {
-	border-top: 2px solid #e8bd4f;
+	border-top: 2px solid #fc3;
 }
 
 .mw-revslider-newer-diff-column {
