@@ -299,6 +299,7 @@ of the frameless one (to fit the size of the toggle button */
 
 .mw-revslider-help-dialog-text {
 	font-size: 14px;
+	line-height: 1.5;
 }
 
 .mw-revslider-show-help {
