@@ -21,9 +21,11 @@
 		refresh: function ( revId1, revId2, retryAttempt ) {
 			var self = this,
 				retryLimit = 2,
+				diff = Math.max( revId1, revId2 ),
+				oldid = Math.min( revId1, revId2 ),
 				data = {
-					diff: Math.max( revId1, revId2 ),
-					oldid: Math.min( revId1, revId2 )
+					diff: diff,
+					oldid: oldid
 				},
 				params = this.getExtraDiffPageParams();
 
@@ -50,7 +52,6 @@
 					$container = $( '.mw-revslider-container' ),
 					$contentText = $( '#mw-content-text' ),
 					$sidePanel = $( '#mw-panel' ),
-					$navigation = $( '#p-views' ),
 					$catLinks = $( '#catlinks' ),
 					$printFooter = $( '.printfooter' ),
 					scrollLeft = $container.find( '.mw-revslider-revisions-container' ).scrollLeft();
@@ -60,11 +61,16 @@
 				$data.find( '.mw-revslider-container' ).replaceWith( $container );
 
 				// Replace the elements on the page with the newly loaded elements
-				$navigation.replaceWith( $data.find( '#p-views' ) );
 				$catLinks.replaceWith( $data.find( '#catlinks' ) );
 				$sidePanel.replaceWith( $data.find( '#mw-panel' ) );
 				$printFooter.replaceWith( $data.find( '.printfooter' ) );
 				$contentText.replaceWith( $data.find( '#mw-content-text' ) );
+				// Update edit link
+				$( '#ca-edit a, #ca-ve-edit a' ).each( function () {
+					var uri = new mw.Uri( $( this ).attr( 'href' ) );
+					uri.query.oldid = diff;
+					$( this ).attr( 'href', uri.toString() );
+				} );
 
 				$( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
 
