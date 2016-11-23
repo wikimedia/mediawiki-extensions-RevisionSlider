@@ -7,6 +7,7 @@
 		]
 	},
 	"revisionslider": "RevisionSlider, see https://www.mediawiki.org/wiki/Extension:RevisionSlider",
+	"revisionslider-preference-disable": "Label for the user preference that disables the RevisionSlider",
 	"revisionslider-desc": "{{desc|name=RevisionSlider|url=https://www.mediawiki.org/wiki/Extension:RevisionSlider}}",
 	"revisionslider-beta-feature-message": "Label for the RevisionSlider Beta Feature.",
 	"revisionslider-beta-feature-description": "Description for the RevisionSlider Beta Feature, describing the feature that will be enabled.",

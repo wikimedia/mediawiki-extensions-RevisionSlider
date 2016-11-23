@@ -253,6 +253,9 @@
 		"GetBetaFeaturePreferences": [
 			"RevisionSliderHooks::getBetaFeaturePreferences"
 		],
+		"GetPreferences": [
+			"RevisionSliderHooks::onGetPreferences"
+		],
 		"ResourceLoaderTestModules": [
 			"RevisionSliderHooks::onResourceLoaderTestModules"
 		]

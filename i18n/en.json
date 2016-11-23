@@ -5,6 +5,7 @@
         ]
     },
     "revisionslider": "RevisionSlider",
+    "revisionslider-preference-disable": "Don't show the RevisionSlider",
     "revisionslider-desc": "Shows a slider allowing selecting and comparing of revisions on a diff page",
     "revisionslider-beta-feature-message": "Revision slider",
     "revisionslider-beta-feature-description": "Show a revision slider when comparing two revisions of a page.",
