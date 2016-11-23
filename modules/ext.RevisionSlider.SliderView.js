@@ -263,7 +263,7 @@
 			$container.html( $slider );
 
 			this.slide( Math.floor( ( this.pointerNewer.getPosition() - 1 ) / this.slider.getRevisionsPerWindow() ), 0 );
-			this.diffPage.replaceState( mw.config.values.extRevisionSliderOldRev, mw.config.values.extRevisionSliderNewRev, this );
+			this.diffPage.replaceState( mw.config.get( 'extRevisionSliderOldRev' ), mw.config.get( 'extRevisionSliderNewRev' ), this );
 			this.diffPage.initOnPopState( this );
 		},
 
@@ -388,7 +388,7 @@
 		 * @return {jQuery}
 		 */
 		getOldRevElement: function ( $revs ) {
-			return $revs.find( 'div.mw-revslider-revision[data-revid="' + mw.config.values.extRevisionSliderOldRev + '"]' );
+			return $revs.find( 'div.mw-revslider-revision[data-revid="' + mw.config.get( 'extRevisionSliderOldRev' ) + '"]' );
 		},
 
 		/**
@@ -398,7 +398,7 @@
 		 * @return {jQuery}
 		 */
 		getNewRevElement: function ( $revs ) {
-			return $revs.find( 'div.mw-revslider-revision[data-revid="' + mw.config.values.extRevisionSliderNewRev + '"]' );
+			return $revs.find( 'div.mw-revslider-revision[data-revid="' + mw.config.get( 'extRevisionSliderNewRev' ) + '"]' );
 		},
 
 		/**
