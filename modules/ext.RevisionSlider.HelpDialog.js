@@ -12,6 +12,7 @@
 	OO.inheritClass( HelpDialog, OO.ui.ProcessDialog );
 
 	HelpDialog.static.title = mw.msg( 'revisionslider-tutorial' );
+	HelpDialog.static.name = 'revisionslider-tutorial';
 	HelpDialog.static.actions = [
 		{
 			action: 'next',
