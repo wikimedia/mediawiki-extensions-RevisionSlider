@@ -26,6 +26,18 @@
 		"RevisionSliderHooks": "RevisionSlider.hooks.php"
 	},
 	"ResourceModules": {
+		"ext.RevisionSlider.lazy": {
+			"scripts": [
+				"modules/ext.RevisionSlider.lazy.js"
+			],
+			"styles": [
+				"modules/ext.RevisionSlider.lazy.css"
+			],
+			"dependencies": [
+				"ext.RevisionSlider.Settings"
+			],
+			"position": "top"
+		},
 		"ext.RevisionSlider.init": {
 			"scripts": [
 				"modules/ext.RevisionSlider.init.js"
@@ -34,6 +46,7 @@
 				"modules/ext.RevisionSlider.css"
 			],
 			"dependencies": [
+				"oojs-ui",
 				"mediawiki.jqueryMsg",
 				"ext.RevisionSlider.Settings",
 				"ext.RevisionSlider.Slider",
@@ -71,6 +84,7 @@
 				"modules/ext.RevisionSlider.Settings.js"
 			],
 			"dependencies": [
+				"mediawiki.user",
 				"mediawiki.storage",
 				"mediawiki.cookie"
 			]

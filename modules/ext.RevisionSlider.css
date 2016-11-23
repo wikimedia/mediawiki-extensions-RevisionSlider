@@ -19,8 +19,7 @@
 
 .mw-revslider-toggle-button .oo-ui-buttonElement-button {
 	width: 100%;
-	padding-top: 0.06em;
-	padding-bottom: 0.06em;
+	padding: 0.06em 0 0.06em 0;
 }
 
 .mw-revslider-toggle-button .oo-ui-labelElement-label {

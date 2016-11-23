@@ -57,7 +57,13 @@ class RevisionSliderHooks {
 		$autoExpand = $user->getBoolOption( 'userjs-revslider-autoexpand' );
 
 		$out = RequestContext::getMain()->getOutput();
-		$out->addModules( 'ext.RevisionSlider.init' );
+		if ( $autoExpand ) {
+			$out->addModules( 'ext.RevisionSlider.init' );
+			$stats->increment( 'RevisionSlider.event.load' );
+		} else {
+			$out->addModules( 'ext.RevisionSlider.lazy' );
+			$stats->increment( 'RevisionSlider.event.lazyload' );
+		}
 		$out->addModuleStyles( 'ext.RevisionSlider.noscript' );
 		$out->addJsConfigVars( 'extRevisionSliderOldRev', $oldRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderNewRev', $newRev->getId() );
@@ -69,7 +75,9 @@ class RevisionSliderHooks {
 		// rendered as intended before RL loads all CSS styles (avoid jumping after CSS is loaded).
 		// Some better and more future-proof solution (what if ButtonWidget switches to use other tags?)
 		// should be used if possible.
-		$button = ( new OOUI\Tag( 'a' ) )->setAttributes( [ 'style' => 'width: 100%;' ] );
+		$button = ( new OOUI\Tag( 'a' ) )->setAttributes(
+			[ 'style' => 'width: 100%; padding: 0.06em 0 0.06em 0;' ]
+		);
 		$label = ( new OOUI\Tag( 'span' ) )->setAttributes( [ 'style' => 'line-height: 1.875em;' ] );
 		$icon = ( new OOUI\Tag( 'span' ) )->setAttributes( [ 'style' => 'float: right;' ] );
 

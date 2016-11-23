@@ -2,10 +2,9 @@
 	var settings = new mw.libs.revisionSlider.Settings(),
 		autoExpand = settings.shouldAutoExpand(),
 		expanded = autoExpand,
-		initialized = false,
 		autoExpandButton,
 		toggleButton = OO.ui.ButtonWidget.static.infuse( $( '.mw-revslider-toggle-button' ) ),
-		initialize = function () {
+		initialize = function() {
 			var startTime = mw.now(),
 				api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) );
 
@@ -52,8 +51,6 @@
 					mw.log.error( err );
 					mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
 				}
-
-				initialized = true;
 			}, function ( err ) {
 				$( '.mw-revslider-placeholder' )
 					.text( mw.message( 'revisionslider-loading-failed' ).text() );
@@ -62,15 +59,16 @@
 			} );
 		},
 
-		expandAndIntitialize = function () {
+		expand = function () {
+			toggleButton.setIcon( 'collapse' ).setTitle( mw.message( 'revisionslider-toggle-title-collapse' ).text() );
 			$( '.mw-revslider-slider-wrapper' ).show();
 			expanded = true;
-			if ( !initialized ) {
-				initialize();
-			}
-		};
+		},
 
-	mw.track( 'counter.MediaWiki.RevisionSlider.event.load' );
+		collapse = function () {
+			toggleButton.setIcon( 'expand' ).setTitle( mw.message( 'revisionslider-toggle-title-expand' ).text() );
+			$( '.mw-revslider-slider-wrapper' ).hide();
+		};
 
 	autoExpandButton = new OO.ui.ToggleButtonWidget( {
 		icon: 'pin',
@@ -88,8 +86,7 @@
 			settings.setAutoExpand( autoExpand );
 			if ( autoExpand ) {
 				autoExpandButton.setTitle( mw.message( 'revisionslider-turn-off-auto-expand-title' ).text() );
-				expandAndIntitialize();
-				toggleButton.setIcon( 'collapse' ).setTitle( mw.message( 'revisionslider-toggle-title-collapse' ).text() );
+				expand();
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand_on' );
 			} else {
 				autoExpandButton.setTitle( mw.message( 'revisionslider-turn-on-auto-expand-title' ).text() );
@@ -100,25 +97,22 @@
 
 	$( '.mw-revslider-container' ).append( autoExpandButton.$element );
 
-	if ( autoExpand ) {
-		expandAndIntitialize();
-		toggleButton.setIcon( 'collapse' ).setTitle( mw.message( 'revisionslider-toggle-title-collapse' ).text() );
-	}
-
 	toggleButton.connect( this, {
 		click: function () {
 			expanded = !expanded;
 			if ( expanded ) {
-				expandAndIntitialize();
-				toggleButton.setIcon( 'collapse' ).setTitle( mw.message( 'revisionslider-toggle-title-collapse' ).text() );
+				expand();
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.expand' );
 				mw.hook( 'revslider.expand' ).fire();
 			} else {
-				$( '.mw-revslider-slider-wrapper' ).hide();
-				toggleButton.setIcon( 'expand' ).setTitle( mw.message( 'revisionslider-toggle-title-expand' ).text() );
+				collapse();
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.collapse' );
 				mw.hook( 'revslider.collapse' ).fire();
 			}
 		}
 	} );
+
+	expand();
+	initialize();
+
 }( mediaWiki, jQuery ) );

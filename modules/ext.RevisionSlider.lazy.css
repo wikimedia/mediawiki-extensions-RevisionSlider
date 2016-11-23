@@ -1,0 +1,33 @@
+/* This CSS is duplicated in ext.RevisionSlider.css */
+
+@media print {
+	.mw-revslider-container {
+		display: none;
+	}
+}
+
+.mw-revslider-container {
+	/* This will flip with CSSJanus in case */
+	/* the interface is in RTL */
+	direction: ltr;
+	position: relative;
+	z-index: 8;
+}
+
+.mw-revslider-toggle-button {
+	width: 100%;
+	text-align: center;
+}
+
+.mw-revslider-toggle-button .oo-ui-buttonElement-button {
+	width: 100%;
+	padding: 0.06em 0 0.06em 0;
+}
+
+.mw-revslider-toggle-button .oo-ui-labelElement-label {
+	line-height: 1.875em;
+}
+
+.mw-revslider-toggle-button .oo-ui-iconElement-icon {
+	float: right;
+}
