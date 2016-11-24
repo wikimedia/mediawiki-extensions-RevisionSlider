@@ -3,12 +3,12 @@
 This MediaWiki extension shows a slider allowing selecting and comparing of revisions on a diff page
 
 ## Installation
-Check out this extension into the `extensions` folder of your MediaWiki installation and add the following line to  your `LocalSettings.php`:
+Check out this extension into the `extensions` folder of your MediaWiki installation and add the following line to your `LocalSettings.php`:
 
     wfLoadExtension( 'RevisionSlider' );
 
 ## Tests
-Before executing tests run tho following in the root directory of the extension once:
+Before executing tests run the following in the root directory of the extension once:
 
     composer install
     npm install
