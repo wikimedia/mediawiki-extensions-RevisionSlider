@@ -30,6 +30,14 @@ class RevisionSliderHooks {
 		}
 
 		/**
+		 * If the user is logged in and has explictly requested to disable the extension don't load.
+		 */
+		$user = $diff->getUser();
+		if ( !$user->isAnon() && $user->getBoolOption( 'revisionslider-disable' ) ) {
+			return true;
+		}
+
+		/**
 		 * Do not show the RevisionSlider when revisions from two different pages are being compared
 		 */
 		if ( !$oldRev->getTitle()->equals( $newRev->getTitle() ) ) {
@@ -46,7 +54,7 @@ class RevisionSliderHooks {
 			$timeOffset = 0;
 		}
 
-		$autoExpand = $diff->getUser()->getBoolOption( 'userjs-revslider-autoexpand' );
+		$autoExpand = $user->getBoolOption( 'userjs-revslider-autoexpand' );
 
 		$out = RequestContext::getMain()->getOutput();
 		$out->addModules( 'ext.RevisionSlider.init' );
@@ -162,6 +170,17 @@ class RevisionSliderHooks {
 			],
 			'localBasePath' => __DIR__,
 			'remoteExtPath' => 'RevisionSlider',
+		];
+
+		return true;
+	}
+
+	public static function onGetPreferences( User $user, array &$preferences ) {
+		$preferences['revisionslider-disable'] = [
+			'type' => 'toggle',
+			'label-message' => 'revisionslider-preference-disable',
+			'section' => 'rendering/diffs',
+			'default' => $user->getBoolOption( 'revisionslider-disable' ),
 		];
 
 		return true;
