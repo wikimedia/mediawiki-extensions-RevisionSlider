@@ -8,6 +8,7 @@
 		]
 	},
 	"revisionslider": "סרגל הגרסאות",
+	"revisionslider-preference-disable": "לא להציג את סרגל הגרסאות",
 	"revisionslider-desc": "הצגת סרגל המאפשר לבחור ולהשוות גרסאות ישירות בתוך דף השוואת הגרסאות",
 	"revisionslider-beta-feature-message": "סרגל הגרסאות",
 	"revisionslider-beta-feature-description": "הצגת סרגל ניווט בעת השוואת שתי גרסאות של דף.",

@@ -6,6 +6,7 @@
 		]
 	},
 	"revisionslider": "Versionsblätterer",
+	"revisionslider-preference-disable": "Den Versionsblätterer nicht anzeigen",
 	"revisionslider-desc": "Zeigt eine Leiste an, mit der das Auswählen und Vergleichen von Versionen in der Vergleichsansicht ermöglicht wird.",
 	"revisionslider-beta-feature-message": "Versionsblätterer",
 	"revisionslider-beta-feature-description": "Zeigt eine Leiste über der Vergleichsansicht an, mit der das Auswählen und Vergleichen von Versionen ermöglicht wird.",
