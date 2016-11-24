@@ -16,6 +16,24 @@
       "revId": "e89437cc06ea5841cb5ef979ad6069ddf9e64cff",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aebe47e0_4051e4dc",
+        "filename": "extension.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2016-11-24T13:42:46Z",
+      "side": 1,
+      "message": "yep, these messages and event the dependancies have been removed in a following patch.\nThe CSS has also been stripped back.",
+      "parentUuid": "aebe47e0_4030c4e5",
+      "revId": "e89437cc06ea5841cb5ef979ad6069ddf9e64cff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
