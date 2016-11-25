@@ -10,6 +10,7 @@
 		]
 	},
 	"revisionslider": "Cursore delle versioni",
+	"revisionslider-preference-disable": "Non mostrare il RevisionSlider",
 	"revisionslider-desc": "Mostra un cursore che permette la selezione e il confronto tra le versioni di una pagina delle differenze",
 	"revisionslider-beta-feature-message": "RevisionSlider",
 	"revisionslider-beta-feature-description": "Mostra un cursore quando si confrontano due versioni di una pagina.",

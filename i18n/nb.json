@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Danmichaelo"
+			"Danmichaelo",
+			"Jon Harald Søby"
 		]
 	},
 	"revisionslider": "Revisjonsskyvelinje",
+	"revisionslider-preference-disable": "Ikke vis revisjonsskyvelinja",
 	"revisionslider-desc": "Viser en skyvelinje for å velge revisjoner å sammenligne på revisjonssammenligningssidene (diff-sidene)",
 	"revisionslider-beta-feature-message": "Revisjonsskyvelinje",
 	"revisionslider-beta-feature-description": "Viser en revisjonsskyvelinje ved sammenligning av to revisjoner av en side.",

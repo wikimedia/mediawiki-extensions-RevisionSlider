@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Metalhead64",
-			"Cornelius Kibelka (WMDE)"
+			"Cornelius Kibelka (WMDE)",
+			"ThePiscin"
 		]
 	},
 	"revisionslider": "Versionsblätterer",
@@ -22,8 +23,8 @@
 	"revisionslider-loading-failed": "Der Versionsblätterer konnte nicht geladen werden.",
 	"revisionslider-toggle-title-expand": "Versionsblätterer öffnen",
 	"revisionslider-toggle-title-collapse": "Versionsblätterer einklappen",
-	"revisionslider-turn-on-auto-expand-title": "Versionsblätterer immer expandieren",
-	"revisionslider-turn-off-auto-expand-title": "Versionsblätterer nicht automatisch expandieren",
+	"revisionslider-turn-on-auto-expand-title": "Versionsblätterer immer ausklappen",
+	"revisionslider-turn-off-auto-expand-title": "Versionsblätterer nicht automatisch ausklappen",
 	"revisionslider-arrow-tooltip-newer": "Neuere Versionen ansehen",
 	"revisionslider-arrow-tooltip-older": "Ältere Versionen ansehen",
 	"revisionslider-show-help-tooltip": "Hilfetext anzeigen",
