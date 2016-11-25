@@ -176,6 +176,11 @@ class RevisionSliderHooks {
 	}
 
 	public static function onGetPreferences( User $user, array &$preferences ) {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		if ( $config->get( 'RevisionSliderBetaFeature' ) ) {
+			return true;
+		}
+
 		$preferences['revisionslider-disable'] = [
 			'type' => 'toggle',
 			'label-message' => 'revisionslider-preference-disable',
