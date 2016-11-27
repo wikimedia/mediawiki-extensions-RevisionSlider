@@ -9,6 +9,7 @@
 		]
 	},
 	"revisionslider": "Слайдер версій",
+	"revisionslider-preference-disable": "Не показувати Слайдер версій",
 	"revisionslider-desc": "Показує слайдер для вибору і порівняння версій на сторінці порівняння версій",
 	"revisionslider-beta-feature-message": "Слайдер версій",
 	"revisionslider-beta-feature-description": "Показувати слайдер версій при порівнянні двох версій сторінки.",
