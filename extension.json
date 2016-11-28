@@ -130,6 +130,9 @@
 		"ext.RevisionSlider.DiffPage": {
 			"scripts": [
 				"modules/ext.RevisionSlider.DiffPage.js"
+			],
+			"dependencies": [
+				"mediawiki.Uri"
 			]
 		},
 		"ext.RevisionSlider.RevisionList": {
