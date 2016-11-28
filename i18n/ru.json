@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Putnik"
+			"Putnik",
+			"Kareyac"
 		]
 	},
 	"revisionslider": "RevisionSlider",
+	"revisionslider-preference-disable": "Не показывать RevisionSlider",
 	"revisionslider-desc": "Показывает слайдер для выбора и сравнения версий на странице разницы версий",
 	"revisionslider-beta-feature-message": "RevisionSlider",
 	"revisionslider-beta-feature-description": "Показать слайдер версий при сравнении двух версий страницы.",

@@ -5,6 +5,7 @@
 		]
 	},
 	"revisionslider": "Con trượt phiên bản",
+	"revisionslider-preference-disable": "Không hiển thị Con trượt phiên bản",
 	"revisionslider-desc": "Hiển thị con trượt cho phép lựa chọn và so sánh các phiên bản của một trang",
 	"revisionslider-beta-feature-message": "Con trượt phiên bản",
 	"revisionslider-beta-feature-description": "Hiển thị con trượt cho phép lựa chọn và so sánh các phiên bản của một trang.",
@@ -20,6 +21,8 @@
 	"revisionslider-loading-failed": "Thất bại khi tải con trượt phiên bản.",
 	"revisionslider-toggle-title-expand": "Mở con trượt phiên bản",
 	"revisionslider-toggle-title-collapse": "Đóng con trượt phiên bản",
+	"revisionslider-turn-on-auto-expand-title": "Luôn mở rộng con trượt phiên bản",
+	"revisionslider-turn-off-auto-expand-title": "Không tự động mở rộng con trượt phiên bản",
 	"revisionslider-arrow-tooltip-newer": "Xem phiên bản mới hơn",
 	"revisionslider-arrow-tooltip-older": "Xem phiên bản cũ hơn",
 	"revisionslider-show-help-tooltip": "Xem văn bản trợ giúp",
