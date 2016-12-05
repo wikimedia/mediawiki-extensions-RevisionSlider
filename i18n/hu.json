@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Tacsipacsi"
+			"Tacsipacsi",
+			"Dorgan"
 		]
 	},
 	"revisionslider-desc": "Egy csúszkát jelenít meg lapváltozat-összehasonlításkor, ami lehetővé teszi a lap változatainak kiválasztását és összehasonlítását",
 	"revisionslider-beta-feature-message": "Lapváltozatcsúszka",
-	"revisionslider-beta-feature-description": "Egy lapváltozatcsúszka megjelenítése egy lap két változatának összehasonlításakor",
+	"revisionslider-beta-feature-description": "Csúszka megjelenítése egy lap két változatának összehasonlításakor.",
 	"revisionslider-toggle-label": "Laptörténet böngészése",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bájt}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bájt}}",
