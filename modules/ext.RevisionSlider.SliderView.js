@@ -92,6 +92,8 @@
 				helpPopup,
 				backwardArrowPopup,
 				forwardArrowPopup,
+				escapePressed = false,
+				$pointers,
 				self = this;
 
 			this.dir = $container.css( 'direction' ) || 'ltr';
@@ -198,12 +200,21 @@
 					this.pointerOlder.getLine().render(), this.pointerNewer.getLine().render()
 				);
 
-			$slider.find( '.mw-revslider-pointer' ).draggable( {
+			$pointers = $slider.find( '.mw-revslider-pointer' );
+			$( 'body' ).keydown( function ( e ) {
+				if ( e.which === 27 ) {
+					escapePressed = true;
+					$pointers.trigger( 'mouseup' );
+				}
+			} );
+
+			$pointers.draggable( {
 				axis: 'x',
 				grid: [ this.revisionWidth, null ],
 				containment: '.mw-revslider-pointer-container',
 				start: function () {
 					$( '.mw-revslider-revision-wrapper' ).addClass( 'mw-revslider-pointer-cursor' );
+					escapePressed = false;
 				},
 				stop: function () {
 					var $p = $( this ),
@@ -212,6 +223,14 @@
 						adjustedPos = self.dir === 'rtl' ? pointer.getView().getAdjustedLeftPositionWhenRtl( pos ) : pos,
 						relativeIndex = Math.ceil( ( adjustedPos + self.revisionWidth / 2 ) / self.revisionWidth ),
 						revId1, revId2;
+
+					$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-pointer-cursor' );
+
+					if ( escapePressed ) {
+						self.updatePointerPositionAttributes();
+						self.resetPointerStylesBasedOnPosition();
+						return;
+					}
 
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
 					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + relativeIndex );
@@ -227,7 +246,6 @@
 
 					self.redrawPointerLines();
 
-					$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-pointer-cursor' );
 				},
 				drag: function ( event, ui ) {
 					var olderLeftPos, newerLeftPos,
@@ -249,6 +267,9 @@
 							self.resetPointerColorsBasedOnValues( newerLeftPos, olderLeftPos );
 						}
 					}
+				},
+				revert: function () {
+					return escapePressed;
 				}
 			} );
 
