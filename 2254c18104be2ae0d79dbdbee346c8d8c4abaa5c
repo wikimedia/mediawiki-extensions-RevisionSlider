@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2edfb757_34c2b689",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 4082
+      },
+      "writtenOn": "2016-12-10T19:22:22Z",
+      "side": 1,
+      "message": "Missing space before and after quotes.",
+      "revId": "2254c18104be2ae0d79dbdbee346c8d8c4abaa5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2edfb757_14bfbaf7",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 4082
+      },
+      "writtenOn": "2016-12-10T19:22:22Z",
+      "side": 1,
+      "message": "Missing space before and after function(e) and after opening bracket.",
+      "revId": "2254c18104be2ae0d79dbdbee346c8d8c4abaa5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2edfb757_14e8da0a",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 4082
+      },
+      "writtenOn": "2016-12-10T19:22:22Z",
+      "side": 1,
+      "message": "Missing space before and after quotes and inside the if statement.",
+      "revId": "2254c18104be2ae0d79dbdbee346c8d8c4abaa5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2edfb757_74c83eab",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 4082
+      },
+      "writtenOn": "2016-12-10T19:22:22Z",
+      "side": 1,
+      "message": "Missing space before and after quotes.",
+      "revId": "2254c18104be2ae0d79dbdbee346c8d8c4abaa5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2edfb757_f4d30e63",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 4082
+      },
+      "writtenOn": "2016-12-10T19:22:22Z",
+      "side": 1,
+      "message": "Missing space before and after quotes and inside the if statement.",
+      "revId": "2254c18104be2ae0d79dbdbee346c8d8c4abaa5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2edfb757_d4d81282",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 4082
+      },
+      "writtenOn": "2016-12-10T19:22:22Z",
+      "side": 1,
+      "message": "Missing space after function()",
+      "revId": "2254c18104be2ae0d79dbdbee346c8d8c4abaa5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

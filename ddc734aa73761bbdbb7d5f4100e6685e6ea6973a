@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2edfb757_94d28a5c",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4082
+      },
+      "writtenOn": "2016-12-10T19:22:22Z",
+      "side": 0,
+      "message": "I would keep the order and leave \"self \u003d this;\" as last element, just to make the code easier to read.",
+      "revId": "ddc734aa73761bbdbb7d5f4100e6685e6ea6973a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
