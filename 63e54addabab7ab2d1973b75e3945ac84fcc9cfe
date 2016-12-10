@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2edfb757_341636f7",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 4082
+      },
+      "writtenOn": "2016-12-10T19:57:27Z",
+      "side": 1,
+      "message": "Missing spaces, should be if ( e.which \u003d\u003d\u003d 27 ) {",
+      "revId": "63e54addabab7ab2d1973b75e3945ac84fcc9cfe",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2edfb757_14133a07",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 4082
+      },
+      "writtenOn": "2016-12-10T19:57:27Z",
+      "side": 1,
+      "message": "Missing space before and after quotes and inside the if statement.",
+      "revId": "63e54addabab7ab2d1973b75e3945ac84fcc9cfe",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
