@@ -78,8 +78,9 @@ class RevisionSliderHooks {
 		$button = ( new OOUI\Tag( 'a' ) )->setAttributes(
 			[ 'style' => 'width: 100%; padding: 0.06em 0 0.06em 0;' ]
 		);
+		$iconPosition = $out->getLanguage()->isRTL()? 'left' : 'right';
 		$label = ( new OOUI\Tag( 'span' ) )->setAttributes( [ 'style' => 'line-height: 1.875em;' ] );
-		$icon = ( new OOUI\Tag( 'span' ) )->setAttributes( [ 'style' => 'float: right;' ] );
+		$icon = ( new OOUI\Tag( 'span' ) )->setAttributes( [ 'style' => "float: $iconPosition;" ] );
 
 		$toggleButton = new OOUI\ButtonWidget( [
 			'label' => ( new Message( 'revisionslider-toggle-label' ) )->text(),
