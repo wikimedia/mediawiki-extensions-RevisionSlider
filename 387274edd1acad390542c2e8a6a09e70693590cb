@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2edfb757_325ab4fa",
+        "filename": "RevisionSlider.hooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-12-13T16:35:45Z",
+      "side": 1,
+      "message": "TL;DR This change is good and fixed the bug. I thought I had a clue why it all happened and thought there might have been another option of handling the expand button. But while writing this lengthy comment I realized this new idea does not work for reasons unknown to my. So, as I also mention below, even there is some slight odd jumping of the button, I believe this change is the best we could get. And jumping problem only appears in RTL UI in Chromium, no jumping in FF\n\n\nA bit of background why we actually ended up having this position set up here:\nWe want to have the expand icon displayed on the edge of the button. This is done correctly by the browser once all CSS is loaded without even needing to set \"float\" for the icon element (setting a width of the \"parent\" button to 100%, and having the direction of the RS container div flipped by cssjanus if needed). But in the time period when browser already shows something but Resource Loader is not done with loading things yet, the icon would be placed in the wrong position (on the left of the label of the \"parent button\", ie. the one with \"Browse hsstory\"). To avoid the icon jumping to the right after loading is finished, this float: right has been loaded. Actually, when OOJS is loaded, and \"takes over\" the button, it drops all inline styles, so the float setting is no longer relevant. With this hack it all looked rather OK in LTR case. In RTL mode it was a bit of jumping, as the icon jumped from the rightmost edge to the left edge after loading. It was wrong but still not that striking as if it had been initially shown right next to \"Browse history\".\n\nWith the JS lazy loading, the OO button is only instantiated after expanding the RS. Before this the icon always has \"float: right\", making the position completely wrong in RTL UI.\n\nWith this patch the icon would be placed on the left side in RTL UI, which is good. I still notice some jumping after loading all CSS. Apparently \"float: lefT\" makes the icon to be displayed on the left, but not that close to the left edge as it is when all CSS and JS is loaded, and OO kicks in, steals the button and drops the inline float setting.\n\nThis is clearly better than what it was before introducing lazy loading, as it now only slightly jumps on the left side, instead of jumping from right side of the window to the left side. And it is definitely better than the current situation with icon being completely positioned wrong.\n\nOne thing that came to my mind though, would be to avoid jumping completely by only showing the icon after the loading has finished. So the inline style would make the icon element not displayed, while CSS files (both lazy and not lazy) would just show it, as they already set the right float setting. I thought this is a good idea but when I set display: none in the inline style here it for some mysterious reason does not have an effect, and the button looks even more ugly than it is on master.\n\nSo to summarize this short novel: this change fixes the problem!",
+      "revId": "387274edd1acad390542c2e8a6a09e70693590cb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
