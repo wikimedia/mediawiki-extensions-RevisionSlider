@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Alpkant",
-			"Incelemeelemani"
+			"Incelemeelemani",
+			"1917 Ekim Devrimi"
 		]
 	},
 	"revisionslider": "SürümKaydırıcı",
+	"revisionslider-preference-disable": "RevisionSlider gösterme",
 	"revisionslider-desc": "Sürüm farkı karşılaştırmasını bir kaydırıcı seçimi ile yapmanıza izin verir ve gösterir",
 	"revisionslider-beta-feature-message": "Sürüm kaydırıcı",
 	"revisionslider-beta-feature-description": "Bir sayfanın iki sürümünü karşılaştırırken, sürüm kaydırıcısını göster.",
