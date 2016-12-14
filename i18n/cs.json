@@ -7,6 +7,7 @@
 		]
 	},
 	"revisionslider": "Posuvník revizí",
+	"revisionslider-preference-disable": "Nezobrazovat posuvník revizí",
 	"revisionslider-desc": "Na stránce s rozdíly zobrazuje posuvník umožňující výběr a porovnání revizí.",
 	"revisionslider-beta-feature-message": "Časová osa historie",
 	"revisionslider-beta-feature-description": "Při porovnávání dvou verzí stránky zobrazí posuvník revizí.",
