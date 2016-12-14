@@ -65,14 +65,18 @@
 				minor: true
 			} ),
 			tooltip,
-			tooltipHtml;
+			tooltipHtml,
+			originalSeparatorTransformTable = mw.language.getData( 'en', 'separatorTransformTable' );
 
 		revision.setRelativeSize( 2100 );
 
 		mw.libs.revisionSlider.userOffset = 0;
 
+		mw.language.setData( 'en', 'separatorTransformTable', null );
+
 		tooltip = revisionListView.makeTooltip( revision );
 		tooltipHtml = tooltip.$element.html();
+		mw.language.setData( 'en', 'separatorTransformTable', originalSeparatorTransformTable );
 
 		assert.ok( tooltipHtml.match( /User1/ ), 'Test the user.' );
 		assert.ok( tooltipHtml.match( /Hello/ ), 'Test the comment.' );
@@ -80,6 +84,7 @@
 		assert.ok( tooltipHtml.match( /\+2,100/ ), 'Test the change size.' );
 		assert.ok( tooltipHtml.match( /26 April 2016 10:27 AM/ ), 'Test the date.' );
 		assert.ok( tooltipHtml.match( /minor/ ), 'Test minor.' );
+
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
 	QUnit.test( 'empty user leads to no user line', function ( assert ) {
@@ -168,11 +173,14 @@
 	QUnit.test( 'big change number is formatted correctly', function ( assert ) {
 		var revisionListView = new RevisionListView(),
 			originalUserLangSetting = mw.config.get( 'wgUserLanguage' ),
+			originalSeparatorTransformTable = mw.language.getData( 'en', 'separatorTransformTable' ),
 			$changeSizeLineHtml;
 
 		mw.config.set( 'wgUserLanguage', 'en' );
+		mw.language.setData( 'en', 'separatorTransformTable', null );
 		$changeSizeLineHtml = revisionListView.makeChangeSizeLine( 1000 );
 		mw.config.set( 'wgUserLanguage', originalUserLangSetting );
+		mw.language.setData( 'en', 'separatorTransformTable', originalSeparatorTransformTable );
 
 		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).text(), '+1,000' );
 	} );
@@ -180,11 +188,14 @@
 	QUnit.test( 'page size is formatted correctly', function ( assert ) {
 		var revisionListView = new RevisionListView(),
 			originalUserLangSetting = mw.config.get( 'wgUserLanguage' ),
+			originalSeparatorTransformTable = mw.language.getData( 'en', 'separatorTransformTable' ),
 			$pageSizeLineHtml;
 
 		mw.config.set( 'wgUserLanguage', 'en' );
+		mw.language.setData( 'en', 'separatorTransformTable', null );
 		$pageSizeLineHtml = revisionListView.makePageSizeLine( 1337 );
 		mw.config.set( 'wgUserLanguage', originalUserLangSetting );
+		mw.language.setData( 'en', 'separatorTransformTable', originalSeparatorTransformTable );
 
 		assert.ok( $pageSizeLineHtml.text().match( /1,337/ ) );
 	} );
