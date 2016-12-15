@@ -100,7 +100,7 @@ class RevisionSliderHooks {
 			'style' => 'margin: 0 auto;',
 		] );
 
-		$out->addHTML(
+		$out->prependHTML(
 			Html::rawElement(
 				'div',
 				[
