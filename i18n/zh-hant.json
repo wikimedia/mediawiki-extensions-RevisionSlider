@@ -8,6 +8,7 @@
 		]
 	},
 	"revisionslider": "修訂時間軸",
+	"revisionslider-preference-disable": "不要顯示修訂時間軸",
 	"revisionslider-desc": "在修訂版本差異頁面上顯示時間軸，同時可供選擇並比較修訂版本間的差異",
 	"revisionslider-beta-feature-message": "修訂時間軸",
 	"revisionslider-beta-feature-description": "在比較頁面的兩份修訂版本時，顯示修訂時間軸。",
@@ -33,7 +34,7 @@
 	"revisionslider-help-dialog-slide3": "<p>若要比較特定修訂版本，請使用黃色及藍色指標選擇修訂版本。</p><p>藍色指標控制較新的編輯，黃色指標表示較舊的編輯。</p><p>您可以透過拖曳或點擊縱條來移動指標。</p>",
 	"revisionslider-help-dialog-slide4": "使用向後及向前箭頭在修訂歷史之間移動，以顯示較舊或較新的修訂版本。",
 	"revisionslider-tutorial": "修訂時間軸教學",
-	"revisionslider-previous-dialog": "上一個",
-	"revisionslider-next-dialog": "下一個",
+	"revisionslider-previous-dialog": "上一步",
+	"revisionslider-next-dialog": "下一步",
 	"revisionslider-close-dialog": "關閉"
 }
