@@ -61,12 +61,16 @@
 
 		expand = function () {
 			toggleButton.setIcon( 'collapse' ).setTitle( mw.message( 'revisionslider-toggle-title-collapse' ).text() );
+			$( '.mw-revslider-container' ).removeClass( 'mw-revslider-container-collapsed' )
+				.addClass( 'mw-revslider-container-expanded' );
 			$( '.mw-revslider-slider-wrapper' ).show();
 			expanded = true;
 		},
 
 		collapse = function () {
 			toggleButton.setIcon( 'expand' ).setTitle( mw.message( 'revisionslider-toggle-title-expand' ).text() );
+			$( '.mw-revslider-container' ).removeClass( 'mw-revslider-container-expanded' )
+				.addClass( 'mw-revslider-container-collapsed' );
 			$( '.mw-revslider-slider-wrapper' ).hide();
 		};
 

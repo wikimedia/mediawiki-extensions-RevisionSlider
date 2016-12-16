@@ -99,7 +99,12 @@
 		drawLine: function () {
 			var $upperLineDiv = this.$html.find( '.mw-revslider-pointer-line-upper' ),
 				$lowerLineDiv = this.$html.find( '.mw-revslider-pointer-line-lower' ),
+				$newerUnderLineDiv = this.$html.find( '.mw-revslider-pointer-line-underline' )
+					.filter( '.mw-revslider-pointer-newer' ),
+				$olderUnderLineDiv = this.$html.find( '.mw-revslider-pointer-line-underline' )
+					.filter( '.mw-revslider-pointer-older' ),
 				$sourcePointer = this.pointer.getView().getElement(),
+				$table = $( '.diff-otitle' ),
 				$targetColumn;
 
 			if ( this.offsetNotAvailable() ) {
@@ -110,10 +115,14 @@
 			if ( this.pointer.getView().isUpperPointer() ) {
 				$lowerLineDiv.removeClass( 'mw-revslider-lower-color' ).addClass( 'mw-revslider-upper-color' );
 				$upperLineDiv.removeClass( 'mw-revslider-lower-color' ).addClass( 'mw-revslider-upper-color' );
+				$newerUnderLineDiv.removeClass( 'mw-revslider-lower-color' ).addClass( 'mw-revslider-upper-color' );
+				$olderUnderLineDiv.removeClass( 'mw-revslider-lower-color' ).addClass( 'mw-revslider-upper-color' );
 				$targetColumn = $( '.diff-ntitle' );
 			} else {
 				$lowerLineDiv.removeClass( 'mw-revslider-upper-color' ).addClass( 'mw-revslider-lower-color' );
 				$upperLineDiv.removeClass( 'mw-revslider-upper-color' ).addClass( 'mw-revslider-lower-color' );
+				$olderUnderLineDiv.removeClass( 'mw-revslider-upper-color' ).addClass( 'mw-revslider-lower-color' );
+				$newerUnderLineDiv.removeClass( 'mw-revslider-upper-color' ).addClass( 'mw-revslider-lower-color' );
 				$targetColumn = $( '.diff-otitle' );
 			}
 
@@ -124,9 +133,35 @@
 			if ( this.targetColumnIsRightFromPointer( $sourcePointer, $targetColumn ) ) {
 				$upperLineDiv.addClass( 'mw-revslider-left-line' );
 				$lowerLineDiv.addClass( 'mw-revslider-right-line' );
+
+				$( $newerUnderLineDiv ).css( {
+					width: $table.width() + 'px',
+					'margin-right': -$table.width() / 2 + 'px',
+					'margin-left': 0,
+					'float': 'right'
+				} );
+				$( $olderUnderLineDiv ).css( {
+					width: $table.width() + 'px',
+					'margin-right': -$table.width() / 2 + 'px',
+					'margin-left': 0,
+					'float': 'right'
+				} );
 			} else {
 				$upperLineDiv.addClass( 'mw-revslider-right-line' );
 				$lowerLineDiv.addClass( 'mw-revslider-left-line' );
+
+				$( $newerUnderLineDiv ).css( {
+					width: $table.width() + 'px',
+					'margin-left': -$table.width() / 2 + 'px',
+					'margin-right': 0,
+					'float': 'left'
+				} );
+				$( $olderUnderLineDiv ).css( {
+					width: $table.width() + 'px',
+					'margin-left': -$table.width() / 2 + 'px',
+					'margin-right': 0,
+					'float': 'left'
+				} );
 			}
 
 			return true;
@@ -140,7 +175,8 @@
 				.addClass( 'mw-revslider-pointer-line ' + this.name )
 				.append(
 					$( '<div>' ).addClass( 'mw-revslider-pointer-line-upper ' + this.name ),
-					$( '<div>' ).addClass( 'mw-revslider-pointer-line-lower ' + this.name )
+					$( '<div>' ).addClass( 'mw-revslider-pointer-line-lower ' + this.name ),
+					$( '<div>' ).addClass( 'mw-revslider-pointer-line-underline ' + this.name )
 				);
 		},
 
@@ -184,6 +220,7 @@
 		getElement: function () {
 			return this.$html;
 		}
+
 	} );
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
