@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e0e73b5_1510ba52",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-12-19T12:54:21Z",
+      "side": 1,
+      "message": "When testing this, the event was never triggered for me when set to the slider. You could think about setting it to some root element like $( \u0027body\u0027 ) or $( \u0027html\u0027 ).",
+      "range": {
+        "startLine": 204,
+        "startChar": 3,
+        "endLine": 204,
+        "endChar": 10
+      },
+      "revId": "6d12816a5a5e8426623c3532f559e94cc3307f77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e0e73b5_d55ea216",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2016-12-19T12:54:21Z",
+      "side": 1,
+      "message": "You should add \n$( \u0027.mw-revslider-revision-wrapper\u0027 ).removeClass( \u0027mw-revslider-pointer-cursor\u0027 );\nhere to remove the dragging mouse pointer.",
+      "revId": "6d12816a5a5e8426623c3532f559e94cc3307f77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
