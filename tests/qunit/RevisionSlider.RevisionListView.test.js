@@ -167,24 +167,18 @@
 
 	QUnit.test( 'big change number is formatted correctly', function ( assert ) {
 		var revisionListView = new RevisionListView(),
-			originalUserLangSetting = mw.config.get( 'wgUserLanguage' ),
 			$changeSizeLineHtml;
 
-		mw.config.set( 'wgUserLanguage', 'en' );
 		$changeSizeLineHtml = revisionListView.makeChangeSizeLine( 1000 );
-		mw.config.set( 'wgUserLanguage', originalUserLangSetting );
 
 		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).text(), '+1,000' );
 	} );
 
 	QUnit.test( 'page size is formatted correctly', function ( assert ) {
 		var revisionListView = new RevisionListView(),
-			originalUserLangSetting = mw.config.get( 'wgUserLanguage' ),
 			$pageSizeLineHtml;
 
-		mw.config.set( 'wgUserLanguage', 'en' );
 		$pageSizeLineHtml = revisionListView.makePageSizeLine( 1337 );
-		mw.config.set( 'wgUserLanguage', originalUserLangSetting );
 
 		assert.ok( $pageSizeLineHtml.text().match( /1,337/ ) );
 	} );
