@@ -3,7 +3,8 @@
 		"authors": [
 			"LucyDiniz",
 			"TheEduGobi",
-			"Macofe"
+			"Macofe",
+			"Diego Queiroz"
 		]
 	},
 	"revisionslider": "Deslizador de Revisões",
@@ -14,9 +15,8 @@
 	"revisionslider-label-page-size": "Tamanho da página",
 	"revisionslider-label-change-size": "Tamanho da mudança",
 	"revisionslider-label-comment": "Comentário",
-	"revisionslider-label-username": "<strong>Nome de usuário(a):</strong> [[$3|$1]]",
+	"revisionslider-label-username": "{{GENDER:$1|Usuário|Usuária|Usuário(a)}}",
 	"revisionslider-minoredit": "Esta é uma edição menor",
-	"revisionslider-loading-placeholder": "O deslizador de revisões está sendo carregado.",
 	"revisionslider-loading-failed": "O deslizador de revisões não pôde ser carregado.",
 	"revisionslider-arrow-tooltip-newer": "Ver revisões posteriores",
 	"revisionslider-arrow-tooltip-older": "Ver revisões anteriores",
