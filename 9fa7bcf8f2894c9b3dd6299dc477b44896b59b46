@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e0e73b5_da733fae",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2016-12-29T14:10:14Z",
+      "side": 1,
+      "message": "that is a fancy way of setting a variable to zero :)",
+      "revId": "9fa7bcf8f2894c9b3dd6299dc477b44896b59b46",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
