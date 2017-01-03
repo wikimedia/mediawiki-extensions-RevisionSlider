@@ -23,7 +23,7 @@
 		]
 	},
 	"AutoloadClasses": {
-		"RevisionSliderHooks": "RevisionSlider.hooks.php"
+		"RevisionSliderHooks": "src/RevisionSliderHooks.php"
 	},
 	"ResourceModules": {
 		"ext.RevisionSlider.lazy": {

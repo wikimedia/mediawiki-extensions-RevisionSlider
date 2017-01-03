@@ -175,7 +175,7 @@ class RevisionSliderHooks {
 				'jquery.ui.tooltip',
 				'oojs-ui'
 			],
-			'localBasePath' => __DIR__,
+			'localBasePath' => dirname( __DIR__ ),
 			'remoteExtPath' => 'RevisionSlider',
 		];
 
