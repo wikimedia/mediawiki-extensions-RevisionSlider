@@ -16,6 +16,24 @@
       "revId": "7ed3755cb74a06fadd588303e78fce76b43ad444",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e01838a_fbc2d305",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 4111
+      },
+      "writtenOn": "2017-01-08T14:44:24Z",
+      "side": 1,
+      "message": "Well, I can\u0027t reproduce the slightly above/below bug stated above anyway, so I can\u0027t really test it.",
+      "parentUuid": "0e0e73b5_c8c2475d",
+      "revId": "7ed3755cb74a06fadd588303e78fce76b43ad444",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
