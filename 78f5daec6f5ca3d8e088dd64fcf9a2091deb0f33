@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e01838a_d4d23e5d",
+        "filename": "modules/ext.RevisionSlider.css",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2017-01-10T10:35:01Z",
+      "side": 1,
+      "message": "This is a small, cosmetic issue though would be nice if we find a solution for it. From my side it does however not block merging the change.",
+      "revId": "78f5daec6f5ca3d8e088dd64fcf9a2091deb0f33",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
