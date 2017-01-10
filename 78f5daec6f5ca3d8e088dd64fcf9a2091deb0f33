@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "8e01838a_140696d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2017-01-10T10:49:10Z",
+      "side": 1,
+      "message": "Isn\u0027t this fixed now?\nAlso, please add the reference to the task just in the line above the Change-Id:\nBug: T151450",
+      "revId": "78f5daec6f5ca3d8e088dd64fcf9a2091deb0f33",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e01838a_d4d23e5d",
         "filename": "modules/ext.RevisionSlider.css",
         "patchSetId": 5
