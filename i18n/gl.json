@@ -8,6 +8,7 @@
 		]
 	},
 	"revisionslider": "Cronograma de revisións",
+	"revisionslider-preference-disable": "Non amosar o Cronograma de revisións",
 	"revisionslider-desc": "Mostra un control deslizante que permite a selección e comparación das revisións nunha páxina de diferenzas",
 	"revisionslider-beta-feature-message": "Cronograma de revisións",
 	"revisionslider-beta-feature-description": "Mostra un control deslizante cando se comparan dúas versións dunha páxina.",
