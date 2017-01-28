@@ -134,8 +134,7 @@
 					list: 'users',
 					format: 'json',
 					usprop: 'gender',
-					ususers: users.join( '|' ),
-					uslimit: 500
+					ususers: users.join( '|' )
 				}
 			} );
 		},
