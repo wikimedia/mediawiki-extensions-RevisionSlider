@@ -129,6 +129,7 @@
 			return $.ajax( {
 				url: this.url,
 				data: {
+					formatversion: 2,
 					action: 'query',
 					list: 'users',
 					format: 'json',
