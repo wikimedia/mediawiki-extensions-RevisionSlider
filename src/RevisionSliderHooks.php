@@ -141,8 +141,10 @@ class RevisionSliderHooks {
 					'ltr' => "$extensionAssetsPath/RevisionSlider/resources/RevisionSlider-beta-features-ltr.svg",
 					'rtl' => "$extensionAssetsPath/RevisionSlider/resources/RevisionSlider-beta-features-rtl.svg",
 				],
-				'info-link' => 'https://www.mediawiki.org/wiki/Extension:RevisionSlider',
-				'discussion-link' => 'https://www.mediawiki.org/wiki/Extension_talk:RevisionSlider',
+				'info-link'
+					=> 'https://meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider',
+				'discussion-link'
+					=> 'https://meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/RevisionSlider',
 			];
 		}
 	}
