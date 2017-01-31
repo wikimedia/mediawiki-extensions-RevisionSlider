@@ -1,6 +1,4 @@
 ( function ( mw, $ ) {
-	/* global wikEd */
-
 	/**
 	 * Module handling diff page reloading and the RevisionSlider browser history
 	 *
@@ -77,16 +75,6 @@
 				mw.hook( 'wikipage.content' ).fire( $contentText );
 				mw.hook( 'wikipage.diff' ).fire( $contentText.find( 'table.diff' ) );
 
-				// In order to correctly interact with third-party code (extensions and gadgets)
-				// Revision slider should trigger some general (core) hook that other parties listen too
-				// Following wikEdDiff.js-specific code is deprecated and will be removed in the future.
-				// WikEdDiff should be updated to use a hook.
-				if ( self.wikEdDiffDetected() ) {
-					mw.log( 'You are running WikEdDiff & your copy of the code may need to be updated to work with the RevisionSlider.' );
-					mw.log( 'Please see: https://phabricator.wikimedia.org/T143199#2631963' );
-					mw.log( 'If WikEdDiff is still working while using the RevisonSlider then the code change has already been done.' );
-				}
-
 			}, function ( xhr ) {
 				$( 'table.diff[data-mw="interface"]' ).removeClass( 'mw-revslider-diff-loading' );
 				if ( xhr.statusText !== 'abort' ) {
@@ -99,10 +87,6 @@
 					// This could also attempt to reload the page with the correct diff loaded without ajax?
 				}
 			} );
-		},
-
-		wikEdDiffDetected: function () {
-			return typeof wikEd !== 'undefined' && $( 'meta[name=wikEdDiffSetupFlag]' ).length !== 0;
 		},
 
 		/**
