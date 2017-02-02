@@ -6,6 +6,14 @@ When(/^I click on revision (\d+) to move the upper pointer$/) do |index|
   on(DiffPage).click_revision_upper(index.to_i)
 end
 
+When(/^I click on the older edit link$/) do
+  on(DiffPage).click_older_edit_link
+end
+
+When(/^I click on the newer edit link$/) do
+  on(DiffPage).click_newer_edit_link
+end
+
 Given(/^I drag the lower pointer to revision (\d+)$/) do |index|
   on(DiffPage) do |page|
     page.revisionslider_pointer_lower_element.element.drag_and_drop_on page.revisionslider_rev(index.to_i).element

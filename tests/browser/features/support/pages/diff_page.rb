@@ -1,6 +1,9 @@
 class DiffPage
   include PageObject
 
+  a(:differences_prevlink, id: 'differences-prevlink')
+  a(:differences_nextlink, id: 'differences-nextlink')
+
   p(:revisionslider_placeholder, css: '.mw-revslider-placeholder')
   div(:revisionslider_wrapper, css: '.mw-revslider-slider-wrapper')
   div(:revisionslider_auto_expand_button, css: '.mw-revslider-auto-expand-button')
@@ -38,6 +41,14 @@ class DiffPage
   def click_revision_upper(index = 1)
     revbar = revisionslider_rev(index).element.wd
     browser.driver.action.move_to(revbar, 1, 0).click.perform
+  end
+
+  def click_older_edit_link
+    differences_prevlink_element.when_visible.click
+  end
+
+  def click_newer_edit_link
+    differences_nextlink_element.when_visible.click
   end
 
   def revisionslider_tooltip(index = 1)

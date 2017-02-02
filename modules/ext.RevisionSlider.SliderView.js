@@ -284,6 +284,7 @@
 			$container.html( $slider );
 
 			this.slide( Math.floor( ( this.pointerNewer.getPosition() - 1 ) / this.slider.getRevisionsPerWindow() ), 0 );
+			this.diffPage.addHandlersToCoreLinks( this );
 			this.diffPage.replaceState( mw.config.get( 'extRevisionSliderOldRev' ), mw.config.get( 'extRevisionSliderNewRev' ), this );
 			this.diffPage.initOnPopState( this );
 		},
@@ -389,8 +390,33 @@
 		refreshRevisions: function ( revId1, revId2 ) {
 			var oldRev = Math.min( revId1, revId2 ),
 				newRev = Math.max( revId1, revId2 );
-			this.diffPage.refresh( oldRev, newRev );
+			this.diffPage.refresh( oldRev, newRev, this );
 			this.diffPage.pushState( oldRev, newRev, this );
+		},
+
+		showNextDiff: function () {
+			this.pointerOlder.setPosition( this.pointerNewer.getPosition() );
+			this.pointerNewer.setPosition( this.pointerNewer.getPosition() + 1 );
+			this.resetAndRefreshRevisions();
+		},
+
+		showPrevDiff: function () {
+			this.pointerNewer.setPosition( this.pointerOlder.getPosition() );
+			this.pointerOlder.setPosition( this.pointerOlder.getPosition() - 1 );
+			this.resetAndRefreshRevisions();
+		},
+
+		resetAndRefreshRevisions: function() {
+			this.slide( 0 );
+			this.resetPointerStylesBasedOnPosition();
+			this.resetRevisionStylesBasedOnPointerPosition(
+				this.$element.find( 'div.mw-revslider-revisions' )
+			);
+			this.updatePointerPositionAttributes();
+			this.refreshRevisions(
+				$( '.mw-revslider-revision[data-pos="' + this.pointerOlder.getPosition() + '"]' ).attr( 'data-revid' ),
+				$( '.mw-revslider-revision[data-pos="' + this.pointerNewer.getPosition() + '"]' ).attr( 'data-revid' )
+			);
 		},
 
 		/**

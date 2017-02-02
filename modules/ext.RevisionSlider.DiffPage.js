@@ -14,9 +14,10 @@
 		 *
 		 * @param {number} revId1
 		 * @param {number} revId2
+		 * @param {SliderView} sliderView
 		 * @param {number} [retryAttempt=0]
 		 */
-		refresh: function ( revId1, revId2, retryAttempt ) {
+		refresh: function ( revId1, revId2, sliderView, retryAttempt ) {
 			var self = this,
 				retryLimit = 2,
 				diff = Math.max( revId1, revId2 ),
@@ -72,6 +73,8 @@
 
 				$( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
 
+				self.addHandlersToCoreLinks( sliderView );
+
 				mw.hook( 'wikipage.content' ).fire( $contentText );
 				mw.hook( 'wikipage.diff' ).fire( $contentText.find( 'table.diff' ) );
 
@@ -81,7 +84,7 @@
 					this.tryCount++;
 					mw.track( 'counter.MediaWiki.RevisionSlider.error.refresh' );
 					if ( retryAttempt <= retryLimit ) {
-						self.refresh( revId1, revId2, retryAttempt + 1 );
+						self.refresh( revId1, revId2, sliderView, retryAttempt + 1 );
 					}
 					// TODO notify the user that we failed to update the diff?
 					// This could also attempt to reload the page with the correct diff loaded without ajax?
@@ -199,6 +202,20 @@
 				);
 				sliderView.updatePointerPositionAttributes();
 				self.refresh( event.state.revid1, event.state.revid2 );
+			} );
+		},
+
+		/**
+		 * @param {SliderView} sliderView
+		 */
+		addHandlersToCoreLinks: function ( sliderView ) {
+			$( '#differences-nextlink' ).click( function() {
+				sliderView.showNextDiff();
+				return false;
+			} );
+			$( '#differences-prevlink' ).click( function() {
+				sliderView.showPrevDiff();
+				return false;
 			} );
 		}
 	} );
