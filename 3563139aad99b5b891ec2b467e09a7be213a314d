@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ef897d1_b6167baa",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2017-02-03T13:04:55Z",
+      "side": 1,
+      "message": "the two methods are nearly identical - could probably be refactored",
+      "revId": "3563139aad99b5b891ec2b467e09a7be213a314d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
