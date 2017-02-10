@@ -20,6 +20,8 @@
 }
 
 .mw-revslider-toggle-button .oo-ui-buttonElement-button {
+	min-height: 0;
+	min-width: 0;
 	width: 100%;
 	padding: 0.06em 0 0.06em 0;
 }
