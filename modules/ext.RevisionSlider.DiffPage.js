@@ -100,7 +100,7 @@
 		 * @param {SliderView} sliderView
 		 */
 		replaceState: function ( revId1, revId2, sliderView ) {
-			// IE8 and IE9 do not have history.pushState()
+			// IE9 does not have history.replaceState()
 			if ( typeof history.replaceState === 'function' ) {
 				history.replaceState(
 					this.getStateObject( revId1, revId2, sliderView ),
@@ -118,7 +118,7 @@
 		 * @param {SliderView} sliderView
 		 */
 		pushState: function ( revId1, revId2, sliderView ) {
-			// IE8 and IE9 do not have history.pushState()
+			// IE9 does not have history.pushState()
 			if ( typeof history.pushState === 'function' ) {
 				history.pushState(
 					this.getStateObject( revId1, revId2, sliderView ),
