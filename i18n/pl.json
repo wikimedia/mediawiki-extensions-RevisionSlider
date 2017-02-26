@@ -7,11 +7,13 @@
 			"Tar Lócesilion",
 			"Doctore",
 			"Sethakill",
-			"Lebiega"
+			"Lebiega",
+			"Woytecr"
 		]
 	},
 	"revisionslider": "Suwak wersji",
-	"revisionslider-desc": "Pokazuje suwak, pozwalając wybrać i porównywać wersje zmian na stronie",
+	"revisionslider-preference-disable": "Nie pokazuj Suwaka Wersji",
+	"revisionslider-desc": "Pokazuje suwak, pozwalający wybierać i porównywać wersje zmian na stronie",
 	"revisionslider-beta-feature-message": "Suwak wersji",
 	"revisionslider-beta-feature-description": "Pokaż suwak wersji przy porównaniu dwóch wersji strony.",
 	"revisionslider-toggle-label": "Przeglądaj historię",
