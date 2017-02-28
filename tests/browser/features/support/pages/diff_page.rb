@@ -1,8 +1,8 @@
 class DiffPage
   include PageObject
 
-  a(:differences_prevlink, id: 'differences-prevlink')
-  a(:differences_nextlink, id: 'differences-nextlink')
+  link(:differences_prevlink, id: 'differences-prevlink')
+  link(:differences_nextlink, id: 'differences-nextlink')
 
   p(:revisionslider_placeholder, css: '.mw-revslider-placeholder')
   div(:revisionslider_wrapper, css: '.mw-revslider-slider-wrapper')
@@ -12,10 +12,10 @@ class DiffPage
 
   div(:revisionslider_help_dialog, css: '.revisionslider-help-dialog')
   button(:revisionslider_help, css: '.mw-revision-slider-container > button')
-  a(:revisionslider_help_next, css: '.revisionslider-help-next > a')
-  a(:revisionslider_help_previous, css: '.revisionslider-help-previous > a')
-  a(:revisionslider_help_close_start, css: '.revisionslider-help-close-start > a')
-  a(:revisionslider_help_close_end, css: '.revisionslider-help-close-end > a')
+  link(:revisionslider_help_next, css: '.revisionslider-help-next > a')
+  link(:revisionslider_help_previous, css: '.revisionslider-help-previous > a')
+  link(:revisionslider_help_close_start, css: '.revisionslider-help-close-start > a')
+  link(:revisionslider_help_close_end, css: '.revisionslider-help-close-end > a')
 
   div(:revisionslider_timeline_backwards, css: '.mw-revslider-arrow.mw-revslider-arrow-backwards:not(.oo-ui-widget-disabled)')
   div(:revisionslider_timeline_forwards, css: '.mw-revslider-arrow.mw-revslider-arrow-forwards:not(.oo-ui-widget-disabled)')

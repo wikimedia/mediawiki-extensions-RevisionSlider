@@ -7,9 +7,9 @@ Given(/^I hover over the revision (\d+) tooltip$/) do |index|
 end
 
 Then(/^a tooltip should be present for revision (\d+)$/) do |index|
-  expect(on(DiffPage).revisionslider_tooltip(index.to_i).when_visible).to be_visible
+  expect(on(DiffPage).revisionslider_tooltip(index.to_i).when_present).to be_visible
 end
 
 Then(/^no tooltip should be present for revision (\d+)$/) do |index|
-  expect(on(DiffPage).revisionslider_tooltip(index.to_i).when_not_visible).not_to be_visible
+  expect(on(DiffPage).revisionslider_tooltip(index.to_i).when_not_present).not_to be_present
 end
