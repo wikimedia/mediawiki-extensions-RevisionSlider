@@ -174,23 +174,31 @@
 	height: 142px;
 }
 
-.mw-revslider-arrow .oo-ui-buttonElement-button {
+.mw-revslider-arrow-backwards {
+	margin-right: 30px;
+}
+
+.mw-revslider-arrow-forwards {
+	margin-left: 30px;
+}
+
+.mw-revslider-arrow.oo-ui-buttonElement .oo-ui-buttonElement-button {
+	width: 20px;
+	height: 140px;
+	padding: 0;
 	min-height: 0;
 	min-width: 0;
-	height: 140px;
+}
+
+.mw-revslider-arrow.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
+	left: 0;
 	width: 20px;
-	padding: 0;
+	min-width: inherit;
+	min-height: inherit;
 }
 
 .mw-revslider-auto-expand-button.oo-ui-buttonElement > .oo-ui-buttonElement-button {
 	border-color: #fff;
-}
-
-.mw-revslider-arrow .oo-ui-iconElement-icon {
-	width: 20px;
-	height: 20px;
-	min-width: inherit;
-	min-height: inherit;
 }
 
 /* This is a bit hacky way, the goal being to have a framed toggle button widget with some styles
@@ -214,20 +222,6 @@ of the frameless one (to fit the size of the toggle button */
 	top: auto;
 	width: 1.775em;
 	height: 1.775em;
-}
-
-.mw-revslider-arrow.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
-	left: 0;
-	top: 61px;
-}
-
-.mw-revslider-arrow-backwards {
-	margin-right: 30px;
-}
-
-.mw-revslider-arrow-forwards {
-	margin-left: 30px;
-	margin-right: 0;
 }
 
 .mw-revslider-revision-slider {
