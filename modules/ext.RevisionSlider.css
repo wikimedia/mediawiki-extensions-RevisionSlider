@@ -132,6 +132,11 @@
 	word-wrap: break-word;
 }
 
+/* quick fix for T159428 can be removed when https://gerrit.wikimedia.org/r/#/c/340443/ is deployed */
+.mw-revslider-tooltip.oo-ui-popupWidget {
+	left: auto;
+}
+
 .mw-revslider-revision-tooltip .oo-ui-popupWidget-body {
 	padding-right: 19px;
 }
