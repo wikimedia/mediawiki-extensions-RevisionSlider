@@ -105,17 +105,17 @@
 			this.pointerOlder = this.pointerOlder || new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-older' );
 			this.pointerNewer = this.pointerNewer || new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-newer' );
 
-			helpPopup = new OO.ui.PopupWidget( {
-				$content: $( '<p>' ).text( mw.msg( 'revisionslider-show-help-tooltip' ) ),
-				padded: true,
-				width: 200,
-				classes: [ 'mw-revslider-tooltip', 'mw-revslider-help-tooltip' ]
-			} );
-
 			helpButton = new OO.ui.ButtonWidget( {
 				icon: 'help',
 				framed: false,
 				classes: [ 'mw-revslider-show-help' ]
+			} );
+			helpPopup = new OO.ui.PopupWidget( {
+				$content: $( '<p>' ).text( mw.msg( 'revisionslider-show-help-tooltip' ) ),
+				$floatableContainer: helpButton.$element,
+				padded: true,
+				width: 200,
+				classes: [ 'mw-revslider-tooltip', 'mw-revslider-help-tooltip' ]
 			} );
 			helpButton.$element
 				.click( function () {
@@ -124,26 +124,19 @@
 				.mouseover( { popup: helpPopup }, this.showPopup )
 				.mouseout( function () { helpPopup.toggle( false ); } );
 
-			backwardArrowPopup = new OO.ui.PopupWidget( {
-				$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-older' ) ),
-				padded: true,
-				width: 200,
-				classes: [ 'mw-revslider-tooltip', 'mw-revslider-arrow-tooltip' ]
-			} );
-			forwardArrowPopup = new OO.ui.PopupWidget( {
-				$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-newer' ) ),
-				padded: true,
-				width: 200,
-				classes: [ 'mw-revslider-tooltip', 'mw-revslider-arrow-tooltip' ]
-			} );
-			$( 'body' ).append( backwardArrowPopup.$element, forwardArrowPopup.$element, helpPopup.$element );
-
 			this.backwardArrowButton = new OO.ui.ButtonWidget( {
 				icon: 'previous',
 				width: 20,
 				height: 140,
 				framed: true,
 				classes: [ 'mw-revslider-arrow', 'mw-revslider-arrow-backwards' ]
+			} );
+			backwardArrowPopup = new OO.ui.PopupWidget( {
+				$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-older' ) ),
+				$floatableContainer: this.backwardArrowButton.$element,
+				padded: true,
+				width: 200,
+				classes: [ 'mw-revslider-tooltip', 'mw-revslider-arrow-tooltip' ]
 			} );
 			this.backwardArrowButton.connect( this, {
 				click: [ 'arrowClickHandler', this.backwardArrowButton ]
@@ -161,6 +154,13 @@
 				framed: true,
 				classes: [ 'mw-revslider-arrow', 'mw-revslider-arrow-forwards' ]
 			} );
+			forwardArrowPopup = new OO.ui.PopupWidget( {
+				$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-newer' ) ),
+				$floatableContainer: this.forwardArrowButton.$element,
+				padded: true,
+				width: 200,
+				classes: [ 'mw-revslider-tooltip', 'mw-revslider-arrow-tooltip' ]
+			} );
 			this.forwardArrowButton.connect( this, {
 				click: [ 'arrowClickHandler', this.forwardArrowButton ]
 			} );
@@ -169,6 +169,8 @@
 				.mouseover( { button: this.forwardArrowButton, popup: forwardArrowPopup }, this.showPopup )
 				.mouseout( { popup: forwardArrowPopup }, this.hidePopup )
 				.focusin( { button: this.forwardArrowButton }, this.arrowFocusHandler );
+
+			$( 'body' ).append( backwardArrowPopup.$element, forwardArrowPopup.$element, helpPopup.$element );
 
 			pointerContainerStyle = { left: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
 			if ( this.dir === 'rtl' ) {
@@ -757,7 +759,7 @@
 			// loaded revision. This should be taken into account when rendering newly loaded revisions (tooltip)
 			revisionsToRender = this.slider.getRevisions().slice( revPositionOffset );
 
-			$addedRevisions = new mw.libs.revisionSlider.RevisionListView( revisionsToRender ).render( this.revisionWidth, revPositionOffset );
+			$addedRevisions = new mw.libs.revisionSlider.RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth, revPositionOffset );
 
 			this.addClickHandlerToRevisions( $addedRevisions, $revisions, this.revisionWrapperClickHandler );
 
@@ -804,7 +806,7 @@
 			// loaded revision. This should be taken into account when rendering newly loaded revisions (tooltip)
 			revisionsToRender = this.slider.getRevisions().slice( 0, revs.length );
 
-			$addedRevisions = new mw.libs.revisionSlider.RevisionListView( revisionsToRender ).render( this.revisionWidth );
+			$addedRevisions = new mw.libs.revisionSlider.RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth );
 
 			pOld = this.getOldRevPointer();
 			pNew = this.getNewRevPointer();

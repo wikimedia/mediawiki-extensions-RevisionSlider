@@ -44,7 +44,7 @@
 
 		mw.libs.revisionSlider.userOffset = 0;
 
-		tooltip = revisionListView.makeTooltip( revision );
+		tooltip = revisionListView.makeTooltip( revision, {} );
 		tooltipHtml = tooltip.$element.html();
 
 		assert.ok( tooltipHtml.match( /User1/ ), 'Test the user.' );
@@ -71,7 +71,7 @@
 
 		mw.libs.revisionSlider.userOffset = 0;
 
-		tooltip = revisionListView.makeTooltip( revision );
+		tooltip = revisionListView.makeTooltip( revision, {} );
 		tooltipHtml = tooltip.$element.html();
 
 		assert.ok( tooltipHtml.match( /User1/ ), 'Test the user.' );
