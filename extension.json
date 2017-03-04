@@ -3,10 +3,11 @@
 	"version": "1.0.0",
 	"author": [
 		"TCB team (Wikimedia Deutschland)",
-		"Christoph Fischer",
-		"Leszek Manicki",
 		"Addshore",
-		"Jakob Warkotsch"
+		"Leszek Manicki",
+		"Jakob Warkotsch",
+		"Tobias Gritschacher",
+		"Christoph Jauera"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:RevisionSlider",
 	"namemsg": "revisionslider",
