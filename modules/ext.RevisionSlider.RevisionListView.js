@@ -1,10 +1,12 @@
 ( function ( mw, $ ) {
 	/**
 	 * @param {RevisionList} revisionList
+	 * @param {string} dir
 	 * @constructor
 	 */
-	var RevisionListView = function ( revisionList ) {
+	var RevisionListView = function ( revisionList, dir ) {
 		this.revisionList = revisionList;
+		this.dir = dir;
 	};
 
 	$.extend( RevisionListView.prototype, {
@@ -22,6 +24,11 @@
 		 * @type {number}
 		 */
 		tooltipTimeout: -1,
+
+		/**
+		 * @type {string}
+		 */
+		dir: null,
 
 		/**
 		 * @param {number} revisionTickWidth
@@ -142,11 +149,14 @@
 
 			this.hideCurrentTooltip();
 
-			tooltip = this.makeTooltip( revision );
-			tooltip.$element.css( {
-				left: $rev.offset().left + this.revisionWidth / 2 + 'px',
-				top: $rev.offset().top + $rev.outerHeight() + 'px'
-			} ).addClass( 'mw-revslider-revision-tooltip-' + pos );
+			tooltip = this.makeTooltip( revision, $rev );
+			if ( this.dir === 'ltr' ) {
+				tooltip.$element.css( 'margin-left', this.revisionWidth / 2 + 'px' );
+			} else {
+				tooltip.$element.css( 'margin-right', this.revisionWidth / 2 + 'px' );
+			}
+			tooltip.$element.addClass( 'mw-revslider-revision-tooltip-' + pos );
+
 			$( 'body' ).append( tooltip.$element );
 			tooltip.toggle( true );
 
@@ -200,24 +210,26 @@
 		/**
 		 * Generates the HTML for a tooltip that appears on hover above each revision on the slider
 		 *
-		 * @param {Revision} rev
+		 * @param {Revision} revision
+		 * @param {jQuery} $revisionContainer
 		 * @return {OO.ui.PopupWidget}
 		 */
-		makeTooltip: function ( rev ) {
+		makeTooltip: function ( revision, $revisionContainer ) {
 			var $tooltip = $( '<div>' )
 				.append(
 					$( '<p>' ).append(
 						$( '<strong>' ).text( mw.msg( 'revisionslider-label-date' ) + mw.msg( 'colon-separator' ) ),
-						rev.getFormattedDate()
+						revision.getFormattedDate()
 					),
-					this.makeUserLine( rev.getUser(), rev.getUserGender() ),
-					this.makeCommentLine( rev ),
-					this.makePageSizeLine( rev.getSize() ),
-					this.makeChangeSizeLine( rev.getRelativeSize() ),
-					rev.isMinor() ? $( '<p>' ).text( mw.message( 'revisionslider-minoredit' ).text() ) : ''
+					this.makeUserLine( revision.getUser(), revision.getUserGender() ),
+					this.makeCommentLine( revision ),
+					this.makePageSizeLine( revision.getSize() ),
+					this.makeChangeSizeLine( revision.getRelativeSize() ),
+					revision.isMinor() ? $( '<p>' ).text( mw.message( 'revisionslider-minoredit' ).text() ) : ''
 				);
 			return new OO.ui.PopupWidget( {
 				$content: $tooltip,
+				$floatableContainer: $revisionContainer,
 				padded: true,
 				classes: [ 'mw-revslider-tooltip', 'mw-revslider-revision-tooltip' ]
 			} );
@@ -327,6 +339,15 @@
 				$( '<strong>' ).text( mw.msg( 'revisionslider-label-change-size' ) + mw.msg( 'colon-separator' ) ),
 				mw.message( 'revisionslider-change-size', $changeNumber, relativeSize, Math.abs( relativeSize ) ).parse()
 			);
+		},
+
+		/**
+		 * Set direction for the view
+		 *
+		 * @param {string} dir
+		 */
+		setDir: function ( dir ) {
+			this.dir = dir;
 		}
 	} );
 
