@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce3c5b53_8d8f9825",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2017-03-04T17:19:16Z",
+      "side": 1,
+      "message": "$revisionContainer might be clearer here?\nIt\u0027s a bit odd having rev and revision next to each other.",
+      "range": {
+        "startLine": 152,
+        "startChar": 41,
+        "endLine": 152,
+        "endChar": 45
+      },
+      "revId": "fbac5c69a48bb0dc9318b2ad66488de7561d6853",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
