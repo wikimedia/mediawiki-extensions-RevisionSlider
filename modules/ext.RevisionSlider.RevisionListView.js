@@ -119,13 +119,13 @@
 		/**
 		 * Hides the tooltip after 500ms
 		 *
-		 * @param {jQuery} $rev
+		 * @param {jQuery} $revisionContainer
 		 */
-		hideTooltip: function ( $rev ) {
+		hideTooltip: function ( $revisionContainer ) {
 			var $currentTooltip = $( '.mw-revslider-revision-tooltip' );
 			this.tooltipTimeout = window.setTimeout( function () {
-				if ( $rev.length !== 0 ) {
-					$rev.removeClass( 'mw-revslider-revision-wrapper-hovered' );
+				if ( $revisionContainer.length !== 0 ) {
+					$revisionContainer.removeClass( 'mw-revslider-revision-wrapper-hovered' );
 				}
 				if ( $currentTooltip.length !== 0 ) {
 					$currentTooltip.remove();
@@ -136,11 +136,11 @@
 		/**
 		 * Hides the previous tooltip and shows the new one
 		 *
-		 * @param {jQuery} $rev
+		 * @param {jQuery} $revisionContainer
 		 */
-		showTooltip: function ( $rev ) {
-			var pos = +$rev.find( '.mw-revslider-revision' ).attr( 'data-pos' ),
-				revId = +$rev.find( '.mw-revslider-revision' ).attr( 'data-revid' ),
+		showTooltip: function ( $revisionContainer ) {
+			var pos = +$revisionContainer.find( '.mw-revslider-revision' ).attr( 'data-pos' ),
+				revId = +$revisionContainer.find( '.mw-revslider-revision' ).attr( 'data-revid' ),
 				revision = this.getRevisionWithId( revId ),
 				tooltip;
 			if ( revision === null ) {
@@ -149,7 +149,7 @@
 
 			this.hideCurrentTooltip();
 
-			tooltip = this.makeTooltip( revision, $rev );
+			tooltip = this.makeTooltip( revision, $revisionContainer );
 			if ( this.dir === 'ltr' ) {
 				tooltip.$element.css( 'margin-left', this.revisionWidth / 2 + 'px' );
 			} else {
@@ -160,7 +160,7 @@
 			$( 'body' ).append( tooltip.$element );
 			tooltip.toggle( true );
 
-			$rev.addClass( 'mw-revslider-revision-wrapper-hovered' );
+			$revisionContainer.addClass( 'mw-revslider-revision-wrapper-hovered' );
 		},
 
 		/**
