@@ -15,7 +15,7 @@ When(/^I have moved to the next step$/) do
   on(DiffPage).revisionslider_help_next_element.when_present.click
 end
 
-When (/^I wait until help dialog is hidden$/) do
+When(/^I wait until help dialog is hidden$/) do
   step 'The help dialog is hidden'
 end
 

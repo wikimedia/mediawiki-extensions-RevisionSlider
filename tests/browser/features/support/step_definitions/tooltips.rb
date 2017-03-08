@@ -1,5 +1,5 @@
 Given(/^I hover over revision (\d+)$/) do |index|
-  on(DiffPage).revisionslider_rev(index.to_i).hover
+    on(DiffPage).revisionslider_rev(index.to_i).hover
   end
 
 Given(/^I hover over the revision (\d+) tooltip$/) do |index|
