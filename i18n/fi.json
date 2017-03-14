@@ -1,12 +1,21 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lebiega"
+			"Lebiega",
+			"Pyscowicz"
 		]
 	},
+	"revisionslider-toggle-label": "Selaa historiaa",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|tavu|tavua}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|tavu|tavua}}",
 	"revisionslider-label-date": "Päiväys",
 	"revisionslider-label-page-size": "Sivun koko",
-	"revisionslider-label-username": "{{GENDER:$1|Käyttäjätunnus}}"
+	"revisionslider-label-username": "{{GENDER:$1|Käyttäjätunnus}}",
+	"revisionslider-minoredit": "Tämä on pieni muutos",
+	"revisionslider-arrow-tooltip-newer": "Näe uudemmat korjaukset",
+	"revisionslider-arrow-tooltip-older": "Näe vanhemmat korjaukset",
+	"revisionslider-show-help-tooltip": "Näytä ohjeteksti",
+	"revisionslider-previous-dialog": "Edellinen",
+	"revisionslider-next-dialog": "Seuraava",
+	"revisionslider-close-dialog": "Sulje"
 }
