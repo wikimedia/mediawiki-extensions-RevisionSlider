@@ -1,5 +1,5 @@
 Then(/^The forward arrow should be disabled/) do
-  expect(on(DiffPage).revisionslider_timeline_forwards_disabled_element).to be_visible
+    expect(on(DiffPage).revisionslider_timeline_forwards_disabled_element).to be_visible
   end
 
 Then(/^The backward arrow should be disabled/) do
