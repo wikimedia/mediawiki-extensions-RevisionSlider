@@ -10,12 +10,12 @@ class DiffPage
   div(:revisionslider_toggle_button, css: '.mw-revslider-toggle-button')
   table(:revisionslider_loading, css: '.mw-revslider-diff-loading')
 
-  div(:revisionslider_help_dialog, css: '.revisionslider-help-dialog')
+  div(:revisionslider_help_dialog, css: '.mw-revslider-help-dialog')
   button(:revisionslider_help, css: '.mw-revision-slider-container > button')
-  link(:revisionslider_help_next, css: '.revisionslider-help-next > a')
-  link(:revisionslider_help_previous, css: '.revisionslider-help-previous > a')
-  link(:revisionslider_help_close_start, css: '.revisionslider-help-close-start > a')
-  link(:revisionslider_help_close_end, css: '.revisionslider-help-close-end > a')
+  link(:revisionslider_help_next, css: '.mw-revslider-help-next > a')
+  link(:revisionslider_help_previous, css: '.mw-revslider-help-previous > a')
+  link(:revisionslider_help_close_start, css: '.mw-revslider-help-close-start > a')
+  link(:revisionslider_help_close_end, css: '.mw-revslider-help-close-end > a')
 
   div(:revisionslider_timeline_backwards, css: '.mw-revslider-arrow.mw-revslider-arrow-backwards:not(.oo-ui-widget-disabled)')
   div(:revisionslider_timeline_forwards, css: '.mw-revslider-arrow.mw-revslider-arrow-forwards:not(.oo-ui-widget-disabled)')

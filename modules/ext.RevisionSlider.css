@@ -286,7 +286,7 @@ of the frameless one (to fit the size of the toggle button */
 	opacity: 0.5;
 }
 
-.oo-ui-windowManager-modal.oo-ui-windowManager-floating > .revisionslider-help-dialog > .oo-ui-window-frame {
+.oo-ui-windowManager-modal.oo-ui-windowManager-floating > .mw-revslider-help-dialog > .oo-ui-window-frame {
 	top: 30%;
 	bottom: auto;
 }

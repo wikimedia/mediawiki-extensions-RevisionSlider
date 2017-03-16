@@ -19,11 +19,11 @@
 			label: mw.msg( 'revisionslider-next-dialog' ),
 			flags: [ 'primary', 'progressive' ],
 			modes: [ 'initial', 'middle' ],
-			classes: [ 'revisionslider-help-next' ]
+			classes: [ 'mw-revslider-help-next' ]
 		},
-		{ action: 'previous', flags: 'safe', label: mw.msg( 'revisionslider-previous-dialog' ), modes: [ 'middle', 'last' ], classes: [ 'revisionslider-help-previous' ] },
-		{ label: mw.msg( 'revisionslider-close-dialog' ), flags: 'safe', modes: 'initial', classes: [ 'revisionslider-help-close-start' ] },
-		{ label: mw.msg( 'revisionslider-close-dialog' ), flags: 'primary', modes: 'last', classes: [ 'revisionslider-help-close-end' ] }
+		{ action: 'previous', flags: 'safe', label: mw.msg( 'revisionslider-previous-dialog' ), modes: [ 'middle', 'last' ], classes: [ 'mw-revslider-help-previous' ] },
+		{ label: mw.msg( 'revisionslider-close-dialog' ), flags: 'safe', modes: 'initial', classes: [ 'mw-revslider-help-close-start' ] },
+		{ label: mw.msg( 'revisionslider-close-dialog' ), flags: 'primary', modes: 'last', classes: [ 'mw-revslider-help-close-end' ] }
 	];
 
 	$.extend( HelpDialog.prototype, {
@@ -168,13 +168,13 @@
 		$( 'body' )
 			.append( windowManager.$element )
 			.click( function ( event ) {
-				if ( $( event.target ).hasClass( 'revisionslider-help-dialog' ) ) {
+				if ( $( event.target ).hasClass( 'mw-revslider-help-dialog' ) ) {
 					HelpDialog.hide();
 				}
 			} );
 
 		HelpDialog.show = function () {
-			dialogue = new HelpDialog( { size: 'medium', classes: [ 'revisionslider-help-dialog' ] } );
+			dialogue = new HelpDialog( { size: 'medium', classes: [ 'mw-revslider-help-dialog' ] } );
 			windowManager.addWindows( [ dialogue ] );
 			windowManager.openWindow( dialogue );
 		};
