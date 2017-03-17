@@ -4,5 +4,6 @@
 			"Benoit Rochon"
 		]
 	},
-	"revisionslider-label-date": "Tatokonakisitc"
+	"revisionslider-label-date": "Tatokonakisitc",
+	"revisionslider-label-username": "{{GENDER:$1|Icinikasowin}}"
 }
