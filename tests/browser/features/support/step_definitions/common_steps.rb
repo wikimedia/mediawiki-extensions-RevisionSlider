@@ -45,7 +45,7 @@ Given(/^The window size is (\d+) by (\d+)$/) do |width, height|
 end
 
 Then(/^The auto expand button should be visible/) do
-  expect(on(DiffPage).revisionslider_auto_expand_button_element.when_visible).to be_visible
+  expect(on(DiffPage).revisionslider_auto_expand_button_element.when_present).to be_visible
 end
 
 Given(/^I wait for the setting to be saved$/) do
