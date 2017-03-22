@@ -89,7 +89,6 @@
 					.addClass( 'mw-revslider-revision-slider' )
 					.css( { direction: $container.css( 'direction' ) } ),
 				helpButton,
-				helpPopup,
 				backwardArrowPopup,
 				forwardArrowPopup,
 				escapePressed = false,
@@ -105,24 +104,7 @@
 			this.pointerOlder = this.pointerOlder || new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-older' );
 			this.pointerNewer = this.pointerNewer || new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-newer' );
 
-			helpButton = new OO.ui.ButtonWidget( {
-				icon: 'help',
-				framed: false,
-				classes: [ 'mw-revslider-show-help' ]
-			} );
-			helpPopup = new OO.ui.PopupWidget( {
-				$content: $( '<p>' ).text( mw.msg( 'revisionslider-show-help-tooltip' ) ),
-				$floatableContainer: helpButton.$element,
-				padded: true,
-				width: 200,
-				classes: [ 'mw-revslider-tooltip', 'mw-revslider-help-tooltip' ]
-			} );
-			helpButton.$element
-				.click( function () {
-					mw.libs.revisionSlider.HelpDialog.show();
-				} )
-				.mouseover( { popup: helpPopup }, this.showPopup )
-				.mouseout( function () { helpPopup.toggle( false ); } );
+			helpButton = this.renderHelpButton();
 
 			this.backwardArrowButton = new OO.ui.ButtonWidget( {
 				icon: 'previous',
@@ -170,7 +152,7 @@
 				.mouseout( { popup: forwardArrowPopup }, this.hidePopup )
 				.focusin( { button: this.forwardArrowButton }, this.arrowFocusHandler );
 
-			$( 'body' ).append( backwardArrowPopup.$element, forwardArrowPopup.$element, helpPopup.$element );
+			$( 'body' ).append( backwardArrowPopup.$element, forwardArrowPopup.$element );
 
 			pointerContainerStyle = { left: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
 			if ( this.dir === 'rtl' ) {
@@ -289,6 +271,35 @@
 			this.diffPage.addHandlersToCoreLinks( this );
 			this.diffPage.replaceState( mw.config.get( 'extRevisionSliderOldRev' ), mw.config.get( 'extRevisionSliderNewRev' ), this );
 			this.diffPage.initOnPopState( this );
+		},
+
+		renderHelpButton: function() {
+			var helpButton, helpPopup;
+
+			helpButton = new OO.ui.ButtonWidget( {
+				icon: 'help',
+				framed: false,
+				classes: [ 'mw-revslider-show-help' ]
+			} );
+			helpPopup = new OO.ui.PopupWidget( {
+				$content: $( '<p>' ).text( mw.msg( 'revisionslider-show-help-tooltip' ) ),
+				$floatableContainer: helpButton.$element,
+				padded: true,
+				width: 200,
+				classes: [ 'mw-revslider-tooltip', 'mw-revslider-help-tooltip' ]
+			} );
+			helpButton.$element
+				.click( function() {
+					mw.libs.revisionSlider.HelpDialog.show();
+				} )
+				.mouseover( { popup: helpPopup }, this.showPopup )
+				.mouseout( function() {
+					helpPopup.toggle( false );
+				} );
+
+			$( 'body' ).append( helpPopup.$element );
+
+			return helpButton;
 		},
 
 		showPopup: function ( e ) {
