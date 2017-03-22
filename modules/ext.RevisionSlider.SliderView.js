@@ -80,14 +80,11 @@
 
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
-				lastValidLeftPos,
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
 				$slider = $( '<div>' )
 					.addClass( 'mw-revslider-revision-slider' )
 					.css( { direction: $container.css( 'direction' ) } ),
 				helpButton,
-				escapePressed = false,
-				$pointers,
 				self = this;
 
 			this.dir = $container.css( 'direction' ) || 'ltr';
@@ -116,78 +113,7 @@
 					this.pointerOlder.getLine().render(), this.pointerNewer.getLine().render()
 				);
 
-			$pointers = $slider.find( '.mw-revslider-pointer' );
-			$( 'body' ).keydown( function ( e ) {
-				if ( e.which === 27 ) {
-					escapePressed = true;
-					$pointers.trigger( 'mouseup' );
-				}
-			} );
-
-			$pointers.draggable( {
-				axis: 'x',
-				grid: [ this.revisionWidth, null ],
-				containment: '.mw-revslider-pointer-container',
-				start: function () {
-					$( '.mw-revslider-revision-wrapper' ).addClass( 'mw-revslider-pointer-cursor' );
-					escapePressed = false;
-				},
-				stop: function () {
-					var $p = $( this ),
-						pointer = self.whichPointer( $p ),
-						pos = $p.position().left,
-						adjustedPos = self.dir === 'rtl' ? pointer.getView().getAdjustedLeftPositionWhenRtl( pos ) : pos,
-						relativeIndex = Math.ceil( ( adjustedPos + self.revisionWidth / 2 ) / self.revisionWidth ),
-						revId1, revId2;
-
-					$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-pointer-cursor' );
-
-					if ( escapePressed ) {
-						self.updatePointerPositionAttributes();
-						self.resetPointerStylesBasedOnPosition();
-						return;
-					}
-
-					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
-					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + relativeIndex );
-					self.updatePointerPositionAttributes();
-					self.resetPointerStylesBasedOnPosition();
-					self.resetRevisionStylesBasedOnPointerPosition( $revisions );
-
-					revId1 = self.getRevElementAtPosition( $revisions, self.pointerOlder.getPosition() ).data( 'revid' );
-
-					revId2 = self.getRevElementAtPosition( $revisions, self.pointerNewer.getPosition() ).data( 'revid' );
-
-					self.refreshRevisions( revId1, revId2 );
-
-					self.redrawPointerLines();
-
-				},
-				drag: function ( event, ui ) {
-					var olderLeftPos, newerLeftPos,
-						isNew = $( this ).hasClass( 'mw-revslider-pointer-newer' ),
-						newestVisibleRevisionLeftPos = $( '.mw-revslider-revisions-container' ).width() - self.revisionWidth;
-
-					ui.position.left = Math.min( ui.position.left, newestVisibleRevisionLeftPos );
-
-					olderLeftPos = self.pointerOlder.getView().getElement().position().left;
-					newerLeftPos = self.pointerNewer.getView().getElement().position().left;
-
-					if ( ui.position.left === ( isNew ? olderLeftPos : newerLeftPos ) ) {
-						ui.position.left = lastValidLeftPos;
-					} else {
-						lastValidLeftPos = ui.position.left;
-						if ( self.dir === 'ltr' ) {
-							self.resetPointerColorsBasedOnValues( olderLeftPos, newerLeftPos );
-						} else {
-							self.resetPointerColorsBasedOnValues( newerLeftPos, olderLeftPos );
-						}
-					}
-				},
-				revert: function () {
-					return escapePressed;
-				}
-			} );
+			this.renderPointers( $slider, $revisions );
 
 			$slider.find( '.mw-revslider-revision-wrapper' ).on( 'click', null, { view: self, revisionsDom: $revisions }, this.revisionWrapperClickHandler );
 
@@ -233,6 +159,87 @@
 				.addClass( 'mw-revslider-pointer-container' )
 				.css( pointerContainerStyle )
 				.append( this.pointerOlder.getView().render(), this.pointerNewer.getView().render() );
+		},
+
+		renderPointers: function( $slider, $revisions ) {
+			var $pointers,
+				lastValidLeftPos,
+				escapePressed = false,
+				self = this;
+
+			$pointers = $slider.find( '.mw-revslider-pointer' );
+
+			$( 'body' ).keydown( function( e ) {
+				if ( e.which === 27 ) {
+					escapePressed = true;
+					$pointers.trigger( 'mouseup' );
+				}
+			} );
+
+			$pointers.draggable( {
+				axis: 'x',
+				grid: [ this.revisionWidth, null ],
+				containment: '.mw-revslider-pointer-container',
+				start: function() {
+					$( '.mw-revslider-revision-wrapper' ).addClass( 'mw-revslider-pointer-cursor' );
+					escapePressed = false;
+				},
+				stop: function() {
+					var $p = $( this ),
+						pointer = self.whichPointer( $p ),
+						pos = $p.position().left,
+						adjustedPos = self.dir === 'rtl' ? pointer.getView().getAdjustedLeftPositionWhenRtl( pos ) : pos,
+						relativeIndex = Math.ceil( ( adjustedPos + self.revisionWidth / 2 ) / self.revisionWidth ),
+						revId1, revId2;
+
+					$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-pointer-cursor' );
+
+					if ( escapePressed ) {
+						self.updatePointerPositionAttributes();
+						self.resetPointerStylesBasedOnPosition();
+						return;
+					}
+
+					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
+					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + relativeIndex );
+					self.updatePointerPositionAttributes();
+					self.resetPointerStylesBasedOnPosition();
+					self.resetRevisionStylesBasedOnPointerPosition( $revisions );
+
+					revId1 = self.getRevElementAtPosition( $revisions, self.pointerOlder.getPosition() ).data( 'revid' );
+
+					revId2 = self.getRevElementAtPosition( $revisions, self.pointerNewer.getPosition() ).data( 'revid' );
+
+					self.refreshRevisions( revId1, revId2 );
+
+					self.redrawPointerLines();
+
+				},
+				drag: function( event, ui ) {
+					var olderLeftPos, newerLeftPos,
+						isNew = $( this ).hasClass( 'mw-revslider-pointer-newer' ),
+						newestVisibleRevisionLeftPos = $( '.mw-revslider-revisions-container' ).width() - self.revisionWidth;
+
+					ui.position.left = Math.min( ui.position.left, newestVisibleRevisionLeftPos );
+
+					olderLeftPos = self.pointerOlder.getView().getElement().position().left;
+					newerLeftPos = self.pointerNewer.getView().getElement().position().left;
+
+					if ( ui.position.left === ( isNew ? olderLeftPos : newerLeftPos ) ) {
+						ui.position.left = lastValidLeftPos;
+					} else {
+						lastValidLeftPos = ui.position.left;
+						if ( self.dir === 'ltr' ) {
+							self.resetPointerColorsBasedOnValues( olderLeftPos, newerLeftPos );
+						} else {
+							self.resetPointerColorsBasedOnValues( newerLeftPos, olderLeftPos );
+						}
+					}
+				},
+				revert: function() {
+					return escapePressed;
+				}
+			} );
 		},
 
 		renderHelpButton: function() {
