@@ -81,10 +81,6 @@
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
-				$slider = $( '<div>' )
-					.addClass( 'mw-revslider-revision-slider' )
-					.css( { direction: $container.css( 'direction' ) } ),
-				helpButton,
 				self = this;
 
 			this.dir = $container.css( 'direction' ) || 'ltr';
@@ -96,34 +92,35 @@
 			this.pointerOlder = this.pointerOlder || new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-older' );
 			this.pointerNewer = this.pointerNewer || new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-newer' );
 
-			helpButton = this.renderHelpButton();
 			this.renderBackwardArrow();
 			this.renderForwardArrow();
 
-			$slider.css( {
-				width: ( containerWidth + this.containerMargin ) + 'px'
-			} )
+			this.$element = $( '<div>' )
+				.addClass( 'mw-revslider-revision-slider' )
+				.css( {
+					direction: $container.css( 'direction' ),
+					width: ( containerWidth + this.containerMargin ) + 'px'
+				} )
 				.append(
 					this.backwardArrowButton.$element,
 					this.renderRevisionsContainer( containerWidth, $revisions ),
 					this.forwardArrowButton.$element,
-					helpButton.$element,
+					this.renderHelpButton().$element,
 					$( '<div>' ).css( { clear: 'both' } ),
 					this.renderPointerContainer( containerWidth ),
 					this.pointerOlder.getLine().render(), this.pointerNewer.getLine().render()
 				);
 
-			this.renderPointers( $slider, $revisions );
+			this.renderPointers( this.$element, $revisions );
 
-			$slider.find( '.mw-revslider-revision-wrapper' ).on( 'click', null, { view: self, revisionsDom: $revisions }, this.revisionWrapperClickHandler );
+			this.$element.find( '.mw-revslider-revision-wrapper' ).on( 'click', null, { view: self, revisionsDom: $revisions }, this.revisionWrapperClickHandler );
 
-			this.slider.setRevisionsPerWindow( $slider.find( '.mw-revslider-revisions-container' ).width() / this.revisionWidth );
+			this.slider.setRevisionsPerWindow( this.$element.find( '.mw-revslider-revisions-container' ).width() / this.revisionWidth );
 
 			this.initializePointers( this.getOldRevElement( $revisions ), this.getNewRevElement( $revisions ) );
 			this.resetRevisionStylesBasedOnPointerPosition( $revisions );
 
-			this.$element = $slider;
-			$container.html( $slider );
+			$container.html( this.$element );
 
 			this.slide( Math.floor( ( this.pointerNewer.getPosition() - 1 ) / this.slider.getRevisionsPerWindow() ), 0 );
 			this.diffPage.addHandlersToCoreLinks( this );
@@ -268,7 +265,7 @@
 
 			$( 'body' ).append( helpPopup.$element );
 
-			return helpButton;
+			return helpButton.$element;
 		},
 
 		renderBackwardArrow: function() {
