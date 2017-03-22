@@ -4,7 +4,7 @@ class SpecialPreferencesPage
 
   link(:beta_features_tab, css: '#preftab-betafeatures')
   checkbox(:revisionslider_checkbox, name: 'wprevisionslider')
-  div(:revisionslider_checkbox_div, xpath: '//*[@name="wprevisionslider"]//parent::div')
+  span(:revisionslider_checkbox_div, xpath: '//*[@name="wprevisionslider"]//parent::span')
   button(:submit_button, css: '#prefcontrol')
 
   def enable_revisionslider
