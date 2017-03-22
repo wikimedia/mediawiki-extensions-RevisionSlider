@@ -80,9 +80,6 @@
 
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
-				pointerContainerPosition = 53,
-				pointerContainerWidth = containerWidth + this.revisionWidth - 1,
-				pointerContainerStyle,
 				lastValidLeftPos,
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
 				$slider = $( '<div>' )
@@ -106,33 +103,16 @@
 			this.renderBackwardArrow();
 			this.renderForwardArrow();
 
-			pointerContainerStyle = { left: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
-			if ( this.dir === 'rtl' ) {
-				// Due to properly limit dragging a pointer on the right side of the screen,
-				// there must some extra space added to the right of the revision bar container
-				// For this reason right position of the pointer container in the RTL mode is
-				// a bit moved off right compared to its left position in the LTR mode
-				pointerContainerPosition = pointerContainerPosition - this.revisionWidth + 1;
-				pointerContainerStyle = { right: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
-			}
 			$slider.css( {
 				width: ( containerWidth + this.containerMargin ) + 'px'
 			} )
 				.append(
 					this.backwardArrowButton.$element,
-					$( '<div>' )
-						.addClass( 'mw-revslider-revisions-container' )
-						.css( {
-							width: containerWidth + 'px'
-						} )
-						.append( $revisions ),
+					this.renderRevisionsContainer( containerWidth, $revisions ),
 					this.forwardArrowButton.$element,
 					helpButton.$element,
 					$( '<div>' ).css( { clear: 'both' } ),
-					$( '<div>' )
-						.addClass( 'mw-revslider-pointer-container' )
-						.css( pointerContainerStyle )
-						.append( this.pointerOlder.getView().render(), this.pointerNewer.getView().render() ),
+					this.renderPointerContainer( containerWidth ),
 					this.pointerOlder.getLine().render(), this.pointerNewer.getLine().render()
 				);
 
@@ -223,6 +203,36 @@
 			this.diffPage.addHandlersToCoreLinks( this );
 			this.diffPage.replaceState( mw.config.get( 'extRevisionSliderOldRev' ), mw.config.get( 'extRevisionSliderNewRev' ), this );
 			this.diffPage.initOnPopState( this );
+		},
+
+		renderRevisionsContainer: function( containerWidth, $revisions ) {
+			return $( '<div>' )
+				.addClass( 'mw-revslider-revisions-container' )
+				.css( {
+					width: containerWidth + 'px'
+				} )
+				.append( $revisions );
+		},
+
+		renderPointerContainer: function( containerWidth ) {
+			var pointerContainerPosition = 53,
+				pointerContainerWidth = containerWidth + this.revisionWidth - 1,
+				pointerContainerStyle;
+
+			pointerContainerStyle = { left: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
+			if ( this.dir === 'rtl' ) {
+				// Due to properly limit dragging a pointer on the right side of the screen,
+				// there must some extra space added to the right of the revision bar container
+				// For this reason right position of the pointer container in the RTL mode is
+				// a bit moved off right compared to its left position in the LTR mode
+				pointerContainerPosition = pointerContainerPosition - this.revisionWidth + 1;
+				pointerContainerStyle = { right: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
+			}
+
+			return $( '<div>' )
+				.addClass( 'mw-revslider-pointer-container' )
+				.css( pointerContainerStyle )
+				.append( this.pointerOlder.getView().render(), this.pointerNewer.getView().render() );
 		},
 
 		renderHelpButton: function() {
