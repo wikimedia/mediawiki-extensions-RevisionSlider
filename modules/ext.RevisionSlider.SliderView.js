@@ -89,8 +89,6 @@
 					.addClass( 'mw-revslider-revision-slider' )
 					.css( { direction: $container.css( 'direction' ) } ),
 				helpButton,
-				backwardArrowPopup,
-				forwardArrowPopup,
 				escapePressed = false,
 				$pointers,
 				self = this;
@@ -105,54 +103,8 @@
 			this.pointerNewer = this.pointerNewer || new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-newer' );
 
 			helpButton = this.renderHelpButton();
-
-			this.backwardArrowButton = new OO.ui.ButtonWidget( {
-				icon: 'previous',
-				width: 20,
-				height: 140,
-				framed: true,
-				classes: [ 'mw-revslider-arrow', 'mw-revslider-arrow-backwards' ]
-			} );
-			backwardArrowPopup = new OO.ui.PopupWidget( {
-				$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-older' ) ),
-				$floatableContainer: this.backwardArrowButton.$element,
-				padded: true,
-				width: 200,
-				classes: [ 'mw-revslider-tooltip', 'mw-revslider-arrow-tooltip' ]
-			} );
-			this.backwardArrowButton.connect( this, {
-				click: [ 'arrowClickHandler', this.backwardArrowButton ]
-			} );
-			this.backwardArrowButton.$element
-				.attr( 'data-dir', -1 )
-				.mouseover( { button: this.backwardArrowButton, popup: backwardArrowPopup }, this.showPopup )
-				.mouseout( { popup: backwardArrowPopup }, this.hidePopup )
-				.focusin( { button: this.backwardArrowButton }, this.arrowFocusHandler );
-
-			this.forwardArrowButton = new OO.ui.ButtonWidget( {
-				icon: 'next',
-				width: 20,
-				height: 140,
-				framed: true,
-				classes: [ 'mw-revslider-arrow', 'mw-revslider-arrow-forwards' ]
-			} );
-			forwardArrowPopup = new OO.ui.PopupWidget( {
-				$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-newer' ) ),
-				$floatableContainer: this.forwardArrowButton.$element,
-				padded: true,
-				width: 200,
-				classes: [ 'mw-revslider-tooltip', 'mw-revslider-arrow-tooltip' ]
-			} );
-			this.forwardArrowButton.connect( this, {
-				click: [ 'arrowClickHandler', this.forwardArrowButton ]
-			} );
-			this.forwardArrowButton.$element
-				.attr( 'data-dir', 1 )
-				.mouseover( { button: this.forwardArrowButton, popup: forwardArrowPopup }, this.showPopup )
-				.mouseout( { popup: forwardArrowPopup }, this.hidePopup )
-				.focusin( { button: this.forwardArrowButton }, this.arrowFocusHandler );
-
-			$( 'body' ).append( backwardArrowPopup.$element, forwardArrowPopup.$element );
+			this.renderBackwardArrow();
+			this.renderForwardArrow();
 
 			pointerContainerStyle = { left: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
 			if ( this.dir === 'rtl' ) {
@@ -300,6 +252,70 @@
 			$( 'body' ).append( helpPopup.$element );
 
 			return helpButton;
+		},
+
+		renderBackwardArrow: function() {
+			var backwardArrowPopup;
+
+			this.backwardArrowButton = new OO.ui.ButtonWidget( {
+				icon: 'previous',
+				width: 20,
+				height: 140,
+				framed: true,
+				classes: [ 'mw-revslider-arrow', 'mw-revslider-arrow-backwards' ]
+			} );
+
+			backwardArrowPopup = new OO.ui.PopupWidget( {
+				$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-older' ) ),
+				$floatableContainer: this.backwardArrowButton.$element,
+				padded: true,
+				width: 200,
+				classes: [ 'mw-revslider-tooltip', 'mw-revslider-arrow-tooltip' ]
+			} );
+
+			this.backwardArrowButton.connect( this, {
+				click: [ 'arrowClickHandler', this.backwardArrowButton ]
+			} );
+
+			this.backwardArrowButton.$element
+				.attr( 'data-dir', -1 )
+				.mouseover( { button: this.backwardArrowButton, popup: backwardArrowPopup }, this.showPopup )
+				.mouseout( { popup: backwardArrowPopup }, this.hidePopup )
+				.focusin( { button: this.backwardArrowButton }, this.arrowFocusHandler );
+
+			$( 'body' ).append( backwardArrowPopup.$element );
+		},
+
+		renderForwardArrow: function() {
+			var forwardArrowPopup;
+
+			this.forwardArrowButton = new OO.ui.ButtonWidget( {
+				icon: 'next',
+				width: 20,
+				height: 140,
+				framed: true,
+				classes: [ 'mw-revslider-arrow', 'mw-revslider-arrow-forwards' ]
+			} );
+
+			forwardArrowPopup = new OO.ui.PopupWidget( {
+				$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-newer' ) ),
+				$floatableContainer: this.forwardArrowButton.$element,
+				padded: true,
+				width: 200,
+				classes: [ 'mw-revslider-tooltip', 'mw-revslider-arrow-tooltip' ]
+			} );
+
+			this.forwardArrowButton.connect( this, {
+				click: [ 'arrowClickHandler', this.forwardArrowButton ]
+			} );
+
+			this.forwardArrowButton.$element
+				.attr( 'data-dir', 1 )
+				.mouseover( { button: this.forwardArrowButton, popup: forwardArrowPopup }, this.showPopup )
+				.mouseout( { popup: forwardArrowPopup }, this.hidePopup )
+				.focusin( { button: this.forwardArrowButton }, this.arrowFocusHandler );
+
+			$( 'body' ).append( forwardArrowPopup.$element );
 		},
 
 		showPopup: function ( e ) {
