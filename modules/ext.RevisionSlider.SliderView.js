@@ -111,7 +111,7 @@
 					this.pointerOlder.getLine().render(), this.pointerNewer.getLine().render()
 				);
 
-			this.renderPointers( this.$element, $revisions );
+			this.initPointers( $revisions );
 
 			this.$element.find( '.mw-revslider-revision-wrapper' ).on( 'click', null, { view: self, revisionsDom: $revisions }, this.revisionWrapperClickHandler );
 
@@ -128,6 +128,13 @@
 			this.diffPage.initOnPopState( this );
 		},
 
+		/**
+		 * Renders the revisions container and adds the revisions to it
+		 *
+		 * @param {number} containerWidth
+		 * @param {jQuery} $revisions
+		 * @return {jQuery} the revisions container
+		 */
 		renderRevisionsContainer: function( containerWidth, $revisions ) {
 			return $( '<div>' )
 				.addClass( 'mw-revslider-revisions-container' )
@@ -137,6 +144,12 @@
 				.append( $revisions );
 		},
 
+		/**
+		 * Renders the pointer container and adds the pointers to it
+		 *
+		 * @param {number} containerWidth
+		 * @return {jQuery} the pointer container
+		 */
 		renderPointerContainer: function( containerWidth ) {
 			var pointerContainerPosition = 53,
 				pointerContainerWidth = containerWidth + this.revisionWidth - 1,
@@ -158,13 +171,18 @@
 				.append( this.pointerOlder.getView().render(), this.pointerNewer.getView().render() );
 		},
 
-		renderPointers: function( $slider, $revisions ) {
+		/**
+		 * Initializes the pointer dragging logic
+		 *
+		 * @param {jQuery} $revisions
+		 */
+		initPointers: function( $revisions ) {
 			var $pointers,
 				lastValidLeftPos,
 				escapePressed = false,
 				self = this;
 
-			$pointers = $slider.find( '.mw-revslider-pointer' );
+			$pointers = this.$element.find( '.mw-revslider-pointer' );
 
 			$( 'body' ).keydown( function( e ) {
 				if ( e.which === 27 ) {
@@ -239,6 +257,11 @@
 			} );
 		},
 
+		/**
+		 * Renders the help button and renders and adds the popup for it.
+		 *
+		 * @return {jQuery} the help button object
+		 */
 		renderHelpButton: function() {
 			var helpButton, helpPopup;
 
@@ -268,6 +291,10 @@
 			return helpButton.$element;
 		},
 
+		/**
+		 * Renders the backwards arrow, adds the element to the class attribute
+		 * and renders and adds the popup for it.
+		 */
 		renderBackwardArrow: function() {
 			var backwardArrowPopup;
 
@@ -300,6 +327,10 @@
 			$( 'body' ).append( backwardArrowPopup.$element );
 		},
 
+		/**
+		 * Renders the forwards arrow, adds the element to the class attribute
+		 * and renders and adds the popup for it.
+		 */
 		renderForwardArrow: function() {
 			var forwardArrowPopup;
 
