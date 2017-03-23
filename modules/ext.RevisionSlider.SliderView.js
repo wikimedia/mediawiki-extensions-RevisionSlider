@@ -190,7 +190,7 @@
 				}
 			} );
 
-			$pointers.draggable( this.buildDraggableOptions( escapePressed, $revisions ) );
+			$pointers.draggable( this.buildDraggableOptions( escapePressed, $revisions, '.mw-revslider-pointer-container' ) );
 		},
 
 		/**
@@ -198,16 +198,17 @@
 		 *
 		 * @param {boolean} escapePressed
 		 * @param {jQuery} $revisions
+		 * @param {string} containmentClass
 		 * @return {Object}
 		 */
-		buildDraggableOptions: function( escapePressed, $revisions ) {
+		buildDraggableOptions: function( escapePressed, $revisions, containmentClass ) {
 			var lastValidLeftPos,
 				self = this;
 
 			return {
 				axis: 'x',
 				grid: [ this.revisionWidth, null ],
-				containment: '.mw-revslider-pointer-container',
+				containment: containmentClass,
 				start: function() {
 					self.setPointerDragCursor();
 					self.fadeOutPointerLines();
