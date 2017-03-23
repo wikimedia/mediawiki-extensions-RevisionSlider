@@ -70,6 +70,8 @@
 					uri.query.oldid = diff;
 					$( this ).attr( 'href', uri.toString() );
 				} );
+				// Update wgRevisionId (T161257)
+				mw.config.set( 'wgRevisionId', diff );
 
 				$( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
 
