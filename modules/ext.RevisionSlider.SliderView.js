@@ -214,10 +214,8 @@
 				},
 				stop: function() {
 					var $p = $( this ),
+						relativeIndex = self.getRelativePointerIndex( $p ),
 						pointer = self.whichPointer( $p ),
-						pos = $p.position().left,
-						adjustedPos = self.dir === 'rtl' ? pointer.getView().getAdjustedLeftPositionWhenRtl( pos ) : pos,
-						relativeIndex = Math.ceil( ( adjustedPos + self.revisionWidth / 2 ) / self.revisionWidth ),
 						revId1, revId2;
 
 					$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-pointer-cursor' );
@@ -273,6 +271,22 @@
 					return escapePressed;
 				}
 			};
+		},
+
+		/**
+		 * Get the relative index for a pointer.
+		 *
+		 * @param {jQuery} $pointer
+		 * @return {number}
+		 */
+		getRelativePointerIndex: function( $pointer ) {
+			var pos = $pointer.position().left,
+				pointer = this.whichPointer( $pointer );
+
+			if ( this.dir === 'rtl' ) {
+				pos = pointer.getView().getAdjustedLeftPositionWhenRtl( pos );
+			}
+			return Math.ceil( ( pos + this.revisionWidth / 2 ) / this.revisionWidth );
 		},
 
 		getNewestVisibleRevisonLeftPos: function() {
