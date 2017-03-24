@@ -178,9 +178,7 @@
 		 */
 		initPointers: function( $revisions ) {
 			var $pointers,
-				lastValidLeftPos,
-				escapePressed = false,
-				self = this;
+				escapePressed = false;
 
 			$pointers = this.$element.find( '.mw-revslider-pointer' );
 
@@ -191,12 +189,27 @@
 				}
 			} );
 
-			$pointers.draggable( {
+			$pointers.draggable( this.buildDraggableOptions( escapePressed, $revisions ) );
+		},
+
+		/**
+		 * Build options for the draggable
+		 *
+		 * @param {boolean} escapePressed
+		 * @param {jQuery} $revisions
+		 * @return {Object}
+		 */
+		buildDraggableOptions: function( escapePressed, $revisions ) {
+			var lastValidLeftPos,
+				self = this;
+
+			return {
 				axis: 'x',
 				grid: [ this.revisionWidth, null ],
 				containment: '.mw-revslider-pointer-container',
 				start: function() {
-					$( '.mw-revslider-revision-wrapper' ).addClass( 'mw-revslider-pointer-cursor' );
+					$( '.mw-revslider-revision-wrapper' )
+						.addClass( 'mw-revslider-pointer-cursor' );
 					escapePressed = false;
 				},
 				stop: function() {
@@ -221,21 +234,26 @@
 					self.resetPointerStylesBasedOnPosition();
 					self.resetRevisionStylesBasedOnPointerPosition( $revisions );
 
-					revId1 = self.getRevElementAtPosition( $revisions, self.pointerOlder.getPosition() ).data( 'revid' );
+					revId1 = self.getRevElementAtPosition(
+						$revisions, self.pointerOlder.getPosition()
+					).data( 'revid' );
 
-					revId2 = self.getRevElementAtPosition( $revisions, self.pointerNewer.getPosition() ).data( 'revid' );
+					revId2 = self.getRevElementAtPosition(
+						$revisions, self.pointerNewer.getPosition()
+					).data( 'revid' );
 
 					self.refreshRevisions( revId1, revId2 );
 
 					self.redrawPointerLines();
-
 				},
 				drag: function( event, ui ) {
 					var olderLeftPos, newerLeftPos,
-						isNew = $( this ).hasClass( 'mw-revslider-pointer-newer' ),
-						newestVisibleRevisionLeftPos = $( '.mw-revslider-revisions-container' ).width() - self.revisionWidth;
+						isNew = $( this ).hasClass( 'mw-revslider-pointer-newer' );
 
-					ui.position.left = Math.min( ui.position.left, newestVisibleRevisionLeftPos );
+					ui.position.left = Math.min(
+						ui.position.left,
+						self.getNewestVisibleRevisonLeftPos()
+					);
 
 					olderLeftPos = self.pointerOlder.getView().getElement().position().left;
 					newerLeftPos = self.pointerNewer.getView().getElement().position().left;
@@ -254,7 +272,11 @@
 				revert: function() {
 					return escapePressed;
 				}
-			} );
+			};
+		},
+
+		getNewestVisibleRevisonLeftPos: function() {
+			return $( '.mw-revslider-revisions-container' ).width() - this.revisionWidth;
 		},
 
 		/**
