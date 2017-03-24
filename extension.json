@@ -220,7 +220,8 @@
 		},
 		"ext.RevisionSlider.HelpDialog": {
 			"scripts": [
-				"modules/ext.RevisionSlider.HelpDialog.js"
+				"modules/ext.RevisionSlider.HelpDialog.js",
+				"modules/ext.RevisionSlider.HelpButtonView.js"
 			],
 			"dependencies": [
 				"oojs-ui",

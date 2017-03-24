@@ -105,7 +105,7 @@
 					this.backwardArrowButton.$element,
 					this.renderRevisionsContainer( containerWidth, $revisions ),
 					this.forwardArrowButton.$element,
-					this.renderHelpButton().$element,
+					mw.libs.revisionSlider.HelpButtonView.render(),
 					$( '<div>' ).css( { clear: 'both' } ),
 					this.renderPointerContainer( containerWidth ),
 					this.pointerOlder.getLine().render(), this.pointerNewer.getLine().render()
@@ -291,40 +291,6 @@
 
 		getNewestVisibleRevisonLeftPos: function() {
 			return $( '.mw-revslider-revisions-container' ).width() - this.revisionWidth;
-		},
-
-		/**
-		 * Renders the help button and renders and adds the popup for it.
-		 *
-		 * @return {jQuery} the help button object
-		 */
-		renderHelpButton: function() {
-			var helpButton, helpPopup;
-
-			helpButton = new OO.ui.ButtonWidget( {
-				icon: 'help',
-				framed: false,
-				classes: [ 'mw-revslider-show-help' ]
-			} );
-			helpPopup = new OO.ui.PopupWidget( {
-				$content: $( '<p>' ).text( mw.msg( 'revisionslider-show-help-tooltip' ) ),
-				$floatableContainer: helpButton.$element,
-				padded: true,
-				width: 200,
-				classes: [ 'mw-revslider-tooltip', 'mw-revslider-help-tooltip' ]
-			} );
-			helpButton.$element
-				.click( function() {
-					mw.libs.revisionSlider.HelpDialog.show();
-				} )
-				.mouseover( { popup: helpPopup }, this.showPopup )
-				.mouseout( function() {
-					helpPopup.toggle( false );
-				} );
-
-			$( 'body' ).append( helpPopup.$element );
-
-			return helpButton.$element;
 		},
 
 		/**
