@@ -131,7 +131,8 @@
 		},
 		"ext.RevisionSlider.SliderView": {
 			"scripts": [
-				"modules/ext.RevisionSlider.SliderView.js"
+				"modules/ext.RevisionSlider.SliderView.js",
+				"modules/ext.RevisionSlider.SliderArrowView.js"
 			],
 			"dependencies": [
 				"jquery.ui.draggable",
