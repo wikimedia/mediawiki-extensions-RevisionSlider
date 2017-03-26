@@ -6,6 +6,8 @@
 			"StanProg"
 		]
 	},
+	"revisionslider-beta-feature-message": "Плъзгач при сравняване на версии",
+	"revisionslider-beta-feature-description": "Показва плъзгач когато се сравняват две редакционни версии от една страница.",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|байт|байта}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|байт|байта}}",
 	"revisionslider-label-date": "Дата",
