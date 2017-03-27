@@ -81,6 +81,7 @@
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
+				sliderArrowView = new mw.libs.revisionSlider.SliderArrowView( this ),
 				self = this;
 
 			this.dir = $container.css( 'direction' ) || 'ltr';
@@ -92,8 +93,8 @@
 			this.pointerOlder = this.pointerOlder || new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-older' );
 			this.pointerNewer = this.pointerNewer || new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-newer' );
 
-			this.renderBackwardArrow();
-			this.renderForwardArrow();
+			this.backwardArrowButton = sliderArrowView.renderBackwardArrow();
+			this.forwardArrowButton = sliderArrowView.renderForwardArrow();
 
 			this.$element = $( '<div>' )
 				.addClass( 'mw-revslider-revision-slider' )
@@ -291,124 +292,6 @@
 
 		getNewestVisibleRevisonLeftPos: function() {
 			return $( '.mw-revslider-revisions-container' ).width() - this.revisionWidth;
-		},
-
-		/**
-		 * Renders the backwards arrow, adds the element to the class attribute
-		 * and renders and adds the popup for it.
-		 */
-		renderBackwardArrow: function() {
-			var backwardArrowPopup;
-
-			this.backwardArrowButton = new OO.ui.ButtonWidget( {
-				icon: 'previous',
-				width: 20,
-				height: 140,
-				framed: true,
-				classes: [ 'mw-revslider-arrow', 'mw-revslider-arrow-backwards' ]
-			} );
-
-			backwardArrowPopup = new OO.ui.PopupWidget( {
-				$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-older' ) ),
-				$floatableContainer: this.backwardArrowButton.$element,
-				padded: true,
-				width: 200,
-				classes: [ 'mw-revslider-tooltip', 'mw-revslider-arrow-tooltip' ]
-			} );
-
-			this.backwardArrowButton.connect( this, {
-				click: [ 'arrowClickHandler', this.backwardArrowButton ]
-			} );
-
-			this.backwardArrowButton.$element
-				.attr( 'data-dir', -1 )
-				.mouseover( { button: this.backwardArrowButton, popup: backwardArrowPopup }, this.showPopup )
-				.mouseout( { popup: backwardArrowPopup }, this.hidePopup )
-				.focusin( { button: this.backwardArrowButton }, this.arrowFocusHandler );
-
-			$( 'body' ).append( backwardArrowPopup.$element );
-		},
-
-		/**
-		 * Renders the forwards arrow, adds the element to the class attribute
-		 * and renders and adds the popup for it.
-		 */
-		renderForwardArrow: function() {
-			var forwardArrowPopup;
-
-			this.forwardArrowButton = new OO.ui.ButtonWidget( {
-				icon: 'next',
-				width: 20,
-				height: 140,
-				framed: true,
-				classes: [ 'mw-revslider-arrow', 'mw-revslider-arrow-forwards' ]
-			} );
-
-			forwardArrowPopup = new OO.ui.PopupWidget( {
-				$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-newer' ) ),
-				$floatableContainer: this.forwardArrowButton.$element,
-				padded: true,
-				width: 200,
-				classes: [ 'mw-revslider-tooltip', 'mw-revslider-arrow-tooltip' ]
-			} );
-
-			this.forwardArrowButton.connect( this, {
-				click: [ 'arrowClickHandler', this.forwardArrowButton ]
-			} );
-
-			this.forwardArrowButton.$element
-				.attr( 'data-dir', 1 )
-				.mouseover( { button: this.forwardArrowButton, popup: forwardArrowPopup }, this.showPopup )
-				.mouseout( { popup: forwardArrowPopup }, this.hidePopup )
-				.focusin( { button: this.forwardArrowButton }, this.arrowFocusHandler );
-
-			$( 'body' ).append( forwardArrowPopup.$element );
-		},
-
-		showPopup: function ( e ) {
-			var button = e.data.button,
-				popup = e.data.popup;
-			if ( typeof button !== 'undefined' && button.isDisabled() ) {
-				return;
-			}
-			popup.$element.css( {
-				left: $( this ).offset().left + $( this ).outerWidth() / 2 + 'px',
-				top: $( this ).offset().top + $( this ).outerHeight() + 'px'
-			} );
-			popup.toggle( true );
-		},
-
-		hidePopup: function ( e ) {
-			var popup = e.data.popup;
-			popup.toggle( false );
-		},
-
-		/**
-		 * @param {OO.ui.ButtonWidget} button
-		 */
-		arrowClickHandler: function ( button ) {
-			if ( button.isDisabled() ) {
-				return;
-			}
-			mw.track( 'counter.MediaWiki.RevisionSlider.event.arrowClick' );
-			this.slide( button.$element.data( 'dir' ) );
-		},
-
-		/**
-		 * Disabled oo.ui.ButtonWidgets get focused when clicked. In particular cases
-		 * (arrow gets clicked when disabled, none other elements gets focus meanwhile, the other arrow is clicked)
-		 * previously disabled arrow button still has focus and has OOjs-ui focused button styles
-		 * applied (blue border) which is not what is wanted. And generally setting a focus on disabled
-		 * buttons does not seem right in case of RevisionSlider's arrow buttons.
-		 * This method removes focus from the disabled button if such case happens.
-		 *
-		 * @param {jQuery.Event} e
-		 */
-		arrowFocusHandler: function ( e ) {
-			var button = e.data.button;
-			if ( button.isDisabled() ) {
-				button.$element.find( 'a.oo-ui-buttonElement-button' ).blur();
-			}
 		},
 
 		revisionWrapperClickHandler: function ( e ) {
