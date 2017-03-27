@@ -19,7 +19,7 @@
 		/**
 		 * @type {number}
 		 */
-		firstVisibleRevisionIndex: 0,
+		oldestVisibleRevisionIndex: 0,
 
 		/**
 		 * @type {number}
@@ -62,35 +62,35 @@
 		},
 
 		/**
-		 * Returns the index of the first revision that is visible in the current window
+		 * Returns the index of the oldest revision that is visible in the current window
 		 *
 		 * @return {number}
 		 */
-		getFirstVisibleRevisionIndex: function () {
-			return this.firstVisibleRevisionIndex;
+		getOldestVisibleRevisionIndex: function () {
+			return this.oldestVisibleRevisionIndex;
 		},
 
 		/**
-		 * Returns the index of the last revision that is visible in the current window
+		 * Returns the index of the newest revision that is visible in the current window
 		 *
 		 * @return {number}
 		 */
-		getLastVisibleRevisionIndex: function () {
-			return this.firstVisibleRevisionIndex + this.revisionsPerWindow - 1;
+		getNewestVisibleRevisionIndex: function () {
+			return this.oldestVisibleRevisionIndex + this.revisionsPerWindow - 1;
 		},
 
 		/**
 		 * @return {boolean}
 		 */
 		isAtStart: function () {
-			return this.getFirstVisibleRevisionIndex() === 0 || this.revisions.getLength() <= this.revisionsPerWindow;
+			return this.getOldestVisibleRevisionIndex() === 0 || this.revisions.getLength() <= this.revisionsPerWindow;
 		},
 
 		/**
 		 * @return {boolean}
 		 */
 		isAtEnd: function () {
-			return this.getLastVisibleRevisionIndex() === this.revisions.getLength() - 1 || this.revisions.getLength() <= this.revisionsPerWindow;
+			return this.getNewestVisibleRevisionIndex() === this.revisions.getLength() - 1 || this.revisions.getLength() <= this.revisionsPerWindow;
 		},
 
 		/**
@@ -99,20 +99,20 @@
 		 * @param {number} value
 		 */
 		setFirstVisibleRevisionIndex: function ( value ) {
-			this.firstVisibleRevisionIndex = value;
+			this.oldestVisibleRevisionIndex = value;
 		},
 
 		/**
-		 * Sets the new firstVisibleRevisionIndex after sliding in a direction
+		 * Sets the new oldestVisibleRevisionIndex after sliding in a direction
 		 *
 		 * @param {number} direction - Either -1 or 1
 		 */
 		slide: function ( direction ) {
 			var highestPossibleFirstRev = this.revisions.getLength() - this.revisionsPerWindow;
 
-			this.firstVisibleRevisionIndex += direction * this.revisionsPerWindow;
-			this.firstVisibleRevisionIndex = Math.min( this.firstVisibleRevisionIndex, highestPossibleFirstRev );
-			this.firstVisibleRevisionIndex = Math.max( 0, this.firstVisibleRevisionIndex );
+			this.oldestVisibleRevisionIndex += direction * this.revisionsPerWindow;
+			this.oldestVisibleRevisionIndex = Math.min( this.oldestVisibleRevisionIndex, highestPossibleFirstRev );
+			this.oldestVisibleRevisionIndex = Math.max( 0, this.oldestVisibleRevisionIndex );
 		}
 	} );
 

@@ -144,7 +144,7 @@
 				revid2: revId2,
 				pointerOlderPos: sliderView.pointerOlder.getPosition(),
 				pointerNewerPos: sliderView.pointerNewer.getPosition(),
-				sliderPos: sliderView.slider.getFirstVisibleRevisionIndex()
+				sliderPos: sliderView.slider.getOldestVisibleRevisionIndex()
 			};
 		},
 

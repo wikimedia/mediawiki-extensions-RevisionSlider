@@ -227,7 +227,7 @@
 					}
 
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
-					pointer.setPosition( self.slider.getFirstVisibleRevisionIndex() + relativeIndex );
+					pointer.setPosition( self.slider.getOldestVisibleRevisionIndex() + relativeIndex );
 					self.updatePointerPositionAttributes();
 					self.resetPointerStylesBasedOnPosition();
 					self.resetRevisionStylesBasedOnPointerPosition( $revisions );
@@ -685,7 +685,7 @@
 				this.forwardArrowButton.setDisabled( false );
 			}
 
-			animateObj = { scrollLeft: this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth };
+			animateObj = { scrollLeft: this.slider.getOldestVisibleRevisionIndex() * this.revisionWidth };
 			if ( this.dir === 'rtl' ) {
 				animateObj.scrollLeft = this.getRtlScrollLeft( $animatedElement, animateObj.scrollLeft );
 			}
@@ -942,13 +942,13 @@
 				this.resetRevisionStylesBasedOnPointerPosition( $slider );
 			}
 
-			this.slider.setFirstVisibleRevisionIndex( this.slider.getFirstVisibleRevisionIndex() + revisionsToRender.getLength() );
+			this.slider.setFirstVisibleRevisionIndex( this.slider.getOldestVisibleRevisionIndex() + revisionsToRender.getLength() );
 
 			revIdOld = self.getRevElementAtPosition( $revisions, pOld.getPosition() ).data( 'revid' );
 			revIdNew = self.getRevElementAtPosition( $revisions, pNew.getPosition() ).data( 'revid' );
 			this.diffPage.replaceState( revIdOld, revIdNew, this );
 
-			scrollLeft = this.slider.getFirstVisibleRevisionIndex() * this.revisionWidth;
+			scrollLeft = this.slider.getOldestVisibleRevisionIndex() * this.revisionWidth;
 			$revisionContainer.scrollLeft( scrollLeft );
 			if ( this.dir === 'rtl' ) {
 				$revisionContainer.scrollLeft( self.getRtlScrollLeft( $revisionContainer, scrollLeft ) );

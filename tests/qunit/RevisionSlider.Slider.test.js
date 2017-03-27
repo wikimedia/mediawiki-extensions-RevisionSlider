@@ -26,32 +26,32 @@
 	QUnit.test( 'Given no revisions, first visible revision index is 0', function ( assert ) {
 		var slider = new Slider( makeNRevisions( 0 ) );
 
-		assert.equal( slider.getFirstVisibleRevisionIndex(), 0 );
+		assert.equal( slider.getOldestVisibleRevisionIndex(), 0 );
 	} );
 
-	QUnit.test( 'Given 200 revisions sliding once increases firstVisibleRevisionIndex by the number of revisions per window', function ( assert ) {
+	QUnit.test( 'Given 200 revisions sliding once increases oldestVisibleRevisionIndex by the number of revisions per window', function ( assert ) {
 		var slider = new Slider( makeNRevisions( 200 ) );
 		slider.setRevisionsPerWindow( 50 );
 		slider.slide( 1 );
 
-		assert.equal( slider.getFirstVisibleRevisionIndex(), 50 );
+		assert.equal( slider.getOldestVisibleRevisionIndex(), 50 );
 	} );
 
-	QUnit.test( 'firstVisibleRevisionIndex cannot be higher than revisions.length - revisionsPerWindow', function ( assert ) {
+	QUnit.test( 'oldestVisibleRevisionIndex cannot be higher than revisions.length - revisionsPerWindow', function ( assert ) {
 		var slider = new Slider( makeNRevisions( 75 ) );
 		slider.setRevisionsPerWindow( 50 );
 		slider.slide( 1 );
 
-		assert.equal( slider.getFirstVisibleRevisionIndex(), 25 );
+		assert.equal( slider.getOldestVisibleRevisionIndex(), 25 );
 	} );
 
-	QUnit.test( 'firstVisibleRevisionIndex cannot be lower than 0', function ( assert ) {
+	QUnit.test( 'oldestVisibleRevisionIndex cannot be lower than 0', function ( assert ) {
 		var slider = new Slider( makeNRevisions( 50 ) );
-		slider.firstVisibleRevisionIndex = 10;
+		slider.oldestVisibleRevisionIndex = 10;
 		slider.setRevisionsPerWindow( 20 );
 		slider.slide( -1 );
 
-		assert.equal( slider.getFirstVisibleRevisionIndex(), 0 );
+		assert.equal( slider.getOldestVisibleRevisionIndex(), 0 );
 	} );
 
 }( mediaWiki ) );

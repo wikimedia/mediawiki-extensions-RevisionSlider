@@ -99,7 +99,7 @@
 		 * @return {jQuery}
 		 */
 		slideToPosition: function ( slider, duration ) {
-			var relativePos = this.pointer.getPosition() - slider.getFirstVisibleRevisionIndex();
+			var relativePos = this.pointer.getPosition() - slider.getOldestVisibleRevisionIndex();
 			return this.animateTo( ( relativePos - 1 ) * slider.getView().revisionWidth, duration );
 		},
 
@@ -127,7 +127,7 @@
 		 * @return {jQuery}
 		 */
 		slideToSideOrPosition: function ( slider, duration ) {
-			var firstVisibleRev = slider.getFirstVisibleRevisionIndex(),
+			var firstVisibleRev = slider.getOldestVisibleRevisionIndex(),
 				posBeforeSlider = this.pointer.getPosition() < firstVisibleRev,
 				isVisible = !posBeforeSlider && this.pointer.getPosition() <= firstVisibleRev + slider.getRevisionsPerWindow();
 			if ( isVisible ) {
