@@ -152,18 +152,18 @@
 		 * @return {jQuery} the pointer container
 		 */
 		renderPointerContainer: function( containerWidth ) {
-			var pointerContainerPosition = 53,
+			var pointerContainerSideOffset = 53,
 				pointerContainerWidth = containerWidth + this.revisionWidth - 1,
 				pointerContainerStyle;
 
-			pointerContainerStyle = { left: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
+			pointerContainerStyle = { left: pointerContainerSideOffset + 'px', width: pointerContainerWidth + 'px' };
 			if ( this.dir === 'rtl' ) {
 				// Due to properly limit dragging a pointer on the right side of the screen,
 				// there must some extra space added to the right of the revision bar container
 				// For this reason right position of the pointer container in the RTL mode is
 				// a bit moved off right compared to its left position in the LTR mode
-				pointerContainerPosition = pointerContainerPosition - this.revisionWidth + 1;
-				pointerContainerStyle = { right: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
+				pointerContainerSideOffset = pointerContainerSideOffset - this.revisionWidth + 1;
+				pointerContainerStyle = { right: pointerContainerSideOffset + 'px', width: pointerContainerWidth + 'px' };
 			}
 
 			return $( '<div>' )
