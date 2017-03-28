@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e436fe2_9e44fe4b",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2017-03-28T10:34:52Z",
+      "side": 1,
+      "message": "Making the right offset to be a  \"left offset\" is a bit odd :)",
+      "revId": "c57e9cece41b04449fbabae30692d9619fd4dc0d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
