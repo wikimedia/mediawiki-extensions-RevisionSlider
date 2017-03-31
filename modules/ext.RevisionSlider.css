@@ -251,21 +251,17 @@ of the frameless one (to fit the size of the toggle button */
 }
 
 .mw-revslider-pointer-upper {
-	padding: 4px 4px 0 4px;
-	margin-left: -4px;
-	background-position: 4px 0;
+	padding-top: 2px;
 }
 .mw-revslider-pointer-lower {
 	top: 15px;
-	padding: 0 4px 4px 4px;
-	margin-left: -4px;
-	background-position: 4px 0;
+	padding-bottom: 2px;
 }
 
 .mw-revslider-pointer {
 	position: absolute !important; /* stylelint-disable-line declaration-no-important */
 	z-index: 11;
-	width: 18px;
+	width: 16px;
 	height: 13px;
 	background-repeat: no-repeat;
 }

@@ -69,11 +69,9 @@
 		},
 
 		// For correct positioning of the pointer in the RTL mode the left position is flipped in the container.
-		// Additionally what must be taken into consideration is the width of the revision,
-		// and the extra space added on the right side of the pointer container used for correct
-		// restricting the pointer dragging area
+		// 30 pixel have to be added to cover the arrow and its margin.
 		getAdjustedLeftPositionWhenRtl: function ( pos ) {
-			return this.getElement().offsetParent().width() - pos - 16 - 18;
+			return this.getElement().offsetParent().width() - pos - 30;
 		},
 
 		/**

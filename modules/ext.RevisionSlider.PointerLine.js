@@ -46,8 +46,7 @@
 		 */
 		calculateDistance: function ( $sourcePointer, $targetColumn ) {
 			return ( $targetColumn.offset().left + $targetColumn.width() / 2 ) -
-				( $sourcePointer.offset().left + ( $sourcePointer.width() + 4 ) / 2 );
-			// +4 there is a negative left-margin in the pointer that needs to be considered
+				( $sourcePointer.offset().left + ( $sourcePointer.width() ) / 2 );
 		},
 
 		/**
@@ -65,12 +64,13 @@
 			leftToSet = ( $targetColumn.offset().left + $targetColumn.width() / 2 ) -
 				$( '.mw-revslider-revision-slider' ).offset().left;
 
-			if ( distance < 0 ) {
-				// targetColumn is left relative to sourcePointer
-				leftToSet += 2; // in that case somehow the border-width of the line-box seems to affect the positioning
-			} else {
+			if ( distance > 0 ) {
 				// targetColumn is right relative to sourcePointer
 				leftToSet -= widthToSet;
+				leftToSet -= 1;
+			} else {
+				// targetColumn is left relative to sourcePointer
+				leftToSet += 1;
 			}
 
 			this.$html.css( {
