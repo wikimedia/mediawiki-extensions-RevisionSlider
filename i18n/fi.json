@@ -2,12 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Lebiega",
-			"Pyscowicz"
+			"Pyscowicz",
+			"Stryn"
 		]
 	},
 	"revisionslider": "Tarkistusliukusäädin",
 	"revisionslider-preference-disable": "Älä näytä tarkistusliukusäädintä",
 	"revisionslider-beta-feature-message": "Tarkistusliukusäädin",
+	"revisionslider-beta-feature-description": "Näytä tarkistusliukusäädin vertailtaessa kahta eri versiota sivusta.",
 	"revisionslider-toggle-label": "Selaa historiaa",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|tavu|tavua}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|tavu|tavua}}",
