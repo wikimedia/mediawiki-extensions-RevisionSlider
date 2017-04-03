@@ -16,6 +16,24 @@
       "revId": "bf8629bdbdedcd487dce0ea5867dbfb381f2e59d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e436fe2_75b9f028",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2017-04-03T10:07:13Z",
+      "side": 1,
+      "message": "Yeah I think with the margin, the paddings, the container being to big for the actual image. The whole thing was a bit misalign asynchronously. \n\nIn the current PS theres exactly 1px need on each side and I assume it is related to the line border. At least it works and is perfectly centered now.",
+      "parentUuid": "6e436fe2_7da0f83e",
+      "revId": "bf8629bdbdedcd487dce0ea5867dbfb381f2e59d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
