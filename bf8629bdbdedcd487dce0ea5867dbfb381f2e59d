@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e436fe2_7da0f83e",
+        "filename": "modules/ext.RevisionSlider.PointerLine.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2017-04-03T09:00:27Z",
+      "side": 1,
+      "message": "Just by looking at the code changed the new code does not seem to be matching what used to be there before, so I am not sure if this is all good. Is there some test (browser test probably?) that ensures that the behaviour relevant here is still correct after the change?",
+      "revId": "bf8629bdbdedcd487dce0ea5867dbfb381f2e59d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
