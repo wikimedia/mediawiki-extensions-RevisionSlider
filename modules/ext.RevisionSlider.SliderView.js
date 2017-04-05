@@ -211,6 +211,7 @@
 				start: function() {
 					$( '.mw-revslider-revision-wrapper' )
 						.addClass( 'mw-revslider-pointer-cursor' );
+					self.fadeOutPointerLines();
 					escapePressed = false;
 				},
 				stop: function() {
@@ -498,10 +499,25 @@
 		 * Redraws the lines for the pointers
 		 */
 		redrawPointerLines: function () {
+			this.fadeInPointerLines();
 			$( '.mw-revslider-pointer-line-upper, .mw-revslider-pointer-line-lower' )
 				.removeClass( 'mw-revslider-bottom-line mw-revslider-left-line mw-revslider-right-line' );
 			this.pointerOlder.getLine().drawLine();
 			this.pointerNewer.getLine().drawLine();
+		},
+
+		/**
+		 * Fades out the lines for the pointers
+		 */
+		fadeOutPointerLines: function () {
+			$( '.mw-revslider-pointer-line' ).fadeTo( 0, 0.3 );
+		},
+
+		/**
+		 * Fades in the lines for the pointers
+		 */
+		fadeInPointerLines: function () {
+			$( '.mw-revslider-pointer-line' ).fadeTo( 0, 1 );
 		},
 
 		/**
@@ -604,6 +620,8 @@
 
 		alignPointers: function ( duration ) {
 			var self = this;
+
+			this.fadeOutPointerLines();
 
 			this.pointerOlder.getView()
 				.slideToSideOrPosition( this.slider, duration )
