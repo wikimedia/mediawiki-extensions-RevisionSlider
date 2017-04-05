@@ -97,6 +97,26 @@
 			SliderViewTwo.super.prototype.resetPointerStylesBasedOnPosition.call( this );
 		},
 
+		setPointerDragCursor: function() {
+			$( '.mw-revslider-pointer, ' +
+				'.mw-revslider-pointer-container, ' +
+				'.mw-revslider-pointer-container-newer, ' +
+				'.mw-revslider-pointer-container-older, ' +
+				'.mw-revslider-pointer-line, ' +
+				'.mw-revslider-revision-wrapper' )
+				.addClass( 'mw-revslider-pointer-grabbing' );
+		},
+
+		removePointerDragCursor: function() {
+			$( '.mw-revslider-pointer, ' +
+				'.mw-revslider-pointer-container, ' +
+				'.mw-revslider-pointer-container-newer, ' +
+				'.mw-revslider-pointer-container-older, ' +
+				'.mw-revslider-pointer-line, ' +
+				'.mw-revslider-revision-wrapper' )
+				.removeClass( 'mw-revslider-pointer-grabbing' );
+		},
+
 		sliderLineClickHandler: function( event, $line ) {
 			var $revisions = this.$element.find( '.mw-revslider-revisions' ),
 				$clickedRev = this.getRevisionNearestToClick( event ),
