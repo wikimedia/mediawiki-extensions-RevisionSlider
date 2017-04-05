@@ -1,10 +1,7 @@
 @chrome @en.wikipedia.beta.wmflabs.org @firefox @integration
 Feature: RevisionSlider diff links
   Background:
-    Given I am logged in
-    And I have reset my preferences
-    And RevisionSlider is enabled as a beta feature
-    And a page with 4 revision(s) exists
+    Given a page with 4 revision(s) exists
 
   Scenario: Older edit diff link can be clicked
     Given I am on the diff page

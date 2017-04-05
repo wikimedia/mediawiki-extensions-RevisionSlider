@@ -52,14 +52,6 @@ Given(/^I wait for the setting to be saved$/) do
   on(DiffPage).wait_for_ajax_calls
 end
 
-Then(/^RevisionSlider is enabled as a beta feature$/) do
-  visit(SpecialPreferencesPage).enable_revisionslider
-end
-
-Then(/^RevisionSlider is disabled as a beta feature$/) do
-  visit(SpecialPreferencesPage).disable_revisionslider
-end
-
 Then(/^The auto expand button should be off/) do
   expect(on(DiffPage).revisionslider_auto_expand_button_element.class_name).to match 'oo-ui-toggleWidget-off'
 end

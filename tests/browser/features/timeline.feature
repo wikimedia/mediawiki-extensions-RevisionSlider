@@ -1,10 +1,5 @@
 @chrome @en.wikipedia.beta.wmflabs.org @firefox @integration
 Feature: RevisionSlider timeline
-  Background:
-    Given I am logged in
-    And I have reset my preferences
-    And RevisionSlider is enabled as a beta feature
-
   Scenario: RevisionSlider timeline arrows to be disabled with 3 revisions
     Given a page with 3 revision(s) exists
     And I am on the diff page

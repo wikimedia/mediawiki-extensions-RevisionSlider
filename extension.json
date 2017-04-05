@@ -20,7 +20,7 @@
 	},
 	"config": {
 		"@RevisionSliderBetaFeature": "Make the RevisionSlider feature a BetaFeature. Setting this requires the RevisionSlider extension and requires each user to enable the BetaFeature.",
-		"RevisionSliderBetaFeature": true
+		"RevisionSliderBetaFeature": false
 	},
 	"MessagesDirs": {
 		"RevisionSlider": [

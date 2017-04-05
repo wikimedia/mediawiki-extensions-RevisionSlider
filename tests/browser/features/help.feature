@@ -1,10 +1,7 @@
 @chrome @en.wikipedia.beta.wmflabs.org @firefox @integration
 Feature: RevisionSlider help
   Background:
-    Given I am logged in
-    And a page with 2 revision(s) exists
-    And I have reset my preferences
-    And RevisionSlider is enabled as a beta feature
+    Given a page with 2 revision(s) exists
     And I am on the diff page
 
   Scenario: RevisionSlider tutorial is present on first load
