@@ -209,8 +209,7 @@
 				grid: [ this.revisionWidth, null ],
 				containment: '.mw-revslider-pointer-container',
 				start: function() {
-					$( '.mw-revslider-revision-wrapper' )
-						.addClass( 'mw-revslider-pointer-cursor' );
+					self.setPointerDragCursor();
 					self.fadeOutPointerLines();
 					escapePressed = false;
 				},
@@ -220,7 +219,7 @@
 						pointer = self.whichPointer( $p ),
 						revId1, revId2;
 
-					$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-pointer-cursor' );
+					self.removePointerDragCursor();
 
 					if ( escapePressed ) {
 						self.updatePointerPositionAttributes();
@@ -273,6 +272,16 @@
 					return escapePressed;
 				}
 			};
+		},
+
+		setPointerDragCursor: function() {
+			$( '.mw-revslider-revision-wrapper' )
+				.addClass( 'mw-revslider-pointer-cursor' );
+		},
+
+		removePointerDragCursor: function() {
+			$( '.mw-revslider-revision-wrapper' )
+				.removeClass( 'mw-revslider-pointer-cursor' );
 		},
 
 		/**
