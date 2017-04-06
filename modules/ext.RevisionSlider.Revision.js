@@ -120,10 +120,8 @@
 		 * @return {string}
 		 */
 		formatDate: function ( rawDate ) {
-			// Moment's offset works "backwards", as the number of minutes
-			// behind UTC, so we need to make this number negative
-			var offset = -mw.libs.revisionSlider.userOffset;
-			return moment( rawDate ).zone( offset ).format( 'LLL' );
+			var offset = parseInt( mw.libs.revisionSlider.userOffset );
+			return moment( rawDate ).utcOffset( offset ).format( 'LLL' );
 		},
 
 		/**
