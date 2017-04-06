@@ -97,6 +97,21 @@
 			SliderViewTwo.super.prototype.resetPointerStylesBasedOnPosition.call( this );
 		},
 
+		draggableDragAction: function( event, ui, pointer, lastValidLeftPos ) {
+			var pos = this.getRelativePointerIndex( $( pointer ) ),
+				$revisions, $hoveredRevisionWrapper;
+
+			if ( pos === lastValidLeftPos ) {
+				return pos;
+			}
+
+			$revisions = $( '.mw-revslider-revisions' );
+			$hoveredRevisionWrapper = this.getRevElementAtPosition( $revisions, pos ).parent();
+			this.slider.getRevisions().getView().showTooltip( $hoveredRevisionWrapper );
+
+			return pos;
+		},
+
 		setPointerDragCursor: function() {
 			$( '.mw-revslider-pointer, ' +
 				'.mw-revslider-pointer-container, ' +
