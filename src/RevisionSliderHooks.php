@@ -68,6 +68,7 @@ class RevisionSliderHooks {
 		$out->addJsConfigVars( 'extRevisionSliderOldRev', $oldRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderNewRev', $newRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderTimeOffset', intval( $timeOffset ) );
+		$out->addJsConfigVars( 'extRevisionSliderBeta', $config->get( 'RevisionSliderBetaFeature' ) );
 		$out->enableOOUI();
 
 		// FIXME: this really not nice to inject those elements to ButtonWidget like that

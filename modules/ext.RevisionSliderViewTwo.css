@@ -1,0 +1,80 @@
+.mw-revslider-revision-wrapper {
+	cursor: auto;
+}
+
+.mw-revslider-pointer-container {
+	top: 52px;
+	z-index: 10;
+	height: 26px;
+	margin: 0;
+}
+
+.mw-revslider-pointer-container-newer,
+.mw-revslider-pointer-container-older {
+	cursor: pointer;
+	height: 12px;
+}
+
+.mw-revslider-revision-old,
+.mw-revslider-revision-new {
+	background-color: #bcbcbc;
+	border-color: #989898;
+}
+
+.mw-revslider-revision-old:hover,
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision-old,
+.mw-revslider-revision-new:hover,
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision-new {
+	background-color: #a6a6a6;
+	border-color: #828282;
+}
+
+.mw-revslider-pointer-container-newer {
+	margin-top: 7px;
+}
+
+.mw-revslider-slider-line {
+	margin: 0 10px;
+}
+
+.mw-revslider-pointer-container-newer .mw-revslider-slider-line {
+	height: 8px;
+	border-bottom: 2px solid rgba( 30, 109, 184, 0.5 ); /* #1e6db8 */
+}
+
+.mw-revslider-pointer-container-older .mw-revslider-slider-line {
+	height: 2px;
+	border-bottom: 2px solid rgba( 255, 204, 51, 0.5 ); /* #fc3 */
+}
+
+.mw-revslider-pointer-upper.mw-revslider-pointer-newid {
+	top: 8px;
+	border: 1px solid #66b2ff;
+	background: -webkit-linear-gradient( bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
+	background: -moz-linear-gradient( bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
+	background: -ms-linear-gradient( bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
+	background: -o-linear-gradient( bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
+	background: linear-gradient( to bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
+}
+.mw-revslider-pointer-lower.mw-revslider-pointer-oldid {
+	top: 14px;
+	border: 1px solid #ffc561;
+	background: -webkit-linear-gradient( bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
+	background: -moz-linear-gradient( bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
+	background: -ms-linear-gradient( bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
+	background: -o-linear-gradient( bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
+	background: linear-gradient( to bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
+}
+
+.mw-revslider-pointer {
+	padding: 0;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+}
+
+.mw-revslider-pointer-line {
+	z-index: 5;
+	/* @noflip */
+	margin-left: 1px;
+}

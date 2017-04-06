@@ -147,6 +147,17 @@
 				"revisionslider-arrow-tooltip-older"
 			]
 		},
+		"ext.RevisionSlider.SliderViewTwo": {
+			"scripts": [
+				"modules/ext.RevisionSlider.SliderViewTwo.js"
+			],
+			"styles": [
+				"modules/ext.RevisionSliderViewTwo.css"
+			],
+			"dependencies": [
+				"ext.RevisionSlider.SliderView"
+			]
+		},
 		"ext.RevisionSlider.DiffPage": {
 			"scripts": [
 				"modules/ext.RevisionSlider.DiffPage.js"
