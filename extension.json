@@ -132,7 +132,8 @@
 		"ext.RevisionSlider.SliderView": {
 			"scripts": [
 				"modules/ext.RevisionSlider.SliderView.js",
-				"modules/ext.RevisionSlider.SliderArrowView.js"
+				"modules/ext.RevisionSlider.SliderArrowView.js",
+				"modules/ext.RevisionSlider.SliderViewTwo.js"
 			],
 			"dependencies": [
 				"jquery.ui.draggable",
@@ -148,14 +149,11 @@
 			]
 		},
 		"ext.RevisionSlider.SliderViewTwo": {
-			"scripts": [
-				"modules/ext.RevisionSlider.SliderViewTwo.js"
-			],
 			"styles": [
 				"modules/ext.RevisionSliderViewTwo.css"
 			],
 			"dependencies": [
-				"ext.RevisionSlider.SliderView"
+				"ext.RevisionSlider.init"
 			]
 		},
 		"ext.RevisionSlider.DiffPage": {
