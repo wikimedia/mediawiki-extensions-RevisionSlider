@@ -34,8 +34,8 @@ return [
 	 * project. directory_list won't find .inc files so
 	 * we augment it here.
 	 */
-	'file_list' => [
-	],
+	'file_list' => !is_dir( './../../extensions/BetaFeatures/includes' ) ?
+		[ 'tests/phan/stubs/betafeatures.php' ] : [],
 
 	/**
 	 * A list of directories that should be parsed for class and
@@ -46,15 +46,18 @@ return [
 	 * Thus, both first-party and third-party code being used by
 	 * your application should be included in this list.
 	 */
-	'directory_list' => [
+	'directory_list' => array_merge(
+		[
 		'src/',
 		'tests/phan/stubs/',
 		'./../../includes',
 		'./../../languages',
 		'./../../maintenance',
 		'./../../vendor',
-		'./../../extensions/BetaFeatures/includes',
-	],
+		],
+		is_dir( './../../extensions/BetaFeatures/includes' ) ?
+			[ './../../extensions/BetaFeatures/includes' ] : []
+	),
 
 	/**
 	 * A file list that defines files that will be excluded
@@ -71,14 +74,16 @@ return [
 	 * to parse, but not analyze. Also works for individual
 	 * files.
 	 */
-	"exclude_analysis_directory_list" => [
+	"exclude_analysis_directory_list" => array_merge(
+		[
 		'tests/phan/stubs/',
 		'./../../includes',
 		'./../../languages',
 		'./../../maintenance',
 		'./../../vendor',
-		'./../../extensions/BetaFeatures/includes',
-	],
+		],
+		is_dir( './../../extensions/BetaFeatures' ) ? [ './../../extensions/BetaFeatures' ] : []
+	),
 
 	/**
 	 * Backwards Compatibility Checking. This is slow
