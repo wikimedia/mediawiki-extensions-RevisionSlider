@@ -5,7 +5,6 @@
 .mw-revslider-pointer-container {
 	top: 52px;
 	z-index: 10;
-	height: 26px;
 	margin: 0;
 }
 
@@ -15,18 +14,22 @@
 	height: 12px;
 }
 
-.mw-revslider-revision-old,
-.mw-revslider-revision-new {
-	background-color: #bcbcbc;
-	border-color: #989898;
+.mw-revslider-revision:hover,
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision {
+	background-color: #e3e3e3;
+	border-color: #e3e3e3;
 }
 
+.mw-revslider-revision-old,
+.mw-revslider-revision-new,
 .mw-revslider-revision-old:hover,
 .mw-revslider-revision-wrapper-hovered .mw-revslider-revision-old,
 .mw-revslider-revision-new:hover,
-.mw-revslider-revision-wrapper-hovered .mw-revslider-revision-new {
-	background-color: #a6a6a6;
-	border-color: #828282;
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision-new,
+.mw-revslider-revision-intermediate:hover,
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision-intermediate {
+	background-color: #bcbcbc;
+	border-color: #989898;
 }
 
 .mw-revslider-pointer-container-newer {
