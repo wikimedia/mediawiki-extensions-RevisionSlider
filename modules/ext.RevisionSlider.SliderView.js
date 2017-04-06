@@ -247,32 +247,43 @@
 					self.redrawPointerLines();
 				},
 				drag: function( event, ui ) {
-					var olderLeftPos, newerLeftPos,
-						isNew = $( this ).hasClass( 'mw-revslider-pointer-newer' );
-
-					ui.position.left = Math.min(
-						ui.position.left,
-						self.getNewestVisibleRevisonLeftPos()
+					lastValidLeftPos = self.draggableDragAction(
+						event,
+						ui,
+						this,
+						lastValidLeftPos
 					);
-
-					olderLeftPos = self.pointerOlder.getView().getElement().position().left;
-					newerLeftPos = self.pointerNewer.getView().getElement().position().left;
-
-					if ( ui.position.left === ( isNew ? olderLeftPos : newerLeftPos ) ) {
-						ui.position.left = lastValidLeftPos;
-					} else {
-						lastValidLeftPos = ui.position.left;
-						if ( self.dir === 'ltr' ) {
-							self.resetPointerColorsBasedOnValues( olderLeftPos, newerLeftPos );
-						} else {
-							self.resetPointerColorsBasedOnValues( newerLeftPos, olderLeftPos );
-						}
-					}
 				},
 				revert: function() {
 					return escapePressed;
 				}
 			};
+		},
+
+		draggableDragAction: function( event, ui, pointer, lastValidLeftPos ) {
+			var olderLeftPos, newerLeftPos,
+				isNew = $( pointer ).hasClass( 'mw-revslider-pointer-newer' );
+
+			ui.position.left = Math.min(
+				ui.position.left,
+				this.getNewestVisibleRevisonLeftPos()
+			);
+
+			olderLeftPos = this.pointerOlder.getView().getElement().position().left;
+			newerLeftPos = this.pointerNewer.getView().getElement().position().left;
+
+			if ( ui.position.left === ( isNew ? olderLeftPos : newerLeftPos ) ) {
+				ui.position.left = lastValidLeftPos;
+			} else {
+				lastValidLeftPos = ui.position.left;
+				if ( this.dir === 'ltr' ) {
+					this.resetPointerColorsBasedOnValues( olderLeftPos, newerLeftPos );
+				} else {
+					this.resetPointerColorsBasedOnValues( newerLeftPos, olderLeftPos );
+				}
+			}
+
+			return lastValidLeftPos;
 		},
 
 		setPointerDragCursor: function() {
