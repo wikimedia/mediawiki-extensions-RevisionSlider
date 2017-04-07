@@ -60,7 +60,7 @@ class RevisionSliderHooks {
 		if ( $autoExpand ) {
 			$out->addModules( 'ext.RevisionSlider.init' );
 			$stats->increment( 'RevisionSlider.event.load' );
-			if ( $config->get( 'RevisionSliderBetaFeature' ) ) {
+			if ( $config->get( 'RevisionSliderAlternateSlider' ) ) {
 				$out->addModules( 'ext.RevisionSlider.SliderViewTwo' );
 			}
 		} else {
@@ -71,7 +71,10 @@ class RevisionSliderHooks {
 		$out->addJsConfigVars( 'extRevisionSliderOldRev', $oldRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderNewRev', $newRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderTimeOffset', intval( $timeOffset ) );
-		$out->addJsConfigVars( 'extRevisionSliderBeta', $config->get( 'RevisionSliderBetaFeature' ) );
+		$out->addJsConfigVars(
+			'extRevisionSliderAlternateSlider',
+			$config->get( 'RevisionSliderAlternateSlider' )
+		);
 		$out->enableOOUI();
 
 		// FIXME: this really not nice to inject those elements to ButtonWidget like that

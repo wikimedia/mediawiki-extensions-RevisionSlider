@@ -118,7 +118,7 @@
 		}
 	} );
 
-	if ( mw.config.get( 'extRevisionSliderBeta' ) ) {
+	if ( mw.config.get( 'extRevisionSliderAlternateSlider' ) ) {
 		mw.loader.load( 'ext.RevisionSlider.SliderViewTwo' );
 	}
 	expand();
