@@ -5,6 +5,7 @@
 		]
 	},
 	"revisionslider": "Grafički prikazivač izmjena",
+	"revisionslider-preference-disable": "Ne prikazuj grafički prikazivač izmjena",
 	"revisionslider-desc": "Grafički prikaz u kojem je moguće označavanje i usporedba izmjena na stranici",
 	"revisionslider-beta-feature-message": "Grafički prikazivač izmjena",
 	"revisionslider-beta-feature-description": "Grafički prikaz izmjena prilikom uspoređivanja dviju inačica stranice.",
