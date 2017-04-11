@@ -32,6 +32,14 @@
 	border-color: #989898;
 }
 
+.mw-revslider-revision-old .mw-revslider-revision-border-box {
+	border-bottom: 2px solid #fc3;
+}
+
+.mw-revslider-revision-new .mw-revslider-revision-border-box {
+	border-bottom: 2px solid #1e6db8;
+}
+
 .mw-revslider-pointer-container-newer {
 	margin-top: 4px;
 }
@@ -119,7 +127,6 @@
 }
 
 .mw-revslider-pointer-line {
-	z-index: 5;
 	/* @noflip */
 	margin-left: 1px;
 }
