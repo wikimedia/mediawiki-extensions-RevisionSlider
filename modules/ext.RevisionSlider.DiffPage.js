@@ -78,7 +78,7 @@
 				self.addHandlersToCoreLinks( sliderView );
 
 				mw.hook( 'wikipage.content' ).fire( $contentText );
-				mw.hook( 'wikipage.diff' ).fire( $contentText.find( 'table.diff' ) );
+				mw.hook( 'wikipage.diff' ).fire( $( 'body' ).find( 'table.diff' ) );
 
 			}, function ( xhr ) {
 				$( 'table.diff[data-mw="interface"]' ).removeClass( 'mw-revslider-diff-loading' );
