@@ -57,6 +57,8 @@ class RevisionSliderHooks {
 		$autoExpand = $user->getBoolOption( 'userjs-revslider-autoexpand' );
 
 		$out = RequestContext::getMain()->getOutput();
+		// Load styles on page load to avoid FOUC
+		$out->addModuleStyles( 'ext.RevisionSlider.lazy' );
 		if ( $autoExpand ) {
 			$out->addModules( 'ext.RevisionSlider.init' );
 			$stats->increment( 'RevisionSlider.event.load' );
@@ -77,24 +79,9 @@ class RevisionSliderHooks {
 		);
 		$out->enableOOUI();
 
-		// FIXME: this really not nice to inject those elements to ButtonWidget like that
-		// but this is only done to have inline styles set for those elements, so they are
-		// rendered as intended before RL loads all CSS styles (avoid jumping after CSS is loaded).
-		// Some better and more future-proof solution (what if ButtonWidget switches to use other tags?)
-		// should be used if possible.
-		$button = ( new OOUI\Tag( 'a' ) )->setAttributes(
-			[ 'style' => 'width: 100%; padding: 0.06em 0 0.06em 0;' ]
-		);
-		$iconPosition = $out->getLanguage()->isRTL()? 'left' : 'right';
-		$label = ( new OOUI\Tag( 'span' ) )->setAttributes( [ 'style' => 'line-height: 1.875em;' ] );
-		$icon = ( new OOUI\Tag( 'span' ) )->setAttributes( [ 'style' => "float: $iconPosition;" ] );
-
 		$toggleButton = new OOUI\ButtonWidget( [
 			'label' => ( new Message( 'revisionslider-toggle-label' ) )->text(),
 			'icon' => $autoExpand ? 'collapse' : 'expand',
-			'button' => $button,
-			'labelElement' => $label,
-			'iconElement' => $icon,
 			'classes' => [ 'mw-revslider-toggle-button' ],
 			'infusable' => true,
 			'framed' => false,
@@ -103,31 +90,19 @@ class RevisionSliderHooks {
 		$toggleButton->setAttributes( [ 'style' => 'width: 100%; text-align: center;' ] );
 
 		$progressBar = new OOUI\ProgressBarWidget( [ 'progress' => false ] );
-		$progressBar->setAttributes( [
-			'style' => 'margin: 0 auto;',
-		] );
 
 		$out->prependHTML(
 			Html::rawElement(
-				'div',
-				[
-					'class' => 'mw-revslider-container',
-					'style' => 'border: 1px solid #cccccc;'
-				],
+				'div', [ 'class' => 'mw-revslider-container' ],
 				$toggleButton .
 				Html::rawElement(
 					'div',
 					[
 						'class' => 'mw-revslider-slider-wrapper',
-						'style' => 'min-height: 142px; border-top: 1px solid #cccccc; padding: 20px 10px;' .
-							( !$autoExpand ? ' display: none;' : '' ),
+						'style' => ( !$autoExpand ? ' display: none;' : '' ),
 					],
 					Html::rawElement(
-						'div',
-						[
-							'style' => 'text-align: center; margin-top: 60px;',
-							'class' => 'mw-revslider-placeholder'
-						],
+						'div', [ 'class' => 'mw-revslider-placeholder' ],
 						$progressBar
 					)
 				)
