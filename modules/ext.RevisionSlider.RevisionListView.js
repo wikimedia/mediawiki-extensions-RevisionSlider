@@ -31,13 +31,17 @@
 		dir: null,
 
 		/**
+		 * @type {jQuery}
+		 */
+		html: null,
+
+		/**
 		 * @param {number} revisionTickWidth
 		 * @param {number} positionOffset
 		 * @return {jQuery}
 		 */
 		render: function ( revisionTickWidth, positionOffset ) {
-			var $html = $( '<div>' ).addClass( 'mw-revslider-revisions' ),
-				revs = this.revisionList.getRevisions(),
+			var revs = this.revisionList.getRevisions(),
 				maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() ),
 				self = this,
 				i, diffSize, relativeChangeSize,
@@ -51,11 +55,13 @@
 			positionOffset = positionOffset || 0;
 			this.revisionWidth = revisionTickWidth;
 
+			this.$html = $( '<div>' ).addClass( 'mw-revslider-revisions' );
+
 			for ( i = 0; i < revs.length; i++ ) {
 				diffSize = revs[ i ].getRelativeSize();
 				relativeChangeSize = diffSize !== 0 ? Math.ceil( 65.0 * Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) + 5 : 0;
 
-				$html
+				this.$html
 					.append( $( '<div>' )
 						.addClass( 'mw-revslider-revision-wrapper' )
 						.width( this.revisionWidth )
@@ -79,7 +85,7 @@
 			this.keepTooltipsOnHover();
 			this.closeTooltipsOnClick();
 
-			return $html;
+			return this.$html;
 		},
 
 		/**
@@ -348,6 +354,13 @@
 		 */
 		setDir: function ( dir ) {
 			this.dir = dir;
+		},
+
+		/**
+		 * @return {jQuery}
+		 */
+		getElement: function() {
+			return this.$html;
 		}
 	} );
 

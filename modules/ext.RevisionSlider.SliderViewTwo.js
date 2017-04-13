@@ -108,7 +108,7 @@
 				return pos;
 			}
 
-			$revisions = $( '.mw-revslider-revisions' );
+			$revisions = this.getRevisionsElement();
 			$hoveredRevisionWrapper = this.getRevElementAtPosition( $revisions, pos ).parent();
 			this.slider.getRevisions().getView().showTooltip( $hoveredRevisionWrapper );
 
@@ -151,7 +151,7 @@
 				return;
 			}
 
-			$revisions = this.$element.find( '.mw-revslider-revisions' );
+			$revisions = this.getRevisionsElement();
 			$clickedRev = this.getRevElementAtPosition( $revisions, pos );
 
 			pointerMoved.setPosition( pos );
@@ -165,7 +165,7 @@
 		},
 
 		getRevisionPositionFromLeftOffset: function( leftOffset ) {
-			var $revisions = $( '.mw-revslider-revisions' ),
+			var $revisions = this.getRevisionsElement(),
 				revisionsX = $revisions.offset().left,
 				pos = Math.ceil( Math.abs( leftOffset - revisionsX ) / this.revisionWidth );
 
@@ -239,6 +239,10 @@
 
 		getDistanceBetweenPointers: function() {
 			return this.pointerNewer.getPosition() - this.pointerOlder.getPosition();
+		},
+
+		getRevisionsElement: function() {
+			return this.slider.getRevisions().getView().getElement();
 		},
 
 		revisionWrapperClickHandler: function() {
