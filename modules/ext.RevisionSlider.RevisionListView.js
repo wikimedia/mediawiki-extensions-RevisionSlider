@@ -156,11 +156,6 @@
 			this.hideCurrentTooltip();
 
 			tooltip = this.makeTooltip( revision, $revisionContainer );
-			if ( this.dir === 'ltr' ) {
-				tooltip.$element.css( 'margin-left', this.revisionWidth / 2 + 'px' );
-			} else {
-				tooltip.$element.css( 'margin-right', this.revisionWidth / 2 + 'px' );
-			}
 			tooltip.$element.addClass( 'mw-revslider-revision-tooltip-' + pos );
 
 			$( 'body' ).append( tooltip.$element );
