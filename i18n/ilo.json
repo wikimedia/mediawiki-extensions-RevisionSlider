@@ -5,6 +5,7 @@
 		]
 	},
 	"revisionslider": "RevisionSlider",
+	"revisionslider-preference-disable": "Saan nga ipakita ti RevisionSlider",
 	"revisionslider-desc": "Mangipakita ti uyasan a mangipalubos iti panagpili ken panangiyasping kadagiti rebision iti panid ti diperensia",
 	"revisionslider-beta-feature-message": "RevisionSlider",
 	"revisionslider-beta-feature-description": "Ipakita ti uyasan ti rebision no agiyasping kadagiti dua a rebision iti maysa a panid.",
@@ -20,7 +21,7 @@
 	"revisionslider-loading-failed": "Napaay a naikarga ti uyasan ti rebision.",
 	"revisionslider-toggle-title-expand": "Lukatan ti uyasan ti rebision",
 	"revisionslider-toggle-title-collapse": "Rebbaen ti uyasan ti rebision",
-	"revisionslider-turn-on-auto-expand-title": "Automatiko nga ipadakkel ti uyasan ti rebision",
+	"revisionslider-turn-on-auto-expand-title": "Kankanayon nga ipadakkel ti uyasan ti rebision",
 	"revisionslider-turn-off-auto-expand-title": "Saan nga automatiko nga ipadakkel ti uyasan ti rebision",
 	"revisionslider-arrow-tooltip-newer": "Kitaen dagiti barbaro a rebision",
 	"revisionslider-arrow-tooltip-older": "Kitaen dagiti nadadaan a rebision",
