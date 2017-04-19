@@ -78,6 +78,11 @@
 		 */
 		dir: null,
 
+		/**
+		 * @type {boolean}
+		 */
+		isDragged: false,
+
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
@@ -210,6 +215,7 @@
 				grid: [ this.revisionWidth, null ],
 				containment: containmentClass,
 				start: function() {
+					self.isDragged = true;
 					self.setPointerDragCursor();
 					self.fadeOutPointerLines();
 					escapePressed = false;
@@ -220,6 +226,7 @@
 						pointer = self.whichPointer( $p ),
 						revId1, revId2;
 
+					self.isDragged = false;
 					self.removePointerDragCursor();
 
 					if ( escapePressed ) {

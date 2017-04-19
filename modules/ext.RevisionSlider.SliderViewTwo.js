@@ -22,7 +22,8 @@
 		renderPointerContainer: function( containerWidth ) {
 			var pointerContainerPosition = 53,
 				pointerContainerWidth = containerWidth + this.revisionWidth - 1,
-				pointerContainerStyle;
+				pointerContainerStyle, lastMouseMoveRevisionPos,
+				self = this;
 
 			pointerContainerStyle = { left: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
 			if ( this.dir === 'rtl' ) {
@@ -37,7 +38,15 @@
 			return $( '<div>' )
 				.addClass( 'mw-revslider-pointer-container' )
 				.css( pointerContainerStyle )
-				.append( this.renderPointerContainers() );
+				.append( this.renderPointerContainers() )
+				.mousemove( function( event ) {
+					if ( !self.isDragged ) {
+						lastMouseMoveRevisionPos = self.showTooltipsOnMouseMoveHandler(
+							event,
+							lastMouseMoveRevisionPos
+						);
+					}
+				} );
 		},
 
 		renderPointerContainers: function() {
@@ -133,6 +142,20 @@
 				'.mw-revslider-pointer-line, ' +
 				'.mw-revslider-revision-wrapper' )
 				.removeClass( 'mw-revslider-pointer-grabbing' );
+		},
+
+		showTooltipsOnMouseMoveHandler: function( event, lastValidPosition ) {
+			var pos = this.getRevisionPositionFromLeftOffset( event.pageX ),
+				$hoveredRevisionWrapper;
+
+			if ( pos === lastValidPosition ) {
+				return pos;
+			}
+
+			$hoveredRevisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), pos ).parent();
+			this.slider.getRevisions().getView().showTooltip( $hoveredRevisionWrapper );
+
+			return pos;
 		},
 
 		sliderLineClickHandler: function( event, $line ) {
