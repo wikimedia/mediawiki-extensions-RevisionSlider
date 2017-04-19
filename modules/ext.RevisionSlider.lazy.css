@@ -45,8 +45,3 @@
 .mw-revslider-toggle-button .oo-ui-labelElement-label {
 	line-height: 1.875em;
 }
-
-/* can be removed when OOjs UI v0.21.1 is put into core master */
-.mw-revslider-toggle-button > .oo-ui-buttonElement-button {
-	margin-left: 0 !important;  /* stylelint-disable-line declaration-no-important */
-}
