@@ -98,8 +98,11 @@
 		},
 
 		draggableDragAction: function( event, ui, pointer, lastValidLeftPos ) {
-			var pos = this.getRelativePointerIndex( $( pointer ) ),
-				$revisions, $hoveredRevisionWrapper;
+			var pos, $revisions, $hoveredRevisionWrapper;
+
+			pos = this.getRevisionPositionFromLeftOffset(
+				$( pointer ).offset().left + this.revisionWidth / 2
+			);
 
 			if ( pos === lastValidLeftPos ) {
 				return pos;
@@ -133,11 +136,8 @@
 		},
 
 		sliderLineClickHandler: function( event, $line ) {
-			var $revisions = this.$element.find( '.mw-revslider-revisions' ),
-				$clickedRev = this.getRevisionNearestToClick( event ),
-				pointerMoved, pointerOther, newPosition;
-
-			newPosition = parseInt( $clickedRev.attr( 'data-pos' ) );
+			var pos = this.getRevisionPositionFromLeftOffset( event.pageX ),
+				$clickedRev, pointerMoved, pointerOther, $revisions;
 
 			if ( $line.hasClass( 'mw-revslider-pointer-container-newer' ) ) {
 				pointerMoved = this.pointerNewer;
@@ -147,11 +147,14 @@
 				pointerOther = this.pointerNewer;
 			}
 
-			if ( newPosition === pointerOther.getPosition() ) {
+			if ( pos === pointerOther.getPosition() ) {
 				return;
 			}
 
-			pointerMoved.setPosition( newPosition );
+			$revisions = this.$element.find( '.mw-revslider-revisions' );
+			$clickedRev = this.getRevElementAtPosition( $revisions, pos );
+
+			pointerMoved.setPosition( pos );
 			this.updatePointerPositionAttributes();
 			this.refreshRevisions(
 				this.getRevElementAtPosition( $revisions, pointerOther.getPosition() ).attr( 'data-revid' ),
@@ -161,20 +164,21 @@
 			this.alignPointers();
 		},
 
-		getRevisionNearestToClick: function( clickEvent ) {
-			var $revisionArr = $( '.mw-revslider-revision' ),
-				$current, rtlOffset, i = 0, count;
+		getRevisionPositionFromLeftOffset: function( leftOffset ) {
+			var $revisions = $( '.mw-revslider-revisions' ),
+				revisionsX = $revisions.offset().left,
+				pos = Math.ceil( Math.abs( leftOffset - revisionsX ) / this.revisionWidth );
 
-			rtlOffset = this.dir === 'rtl' ? this.revisionWidth : 0;
-
-			for ( count = $revisionArr.length; i < count; i++ ) {
-				$current = $( $revisionArr[ i ] );
-				if ( Math.abs( $current.offset().left + rtlOffset - clickEvent.pageX ) < this.revisionWidth ) {
-					break;
+			if ( this.dir === 'rtl' ) {
+				// pre-loading the revisions on the right side leads to shifted position numbers
+				if ( this.slider.isAtStart() ) {
+					pos = this.slider.getRevisionsPerWindow() - pos + 1;
+				} else {
+					pos += this.slider.getRevisionsPerWindow();
 				}
 			}
 
-			return $current;
+			return pos;
 		},
 
 		resetPointerStylesBasedOnPosition: function() {
