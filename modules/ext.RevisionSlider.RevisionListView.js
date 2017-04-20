@@ -23,6 +23,16 @@
 		/**
 		 * @type {number}
 		 */
+		minRevisionHeight: 5,
+
+		/**
+		 * @type {number}
+		 */
+		maxRevisionHeight: 66,
+
+		/**
+		 * @type {number}
+		 */
 		tooltipTimeout: -1,
 
 		/**
@@ -59,7 +69,7 @@
 
 			for ( i = 0; i < revs.length; i++ ) {
 				diffSize = revs[ i ].getRelativeSize();
-				relativeChangeSize = diffSize !== 0 ? Math.ceil( 65.0 * Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) + 5 : 0;
+				relativeChangeSize = this.calcRelativeChangeSize( diffSize, maxChangeSizeLogged );
 
 				this.$html
 					.append( $( '<div>' )
@@ -95,14 +105,26 @@
 			var revs = this.revisionList.getRevisions(),
 				maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() ),
 				i, diffSize, relativeChangeSize;
+
 			for ( i = 0; i < revs.length; i++ ) {
 				diffSize = revs[ i ].getRelativeSize();
-				relativeChangeSize = diffSize !== 0 ? Math.ceil( 65.0 * Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) + 5 : 0;
+				relativeChangeSize = this.calcRelativeChangeSize( diffSize, maxChangeSizeLogged );
+
 				$renderedList.find( '.mw-revslider-revision[data-pos="' + ( i + 1 ) + '"]' ).css( {
 					height: relativeChangeSize + 'px',
 					top: diffSize > 0 ? '-' + relativeChangeSize + 'px' : 0
 				} );
 			}
+		},
+
+		calcRelativeChangeSize: function( diffSize, maxChangeSizeLogged ) {
+			if ( diffSize === 0 ) {
+				return 0;
+			}
+			return Math.ceil(
+					( this.maxRevisionHeight - this.minRevisionHeight ) *
+					Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged
+				) + this.minRevisionHeight;
 		},
 
 		/**

@@ -21,7 +21,7 @@
 		assert.equal( $( $revisionDivs[ 0 ] ).attr( 'data-revid' ), 1 );
 		assert.equal( $( $revisionDivs[ 2 ] ).attr( 'data-revid' ), 37 );
 		assert.equal( $( $revisionDivs[ 1 ] ).css( 'width' ), '11px' );
-		assert.equal( $( $revisionDivs[ 1 ] ).css( 'height' ), '70px' ); // max relative size
+		assert.equal( $( $revisionDivs[ 1 ] ).css( 'height' ), '66px' ); // max relative size
 		assert.ok( $( $revisionDivs[ 1 ] ).hasClass( 'mw-revslider-revision-up' ) );
 		assert.ok( $( $revisionDivs[ 2 ] ).hasClass( 'mw-revslider-revision-down' ) );
 	} );
