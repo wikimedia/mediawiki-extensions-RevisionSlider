@@ -250,6 +250,7 @@
 				"revisionslider-help-dialog-slide1",
 				"revisionslider-help-dialog-slide2",
 				"revisionslider-help-dialog-slide3",
+				"revisionslider-help-dialog-slide3a",
 				"revisionslider-help-dialog-slide4",
 				"revisionslider-tutorial",
 				"revisionslider-previous-dialog",
@@ -269,18 +270,17 @@
 					}
 				},
 				"2": "resources/ext.RevisionSlider.helpDialog/slide2.svg",
-				"3": {
+				"3": "resources/ext.RevisionSlider.helpDialog/slide3.svg",
+				"4": "resources/ext.RevisionSlider.helpDialog/slide4.svg",
+				"1a": {
 					"file": {
-						"ltr": "resources/ext.RevisionSlider.helpDialog/slide3-ltr.svg",
-						"rtl": "resources/ext.RevisionSlider.helpDialog/slide3-rtl.svg"
+						"ltr": "resources/ext.RevisionSlider.helpDialog/slide1-ltr.svg",
+						"rtl": "resources/ext.RevisionSlider.helpDialog/slide1-rtl.svg"
 					}
 				},
-				"4": {
-					"file": {
-						"ltr": "resources/ext.RevisionSlider.helpDialog/slide4-ltr.svg",
-						"rtl": "resources/ext.RevisionSlider.helpDialog/slide4-rtl.svg"
-					}
-				}
+				"2a": "resources/ext.RevisionSlider.helpDialog/slide2.svg",
+				"3a": "resources/ext.RevisionSlider.helpDialog/slide3a.svg",
+				"4a": "resources/ext.RevisionSlider.helpDialog/slide4a.svg"
 			}
 		}
 	},
