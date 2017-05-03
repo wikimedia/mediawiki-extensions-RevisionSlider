@@ -441,7 +441,7 @@
 			}
 			if ( $oldRevElement.length === 0 && $newRevElement.length === 0 ) {
 				// Note: this is currently caught in init.js
-				throw 'RS-revs-not-specified';
+				throw new Error( 'RS-revs-not-specified' );
 			}
 			if ( $oldRevElement.length !== 0 ) {
 				this.pointerOlder.setPosition( $oldRevElement.data( 'pos' ) );
