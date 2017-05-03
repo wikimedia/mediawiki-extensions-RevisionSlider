@@ -196,6 +196,10 @@
 			} );
 
 			$pointers.draggable( this.buildDraggableOptions( escapePressed, $revisions, '.mw-revslider-pointer-container' ) );
+			$pointers.on(
+				'touchstart touchmove touchend',
+				mw.libs.revisionSlider.touchEventConverter
+			);
 		},
 
 		/**
@@ -905,8 +909,4 @@
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 	mw.libs.revisionSlider.SliderView = SliderView;
-
-	mw.libs.revisionSlider.calculateRevisionsPerWindow = function ( margin, revisionWidth ) {
-		return Math.floor( ( $( '#mw-content-text' ).width() - margin ) / revisionWidth );
-	};
 }( mediaWiki, jQuery ) );

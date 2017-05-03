@@ -103,6 +103,15 @@
 				'.mw-revslider-pointer-container-newer'
 			) );
 
+			$pointerNewer.on(
+				'touchstart touchmove touchend touchcancel touchleave',
+				mw.libs.revisionSlider.touchEventConverter
+			);
+			$pointerOlder.on(
+				'touchstart touchmove touchend touchcancel touchleave',
+				mw.libs.revisionSlider.touchEventConverter
+			);
+
 			SliderViewTwo.super.prototype.resetPointerStylesBasedOnPosition.call( this );
 		},
 
@@ -189,7 +198,7 @@
 
 		getRevisionPositionFromLeftOffset: function ( leftOffset ) {
 			var $revisions = this.getRevisionsElement(),
-				revisionsX = $revisions.offset().left,
+				revisionsX = mw.libs.revisionSlider.correctElementOffsets( $revisions.offset() ).left,
 				pos = Math.ceil( Math.abs( leftOffset - revisionsX ) / this.revisionWidth );
 
 			if ( this.dir === 'rtl' ) {
