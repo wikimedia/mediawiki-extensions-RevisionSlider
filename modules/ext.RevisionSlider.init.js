@@ -4,7 +4,7 @@
 		expanded = autoExpand,
 		autoExpandButton,
 		toggleButton = OO.ui.ButtonWidget.static.infuse( $( '.mw-revslider-toggle-button' ) ),
-		initialize = function() {
+		initialize = function () {
 			var startTime = mw.now(),
 				api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) );
 

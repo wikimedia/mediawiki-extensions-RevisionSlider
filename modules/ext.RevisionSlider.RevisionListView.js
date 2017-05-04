@@ -117,7 +117,7 @@
 			}
 		},
 
-		calcRelativeChangeSize: function( diffSize, maxChangeSizeLogged ) {
+		calcRelativeChangeSize: function ( diffSize, maxChangeSizeLogged ) {
 			if ( diffSize === 0 ) {
 				return 0;
 			}
@@ -376,7 +376,7 @@
 		/**
 		 * @return {jQuery}
 		 */
-		getElement: function() {
+		getElement: function () {
 			return this.$html;
 		}
 	} );

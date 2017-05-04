@@ -21,7 +21,7 @@
 		 *
 		 * @return {OO.ui.ButtonWidget}
 		 */
-		renderBackwardArrow: function() {
+		renderBackwardArrow: function () {
 			var backwardArrowButton,
 				backwardArrowPopup;
 
@@ -62,7 +62,7 @@
 		 *
 		 * @return {OO.ui.ButtonWidget}
 		 */
-		renderForwardArrow: function() {
+		renderForwardArrow: function () {
 			var forwardArrowButton,
 				forwardArrowPopup;
 
