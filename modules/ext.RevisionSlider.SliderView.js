@@ -141,7 +141,7 @@
 		 * @param {jQuery} $revisions
 		 * @return {jQuery} the revisions container
 		 */
-		renderRevisionsContainer: function( containerWidth, $revisions ) {
+		renderRevisionsContainer: function ( containerWidth, $revisions ) {
 			return $( '<div>' )
 				.addClass( 'mw-revslider-revisions-container' )
 				.css( {
@@ -156,7 +156,7 @@
 		 * @param {number} containerWidth
 		 * @return {jQuery} the pointer container
 		 */
-		renderPointerContainer: function( containerWidth ) {
+		renderPointerContainer: function ( containerWidth ) {
 			var pointerContainerSideOffset = 53,
 				pointerContainerWidth = containerWidth + this.revisionWidth - 1,
 				pointerContainerStyle;
@@ -182,13 +182,13 @@
 		 *
 		 * @param {jQuery} $revisions
 		 */
-		initPointers: function( $revisions ) {
+		initPointers: function ( $revisions ) {
 			var $pointers,
 				escapePressed = false;
 
 			$pointers = this.$element.find( '.mw-revslider-pointer' );
 
-			$( 'body' ).keydown( function( e ) {
+			$( 'body' ).keydown( function ( e ) {
 				if ( e.which === 27 ) {
 					escapePressed = true;
 					$pointers.trigger( 'mouseup' );
@@ -206,7 +206,7 @@
 		 * @param {string} containmentClass
 		 * @return {Object}
 		 */
-		buildDraggableOptions: function( escapePressed, $revisions, containmentClass ) {
+		buildDraggableOptions: function ( escapePressed, $revisions, containmentClass ) {
 			var lastValidLeftPos,
 				self = this;
 
@@ -214,13 +214,13 @@
 				axis: 'x',
 				grid: [ this.revisionWidth, null ],
 				containment: containmentClass,
-				start: function() {
+				start: function () {
 					self.isDragged = true;
 					self.setPointerDragCursor();
 					self.fadeOutPointerLines();
 					escapePressed = false;
 				},
-				stop: function() {
+				stop: function () {
 					var $p = $( this ),
 						relativeIndex = self.getRelativePointerIndex( $p ),
 						pointer = self.whichPointer( $p ),
@@ -253,7 +253,7 @@
 
 					self.redrawPointerLines();
 				},
-				drag: function( event, ui ) {
+				drag: function ( event, ui ) {
 					lastValidLeftPos = self.draggableDragAction(
 						event,
 						ui,
@@ -261,13 +261,13 @@
 						lastValidLeftPos
 					);
 				},
-				revert: function() {
+				revert: function () {
 					return escapePressed;
 				}
 			};
 		},
 
-		draggableDragAction: function( event, ui, pointer, lastValidLeftPos ) {
+		draggableDragAction: function ( event, ui, pointer, lastValidLeftPos ) {
 			var olderLeftPos, newerLeftPos,
 				isNew = $( pointer ).hasClass( 'mw-revslider-pointer-newer' );
 
@@ -293,12 +293,12 @@
 			return lastValidLeftPos;
 		},
 
-		setPointerDragCursor: function() {
+		setPointerDragCursor: function () {
 			$( '.mw-revslider-revision-wrapper' )
 				.addClass( 'mw-revslider-pointer-cursor' );
 		},
 
-		removePointerDragCursor: function() {
+		removePointerDragCursor: function () {
 			$( '.mw-revslider-revision-wrapper' )
 				.removeClass( 'mw-revslider-pointer-cursor' );
 		},
@@ -309,7 +309,7 @@
 		 * @param {jQuery} $pointer
 		 * @return {number}
 		 */
-		getRelativePointerIndex: function( $pointer ) {
+		getRelativePointerIndex: function ( $pointer ) {
 			var pos = $pointer.position().left,
 				pointer = this.whichPointer( $pointer );
 
@@ -319,7 +319,7 @@
 			return Math.ceil( ( pos + this.revisionWidth / 2 ) / this.revisionWidth );
 		},
 
-		getNewestVisibleRevisonLeftPos: function() {
+		getNewestVisibleRevisonLeftPos: function () {
 			return $( '.mw-revslider-revisions-container' ).width() - this.revisionWidth;
 		},
 
@@ -394,7 +394,7 @@
 			this.resetAndRefreshRevisions();
 		},
 
-		resetAndRefreshRevisions: function() {
+		resetAndRefreshRevisions: function () {
 			this.slide( 0 );
 			this.resetPointerStylesBasedOnPosition();
 			this.resetRevisionStylesBasedOnPointerPosition(

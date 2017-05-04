@@ -211,11 +211,11 @@
 		 * @param {SliderView} sliderView
 		 */
 		addHandlersToCoreLinks: function ( sliderView ) {
-			$( '#differences-nextlink' ).click( function() {
+			$( '#differences-nextlink' ).click( function () {
 				sliderView.showNextDiff();
 				return false;
 			} );
-			$( '#differences-prevlink' ).click( function() {
+			$( '#differences-prevlink' ).click( function () {
 				sliderView.showPrevDiff();
 				return false;
 			} );

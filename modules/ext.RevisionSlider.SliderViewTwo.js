@@ -19,7 +19,7 @@
 		 * @param {number} containerWidth
 		 * @return {jQuery} the pointer container
 		 */
-		renderPointerContainer: function( containerWidth ) {
+		renderPointerContainer: function ( containerWidth ) {
 			var pointerContainerPosition = 53,
 				pointerContainerWidth = containerWidth + this.revisionWidth - 1,
 				pointerContainerStyle, lastMouseMoveRevisionPos,
@@ -39,7 +39,7 @@
 				.addClass( 'mw-revslider-pointer-container' )
 				.css( pointerContainerStyle )
 				.append( this.renderPointerContainers() )
-				.mousemove( function( event ) {
+				.mousemove( function ( event ) {
 					if ( !self.isDragged ) {
 						lastMouseMoveRevisionPos = self.showTooltipsOnMouseMoveHandler(
 							event,
@@ -49,13 +49,13 @@
 				} );
 		},
 
-		renderPointerContainers: function() {
+		renderPointerContainers: function () {
 			var self = this;
 
 			return [
 				$( '<div>' )
 					.addClass( 'mw-revslider-pointer-container-newer' )
-					.click( function( event ) {
+					.click( function ( event ) {
 						self.sliderLineClickHandler( event, $( this ) );
 					} )
 					.append(
@@ -64,7 +64,7 @@
 					),
 				$( '<div>' )
 					.addClass( 'mw-revslider-pointer-container-older' )
-					.click( function( event ) {
+					.click( function ( event ) {
 						self.sliderLineClickHandler( event, $( this ) );
 					} )
 					.append(
@@ -79,7 +79,7 @@
 		 *
 		 * @param {jQuery} $revisions
 		 */
-		initPointers: function( $revisions ) {
+		initPointers: function ( $revisions ) {
 			var $pointers,
 				$pointerOlder = this.pointerOlder.getView().getElement(),
 				$pointerNewer = this.pointerNewer.getView().getElement(),
@@ -87,7 +87,7 @@
 
 			$pointers = this.$element.find( '.mw-revslider-pointer' );
 
-			$( 'body' ).keydown( function( e ) {
+			$( 'body' ).keydown( function ( e ) {
 				if ( e.which === 27 ) {
 					escapePressed = true;
 					$pointers.trigger( 'mouseup' );
@@ -106,7 +106,7 @@
 			SliderViewTwo.super.prototype.resetPointerStylesBasedOnPosition.call( this );
 		},
 
-		draggableDragAction: function( event, ui, pointer, lastValidLeftPos ) {
+		draggableDragAction: function ( event, ui, pointer, lastValidLeftPos ) {
 			var pos, $revisions, $hoveredRevisionWrapper;
 
 			pos = this.getRevisionPositionFromLeftOffset(
@@ -124,7 +124,7 @@
 			return pos;
 		},
 
-		setPointerDragCursor: function() {
+		setPointerDragCursor: function () {
 			$( '.mw-revslider-pointer, ' +
 				'.mw-revslider-pointer-container, ' +
 				'.mw-revslider-pointer-container-newer, ' +
@@ -134,7 +134,7 @@
 				.addClass( 'mw-revslider-pointer-grabbing' );
 		},
 
-		removePointerDragCursor: function() {
+		removePointerDragCursor: function () {
 			$( '.mw-revslider-pointer, ' +
 				'.mw-revslider-pointer-container, ' +
 				'.mw-revslider-pointer-container-newer, ' +
@@ -144,7 +144,7 @@
 				.removeClass( 'mw-revslider-pointer-grabbing' );
 		},
 
-		showTooltipsOnMouseMoveHandler: function( event, lastValidPosition ) {
+		showTooltipsOnMouseMoveHandler: function ( event, lastValidPosition ) {
 			var pos = this.getRevisionPositionFromLeftOffset( event.pageX ),
 				$hoveredRevisionWrapper;
 
@@ -158,7 +158,7 @@
 			return pos;
 		},
 
-		sliderLineClickHandler: function( event, $line ) {
+		sliderLineClickHandler: function ( event, $line ) {
 			var pos = this.getRevisionPositionFromLeftOffset( event.pageX ),
 				$clickedRev, pointerMoved, pointerOther, $revisions;
 
@@ -187,7 +187,7 @@
 			this.alignPointers();
 		},
 
-		getRevisionPositionFromLeftOffset: function( leftOffset ) {
+		getRevisionPositionFromLeftOffset: function ( leftOffset ) {
 			var $revisions = this.getRevisionsElement(),
 				revisionsX = $revisions.offset().left,
 				pos = Math.ceil( Math.abs( leftOffset - revisionsX ) / this.revisionWidth );
@@ -204,15 +204,15 @@
 			return pos;
 		},
 
-		resetPointerStylesBasedOnPosition: function() {
+		resetPointerStylesBasedOnPosition: function () {
 			this.updateOlderSliderLineCSS();
 			this.updateNewerSliderLineCSS();
 		},
 
-		resetPointerColorsBasedOnValues: function() {
+		resetPointerColorsBasedOnValues: function () {
 		},
 
-		updateOlderSliderLineCSS: function() {
+		updateOlderSliderLineCSS: function () {
 			var widthToSet = ( this.getOlderDistanceToOldest() + this.getDistanceBetweenPointers() ) *
 					this.revisionWidth,
 				marginToSet = -this.revisionWidth / 2;
@@ -224,7 +224,7 @@
 			);
 		},
 
-		updateNewerSliderLineCSS: function() {
+		updateNewerSliderLineCSS: function () {
 			var widthToSet = ( this.getNewerDistanceToNewest() + this.getDistanceBetweenPointers() + 2 ) *
 					this.revisionWidth,
 				marginToSet = ( this.getOlderDistanceToOldest() * this.revisionWidth ) -
@@ -238,7 +238,7 @@
 			);
 		},
 
-		setSliderLineCSS: function( $lineContainer, widthToSet, marginToSet ) {
+		setSliderLineCSS: function ( $lineContainer, widthToSet, marginToSet ) {
 			if ( this.dir === 'ltr' ) {
 				$lineContainer.css( {
 					width: widthToSet,
@@ -252,23 +252,23 @@
 			}
 		},
 
-		getOlderDistanceToOldest: function() {
+		getOlderDistanceToOldest: function () {
 			return this.pointerOlder.getPosition() - this.slider.getOldestVisibleRevisionIndex();
 		},
 
-		getNewerDistanceToNewest: function() {
+		getNewerDistanceToNewest: function () {
 			return this.slider.getNewestVisibleRevisionIndex() - this.pointerNewer.getPosition();
 		},
 
-		getDistanceBetweenPointers: function() {
+		getDistanceBetweenPointers: function () {
 			return this.pointerNewer.getPosition() - this.pointerOlder.getPosition();
 		},
 
-		getRevisionsElement: function() {
+		getRevisionsElement: function () {
 			return this.slider.getRevisions().getView().getElement();
 		},
 
-		revisionWrapperClickHandler: function() {
+		revisionWrapperClickHandler: function () {
 		}
 	} );
 

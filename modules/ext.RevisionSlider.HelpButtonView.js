@@ -9,7 +9,7 @@
 		 *
 		 * @return {jQuery} the help button object
 		 */
-		render: function() {
+		render: function () {
 			var helpButton, helpPopup;
 
 			helpButton = new OO.ui.ButtonWidget( {
@@ -25,13 +25,13 @@
 				classes: [ 'mw-revslider-tooltip', 'mw-revslider-help-tooltip' ]
 			} );
 			helpButton.$element
-				.click( function() {
+				.click( function () {
 					mw.libs.revisionSlider.HelpDialog.show();
 				} )
-				.mouseover( function() {
+				.mouseover( function () {
 					helpPopup.toggle( true );
 				} )
-				.mouseout( function() {
+				.mouseout( function () {
 					helpPopup.toggle( false );
 				} );
 
