@@ -28,7 +28,7 @@
 	"revisionslider-arrow-tooltip-newer": "Zobrazit novější revize",
 	"revisionslider-arrow-tooltip-older": "Zobrazit starší revize",
 	"revisionslider-show-help-tooltip": "Zobrazit text nápovědy",
-	"revisionslider-help-dialog-slide1": "Posuvník revizí pomáhá najít a porovnávat revize v rozdílu verzí. Je vytvořen na základě [[m:WMDE_Technical_Wishes/RevisionSlider|přání německy mluvící komunity]]. Velmi oceníme [[mw:Extension_talk:RevisionSlider|komentáře]].",
+	"revisionslider-help-dialog-slide1": "Posuvník revizí pomáhá najít a porovnávat revize v rozdílu verzí. Je vytvořen na základě [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSliderpřání německy mluvící komunity]. Velmi oceníme [//www.mediawiki.org/wiki/Extension_talk:RevisionSliderkomentáře].",
 	"revisionslider-help-dialog-slide2": "Každý sloupec představuje revizi stránky. Sloupce nahoru zobrazují nárůst velikosti stránky, sloupce dolů pak zmenšení. Na obrázku představuje revize 1 přidání obsahu, zatímco revize 2 jeho odebrání.",
 	"revisionslider-help-dialog-slide3": "<p>Pro porovnání konkrétních revizí je vyberte pomocí žluté a modré šipky.</p><p>Modrá šipka ovládá novější revizi, žlutá šipka ukazuje na starší revizi.</p><p>Šipky můžete přesouvat stisknutím a tažením nebo kliknutím na sloupec.</p>",
 	"revisionslider-help-dialog-slide4": "Pomocí šipek vpřed a vzad se můžete posouvat historií verzí a zobrazovat starší či novější verze.",

@@ -27,7 +27,7 @@
 	"revisionslider-arrow-tooltip-newer": "Ver revisiones más recién",
 	"revisionslider-arrow-tooltip-older": "Ver revisiones anteriores",
 	"revisionslider-show-help-tooltip": "Amosar el testu d'ayuda",
-	"revisionslider-help-dialog-slide1": "L'esnidiante de revisiones te ayuda a navegar y comparar revisiones na páxina de diferencies. Ta basáu nun [[m:WMDE_Technical_Wishes/RevisionSlider|pidimientu de la comunidá]] de la llista de solicitúes técniques de la comunidá de falantes d'alemán. Prestaríanos enforma recibir comentarios [[mw:Extension_talk:RevisionSlider|equí]].",
+	"revisionslider-help-dialog-slide1": "L'esnidiante de revisiones te ayuda a navegar y comparar revisiones na páxina de diferencies. Ta basáu nun [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSliderpidimientu de la comunidá] de la llista de solicitúes técniques de la comunidá de falantes d'alemán. Prestaríanos enforma recibir comentarios [//www.mediawiki.org/wiki/Extension_talk:RevisionSliderequí].",
 	"revisionslider-help-dialog-slide2": "Cada barra representa una revisión d'una páxina. Les barres de riba amuesen la medría nel tamañu de la páxina, les barres de baxo amuesen un amenorgamientu. Na imaxe, la revisión 1 representa'l conteníu añadíu, ente que la revisión 2 representa'l desaniciu de conteníu.",
 	"revisionslider-help-dialog-slide3": "<p>Pa comparar ciertes revisiones, escuéyeles utilizando'l punteru mariellu y l'azul.</p><p>El punteru azul controla la revisión recién, el punteru mariellu la versión más vieya.</p><p>Mueve los punteros abasnando y soltando o fai clic nuna barra.</p>",
 	"revisionslider-help-dialog-slide4": "Usa les fleches d'avanzar y recular pa movete pel historial de revisiones y amosar revisiones más nueves y más antigües.",
