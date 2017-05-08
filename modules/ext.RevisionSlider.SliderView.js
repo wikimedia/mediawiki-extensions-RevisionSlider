@@ -132,7 +132,7 @@
 
 			this.slide( Math.floor( ( this.pointerNewer.getPosition() - 1 ) / this.slider.getRevisionsPerWindow() ), 0 );
 			this.diffPage.addHandlersToCoreLinks( this );
-			this.diffPage.replaceState( mw.config.get( 'extRevisionSliderOldRev' ), mw.config.get( 'extRevisionSliderNewRev' ), this );
+			this.diffPage.replaceState( mw.config.get( 'extRevisionSliderNewRev' ), mw.config.get( 'extRevisionSliderOldRev' ), this );
 			this.diffPage.initOnPopState( this );
 		},
 
@@ -229,7 +229,7 @@
 					var $p = $( this ),
 						relativeIndex = self.getRelativePointerIndex( $p ),
 						pointer = self.whichPointer( $p ),
-						revId1, revId2;
+						diff, oldid;
 
 					self.isDragged = false;
 					self.removePointerDragCursor();
@@ -246,15 +246,15 @@
 					self.resetPointerStylesBasedOnPosition();
 					self.resetRevisionStylesBasedOnPointerPosition( $revisions );
 
-					revId1 = self.getRevElementAtPosition(
-						$revisions, self.pointerOlder.getPosition()
-					).data( 'revid' );
-
-					revId2 = self.getRevElementAtPosition(
+					diff = self.getRevElementAtPosition(
 						$revisions, self.pointerNewer.getPosition()
 					).data( 'revid' );
 
-					self.refreshRevisions( revId1, revId2 );
+					oldid = self.getRevElementAtPosition(
+						$revisions, self.pointerOlder.getPosition()
+					).data( 'revid' );
+
+					self.refreshRevisions( diff, oldid );
 
 					self.redrawPointerLines();
 				},
@@ -347,10 +347,19 @@
 			}
 			pClicked.setPosition( targetPos );
 			view.updatePointerPositionAttributes();
-			view.refreshRevisions(
-				+view.getRevElementAtPosition( $revisions, pOther.getPosition() ).data( 'revid' ),
-				+$clickedRev.data( 'revid' )
-			);
+
+			if ( hasClickedTop ) {
+				view.refreshRevisions(
+					+$clickedRev.data( 'revid' ),
+					+view.getRevElementAtPosition( $revisions, pOther.getPosition() ).data( 'revid' )
+				);
+			} else {
+				view.refreshRevisions(
+					+view.getRevElementAtPosition( $revisions, pOther.getPosition() ).data( 'revid' ),
+					+$clickedRev.data( 'revid' )
+				);
+			}
+
 			view.resetPointerColorsBasedOnValues( view.pointerOlder.getPosition(), view.pointerNewer.getPosition() );
 			view.resetRevisionStylesBasedOnPointerPosition( $revisions );
 			view.alignPointers();
@@ -377,14 +386,12 @@
 		/**
 		 * Refreshes the diff page to show the diff for the specified revisions
 		 *
-		 * @param {number} revId1
-		 * @param {number} revId2
+		 * @param {number} diff
+		 * @param {number} oldid
 		 */
-		refreshRevisions: function ( revId1, revId2 ) {
-			var oldRev = Math.min( revId1, revId2 ),
-				newRev = Math.max( revId1, revId2 );
-			this.diffPage.refresh( oldRev, newRev, this );
-			this.diffPage.pushState( oldRev, newRev, this );
+		refreshRevisions: function ( diff, oldid ) {
+			this.diffPage.refresh( diff, oldid, this );
+			this.diffPage.pushState( diff, oldid, this );
 		},
 
 		showNextDiff: function () {
@@ -407,8 +414,8 @@
 			);
 			this.updatePointerPositionAttributes();
 			this.refreshRevisions(
-				$( '.mw-revslider-revision[data-pos="' + this.pointerOlder.getPosition() + '"]' ).attr( 'data-revid' ),
-				$( '.mw-revslider-revision[data-pos="' + this.pointerNewer.getPosition() + '"]' ).attr( 'data-revid' )
+				$( '.mw-revslider-revision[data-pos="' + this.pointerNewer.getPosition() + '"]' ).attr( 'data-revid' ),
+				$( '.mw-revslider-revision[data-pos="' + this.pointerOlder.getPosition() + '"]' ).attr( 'data-revid' )
 			);
 		},
 
@@ -846,7 +853,7 @@
 
 			revIdOld = self.getRevElementAtPosition( $revisions, pOld.getPosition() ).data( 'revid' );
 			revIdNew = self.getRevElementAtPosition( $revisions, pNew.getPosition() ).data( 'revid' );
-			this.diffPage.replaceState( revIdOld, revIdNew, this );
+			this.diffPage.replaceState( revIdNew, revIdOld, this );
 
 			scrollLeft = this.slider.getOldestVisibleRevisionIndex() * this.revisionWidth;
 			$revisionContainer.scrollLeft( scrollLeft );
