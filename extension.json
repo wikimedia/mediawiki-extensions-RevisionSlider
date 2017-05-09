@@ -55,6 +55,7 @@
 			"dependencies": [
 				"oojs-ui",
 				"mediawiki.jqueryMsg",
+				"ext.RevisionSlider.util",
 				"ext.RevisionSlider.Settings",
 				"ext.RevisionSlider.Slider",
 				"ext.RevisionSlider.Revision",
@@ -80,6 +81,11 @@
 		},
 		"ext.RevisionSlider.noscript": {
 			"styles": "modules/ext.RevisionSlider.noscript.css"
+		},
+		"ext.RevisionSlider.util": {
+			"scripts": [
+				"modules/ext.RevisionSlider.util.js"
+			]
 		},
 		"ext.RevisionSlider.Api": {
 			"scripts": [
@@ -141,6 +147,7 @@
 				"jquery.ui.draggable",
 				"mediawiki.util",
 				"oojs-ui",
+				"ext.RevisionSlider.util",
 				"ext.RevisionSlider.DiffPage",
 				"ext.RevisionSlider.HelpDialog",
 				"ext.RevisionSlider.Pointer"
