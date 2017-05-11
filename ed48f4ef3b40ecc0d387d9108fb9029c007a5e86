@@ -45,6 +45,30 @@
       "revId": "ed48f4ef3b40ecc0d387d9108fb9029c007a5e86",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e1cb3f9_7eaf9791",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2017-05-11T17:40:10Z",
+      "side": 1,
+      "message": "The position system has been removed last year. These properties are no-ops. Tolerated without warnings for comfortable back-compat only.",
+      "parentUuid": "0e1cb3f9_8dce03b8",
+      "range": {
+        "startLine": 49,
+        "startChar": 3,
+        "endLine": 49,
+        "endChar": 20
+      },
+      "revId": "ed48f4ef3b40ecc0d387d9108fb9029c007a5e86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
