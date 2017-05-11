@@ -33,12 +33,15 @@
 		"RevisionSliderHooks": "src/RevisionSliderHooks.php"
 	},
 	"ResourceModules": {
-		"ext.RevisionSlider.lazy": {
-			"scripts": [
-				"modules/ext.RevisionSlider.lazy.js"
-			],
+		"ext.RevisionSlider.lazyCss": {
 			"styles": [
 				"modules/ext.RevisionSlider.lazy.css"
+			],
+			"position": "top"
+		},
+		"ext.RevisionSlider.lazyJs": {
+			"scripts": [
+				"modules/ext.RevisionSlider.lazy.js"
 			],
 			"dependencies": [
 				"ext.RevisionSlider.Settings"
