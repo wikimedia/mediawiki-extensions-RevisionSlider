@@ -69,6 +69,30 @@
       "revId": "ed48f4ef3b40ecc0d387d9108fb9029c007a5e86",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e1cb3f9_399a9976",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-05-11T19:31:36Z",
+      "side": 1,
+      "message": "Uh, this is good to know, thank you! :-)",
+      "parentUuid": "0e1cb3f9_7eaf9791",
+      "range": {
+        "startLine": 49,
+        "startChar": 3,
+        "endLine": 49,
+        "endChar": 20
+      },
+      "revId": "ed48f4ef3b40ecc0d387d9108fb9029c007a5e86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
