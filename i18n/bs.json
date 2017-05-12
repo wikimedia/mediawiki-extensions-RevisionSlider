@@ -7,7 +7,7 @@
 	"revisionslider": "Klizač izmjena",
 	"revisionslider-desc": "Prikazuje klizač koji Vam dozvoljava da izaberete i uporedite izmjene pri pregledu razlika neke izmjene",
 	"revisionslider-beta-feature-message": "Klizač izmjena",
-	"revisionslider-beta-feature-description": "Prikaži klizač izmjena pri upoređivanju dvije izmjene stranice.",
+	"revisionslider-beta-feature-description": "Prikazuje klizač izmjena pri upoređivanju dvije izmjene stranice.",
 	"revisionslider-toggle-label": "Pregled historije",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bajt|bajtova}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bajt|bajtova}}",
