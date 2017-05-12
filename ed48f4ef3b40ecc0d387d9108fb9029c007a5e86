@@ -93,6 +93,30 @@
       "revId": "ed48f4ef3b40ecc0d387d9108fb9029c007a5e86",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e1cb3f9_0417254a",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 106
+      },
+      "writtenOn": "2017-05-12T07:51:23Z",
+      "side": 1,
+      "message": "I\u0027ll get these removed in a followup.",
+      "parentUuid": "0e1cb3f9_399a9976",
+      "range": {
+        "startLine": 49,
+        "startChar": 3,
+        "endLine": 49,
+        "endChar": 20
+      },
+      "revId": "ed48f4ef3b40ecc0d387d9108fb9029c007a5e86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
