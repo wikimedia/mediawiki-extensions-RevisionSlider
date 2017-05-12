@@ -58,7 +58,7 @@ class RevisionSliderHooks {
 
 		$out = RequestContext::getMain()->getOutput();
 		// Load styles on page load to avoid FOUC
-		$out->addModuleStyles( 'ext.RevisionSlider.lazy' );
+		$out->addModuleStyles( 'ext.RevisionSlider.lazyCss' );
 		if ( $autoExpand ) {
 			$out->addModules( 'ext.RevisionSlider.init' );
 			$stats->increment( 'RevisionSlider.event.load' );
@@ -66,7 +66,7 @@ class RevisionSliderHooks {
 				$out->addModules( 'ext.RevisionSlider.SliderViewTwo' );
 			}
 		} else {
-			$out->addModules( 'ext.RevisionSlider.lazy' );
+			$out->addModules( 'ext.RevisionSlider.lazyJs' );
 			$stats->increment( 'RevisionSlider.event.lazyload' );
 		}
 		$out->addModuleStyles( 'ext.RevisionSlider.noscript' );
