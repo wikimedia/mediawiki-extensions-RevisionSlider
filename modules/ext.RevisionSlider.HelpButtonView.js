@@ -24,20 +24,28 @@
 				width: 200,
 				classes: [ 'mw-revslider-tooltip', 'mw-revslider-help-tooltip' ]
 			} );
+			helpButton.connect( this, {
+				click: 'showDialog'
+			} );
 			helpButton.$element
-				.click( function () {
-					mw.libs.revisionSlider.HelpDialog.show();
-				} )
 				.mouseover( function () {
 					helpPopup.toggle( true );
 				} )
 				.mouseout( function () {
 					helpPopup.toggle( false );
+				} )
+				.children().attr( {
+					'aria-haspopup': 'true',
+					'aria-label': mw.msg( 'revisionslider-show-help-tooltip' )
 				} );
 
 			$( 'body' ).append( helpPopup.$element );
 
 			return helpButton.$element;
+		},
+
+		showDialog: function () {
+			mw.libs.revisionSlider.HelpDialog.show();
 		}
 	};
 
