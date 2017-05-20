@@ -10,12 +10,31 @@ use MediaWiki\MediaWikiServices;
  */
 class RevisionSliderHooks {
 
+	/**
+	 * @var Config
+	 */
+	private static $config;
+
+	/**
+	 * Returns the RevisionSlider extensions config.
+	 *
+	 * @return Config
+	 */
+	private static function getConfig() {
+		if ( self::$config === null ) {
+			self::$config = MediaWikiServices::getInstance()
+				->getConfigFactory()
+				->makeConfig( 'revisionslider' );
+		}
+		return self::$config;
+	}
+
 	public static function onDiffViewHeader(
 		DifferenceEngine $diff,
 		Revision $oldRev,
 		Revision $newRev
 	) {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$config = self::getConfig();
 
 		/**
 		 * If this extension is configured to be a beta feature, and the BetaFeatures extension
@@ -112,7 +131,7 @@ class RevisionSliderHooks {
 	}
 
 	public static function getBetaFeaturePreferences( User $user, array &$prefs ) {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
+		$config = self::getConfig();
 		$extensionAssetsPath = $config->get( 'ExtensionAssetsPath' );
 
 		if ( $config->get( 'RevisionSliderBetaFeature' ) ) {
