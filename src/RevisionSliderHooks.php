@@ -112,7 +112,11 @@ class RevisionSliderHooks {
 
 		$out->prependHTML(
 			Html::rawElement(
-				'div', [ 'class' => 'mw-revslider-container' ],
+				'div',
+				[
+					'class' => 'mw-revslider-container',
+					'aria-hidden' => 'true'
+				],
 				$toggleButton .
 				Html::rawElement(
 					'div',
