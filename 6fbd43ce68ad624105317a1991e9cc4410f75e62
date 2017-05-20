@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e1cb3f9_ed8aed6d",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2017-05-20T16:11:04Z",
+      "side": 1,
+      "message": "I\u0027m not sure about the direct nesting of role\u003dheading\u003erole\u003dbutton, you should test drive this in a screen reader.",
+      "revId": "6fbd43ce68ad624105317a1991e9cc4410f75e62",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
