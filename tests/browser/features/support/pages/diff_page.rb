@@ -6,8 +6,8 @@ class DiffPage
 
   p(:revisionslider_placeholder, css: '.mw-revslider-placeholder')
   div(:revisionslider_wrapper, css: '.mw-revslider-slider-wrapper')
-  span(:revisionslider_auto_expand_button, css: '.mw-revslider-auto-expand-button')
-  span(:revisionslider_toggle_button, css: '.mw-revslider-toggle-button')
+  div(:revisionslider_auto_expand_button, css: '.mw-revslider-auto-expand-button')
+  div(:revisionslider_toggle_button, css: '.mw-revslider-toggle-button')
   table(:revisionslider_loading, css: '.mw-revslider-diff-loading')
 
   div(:revisionslider_help_dialog, css: '.mw-revslider-help-dialog')
@@ -17,11 +17,11 @@ class DiffPage
   link(:revisionslider_help_close_start, css: '.mw-revslider-help-close-start > a')
   link(:revisionslider_help_close_end, css: '.mw-revslider-help-close-end > a')
 
-  span(:revisionslider_timeline_backwards, css: '.mw-revslider-arrow.mw-revslider-arrow-backwards:not(.oo-ui-widget-disabled)')
-  span(:revisionslider_timeline_forwards, css: '.mw-revslider-arrow.mw-revslider-arrow-forwards:not(.oo-ui-widget-disabled)')
+  div(:revisionslider_timeline_backwards, css: '.mw-revslider-arrow.mw-revslider-arrow-backwards:not(.oo-ui-widget-disabled)')
+  div(:revisionslider_timeline_forwards, css: '.mw-revslider-arrow.mw-revslider-arrow-forwards:not(.oo-ui-widget-disabled)')
 
-  span(:revisionslider_timeline_backwards_disabled, css: '.mw-revslider-arrow.mw-revslider-arrow-backwards.oo-ui-widget-disabled')
-  span(:revisionslider_timeline_forwards_disabled, css: '.mw-revslider-arrow.mw-revslider-arrow-forwards.oo-ui-widget-disabled')
+  div(:revisionslider_timeline_backwards_disabled, css: '.mw-revslider-arrow.mw-revslider-arrow-backwards.oo-ui-widget-disabled')
+  div(:revisionslider_timeline_forwards_disabled, css: '.mw-revslider-arrow.mw-revslider-arrow-forwards.oo-ui-widget-disabled')
 
   div(:revisionslider_pointer_lower, css: '.mw-revslider-pointer-lower')
   div(:revisionslider_pointer_upper, css: '.mw-revslider-pointer-upper')

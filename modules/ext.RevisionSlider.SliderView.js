@@ -911,6 +911,21 @@
 			this.slider.setRevisionsPerWindow( expandedRevisionWindowCapacity );
 
 			this.slide( Math.floor( ( this.pointerNewer.getPosition() - 1 ) / expandedRevisionWindowCapacity ), 0 );
+
+			this.adjustHelpButtonPopup();
+		},
+
+		adjustHelpButtonPopup: function () {
+			var $helpButton = $( '.mw-revslider-show-help' ),
+				$helpButtonPopup = $( '.mw-revslider-help-tooltip' );
+
+			$helpButtonPopup.css( 'top', $helpButton.offset().top + $helpButton.outerHeight() + 'px' );
+
+			if ( this.dir === 'ltr' ) {
+				$helpButtonPopup.css( 'margin-left', $helpButton.offset().left + $helpButton.width() / 2 + 'px' );
+			} else {
+				$helpButtonPopup.css( 'margin-right', $helpButton.offset().left + $helpButton.width() / 2 + 'px' );
+			}
 		}
 
 	} );

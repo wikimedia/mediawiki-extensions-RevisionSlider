@@ -109,7 +109,14 @@ class RevisionSliderHooks {
 		] );
 		$toggleButton->setAttributes( [ 'style' => 'width: 100%; text-align: center;' ] );
 
-		$progressBar = new OOUI\ProgressBarWidget( [ 'progress' => false ] );
+		$progressBar =
+			Html::rawElement(
+				'div',
+				[
+					'style' => 'width: 100%; text-align: center;',
+				],
+				( new Message( 'revisionslider-loading-placeholder' ) )->text()
+			);
 
 		$out->prependHTML(
 			Html::rawElement(

@@ -8,9 +8,8 @@
 
 .mw-revslider-auto-expand-button {
 	position: absolute;
-	top: 0.234375em;
-	/* default button width + default button margin ( 1.875em + 0.234375em ) */
-	right: 2.109375em;
+	top: 0;
+	right: 1.875em;
 }
 
 .mw-revslider-button-active {
@@ -167,6 +166,8 @@
 .mw-revslider-arrow.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
 	left: 0;
 	width: 20px;
+	height: 100%;
+	top: 0;
 	min-width: inherit;
 	min-height: inherit;
 }
@@ -182,8 +183,8 @@ of the frameless one (to fit the size of the toggle button */
 	box-sizing: border-box;
 	min-height: 0;
 	min-width: 0;
-	width: 1.875em;
-	height: 1.875em;
+	width: 1.775em;
+	height: 1.775em;
 	background-color: transparent;
 	border: 0;
 	margin-top: 0.12em;
@@ -193,8 +194,8 @@ of the frameless one (to fit the size of the toggle button */
 	position: static;
 	left: auto;
 	top: auto;
-	width: 1.875em;
-	height: 1.875em;
+	width: 1.775em;
+	height: 1.775em;
 }
 
 .mw-revslider-revision-slider {

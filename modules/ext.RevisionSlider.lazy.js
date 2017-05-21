@@ -1,15 +1,15 @@
 ( function ( mw, $ ) {
 	var settings = new mw.libs.revisionSlider.Settings(),
-		autoExpand = settings.shouldAutoExpand();
+		autoExpand = settings.shouldAutoExpand(),
+		revContainer = $( '.mw-revslider-container' );
 
 	if ( autoExpand ) {
 		mw.loader.load( 'ext.RevisionSlider.init' );
 	} else {
-		$( '.mw-revslider-toggle-button' ).click(
-			function () {
-				mw.loader.load( 'ext.RevisionSlider.init' );
-			}
-		);
+		revContainer.on( 'click', function () {
+			revContainer.off( 'click' );
+			mw.loader.load( 'ext.RevisionSlider.init' );
+		} );
 	}
 
 }( mediaWiki, jQuery ) );

@@ -178,6 +178,12 @@
 			this.hideCurrentTooltip();
 
 			tooltip = this.makeTooltip( revision, $revisionContainer );
+
+			tooltip.$element.css( {
+				top: $revisionContainer.offset().top + $revisionContainer.outerHeight() + 'px',
+				'margin-left': $revisionContainer.offset().left + this.revisionWidth / 2 + 'px'
+			} );
+
 			tooltip.$element.addClass( 'mw-revslider-revision-tooltip-' + pos );
 
 			$( 'body' ).append( tooltip.$element );

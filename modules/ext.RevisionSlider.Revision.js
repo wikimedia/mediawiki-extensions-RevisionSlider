@@ -120,8 +120,8 @@
 		 * @return {string}
 		 */
 		formatDate: function ( rawDate ) {
-			var offset = parseInt( mw.libs.revisionSlider.userOffset );
-			return moment( rawDate ).utcOffset( offset ).format( 'LLL' );
+			var offset = -parseInt( mw.libs.revisionSlider.userOffset );
+			return moment( rawDate ).zone( offset ).format( 'HH:mm, D MMM YYYY' );
 		},
 
 		/**

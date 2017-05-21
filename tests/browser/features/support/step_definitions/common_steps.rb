@@ -77,9 +77,9 @@ Then(/^RevisionSlider wrapper should be visible/) do
 end
 
 Given(/^I click on the auto expand button/) do
-  on(DiffPage).revisionslider_auto_expand_button_element.when_visible.click
+  on(DiffPage).revisionslider_auto_expand_button_element.when_present.click
 end
 
 Given(/^I click on the expand button/) do
-  on(DiffPage).revisionslider_toggle_button_element.when_visible.click
+  on(DiffPage).revisionslider_toggle_button_element.when_present.click
 end
