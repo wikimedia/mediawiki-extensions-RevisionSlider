@@ -83,6 +83,8 @@
 		 */
 		isDragged: false,
 
+		escapePressed: false,
+
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
@@ -184,18 +186,18 @@
 		 */
 		initPointers: function ( $revisions ) {
 			var $pointers,
-				escapePressed = false;
+				self = this;
 
 			$pointers = this.$element.find( '.mw-revslider-pointer' );
 
 			$( 'body' ).keydown( function ( e ) {
 				if ( e.which === 27 ) {
-					escapePressed = true;
+					self.escapePressed = true;
 					$pointers.trigger( 'mouseup' );
 				}
 			} );
 
-			$pointers.draggable( this.buildDraggableOptions( escapePressed, $revisions, '.mw-revslider-pointer-container' ) );
+			$pointers.draggable( this.buildDraggableOptions( $revisions, '.mw-revslider-pointer-container' ) );
 			$pointers.on(
 				'touchstart touchmove touchend',
 				mw.libs.revisionSlider.touchEventConverter
@@ -205,12 +207,11 @@
 		/**
 		 * Build options for the draggable
 		 *
-		 * @param {boolean} escapePressed
 		 * @param {jQuery} $revisions
 		 * @param {string} containmentClass
 		 * @return {Object}
 		 */
-		buildDraggableOptions: function ( escapePressed, $revisions, containmentClass ) {
+		buildDraggableOptions: function ( $revisions, containmentClass ) {
 			var lastValidLeftPos,
 				self = this;
 
@@ -222,7 +223,7 @@
 					self.isDragged = true;
 					self.setPointerDragCursor();
 					self.fadeOutPointerLines();
-					escapePressed = false;
+					self.escapePressed = false;
 				},
 				stop: function () {
 					var $p = $( this ),
@@ -233,7 +234,7 @@
 					self.isDragged = false;
 					self.removePointerDragCursor();
 
-					if ( escapePressed ) {
+					if ( self.escapePressed ) {
 						self.updatePointerPositionAttributes();
 						self.resetPointerStylesBasedOnPosition();
 						return;
@@ -266,7 +267,7 @@
 					);
 				},
 				revert: function () {
-					return escapePressed;
+					return self.escapePressed;
 				}
 			};
 		},

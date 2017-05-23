@@ -83,23 +83,23 @@
 			var $pointers,
 				$pointerOlder = this.pointerOlder.getView().getElement(),
 				$pointerNewer = this.pointerNewer.getView().getElement(),
-				escapePressed = false;
+				self = this;
 
 			$pointers = this.$element.find( '.mw-revslider-pointer' );
 
 			$( 'body' ).keydown( function ( e ) {
 				if ( e.which === 27 ) {
-					escapePressed = true;
+					self.escapePressed = true;
 					$pointers.trigger( 'mouseup' );
 				}
 			} );
 
 			$pointerOlder.draggable( this.buildDraggableOptions(
-				escapePressed, $revisions,
+				$revisions,
 				'.mw-revslider-pointer-container-older'
 			) );
 			$pointerNewer.draggable( this.buildDraggableOptions(
-				escapePressed, $revisions,
+				$revisions,
 				'.mw-revslider-pointer-container-newer'
 			) );
 
