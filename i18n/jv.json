@@ -5,6 +5,7 @@
 		]
 	},
 	"revisionslider": "Panyalindra Owahan",
+	"revisionslider-preference-disable": "Aja tuduhaké Panyalindra Owahan",
 	"revisionslider-desc": "Nuduhaké panyalindra minangka sarana milih lan mbandhingaké owah-owahaning sawiji kaca",
 	"revisionslider-beta-feature-message": "Panyalindra Owahan",
 	"revisionslider-beta-feature-description": "Nuduhaké panyalindra owahan nalika mbandhingaké rong owahan saka sawiji kaca.",
@@ -12,8 +13,8 @@
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bèt}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bèt}}",
 	"revisionslider-label-date": "Tanggal",
-	"revisionslider-label-page-size": "Ukuran kaca",
-	"revisionslider-label-change-size": "Ukuran owahan",
+	"revisionslider-label-page-size": "Gedhéné kaca",
+	"revisionslider-label-change-size": "Gedhéné owahan",
 	"revisionslider-label-comment": "Tanggapan",
 	"revisionslider-label-username": "{{GENDER:$1|Panganggo}}",
 	"revisionslider-minoredit": "Iki besutan cikil",
