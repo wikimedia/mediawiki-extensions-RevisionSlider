@@ -6,6 +6,8 @@
 	},
 	"revisionslider-toggle-label": "Прагляд гісторыі",
 	"revisionslider-label-date": "Дата",
+	"revisionslider-label-page-size": "Памер старонкі",
+	"revisionslider-label-comment": "Камэнтар",
 	"revisionslider-label-username": "{{GENDER:$1|Удзельнік|Удзельніца}}",
 	"revisionslider-toggle-title-expand": "Адкрыць слайдэр вэрсіяў",
 	"revisionslider-toggle-title-collapse": "Згарнуць слайдэр вэрсіяў",
