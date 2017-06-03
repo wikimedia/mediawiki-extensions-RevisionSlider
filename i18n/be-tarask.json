@@ -8,6 +8,7 @@
 	"revisionslider-page-size": "$1 {{PLURAL:$2|байт|байты|байтаў}}",
 	"revisionslider-label-date": "Дата",
 	"revisionslider-label-page-size": "Памер старонкі",
+	"revisionslider-label-change-size": "Памер зьмены",
 	"revisionslider-label-comment": "Камэнтар",
 	"revisionslider-label-username": "{{GENDER:$1|Удзельнік|Удзельніца}}",
 	"revisionslider-toggle-title-expand": "Адкрыць слайдэр вэрсіяў",
