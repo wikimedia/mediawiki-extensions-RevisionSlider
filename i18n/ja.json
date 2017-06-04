@@ -3,10 +3,12 @@
 		"authors": [
 			"Otokoume",
 			"Macofe",
-			"にょきにょき"
+			"にょきにょき",
+			"Mirinano"
 		]
 	},
 	"revisionslider": "リビジョンスライダー",
+	"revisionslider-preference-disable": "リビジョンスライダーを表示しない",
 	"revisionslider-desc": "版間の差分を表示する際にスライダーを使って版の選択ができるようになります。",
 	"revisionslider-beta-feature-message": "リビジョンスライダー",
 	"revisionslider-beta-feature-description": "版間の差分を表示するときにグラフィックなスライダーが利用できます。",
