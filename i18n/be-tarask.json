@@ -6,6 +6,7 @@
 	},
 	"revisionslider-toggle-label": "Прагляд гісторыі",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|байт|байты|байтаў}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|байт|байты|байтаў}}",
 	"revisionslider-label-date": "Дата",
 	"revisionslider-label-page-size": "Памер старонкі",
 	"revisionslider-label-change-size": "Памер зьмены",
