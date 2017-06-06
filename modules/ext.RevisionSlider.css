@@ -21,6 +21,7 @@
 	margin-top: 70px;
 	background-color: #e3e3e3;
 	border-color: #e3e3e3;
+	z-index: 1;
 }
 
 .mw-revslider-revision:hover,
@@ -79,7 +80,6 @@
 .mw-revslider-revision-wrapper {
 	display: inline-block;
 	cursor: pointer;
-	z-index: 10;
 	height: 140px;
 }
 
@@ -177,7 +177,6 @@
 /* This is a bit hacky way, the goal being to have a framed toggle button widget with some styles
 of the frameless one (to fit the size of the toggle button */
 .mw-revslider-container .mw-revslider-auto-expand-button .oo-ui-buttonElement-button {
-	z-index: 10;
 	padding: 0;
 	box-sizing: border-box;
 	min-height: 0;
@@ -207,7 +206,7 @@ of the frameless one (to fit the size of the toggle button */
 	clear: both;
 	top: 57px;
 	margin: auto;
-	z-index: 10;
+	z-index: 1;
 }
 
 .mw-revslider-pointer-upper {
@@ -220,7 +219,7 @@ of the frameless one (to fit the size of the toggle button */
 
 .mw-revslider-pointer {
 	position: absolute !important; /* stylelint-disable-line declaration-no-important */
-	z-index: 11;
+	z-index: 1;
 	width: 16px;
 	height: 13px;
 	background-repeat: no-repeat;
@@ -281,12 +280,12 @@ of the frameless one (to fit the size of the toggle button */
 	right: 0;
 	bottom: 0;
 	margin-right: 0;
+	z-index: 1;
 }
 
 .mw-revslider-pointer-line {
 	position: absolute;
 	top: 73px;
-	z-index: -1;
 }
 
 .mw-revslider-pointer-line-upper,
