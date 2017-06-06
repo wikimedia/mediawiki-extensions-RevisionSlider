@@ -26,16 +26,3 @@ Feature: RevisionSlider pointers
     And the upper pointer should be on revision 4
     And revision 3 should be loaded on the left of the diff
     And revision 4 should be loaded on the right of the diff
-
-  Scenario: RevisionSlider pointers switch when crossed over
-    Given I am on the diff page
-    When I have loaded the RevisionSlider and dismissed the help dialog
-    And I drag the lower pointer to revision 3
-    And I wait until the diff has loaded
-    And I click on revision 1 to move the upper pointer
-    And I wait until the diff has loaded
-    And I wait until the pointers stopped moving
-    Then the lower pointer should be on revision 1
-    And the upper pointer should be on revision 3
-    And revision 1 should be loaded on the left of the diff
-    And revision 3 should be loaded on the right of the diff

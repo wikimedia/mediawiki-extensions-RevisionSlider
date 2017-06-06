@@ -12,16 +12,14 @@
 		/**
 		 * Refreshes the diff view with two given revision IDs
 		 *
-		 * @param {number} revId1
-		 * @param {number} revId2
+		 * @param {number} diff
+		 * @param {number} oldid
 		 * @param {SliderView} sliderView
 		 * @param {number} [retryAttempt=0]
 		 */
-		refresh: function ( revId1, revId2, sliderView, retryAttempt ) {
+		refresh: function ( diff, oldid, sliderView, retryAttempt ) {
 			var self = this,
 				retryLimit = 2,
-				diff = Math.max( revId1, revId2 ),
-				oldid = Math.min( revId1, revId2 ),
 				data = {
 					diff: diff,
 					oldid: oldid
@@ -86,7 +84,7 @@
 					this.tryCount++;
 					mw.track( 'counter.MediaWiki.RevisionSlider.error.refresh' );
 					if ( retryAttempt <= retryLimit ) {
-						self.refresh( revId1, revId2, sliderView, retryAttempt + 1 );
+						self.refresh( diff, oldid, sliderView, retryAttempt + 1 );
 					}
 					// TODO notify the user that we failed to update the diff?
 					// This could also attempt to reload the page with the correct diff loaded without ajax?
@@ -97,17 +95,17 @@
 		/**
 		 * Replaces the current state in the history stack
 		 *
-		 * @param {number} revId1
-		 * @param {number} revId2
+		 * @param {number} diff
+		 * @param {number} oldid
 		 * @param {SliderView} sliderView
 		 */
-		replaceState: function ( revId1, revId2, sliderView ) {
+		replaceState: function ( diff, oldid, sliderView ) {
 			// IE9 does not have history.replaceState()
 			if ( typeof history.replaceState === 'function' ) {
 				history.replaceState(
-					this.getStateObject( revId1, revId2, sliderView ),
+					this.getStateObject( diff, oldid, sliderView ),
 					$( document ).find( 'title' ).text(),
-					this.getStateUrl( revId1, revId2 )
+					this.getStateUrl( diff, oldid )
 				);
 			}
 		},
@@ -115,17 +113,17 @@
 		/**
 		 * Pushes the current state onto the history stack
 		 *
-		 * @param {number} revId1
-		 * @param {number} revId2
+		 * @param {number} diff
+		 * @param {number} oldid
 		 * @param {SliderView} sliderView
 		 */
-		pushState: function ( revId1, revId2, sliderView ) {
+		pushState: function ( diff, oldid, sliderView ) {
 			// IE9 does not have history.pushState()
 			if ( typeof history.pushState === 'function' ) {
 				history.pushState(
-					this.getStateObject( revId1, revId2, sliderView ),
+					this.getStateObject( diff, oldid, sliderView ),
 					$( document ).find( 'title' ).text(),
-					this.getStateUrl( revId1, revId2 )
+					this.getStateUrl( diff, oldid )
 				);
 			}
 		},
@@ -133,15 +131,15 @@
 		/**
 		 * Gets a state object to be used with history.replaceState and history.pushState
 		 *
-		 * @param {number} revId1
-		 * @param {number} revId2
+		 * @param {number} diff
+		 * @param {number} oldid
 		 * @param {SliderView} sliderView
 		 * @return {Object}
 		 */
-		getStateObject: function ( revId1, revId2, sliderView ) {
+		getStateObject: function ( diff, oldid, sliderView ) {
 			return {
-				revid1: revId1,
-				revid2: revId2,
+				diff: diff,
+				oldid: oldid,
 				pointerOlderPos: sliderView.pointerOlder.getPosition(),
 				pointerNewerPos: sliderView.pointerNewer.getPosition(),
 				sliderPos: sliderView.slider.getOldestVisibleRevisionIndex()
@@ -151,12 +149,12 @@
 		/**
 		 * Gets a URL to be used with history.replaceState and history.pushState
 		 *
-		 * @param {number} revId1
-		 * @param {number} revId2
+		 * @param {number} diff
+		 * @param {number} oldid
 		 * @return {string}
 		 */
-		getStateUrl: function ( revId1, revId2 ) {
-			var url = mw.util.wikiScript( 'index' ) + '?diff=' + Math.max( revId1, revId2 ) + '&oldid=' + Math.min( revId1, revId2 ),
+		getStateUrl: function ( diff, oldid ) {
+			var url = mw.util.wikiScript( 'index' ) + '?diff=' + diff + '&oldid=' + oldid,
 				params = this.getExtraDiffPageParams();
 			if ( Object.keys( params ).length > 0 ) {
 				Object.keys( params ).forEach( function ( key ) {
@@ -203,7 +201,7 @@
 					sliderView.$element.find( 'div.mw-revslider-revisions' )
 				);
 				sliderView.updatePointerPositionAttributes();
-				self.refresh( event.state.revid1, event.state.revid2 );
+				self.refresh( event.state.diff, event.state.oldid );
 			} );
 		},
 

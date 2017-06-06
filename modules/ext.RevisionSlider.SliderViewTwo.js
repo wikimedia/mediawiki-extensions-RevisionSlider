@@ -188,10 +188,17 @@
 
 			pointerMoved.setPosition( pos );
 			this.updatePointerPositionAttributes();
-			this.refreshRevisions(
-				this.getRevElementAtPosition( $revisions, pointerOther.getPosition() ).attr( 'data-revid' ),
-				$clickedRev.attr( 'data-revid' )
-			);
+			if ( $line.hasClass( 'mw-revslider-pointer-container-newer' ) ) {
+				this.refreshRevisions(
+					$clickedRev.attr( 'data-revid' ),
+					this.getRevElementAtPosition( $revisions, pointerOther.getPosition() ).attr( 'data-revid' )
+				);
+			} else {
+				this.refreshRevisions(
+					this.getRevElementAtPosition( $revisions, pointerOther.getPosition() ).attr( 'data-revid' ),
+					$clickedRev.attr( 'data-revid' )
+				);
+			}
 			this.resetRevisionStylesBasedOnPointerPosition( $revisions );
 			this.alignPointers();
 		},

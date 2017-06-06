@@ -32,8 +32,8 @@
 		assert.propEqual(
 			history.state,
 			{
-				revid1: 3,
-				revid2: 37,
+				diff: 3,
+				oldid: 37,
 				pointerOlderPos: 1,
 				pointerNewerPos: 3,
 				sliderPos: NaN
