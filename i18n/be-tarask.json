@@ -12,6 +12,7 @@
 	"revisionslider-label-change-size": "Памер зьмены",
 	"revisionslider-label-comment": "Камэнтар",
 	"revisionslider-label-username": "{{GENDER:$1|Удзельнік|Удзельніца}}",
+	"revisionslider-minoredit": "Гэта дробная праўка",
 	"revisionslider-toggle-title-expand": "Адкрыць слайдэр вэрсіяў",
 	"revisionslider-toggle-title-collapse": "Згарнуць слайдэр вэрсіяў",
 	"revisionslider-turn-on-auto-expand-title": "Заўсёды разгортваць слайдэр вэрсіяў",
