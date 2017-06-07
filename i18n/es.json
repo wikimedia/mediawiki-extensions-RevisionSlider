@@ -3,10 +3,12 @@
 		"authors": [
 			"Macofe",
 			"Rubentl134",
-			"Dgstranz"
+			"Dgstranz",
+			"-jem-"
 		]
 	},
 	"revisionslider": "Deslizador de revisiones",
+	"revisionslider-preference-disable": "No mostrar el deslizador de revisiones",
 	"revisionslider-desc": "Muestra un control deslizante que permite la selección y comparación de las revisiones en una página de diferencias",
 	"revisionslider-beta-feature-message": "Deslizador de revisiones",
 	"revisionslider-beta-feature-description": "Mostrar un deslizador de revisiones al comparar dos revisiones de una página.",
