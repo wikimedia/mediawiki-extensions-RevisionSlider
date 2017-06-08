@@ -29,11 +29,12 @@ class RevisionSliderHooks {
 		return self::$config;
 	}
 
-	public static function onDiffViewHeader(
-		DifferenceEngine $diff,
-		Revision $oldRev,
-		Revision $newRev
-	) {
+	public static function onDiffViewHeader( DifferenceEngine $diff, Revision $oldRev, $newRev ) {
+		// sometimes $oldRev can be null (e.g. missing rev), and perhaps also $newRev (T167359)
+		if ( !( $oldRev instanceof Revision ) || !( $newRev instanceof Revision ) ) {
+			return true;
+		}
+
 		$config = self::getConfig();
 
 		/**
