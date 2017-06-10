@@ -19,6 +19,7 @@
 	"revisionslider-arrow-tooltip-newer": "Паглядзець навейшыя вэрсіі",
 	"revisionslider-arrow-tooltip-older": "Паглядзець старэйшыя вэрсіі",
 	"revisionslider-show-help-tooltip": "Паказаць тэкст даведкі",
+	"revisionslider-help-dialog-slide1": "Слайдэр вэрсіяў дапамагае ў навігацыі і параўнаньні вэрсіяў на старонцы розьніцы вэрсіяў. Ён заснаваны на [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider пажаданьні] нямецкамоўнай супольнасьці. Водгукі вітаюцца [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider тут].",
 	"revisionslider-tutorial": "Інструкцыя слайдэру вэрсіяў",
 	"revisionslider-close-dialog": "Закрыць"
 }
