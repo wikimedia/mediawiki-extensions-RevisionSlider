@@ -5,5 +5,6 @@
 		]
 	},
 	"revisionslider-label-date": "Tatokonakisitc",
-	"revisionslider-label-username": "{{GENDER:$1|Icinikasowin}}"
+	"revisionslider-label-username": "{{GENDER:$1|Icinikasowin}}",
+	"revisionslider-arrow-tooltip-older": "Nictam ka ki masinatek"
 }
