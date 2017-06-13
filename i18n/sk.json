@@ -29,7 +29,7 @@
 	"revisionslider-help-dialog-slide1": "Posuvník revízií pomáha hľadať a porovnávať rozdiely v revíziách stránok. Je vytvorený na základe [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider želania nemecky hovoriacej komunity]. Veľmi oceníme [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider spätnú väzbu].",
 	"revisionslider-help-dialog-slide2": "Každý stĺpec predstavuje revíziu stránky. Nahor smerujúce stĺpce zobrazujú nárast veľkosti stránky, stĺpce nadol zase zmenšenie. Revízia 1 na obrázku predstavuje pridanie obsahu, revízia 2 jeho odobratie.",
 	"revisionslider-help-dialog-slide3": "<p>Konkrétne revízie pre porovnanie vyberte pomocou žltej a modrej šípky.</p><p>Modrá šípka označuje novšiu revíziu, žltá ukazuje na staršiu revíziu.</p><p>Šípky môžete presúvať stlačením a ťahaním alebo kliknutím na stĺpec.</p>",
-	"revisionslider-help-dialog-slide3a": "Konkrétne revízie pre porovnanie vyberte pomocou žltej a modrej značky.</p><p>Modrá značka označuje novšiu revíziu, žltá označuje staršiu revíziu.</p><p>Značky môžete presúvať stlačením a ťahaním alebo kliknutím na os príslušnej farby.</p>",
+	"revisionslider-help-dialog-slide3a": "<p>Konkrétne revízie pre porovnanie vyberte pomocou žltej a modrej značky.</p><p>Modrá značka označuje novšiu revíziu, žltá označuje staršiu revíziu.</p><p>Značky môžete presúvať stlačením a ťahaním alebo kliknutím na os príslušnej farby.</p>",
 	"revisionslider-help-dialog-slide4": "Pomocou šípok dopredu a dozadu sa môžete posúvať v histórii stránky a zobrazovať staršie alebo novšie revízie.",
 	"revisionslider-tutorial": "Sprievodca posuvníkom revízií",
 	"revisionslider-previous-dialog": "Späť",
