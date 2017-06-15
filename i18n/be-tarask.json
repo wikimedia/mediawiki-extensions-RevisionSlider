@@ -4,6 +4,7 @@
 			"Red Winged Duck"
 		]
 	},
+	"revisionslider": "Слайдэр вэрсіяў",
 	"revisionslider-toggle-label": "Прагляд гісторыі",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|байт|байты|байтаў}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|байт|байты|байтаў}}",
@@ -16,6 +17,7 @@
 	"revisionslider-toggle-title-expand": "Адкрыць слайдэр вэрсіяў",
 	"revisionslider-toggle-title-collapse": "Згарнуць слайдэр вэрсіяў",
 	"revisionslider-turn-on-auto-expand-title": "Заўсёды разгортваць слайдэр вэрсіяў",
+	"revisionslider-turn-off-auto-expand-title": "Не разгортваць слайдэр вэрсіяў аўтаматычна",
 	"revisionslider-arrow-tooltip-newer": "Паглядзець навейшыя вэрсіі",
 	"revisionslider-arrow-tooltip-older": "Паглядзець старэйшыя вэрсіі",
 	"revisionslider-show-help-tooltip": "Паказаць тэкст даведкі",
