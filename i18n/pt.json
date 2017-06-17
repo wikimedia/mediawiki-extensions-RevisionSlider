@@ -9,6 +9,7 @@
 		]
 	},
 	"revisionslider": "Barra de revisões",
+	"revisionslider-preference-disable": "Não mostrar a barra de revisões",
 	"revisionslider-desc": "Mostra um controlo deslizante que permite a seleção e comparação de revisões numa página de diferenças entre edições",
 	"revisionslider-beta-feature-message": "Barra de revisões",
 	"revisionslider-beta-feature-description": "Mostra uma barra deslizante de revisão ao comparar duas versões de uma página.",
@@ -32,8 +33,9 @@
 	"revisionslider-help-dialog-slide1": "A barra de revisões auxilia na navegação e comparação de revisões na página de diferença entre edições (dif). Foi concebida após [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider solicitação] da comunidade técnica alemã. A sua opinião é muito bem-vinda [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider aqui].",
 	"revisionslider-help-dialog-slide2": "Cada barra representa uma revisão da página. As barras no topo mostram o crescimento no tamanho da página, enquanto que na base é mostrada uma redução. Na imagem, a revisão 1 representa o conteúdo adicionado, enquanto a revisão 2 representa a remoção de conteúdo.",
 	"revisionslider-help-dialog-slide3": "<p>Para comparar certas revisões, selecione-as  utilizando o ponteiro amarelo e azul.</p><p>O ponteiro azul controla a revisão mais recente e o amarelo a mais antiga.</p><p>Mova os ponteiros ao arrastar e soltar, ou clique numa barra.</p>",
+	"revisionslider-help-dialog-slide3a": "<p>Para comparar certas revisões, selecione-as  utilizando o ponteiro amarelo e azul.</p><p>O ponteiro azul controla a revisão mais recente e o amarelo a mais antiga.</p><p>Mova os ponteiros ao arrastar e soltar, ou clique na linha da barra.</p>",
 	"revisionslider-help-dialog-slide4": "Utilize as setas de avanço e retrocesso para consultar o histórico de revisões e mostrar as mais antigas e mais recentes.",
-	"revisionslider-tutorial": "Tutorial sobre a barra de revisões",
+	"revisionslider-tutorial": "Guia da barra de revisões",
 	"revisionslider-previous-dialog": "Anterior",
 	"revisionslider-next-dialog": "Seguinte",
 	"revisionslider-close-dialog": "Fechar"
