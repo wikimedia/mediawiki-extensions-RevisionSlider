@@ -1,0 +1,46 @@
+@media print {
+	.mw-revslider-container {
+		display: none;
+	}
+}
+
+.mw-revslider-container {
+	/* This will flip with CSSJanus in case */
+	/* the interface is in RTL */
+	direction: ltr;
+	position: relative;
+	border: 1px solid #ccc;
+}
+
+.mw-revslider-slider-wrapper {
+	min-height: 142px;
+	border-top: 1px solid #ccc;
+	padding: 20px 10px;
+}
+
+.mw-revslider-placeholder .oo-ui-progressBarWidget {
+	margin: 60px auto;
+}
+
+.mw-revslider-toggle-button {
+	width: 100%;
+	text-align: center;
+}
+
+.mw-revslider-toggle-button .oo-ui-buttonElement-button {
+	min-height: 0;
+	min-width: 0;
+	width: 100%;
+	padding: 0.06em 0 0.06em 0;
+}
+
+.mw-revslider-toggle-button .oo-ui-iconElement-icon {
+	left: auto !important; /* stylelint-disable-line declaration-no-important */
+	right: 0;
+	/* For OOUI-Apex */
+	position: absolute;
+}
+
+.mw-revslider-toggle-button .oo-ui-labelElement-label {
+	line-height: 1.875em;
+}

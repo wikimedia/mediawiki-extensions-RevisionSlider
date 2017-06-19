@@ -1,99 +1,337 @@
-.ui-slider-tick-mark {
-    display: 	inline-block;
-    border: 	1px solid black;
-    height:		9px;
-    position:	absolute;
-    top:		-3px;
-    opacity: 	0.35;
-    z-index:	10;
+.mw-revslider-container-expanded {
+	margin-bottom: 15px;
 }
 
-.ui-slider-tick-mark:hover {
-    opacity: 0.65!important;
-    -webkit-transition: all ease 0.2s;
-    -moz-transition: all ease 0.2s;
-    -o-transition: all ease 0.2s;
-    transition: all ease 0.2s;
+.mw-revslider-container-collapsed {
+	margin-bottom: 0;
 }
 
-.rvslider-legend-box {
-    opacity: 0.35;
-    font-size: 1.4em;
+.mw-revslider-auto-expand-button {
+	position: absolute;
+	top: 0.234375em;
+	/* default button width + default button margin ( 1.875em + 0.234375em ) */
+	right: 2.109375em;
 }
 
-.revisions-legend {
-    text-align: center;
-    font-size: 0.9em;
-    padding: 0.5em 0.5em;
+.mw-revslider-button-active {
+	background-color: #999;
 }
 
-.revisions {
-    height: 150px;
-}
-.revisions-container {
-    width: 90%;
-    position: relative;
-    overflow: hidden;
-}
-.revisions-container, .arrow {
-    float: left;
-}
-.arrow {
-    width: 5%;
-    margin-top: 63px;
-}
-.left-arrow {
-    width: 0;
-    height: 0;
-    margin-right: 20px;
-    border-style: solid;
-    border-width: 12px 20px 12px 0;
-    border-color: transparent #424242 transparent transparent;
-}
-.right-arrow {
-    margin-left: 20px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 12px 0 12px 18px;
-    border-color: transparent transparent transparent #424242;
+.mw-revslider-revision {
+	position: relative;
+	margin-top: 70px;
+	background-color: #e3e3e3;
+	border-color: #e3e3e3;
+	z-index: 1;
 }
 
-.revision {
-    margin-top: 75px;
+.mw-revslider-revision:hover,
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision {
+	background-color: #ccc;
+	border-color: #ccc;
+	transition: all ease 0.2s;
+	-webkit-transition: all ease 0.2s;
+	-moz-transition: all ease 0.2s;
+	-o-transition: all ease 0.2s;
 }
 
-.stopper {
-    position: absolute;
-    top: 50%;
-    height: 50px;
-    width: 0;
+.mw-revslider-revision-up {
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
 }
 
-.revision-slider {
-    position: relative;
-    margin: auto;
+.mw-revslider-revision-down {
+	border-top-width: 2px;
+	border-top-style: solid;
 }
 
-.pointer-container {
-    position: absolute;
-    clear: both;
-    height: 1px;
-    top: 77px;
-    margin: auto;
-    z-index: 10;
+.mw-revslider-revision-old {
+	background-color: #fee9a8;
+	border-color: #fc3;
 }
-.left-pointer {
-    border-color: transparent transparent #00f transparent;
+
+.mw-revslider-revision-old:hover,
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision-old {
+	background-color: #fc3;
+	border-color: #dda000;
 }
-.right-pointer {
-    border-color: transparent transparent #f00 transparent;
+
+.mw-revslider-revision-new {
+	background-color: #c3e2ff;
+	border-color: #1e6db8;
 }
-.pointer {
-    position: absolute !important;
-    z-index: 11;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 10px 10px 10px;
+
+.mw-revslider-revision-new:hover,
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision-new {
+	background-color: #45a6ff;
+	border-color: #065cad;
+}
+
+.mw-revslider-revision-intermediate {
+	background-color: #bcbcbc;
+	border-color: #989898;
+}
+
+.mw-revslider-revision-intermediate:hover,
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision-intermediate {
+	background-color: #a6a6a6;
+	border-color: #828282;
+}
+
+.mw-revslider-revision-wrapper {
+	display: inline-block;
+	cursor: pointer;
+	height: 140px;
+}
+
+.mw-revslider-revision-wrapper:hover,
+.mw-revslider-revision-wrapper-hovered {
+	background-color: #f2f2f2;
+}
+
+.mw-revslider-revision-border-box {
+	height: 100%;
+	width: 100%;
+	border-left: solid 1px #fff;
+}
+
+.mw-revslider-tooltip {
+	font-size: 0.8em;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+/* quick fix for T159428 can be removed when https://gerrit.wikimedia.org/r/#/c/340443/ is deployed */
+.mw-revslider-tooltip.oo-ui-popupWidget {
+	left: auto;
+}
+
+.mw-revslider-revision-tooltip .oo-ui-popupWidget-body {
+	padding-right: 19px;
+}
+
+.mw-revslider-revision-tooltip .mw-revslider-change-positive {
+	color: #006400;
+}
+
+.mw-revslider-revision-tooltip .mw-revslider-change-negative {
+	color: #8b0000;
+}
+
+.mw-revslider-revision-tooltip .mw-revslider-change-none {
+	color: #aaa;
+}
+
+.mw-revslider-arrow-tooltip,
+.mw-revslider-help-tooltip {
+	text-align: center;
+}
+
+.mw-revslider-revisions {
+	height: 140px;
+	white-space: nowrap;
+}
+
+.mw-revslider-revisions-container {
+	width: 90%;
+	position: relative;
+	overflow: hidden;
+}
+
+.mw-revslider-revisions-container,
+.mw-revslider-arrow {
+	float: left;
+}
+
+.mw-revslider-arrow {
+	width: 22px;
+	height: 142px;
+}
+
+.mw-revslider-arrow-backwards {
+	margin-right: 30px;
+}
+
+.mw-revslider-arrow-forwards {
+	margin-left: 30px;
+}
+
+.mw-revslider-arrow.oo-ui-buttonElement .oo-ui-buttonElement-button {
+	width: 20px;
+	height: 140px;
+	padding: 0;
+	min-height: 0;
+	min-width: 0;
+}
+
+.mw-revslider-arrow.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
+	left: 0;
+	width: 20px;
+	min-width: inherit;
+	min-height: inherit;
+}
+
+.mw-revslider-auto-expand-button.oo-ui-buttonElement > .oo-ui-buttonElement-button {
+	border-color: #fff;
+}
+
+/* This is a bit hacky way, the goal being to have a framed toggle button widget with some styles
+of the frameless one (to fit the size of the toggle button */
+.mw-revslider-container .mw-revslider-auto-expand-button .oo-ui-buttonElement-button {
+	padding: 0;
+	box-sizing: border-box;
+	min-height: 0;
+	min-width: 0;
+	width: 1.875em;
+	height: 1.875em;
+	background-color: transparent;
+	border: 0;
+	margin-top: 0.12em;
+}
+
+.mw-revslider-auto-expand-button.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
+	position: static;
+	left: auto;
+	top: auto;
+	width: 1.875em;
+	height: 1.875em;
+}
+
+.mw-revslider-revision-slider {
+	position: relative;
+	margin: auto;
+}
+
+.mw-revslider-pointer-container {
+	position: absolute;
+	clear: both;
+	top: 57px;
+	margin: auto;
+	z-index: 1;
+}
+
+.mw-revslider-pointer-upper {
+	padding-top: 2px;
+}
+.mw-revslider-pointer-lower {
+	top: 15px;
+	padding-bottom: 2px;
+}
+
+.mw-revslider-pointer {
+	position: absolute !important; /* stylelint-disable-line declaration-no-important */
+	z-index: 1;
+	width: 16px;
+	height: 13px;
+	background-repeat: no-repeat;
+}
+
+.mw-revslider-pointer-cursor {
+	cursor: ew-resize;
+}
+
+.mw-revslider-revisions-older {
+	float: left;
+}
+
+.mw-revslider-revisions-newer {
+	float: right;
+}
+
+.mw-revslider-diff-loading {
+	opacity: 0.5;
+}
+
+.oo-ui-windowManager-modal.oo-ui-windowManager-floating > .mw-revslider-help-dialog > .oo-ui-window-frame {
+	top: 30%;
+	bottom: auto;
+}
+
+.mw-revslider-help-dialog-image-landscape {
+	height: 160px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.mw-revslider-help-dialog-image-portrait {
+	height: 180px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.mw-revslider-column-image {
+	width: 50%;
+	float: left;
+}
+
+.mw-revslider-column-text {
+	width: 50%;
+	float: right;
+}
+
+.mw-revslider-help-dialog-text {
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.mw-revslider-show-help {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-right: 0;
+	z-index: 1;
+}
+
+.mw-revslider-pointer-line {
+	position: absolute;
+	top: 73px;
+}
+
+.mw-revslider-pointer-line-upper,
+.mw-revslider-pointer-line-lower {
+	border: 0 solid transparent;
+}
+
+/* @noflip */
+.mw-revslider-pointer-line .mw-revslider-left-line {
+	border-left-width: 2px;
+}
+
+/* @noflip */
+.mw-revslider-pointer-line .mw-revslider-right-line {
+	border-right-width: 2px;
+}
+
+.mw-revslider-pointer-line .mw-revslider-bottom-line {
+	border-bottom-width: 2px;
+}
+
+.mw-revslider-pointer-line .mw-revslider-lower-color {
+	border-color: #fc3;
+}
+
+.mw-revslider-pointer-line .mw-revslider-upper-color {
+	border-color: #1e6db8;
+}
+
+.mw-revslider-pointer-older .mw-revslider-pointer-line-upper {
+	height: 81px;
+}
+
+.mw-revslider-pointer-older .mw-revslider-pointer-line-lower {
+	height: 17px;
+}
+
+.mw-revslider-pointer-newer .mw-revslider-pointer-line-upper {
+	height: 71px;
+}
+
+.mw-revslider-pointer-newer .mw-revslider-pointer-line-lower {
+	height: 27px;
+}
+
+.mw-revslider-pointer-line-underline {
+	border-bottom: 2px solid;
 }

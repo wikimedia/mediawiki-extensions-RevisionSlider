@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sator",
+			"Subi"
+		]
+	},
+	"revisionslider-beta-feature-description": "Orrialde bateko bi berrikuspen alderatzean, korritze-barra bat erakusten du.",
+	"revisionslider-toggle-label": "Nabigazio historia",
+	"revisionslider-label-date": "Data",
+	"revisionslider-label-page-size": "Orriaren tamaina",
+	"revisionslider-label-change-size": "Tamaina aldatu",
+	"revisionslider-label-comment": "Iruzkina",
+	"revisionslider-label-username": "{{GENDER:$1|Lankide izena}}",
+	"revisionslider-previous-dialog": "Aurrekoa",
+	"revisionslider-next-dialog": "Hurrengoa",
+	"revisionslider-close-dialog": "Itxi"
+}

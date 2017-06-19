@@ -1,0 +1,131 @@
+.mw-revslider-revision-wrapper {
+	cursor: auto;
+}
+
+.mw-revslider-pointer-container {
+	top: 49px;
+	margin: 0;
+}
+
+.mw-revslider-pointer-container-newer,
+.mw-revslider-pointer-container-older {
+	cursor: pointer;
+	height: 12px;
+}
+
+.mw-revslider-revision:hover,
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision {
+	background-color: #e3e3e3;
+	border-color: #e3e3e3;
+}
+
+.mw-revslider-revision-old,
+.mw-revslider-revision-new,
+.mw-revslider-revision-old:hover,
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision-old,
+.mw-revslider-revision-new:hover,
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision-new,
+.mw-revslider-revision-intermediate:hover,
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision-intermediate {
+	background-color: #bcbcbc;
+	border-color: #989898;
+}
+
+.mw-revslider-revision-old .mw-revslider-revision-border-box {
+	border-bottom: 2px solid #fc3;
+}
+
+.mw-revslider-revision-new .mw-revslider-revision-border-box {
+	border-bottom: 2px solid #1e6db8;
+}
+
+.mw-revslider-pointer-container-newer {
+	margin-top: 4px;
+}
+
+.mw-revslider-slider-line {
+	margin: 0 10px;
+	height: 12px;
+}
+
+.mw-revslider-pointer-container-newer .mw-revslider-slider-line {
+	border-bottom: 4px solid;
+	border-bottom-color: rgba( 30, 109, 184, 0.5 ); /* #1e6db8 */
+}
+
+.mw-revslider-pointer-container-older .mw-revslider-slider-line {
+	margin-top: 8px;
+	border-top: 4px solid;
+	border-top-color: rgba( 255, 204, 51, 0.5 ); /* #fc3 */
+}
+
+.mw-revslider-pointer-container-newer:hover .mw-revslider-slider-line {
+	border-bottom-color: rgba( 30, 109, 184, 0.8 );
+}
+
+.mw-revslider-pointer-container-older:hover .mw-revslider-slider-line {
+	border-top-color: rgba( 255, 204, 51, 0.8 );
+}
+
+.mw-revslider-pointer-upper.mw-revslider-pointer-newid {
+	top: 10px;
+	border: 1px solid #66b2ff;
+	background: -webkit-linear-gradient( bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
+	background: -moz-linear-gradient( bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
+	background: -ms-linear-gradient( bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
+	background: -o-linear-gradient( bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
+	background: linear-gradient( to bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
+}
+
+.mw-revslider-pointer-upper.mw-revslider-pointer-newid:hover {
+	background: -webkit-linear-gradient( bottom, rgba( 109, 182, 253, 1 ), rgba( 7, 91, 172, 1 ) );
+	background: -moz-linear-gradient( bottom, rgba( 109, 182, 253, 1 ), rgba( 7, 91, 172, 1 ) );
+	background: -ms-linear-gradient( bottom, rgba( 109, 182, 253, 1 ), rgba( 7, 91, 172, 1 ) );
+	background: -o-linear-gradient( bottom, rgba( 109, 182, 253, 1 ), rgba( 7, 91, 172, 1 ) );
+	background: linear-gradient( to bottom, rgba( 109, 182, 253, 1 ), rgba( 7, 91, 172, 1 ) );
+}
+
+.mw-revslider-pointer-lower.mw-revslider-pointer-oldid {
+	top: 18px;
+	border: 1px solid #ffc561;
+	background: -webkit-linear-gradient( bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
+	background: -moz-linear-gradient( bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
+	background: -ms-linear-gradient( bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
+	background: -o-linear-gradient( bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
+	background: linear-gradient( to bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
+}
+
+.mw-revslider-pointer-lower.mw-revslider-pointer-oldid:hover {
+	background: -webkit-linear-gradient( bottom, rgba( 255, 235, 161, 1 ), rgba( 255, 195, 41, 1 ) );
+	background: -moz-linear-gradient( bottom, rgba( 255, 235, 161, 1 ), rgba( 255, 195, 41, 1 ) );
+	background: -ms-linear-gradient( bottom, rgba( 255, 235, 161, 1 ), rgba( 255, 195, 41, 1 ) );
+	background: -o-linear-gradient( bottom, rgba( 255, 235, 161, 1 ), rgba( 255, 195, 41, 1 ) );
+	background: linear-gradient( to bottom, rgba( 255, 235, 161, 1 ), rgba( 255, 195, 41, 1 ) );
+}
+
+.mw-revslider-pointer {
+	padding: 0;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+}
+
+.mw-revslider-pointer:hover,
+.mw-revslider-pointer-cursor {
+	cursor: move; /* fallback if grab cursor is unsupported */
+	cursor: grab;
+	cursor: -moz-grab;
+	cursor: -webkit-grab;
+}
+
+.mw-revslider-pointer-grabbing,
+.mw-revslider-pointer.mw-revslider-pointer-grabbing:hover {
+	cursor: grabbing;
+	cursor: -moz-grabbing;
+	cursor: -webkit-grabbing;
+}
+
+.mw-revslider-pointer-line {
+	/* @noflip */
+	margin-left: 1px;
+}

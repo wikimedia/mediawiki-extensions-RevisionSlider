@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eitvys200",
+			"Macofe",
+			"Zygimantus"
+		]
+	},
+	"revisionslider-toggle-label": "Naršyti istoriją",
+	"revisionslider-label-date": "Data",
+	"revisionslider-label-page-size": "Puslapio dydis",
+	"revisionslider-label-change-size": "Keisti dydį",
+	"revisionslider-label-comment": "Komentaras",
+	"revisionslider-label-username": "<strong>Vartotojo vardas:</strong> [[$3|$1]]",
+	"revisionslider-minoredit": "Tai smulkus pakeitimas",
+	"revisionslider-show-help-tooltip": "Rodyti pagalbinį tekstą"
+}
