@@ -82,9 +82,6 @@ class RevisionSliderHooks {
 		if ( $autoExpand ) {
 			$out->addModules( 'ext.RevisionSlider.init' );
 			$stats->increment( 'RevisionSlider.event.load' );
-			if ( $config->get( 'RevisionSliderAlternateSlider' ) ) {
-				$out->addModules( 'ext.RevisionSlider.SliderViewTwo' );
-			}
 		} else {
 			$out->addModules( 'ext.RevisionSlider.lazyJs' );
 			$stats->increment( 'RevisionSlider.event.lazyload' );

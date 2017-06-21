@@ -71,8 +71,6 @@
 				"ext.RevisionSlider.HelpDialog",
 				"ext.RevisionSlider.Api",
 				"ext.RevisionSlider.icons",
-				"ext.RevisionSlider.pointers.lower",
-				"ext.RevisionSlider.pointers.upper",
 				"mediawiki.api.options",
 				"mediawiki.user",
 				"mediawiki.util"
@@ -166,14 +164,6 @@
 				"revisionslider-arrow-tooltip-older"
 			]
 		},
-		"ext.RevisionSlider.SliderViewTwo": {
-			"styles": [
-				"modules/ext.RevisionSliderViewTwo.css"
-			],
-			"dependencies": [
-				"ext.RevisionSlider.init"
-			]
-		},
 		"ext.RevisionSlider.DiffPage": {
 			"scripts": [
 				"modules/ext.RevisionSlider.DiffPage.js"
@@ -226,24 +216,6 @@
 			},
 			"images": {
 				"auto-expand": "resources/ext.RevisionSlider.icons/pin.svg"
-			}
-		},
-		"ext.RevisionSlider.pointers.lower": {
-			"position": "top",
-			"class": "ResourceLoaderImageModule",
-			"selector": ".mw-revslider-pointer-lower.mw-revslider-pointer-{name}",
-			"images": {
-				"oldid": "resources/ext.RevisionSlider.pointers/pointer-lower-old.svg",
-				"newid": "resources/ext.RevisionSlider.pointers/pointer-lower-new.svg"
-			}
-		},
-		"ext.RevisionSlider.pointers.upper": {
-			"position": "top",
-			"class": "ResourceLoaderImageModule",
-			"selector": ".mw-revslider-pointer-upper.mw-revslider-pointer-{name}",
-			"images": {
-				"oldid": "resources/ext.RevisionSlider.pointers/pointer-upper-old.svg",
-				"newid": "resources/ext.RevisionSlider.pointers/pointer-upper-new.svg"
 			}
 		},
 		"ext.RevisionSlider.HelpDialog": {
