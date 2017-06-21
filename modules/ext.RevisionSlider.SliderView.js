@@ -621,7 +621,16 @@
 		 * @return {string} - 'default', 'negative' or 'reverse'
 		 */
 		determineRtlScrollType: function () {
-			var $dummy = $( '<div>' )
+			var isChrome = /chrom(e|ium)/.test( navigator.userAgent.toLowerCase() ),
+				$dummy;
+
+			// in Chrome V8 5.8.283 and 5.9.211 the detection below gives wrong results leading to strange behavior
+			// Chrome V8 6.0 seems to fix that issue so this workaround can be removed then
+			if ( isChrome ) {
+				return 'default';
+			}
+
+			$dummy = $( '<div>' )
 				.css( {
 					dir: 'rtl',
 					width: '1px',
