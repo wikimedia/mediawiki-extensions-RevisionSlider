@@ -6,8 +6,8 @@
 	},
 	"scripts": {
 		"test": [
-			"parallel-lint . --exclude vendor",
-			"phpcs -sp"
+			"parallel-lint . --exclude vendor --exclude node_modules",
+			"phpcs -s -p"
 		],
 		"fix": "phpcbf"
 	}
