@@ -38,18 +38,6 @@ class RevisionSliderHooks {
 		$config = self::getConfig();
 
 		/**
-		 * If this extension is configured to be a beta feature, and the BetaFeatures extension
-		 * is loaded then require the current user to have the feature enabled.
-		 */
-		if (
-			$config->get( 'RevisionSliderBetaFeature' ) &&
-			class_exists( BetaFeatures::class ) &&
-			!BetaFeatures::isFeatureEnabled( $diff->getUser(), 'revisionslider' )
-		) {
-			return true;
-		}
-
-		/**
 		 * If the user is logged in and has explictly requested to disable the extension don't load.
 		 */
 		$user = $diff->getUser();
@@ -132,26 +120,6 @@ class RevisionSliderHooks {
 		return true;
 	}
 
-	public static function getBetaFeaturePreferences( User $user, array &$prefs ) {
-		$config = self::getConfig();
-		$extensionAssetsPath = $config->get( 'ExtensionAssetsPath' );
-
-		if ( $config->get( 'RevisionSliderBetaFeature' ) ) {
-			$prefs['revisionslider'] = [
-				'label-message' => 'revisionslider-beta-feature-message',
-				'desc-message' => 'revisionslider-beta-feature-description',
-				'screenshot' => [
-					'ltr' => "$extensionAssetsPath/RevisionSlider/resources/RevisionSlider-beta-features-ltr.svg",
-					'rtl' => "$extensionAssetsPath/RevisionSlider/resources/RevisionSlider-beta-features-rtl.svg",
-				],
-				'info-link'
-					=> 'https://meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider',
-				'discussion-link'
-					=> 'https://meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/RevisionSlider',
-			];
-		}
-	}
-
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
 		$testModules['qunit']['ext.RevisionSlider.tests'] = [
 			'scripts' => [
@@ -188,11 +156,6 @@ class RevisionSliderHooks {
 	}
 
 	public static function onGetPreferences( User $user, array &$preferences ) {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-		if ( $config->get( 'RevisionSliderBetaFeature' ) ) {
-			return true;
-		}
-
 		$preferences['revisionslider-disable'] = [
 			'type' => 'toggle',
 			'label-message' => 'revisionslider-preference-disable',

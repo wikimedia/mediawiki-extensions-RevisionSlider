@@ -7,8 +7,6 @@
 	"revisionslider": "RevisionSlider",
 	"revisionslider-preference-disable": "Don't show the RevisionSlider",
 	"revisionslider-desc": "Shows a slider allowing selecting and comparing of revisions on a diff page",
-	"revisionslider-beta-feature-message": "Revision slider",
-	"revisionslider-beta-feature-description": "Show a revision slider when comparing two revisions of a page.",
 	"revisionslider-toggle-label": "Browse history",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte|bytes}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte|bytes}}",

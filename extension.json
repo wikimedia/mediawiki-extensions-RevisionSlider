@@ -22,8 +22,6 @@
 		"revisionslider": "GlobalVarConfig::newInstance"
 	},
 	"config": {
-		"@RevisionSliderBetaFeature": "Make the RevisionSlider feature a BetaFeature. Setting this requires the RevisionSlider extension and requires each user to enable the BetaFeature.",
-		"RevisionSliderBetaFeature": false,
 		"@RevisionSliderAlternateSlider": "Enables the alternate version of the sliding mechanism.",
 		"RevisionSliderAlternateSlider": false
 	},
@@ -273,9 +271,6 @@
 	"Hooks": {
 		"DiffViewHeader": [
 			"RevisionSliderHooks::onDiffViewHeader"
-		],
-		"GetBetaFeaturePreferences": [
-			"RevisionSliderHooks::getBetaFeaturePreferences"
 		],
 		"GetPreferences": [
 			"RevisionSliderHooks::onGetPreferences"
