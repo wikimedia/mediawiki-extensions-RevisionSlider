@@ -29,7 +29,17 @@ class RevisionSliderHooks {
 		return self::$config;
 	}
 
-	public static function onDiffViewHeader( DifferenceEngine $diff, $oldRev, $newRev ) {
+	/**
+	 * @param DifferenceEngine $diff
+	 * @param Revision|null $oldRev
+	 * @param Revision|null $newRev
+	 * @return bool
+	 */
+	public static function onDiffViewHeader(
+		DifferenceEngine $diff,
+		Revision $oldRev,
+		Revision $newRev
+	) {
 		// sometimes $oldRev can be null (e.g. missing rev), and perhaps also $newRev (T167359)
 		if ( !( $oldRev instanceof Revision ) || !( $newRev instanceof Revision ) ) {
 			return true;
@@ -120,6 +130,11 @@ class RevisionSliderHooks {
 		return true;
 	}
 
+	/**
+	 * @param array &$testModules
+	 * @param ResourceLoader $rl
+	 * @return bool
+	 */
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
 		$testModules['qunit']['ext.RevisionSlider.tests'] = [
 			'scripts' => [
@@ -155,6 +170,11 @@ class RevisionSliderHooks {
 		return true;
 	}
 
+	/**
+	 * @param User $user
+	 * @param array &$preferences
+	 * @return bool
+	 */
 	public static function onGetPreferences( User $user, array &$preferences ) {
 		$preferences['revisionslider-disable'] = [
 			'type' => 'toggle',
