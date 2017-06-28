@@ -37,8 +37,8 @@ class RevisionSliderHooks {
 	 */
 	public static function onDiffViewHeader(
 		DifferenceEngine $diff,
-		Revision $oldRev,
-		Revision $newRev
+		Revision $oldRev = null,
+		Revision $newRev = null
 	) {
 		// sometimes $oldRev can be null (e.g. missing rev), and perhaps also $newRev (T167359)
 		if ( !( $oldRev instanceof Revision ) || !( $newRev instanceof Revision ) ) {
