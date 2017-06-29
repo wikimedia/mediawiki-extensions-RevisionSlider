@@ -159,24 +159,58 @@
 		 * @return {jQuery} the pointer container
 		 */
 		renderPointerContainer: function ( containerWidth ) {
-			var pointerContainerSideOffset = 53,
+			var pointerContainerPosition = 53,
 				pointerContainerWidth = containerWidth + this.revisionWidth - 1,
-				pointerContainerStyle;
+				pointerContainerStyle, lastMouseMoveRevisionPos,
+				self = this;
 
-			pointerContainerStyle = { left: pointerContainerSideOffset + 'px', width: pointerContainerWidth + 'px' };
+			pointerContainerStyle = { left: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
 			if ( this.dir === 'rtl' ) {
 				// Due to properly limit dragging a pointer on the right side of the screen,
 				// there must some extra space added to the right of the revision bar container
 				// For this reason right position of the pointer container in the RTL mode is
 				// a bit moved off right compared to its left position in the LTR mode
-				pointerContainerSideOffset = pointerContainerSideOffset - this.revisionWidth + 1;
-				pointerContainerStyle = { right: pointerContainerSideOffset + 'px', width: pointerContainerWidth + 'px' };
+				pointerContainerPosition = pointerContainerPosition - this.revisionWidth + 1;
+				pointerContainerStyle = { right: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
 			}
 
 			return $( '<div>' )
 				.addClass( 'mw-revslider-pointer-container' )
 				.css( pointerContainerStyle )
-				.append( this.pointerOlder.getView().render(), this.pointerNewer.getView().render() );
+				.append( this.renderPointerContainers() )
+				.mousemove( function ( event ) {
+					if ( !self.isDragged ) {
+						lastMouseMoveRevisionPos = self.showTooltipsOnMouseMoveHandler(
+							event,
+							lastMouseMoveRevisionPos
+						);
+					}
+				} );
+		},
+
+		renderPointerContainers: function () {
+			var self = this;
+
+			return [
+				$( '<div>' )
+					.addClass( 'mw-revslider-pointer-container-newer' )
+					.click( function ( event ) {
+						self.sliderLineClickHandler( event, $( this ) );
+					} )
+					.append(
+						$( '<div>' ).addClass( 'mw-revslider-slider-line' ),
+						this.pointerNewer.getView().render()
+					),
+				$( '<div>' )
+					.addClass( 'mw-revslider-pointer-container-older' )
+					.click( function ( event ) {
+						self.sliderLineClickHandler( event, $( this ) );
+					} )
+					.append(
+						$( '<div>' ).addClass( 'mw-revslider-slider-line' ),
+						this.pointerOlder.getView().render()
+					)
+			];
 		},
 
 		/**
@@ -186,6 +220,8 @@
 		 */
 		initPointers: function ( $revisions ) {
 			var $pointers,
+				$pointerOlder = this.pointerOlder.getView().getElement(),
+				$pointerNewer = this.pointerNewer.getView().getElement(),
 				self = this;
 
 			$pointers = this.$element.find( '.mw-revslider-pointer' );
@@ -197,11 +233,77 @@
 				}
 			} );
 
-			$pointers.draggable( this.buildDraggableOptions( $revisions, '.mw-revslider-pointer-container' ) );
-			$pointers.on(
-				'touchstart touchmove touchend',
-				mw.libs.revisionSlider.touchEventConverter
-			);
+			$pointerOlder.draggable( this.buildDraggableOptions(
+				$revisions,
+				'.mw-revslider-pointer-container-older'
+			) );
+			$pointerNewer.draggable( this.buildDraggableOptions(
+				$revisions,
+				'.mw-revslider-pointer-container-newer'
+			) );
+
+			$pointerNewer
+				.on(
+					'touchstart touchmove touchend touchcancel touchleave',
+					mw.libs.revisionSlider.touchEventConverter
+				)
+				.addClass( 'mw-revslider-pointer-newid mw-revslider-pointer-upper' );
+			$pointerOlder
+				.on(
+					'touchstart touchmove touchend touchcancel touchleave',
+					mw.libs.revisionSlider.touchEventConverter
+				)
+				.addClass( 'mw-revslider-pointer-oldid mw-revslider-pointer-lower' );
+		},
+
+		showTooltipsOnMouseMoveHandler: function ( event, lastValidPosition ) {
+			var pos = this.getRevisionPositionFromLeftOffset( event.pageX ),
+				$hoveredRevisionWrapper;
+
+			if ( pos === lastValidPosition ) {
+				return pos;
+			}
+
+			$hoveredRevisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), pos ).parent();
+			this.slider.getRevisions().getView().showTooltip( $hoveredRevisionWrapper );
+
+			return pos;
+		},
+
+		sliderLineClickHandler: function ( event, $line ) {
+			var pos = this.getRevisionPositionFromLeftOffset( event.pageX ),
+				$clickedRev, pointerMoved, pointerOther, $revisions;
+
+			if ( $line.hasClass( 'mw-revslider-pointer-container-newer' ) ) {
+				pointerMoved = this.pointerNewer;
+				pointerOther = this.pointerOlder;
+			} else {
+				pointerMoved = this.pointerOlder;
+				pointerOther = this.pointerNewer;
+			}
+
+			if ( pos === pointerOther.getPosition() ) {
+				return;
+			}
+
+			$revisions = this.getRevisionsElement();
+			$clickedRev = this.getRevElementAtPosition( $revisions, pos );
+
+			pointerMoved.setPosition( pos );
+			this.updatePointerPositionAttributes();
+			if ( $line.hasClass( 'mw-revslider-pointer-container-newer' ) ) {
+				this.refreshRevisions(
+					$clickedRev.attr( 'data-revid' ),
+					this.getRevElementAtPosition( $revisions, pointerOther.getPosition() ).attr( 'data-revid' )
+				);
+			} else {
+				this.refreshRevisions(
+					this.getRevElementAtPosition( $revisions, pointerOther.getPosition() ).attr( 'data-revid' ),
+					$clickedRev.attr( 'data-revid' )
+				);
+			}
+			this.resetRevisionStylesBasedOnPointerPosition( $revisions );
+			this.alignPointers();
 		},
 
 		/**
@@ -236,14 +338,14 @@
 
 					if ( self.escapePressed ) {
 						self.updatePointerPositionAttributes();
-						self.resetPointerStylesBasedOnPosition();
+						self.resetSliderLines();
 						return;
 					}
 
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
 					pointer.setPosition( self.slider.getOldestVisibleRevisionIndex() + relativeIndex );
 					self.updatePointerPositionAttributes();
-					self.resetPointerStylesBasedOnPosition();
+					self.resetSliderLines();
 					self.resetRevisionStylesBasedOnPointerPosition( $revisions );
 
 					diff = self.getRevElementAtPosition(
@@ -417,7 +519,7 @@
 
 		resetAndRefreshRevisions: function () {
 			this.slide( 0 );
-			this.resetPointerStylesBasedOnPosition();
+			this.resetSliderLines();
 			this.resetRevisionStylesBasedOnPointerPosition(
 				this.$element.find( 'div.mw-revslider-revisions' )
 			);
@@ -477,7 +579,7 @@
 				this.pointerOlder.setPosition( -1 );
 			}
 			this.pointerNewer.setPosition( $newRevElement.data( 'pos' ) );
-			this.resetPointerStylesBasedOnPosition();
+			this.resetSliderLines();
 			this.updatePointerPositionAttributes();
 		},
 
@@ -499,13 +601,63 @@
 		},
 
 		/**
-		 * Resets the pointer styles (upper/lower, blue/yellow) based on their position.
+		 * Resets the slider lines based on the selected revisions
 		 */
-		resetPointerStylesBasedOnPosition: function () {
-			this.getNewRevPointer().getView().getElement().removeClass( 'mw-revslider-pointer-oldid' ).addClass( 'mw-revslider-pointer-newid' )
-				.removeClass( 'mw-revslider-pointer-lower' ).addClass( 'mw-revslider-pointer-upper' );
-			this.getOldRevPointer().getView().getElement().removeClass( 'mw-revslider-pointer-newid' ).addClass( 'mw-revslider-pointer-oldid' )
-				.removeClass( 'mw-revslider-pointer-upper' ).addClass( 'mw-revslider-pointer-lower' );
+		resetSliderLines: function () {
+			this.updateOlderSliderLineCSS();
+			this.updateNewerSliderLineCSS();
+		},
+
+		updateOlderSliderLineCSS: function () {
+			var widthToSet = ( this.getOlderDistanceToOldest() + this.getDistanceBetweenPointers() ) *
+					this.revisionWidth,
+				marginToSet = -this.revisionWidth / 2;
+
+			widthToSet = Math.min( widthToSet, this.calculateSliderContainerWidth() + this.revisionWidth );
+
+			this.setSliderLineCSS(
+				$( '.mw-revslider-pointer-container-older' ), widthToSet, marginToSet
+			);
+		},
+
+		updateNewerSliderLineCSS: function () {
+			var widthToSet = ( this.getNewerDistanceToNewest() + this.getDistanceBetweenPointers() + 2 ) *
+					this.revisionWidth,
+				marginToSet = ( this.getOlderDistanceToOldest() * this.revisionWidth ) -
+					this.revisionWidth / 2;
+
+			widthToSet = Math.min( widthToSet, this.calculateSliderContainerWidth() + this.revisionWidth );
+			marginToSet = Math.max( marginToSet, -0.5 * this.revisionWidth );
+
+			this.setSliderLineCSS(
+				$( '.mw-revslider-pointer-container-newer' ), widthToSet, marginToSet
+			);
+		},
+
+		setSliderLineCSS: function ( $lineContainer, widthToSet, marginToSet ) {
+			if ( this.dir === 'ltr' ) {
+				$lineContainer.css( {
+					width: widthToSet,
+					'margin-left': marginToSet
+				} );
+			} else {
+				$lineContainer.css( {
+					width: widthToSet,
+					'margin-right': marginToSet + this.revisionWidth
+				} );
+			}
+		},
+
+		getOlderDistanceToOldest: function () {
+			return this.pointerOlder.getPosition() - this.slider.getOldestVisibleRevisionIndex();
+		},
+
+		getNewerDistanceToNewest: function () {
+			return this.slider.getNewestVisibleRevisionIndex() - this.pointerNewer.getPosition();
+		},
+
+		getDistanceBetweenPointers: function () {
+			return this.pointerNewer.getPosition() - this.pointerOlder.getPosition();
 		},
 
 		/**
@@ -684,13 +836,13 @@
 			this.pointerOlder.getView()
 				.slideToSideOrPosition( this.slider, duration )
 				.promise().done( function () {
-					self.resetPointerStylesBasedOnPosition();
+					self.resetSliderLines();
 					self.redrawPointerLines();
 				} );
 			this.pointerNewer.getView()
 				.slideToSideOrPosition( this.slider, duration )
 				.promise().done( function () {
-					self.resetPointerStylesBasedOnPosition();
+					self.resetSliderLines();
 					self.redrawPointerLines();
 				} );
 		},

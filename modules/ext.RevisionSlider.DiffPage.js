@@ -196,7 +196,7 @@
 				sliderView.pointerNewer.setPosition( event.state.pointerNewerPos );
 				sliderView.slider.setFirstVisibleRevisionIndex( event.state.sliderPos );
 				sliderView.slide( 0 );
-				sliderView.resetPointerStylesBasedOnPosition();
+				sliderView.resetSliderLines();
 				sliderView.resetRevisionStylesBasedOnPointerPosition(
 					sliderView.$element.find( 'div.mw-revslider-revisions' )
 				);
