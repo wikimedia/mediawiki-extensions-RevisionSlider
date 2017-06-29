@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function ( mw, $ ) {
 	var SliderView = mw.libs.revisionSlider.SliderView,
 		Slider = mw.libs.revisionSlider.Slider,
 		RevisionList = mw.libs.revisionSlider.RevisionList,
@@ -58,4 +58,4 @@
 		);
 	} );
 
-}( mediaWiki ) );
+}( mediaWiki, jQuery ) );
