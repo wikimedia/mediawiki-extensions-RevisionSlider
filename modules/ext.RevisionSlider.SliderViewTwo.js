@@ -115,24 +115,6 @@
 			SliderViewTwo.super.prototype.resetPointerStylesBasedOnPosition.call( this );
 		},
 
-		draggableDragAction: function ( event, ui, pointer, lastValidLeftPos ) {
-			var pos, $revisions, $hoveredRevisionWrapper;
-
-			pos = this.getRevisionPositionFromLeftOffset(
-				$( pointer ).offset().left + this.revisionWidth / 2
-			);
-
-			if ( pos === lastValidLeftPos ) {
-				return pos;
-			}
-
-			$revisions = this.getRevisionsElement();
-			$hoveredRevisionWrapper = this.getRevElementAtPosition( $revisions, pos ).parent();
-			this.slider.getRevisions().getView().showTooltip( $hoveredRevisionWrapper );
-
-			return pos;
-		},
-
 		setPointerDragCursor: function () {
 			$( '.mw-revslider-pointer, ' +
 				'.mw-revslider-pointer-container, ' +
@@ -203,23 +185,6 @@
 			this.alignPointers();
 		},
 
-		getRevisionPositionFromLeftOffset: function ( leftOffset ) {
-			var $revisions = this.getRevisionsElement(),
-				revisionsX = mw.libs.revisionSlider.correctElementOffsets( $revisions.offset() ).left,
-				pos = Math.ceil( Math.abs( leftOffset - revisionsX ) / this.revisionWidth );
-
-			if ( this.dir === 'rtl' ) {
-				// pre-loading the revisions on the right side leads to shifted position numbers
-				if ( this.slider.isAtStart() ) {
-					pos = this.slider.getRevisionsPerWindow() - pos + 1;
-				} else {
-					pos += this.slider.getRevisionsPerWindow();
-				}
-			}
-
-			return pos;
-		},
-
 		resetPointerStylesBasedOnPosition: function () {
 			this.updateOlderSliderLineCSS();
 			this.updateNewerSliderLineCSS();
@@ -278,10 +243,6 @@
 
 		getDistanceBetweenPointers: function () {
 			return this.pointerNewer.getPosition() - this.pointerOlder.getPosition();
-		},
-
-		getRevisionsElement: function () {
-			return this.slider.getRevisions().getView().getElement();
 		},
 
 		revisionWrapperClickHandler: function () {

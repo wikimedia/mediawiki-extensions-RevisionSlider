@@ -273,29 +273,38 @@
 		},
 
 		draggableDragAction: function ( event, ui, pointer, lastValidLeftPos ) {
-			var olderLeftPos, newerLeftPos,
-				isNew = $( pointer ).hasClass( 'mw-revslider-pointer-newer' );
+			var pos, $revisions, $hoveredRevisionWrapper;
 
-			ui.position.left = Math.min(
-				ui.position.left,
-				this.getNewestVisibleRevisonLeftPos()
+			pos = this.getRevisionPositionFromLeftOffset(
+				$( pointer ).offset().left + this.revisionWidth / 2
 			);
 
-			olderLeftPos = this.pointerOlder.getView().getElement().position().left;
-			newerLeftPos = this.pointerNewer.getView().getElement().position().left;
+			if ( pos === lastValidLeftPos ) {
+				return pos;
+			}
 
-			if ( ui.position.left === ( isNew ? olderLeftPos : newerLeftPos ) ) {
-				ui.position.left = lastValidLeftPos;
-			} else {
-				lastValidLeftPos = ui.position.left;
-				if ( this.dir === 'ltr' ) {
-					this.resetPointerColorsBasedOnValues( olderLeftPos, newerLeftPos );
+			$revisions = this.getRevisionsElement();
+			$hoveredRevisionWrapper = this.getRevElementAtPosition( $revisions, pos ).parent();
+			this.slider.getRevisions().getView().showTooltip( $hoveredRevisionWrapper );
+
+			return pos;
+		},
+
+		getRevisionPositionFromLeftOffset: function ( leftOffset ) {
+			var $revisions = this.getRevisionsElement(),
+				revisionsX = mw.libs.revisionSlider.correctElementOffsets( $revisions.offset() ).left,
+				pos = Math.ceil( Math.abs( leftOffset - revisionsX ) / this.revisionWidth );
+
+			if ( this.dir === 'rtl' ) {
+				// pre-loading the revisions on the right side leads to shifted position numbers
+				if ( this.slider.isAtStart() ) {
+					pos = this.slider.getRevisionsPerWindow() - pos + 1;
 				} else {
-					this.resetPointerColorsBasedOnValues( newerLeftPos, olderLeftPos );
+					pos += this.slider.getRevisionsPerWindow();
 				}
 			}
 
-			return lastValidLeftPos;
+			return pos;
 		},
 
 		setPointerDragCursor: function () {
@@ -920,8 +929,14 @@
 			this.slider.setRevisionsPerWindow( expandedRevisionWindowCapacity );
 
 			this.slide( Math.floor( ( this.pointerNewer.getPosition() - 1 ) / expandedRevisionWindowCapacity ), 0 );
-		}
+		},
 
+		/**
+		 * @return {jQuery}
+		 */
+		getRevisionsElement: function () {
+			return this.slider.getRevisions().getView().getElement();
+		}
 	} );
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
