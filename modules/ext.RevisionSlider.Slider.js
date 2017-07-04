@@ -7,11 +7,7 @@
 	 */
 	var Slider = function ( revisions ) {
 		this.revisions = revisions;
-		if ( mw.config.get( 'extRevisionSliderAlternateSlider' ) ) {
-			this.view = new mw.libs.revisionSlider.SliderViewTwo( this );
-		} else {
-			this.view = new mw.libs.revisionSlider.SliderView( this );
-		}
+		this.view = new mw.libs.revisionSlider.SliderView( this );
 	};
 
 	$.extend( Slider.prototype, {

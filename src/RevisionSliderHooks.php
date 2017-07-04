@@ -88,10 +88,6 @@ class RevisionSliderHooks {
 		$out->addJsConfigVars( 'extRevisionSliderOldRev', $oldRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderNewRev', $newRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderTimeOffset', intval( $timeOffset ) );
-		$out->addJsConfigVars(
-			'extRevisionSliderAlternateSlider',
-			$config->get( 'RevisionSliderAlternateSlider' )
-		);
 		$out->enableOOUI();
 
 		$toggleButton = new OOUI\ButtonWidget( [

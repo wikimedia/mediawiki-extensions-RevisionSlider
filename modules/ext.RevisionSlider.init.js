@@ -138,9 +138,6 @@
 		}
 	} );
 
-	if ( mw.config.get( 'extRevisionSliderAlternateSlider' ) ) {
-		mw.loader.load( 'ext.RevisionSlider.SliderViewTwo' );
-	}
 	expand();
 	initialize();
 

@@ -32,7 +32,7 @@
 		);
 		assert.equal(
 			getSlideTextHtml( helpDialog.slides[ 2 ] ),
-			addLinkTargets( mw.message( 'revisionslider-help-dialog-slide3' ).parse() )
+			addLinkTargets( mw.message( 'revisionslider-help-dialog-slide3a' ).parse() )
 		);
 		assert.equal(
 			getSlideTextHtml( helpDialog.slides[ 3 ] ),
