@@ -410,13 +410,23 @@
 		},
 
 		setPointerDragCursor: function () {
-			$( '.mw-revslider-revision-wrapper' )
-				.addClass( 'mw-revslider-pointer-cursor' );
+			$( '.mw-revslider-pointer, ' +
+				'.mw-revslider-pointer-container, ' +
+				'.mw-revslider-pointer-container-newer, ' +
+				'.mw-revslider-pointer-container-older, ' +
+				'.mw-revslider-pointer-line, ' +
+				'.mw-revslider-revision-wrapper' )
+				.addClass( 'mw-revslider-pointer-grabbing' );
 		},
 
 		removePointerDragCursor: function () {
-			$( '.mw-revslider-revision-wrapper' )
-				.removeClass( 'mw-revslider-pointer-cursor' );
+			$( '.mw-revslider-pointer, ' +
+				'.mw-revslider-pointer-container, ' +
+				'.mw-revslider-pointer-container-newer, ' +
+				'.mw-revslider-pointer-container-older, ' +
+				'.mw-revslider-pointer-line, ' +
+				'.mw-revslider-revision-wrapper' )
+				.removeClass( 'mw-revslider-pointer-grabbing' );
 		},
 
 		/**
@@ -471,7 +481,6 @@
 				);
 			}
 
-			view.resetPointerColorsBasedOnValues( view.pointerOlder.getPosition(), view.pointerNewer.getPosition() );
 			view.resetRevisionStylesBasedOnPointerPosition( $revisions );
 			view.alignPointers();
 		},
@@ -581,23 +590,6 @@
 			this.pointerNewer.setPosition( $newRevElement.data( 'pos' ) );
 			this.resetSliderLines();
 			this.updatePointerPositionAttributes();
-		},
-
-		/**
-		 * Adjusts the colors of the pointers without changing the upper/lower property based on values `p1` and `p2`.
-		 * Used e.g. when pointers get dragged past one another.
-		 *
-		 * @param {number} p1
-		 * @param {number} p2
-		 */
-		resetPointerColorsBasedOnValues: function ( p1, p2 ) {
-			if ( p1 > p2 ) {
-				this.pointerOlder.getView().getElement().removeClass( 'mw-revslider-pointer-oldid' ).addClass( 'mw-revslider-pointer-newid' );
-				this.pointerNewer.getView().getElement().removeClass( 'mw-revslider-pointer-newid' ).addClass( 'mw-revslider-pointer-oldid' );
-			} else {
-				this.pointerOlder.getView().getElement().removeClass( 'mw-revslider-pointer-newid' ).addClass( 'mw-revslider-pointer-oldid' );
-				this.pointerNewer.getView().getElement().removeClass( 'mw-revslider-pointer-oldid' ).addClass( 'mw-revslider-pointer-newid' );
-			}
 		},
 
 		/**

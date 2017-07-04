@@ -14,29 +14,6 @@
 
 	$.extend( SliderViewTwo.prototype, {
 
-		setPointerDragCursor: function () {
-			$( '.mw-revslider-pointer, ' +
-				'.mw-revslider-pointer-container, ' +
-				'.mw-revslider-pointer-container-newer, ' +
-				'.mw-revslider-pointer-container-older, ' +
-				'.mw-revslider-pointer-line, ' +
-				'.mw-revslider-revision-wrapper' )
-				.addClass( 'mw-revslider-pointer-grabbing' );
-		},
-
-		removePointerDragCursor: function () {
-			$( '.mw-revslider-pointer, ' +
-				'.mw-revslider-pointer-container, ' +
-				'.mw-revslider-pointer-container-newer, ' +
-				'.mw-revslider-pointer-container-older, ' +
-				'.mw-revslider-pointer-line, ' +
-				'.mw-revslider-revision-wrapper' )
-				.removeClass( 'mw-revslider-pointer-grabbing' );
-		},
-
-		resetPointerColorsBasedOnValues: function () {
-		},
-
 		revisionWrapperClickHandler: function () {
 		}
 	} );
