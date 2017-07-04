@@ -14,8 +14,6 @@
 
 	$.extend( SliderViewTwo.prototype, {
 
-		revisionWrapperClickHandler: function () {
-		}
 	} );
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};

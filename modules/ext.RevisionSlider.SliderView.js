@@ -88,8 +88,7 @@
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
-				sliderArrowView = new mw.libs.revisionSlider.SliderArrowView( this ),
-				self = this;
+				sliderArrowView = new mw.libs.revisionSlider.SliderArrowView( this );
 
 			this.dir = $container.css( 'direction' ) || 'ltr';
 
@@ -120,8 +119,6 @@
 				);
 
 			this.initPointers( $revisions );
-
-			this.$element.find( '.mw-revslider-revision-wrapper' ).on( 'click', null, { view: self, revisionsDom: $revisions }, this.revisionWrapperClickHandler );
 
 			this.slider.setRevisionsPerWindow( this.$element.find( '.mw-revslider-revisions-container' ).width() / this.revisionWidth );
 
@@ -443,46 +440,6 @@
 				pos = pointer.getView().getAdjustedLeftPositionWhenRtl( pos );
 			}
 			return Math.ceil( ( pos + this.revisionWidth / 2 ) / this.revisionWidth );
-		},
-
-		getNewestVisibleRevisonLeftPos: function () {
-			return $( '.mw-revslider-revisions-container' ).width() - this.revisionWidth;
-		},
-
-		revisionWrapperClickHandler: function ( e ) {
-			var pClicked, pOther,
-				$revWrap = $( this ),
-				view = e.data.view,
-				$revisions = e.data.revisionsDom,
-				$clickedRev = $revWrap.find( '.mw-revslider-revision' ),
-				hasClickedTop = e.pageY - $revWrap.offset().top < $revWrap.height() / 2,
-				pOld = view.getOldRevPointer(),
-				pNew = view.getNewRevPointer(),
-				targetPos = +$clickedRev.attr( 'data-pos' );
-
-			pClicked = hasClickedTop ? pNew : pOld;
-			pOther = hasClickedTop ? pOld : pNew;
-
-			if ( targetPos === pOther.getPosition() ) {
-				return false;
-			}
-			pClicked.setPosition( targetPos );
-			view.updatePointerPositionAttributes();
-
-			if ( hasClickedTop ) {
-				view.refreshRevisions(
-					+$clickedRev.data( 'revid' ),
-					+view.getRevElementAtPosition( $revisions, pOther.getPosition() ).data( 'revid' )
-				);
-			} else {
-				view.refreshRevisions(
-					+view.getRevElementAtPosition( $revisions, pOther.getPosition() ).data( 'revid' ),
-					+$clickedRev.data( 'revid' )
-				);
-			}
-
-			view.resetRevisionStylesBasedOnPointerPosition( $revisions );
-			view.alignPointers();
 		},
 
 		/**
@@ -938,8 +895,6 @@
 
 			$addedRevisions = new mw.libs.revisionSlider.RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth, revPositionOffset );
 
-			this.addClickHandlerToRevisions( $addedRevisions, $revisions, this.revisionWrapperClickHandler );
-
 			$addedRevisions.find( '.mw-revslider-revision-wrapper' ).each( function () {
 				$revisions.append( $( this ) );
 			} );
@@ -1000,8 +955,6 @@
 
 			}
 			pNew.setPosition( pNew.getPosition() + revisionsToRender.getLength() );
-
-			this.addClickHandlerToRevisions( $addedRevisions, $revisions, this.revisionWrapperClickHandler );
 
 			$( $addedRevisions.find( '.mw-revslider-revision-wrapper' ).get().reverse() ).each( function () { // TODO: this is horrible
 				$revisions.prepend( $( this ) );
