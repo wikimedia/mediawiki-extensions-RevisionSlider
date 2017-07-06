@@ -986,21 +986,6 @@
 		},
 
 		/**
-		 * @param {jQuery} $revisions
-		 * @param {jQuery} $allRevisions
-		 * @param {Function} clickHandler
-		 */
-		addClickHandlerToRevisions: function ( $revisions, $allRevisions, clickHandler ) {
-			var self = this;
-			$revisions.find( '.mw-revslider-revision-wrapper' ).on(
-				'click',
-				null,
-				{ view: self, revisionsDom: $allRevisions },
-				clickHandler
-			);
-		},
-
-		/**
 		 * @param {jQuery} $slider
 		 * @return {boolean}
 		 */

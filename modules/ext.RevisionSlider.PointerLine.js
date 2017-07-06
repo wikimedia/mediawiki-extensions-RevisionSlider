@@ -123,7 +123,7 @@
 				$upperLineDiv.removeClass( 'mw-revslider-upper-color' ).addClass( 'mw-revslider-lower-color' );
 				$olderUnderLineDiv.removeClass( 'mw-revslider-upper-color' ).addClass( 'mw-revslider-lower-color' );
 				$newerUnderLineDiv.removeClass( 'mw-revslider-upper-color' ).addClass( 'mw-revslider-lower-color' );
-				$targetColumn = $( '.diff-otitle' );
+				$targetColumn = $table;
 			}
 
 			this.setCssProperties( $sourcePointer, $targetColumn );
