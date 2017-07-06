@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function ( mw, $ ) {
 	var HelpDialog = mw.libs.revisionSlider.HelpDialog;
 
 	QUnit.module( 'ext.RevisionSlider.HelpDialog' );
@@ -40,4 +40,4 @@
 		);
 	} );
 
-}( mediaWiki ) );
+}( mediaWiki, jQuery ) );
