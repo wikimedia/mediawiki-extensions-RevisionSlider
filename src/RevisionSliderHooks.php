@@ -45,6 +45,11 @@ class RevisionSliderHooks {
 			return true;
 		}
 
+		// do not show on MobileDiff page
+		if ( $diff->getTitle()->isSpecial( 'MobileDiff' ) ) {
+			return true;
+		}
+
 		$config = self::getConfig();
 
 		/**
