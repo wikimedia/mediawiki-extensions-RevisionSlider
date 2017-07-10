@@ -326,6 +326,9 @@
 				grid: [ this.revisionWidth, null ],
 				containment: containmentClass,
 				start: function () {
+					if ( self.pointerIsBlockedByOther( this ) ) {
+						return false;
+					}
 					self.isDragged = true;
 					self.setPointerDragCursor();
 					self.fadeOutPointerLines();
@@ -376,6 +379,15 @@
 					return self.escapePressed;
 				}
 			};
+		},
+
+		pointerIsBlockedByOther: function ( pointerElement ) {
+			var pointer = this.whichPointer( $( pointerElement ) ),
+				isNewer = pointer.getView().isNewerPointer();
+
+			return ( isNewer && this.getOlderPointerPos() >= this.slider.getNewestVisibleRevisionIndex() + 1 ) ||
+				( !isNewer && this.getNewerPointerPos() <= this.slider.getOldestVisibleRevisionIndex() + 1 );
+
 		},
 
 		draggableDragAction: function ( event, ui, pointer, lastValidLeftPos ) {
