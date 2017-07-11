@@ -75,6 +75,18 @@
 		},
 
 		/**
+		 * Sets the HTML attribute for the position
+		 *
+		 * @param {number} pos
+		 */
+		setDataPositionAttribute: function ( pos ) {
+			if ( this.getElement() === null ) {
+				this.initialize();
+			}
+			this.getElement().attr( 'data-pos', pos );
+		},
+
+		/**
 		 * Moves the pointer to a position
 		 *
 		 * @param {number} posInPx

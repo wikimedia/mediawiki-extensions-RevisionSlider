@@ -31,6 +31,7 @@
 		 */
 		setPosition: function ( p ) {
 			this.position = p;
+			this.getView().setDataPositionAttribute( p );
 		},
 
 		/**

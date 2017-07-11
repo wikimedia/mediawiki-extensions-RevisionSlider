@@ -200,7 +200,6 @@
 				sliderView.resetRevisionStylesBasedOnPointerPosition(
 					sliderView.$element.find( 'div.mw-revslider-revisions' )
 				);
-				sliderView.updatePointerPositionAttributes();
 				self.refresh( event.state.diff, event.state.oldid );
 			} );
 		},

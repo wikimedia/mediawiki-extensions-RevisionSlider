@@ -294,7 +294,6 @@
 			$clickedRev = this.getRevElementAtPosition( $revisions, pos );
 
 			pointerMoved.setPosition( pos );
-			this.updatePointerPositionAttributes();
 			if ( $line.hasClass( 'mw-revslider-pointer-container-newer' ) ) {
 				this.refreshRevisions(
 					$clickedRev.attr( 'data-revid' ),
@@ -344,14 +343,12 @@
 					self.removePointerDragCursor();
 
 					if ( self.escapePressed ) {
-						self.updatePointerPositionAttributes();
 						self.resetSliderLines();
 						return;
 					}
 
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
 					pointer.setPosition( self.slider.getOldestVisibleRevisionIndex() + relativeIndex );
-					self.updatePointerPositionAttributes();
 					self.resetSliderLines();
 					self.resetRevisionStylesBasedOnPointerPosition( $revisions );
 
@@ -490,7 +487,6 @@
 			this.resetRevisionStylesBasedOnPointerPosition(
 				this.$element.find( 'div.mw-revslider-revisions' )
 			);
-			this.updatePointerPositionAttributes();
 			this.refreshRevisions(
 				$( '.mw-revslider-revision[data-pos="' + this.getNewerPointerPos() + '"]' ).attr( 'data-revid' ),
 				$( '.mw-revslider-revision[data-pos="' + this.getOlderPointerPos() + '"]' ).attr( 'data-revid' )
@@ -547,7 +543,6 @@
 			}
 			this.setNewerPointerPos( $newRevElement.data( 'pos' ) );
 			this.resetSliderLines();
-			this.updatePointerPositionAttributes();
 		},
 
 		/**
@@ -629,21 +624,6 @@
 				this.getRevElementAtPosition( $revisions, positionIndex ).addClass( 'mw-revslider-revision-intermediate' );
 				positionIndex++;
 			}
-		},
-
-		/**
-		 * Updates value of pointers' position data attribute
-		 */
-		updatePointerPositionAttributes: function () {
-			this.pointerNewer.getView().getElement().attr(
-				'data-pos',
-				this.getNewerPointerPos()
-			);
-
-			this.pointerOlder.getView().getElement().attr(
-				'data-pos',
-				this.getOlderPointerPos()
-			);
 		},
 
 		/**
