@@ -77,6 +77,43 @@
 		return offset;
 	};
 
+	/**
+	 * Based on jQuery RTL Scroll Type Detector plugin by othree: https://github.com/othree/jquery.rtl-scroll-type
+	 *
+	 * @return {string} - 'default', 'negative' or 'reverse'
+	 */
+	mw.libs.revisionSlider.determineRtlScrollType = function () {
+		var isChrome = /chrom(e|ium)/.test( navigator.userAgent.toLowerCase() ),
+			$dummy;
+
+		// in Chrome V8 5.8.283 and 5.9.211 the detection below gives wrong results leading to strange behavior
+		// Chrome V8 6.0 seems to fix that issue so this workaround can be removed then
+		if ( isChrome ) {
+			return 'default';
+		}
+
+		$dummy = $( '<div>' )
+			.css( {
+				dir: 'rtl',
+				width: '1px',
+				height: '1px',
+				position: 'absolute',
+				top: '-1000px',
+				overflow: 'scroll'
+			} )
+			.text( 'A' )
+			.appendTo( 'body' )[ 0 ];
+		if ( $dummy.scrollLeft > 0 ) {
+			return 'default';
+		} else {
+			$dummy.scrollLeft = 1;
+			if ( $dummy.scrollLeft === 0 ) {
+				return 'negative';
+			}
+		}
+		return 'reverse';
+	};
+
 	mw.libs.revisionSlider.calculateRevisionsPerWindow = function ( margin, revisionWidth ) {
 		return Math.floor( ( $( '#mw-content-text' ).width() - margin ) / revisionWidth );
 	};
