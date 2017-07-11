@@ -188,18 +188,9 @@ of the frameless one (to fit the size of the toggle button */
 	margin-top: 4px;
 }
 
-.mw-revslider-pointer-upper {
-	padding-top: 2px;
-}
-.mw-revslider-pointer-lower {
-	top: 15px;
-	padding-bottom: 2px;
-}
-
 .mw-revslider-pointer {
 	position: absolute !important; /* stylelint-disable-line declaration-no-important */
 	z-index: 1;
-	padding: 0;
 	width: 14px;
 	height: 14px;
 	border-radius: 50%;
@@ -220,7 +211,7 @@ of the frameless one (to fit the size of the toggle button */
 	cursor: -webkit-grabbing;
 }
 
-.mw-revslider-pointer-upper.mw-revslider-pointer-newid {
+.mw-revslider-pointer.mw-revslider-pointer-newer {
 	top: 10px;
 	border: 1px solid #66b2ff;
 	background: #2f93f7;
@@ -231,7 +222,7 @@ of the frameless one (to fit the size of the toggle button */
 	background: linear-gradient( to bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
 }
 
-.mw-revslider-pointer-upper.mw-revslider-pointer-newid:hover {
+.mw-revslider-pointer.mw-revslider-pointer-newer:hover {
 	background: #6db6fd;
 	background: -webkit-linear-gradient( bottom, rgba( 109, 182, 253, 1 ), rgba( 7, 91, 172, 1 ) );
 	background: -moz-linear-gradient( bottom, rgba( 109, 182, 253, 1 ), rgba( 7, 91, 172, 1 ) );
@@ -240,7 +231,7 @@ of the frameless one (to fit the size of the toggle button */
 	background: linear-gradient( to bottom, rgba( 109, 182, 253, 1 ), rgba( 7, 91, 172, 1 ) );
 }
 
-.mw-revslider-pointer-lower.mw-revslider-pointer-oldid {
+.mw-revslider-pointer.mw-revslider-pointer-older {
 	top: 18px;
 	border: 1px solid #ffc561;
 	background: #fde072;
@@ -251,7 +242,7 @@ of the frameless one (to fit the size of the toggle button */
 	background: linear-gradient( to bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
 }
 
-.mw-revslider-pointer-lower.mw-revslider-pointer-oldid:hover {
+.mw-revslider-pointer.mw-revslider-pointer-older:hover {
 	background: #ffeba1;
 	background: -webkit-linear-gradient( bottom, rgba( 255, 235, 161, 1 ), rgba( 255, 195, 41, 1 ) );
 	background: -moz-linear-gradient( bottom, rgba( 255, 235, 161, 1 ), rgba( 255, 195, 41, 1 ) );

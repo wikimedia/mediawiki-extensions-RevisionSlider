@@ -216,12 +216,10 @@
 		 * @param {jQuery} $revisions
 		 */
 		initPointers: function ( $revisions ) {
-			var $pointers,
+			var $pointers = this.$element.find( '.mw-revslider-pointer' ),
 				$pointerOlder = this.pointerOlder.getView().getElement(),
 				$pointerNewer = this.pointerNewer.getView().getElement(),
 				self = this;
-
-			$pointers = this.$element.find( '.mw-revslider-pointer' );
 
 			$( 'body' ).keydown( function ( e ) {
 				if ( e.which === 27 ) {
@@ -230,27 +228,20 @@
 				}
 			} );
 
-			$pointerOlder.draggable( this.buildDraggableOptions(
-				$revisions,
-				'.mw-revslider-pointer-container-older'
-			) );
-			$pointerNewer.draggable( this.buildDraggableOptions(
-				$revisions,
-				'.mw-revslider-pointer-container-newer'
-			) );
+			$pointers.on(
+				'touchstart touchmove touchend touchcancel touchleave',
+				mw.libs.revisionSlider.touchEventConverter
+			);
 
-			$pointerNewer
-				.on(
-					'touchstart touchmove touchend touchcancel touchleave',
-					mw.libs.revisionSlider.touchEventConverter
-				)
-				.addClass( 'mw-revslider-pointer-newid mw-revslider-pointer-upper' );
-			$pointerOlder
-				.on(
-					'touchstart touchmove touchend touchcancel touchleave',
-					mw.libs.revisionSlider.touchEventConverter
-				)
-				.addClass( 'mw-revslider-pointer-oldid mw-revslider-pointer-lower' );
+			$pointerOlder.draggable( this.buildDraggableOptions(
+					$revisions,
+					'.mw-revslider-pointer-container-older'
+				) );
+
+			$pointerNewer.draggable( this.buildDraggableOptions(
+					$revisions,
+					'.mw-revslider-pointer-container-newer'
+				) );
 		},
 
 		getOlderPointerPos: function () {

@@ -51,21 +51,21 @@
 		},
 
 		/**
-		 * Returns whether a pointer is the upper/new revision pointer based on its CSS class
+		 * Returns whether a pointer is the newer revision pointer based on its CSS class
 		 *
 		 * @return {boolean}
 		 */
-		isUpperPointer: function () {
-			return this.getElement().hasClass( 'mw-revslider-pointer-upper' );
+		isNewerPointer: function () {
+			return this.getElement().hasClass( 'mw-revslider-pointer-newer' );
 		},
 
 		/**
-		 * Returns the offset (margin-left) depending on whether its the upper or lower pointer
+		 * Returns the offset (margin-left) depending on whether its the newer or older pointer
 		 *
 		 * @return {number}
 		 */
 		getOffset: function () {
-			return this.isUpperPointer() ? 16 : 0;
+			return this.isNewerPointer() ? 16 : 0;
 		},
 
 		// For correct positioning of the pointer in the RTL mode the left position is flipped in the container.

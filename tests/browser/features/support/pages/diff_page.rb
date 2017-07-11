@@ -23,8 +23,8 @@ class DiffPage
   span(:revisionslider_timeline_backwards_disabled, css: '.mw-revslider-arrow.mw-revslider-arrow-backwards.oo-ui-widget-disabled')
   span(:revisionslider_timeline_forwards_disabled, css: '.mw-revslider-arrow.mw-revslider-arrow-forwards.oo-ui-widget-disabled')
 
-  div(:revisionslider_pointer_lower, css: '.mw-revslider-pointer-lower')
-  div(:revisionslider_pointer_upper, css: '.mw-revslider-pointer-upper')
+  div(:revisionslider_pointer_older, css: '.mw-revslider-pointer-older')
+  div(:revisionslider_pointer_newer, css: '.mw-revslider-pointer-newer')
 
   div(:revisionslider_left_summary, id: 'mw-diff-otitle3')
   div(:revisionslider_right_summary, id: 'mw-diff-ntitle3')
@@ -33,12 +33,12 @@ class DiffPage
     element('div', css: '.mw-revslider-revision[data-pos="' + index.to_s + '"]')
   end
 
-  def click_revision_lower(index = 1)
+  def click_revision_older(index = 1)
     revbar = revisionslider_rev(index).element.wd
     browser.driver.action.move_to(revbar, 1, revbar.size.height - 1).click.perform
   end
 
-  def click_revision_upper(index = 1)
+  def click_revision_newer(index = 1)
     revbar = revisionslider_rev(index).element.wd
     browser.driver.action.move_to(revbar, 1, 0).click.perform
   end

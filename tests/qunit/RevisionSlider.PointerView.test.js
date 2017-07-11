@@ -7,13 +7,13 @@
 		assert.ok( ( new PointerView( null, 'mw-revslider-pointer' ) ).render().hasClass( 'mw-revslider-pointer' ) );
 	} );
 
-	QUnit.test( 'Is upper pointer', function ( assert ) {
+	QUnit.test( 'Is newer pointer', function ( assert ) {
 		var pv = new PointerView( null, 'mw-revslider-pointer' );
 		pv.render();
-		assert.notOk( pv.isUpperPointer() );
+		assert.notOk( pv.isNewerPointer() );
 
-		pv.getElement().addClass( 'mw-revslider-pointer-upper' );
-		assert.ok( pv.isUpperPointer() );
+		pv.getElement().addClass( 'mw-revslider-pointer-newer' );
+		assert.ok( pv.isNewerPointer() );
 	} );
 
 	QUnit.test( 'Has offset', function ( assert ) {
@@ -21,7 +21,7 @@
 		pv.render();
 		assert.equal( pv.getOffset(), 0 );
 
-		pv.getElement().addClass( 'mw-revslider-pointer-upper' );
+		pv.getElement().addClass( 'mw-revslider-pointer-newer' );
 		assert.equal( pv.getOffset(), 16 );
 	} );
 }( mediaWiki ) );
