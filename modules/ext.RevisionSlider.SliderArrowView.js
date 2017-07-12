@@ -125,7 +125,7 @@
 				return;
 			}
 			mw.track( 'counter.MediaWiki.RevisionSlider.event.arrowClick' );
-			this.sliderView.slide( button.$element.data( 'dir' ) );
+			this.sliderView.slideView( button.$element.data( 'dir' ) );
 		},
 
 		/**

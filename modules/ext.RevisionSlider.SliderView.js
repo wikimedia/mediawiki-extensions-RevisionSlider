@@ -127,7 +127,7 @@
 
 			$container.html( this.$element );
 
-			this.slide( Math.floor( ( this.getNewerPointerPos() - 1 ) / this.slider.getRevisionsPerWindow() ), 0 );
+			this.slideView( Math.floor( ( this.getNewerPointerPos() - 1 ) / this.slider.getRevisionsPerWindow() ), 0 );
 			this.diffPage.addHandlersToCoreLinks( this );
 			this.diffPage.replaceState( mw.config.get( 'extRevisionSliderNewRev' ), mw.config.get( 'extRevisionSliderOldRev' ), this );
 			this.diffPage.initOnPopState( this );
@@ -295,18 +295,20 @@
 
 			pointerMoved.setPosition( pos );
 			if ( $line.hasClass( 'mw-revslider-pointer-container-newer' ) ) {
-				this.refreshRevisions(
+				this.refreshDiffView(
 					$clickedRev.attr( 'data-revid' ),
-					this.getRevElementAtPosition( $revisions, pointerOther.getPosition() ).attr( 'data-revid' )
+					this.getRevElementAtPosition( $revisions, pointerOther.getPosition() ).attr( 'data-revid' ),
+					true
 				);
 			} else {
-				this.refreshRevisions(
+				this.refreshDiffView(
 					this.getRevElementAtPosition( $revisions, pointerOther.getPosition() ).attr( 'data-revid' ),
-					$clickedRev.attr( 'data-revid' )
+					$clickedRev.attr( 'data-revid' ),
+					true
 				);
 			}
+			this.alignPointersAndLines();
 			this.resetRevisionStylesBasedOnPointerPosition( $revisions );
-			this.alignPointers();
 		},
 
 		/**
@@ -343,26 +345,24 @@
 					self.removePointerDragCursor();
 
 					if ( self.escapePressed ) {
-						self.resetSliderLines();
 						return;
 					}
 
 					mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
+
 					pointer.setPosition( self.slider.getOldestVisibleRevisionIndex() + relativeIndex );
-					self.resetSliderLines();
-					self.resetRevisionStylesBasedOnPointerPosition( $revisions );
 
 					diff = self.getRevElementAtPosition(
-						$revisions, self.pointerNewer.getPosition()
+						$revisions, self.getNewerPointerPos()
 					).data( 'revid' );
 
 					oldid = self.getRevElementAtPosition(
 						$revisions, self.getOlderPointerPos()
 					).data( 'revid' );
 
-					self.refreshRevisions( diff, oldid );
-
-					self.redrawPointerLines();
+					self.refreshDiffView( diff, oldid, true );
+					self.alignPointersAndLines( 0 );
+					self.resetRevisionStylesBasedOnPointerPosition( $revisions );
 				},
 				drag: function ( event, ui ) {
 					lastValidLeftPos = self.draggableDragAction(
@@ -459,37 +459,55 @@
 		},
 
 		/**
-		 * Refreshes the diff page to show the diff for the specified revisions
+		 * Loads a new diff and optionally adds a state to the history
 		 *
 		 * @param {number} diff
 		 * @param {number} oldid
+		 * @param {boolean} pushState
 		 */
-		refreshRevisions: function ( diff, oldid ) {
+		refreshDiffView: function ( diff, oldid, pushState ) {
 			this.diffPage.refresh( diff, oldid, this );
-			this.diffPage.pushState( diff, oldid, this );
+			if ( pushState ) {
+				this.diffPage.pushState( diff, oldid, this );
+			}
 		},
 
 		showNextDiff: function () {
-			this.setOlderPointerPos( this.getNewerPointerPos() );
-			this.setNewerPointerPos( this.getNewerPointerPos() + 1 );
-			this.resetAndRefreshRevisions();
+			this.updatePointersAndDiffView(
+				this.getNewerPointerPos() + 1,
+				this.getNewerPointerPos(),
+				true
+			);
 		},
 
 		showPrevDiff: function () {
-			this.setNewerPointerPos( this.getOlderPointerPos() );
-			this.setOlderPointerPos( this.getOlderPointerPos() - 1 );
-			this.resetAndRefreshRevisions();
+			this.updatePointersAndDiffView(
+				this.getOlderPointerPos(),
+				this.getOlderPointerPos() - 1,
+				true
+			);
 		},
 
-		resetAndRefreshRevisions: function () {
-			this.slide( 0 );
-			this.resetSliderLines();
-			this.resetRevisionStylesBasedOnPointerPosition(
-				this.$element.find( 'div.mw-revslider-revisions' )
-			);
-			this.refreshRevisions(
-				$( '.mw-revslider-revision[data-pos="' + this.getNewerPointerPos() + '"]' ).attr( 'data-revid' ),
-				$( '.mw-revslider-revision[data-pos="' + this.getOlderPointerPos() + '"]' ).attr( 'data-revid' )
+		/**
+		 * Updates and moves pointers to new positions, resets styles and refreshes diff accordingly
+		 *
+		 * @param {number} newPointerPos
+		 * @param {number} oldPointerPos
+		 * @param {boolean} pushState
+		 */
+		updatePointersAndDiffView: function (
+			newPointerPos,
+			oldPointerPos,
+			pushState
+		) {
+			this.setNewerPointerPos( newPointerPos );
+			this.setOlderPointerPos( oldPointerPos );
+			this.alignPointersAndLines();
+			this.resetRevisionStylesBasedOnPointerPosition( this.getRevisionsElement() );
+			this.refreshDiffView(
+				$( '.mw-revslider-revision[data-pos="' + newPointerPos + '"]' ).attr( 'data-revid' ),
+				$( '.mw-revslider-revision[data-pos="' + oldPointerPos + '"]' ).attr( 'data-revid' ),
+				pushState
 			);
 		},
 
@@ -661,7 +679,13 @@
 				) * this.revisionWidth;
 		},
 
-		slide: function ( direction, duration ) {
+		/**
+		 * Slide the view to the next chunk of older / newer revisions
+		 *
+		 * @param {number} direction - Either -1, 0 or 1
+		 * @param {number|string} [duration]
+		 */
+		slideView: function ( direction, duration ) {
 			var animateObj,
 				$animatedElement = this.$element.find( '.mw-revslider-revisions-container' ),
 				self = this;
@@ -703,7 +727,7 @@
 				}
 			);
 
-			this.alignPointers( duration );
+			this.alignPointersAndLines( duration );
 		},
 
 		/**
@@ -721,7 +745,12 @@
 			return $element.prop( 'scrollWidth' ) - $element.width() - scrollLeft;
 		},
 
-		alignPointers: function ( duration ) {
+		/**
+		 * Visually move pointers to the positions set and reset pointer- and slider-lines
+		 *
+		 * @param {number|string} [duration]
+		 */
+		alignPointersAndLines: function ( duration ) {
 			var self = this;
 
 			this.fadeOutPointerLines();
@@ -950,7 +979,7 @@
 			expandedRevisionWindowCapacity = $slider.find( '.mw-revslider-revisions-container' ).width() / this.revisionWidth;
 			this.slider.setRevisionsPerWindow( expandedRevisionWindowCapacity );
 
-			this.slide( Math.floor( ( this.getNewerPointerPos() - 1 ) / expandedRevisionWindowCapacity ), 0 );
+			this.slideView( Math.floor( ( this.getNewerPointerPos() - 1 ) / expandedRevisionWindowCapacity ), 0 );
 		},
 
 		/**

@@ -90,7 +90,7 @@
 		 * Moves the pointer to a position
 		 *
 		 * @param {number} posInPx
-		 * @param {number} duration
+		 * @param {number|string} duration
 		 * @return {jQuery}
 		 */
 		animateTo: function ( posInPx, duration ) {
@@ -105,7 +105,7 @@
 		 * Slides the pointer to the revision it's pointing at
 		 *
 		 * @param {Slider} slider
-		 * @param {number} duration
+		 * @param {number|string} duration
 		 * @return {jQuery}
 		 */
 		slideToPosition: function ( slider, duration ) {
@@ -118,7 +118,7 @@
 		 *
 		 * @param {Slider} slider
 		 * @param {boolean} posBeforeSlider
-		 * @param {number} duration
+		 * @param {number|string} duration
 		 * @return {jQuery}
 		 */
 		slideToSide: function ( slider, posBeforeSlider, duration ) {
@@ -133,7 +133,7 @@
 		 * Decides based on its position whether the pointer should be sliding to the side or to its position
 		 *
 		 * @param {Slider} slider
-		 * @param {number} duration
+		 * @param {number|string} duration
 		 * @return {jQuery}
 		 */
 		slideToSideOrPosition: function ( slider, duration ) {

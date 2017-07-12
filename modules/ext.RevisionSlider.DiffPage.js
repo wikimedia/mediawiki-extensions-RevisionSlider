@@ -186,21 +186,17 @@
 		 * @param {SliderView} sliderView
 		 */
 		initOnPopState: function ( sliderView ) {
-			var self = this;
 			window.addEventListener( 'popstate', function ( event ) {
 				if ( event.state === null ) {
 					return;
 				}
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.historyChange' );
-				sliderView.pointerOlder.setPosition( event.state.pointerOlderPos );
-				sliderView.pointerNewer.setPosition( event.state.pointerNewerPos );
 				sliderView.slider.setFirstVisibleRevisionIndex( event.state.sliderPos );
-				sliderView.slide( 0 );
-				sliderView.resetSliderLines();
-				sliderView.resetRevisionStylesBasedOnPointerPosition(
-					sliderView.$element.find( 'div.mw-revslider-revisions' )
+				sliderView.updatePointersAndDiffView(
+					event.state.pointerNewerPos,
+					event.state.pointerOlderPos,
+					false
 				);
-				self.refresh( event.state.diff, event.state.oldid );
 			} );
 		},
 
