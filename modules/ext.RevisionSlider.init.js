@@ -96,9 +96,10 @@
 	autoExpandButton.$element.children().attr(
 		'aria-label',
 		mw.msg( autoExpand ?
-		'revisionslider-turn-off-auto-expand-title' :
-		'revisionslider-turn-on-auto-expand-title'
-	) );
+			'revisionslider-turn-off-auto-expand-title' :
+			'revisionslider-turn-on-auto-expand-title'
+		)
+	);
 
 	autoExpandButton.connect( this, {
 		click: function () {

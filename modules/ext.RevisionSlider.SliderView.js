@@ -234,14 +234,14 @@
 			);
 
 			$pointerOlder.draggable( this.buildDraggableOptions(
-					$revisions,
-					'.mw-revslider-pointer-container-older'
-				) );
+				$revisions,
+				'.mw-revslider-pointer-container-older'
+			) );
 
 			$pointerNewer.draggable( this.buildDraggableOptions(
-					$revisions,
-					'.mw-revslider-pointer-container-newer'
-				) );
+				$revisions,
+				'.mw-revslider-pointer-container-newer'
+			) );
 		},
 
 		getOlderPointerPos: function () {
@@ -674,9 +674,9 @@
 		 */
 		calculateSliderContainerWidth: function () {
 			return Math.min(
-					this.slider.getRevisions().getLength(),
-					mw.libs.revisionSlider.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth )
-				) * this.revisionWidth;
+				this.slider.getRevisions().getLength(),
+				mw.libs.revisionSlider.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth )
+			) * this.revisionWidth;
 		},
 
 		/**
