@@ -87,6 +87,22 @@
 							.addClass( diffSize > 0 ? 'mw-revslider-revision-up' : 'mw-revslider-revision-down' )
 							.append( $( '<div>' ).addClass( 'mw-revslider-revision-border-box' ) )
 						)
+						.append( $( '<div>' )
+							.addClass( 'mw-revslider-revision-wrapper-up' )
+							.width( this.revisionWidth )
+							.append(
+								$( '<div>' )
+									.addClass( 'mw-revslider-pointer mw-revslider-pointer-ghost' )
+							)
+						)
+						.append( $( '<div>' )
+							.addClass( 'mw-revslider-revision-wrapper-down' )
+							.width( this.revisionWidth )
+							.append(
+								$( '<div>' )
+									.addClass( 'mw-revslider-pointer mw-revslider-pointer-ghost' )
+							)
+						)
 						.mouseenter( showTooltip )
 						.mouseleave( hideTooltip )
 					);
