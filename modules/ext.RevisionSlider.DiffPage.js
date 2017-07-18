@@ -68,8 +68,10 @@
 					uri.query.oldid = diff;
 					$( this ).attr( 'href', uri.toString() );
 				} );
-				// Update wgRevisionId (T161257)
+				// Update wgRevisionId (T161257), and wgDiffOldId/NewId
 				mw.config.set( 'wgRevisionId', diff );
+				mw.config.set( 'wgDiffOldId', oldid );
+				mw.config.set( 'wgDiffNewId', diff );
 
 				$( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
 

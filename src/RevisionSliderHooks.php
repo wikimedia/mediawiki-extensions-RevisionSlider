@@ -90,8 +90,6 @@ class RevisionSliderHooks {
 			$stats->increment( 'RevisionSlider.event.lazyload' );
 		}
 		$out->addModuleStyles( 'ext.RevisionSlider.noscript' );
-		$out->addJsConfigVars( 'extRevisionSliderOldRev', $oldRev->getId() );
-		$out->addJsConfigVars( 'extRevisionSliderNewRev', $newRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderTimeOffset', intval( $timeOffset ) );
 		$out->enableOOUI();
 

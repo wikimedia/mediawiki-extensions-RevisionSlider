@@ -26,8 +26,8 @@
 			$revisionOld,
 			$revisionNew;
 
-		mw.config.values.extRevisionSliderOldRev = 1;
-		mw.config.values.extRevisionSliderNewRev = 37;
+		mw.config.set( 'wgDiffOldId', 1 );
+		mw.config.set( 'wgDiffNewId', 37 );
 
 		view.render( $container );
 
@@ -48,8 +48,8 @@
 				new Revision( { revid: 37, size: 13, comment: 'Comment3', user: 'User3' } )
 			] ) ) );
 
-		mw.config.values.extRevisionSliderOldRev = null;
-		mw.config.values.extRevisionSliderNewRev = null;
+		mw.config.set( 'wgDiffOldId', null );
+		mw.config.set( 'wgDiffNewId', null );
 
 		assert.throws(
 			function () {

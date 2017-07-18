@@ -19,7 +19,7 @@
 			mw.libs.revisionSlider.HelpDialog.init();
 
 			api.fetchRevisionData( mw.config.get( 'wgPageName' ), {
-				startId: mw.config.get( 'extRevisionSliderNewRev' ),
+				startId: mw.config.get( 'wgDiffNewId' ),
 				limit: mw.libs.revisionSlider.calculateRevisionsPerWindow( 160, 16 )
 			} ).then( function ( data ) {
 				var revs,

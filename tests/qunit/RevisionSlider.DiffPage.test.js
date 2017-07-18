@@ -20,8 +20,9 @@
 				new Revision( { revid: 37, comment: '' } )
 			] ) )
 			);
-		mw.config.values.extRevisionSliderOldRev = 1;
-		mw.config.values.extRevisionSliderNewRev = 37;
+
+		mw.config.set( 'wgDiffOldId', 1 );
+		mw.config.set( 'wgDiffNewId', 37 );
 		sliderView.render( $( '<div>' ) );
 
 		histLength = history.length;
