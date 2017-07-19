@@ -2,11 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"AryanSogd",
-			"Macofe"
+			"Macofe",
+			"ToJack"
 		]
 	},
-	"revisionslider-beta-feature-message": "Вироишҳои слайдер",
+	"revisionslider-page-size": "$1 {{PLURAL:$1|байт}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$1|байт}}",
 	"revisionslider-label-comment": "Тавзеҳ аз тарафи",
+	"revisionslider-label-username": "{{GENDER:$1|Номи корбарӣ}}",
 	"revisionslider-arrow-tooltip-newer": "Бингар вироишҳои нав",
 	"revisionslider-arrow-tooltip-older": "Бингар нусхаҳои гузашта",
 	"revisionslider-tutorial": "Вироишҳои слайдер, воситаҳои ёдгирӣ"
