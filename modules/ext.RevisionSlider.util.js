@@ -95,13 +95,13 @@
 		$dummy = $( '<div>' )
 			.css( {
 				dir: 'rtl',
-				width: '1px',
+				width: '4px',
 				height: '1px',
 				position: 'absolute',
 				top: '-1000px',
 				overflow: 'scroll'
 			} )
-			.text( 'A' )
+			.text( 'ABCD' )
 			.appendTo( 'body' )[ 0 ];
 		if ( $dummy.scrollLeft > 0 ) {
 			return 'default';
