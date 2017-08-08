@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e7eab26_dcb80b77",
+        "filename": "modules/ext.RevisionSlider.util.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2626
+      },
+      "writtenOn": "2017-08-08T23:33:09Z",
+      "side": 1,
+      "message": "as the fix is chrome-related, is this additional check still needed?",
+      "revId": "7c58766b489ccdf3ed37a1af5b6d112aaf956779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
