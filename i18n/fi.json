@@ -5,15 +5,16 @@
 			"Pyscowicz",
 			"Stryn",
 			"Pxos",
-			"SMAUG"
+			"SMAUG",
+			"Alluk."
 		]
 	},
 	"revisionslider": "Sivuvertailun vaakajana",
 	"revisionslider-preference-disable": "Älä näytä sivuvertailun vaakajanaa",
 	"revisionslider-desc": "Näyttää vaakajanan, joka mahdollistaa sivun eri versioiden valitsemisen ja vertailemisen sivun muutoshistoriassa",
 	"revisionslider-toggle-label": "Selaa historiaa",
-	"revisionslider-page-size": "$1 {{PLURAL:$2|tavu|tavua}}",
-	"revisionslider-change-size": "$1 {{PLURAL:$3|tavu|tavua}}",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|merkki|merkkiä}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|merkki|merkkiä}}",
 	"revisionslider-label-date": "Päiväys",
 	"revisionslider-label-page-size": "Sivun koko",
 	"revisionslider-label-change-size": "Muutoksen koko",
