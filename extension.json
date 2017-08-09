@@ -53,6 +53,14 @@
 			"styles": [
 				"modules/ext.RevisionSlider.css"
 			],
+			"skinStyles": {
+				"monobook": [
+					"modules/ext.RevisionSlider.monobook.css"
+				],
+				"modern": [
+					"modules/ext.RevisionSlider.modern.css"
+				]
+			},
 			"dependencies": [
 				"oojs-ui",
 				"oojs-ui.styles.icons-movement",
