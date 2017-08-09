@@ -20,7 +20,7 @@
 		 * @param {number} [options.startId] Start ID
 		 * @param {number} [options.endId] End ID
 		 * @param {Object} [options.knownUserGenders] Known user genders
-		 * @return {jQuery.Promise}
+		 * @return {jQuery.promise}
 		 */
 		fetchRevisionData: function ( pageName, options ) {
 			var xhr, userXhr,

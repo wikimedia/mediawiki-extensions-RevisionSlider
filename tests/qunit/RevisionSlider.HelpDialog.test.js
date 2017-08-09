@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function ( mw, $ ) {
 	var HelpDialog = mw.libs.revisionSlider.HelpDialog;
 
 	QUnit.module( 'ext.RevisionSlider.HelpDialog' );
@@ -32,7 +32,7 @@
 		);
 		assert.equal(
 			getSlideTextHtml( helpDialog.slides[ 2 ] ),
-			addLinkTargets( mw.message( 'revisionslider-help-dialog-slide3' ).parse() )
+			addLinkTargets( mw.message( 'revisionslider-help-dialog-slide3a' ).parse() )
 		);
 		assert.equal(
 			getSlideTextHtml( helpDialog.slides[ 3 ] ),
@@ -40,4 +40,4 @@
 		);
 	} );
 
-}( mediaWiki ) );
+}( mediaWiki, jQuery ) );

@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function ( mw, $ ) {
 	var DiffPage = mw.libs.revisionSlider.DiffPage,
 		SliderView = mw.libs.revisionSlider.SliderView,
 		Slider = mw.libs.revisionSlider.Slider,
@@ -41,4 +41,4 @@
 		);
 	} );
 
-}( mediaWiki ) );
+}( mediaWiki, jQuery ) );

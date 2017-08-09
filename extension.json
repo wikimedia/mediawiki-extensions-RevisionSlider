@@ -21,12 +21,6 @@
 	"ConfigRegistry": {
 		"revisionslider": "GlobalVarConfig::newInstance"
 	},
-	"config": {
-		"@RevisionSliderBetaFeature": "Make the RevisionSlider feature a BetaFeature. Setting this requires the RevisionSlider extension and requires each user to enable the BetaFeature.",
-		"RevisionSliderBetaFeature": false,
-		"@RevisionSliderAlternateSlider": "Enables the alternate version of the sliding mechanism.",
-		"RevisionSliderAlternateSlider": false
-	},
 	"MessagesDirs": {
 		"RevisionSlider": [
 			"i18n"
@@ -71,8 +65,6 @@
 				"ext.RevisionSlider.HelpDialog",
 				"ext.RevisionSlider.Api",
 				"ext.RevisionSlider.icons",
-				"ext.RevisionSlider.pointers.lower",
-				"ext.RevisionSlider.pointers.upper",
 				"mediawiki.api.options",
 				"mediawiki.user",
 				"mediawiki.util"
@@ -148,8 +140,7 @@
 		"ext.RevisionSlider.SliderView": {
 			"scripts": [
 				"modules/ext.RevisionSlider.SliderView.js",
-				"modules/ext.RevisionSlider.SliderArrowView.js",
-				"modules/ext.RevisionSlider.SliderViewTwo.js"
+				"modules/ext.RevisionSlider.SliderArrowView.js"
 			],
 			"dependencies": [
 				"jquery.ui.draggable",
@@ -164,14 +155,6 @@
 			"messages": [
 				"revisionslider-arrow-tooltip-newer",
 				"revisionslider-arrow-tooltip-older"
-			]
-		},
-		"ext.RevisionSlider.SliderViewTwo": {
-			"styles": [
-				"modules/ext.RevisionSliderViewTwo.css"
-			],
-			"dependencies": [
-				"ext.RevisionSlider.init"
 			]
 		},
 		"ext.RevisionSlider.DiffPage": {
@@ -228,24 +211,6 @@
 				"auto-expand": "resources/ext.RevisionSlider.icons/pin.svg"
 			}
 		},
-		"ext.RevisionSlider.pointers.lower": {
-			"position": "top",
-			"class": "ResourceLoaderImageModule",
-			"selector": ".mw-revslider-pointer-lower.mw-revslider-pointer-{name}",
-			"images": {
-				"oldid": "resources/ext.RevisionSlider.pointers/pointer-lower-old.svg",
-				"newid": "resources/ext.RevisionSlider.pointers/pointer-lower-new.svg"
-			}
-		},
-		"ext.RevisionSlider.pointers.upper": {
-			"position": "top",
-			"class": "ResourceLoaderImageModule",
-			"selector": ".mw-revslider-pointer-upper.mw-revslider-pointer-{name}",
-			"images": {
-				"oldid": "resources/ext.RevisionSlider.pointers/pointer-upper-old.svg",
-				"newid": "resources/ext.RevisionSlider.pointers/pointer-upper-new.svg"
-			}
-		},
 		"ext.RevisionSlider.HelpDialog": {
 			"scripts": [
 				"modules/ext.RevisionSlider.HelpDialog.js",
@@ -259,7 +224,6 @@
 			"messages": [
 				"revisionslider-help-dialog-slide1",
 				"revisionslider-help-dialog-slide2",
-				"revisionslider-help-dialog-slide3",
 				"revisionslider-help-dialog-slide3a",
 				"revisionslider-help-dialog-slide4",
 				"revisionslider-tutorial",
@@ -280,15 +244,6 @@
 					}
 				},
 				"2": "resources/ext.RevisionSlider.helpDialog/slide2.svg",
-				"3": "resources/ext.RevisionSlider.helpDialog/slide3.svg",
-				"4": "resources/ext.RevisionSlider.helpDialog/slide4.svg",
-				"1a": {
-					"file": {
-						"ltr": "resources/ext.RevisionSlider.helpDialog/slide1-ltr.svg",
-						"rtl": "resources/ext.RevisionSlider.helpDialog/slide1-rtl.svg"
-					}
-				},
-				"2a": "resources/ext.RevisionSlider.helpDialog/slide2.svg",
 				"3a": "resources/ext.RevisionSlider.helpDialog/slide3a.svg",
 				"4a": "resources/ext.RevisionSlider.helpDialog/slide4a.svg"
 			}
@@ -301,9 +256,6 @@
 	"Hooks": {
 		"DiffViewHeader": [
 			"RevisionSliderHooks::onDiffViewHeader"
-		],
-		"GetBetaFeaturePreferences": [
-			"RevisionSliderHooks::getBetaFeaturePreferences"
 		],
 		"GetPreferences": [
 			"RevisionSliderHooks::onGetPreferences"

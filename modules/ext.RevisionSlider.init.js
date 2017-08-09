@@ -8,6 +8,11 @@
 			var startTime = mw.now(),
 				api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) );
 
+			toggleButton.$element.children().attr( {
+				'aria-expanded': autoExpand,
+				'aria-controls': 'mw-revslider-slider-wrapper'
+			} );
+
 			mw.track( 'counter.MediaWiki.RevisionSlider.event.init' );
 			mw.libs.revisionSlider.userOffset = mw.user.options.get( 'timecorrection' ) ? mw.user.options.get( 'timecorrection' ).split( '|' )[ 1 ] : mw.config.get( 'extRevisionSliderTimeOffset' );
 
@@ -29,6 +34,7 @@
 					revs.reverse();
 
 					$container = $( '.mw-revslider-slider-wrapper' );
+					$container.attr( 'id', 'mw-revslider-slider-wrapper' );
 
 					revisionList = new mw.libs.revisionSlider.RevisionList( mw.libs.revisionSlider.makeRevisions( revs ) );
 					revisionList.getView().setDir( $container.css( 'direction' ) || 'ltr' );
@@ -66,6 +72,7 @@
 			$( '.mw-revslider-container' ).removeClass( 'mw-revslider-container-collapsed' )
 				.addClass( 'mw-revslider-container-expanded' );
 			$( '.mw-revslider-slider-wrapper' ).show();
+			toggleButton.$element.children().attr( 'aria-expanded', 'true' );
 			expanded = true;
 		},
 
@@ -74,28 +81,42 @@
 			$( '.mw-revslider-container' ).removeClass( 'mw-revslider-container-expanded' )
 				.addClass( 'mw-revslider-container-collapsed' );
 			$( '.mw-revslider-slider-wrapper' ).hide();
+			toggleButton.$element.children().attr( 'aria-expanded', 'false' );
 		};
 
 	autoExpandButton = new OO.ui.ToggleButtonWidget( {
 		icon: 'pin',
 		classes: [ 'mw-revslider-auto-expand-button' ],
-		title: mw.message( autoExpand ?
+		title: mw.msg( autoExpand ?
 			'revisionslider-turn-off-auto-expand-title' :
 			'revisionslider-turn-on-auto-expand-title'
-		).text(),
+		),
 		value: autoExpand
 	} );
+	autoExpandButton.$element.children().attr(
+		'aria-label',
+		mw.msg( autoExpand ?
+			'revisionslider-turn-off-auto-expand-title' :
+			'revisionslider-turn-on-auto-expand-title'
+		)
+	);
 
 	autoExpandButton.connect( this, {
 		click: function () {
 			autoExpand = !autoExpand;
 			settings.setAutoExpand( autoExpand );
 			if ( autoExpand ) {
-				autoExpandButton.setTitle( mw.message( 'revisionslider-turn-off-auto-expand-title' ).text() );
+				autoExpandButton.setTitle( mw.msg( 'revisionslider-turn-off-auto-expand-title' ) );
+				autoExpandButton.$element.children().attr(
+					'aria-label', mw.msg( 'revisionslider-turn-off-auto-expand-title' )
+				);
 				expand();
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand_on' );
 			} else {
-				autoExpandButton.setTitle( mw.message( 'revisionslider-turn-on-auto-expand-title' ).text() );
+				autoExpandButton.setTitle( mw.msg( 'revisionslider-turn-on-auto-expand-title' ) );
+				autoExpandButton.$element.children().attr(
+					'aria-label', mw.msg( 'revisionslider-turn-on-auto-expand-title' )
+				);
 				mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand_off' );
 			}
 		}
@@ -118,9 +139,6 @@
 		}
 	} );
 
-	if ( mw.config.get( 'extRevisionSliderAlternateSlider' ) ) {
-		mw.loader.load( 'ext.RevisionSlider.SliderViewTwo' );
-	}
 	expand();
 	initialize();
 

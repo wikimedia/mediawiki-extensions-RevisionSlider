@@ -11,8 +11,6 @@
 	"revisionslider": "Barra de revisões",
 	"revisionslider-preference-disable": "Não mostrar a barra de revisões",
 	"revisionslider-desc": "Mostra um controlo deslizante que permite a seleção e comparação de revisões numa página de diferenças entre edições",
-	"revisionslider-beta-feature-message": "Barra de revisões",
-	"revisionslider-beta-feature-description": "Mostra uma barra deslizante de revisão ao comparar duas versões de uma página.",
 	"revisionslider-toggle-label": "Explorar histórico",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte|bytes}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte|bytes}}",

@@ -90,13 +90,8 @@
 		 */
 		getSlide3: function () {
 			var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } ),
-				msgKey = 'revisionslider-help-dialog-slide3',
-				className = 'mw-revslider-help-dialog-slide-3';
-
-			if ( mw.config.get( 'extRevisionSliderAlternateSlider' ) ) {
-				msgKey = 'revisionslider-help-dialog-slide3a';
+				msgKey = 'revisionslider-help-dialog-slide3a',
 				className = 'mw-revslider-help-dialog-slide-3a';
-			}
 
 			slide.$element
 				.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-portrait ' + className + ' mw-revslider-column-image' ) )
@@ -114,11 +109,7 @@
 		 */
 		getSlide4: function () {
 			var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } ),
-				className = 'mw-revslider-help-dialog-slide-4';
-
-			if ( mw.config.get( 'extRevisionSliderAlternateSlider' ) ) {
 				className = 'mw-revslider-help-dialog-slide-4a';
-			}
 
 			slide.$element
 				.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape ' + className ) )

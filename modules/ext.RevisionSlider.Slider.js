@@ -7,11 +7,7 @@
 	 */
 	var Slider = function ( revisions ) {
 		this.revisions = revisions;
-		if ( mw.config.get( 'extRevisionSliderAlternateSlider' ) ) {
-			this.view = new mw.libs.revisionSlider.SliderViewTwo( this );
-		} else {
-			this.view = new mw.libs.revisionSlider.SliderView( this );
-		}
+		this.view = new mw.libs.revisionSlider.SliderView( this );
 	};
 
 	$.extend( Slider.prototype, {
@@ -109,7 +105,7 @@
 		/**
 		 * Sets the new oldestVisibleRevisionIndex after sliding in a direction
 		 *
-		 * @param {number} direction - Either -1 or 1
+		 * @param {number} direction - Either -1, 0 or 1
 		 */
 		slide: function ( direction ) {
 			var highestPossibleFirstRev = this.revisions.getLength() - this.revisionsPerWindow;

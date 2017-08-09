@@ -29,25 +29,28 @@ class RevisionSliderHooks {
 		return self::$config;
 	}
 
-	public static function onDiffViewHeader( DifferenceEngine $diff, $oldRev, $newRev ) {
+	/**
+	 * @param DifferenceEngine $diff
+	 * @param Revision|null $oldRev
+	 * @param Revision|null $newRev
+	 * @return bool
+	 */
+	public static function onDiffViewHeader(
+		DifferenceEngine $diff,
+		Revision $oldRev = null,
+		Revision $newRev = null
+	) {
 		// sometimes $oldRev can be null (e.g. missing rev), and perhaps also $newRev (T167359)
 		if ( !( $oldRev instanceof Revision ) || !( $newRev instanceof Revision ) ) {
 			return true;
 		}
 
-		$config = self::getConfig();
-
-		/**
-		 * If this extension is configured to be a beta feature, and the BetaFeatures extension
-		 * is loaded then require the current user to have the feature enabled.
-		 */
-		if (
-			$config->get( 'RevisionSliderBetaFeature' ) &&
-			class_exists( BetaFeatures::class ) &&
-			!BetaFeatures::isFeatureEnabled( $diff->getUser(), 'revisionslider' )
-		) {
+		// do not show on MobileDiff page
+		if ( $diff->getTitle()->isSpecial( 'MobileDiff' ) ) {
 			return true;
 		}
+
+		$config = self::getConfig();
 
 		/**
 		 * If the user is logged in and has explictly requested to disable the extension don't load.
@@ -82,9 +85,6 @@ class RevisionSliderHooks {
 		if ( $autoExpand ) {
 			$out->addModules( 'ext.RevisionSlider.init' );
 			$stats->increment( 'RevisionSlider.event.load' );
-			if ( $config->get( 'RevisionSliderAlternateSlider' ) ) {
-				$out->addModules( 'ext.RevisionSlider.SliderViewTwo' );
-			}
 		} else {
 			$out->addModules( 'ext.RevisionSlider.lazyJs' );
 			$stats->increment( 'RevisionSlider.event.lazyload' );
@@ -93,10 +93,6 @@ class RevisionSliderHooks {
 		$out->addJsConfigVars( 'extRevisionSliderOldRev', $oldRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderNewRev', $newRev->getId() );
 		$out->addJsConfigVars( 'extRevisionSliderTimeOffset', intval( $timeOffset ) );
-		$out->addJsConfigVars(
-			'extRevisionSliderAlternateSlider',
-			$config->get( 'RevisionSliderAlternateSlider' )
-		);
 		$out->enableOOUI();
 
 		$toggleButton = new OOUI\ButtonWidget( [
@@ -142,26 +138,11 @@ class RevisionSliderHooks {
 		return true;
 	}
 
-	public static function getBetaFeaturePreferences( User $user, array &$prefs ) {
-		$config = self::getConfig();
-		$extensionAssetsPath = $config->get( 'ExtensionAssetsPath' );
-
-		if ( $config->get( 'RevisionSliderBetaFeature' ) ) {
-			$prefs['revisionslider'] = [
-				'label-message' => 'revisionslider-beta-feature-message',
-				'desc-message' => 'revisionslider-beta-feature-description',
-				'screenshot' => [
-					'ltr' => "$extensionAssetsPath/RevisionSlider/resources/RevisionSlider-beta-features-ltr.svg",
-					'rtl' => "$extensionAssetsPath/RevisionSlider/resources/RevisionSlider-beta-features-rtl.svg",
-				],
-				'info-link'
-					=> 'https://meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider',
-				'discussion-link'
-					=> 'https://meta.wikimedia.org/wiki/Talk:WMDE_Technical_Wishes/RevisionSlider',
-			];
-		}
-	}
-
+	/**
+	 * @param array &$testModules
+	 * @param ResourceLoader $rl
+	 * @return bool
+	 */
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
 		$testModules['qunit']['ext.RevisionSlider.tests'] = [
 			'scripts' => [
@@ -197,12 +178,12 @@ class RevisionSliderHooks {
 		return true;
 	}
 
+	/**
+	 * @param User $user
+	 * @param array &$preferences
+	 * @return bool
+	 */
 	public static function onGetPreferences( User $user, array &$preferences ) {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-		if ( $config->get( 'RevisionSliderBetaFeature' ) ) {
-			return true;
-		}
-
 		$preferences['revisionslider-disable'] = [
 			'type' => 'toggle',
 			'label-message' => 'revisionslider-preference-disable',

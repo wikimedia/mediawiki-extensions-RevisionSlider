@@ -51,21 +51,21 @@
 		},
 
 		/**
-		 * Returns whether a pointer is the upper/new revision pointer based on its CSS class
+		 * Returns whether a pointer is the newer revision pointer based on its CSS class
 		 *
 		 * @return {boolean}
 		 */
-		isUpperPointer: function () {
-			return this.getElement().hasClass( 'mw-revslider-pointer-upper' );
+		isNewerPointer: function () {
+			return this.getElement().hasClass( 'mw-revslider-pointer-newer' );
 		},
 
 		/**
-		 * Returns the offset (margin-left) depending on whether its the upper or lower pointer
+		 * Returns the offset (margin-left) depending on whether its the newer or older pointer
 		 *
 		 * @return {number}
 		 */
 		getOffset: function () {
-			return this.isUpperPointer() ? 16 : 0;
+			return this.isNewerPointer() ? 16 : 0;
 		},
 
 		// For correct positioning of the pointer in the RTL mode the left position is flipped in the container.
@@ -75,10 +75,22 @@
 		},
 
 		/**
+		 * Sets the HTML attribute for the position
+		 *
+		 * @param {number} pos
+		 */
+		setDataPositionAttribute: function ( pos ) {
+			if ( this.getElement() === null ) {
+				this.initialize();
+			}
+			this.getElement().attr( 'data-pos', pos );
+		},
+
+		/**
 		 * Moves the pointer to a position
 		 *
 		 * @param {number} posInPx
-		 * @param {number} duration
+		 * @param {number|string} duration
 		 * @return {jQuery}
 		 */
 		animateTo: function ( posInPx, duration ) {
@@ -93,7 +105,7 @@
 		 * Slides the pointer to the revision it's pointing at
 		 *
 		 * @param {Slider} slider
-		 * @param {number} duration
+		 * @param {number|string} duration
 		 * @return {jQuery}
 		 */
 		slideToPosition: function ( slider, duration ) {
@@ -106,7 +118,7 @@
 		 *
 		 * @param {Slider} slider
 		 * @param {boolean} posBeforeSlider
-		 * @param {number} duration
+		 * @param {number|string} duration
 		 * @return {jQuery}
 		 */
 		slideToSide: function ( slider, posBeforeSlider, duration ) {
@@ -121,7 +133,7 @@
 		 * Decides based on its position whether the pointer should be sliding to the side or to its position
 		 *
 		 * @param {Slider} slider
-		 * @param {number} duration
+		 * @param {number|string} duration
 		 * @return {jQuery}
 		 */
 		slideToSideOrPosition: function ( slider, duration ) {

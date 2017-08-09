@@ -47,6 +47,7 @@
 
 			backwardArrowButton.$element
 				.attr( 'data-dir', -1 )
+				.children().attr( 'aria-label', mw.msg( 'revisionslider-arrow-tooltip-older' ) )
 				.mouseover( { button: backwardArrowButton, popup: backwardArrowPopup }, this.showPopup )
 				.mouseout( { popup: backwardArrowPopup }, this.hidePopup )
 				.focusin( { button: backwardArrowButton }, this.arrowFocusHandler );
@@ -88,6 +89,7 @@
 
 			forwardArrowButton.$element
 				.attr( 'data-dir', 1 )
+				.children().attr( 'aria-label', mw.msg( 'revisionslider-arrow-tooltip-newer' ) )
 				.mouseover( { button: forwardArrowButton, popup: forwardArrowPopup }, this.showPopup )
 				.mouseout( { popup: forwardArrowPopup }, this.hidePopup )
 				.focusin( { button: forwardArrowButton }, this.arrowFocusHandler );
@@ -123,7 +125,7 @@
 				return;
 			}
 			mw.track( 'counter.MediaWiki.RevisionSlider.event.arrowClick' );
-			this.sliderView.slide( button.$element.data( 'dir' ) );
+			this.sliderView.slideView( button.$element.data( 'dir' ) );
 		},
 
 		/**

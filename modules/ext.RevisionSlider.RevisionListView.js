@@ -122,9 +122,9 @@
 				return 0;
 			}
 			return Math.ceil(
-					( this.maxRevisionHeight - this.minRevisionHeight ) *
-					Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged
-				) + this.minRevisionHeight;
+				( this.maxRevisionHeight - this.minRevisionHeight ) *
+					Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) +
+				this.minRevisionHeight;
 		},
 
 		/**
