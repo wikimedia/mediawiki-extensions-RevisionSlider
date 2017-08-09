@@ -16,6 +16,24 @@
       "revId": "7c58766b489ccdf3ed37a1af5b6d112aaf956779",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e7eab26_7f39c9ca",
+        "filename": "modules/ext.RevisionSlider.util.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2017-08-09T02:59:08Z",
+      "side": 1,
+      "message": "Yeah I also thought about that but was to lazy to install the older Chrome where the error occurred. ... on the other hand, when this \"fix\" works for every Chrome version, why then having unnecessary, costly detection?",
+      "parentUuid": "4e7eab26_dcb80b77",
+      "revId": "7c58766b489ccdf3ed37a1af5b6d112aaf956779",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
