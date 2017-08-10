@@ -242,7 +242,8 @@
 				.append(
 					$( '<p>' ).append(
 						$( '<strong>' ).text( mw.msg( 'revisionslider-label-date' ) + mw.msg( 'colon-separator' ) ),
-						revision.getFormattedDate()
+						$( '<a>' ).attr( 'href', mw.util.getUrl( this, { oldid: revision.id } ) )
+							.text( revision.getFormattedDate() )
 					),
 					this.makeUserLine( revision.getUser(), revision.getUserGender() ),
 					this.makeCommentLine( revision ),
