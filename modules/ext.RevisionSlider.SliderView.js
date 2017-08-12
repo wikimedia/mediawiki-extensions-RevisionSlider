@@ -85,6 +85,16 @@
 
 		escapePressed: false,
 
+		/**
+		 * {number}
+		 */
+		lastOldPointerPosition: null,
+
+		/**
+		 * {number}
+		 */
+		lastNewPointerPosition: null,
+
 		render: function ( $container ) {
 			var containerWidth = this.calculateSliderContainerWidth(),
 				$revisions = this.slider.getRevisions().getView().render( this.revisionWidth ),
@@ -419,6 +429,8 @@
 					self.setPointerDragCursor();
 					self.fadeOutPointerLines();
 					self.escapePressed = false;
+					self.lastOldPointerPosition = self.getOlderPointerPos();
+					self.lastNewPointerPosition = self.getNewerPointerPos();
 				},
 				stop: function () {
 					var $p = $( this ),
@@ -444,6 +456,11 @@
 					oldid = self.getRevElementAtPosition(
 						$revisions, self.getOlderPointerPos()
 					).data( 'revid' );
+
+					if ( self.getNewerPointerPos() === self.lastNewPointerPosition &&
+						self.getOlderPointerPos() === self.lastOldPointerPosition ) {
+						return;
+					}
 
 					self.refreshDiffView( diff, oldid, true );
 					self.alignPointersAndLines( 0 );
