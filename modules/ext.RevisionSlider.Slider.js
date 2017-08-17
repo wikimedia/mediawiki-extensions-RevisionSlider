@@ -34,7 +34,7 @@
 		/**
 		 * @return {RevisionList}
 		 */
-		getRevisions: function () {
+		getRevisionList: function () {
 			return this.revisions;
 		},
 

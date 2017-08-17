@@ -33,9 +33,9 @@
 	border-top: 2px solid transparent;
 }
 
-.mw-revslider-revision-new,
-.mw-revslider-revision-old,
-.mw-revslider-revision-intermediate {
+.mw-revslider-revision-new .mw-revslider-revision,
+.mw-revslider-revision-old .mw-revslider-revision,
+.mw-revslider-revision-intermediate .mw-revslider-revision {
 	background-color: #bcbcbc;
 	border-color: #989898;
 }
@@ -62,6 +62,54 @@
 .mw-revslider-revision-wrapper:hover,
 .mw-revslider-revision-wrapper-hovered {
 	background-color: #f2f2f2;
+}
+
+.mw-revslider-revision-wrapper-up,
+.mw-revslider-revision-wrapper-down {
+	height: 70px;
+	position: absolute;
+	z-index: 1;
+}
+
+.mw-revslider-revision-wrapper-up {
+	top: 0;
+}
+
+.mw-revslider-revision-wrapper-down {
+	top: 70px;
+}
+
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision-wrapper-up.mw-revslider-revision-hovered {
+	background-color: rgba( 102, 178, 255, 0.4 );
+	cursor: pointer;
+}
+
+.mw-revslider-revision-wrapper-hovered .mw-revslider-revision-wrapper-down.mw-revslider-revision-hovered {
+	background-color: rgba( 255, 197, 97, 0.4 );
+	cursor: pointer;
+}
+
+.mw-revslider-pointer.mw-revslider-pointer-ghost {
+	z-index: 2;
+	width: 11px;
+	height: 11px;
+	left: 1px;
+}
+
+.mw-revslider-pointer.mw-revslider-pointer-ghost:hover {
+	cursor: pointer;
+}
+
+.mw-revslider-revision-wrapper-up.mw-revslider-revision-hovered .mw-revslider-pointer-ghost {
+	background-color: #66b2ff;
+	border: 2px solid #1e6db8;
+	bottom: -4px;
+}
+
+.mw-revslider-revision-wrapper-down.mw-revslider-revision-hovered .mw-revslider-pointer-ghost {
+	background-color: #fff2da;
+	border: 2px solid #dea808;
+	top: -3px;
 }
 
 .mw-revslider-tooltip {
@@ -168,19 +216,10 @@ of the frameless one (to fit the size of the toggle button */
 
 .mw-revslider-pointer-container {
 	position: absolute;
-	clear: both;
-	top: 49px;
-	z-index: 1;
-}
-
-.mw-revslider-pointer-container-newer,
-.mw-revslider-pointer-container-older {
 	cursor: pointer;
-	height: 12px;
-}
-
-.mw-revslider-pointer-container-newer {
-	margin-top: 4px;
+	clear: both;
+	top: 65px;
+	z-index: 1;
 }
 
 .mw-revslider-pointer {
@@ -207,7 +246,7 @@ of the frameless one (to fit the size of the toggle button */
 }
 
 .mw-revslider-pointer.mw-revslider-pointer-newer {
-	top: 10px;
+	top: -6px;
 	border: 1px solid #66b2ff;
 	background: #2f93f7;
 	background: -webkit-linear-gradient( bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
@@ -227,7 +266,7 @@ of the frameless one (to fit the size of the toggle button */
 }
 
 .mw-revslider-pointer.mw-revslider-pointer-older {
-	top: 18px;
+	top: 4px;
 	border: 1px solid #ffc561;
 	background: #fde072;
 	background: -webkit-linear-gradient( bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
@@ -248,15 +287,14 @@ of the frameless one (to fit the size of the toggle button */
 
 .mw-revslider-slider-line {
 	margin: 0 10px;
-	height: 12px;
 }
 
 .mw-revslider-pointer-container-newer .mw-revslider-slider-line {
+	margin-bottom: 4px;
 	border-bottom: 4px solid rgba( 30, 109, 184, 0.5 ); /* #1e6db8 */
 }
 
 .mw-revslider-pointer-container-older .mw-revslider-slider-line {
-	margin-top: 8px;
 	border-top: 4px solid rgba( 255, 204, 51, 0.5 ); /* #fc3 */
 }
 

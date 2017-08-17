@@ -20,7 +20,7 @@
 			] ),
 			slider = new Slider( revs );
 
-		assert.equal( slider.getRevisions(), revs );
+		assert.equal( slider.getRevisionList(), revs );
 	} );
 
 	QUnit.test( 'Given no revisions, first visible revision index is 0', function ( assert ) {

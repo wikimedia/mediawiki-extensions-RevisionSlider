@@ -132,6 +132,14 @@
 			slicedList.view = new mw.libs.revisionSlider.RevisionListView( slicedList );
 			slicedList.revisions = this.revisions.slice( begin, end );
 			return slicedList;
+		},
+
+		/**
+		 * @param {number} pos
+		 * @return {boolean}
+		 */
+		isValidPosition: function ( pos ) {
+			return pos > 0 && pos <= this.getLength();
 		}
 	} );
 

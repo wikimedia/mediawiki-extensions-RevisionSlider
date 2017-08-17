@@ -36,6 +36,11 @@
 		tooltipTimeout: -1,
 
 		/**
+		 * @type {boolean}
+		 */
+		allowHover: true,
+
+		/**
 		 * @type {string}
 		 */
 		dir: null,
@@ -55,11 +60,13 @@
 				maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() ),
 				self = this,
 				i, diffSize, relativeChangeSize,
-				showTooltip = function () {
-					self.showTooltip( $( this ) );
+				setHovered = function ( event ) {
+					if ( self.allowHover ) {
+						self.setRevisionHovered( $( this ), event );
+					}
 				},
-				hideTooltip = function () {
-					self.hideTooltip( $( this ) );
+				unsetHovered = function () {
+					self.unsetRevisionHovered( $( this ) );
 				};
 
 			positionOffset = positionOffset || 0;
@@ -87,8 +94,24 @@
 							.addClass( diffSize > 0 ? 'mw-revslider-revision-up' : 'mw-revslider-revision-down' )
 							.append( $( '<div>' ).addClass( 'mw-revslider-revision-border-box' ) )
 						)
-						.mouseenter( showTooltip )
-						.mouseleave( hideTooltip )
+						.append( $( '<div>' )
+							.addClass( 'mw-revslider-revision-wrapper-up' )
+							.width( this.revisionWidth )
+							.append(
+								$( '<div>' )
+									.addClass( 'mw-revslider-pointer mw-revslider-pointer-ghost' )
+							)
+						)
+						.append( $( '<div>' )
+							.addClass( 'mw-revslider-revision-wrapper-down' )
+							.width( this.revisionWidth )
+							.append(
+								$( '<div>' )
+									.addClass( 'mw-revslider-pointer mw-revslider-pointer-ghost' )
+							)
+						)
+						.mouseenter( setHovered )
+						.mouseleave( unsetHovered )
 					);
 			}
 
@@ -96,6 +119,87 @@
 			this.closeTooltipsOnClick();
 
 			return this.$html;
+		},
+
+		enableHover: function () {
+			this.allowHover = true;
+		},
+
+		disableHover: function () {
+			this.allowHover = false;
+			this.unsetAllHovered();
+		},
+
+		/**
+		 * @param {jQuery} $revisionWrapper
+		 * @param {Event} event
+		 */
+		setRevisionHovered: function ( $revisionWrapper, event ) {
+			var hasMovedTop = event.pageY - $revisionWrapper.offset().top < $revisionWrapper.height() / 2,
+				isOlderTop = $revisionWrapper.hasClass( 'mw-revslider-revision-older' ) && hasMovedTop,
+				isNewerBottom = $revisionWrapper.hasClass( 'mw-revslider-revision-newer' ) && !hasMovedTop,
+				$neighborRevisionWrapper = $revisionWrapper;
+
+			this.showTooltip( $revisionWrapper );
+
+			if ( isOlderTop ) {
+				$neighborRevisionWrapper = $revisionWrapper.prev();
+			} else if ( isNewerBottom ) {
+				$neighborRevisionWrapper = $revisionWrapper.next();
+			}
+
+			if ( $neighborRevisionWrapper.length === 0 ) {
+				return;
+			}
+
+			if ( hasMovedTop ) {
+				this.setRevisionGhost( $revisionWrapper.find( '.mw-revslider-revision-wrapper-up' ) );
+				if ( isOlderTop ) {
+					this.setRevisionGhost( $neighborRevisionWrapper.find( '.mw-revslider-revision-wrapper-down' ) );
+				}
+			} else {
+				this.setRevisionGhost( $revisionWrapper.find( '.mw-revslider-revision-wrapper-down' ) );
+				if ( isNewerBottom ) {
+					this.setRevisionGhost( $neighborRevisionWrapper.find( '.mw-revslider-revision-wrapper-up' ) );
+				}
+			}
+		},
+
+		/**
+		 * @param {jQuery} $revisionWrapper
+		 * @return {number}
+		 */
+		getRevisionWrapperPos: function ( $revisionWrapper ) {
+			return +$revisionWrapper.find( '.mw-revslider-revision' ).attr( 'data-pos' );
+		},
+
+		/**
+		 * @param {jQuery} $revisionWrapper
+		 */
+		setRevisionGhost: function ( $revisionWrapper ) {
+			$revisionWrapper.addClass( 'mw-revslider-revision-hovered' );
+		},
+
+		/**
+		 * @param {jQuery} $revisionWrapper
+		 */
+		unsetRevisionHovered: function ( $revisionWrapper ) {
+			this.unsetRevisionGhosts( $revisionWrapper );
+			this.hideTooltip( $revisionWrapper );
+		},
+
+		unsetAllHovered: function () {
+			$( '.mw-revslider-revision-wrapper-up, .mw-revslider-revision-wrapper-down' )
+				.removeClass( 'mw-revslider-revision-hovered' );
+		},
+
+		/**
+		 * @param {jQuery} $revisionWrapper
+		 */
+		unsetRevisionGhosts: function ( $revisionWrapper ) {
+			$revisionWrapper.children().removeClass( 'mw-revslider-revision-hovered' );
+			$revisionWrapper.prev().children().removeClass( 'mw-revslider-revision-hovered' );
+			$revisionWrapper.next().children().removeClass( 'mw-revslider-revision-hovered' );
 		},
 
 		/**
@@ -147,13 +251,13 @@
 		/**
 		 * Hides the tooltip after 500ms
 		 *
-		 * @param {jQuery} $revisionContainer
+		 * @param {jQuery} $revisionWrapper
 		 */
-		hideTooltip: function ( $revisionContainer ) {
+		hideTooltip: function ( $revisionWrapper ) {
 			var $currentTooltip = $( '.mw-revslider-revision-tooltip' );
 			this.tooltipTimeout = window.setTimeout( function () {
-				if ( $revisionContainer.length !== 0 ) {
-					$revisionContainer.removeClass( 'mw-revslider-revision-wrapper-hovered' );
+				if ( $revisionWrapper.length !== 0 ) {
+					$revisionWrapper.removeClass( 'mw-revslider-revision-wrapper-hovered' );
 				}
 				if ( $currentTooltip.length !== 0 ) {
 					$currentTooltip.remove();
@@ -164,11 +268,11 @@
 		/**
 		 * Hides the previous tooltip and shows the new one
 		 *
-		 * @param {jQuery} $revisionContainer
+		 * @param {jQuery} $revisionWrapper
 		 */
-		showTooltip: function ( $revisionContainer ) {
-			var pos = +$revisionContainer.find( '.mw-revslider-revision' ).attr( 'data-pos' ),
-				revId = +$revisionContainer.find( '.mw-revslider-revision' ).attr( 'data-revid' ),
+		showTooltip: function ( $revisionWrapper ) {
+			var pos = +$revisionWrapper.find( '.mw-revslider-revision' ).attr( 'data-pos' ),
+				revId = +$revisionWrapper.find( '.mw-revslider-revision' ).attr( 'data-revid' ),
 				revision = this.getRevisionWithId( revId ),
 				tooltip;
 			if ( revision === null ) {
@@ -177,13 +281,13 @@
 
 			this.hideCurrentTooltip();
 
-			tooltip = this.makeTooltip( revision, $revisionContainer );
+			tooltip = this.makeTooltip( revision, $revisionWrapper );
 			tooltip.$element.addClass( 'mw-revslider-revision-tooltip-' + pos );
 
 			$( 'body' ).append( tooltip.$element );
 			tooltip.toggle( true );
 
-			$revisionContainer.addClass( 'mw-revslider-revision-wrapper-hovered' );
+			$revisionWrapper.addClass( 'mw-revslider-revision-wrapper-hovered' );
 		},
 
 		/**
@@ -234,10 +338,10 @@
 		 * Generates the HTML for a tooltip that appears on hover above each revision on the slider
 		 *
 		 * @param {Revision} revision
-		 * @param {jQuery} $revisionContainer
+		 * @param {jQuery} $revisionWrapper
 		 * @return {OO.ui.PopupWidget}
 		 */
-		makeTooltip: function ( revision, $revisionContainer ) {
+		makeTooltip: function ( revision, $revisionWrapper ) {
 			var $tooltip = $( '<div>' )
 				.append(
 					$( '<p>' ).append(
@@ -253,7 +357,7 @@
 				);
 			return new OO.ui.PopupWidget( {
 				$content: $tooltip,
-				$floatableContainer: $revisionContainer,
+				$floatableContainer: $revisionWrapper,
 				padded: true,
 				classes: [ 'mw-revslider-tooltip', 'mw-revslider-revision-tooltip' ]
 			} );
