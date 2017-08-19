@@ -15,6 +15,7 @@
 	"revisionslider-label-username": "{{GENDER:$1|Dalībnieks|Dalībniece}}",
 	"revisionslider-minoredit": "Šis ir maznozīmīgs labojums",
 	"revisionslider-show-help-tooltip": "Rādīt palīdzības tekstu",
+	"revisionslider-tutorial": "Versiju slīdņa pamācība",
 	"revisionslider-previous-dialog": "Iepriekšējais",
 	"revisionslider-next-dialog": "Nākamais",
 	"revisionslider-close-dialog": "Aizvērt"
