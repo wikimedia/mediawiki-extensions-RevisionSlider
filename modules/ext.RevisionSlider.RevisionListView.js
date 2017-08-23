@@ -1,7 +1,7 @@
 ( function ( mw, $ ) {
 	/**
 	 * @param {RevisionList} revisionList
-	 * @param {string} dir
+	 * @param {string} [dir]
 	 * @constructor
 	 */
 	var RevisionListView = function ( revisionList, dir ) {

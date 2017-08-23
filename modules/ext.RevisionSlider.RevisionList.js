@@ -21,7 +21,7 @@
 		view: null,
 
 		/**
-		 * Inititializes the RevisionList from a list of Revisions
+		 * Initializes the RevisionList from a list of Revisions
 		 *
 		 * @param {Revision[]} revs
 		 */

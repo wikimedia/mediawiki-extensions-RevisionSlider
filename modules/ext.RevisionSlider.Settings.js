@@ -73,7 +73,7 @@
 
 		/**
 		 * @param {string} name
-		 * @param {boolean} defaultValue
+		 * @param {boolean} [defaultValue]
 		 * @return {boolean}
 		 */
 		loadBoolean: function ( name, defaultValue ) {
