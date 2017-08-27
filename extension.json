@@ -74,7 +74,6 @@
 				"ext.RevisionSlider.Api",
 				"ext.RevisionSlider.icons",
 				"mediawiki.api.options",
-				"mediawiki.user",
 				"mediawiki.util"
 			],
 			"messages": [
@@ -170,7 +169,8 @@
 				"modules/ext.RevisionSlider.DiffPage.js"
 			],
 			"dependencies": [
-				"mediawiki.Uri"
+				"mediawiki.Uri",
+				"mediawiki.util"
 			]
 		},
 		"ext.RevisionSlider.RevisionList": {
@@ -179,8 +179,7 @@
 			],
 			"dependencies": [
 				"ext.RevisionSlider.Revision",
-				"ext.RevisionSlider.RevisionListView",
-				"mediawiki.util"
+				"ext.RevisionSlider.RevisionListView"
 			]
 		},
 		"ext.RevisionSlider.RevisionListView": {
