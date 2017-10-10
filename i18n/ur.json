@@ -7,10 +7,9 @@
 			"Muhammad Shuaib"
 		]
 	},
-	"revisionslider": "نظرثانی موازنہ کنندہ",
+	"revisionslider": "نسخہ جاتی موازنہ کنندہ",
+	"revisionslider-preference-disable": "نسخہ جاتی موازنہ کنندہ نہ دکھائیں",
 	"revisionslider-desc": "صفحات کے نسخوں کو منتخب کرنے اور ان میں موازنہ کرنے کی سہولت بہم پہنچاتا ہے",
-	"revisionslider-beta-feature-message": "نسخوں کا موازنہ",
-	"revisionslider-beta-feature-description": "صفحے کے دو نسخوں کے درمیان فرق دکھاتا ہے۔",
 	"revisionslider-toggle-label": "تاریخچہ دیکھیں",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|بائٹ}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|بائٹ}}",
