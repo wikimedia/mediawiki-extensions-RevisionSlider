@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e5d03d5_daae0795",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 658
+      },
+      "writtenOn": "2017-10-27T09:48:43Z",
+      "side": 1,
+      "message": "These need to be numbers, not strings.",
+      "revId": "ab874bdd57e2a95a73c66b641906c29df2b82a73",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
