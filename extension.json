@@ -51,7 +51,7 @@
 				"modules/ext.RevisionSlider.init.js"
 			],
 			"styles": [
-				"modules/ext.RevisionSlider.css"
+				"modules/ext.RevisionSlider.less"
 			],
 			"skinStyles": {
 				"monobook": [
