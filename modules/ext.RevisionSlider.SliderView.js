@@ -579,8 +579,8 @@
 			this.alignPointersAndLines();
 			this.resetRevisionStylesBasedOnPointerPosition( this.getRevisionsElement() );
 			this.refreshDiffView(
-				$( '.mw-revslider-revision[data-pos="' + newPointerPos + '"]' ).attr( 'data-revid' ),
-				$( '.mw-revslider-revision[data-pos="' + oldPointerPos + '"]' ).attr( 'data-revid' ),
+				+$( '.mw-revslider-revision[data-pos="' + newPointerPos + '"]' ).attr( 'data-revid' ),
+				+$( '.mw-revslider-revision[data-pos="' + oldPointerPos + '"]' ).attr( 'data-revid' ),
 				pushState
 			);
 		},
