@@ -1,3 +1,10 @@
+@import 'mediawiki.mixins';
+
+@new: #1e6db8;
+@old: #fc3;
+/* Use darker color for handle */
+@oldHandle: darken( @old, 18% );
+
 .mw-revslider-container-expanded {
 	margin-bottom: 15px;
 }
@@ -47,11 +54,11 @@
 }
 
 .mw-revslider-revision-old .mw-revslider-revision-border-box {
-	border-bottom: 2px solid #fc3;
+	border-bottom: 2px solid @old;
 }
 
 .mw-revslider-revision-new .mw-revslider-revision-border-box {
-	border-bottom: 2px solid #1e6db8;
+	border-bottom: 2px solid @new;
 }
 
 .mw-revslider-revision-wrapper {
@@ -80,12 +87,12 @@
 }
 
 .mw-revslider-revision-wrapper-hovered .mw-revslider-revision-wrapper-up.mw-revslider-revision-hovered {
-	background-color: rgba( 102, 178, 255, 0.4 );
+	background-color: fade( @new, 30% );
 	cursor: pointer;
 }
 
 .mw-revslider-revision-wrapper-hovered .mw-revslider-revision-wrapper-down.mw-revslider-revision-hovered {
-	background-color: rgba( 255, 197, 97, 0.4 );
+	background-color: fade( @old, 30% );
 	cursor: pointer;
 }
 
@@ -101,15 +108,15 @@
 }
 
 .mw-revslider-revision-wrapper-up.mw-revslider-revision-hovered .mw-revslider-pointer-ghost {
-	background-color: #66b2ff;
-	border: 2px solid #1e6db8;
+	background-color: lighten( @new, 30% );
+	border: 2px solid @new;
 	bottom: -4px;
 }
 
 .mw-revslider-revision-wrapper-down.mw-revslider-revision-hovered .mw-revslider-pointer-ghost {
-	background-color: #fff2da;
-	border: 2px solid #dea808;
-	top: -3px;
+	background-color: lighten( @oldHandle, 30% );
+	border: 2px solid @oldHandle;
+	top: -1px;
 }
 
 .mw-revslider-tooltip {
@@ -247,42 +254,22 @@ of the frameless one (to fit the size of the toggle button */
 
 .mw-revslider-pointer.mw-revslider-pointer-newer {
 	top: -6px;
-	border: 1px solid #66b2ff;
-	background: #2f93f7;
-	background: -webkit-linear-gradient( bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
-	background: -moz-linear-gradient( bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
-	background: -ms-linear-gradient( bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
-	background: -o-linear-gradient( bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
-	background: linear-gradient( to bottom, rgba( 47, 147, 247, 1 ), rgba( 3, 81, 159, 1 ) );
+	border: 1px solid @new;
+	.vertical-gradient( lighten( @new, 30% ), @new );
 }
 
 .mw-revslider-pointer.mw-revslider-pointer-newer:hover {
-	background: #6db6fd;
-	background: -webkit-linear-gradient( bottom, rgba( 109, 182, 253, 1 ), rgba( 7, 91, 172, 1 ) );
-	background: -moz-linear-gradient( bottom, rgba( 109, 182, 253, 1 ), rgba( 7, 91, 172, 1 ) );
-	background: -ms-linear-gradient( bottom, rgba( 109, 182, 253, 1 ), rgba( 7, 91, 172, 1 ) );
-	background: -o-linear-gradient( bottom, rgba( 109, 182, 253, 1 ), rgba( 7, 91, 172, 1 ) );
-	background: linear-gradient( to bottom, rgba( 109, 182, 253, 1 ), rgba( 7, 91, 172, 1 ) );
+	.vertical-gradient( lighten( @new, 40% ), @new );
 }
 
 .mw-revslider-pointer.mw-revslider-pointer-older {
 	top: 4px;
-	border: 1px solid #ffc561;
-	background: #fde072;
-	background: -webkit-linear-gradient( bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
-	background: -moz-linear-gradient( bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
-	background: -ms-linear-gradient( bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
-	background: -o-linear-gradient( bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
-	background: linear-gradient( to bottom, rgba( 253, 224, 114, 1 ), rgba( 230, 173, 29, 1 ) );
+	border: 1px solid @oldHandle;
+	.vertical-gradient( lighten( @oldHandle, 30% ), @oldHandle );
 }
 
 .mw-revslider-pointer.mw-revslider-pointer-older:hover {
-	background: #ffeba1;
-	background: -webkit-linear-gradient( bottom, rgba( 255, 235, 161, 1 ), rgba( 255, 195, 41, 1 ) );
-	background: -moz-linear-gradient( bottom, rgba( 255, 235, 161, 1 ), rgba( 255, 195, 41, 1 ) );
-	background: -ms-linear-gradient( bottom, rgba( 255, 235, 161, 1 ), rgba( 255, 195, 41, 1 ) );
-	background: -o-linear-gradient( bottom, rgba( 255, 235, 161, 1 ), rgba( 255, 195, 41, 1 ) );
-	background: linear-gradient( to bottom, rgba( 255, 235, 161, 1 ), rgba( 255, 195, 41, 1 ) );
+	.vertical-gradient( lighten( @oldHandle, 40% ), @oldHandle );
 }
 
 .mw-revslider-slider-line {
@@ -291,19 +278,19 @@ of the frameless one (to fit the size of the toggle button */
 
 .mw-revslider-pointer-container-newer .mw-revslider-slider-line {
 	margin-bottom: 4px;
-	border-bottom: 4px solid rgba( 30, 109, 184, 0.5 ); /* #1e6db8 */
+	border-bottom: 4px solid fade( @new, 50% );
 }
 
 .mw-revslider-pointer-container-older .mw-revslider-slider-line {
-	border-top: 4px solid rgba( 255, 204, 51, 0.5 ); /* #fc3 */
+	border-top: 4px solid fade( @old, 50% );
 }
 
 .mw-revslider-pointer-container-newer:hover .mw-revslider-slider-line {
-	border-bottom-color: rgba( 30, 109, 184, 0.8 );
+	border-bottom-color: fade( @new, 80% );
 }
 
 .mw-revslider-pointer-container-older:hover .mw-revslider-slider-line {
-	border-top-color: rgba( 255, 204, 51, 0.8 );
+	border-top-color: fade( @old, 80% );
 }
 
 .mw-revslider-revisions-older {
@@ -387,11 +374,11 @@ of the frameless one (to fit the size of the toggle button */
 }
 
 .mw-revslider-pointer-line .mw-revslider-lower-color {
-	border-color: #fc3;
+	border-color: @old;
 }
 
 .mw-revslider-pointer-line .mw-revslider-upper-color {
-	border-color: #1e6db8;
+	border-color: @new;
 }
 
 .mw-revslider-pointer-older .mw-revslider-pointer-line-upper {
