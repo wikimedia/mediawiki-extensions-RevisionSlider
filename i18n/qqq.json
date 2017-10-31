@@ -4,10 +4,11 @@
 			"WMDE",
 			"Liuxinyu970226",
 			"Purodha",
-			"Amire80"
+			"Amire80",
+			"Umherirrender"
 		]
 	},
-	"revisionslider": "RevisionSlider, see https://www.mediawiki.org/wiki/Extension:RevisionSlider",
+	"revisionslider": "{{name}}\nSee https://www.mediawiki.org/wiki/Extension:RevisionSlider",
 	"revisionslider-preference-disable": "Label for the user preference that disables the RevisionSlider",
 	"revisionslider-desc": "{{desc|name=RevisionSlider|url=https://www.mediawiki.org/wiki/Extension:RevisionSlider}}",
 	"revisionslider-toggle-label": "Label of the button toggling the visibility of RevisionSlider",
