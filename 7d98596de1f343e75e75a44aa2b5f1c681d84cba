@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e5a8fde_262ff9f4",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2017-11-01T12:28:34Z",
+      "side": 1,
+      "message": "This all should go to https://phabricator.wikimedia.org/source/RevisionSlider/browse/master/modules/ext.RevisionSlider.lazy.css;4c5e32e925a2d7946ae7a672190d0bfb616f96ab$28 and could \"replace\" the margin 0!important; there.",
+      "revId": "7d98596de1f343e75e75a44aa2b5f1c681d84cba",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
