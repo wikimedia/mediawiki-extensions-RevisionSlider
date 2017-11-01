@@ -9,12 +9,12 @@
 	/* the interface is in RTL */
 	direction: ltr;
 	position: relative;
-	border: 1px solid #ccc;
+	border: 1px solid #c8ccd1;
 }
 
 .mw-revslider-slider-wrapper {
 	min-height: 142px;
-	border-top: 1px solid #ccc;
+	border-top: 1px solid #c8ccd1;
 	padding: 20px 10px;
 }
 
