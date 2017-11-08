@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e5a8fde_14a0a699",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2017-11-08T18:44:55Z",
+      "side": 1,
+      "message": "We normally insert a new line before nested new rules. Even though it\u0027s not a stylelint rule (yet) it improves readability.",
+      "revId": "1c040ae6d617cf94534e981543a0261d1e8d0ae3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
