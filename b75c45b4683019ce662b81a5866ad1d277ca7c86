@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e5a8fde_264ed03c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2017-11-09T14:39:32Z",
+      "side": 1,
+      "message": "LESS. With v3 they returned to uppercase LESS as abbreviation. http://lesscss.org/3.x/ – We\u0027ve already updated our documentation accordingly.",
+      "revId": "b75c45b4683019ce662b81a5866ad1d277ca7c86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e5a8fde_e65e78eb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2017-11-09T14:39:32Z",
+      "side": 1,
+      "message": "Put `!important` into backticks as well.",
+      "revId": "b75c45b4683019ce662b81a5866ad1d277ca7c86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e5a8fde_e6a9988e",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2017-11-09T14:39:32Z",
+      "side": 1,
+      "message": "I\u0027ve overlooked this last time while only skimming. Although the nesting might make the code a bit more readable (if only looking  at LESS) it also ends up with unnecessary long selectors and high specificity resulting in\n`.mw-revslider-container .mw-revslider-toggle-button.oo-ui-buttonElement-frameless.oo-ui-labelElement.oo-ui-iconElement .oo-ui-iconElement-icon {}` \nin contrast to earlier \n`.mw-revslider-toggle-button .oo-ui-iconElement-icon`. \nDuring the last couple of months we\u0027ve tried to reduce specificity and compounded selectors where applicable in OOUI upstream and I\u0027d strongly recommend against the nesting here too.\nA lot of OOUI\u0027s very own nesting comes from enabling modularization when using the same selectors (elements) in different widget combinations. Here we have the final application and therefore don\u0027t need to care about such.",
+      "revId": "b75c45b4683019ce662b81a5866ad1d277ca7c86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
