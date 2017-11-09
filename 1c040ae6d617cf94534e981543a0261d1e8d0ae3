@@ -16,6 +16,24 @@
       "revId": "1c040ae6d617cf94534e981543a0261d1e8d0ae3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e5a8fde_0054dc53",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2017-11-09T08:47:07Z",
+      "side": 1,
+      "message": "Makes sense, done :-).",
+      "parentUuid": "6e5a8fde_14a0a699",
+      "revId": "1c040ae6d617cf94534e981543a0261d1e8d0ae3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
