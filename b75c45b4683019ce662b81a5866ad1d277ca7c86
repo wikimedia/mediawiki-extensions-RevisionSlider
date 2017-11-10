@@ -50,6 +50,24 @@
       "revId": "b75c45b4683019ce662b81a5866ad1d277ca7c86",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e5a8fde_09f5e04b",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2017-11-10T10:49:41Z",
+      "side": 1,
+      "message": "Yeah, makes sense. I was a bit over-motivated getting all the `!important` flags removed. This only works with super explicit statements obviously. - PS5 is a good compromise I would say :-)",
+      "parentUuid": "6e5a8fde_e6a9988e",
+      "revId": "b75c45b4683019ce662b81a5866ad1d277ca7c86",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
