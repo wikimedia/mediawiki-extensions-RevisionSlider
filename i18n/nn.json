@@ -5,8 +5,6 @@
 		]
 	},
 	"revisionslider": "Versjonsglidar",
-	"revisionslider-beta-feature-message": "Versjonsglidar",
-	"revisionslider-beta-feature-description": "Vis ein versjonsglidar ved samanlikning av to versjonar av ei side.",
 	"revisionslider-toggle-label": "Gå gjennom historikken",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte}}",

@@ -6,7 +6,6 @@
 		]
 	},
 	"revisionslider-preference-disable": "De Versiounsbliederer (RevisionSlider) net weisen",
-	"revisionslider-beta-feature-message": "Versiounsbliederer",
 	"revisionslider-toggle-label": "An de Versioune sichen",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|Byte|Byten}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|Byte|Byten}}",

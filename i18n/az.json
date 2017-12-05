@@ -6,8 +6,6 @@
 	},
 	"revisionslider": "TarixçəSürüşdürcüsü",
 	"revisionslider-desc": "Səhifənin tarixçələri arasındakı fərqləri sürüşdürərək görməyə imkan verir.",
-	"revisionslider-beta-feature-message": "TarixçəSürüşdürücüsü",
-	"revisionslider-beta-feature-description": "Səhifənin iki tarixçəsini müqayisə edərkən tarixçə sürüşdürücüsü göstər",
 	"revisionslider-toggle-label": "Tarixçəni yüklə",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bayt|bayt}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bayt|bayt}}",
