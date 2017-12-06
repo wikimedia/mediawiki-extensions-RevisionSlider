@@ -32,7 +32,7 @@
 	"ResourceModules": {
 		"ext.RevisionSlider.lazyCss": {
 			"styles": [
-				"modules/ext.RevisionSlider.lazy.css"
+				"modules/ext.RevisionSlider.lazy.less"
 			],
 			"position": "top"
 		},
