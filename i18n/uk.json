@@ -5,10 +5,11 @@
 			"Green Zero",
 			"Macofe",
 			"Base",
-			"Piramidion"
+			"Piramidion",
+			"Avatar6"
 		]
 	},
-	"revisionslider": "Слайдер версій",
+	"revisionslider": "RevisionSlider",
 	"revisionslider-preference-disable": "Не показувати Слайдер версій",
 	"revisionslider-desc": "Показує слайдер для вибору і порівняння версій на сторінці порівняння версій",
 	"revisionslider-toggle-label": "Перегляд історії",
