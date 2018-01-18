@@ -6,6 +6,7 @@
 		]
 	},
 	"revisionslider": "आवृत्तीसरकपटल",
+	"revisionslider-preference-disable": "आवृत्ती सरकपटल दाखवू नका",
 	"revisionslider-desc": "फरक पानावरील आवृत्ती दर्शविणारा एक सरकपटल दाखवितो, जेणेकरुन त्यांची निवड व ताडणी करता येते",
 	"revisionslider-toggle-label": "इतिहास न्याहाळा",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|बाइट|बाइटस्}}",
