@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Ahmed-Najib-Biabani-Ibrahimkhel",
-			"Macofe"
+			"Macofe",
+			"Baloch Khan"
 		]
 	},
+	"revisionslider-toggle-label": "ياداښت ولټوي",
 	"revisionslider-label-date": "نېټه",
 	"revisionslider-label-page-size": "مخ کچه",
 	"revisionslider-label-change-size": "کچه بدلول",
