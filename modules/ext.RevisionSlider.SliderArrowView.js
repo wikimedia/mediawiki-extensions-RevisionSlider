@@ -131,7 +131,7 @@
 		/**
 		 * Disabled oo.ui.ButtonWidgets get focused when clicked. In particular cases
 		 * (arrow gets clicked when disabled, none other elements gets focus meanwhile, the other arrow is clicked)
-		 * previously disabled arrow button still has focus and has OOjs-ui focused button styles
+		 * previously disabled arrow button still has focus and has OOUI focused button styles
 		 * applied (blue border) which is not what is wanted. And generally setting a focus on disabled
 		 * buttons does not seem right in case of RevisionSlider's arrow buttons.
 		 * This method removes focus from the disabled button if such case happens.
