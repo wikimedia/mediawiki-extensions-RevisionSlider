@@ -33,8 +33,7 @@
 		"ext.RevisionSlider.lazyCss": {
 			"styles": [
 				"modules/ext.RevisionSlider.lazy.less"
-			],
-			"position": "top"
+			]
 		},
 		"ext.RevisionSlider.lazyJs": {
 			"scripts": [
@@ -43,8 +42,7 @@
 			"dependencies": [
 				"oojs-ui.styles.icons-movement",
 				"ext.RevisionSlider.Settings"
-			],
-			"position": "top"
+			]
 		},
 		"ext.RevisionSlider.init": {
 			"scripts": [
@@ -83,8 +81,7 @@
 				"revisionslider-toggle-title-collapse",
 				"revisionslider-turn-on-auto-expand-title",
 				"revisionslider-turn-off-auto-expand-title"
-			],
-			"position": "top"
+			]
 		},
 		"ext.RevisionSlider.noscript": {
 			"styles": "modules/ext.RevisionSlider.noscript.css"
@@ -204,7 +201,6 @@
 			]
 		},
 		"ext.RevisionSlider.icons": {
-			"position": "top",
 			"class": "ResourceLoaderImageModule",
 			"selectorWithoutVariant": ".mw-revslider-{name}-button .oo-ui-iconElement-icon",
 			"selectorWithVariant": ".mw-revslider-{name}-button .oo-ui-iconElement-icon.oo-ui-image-invert",
@@ -240,7 +236,6 @@
 			]
 		},
 		"ext.RevisionSlider.dialogImages": {
-			"position": "top",
 			"class": "ResourceLoaderImageModule",
 			"selector": ".mw-revslider-help-dialog-slide-{name}",
 			"images": {
