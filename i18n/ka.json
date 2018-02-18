@@ -3,10 +3,12 @@
 		"authors": [
 			"MIKHEIL",
 			"Macofe",
-			"David1010"
+			"David1010",
+			"Otogi"
 		]
 	},
 	"revisionslider": "ვერსიის სლაიდერი",
+	"revisionslider-preference-disable": "არ აჩვენო RevisionSlider",
 	"revisionslider-toggle-label": "ისტორიის გადახედვა",
 	"revisionslider-label-date": "თარიღი",
 	"revisionslider-label-page-size": "გვერდის ზომა",
