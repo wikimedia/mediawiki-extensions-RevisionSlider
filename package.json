@@ -6,7 +6,7 @@
 		"type": "git",
 		"url": "https://phabricator.wikimedia.org/diffusion/ERSL/RevisionSlider.git"
 	},
-	"license": "GPL-2.0+",
+	"license": "GPL-2.0-or-later",
 	"scripts": {
 		"test": "grunt test"
 	},
