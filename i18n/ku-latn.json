@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"George Animal",
-			"Macofe"
+			"Macofe",
+			"Ghybu"
 		]
 	},
 	"revisionslider-toggle-label": "Li dîroka rûpelê bigere",
@@ -15,5 +16,6 @@
 	"revisionslider-minoredit": "Ev guhertineke biçûk e",
 	"revisionslider-arrow-tooltip-newer": "Revîzyonên nûtir bibîne",
 	"revisionslider-arrow-tooltip-older": "Revîzyonên kevntir bibîne",
+	"revisionslider-next-dialog": "Pêşve",
 	"revisionslider-close-dialog": "Bigre"
 }

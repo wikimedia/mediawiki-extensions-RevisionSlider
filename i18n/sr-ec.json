@@ -17,7 +17,7 @@
 	"revisionslider-label-comment": "Коментар",
 	"revisionslider-label-username": "{{GENDER:$1|Корисничко име}}",
 	"revisionslider-minoredit": "Ово је мања измена",
-	"revisionslider-toggle-title-expand": "Отворите клизач за измене",
+	"revisionslider-toggle-title-expand": "Отвори клизач за измене",
 	"revisionslider-toggle-title-collapse": "Затвори клизач за измене",
 	"revisionslider-turn-on-auto-expand-title": "Увек отвори клизач за измене",
 	"revisionslider-turn-off-auto-expand-title": "Искључивање аутоматског отварања клизача за измене",
