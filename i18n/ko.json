@@ -3,10 +3,11 @@
 		"authors": [
 			"Ykhwong",
 			"Jonghaya",
-			"Macofe"
+			"Macofe",
+			"Garam"
 		]
 	},
-	"revisionslider-preference-disable": "판 슬라이더를 보이지 않습니다",
+	"revisionslider-preference-disable": "판 슬라이더를 보여주지 않기",
 	"revisionslider-toggle-label": "역사 찾아보기",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|바이트}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|바이트}}",
