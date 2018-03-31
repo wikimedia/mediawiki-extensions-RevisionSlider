@@ -5,6 +5,7 @@
 		]
 	},
 	"revisionslider": "Versjonsglidar",
+	"revisionslider-preference-disable": "Ikkje vis versjonsglidaren",
 	"revisionslider-toggle-label": "Gå gjennom historikken",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte}}",
