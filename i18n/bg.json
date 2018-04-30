@@ -4,7 +4,8 @@
 			"Termininja",
 			"Macofe",
 			"StanProg",
-			"ShockD"
+			"ShockD",
+			"V111P"
 		]
 	},
 	"revisionslider-preference-disable": "Скриване на плъзгача на промените",
@@ -17,7 +18,7 @@
 	"revisionslider-label-comment": "Коментар",
 	"revisionslider-label-username": "{{GENDER:$1|Потребителско име}}",
 	"revisionslider-minoredit": "Това е малка промяна",
-	"revisionslider-toggle-title-expand": "Отваряне на салайдера на версии",
+	"revisionslider-toggle-title-expand": "Отваряне на слайдера на версиите",
 	"revisionslider-toggle-title-collapse": "Свиване на слайдера на версии",
 	"revisionslider-turn-on-auto-expand-title": "Автоматично отворен слайдер на версии",
 	"revisionslider-turn-off-auto-expand-title": "Да не се отваря автоматично слайдера на версии",
