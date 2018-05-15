@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c4c64fd5_6663d404",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 1
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-05-15T12:20:08Z",
+      "side": 1,
+      "message": "I believe this section needs an update. It can probably be simplified, e.g. \"width\" and \"height\" can most probably be removed. I briefly tried this, but the icon is still mispositioned then.",
+      "range": {
+        "startLine": 209,
+        "startChar": 0,
+        "endLine": 215,
+        "endChar": 1
+      },
+      "revId": "88840f838c6dcff78c89b06424a3e50d34dd2e30",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
