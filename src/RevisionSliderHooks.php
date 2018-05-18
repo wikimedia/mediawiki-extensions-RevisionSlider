@@ -34,6 +34,7 @@ class RevisionSliderHooks {
 	 * @param Revision|null $oldRev
 	 * @param Revision|null $newRev
 	 * @return bool
+	 * @suppress SecurityCheck-XSS Issue with OOUI, see T193837 for more information
 	 */
 	public static function onDiffViewHeader(
 		DifferenceEngine $diff,
