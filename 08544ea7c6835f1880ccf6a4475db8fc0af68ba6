@@ -16,6 +16,29 @@
       "revId": "08544ea7c6835f1880ccf6a4475db8fc0af68ba6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1cb22f67_c44f0210",
+        "filename": "modules/ext.RevisionSlider.PointerView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-05-19T17:05:04Z",
+      "side": 1,
+      "message": "I find the formula a little awkward. The same result is given by\n\nduration / 4 * Math.sqrt( distance )\n\nAlso I wonder why a distance of (for example) 1000 pixels (on the other side of the screen) should take 800ms, when the duration that was passed to this function was 100ms only? I feel this scales a bit awkward in a way I can not really understand when using this function.\n\nAt least it should be documented up there where the duration is documented.",
+      "range": {
+        "startLine": 105,
+        "startChar": 14,
+        "endLine": 105,
+        "endChar": 55
+      },
+      "revId": "08544ea7c6835f1880ccf6a4475db8fc0af68ba6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
