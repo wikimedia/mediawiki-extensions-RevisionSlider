@@ -15,7 +15,7 @@
 	"revisionslider-label-date": "Datum",
 	"revisionslider-label-page-size": "Seitengröße",
 	"revisionslider-label-change-size": "Größe der Änderung",
-	"revisionslider-label-comment": "Kommentar",
+	"revisionslider-label-comment": "Bearbeitungszusammenfassung",
 	"revisionslider-label-username": "{{GENDER:$1|Benutzername}}",
 	"revisionslider-minoredit": "Dies ist eine kleine Bearbeitung",
 	"revisionslider-loading-failed": "Der Versionsblätterer konnte nicht geladen werden.",
