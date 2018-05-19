@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae5d7575_24d9b0a5",
+        "filename": "modules/ext.RevisionSlider.PointerView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-05-19T16:52:03Z",
+      "side": 1,
+      "message": "I think this line contains a mistake. The result will either be \"true\" or \"100\".",
+      "revId": "08544ea7c6835f1880ccf6a4475db8fc0af68ba6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
