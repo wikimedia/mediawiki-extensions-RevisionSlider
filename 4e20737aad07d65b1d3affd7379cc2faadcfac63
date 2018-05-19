@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfa7be72_719a6e50",
+        "filename": "modules/ext.RevisionSlider.PointerView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-05-19T14:50:09Z",
+      "side": 1,
+      "message": "Just a minor thing, but in this code base we find it best practice to introduce all variables at the very top of the function. :-)",
+      "range": {
+        "startLine": 102,
+        "startChar": 3,
+        "endLine": 102,
+        "endChar": 6
+      },
+      "revId": "4e20737aad07d65b1d3affd7379cc2faadcfac63",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
