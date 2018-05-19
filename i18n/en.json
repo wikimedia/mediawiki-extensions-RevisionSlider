@@ -13,7 +13,7 @@
 	"revisionslider-label-date": "Date",
 	"revisionslider-label-page-size": "Page size",
 	"revisionslider-label-change-size": "Change size",
-	"revisionslider-label-comment": "Comment",
+	"revisionslider-label-comment": "Edit summary",
 	"revisionslider-label-username": "{{GENDER:$1|Username}}",
 	"revisionslider-minoredit": "This is a minor edit",
 	"revisionslider-loading-failed": "The revision slider failed to load.",
