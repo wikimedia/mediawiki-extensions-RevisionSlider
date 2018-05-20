@@ -10,7 +10,7 @@
 	"revisionslider": "סרגל הגרסאות",
 	"revisionslider-preference-disable": "לא להציג את סרגל הגרסאות",
 	"revisionslider-desc": "הצגת סרגל המאפשר לבחור ולהשוות גרסאות ישירות בתוך דף השוואת הגרסאות",
-	"revisionslider-toggle-label": "עיון בהיסטוריה",
+	"revisionslider-toggle-label": "עיון אינטראקטיבי בהיסטוריה",
 	"revisionslider-page-size": "{{PLURAL:$2|בית אחד|$1 בתים}}",
 	"revisionslider-change-size": "{{PLURAL:$3|בית אחד|$1 בתים}}",
 	"revisionslider-label-date": "תאריך",

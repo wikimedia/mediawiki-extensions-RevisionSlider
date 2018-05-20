@@ -5,7 +5,8 @@
 			"Leszek Manicki (WMDE)",
 			"زكريا",
 			"Macofe",
-			"Shbib Al-Subaie"
+			"Shbib Al-Subaie",
+			"محمد عصام"
 		]
 	},
 	"revisionslider": "مقارن النسخ",
@@ -17,7 +18,7 @@
 	"revisionslider-label-date": "التاريخ",
 	"revisionslider-label-page-size": "حجم الصفحة",
 	"revisionslider-label-change-size": "حجم التغيير",
-	"revisionslider-label-comment": "التعليق",
+	"revisionslider-label-comment": "ملخص التعديل",
 	"revisionslider-label-username": "اسم المستخدم{{GENDER:$1||ة}}",
 	"revisionslider-minoredit": "هذا تعديل طفيف",
 	"revisionslider-loading-failed": "لم يحمل مقارن النسخ.",

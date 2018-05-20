@@ -14,7 +14,7 @@
 	"revisionslider-label-date": "日期",
 	"revisionslider-label-page-size": "页面大小",
 	"revisionslider-label-change-size": "更改大小",
-	"revisionslider-label-comment": "注释",
+	"revisionslider-label-comment": "编辑摘要",
 	"revisionslider-label-username": "{{GENDER:$1|用户名}}",
 	"revisionslider-minoredit": "这是一个小编辑",
 	"revisionslider-loading-failed": "修订滑块无法加载。",

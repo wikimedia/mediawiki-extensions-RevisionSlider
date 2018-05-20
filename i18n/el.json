@@ -1,19 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Geraki"
+			"Geraki",
+			"Nikosgranturismogt"
 		]
 	},
 	"revisionslider": "RevisionSlider",
 	"revisionslider-preference-disable": "Να μην εμφανίζεται ο ολισθητής αναθεωρήσεων",
 	"revisionslider-desc": "Εμφανίζει ένα ρυθμιστικό ολισθητή που επιτρέπει την επιλογή και σύγκριση των αναθεωρήσεων σε μια σελίδα διαφορών (ιστορικού)",
-	"revisionslider-toggle-label": "Περιήγηση ιστορικού",
+	"revisionslider-toggle-label": "Περιήγηση ιστορικού διαδραστικά",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte|bytes}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte|bytes}}",
 	"revisionslider-label-date": "Ημερομηνία",
 	"revisionslider-label-page-size": "Μέγεθος σελίδας",
 	"revisionslider-label-change-size": "Αλλαγή μεγέθους",
-	"revisionslider-label-comment": "Σχόλιο",
+	"revisionslider-label-comment": "Σύνοψη επεξεργασίας",
 	"revisionslider-label-username": "{{GENDER:$1|Όνομα χρήστη}}",
 	"revisionslider-minoredit": "Αυτή είναι μια μικροεπεξεργασία",
 	"revisionslider-loading-failed": "Ο ολισθητής αναθεωρήσεων απέτυχε να φορτώσει.",

@@ -16,7 +16,7 @@
 	"revisionslider-label-date": "Datum",
 	"revisionslider-label-page-size": "Sidstorlek",
 	"revisionslider-label-change-size": "Ändringsstorlek",
-	"revisionslider-label-comment": "Kommentar",
+	"revisionslider-label-comment": "Redigeringssammanfattning",
 	"revisionslider-label-username": "{{GENDER:$1|Användarnamn}}",
 	"revisionslider-minoredit": "Detta är en mindre ändring",
 	"revisionslider-loading-failed": "Versionsreglaget kunde inte laddas.",

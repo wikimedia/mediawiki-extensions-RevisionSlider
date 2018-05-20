@@ -6,7 +6,8 @@
 			"Stryn",
 			"Pxos",
 			"SMAUG",
-			"Alluk."
+			"Alluk.",
+			"Nike"
 		]
 	},
 	"revisionslider": "Sivuvertailun vaakajana",
@@ -18,7 +19,7 @@
 	"revisionslider-label-date": "Päiväys",
 	"revisionslider-label-page-size": "Sivun koko",
 	"revisionslider-label-change-size": "Muutoksen koko",
-	"revisionslider-label-comment": "Yhteenveto",
+	"revisionslider-label-comment": "Muokkausyhteenveto",
 	"revisionslider-label-username": "{{GENDER:$1|Käyttäjätunnus}}",
 	"revisionslider-minoredit": "Tämä on pieni muutos",
 	"revisionslider-loading-failed": "Sivuvertailun vaakajanan lataaminen epäonnistui.",

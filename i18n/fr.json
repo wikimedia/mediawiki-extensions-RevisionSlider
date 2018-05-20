@@ -21,7 +21,7 @@
 	"revisionslider-label-date": "Date",
 	"revisionslider-label-page-size": "Longueur de la page",
 	"revisionslider-label-change-size": "Évolution de la taille",
-	"revisionslider-label-comment": "Commentaire",
+	"revisionslider-label-comment": "Résumé des modifications",
 	"revisionslider-label-username": "Nom d’{{GENDER:$1|utilisateur|utilisatrice}}",
 	"revisionslider-minoredit": "Ceci est une modification mineure",
 	"revisionslider-loading-failed": "Impossible de charger le curseur de révision.",
