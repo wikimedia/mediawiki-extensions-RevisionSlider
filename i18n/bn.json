@@ -14,7 +14,7 @@
 	"revisionslider-label-date": "তারিখ",
 	"revisionslider-label-page-size": "পাতার আকার",
 	"revisionslider-label-change-size": "পরিবর্তনের আকার",
-	"revisionslider-label-comment": "মন্তব্য",
+	"revisionslider-label-comment": "সম্পাদনা সারাংশ",
 	"revisionslider-label-username": "{{GENDER:$1|ব্যবহারকারী নাম}}",
 	"revisionslider-minoredit": "এটি একটি অনুল্লেখিত সম্পাদনা",
 	"revisionslider-loading-failed": "সংশোধন স্লাইডার লোড হতে ব্যর্থ।",

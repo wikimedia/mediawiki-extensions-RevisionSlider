@@ -11,7 +11,7 @@
 	"revisionslider-label-date": "Datums",
 	"revisionslider-label-page-size": "Lapas izmērs",
 	"revisionslider-label-change-size": "Izmaiņas izmērs",
-	"revisionslider-label-comment": "Komentārs",
+	"revisionslider-label-comment": "Izmaiņu kopsavilkums",
 	"revisionslider-label-username": "{{GENDER:$1|Dalībnieks|Dalībniece}}",
 	"revisionslider-minoredit": "Šis ir maznozīmīgs labojums",
 	"revisionslider-show-help-tooltip": "Rādīt palīdzības tekstu",
