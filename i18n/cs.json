@@ -3,19 +3,20 @@
 		"authors": [
 			"Dvorapa",
 			"Danny B.",
-			"Mormegil"
+			"Mormegil",
+			"Matěj Suchánek"
 		]
 	},
 	"revisionslider": "Posuvník revizí",
 	"revisionslider-preference-disable": "Nezobrazovat posuvník revizí",
 	"revisionslider-desc": "Na stránce s rozdíly zobrazuje posuvník umožňující výběr a porovnání revizí.",
-	"revisionslider-toggle-label": "Procházet historii",
+	"revisionslider-toggle-label": "Interaktivně procházet historii",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bajt|bajty|bajtů}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bajt|bajty|bajtů}}",
 	"revisionslider-label-date": "Datum",
 	"revisionslider-label-page-size": "Velikost stránky",
 	"revisionslider-label-change-size": "Velikost změny",
-	"revisionslider-label-comment": "Komentář",
+	"revisionslider-label-comment": "Shrnutí editace",
 	"revisionslider-label-username": "{{GENDER:$1|Uživatelské jméno}}",
 	"revisionslider-minoredit": "Toto je malá editace",
 	"revisionslider-loading-failed": "Časovou osu historie se nepodařilo načíst.",
