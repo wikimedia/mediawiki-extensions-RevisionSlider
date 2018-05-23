@@ -8,7 +8,7 @@
 	"revisionslider": "修订滑块",
 	"revisionslider-preference-disable": "不要显示修订滑块",
 	"revisionslider-desc": "显示一个滑块，它允许在差异页面上选择和比较修订",
-	"revisionslider-toggle-label": "浏览历史",
+	"revisionslider-toggle-label": "交互式浏览历史",
 	"revisionslider-page-size": "$1{{PLURAL:$2|字节}}",
 	"revisionslider-change-size": "$1{{PLURAL:$3|字节}}",
 	"revisionslider-label-date": "日期",

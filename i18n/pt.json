@@ -5,19 +5,20 @@
 			"Vitorvicentevalente",
 			"He7d3r",
 			"Mansil",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Athena in Wonderland"
 		]
 	},
 	"revisionslider": "Barra de revisões",
 	"revisionslider-preference-disable": "Não mostrar a barra de revisões",
 	"revisionslider-desc": "Mostra um controlo deslizante que permite a seleção e comparação de revisões numa página de diferenças entre edições",
-	"revisionslider-toggle-label": "Explorar histórico",
+	"revisionslider-toggle-label": "Explorar interativamente o histórico",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte|bytes}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte|bytes}}",
 	"revisionslider-label-date": "Data",
 	"revisionslider-label-page-size": "Tamanho da página",
 	"revisionslider-label-change-size": "Tamanho da alteração",
-	"revisionslider-label-comment": "Comentário",
+	"revisionslider-label-comment": "Resumo da edição",
 	"revisionslider-label-username": "Nome {{GENDER:$1|do utilizador|da utilizadora|de utilizador}}",
 	"revisionslider-minoredit": "Esta é uma edição menor",
 	"revisionslider-loading-failed": "A barra de revisões falhou ao carregar.",

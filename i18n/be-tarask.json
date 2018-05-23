@@ -7,7 +7,7 @@
 	"revisionslider": "Слайдэр вэрсіяў",
 	"revisionslider-preference-disable": "Не паказваць слайдэр вэрсіяў",
 	"revisionslider-desc": "Паказвае слайдэр, які дазваляе выбраць і параўнаць вэрсіі на старонцы адрозьненьняў",
-	"revisionslider-toggle-label": "Прагляд гісторыі",
+	"revisionslider-toggle-label": "Інтэрактыўны прагляд гісторыі",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|байт|байты|байтаў}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|байт|байты|байтаў}}",
 	"revisionslider-label-date": "Дата",
