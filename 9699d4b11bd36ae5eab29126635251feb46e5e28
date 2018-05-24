@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "45d07d6d_e50a6fed",
+        "filename": "modules/ext.RevisionSlider.PointerView.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-05-24T13:47:51Z",
+      "side": 1,
+      "message": "Ah .. also use !\u003d\u003d here please, the linter complains :-)",
+      "range": {
+        "startLine": 101,
+        "startChar": 38,
+        "endLine": 101,
+        "endChar": 40
+      },
+      "revId": "9699d4b11bd36ae5eab29126635251feb46e5e28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a5bdc001_aa9ddbaa",
         "filename": "modules/ext.RevisionSlider.PointerView.js",
         "patchSetId": 3
