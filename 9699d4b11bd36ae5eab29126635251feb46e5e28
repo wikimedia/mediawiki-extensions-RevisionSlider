@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a5bdc001_aa9ddbaa",
+        "filename": "modules/ext.RevisionSlider.PointerView.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-05-24T13:40:47Z",
+      "side": 1,
+      "message": "To avoid the duration being to small there should be an override here so it does not go under 170ms.",
+      "range": {
+        "startLine": 106,
+        "startChar": 3,
+        "endLine": 106,
+        "endChar": 11
+      },
+      "revId": "9699d4b11bd36ae5eab29126635251feb46e5e28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "001d04f9_1063334f",
+        "filename": "modules/ext.RevisionSlider.PointerView.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-05-24T13:40:47Z",
+      "side": 1,
+      "message": "To avoid it being to slow on a long distance please use log() here. The curve will settle quite quick and so we do not get to extreme results at the edges.",
+      "range": {
+        "startLine": 106,
+        "startChar": 36,
+        "endLine": 106,
+        "endChar": 40
+      },
+      "revId": "9699d4b11bd36ae5eab29126635251feb46e5e28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "488216e0_ed8919f3",
+        "filename": "modules/ext.RevisionSlider.PointerView.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-05-24T13:40:47Z",
+      "side": 1,
+      "message": "To get a better conversation from duration to animation we should then use \u0027linear\u0027 here as 3rd parameter to avoid that jquery messes with additionally swinging animation steps that worsen the animation in short distances.",
+      "range": {
+        "startLine": 107,
+        "startChar": 58,
+        "endLine": 107,
+        "endChar": 60
+      },
+      "revId": "9699d4b11bd36ae5eab29126635251feb46e5e28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
