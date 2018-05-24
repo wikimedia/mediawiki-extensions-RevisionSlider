@@ -5,19 +5,20 @@
 			"TheEduGobi",
 			"Macofe",
 			"Diego Queiroz",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"revisionslider": "Deslizador de Revisões",
 	"revisionslider-preference-disable": "Não exibir o Deslizador de Revisões",
 	"revisionslider-desc": "Exibe um deslizador, permitindo a seleção e comparação de revisões numa página de dif",
-	"revisionslider-toggle-label": "Navegar pelo histórico",
+	"revisionslider-toggle-label": "Navegar pelo histórico interativamente",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte|bytes}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte|bytes}}",
 	"revisionslider-label-date": "Data",
 	"revisionslider-label-page-size": "Tamanho da página",
 	"revisionslider-label-change-size": "Tamanho da mudança",
-	"revisionslider-label-comment": "Comentário",
+	"revisionslider-label-comment": "Resumo da edição",
 	"revisionslider-label-username": "{{GENDER:$1|Usuário|Usuária|Usuário(a)}}",
 	"revisionslider-minoredit": "Esta é uma edição menor",
 	"revisionslider-loading-failed": "O deslizador de revisões não pôde ser carregado.",

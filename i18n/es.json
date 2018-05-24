@@ -4,7 +4,8 @@
 			"Macofe",
 			"Rubentl134",
 			"Dgstranz",
-			"-jem-"
+			"-jem-",
+			"Fitoschido"
 		]
 	},
 	"revisionslider": "Deslizador de revisiones",
@@ -16,7 +17,7 @@
 	"revisionslider-label-date": "Fecha",
 	"revisionslider-label-page-size": "Tamaño de la página",
 	"revisionslider-label-change-size": "Tamaño del cambio",
-	"revisionslider-label-comment": "Comentario",
+	"revisionslider-label-comment": "Resumen de edición",
 	"revisionslider-label-username": "Nombre de {{GENDER:$1|usuario|usuaria}}",
 	"revisionslider-minoredit": "Esta es una edición menor",
 	"revisionslider-loading-failed": "El deslizador de revisiones no se pudo cargar.",
