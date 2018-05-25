@@ -16,7 +16,7 @@
 	"type": "other",
 	"manifest_version": 1,
 	"requires": {
-		"MediaWiki": ">= 1.30.0"
+		"MediaWiki": ">= 1.32.0"
 	},
 	"ConfigRegistry": {
 		"revisionslider": "GlobalVarConfig::newInstance"
@@ -71,7 +71,7 @@
 				"ext.RevisionSlider.HelpDialog",
 				"ext.RevisionSlider.Api",
 				"ext.RevisionSlider.icons",
-				"mediawiki.api.options",
+				"mediawiki.api",
 				"mediawiki.util"
 			],
 			"messages": [
