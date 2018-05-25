@@ -3,19 +3,20 @@
 		"authors": [
 			"Putnik",
 			"Kareyac",
-			"David.s.kats"
+			"David.s.kats",
+			"Ole Yves"
 		]
 	},
 	"revisionslider": "RevisionSlider",
 	"revisionslider-preference-disable": "Не показывать RevisionSlider",
 	"revisionslider-desc": "Показывает слайдер для выбора и сравнения версий на странице разницы версий",
-	"revisionslider-toggle-label": "Навигация по истории",
+	"revisionslider-toggle-label": "Интерактивная навигация по истории",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|байт|байта|байт}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|байт|байта|байт}}",
 	"revisionslider-label-date": "Дата",
 	"revisionslider-label-page-size": "Размер страницы",
 	"revisionslider-label-change-size": "Размер изменения",
-	"revisionslider-label-comment": "Комментарий",
+	"revisionslider-label-comment": "Описание изменений",
 	"revisionslider-label-username": "{{GENDER:$1|Участник|Участница}}",
 	"revisionslider-minoredit": "Это малая правка",
 	"revisionslider-loading-failed": "Не получилось загрузить слайдер версий.",

@@ -11,7 +11,7 @@
 	"revisionslider": "Deslizador de revisiones",
 	"revisionslider-preference-disable": "No mostrar el deslizador de revisiones",
 	"revisionslider-desc": "Muestra un control deslizante que permite la selección y comparación de las revisiones en una página de diferencias",
-	"revisionslider-toggle-label": "Explorar historial",
+	"revisionslider-toggle-label": "Explorar historial interactivamente",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte|bytes}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte|bytes}}",
 	"revisionslider-label-date": "Fecha",
