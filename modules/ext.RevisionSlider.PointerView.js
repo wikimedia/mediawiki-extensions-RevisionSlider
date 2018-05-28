@@ -90,27 +90,33 @@
 		 * Moves the pointer to a position
 		 *
 		 * @param {number} posInPx
-		 * @param {number|string} duration
+		 * @param {number} baseDuration - duration per revisionWidth, is adjusted by square root distance
+		 * @param {number} revisionWidth
 		 * @return {jQuery}
 		 */
-		animateTo: function ( posInPx, duration ) {
-			var animatePos = { left: posInPx };
+		animateTo: function ( posInPx, baseDuration, revisionWidth ) {
+			var animatePos = { left: posInPx },
+				currentPos = this.getElement().position(),
+				distance, duration;
+			baseDuration = typeof baseDuration !== 'undefined' ? baseDuration : 100;
 			if ( this.getElement().css( 'direction' ) === 'rtl' ) {
 				animatePos.left = this.getAdjustedLeftPositionWhenRtl( animatePos.left );
 			}
-			return this.getElement().animate( animatePos, duration );
+			distance = Math.abs( animatePos.left - currentPos.left ) / revisionWidth;
+			duration = baseDuration * Math.log( 5 + distance );
+			return this.getElement().animate( animatePos, duration, 'linear' );
 		},
 
 		/**
 		 * Slides the pointer to the revision it's pointing at
 		 *
 		 * @param {Slider} slider
-		 * @param {number|string} duration
+		 * @param {number} duration
 		 * @return {jQuery}
 		 */
 		slideToPosition: function ( slider, duration ) {
 			var relativePos = this.pointer.getPosition() - slider.getOldestVisibleRevisionIndex();
-			return this.animateTo( ( relativePos - 1 ) * slider.getView().revisionWidth, duration );
+			return this.animateTo( ( relativePos - 1 ) * slider.getView().revisionWidth, duration, slider.getView().revisionWidth );
 		},
 
 		/**
@@ -118,14 +124,14 @@
 		 *
 		 * @param {Slider} slider
 		 * @param {boolean} posBeforeSlider
-		 * @param {number|string} duration
+		 * @param {number} duration
 		 * @return {jQuery}
 		 */
 		slideToSide: function ( slider, posBeforeSlider, duration ) {
 			if ( posBeforeSlider ) {
-				return this.animateTo( this.getOffset() - 2 * slider.getView().revisionWidth, duration );
+				return this.animateTo( this.getOffset() - 2 * slider.getView().revisionWidth, duration, slider.getView().revisionWidth );
 			} else {
-				return this.animateTo( slider.getRevisionsPerWindow() * slider.getView().revisionWidth + this.getOffset(), duration );
+				return this.animateTo( slider.getRevisionsPerWindow() * slider.getView().revisionWidth + this.getOffset(), duration, slider.getView().revisionWidth );
 			}
 		},
 
@@ -133,7 +139,7 @@
 		 * Decides based on its position whether the pointer should be sliding to the side or to its position
 		 *
 		 * @param {Slider} slider
-		 * @param {number|string} duration
+		 * @param {number} duration
 		 * @return {jQuery}
 		 */
 		slideToSideOrPosition: function ( slider, duration ) {
