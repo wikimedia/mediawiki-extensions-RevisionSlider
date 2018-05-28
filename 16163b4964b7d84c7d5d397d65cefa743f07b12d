@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "af427694_fbb9361c",
+        "filename": "modules/ext.RevisionSlider.PointerView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-05-28T14:59:49Z",
+      "side": 1,
+      "message": "This is not correct any more since PS4.",
+      "range": {
+        "startLine": 93,
+        "startChar": 67,
+        "endLine": 93,
+        "endChar": 99
+      },
+      "revId": "16163b4964b7d84c7d5d397d65cefa743f07b12d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "748d2fd8_f3a26adb",
+        "filename": "modules/ext.RevisionSlider.PointerView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-05-28T14:59:49Z",
+      "side": 1,
+      "message": "Adding square brackets around [baseDuration] documents this is an optional parameter.\n\nSeparating the variable name from the description with a dash is very uncommon. I\u0027m afraid the dash will end in the generated documentation. Better start with an upper case character to make it clear where the documentation starts.",
+      "range": {
+        "startLine": 93,
+        "startChar": 21,
+        "endLine": 93,
+        "endChar": 33
+      },
+      "revId": "16163b4964b7d84c7d5d397d65cefa743f07b12d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d55198ff_5bb3b6a1",
+        "filename": "modules/ext.RevisionSlider.PointerView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-05-28T14:59:49Z",
+      "side": 1,
+      "message": "This could use $.fx.speeds.fast/2 instead.",
+      "range": {
+        "startLine": 101,
+        "startChar": 71,
+        "endLine": 101,
+        "endChar": 74
+      },
+      "revId": "16163b4964b7d84c7d5d397d65cefa743f07b12d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
