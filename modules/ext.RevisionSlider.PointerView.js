@@ -90,11 +90,11 @@
 		 * Moves the pointer to a position
 		 *
 		 * @param {number} posInPx
-		 * @param {number} baseDuration - duration per revisionWidth, is adjusted by square root distance
 		 * @param {number} revisionWidth
+		 * @param {number} [baseDuration] Duration per revisionWidth, is adjusted by log() distance
 		 * @return {jQuery}
 		 */
-		animateTo: function ( posInPx, baseDuration, revisionWidth ) {
+		animateTo: function ( posInPx, revisionWidth, baseDuration ) {
 			var animatePos = { left: posInPx },
 				currentPos = this.getElement().position(),
 				distance, duration;
@@ -111,12 +111,12 @@
 		 * Slides the pointer to the revision it's pointing at
 		 *
 		 * @param {Slider} slider
-		 * @param {number} duration
+		 * @param {number} [duration]
 		 * @return {jQuery}
 		 */
 		slideToPosition: function ( slider, duration ) {
 			var relativePos = this.pointer.getPosition() - slider.getOldestVisibleRevisionIndex();
-			return this.animateTo( ( relativePos - 1 ) * slider.getView().revisionWidth, duration, slider.getView().revisionWidth );
+			return this.animateTo( ( relativePos - 1 ) * slider.getView().revisionWidth, slider.getView().revisionWidth, duration );
 		},
 
 		/**
@@ -124,14 +124,14 @@
 		 *
 		 * @param {Slider} slider
 		 * @param {boolean} posBeforeSlider
-		 * @param {number} duration
+		 * @param {number} [duration]
 		 * @return {jQuery}
 		 */
 		slideToSide: function ( slider, posBeforeSlider, duration ) {
 			if ( posBeforeSlider ) {
-				return this.animateTo( this.getOffset() - 2 * slider.getView().revisionWidth, duration, slider.getView().revisionWidth );
+				return this.animateTo( this.getOffset() - 2 * slider.getView().revisionWidth, slider.getView().revisionWidth, duration );
 			} else {
-				return this.animateTo( slider.getRevisionsPerWindow() * slider.getView().revisionWidth + this.getOffset(), duration, slider.getView().revisionWidth );
+				return this.animateTo( slider.getRevisionsPerWindow() * slider.getView().revisionWidth + this.getOffset(), slider.getView().revisionWidth, duration );
 			}
 		},
 
@@ -139,7 +139,7 @@
 		 * Decides based on its position whether the pointer should be sliding to the side or to its position
 		 *
 		 * @param {Slider} slider
-		 * @param {number} duration
+		 * @param {number} [duration]
 		 * @return {jQuery}
 		 */
 		slideToSideOrPosition: function ( slider, duration ) {
