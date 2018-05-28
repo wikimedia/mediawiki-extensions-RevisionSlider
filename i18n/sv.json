@@ -10,7 +10,7 @@
 	"revisionslider": "Versionsreglage",
 	"revisionslider-preference-disable": "Visa inte versionsreglaget",
 	"revisionslider-desc": "Visar ett skjutreglage för att välja och jämföra versioner av en artikels historik",
-	"revisionslider-toggle-label": "Bläddra i historiken",
+	"revisionslider-toggle-label": "Bläddra interaktivt i historiken",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte}}",
 	"revisionslider-label-date": "Datum",
