@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "48c96243_f2ef6b13",
+        "filename": "modules/ext.RevisionSlider.PointerView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-05-28T15:21:54Z",
+      "side": 1,
+      "message": "Done in Ic9fe89c7e3f984d3390260805e2480a0f8ffd0c9",
+      "parentUuid": "af427694_fbb9361c",
+      "range": {
+        "startLine": 93,
+        "startChar": 67,
+        "endLine": 93,
+        "endChar": 99
+      },
+      "revId": "16163b4964b7d84c7d5d397d65cefa743f07b12d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a1cb0ef8_196f07b6",
+        "filename": "modules/ext.RevisionSlider.PointerView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-05-28T15:21:54Z",
+      "side": 1,
+      "message": "So this cannot be optional at that position. I changed the order in Ic9fe89c7e3f984d3390260805e2480a0f8ffd0c9 and added the hint to the calling functions.",
+      "parentUuid": "748d2fd8_f3a26adb",
+      "range": {
+        "startLine": 93,
+        "startChar": 21,
+        "endLine": 93,
+        "endChar": 33
+      },
+      "revId": "16163b4964b7d84c7d5d397d65cefa743f07b12d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d55198ff_5bb3b6a1",
         "filename": "modules/ext.RevisionSlider.PointerView.js",
         "patchSetId": 4
@@ -59,6 +107,30 @@
       "writtenOn": "2018-05-28T14:59:49Z",
       "side": 1,
       "message": "This could use $.fx.speeds.fast/2 instead.",
+      "range": {
+        "startLine": 101,
+        "startChar": 71,
+        "endLine": 101,
+        "endChar": 74
+      },
+      "revId": "16163b4964b7d84c7d5d397d65cefa743f07b12d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e4b20186_546aa614",
+        "filename": "modules/ext.RevisionSlider.PointerView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-05-28T15:21:54Z",
+      "side": 1,
+      "message": "It might be better to be independent from this constant and stick to a fixed ms value for now. - But no hard feelings though.",
+      "parentUuid": "d55198ff_5bb3b6a1",
       "range": {
         "startLine": 101,
         "startChar": 71,
