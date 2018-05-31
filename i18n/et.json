@@ -8,7 +8,7 @@
 	"revisionslider": "Redaktsiooniliugur",
 	"revisionslider-preference-disable": "Ära näita redaktsiooniliugurit",
 	"revisionslider-desc": "Näitab liugurit, mis võimaldab erinevuste leheküljel redaktsioone valida ja võrrelda.",
-	"revisionslider-toggle-label": "Sirvi ajalugu",
+	"revisionslider-toggle-label": "Sirvi ajalugu interaktiivselt",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bait|baiti}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bait|baiti}}",
 	"revisionslider-label-date": "Kuupäev",
