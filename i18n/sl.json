@@ -1,19 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Janezdrilc"
+			"Janezdrilc",
+			"Dbc334"
 		]
 	},
 	"revisionslider": "Redakcijski drsnik",
 	"revisionslider-preference-disable": "Ne prikaži redakcijskega drsnika",
 	"revisionslider-desc": "Prikaže drsnik, ki omogoča izbiranje in primerjanje med posameznimi redakcijami na primerjalni strani",
-	"revisionslider-toggle-label": "Brskaj po zgodovini",
+	"revisionslider-toggle-label": "Brskaj po zgodovini interaktivno",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|znak|znaka|znaki|znakov}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|znak|znaka|znaki|znakov}}",
 	"revisionslider-label-date": "Datum",
 	"revisionslider-label-page-size": "Velikost strani",
 	"revisionslider-label-change-size": "Razlika v velikosti",
-	"revisionslider-label-comment": "Komentar",
+	"revisionslider-label-comment": "Povzetek urejanja",
 	"revisionslider-label-username": "{{GENDER:$1|Uporabniško|Uporabničino}} ime",
 	"revisionslider-minoredit": "To je manjše urejanje",
 	"revisionslider-loading-failed": "Redakcijski drsnik se ni uspel naložiti.",
