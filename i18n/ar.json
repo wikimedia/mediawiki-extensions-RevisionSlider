@@ -6,13 +6,14 @@
 			"زكريا",
 			"Macofe",
 			"Shbib Al-Subaie",
-			"محمد عصام"
+			"محمد عصام",
+			"ديفيد"
 		]
 	},
 	"revisionslider": "مقارن النسخ",
 	"revisionslider-preference-disable": "لا تظهر مقارن النسخ",
 	"revisionslider-desc": "إظهار مقارن النسخ لمقارنة نسختين من الصفحة",
-	"revisionslider-toggle-label": "تصفح التاريخ",
+	"revisionslider-toggle-label": "تصفح التاريخ بشكل تفاعلي",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|بايت}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|بايت}}",
 	"revisionslider-label-date": "التاريخ",
