@@ -4,11 +4,12 @@
 			"Putnik",
 			"Kareyac",
 			"David.s.kats",
-			"Ole Yves"
+			"Ole Yves",
+			"Ping08"
 		]
 	},
 	"revisionslider": "RevisionSlider",
-	"revisionslider-preference-disable": "Не показывать RevisionSlider",
+	"revisionslider-preference-disable": "Не показывать «RevisionSlider»",
 	"revisionslider-desc": "Показывает слайдер для выбора и сравнения версий на странице разницы версий",
 	"revisionslider-toggle-label": "Интерактивная навигация по истории",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|байт|байта|байт}}",

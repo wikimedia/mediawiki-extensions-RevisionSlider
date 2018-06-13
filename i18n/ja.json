@@ -5,13 +5,14 @@
 			"Macofe",
 			"にょきにょき",
 			"Mirinano",
-			"Yusuke1109"
+			"Yusuke1109",
+			"Omotecho"
 		]
 	},
 	"revisionslider": "リビジョンスライダー",
 	"revisionslider-preference-disable": "リビジョンスライダーを表示しない",
 	"revisionslider-desc": "版間の差分を表示する際にスライダーを使って版の選択ができるようになります。",
-	"revisionslider-toggle-label": "履歴の閲覧",
+	"revisionslider-toggle-label": "履歴の双方向閲覧",
 	"revisionslider-page-size": "$1{{PLURAL:$2|バイト}}",
 	"revisionslider-change-size": "$1{{PLURAL:$3|バイト}}",
 	"revisionslider-label-date": "日時",
