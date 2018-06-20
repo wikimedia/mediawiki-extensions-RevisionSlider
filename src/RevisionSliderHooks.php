@@ -185,4 +185,5 @@ class RevisionSliderHooks {
 
 		return true;
 	}
+
 }
