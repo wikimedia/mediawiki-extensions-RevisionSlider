@@ -1,4 +1,5 @@
 <?php
+
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -33,7 +34,6 @@ class RevisionSliderHooks {
 	 * @param DifferenceEngine $diff
 	 * @param Revision|null $oldRev
 	 * @param Revision|null $newRev
-	 * @return bool
 	 * @suppress SecurityCheck-XSS Issue with OOUI, see T193837 for more information
 	 */
 	public static function onDiffViewHeader(
@@ -43,12 +43,12 @@ class RevisionSliderHooks {
 	) {
 		// sometimes $oldRev can be null (e.g. missing rev), and perhaps also $newRev (T167359)
 		if ( !( $oldRev instanceof Revision ) || !( $newRev instanceof Revision ) ) {
-			return true;
+			return;
 		}
 
 		// do not show on MobileDiff page
 		if ( $diff->getTitle()->isSpecial( 'MobileDiff' ) ) {
-			return true;
+			return;
 		}
 
 		$config = self::getConfig();
@@ -58,14 +58,14 @@ class RevisionSliderHooks {
 		 */
 		$user = $diff->getUser();
 		if ( !$user->isAnon() && $user->getBoolOption( 'revisionslider-disable' ) ) {
-			return true;
+			return;
 		}
 
 		/**
 		 * Do not show the RevisionSlider when revisions from two different pages are being compared
 		 */
 		if ( !$oldRev->getTitle()->equals( $newRev->getTitle() ) ) {
-			return true;
+			return;
 		}
 
 		$stats = MediaWikiServices::getInstance()->getStatsdDataFactory();
@@ -127,13 +127,11 @@ class RevisionSliderHooks {
 				)
 			)
 		);
-		return true;
 	}
 
 	/**
-	 * @param array &$testModules
+	 * @param array[] &$testModules
 	 * @param ResourceLoader $rl
-	 * @return bool
 	 */
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
 		$testModules['qunit']['ext.RevisionSlider.tests'] = [
@@ -166,14 +164,11 @@ class RevisionSliderHooks {
 			'localBasePath' => dirname( __DIR__ ),
 			'remoteExtPath' => 'RevisionSlider',
 		];
-
-		return true;
 	}
 
 	/**
 	 * @param User $user
-	 * @param array &$preferences
-	 * @return bool
+	 * @param array[] &$preferences
 	 */
 	public static function onGetPreferences( User $user, array &$preferences ) {
 		$preferences['revisionslider-disable'] = [
@@ -182,7 +177,5 @@ class RevisionSliderHooks {
 			'section' => 'rendering/diffs',
 			'default' => $user->getBoolOption( 'revisionslider-disable' ),
 		];
-
-		return true;
 	}
 }
