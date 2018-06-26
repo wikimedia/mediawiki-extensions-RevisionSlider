@@ -94,6 +94,9 @@
 		"ext.RevisionSlider.Api": {
 			"scripts": [
 				"modules/ext.RevisionSlider.Api.js"
+			],
+			"messages": [
+				"revisionslider-label-username"
 			]
 		},
 		"ext.RevisionSlider.Settings": {
