@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b4b26fa_66a194dd",
+        "filename": "modules/ext.RevisionSlider.Api.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-06-29T10:07:28Z",
+      "side": 1,
+      "message": "According to https://www.mediawiki.org/wiki/Manual:Messages_API#GENDER_in_JavaScript the current users gender will be used when the parameter is just left out. Something like \u0027neutral\u0027 should work though.",
+      "revId": "73a5486fad8c8ff3b35924d0b5a5d8f6116c19d5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
