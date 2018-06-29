@@ -9,11 +9,10 @@ Feature: RevisionSlider auto expand
     And RevisionSlider wrapper should be hidden
 
   Scenario: Revision slider expands automatically when auto expand is on
-    Given I am on the diff page
+    Given I am on the diff page and disabled the help dialog
     When I click on the expand button
     And RevisionSlider wrapper should be visible
     And The RevisionSlider has loaded
-    And I have dismissed the help dialog
     And I click on the auto expand button
     And I wait for the setting to be saved
     And I refresh the page
@@ -23,11 +22,10 @@ Feature: RevisionSlider auto expand
     And The RevisionSlider has loaded
 
   Scenario: Revision slider does not expand automatically when auto expand is off
-    Given I am on the diff page
+    Given I am on the diff page and disabled the help dialog
     When I click on the expand button
     And RevisionSlider wrapper should be visible
     And The RevisionSlider has loaded
-    And I have dismissed the help dialog
     And I click on the auto expand button
     And I wait for the setting to be saved
     And I click on the auto expand button

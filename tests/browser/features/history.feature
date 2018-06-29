@@ -6,7 +6,6 @@ Feature: RevisionSlider history
 #  Deactivated until bar clicking will be reintroduced see T165831
 #
 #  Scenario: RevisionSlider history can be accessed using browser back and forward buttons after clicking on a revision
-#    Given I am on the diff page
 #    When I have loaded the RevisionSlider and dismissed the help dialog
 #    And I click on revision 1 to move the older pointer
 #    And I wait until the diff has loaded
@@ -24,7 +23,6 @@ Feature: RevisionSlider history
 #    And revision 4 should be loaded on the right of the diff
 
   Scenario: RevisionSlider history can be accessed using browser back and forward buttons after dragging to a revision
-    Given I am on the diff page
     When I have loaded the RevisionSlider and dismissed the help dialog
     And I drag the older pointer to revision 1
     And I wait until the diff has loaded

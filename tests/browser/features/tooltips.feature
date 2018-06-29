@@ -4,7 +4,6 @@ Feature: RevisionSlider tooltips
     Given a page with 4 revision(s) exists
 
   Scenario: RevisionSlider revision tooltip appears on hover
-    Given I am on the diff page
     When I have loaded the RevisionSlider and dismissed the help dialog
     And I hover over revision 1
     And I hover over revision 2
@@ -12,7 +11,6 @@ Feature: RevisionSlider tooltips
     And no tooltip should be present for revision 1
 
   Scenario: RevisionSlider revision tooltip appears and remains on hover
-    Given I am on the diff page
     When I have loaded the RevisionSlider and dismissed the help dialog
     And I hover over revision 1
     And I hover over the revision 1 tooltip

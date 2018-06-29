@@ -5,6 +5,7 @@ class DiffPage
   link(:differences_nextlink, id: 'differences-nextlink')
 
   p(:revisionslider_placeholder, css: '.mw-revslider-placeholder')
+  p(:revisionslider_slider, css: '.mw-revslider-revision-slider')
   div(:revisionslider_wrapper, css: '.mw-revslider-slider-wrapper')
   span(:revisionslider_auto_expand_button, css: '.mw-revslider-auto-expand-button')
   span(:revisionslider_toggle_button, css: '.mw-revslider-toggle-button')
@@ -44,10 +45,12 @@ class DiffPage
   end
 
   def click_older_edit_link
+    sleep 0.2
     differences_prevlink_element.when_visible.click
   end
 
   def click_newer_edit_link
+    sleep 0.2
     differences_nextlink_element.when_visible.click
   end
 
@@ -57,7 +60,7 @@ class DiffPage
 
   def wait_for_slider_to_load
     wait_until do
-      !revisionslider_placeholder?
+      revisionslider_slider_element
     end
   end
 
