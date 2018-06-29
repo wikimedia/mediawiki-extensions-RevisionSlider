@@ -11,7 +11,7 @@
 	"revisionslider": "修訂時間軸",
 	"revisionslider-preference-disable": "不要顯示修訂時間軸",
 	"revisionslider-desc": "在修訂版本差異頁面上顯示時間軸，同時可供選擇並比較修訂版本間的差異",
-	"revisionslider-toggle-label": "檢視歷史",
+	"revisionslider-toggle-label": "互動式瀏覽歷史",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|位元組|位元組}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|位元組|位元組}}",
 	"revisionslider-label-date": "日期",
