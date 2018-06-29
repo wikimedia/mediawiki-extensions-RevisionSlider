@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ec45edb6_41ff308d",
+        "filename": "tests/browser/features/support/step_definitions/help.rb",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2018-06-29T13:03:10Z",
+      "side": 1,
+      "message": "There is an \"end\" statement missing here.",
+      "revId": "77737a10e5c574726478de38f32b5bfd90f2b0b8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
