@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "db5b9f96_7f11741e",
+        "filename": "tests/browser/features/support/pages/diff_page.rb",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-07-03T14:45:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c0b1006d_569c76a4",
+      "range": {
+        "startLine": 62,
+        "startChar": 4,
+        "endLine": 64,
+        "endChar": 7
+      },
+      "revId": "cb26b4aa3761deb4bec885c2732f9f9c3d079a03",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ffe4015_b92dfe66",
         "filename": "tests/browser/features/support/step_definitions/help.rb",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2018-07-03T11:24:28Z",
       "side": 1,
       "message": "Rename to \"I am on the diff page and disabled the help dialog\".",
+      "range": {
+        "startLine": 1,
+        "startChar": 7,
+        "endLine": 1,
+        "endChar": 39
+      },
+      "revId": "cb26b4aa3761deb4bec885c2732f9f9c3d079a03",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aad2c848_9f0856bf",
+        "filename": "tests/browser/features/support/step_definitions/help.rb",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-07-03T14:45:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ffe4015_b92dfe66",
       "range": {
         "startLine": 1,
         "startChar": 7,
