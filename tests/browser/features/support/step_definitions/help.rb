@@ -1,10 +1,11 @@
-When(/^I have dismissed the help dialog$/) do
-  step 'I have closed the help dialog at the start'
-  step 'I wait until help dialog is hidden'
+When(/^I am on the diff page and disabled the help dialog$/) do
+	step 'I am on the diff page'
+	browser.execute_script('mediaWiki.cookie.set( "-revslider-hide-help-dialogue", "1" );')
 end
 
 When(/^I have closed the help dialog at the start$/) do
   on(DiffPage).revisionslider_help_close_start_element.when_present.click
+  step 'I wait until help dialog is hidden'
 end
 
 When(/^I have closed the help dialog at the end/) do

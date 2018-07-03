@@ -6,7 +6,6 @@ Feature: RevisionSlider pointers
 #  Deactivated until bar clicking will be reintroduced see T165831
 #
 #  Scenario: RevisionSlider pointers move when revision bars are clicked
-#    Given I am on the diff page
 #    When I have loaded the RevisionSlider and dismissed the help dialog
 #    And I click on revision 3 to move the older pointer
 #    And I wait until the diff has loaded
@@ -18,7 +17,6 @@ Feature: RevisionSlider pointers
 #    And revision 4 should be loaded on the right of the diff
 
   Scenario: RevisionSlider pointers can be dragged
-    Given I am on the diff page
     When I have loaded the RevisionSlider and dismissed the help dialog
     And I drag the older pointer to revision 3
     And I wait until the diff has loaded

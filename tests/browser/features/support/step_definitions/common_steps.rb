@@ -31,9 +31,9 @@ When(/^I wait until the RevisionSlider has loaded$/) do
 end
 
 When(/^I have loaded the RevisionSlider and dismissed the help dialog$/) do
+  step 'I am on the diff page and disabled the help dialog'
   step 'I click on the expand button'
   step 'I wait until the RevisionSlider has loaded'
-  step 'I have dismissed the help dialog'
 end
 
 Then(/^The RevisionSlider has loaded$/) do
@@ -81,5 +81,6 @@ Given(/^I click on the auto expand button/) do
 end
 
 Given(/^I click on the expand button/) do
+  sleep 0.2
   on(DiffPage).revisionslider_toggle_button_element.when_visible.click
 end

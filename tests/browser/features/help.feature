@@ -12,7 +12,7 @@ Feature: RevisionSlider help
   Scenario: RevisionSlider tutorial is not present after it was dismissed once
     When I click on the expand button
     And I wait until the RevisionSlider has loaded
-    And I have dismissed the help dialog
+    And I have closed the help dialog at the start
     And I refresh the page
     And I click on the expand button
     And I wait until the RevisionSlider has loaded
