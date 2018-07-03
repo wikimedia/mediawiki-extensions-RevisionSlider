@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad49669_b6956f20",
+        "filename": "src/RevisionSliderHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-07-03T11:41:30Z",
+      "side": 1,
+      "message": "Please replace this as well with the value that should always be used.",
+      "range": {
+        "startLine": 99,
+        "startChar": 13,
+        "endLine": 99,
+        "endChar": 48
+      },
+      "revId": "ffbf373fcd6fb3a85b5c46a24dd4607a425d1b20",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
