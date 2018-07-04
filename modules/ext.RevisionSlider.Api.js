@@ -34,20 +34,32 @@
 					var revs = data.query.pages[ 0 ].revisions,
 						revContinue = data.continue,
 						genderData = options.knownUserGenders || {},
+						unknown,
 						userNames;
 
 					if ( !revs ) {
-						return;
+						return deferred.reject;
 					}
 
-					userNames = self.getUserNames( revs, genderData );
+					// No need to query any gender data if masculine, feminine, and neutral are all
+					// the same anyway
+					unknown = mw.msg( 'revisionslider-label-username', 'unknown' );
+					if ( mw.msg( 'revisionslider-label-username', 'male' ) === unknown &&
+						mw.msg( 'revisionslider-label-username', 'female' ) === unknown
+					) {
+						return deferred.resolve( { revisions: revs, 'continue': revContinue } );
+					}
+
+					userNames = self.getUniqueUserNamesWithUnknownGender( revs, genderData );
 
 					userXhr = self.fetchUserGenderData( userNames )
 						.done( function ( data ) {
-							var users = typeof data !== 'undefined' ? data.query.users : [];
-
-							if ( users.length > 0 ) {
-								$.extend( genderData, self.getUserGenderData( users, genderData ) );
+							if ( typeof data === 'object' &&
+								data.query &&
+								data.query.users &&
+								data.query.users.length > 0
+							) {
+								$.extend( genderData, self.getUserGenderData( data.query.users, genderData ) );
 							}
 
 							revs.forEach( function ( rev ) {
@@ -117,7 +129,7 @@
 		},
 
 		/**
-		 * Fetches gender data for up to 500 user names
+		 * Fetches gender data for maximum 50 user names
 		 *
 		 * @param {string[]} users
 		 * @return {jQuery.jqXHR}
@@ -134,7 +146,7 @@
 					list: 'users',
 					format: 'json',
 					usprop: 'gender',
-					ususers: users.join( '|' )
+					ususers: users.slice( 0, 50 ).join( '|' )
 				}
 			} );
 		},
@@ -144,12 +156,12 @@
 		 * @param {Object} knownUserGenders
 		 * @return {string[]}
 		 */
-		getUserNames: function ( revs, knownUserGenders ) {
+		getUniqueUserNamesWithUnknownGender: function ( revs, knownUserGenders ) {
 			var allUsers = revs.map( function ( rev ) {
-				return typeof rev.user !== 'undefined' ? rev.user : '';
+				return 'user' in rev && !( 'anon' in rev ) ? rev.user : '';
 			} );
 			return allUsers.filter( function ( value, index, array ) {
-				return value !== '' && typeof knownUserGenders[ value ] === 'undefined' && array.indexOf( value ) === index;
+				return value !== '' && !( value in knownUserGenders ) && array.indexOf( value ) === index;
 			} );
 		},
 
@@ -160,7 +172,7 @@
 		getUserGenderData: function ( data ) {
 			var genderData = {},
 				usersWithGender = data.filter( function ( item ) {
-					return typeof item.gender !== 'undefined' && item.gender !== 'unknown';
+					return 'gender' in item && item.gender !== 'unknown';
 				} );
 			usersWithGender.forEach( function ( item ) {
 				genderData[ item.name ] = item.gender;
