@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dd1ab4e9_a725baa2",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-07-24T08:36:51Z",
+      "side": 1,
+      "message": "Please use \u0027.mw-revslider-auto-expand-button\u0027 here and below, and remove the id.",
+      "range": {
+        "startLine": 75,
+        "startChar": 7,
+        "endLine": 75,
+        "endChar": 13
+      },
+      "revId": "dfeec9f91cc3e9eda255e86a6b69cc2dbe8ba461",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a30dc5f7_16944c8b",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-07-24T08:36:51Z",
+      "side": 1,
+      "message": "The \"my…\" naming scheme is typically used in example code, but should not appear in production.",
+      "range": {
+        "startLine": 91,
+        "startChar": 7,
+        "endLine": 91,
+        "endChar": 12
+      },
+      "revId": "dfeec9f91cc3e9eda255e86a6b69cc2dbe8ba461",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
