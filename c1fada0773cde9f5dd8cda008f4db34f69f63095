@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a5669fa9_0deae614",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 7
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2018-07-27T18:47:44Z",
+      "side": 1,
+      "message": "Why does it need the `block` here?",
+      "revId": "c1fada0773cde9f5dd8cda008f4db34f69f63095",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
