@@ -16,6 +16,24 @@
       "revId": "c1fada0773cde9f5dd8cda008f4db34f69f63095",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1d4e91c1_d5497901",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 7
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-07-28T08:56:19Z",
+      "side": 1,
+      "message": "As it displays the pin icon.",
+      "parentUuid": "a5669fa9_0deae614",
+      "revId": "c1fada0773cde9f5dd8cda008f4db34f69f63095",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
