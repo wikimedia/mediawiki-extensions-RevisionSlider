@@ -72,6 +72,7 @@
 			$( '.mw-revslider-container' ).removeClass( 'mw-revslider-container-collapsed' )
 				.addClass( 'mw-revslider-container-expanded' );
 			$( '.mw-revslider-slider-wrapper' ).show();
+			$( '.mw-revslider-auto-expand-button' ).show();
 			toggleButton.$element.children().attr( 'aria-expanded', 'true' );
 			expanded = true;
 		},
@@ -81,6 +82,7 @@
 			$( '.mw-revslider-container' ).removeClass( 'mw-revslider-container-expanded' )
 				.addClass( 'mw-revslider-container-collapsed' );
 			$( '.mw-revslider-slider-wrapper' ).hide();
+			$( '.mw-revslider-auto-expand-button' ).hide();
 			toggleButton.$element.children().attr( 'aria-expanded', 'false' );
 		};
 
@@ -93,6 +95,7 @@
 		),
 		value: autoExpand
 	} );
+
 	autoExpandButton.$element.children().attr(
 		'aria-label',
 		mw.msg( autoExpand ?
