@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "8c4eef98_c6a28cc4",
+        "filename": "modules/ext.RevisionSlider.init.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-07-30T12:44:55Z",
+      "side": 1,
+      "message": "This changes the default behavior, but after a quick chat with the PM we agreed on keeping this as a new feature.",
+      "revId": "c1fada0773cde9f5dd8cda008f4db34f69f63095",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a5669fa9_0deae614",
         "filename": "modules/ext.RevisionSlider.less",
         "patchSetId": 7
@@ -31,6 +48,24 @@
       "side": 1,
       "message": "As it displays the pin icon.",
       "parentUuid": "a5669fa9_0deae614",
+      "revId": "c1fada0773cde9f5dd8cda008f4db34f69f63095",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2654a701_de3d96a2",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 7
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-07-30T12:44:55Z",
+      "side": 1,
+      "message": "@VolkerE yeah for some reason the icon vanished / was hidden here by default. This seems to fix it.",
+      "parentUuid": "1d4e91c1_d5497901",
       "revId": "c1fada0773cde9f5dd8cda008f4db34f69f63095",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
