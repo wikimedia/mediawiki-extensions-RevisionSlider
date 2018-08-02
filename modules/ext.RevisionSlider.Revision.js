@@ -11,15 +11,15 @@
 		this.minor = data.hasOwnProperty( 'minor' ) && ( data.minor || data.minor === '' );
 
 		// Comments and users can be suppressed thus we must check if they exist
-		if ( typeof data.comment !== 'undefined' ) {
+		if ( 'comment' in data ) {
 			this.comment = data.comment;
 		}
-		if ( typeof data.parsedcomment !== 'undefined' ) {
+		if ( 'parsedcomment' in data ) {
 			this.parsedComment = data.parsedcomment;
 		}
-		if ( typeof data.user !== 'undefined' ) {
+		if ( 'user' in data ) {
 			this.user = data.user;
-			if ( typeof data.userGender !== 'undefined' ) {
+			if ( 'userGender' in data ) {
 				this.userGender = data.userGender;
 			}
 		}

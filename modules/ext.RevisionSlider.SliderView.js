@@ -894,7 +894,7 @@
 
 				self.addRevisionsAtEnd( $slider, revs );
 
-				if ( data.continue === undefined ) {
+				if ( !( 'continue' in data ) ) {
 					self.noMoreNewerRevisions = true;
 				}
 			} );
@@ -933,7 +933,7 @@
 				}
 				self.addRevisionsAtStart( $slider, revs, precedingRevisionSize );
 
-				if ( data.continue === undefined ) {
+				if ( !( 'continue' in data ) ) {
 					self.noMoreOlderRevisions = true;
 				}
 			} );

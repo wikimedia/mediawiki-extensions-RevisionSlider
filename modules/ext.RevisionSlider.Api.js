@@ -63,7 +63,7 @@
 							}
 
 							revs.forEach( function ( rev ) {
-								if ( typeof rev.user !== 'undefined' && typeof genderData[ rev.user ] !== 'undefined' ) {
+								if ( 'user' in rev && rev.user in genderData ) {
 									rev.userGender = genderData[ rev.user ];
 								}
 							} );
@@ -99,7 +99,7 @@
 			var dir, data;
 
 			options = options || {};
-			dir = options.dir !== undefined ? options.dir : 'older';
+			dir = 'dir' in options ? options.dir : 'older';
 			data = {
 				action: 'query',
 				prop: 'revisions',
@@ -112,13 +112,13 @@
 				rvdir: dir
 			};
 
-			if ( options.startId !== undefined ) {
+			if ( 'startId' in options ) {
 				data.rvstartid = options.startId;
 			}
-			if ( options.endId !== undefined ) {
+			if ( 'endId' in options ) {
 				data.rvendid = options.endId;
 			}
-			if ( options.limit !== undefined && options.limit <= 500 ) {
+			if ( 'limit' in options && options.limit <= 500 ) {
 				data.rvlimit = options.limit;
 			}
 
