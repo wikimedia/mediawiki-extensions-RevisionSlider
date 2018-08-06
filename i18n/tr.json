@@ -4,7 +4,8 @@
 			"Alpkant",
 			"Incelemeelemani",
 			"1917 Ekim Devrimi",
-			"Vito Genovese"
+			"Vito Genovese",
+			"Rapsar"
 		]
 	},
 	"revisionslider": "SürümKaydırıcı",
@@ -18,7 +19,7 @@
 	"revisionslider-label-change-size": "Boyut değişikliği",
 	"revisionslider-label-comment": "Açıklama",
 	"revisionslider-label-username": "{{GENDER:$1|Kullanıcı adı}}",
-	"revisionslider-minoredit": "Bu küçük bir değişiklik",
+	"revisionslider-minoredit": "Bu bir küçük değişiklik",
 	"revisionslider-loading-failed": "Sürüm kaydırıcı yüklenemedi.",
 	"revisionslider-toggle-title-expand": "Sürüm kaydırıcıyı aç",
 	"revisionslider-toggle-title-collapse": "Revizyon kaydırıcısını daralt",
