@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d8d548f7_8c6df3b1",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-08-09T11:26:21Z",
+      "side": 1,
+      "message": "These two work a bit against each other since they are ( at the time being ) classes on the same element. So both margin instructions will be applied. ( and I assume only the latter is executed since it\u0027s further down )\n\nSo you can remove one of the two, depending on what margin fits best ;-)",
+      "range": {
+        "startLine": 80,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 1
+      },
+      "revId": "78a6d6e608f2f5e301fffc90bff00210206d8c11",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8cb70633_13657cfd",
+        "filename": "src/RevisionSliderHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-08-09T11:26:21Z",
+      "side": 1,
+      "message": "Please prefix CSS class names with mw-revslider- here. This best practice and done to avoid someone else accidentally using this class on the page and potentially messing with the styles. ;-)\n\nAlso I think you do not need two classes here, since they are only used on this element. Please just merge them ( and consider this in the CSS file ) :-)",
+      "range": {
+        "startLine": 108,
+        "startChar": 24,
+        "endLine": 108,
+        "endChar": 47
+      },
+      "revId": "78a6d6e608f2f5e301fffc90bff00210206d8c11",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dfceb58_f332ac7c",
+        "filename": "src/RevisionSliderHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-08-09T11:26:21Z",
+      "side": 1,
+      "message": "This does not have to be a rawElement. rawElements are only needed if their content includes HTML that should not be escaped. - In this case we only have an empty element so you could just use Html::element",
+      "range": {
+        "startLine": 109,
+        "startChar": 9,
+        "endLine": 109,
+        "endChar": 19
+      },
+      "revId": "78a6d6e608f2f5e301fffc90bff00210206d8c11",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7216f04_4b126bd6",
+        "filename": "src/RevisionSliderHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-08-09T11:26:21Z",
+      "side": 1,
+      "message": "Prefix please :-).",
+      "range": {
+        "startLine": 110,
+        "startChar": 25,
+        "endLine": 110,
+        "endChar": 31
+      },
+      "revId": "78a6d6e608f2f5e301fffc90bff00210206d8c11",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
