@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1d363853_0d1a52ad",
+        "filename": "resources/ext.RevisionSlider.icons/pin.svg",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2018-08-09T12:58:44Z",
+      "side": 1,
+      "message": "Why do you leave this file in? It shouldn\u0027t be necessary…",
+      "revId": "777cd4679d9cbe15fb8321640c8547054c8c1aaf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
