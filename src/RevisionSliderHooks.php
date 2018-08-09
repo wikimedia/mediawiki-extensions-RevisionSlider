@@ -104,7 +104,12 @@ class RevisionSliderHooks {
 		] );
 		$toggleButton->setAttributes( [ 'style' => 'width: 100%; text-align: center;' ] );
 
-		$progressBar = new OOUI\ProgressBarWidget( [ 'progress' => false ] );
+		$loadingSpinner = Html::rawElement(
+			'div', [ 'class' => 'mw-revslider-spinner' ],
+			Html::Element(
+				'div', [ 'class' => 'mw-revslider-bounce' ]
+			)
+		);
 
 		$out->prependHTML(
 			Html::rawElement(
@@ -122,7 +127,7 @@ class RevisionSliderHooks {
 					],
 					Html::rawElement(
 						'div', [ 'class' => 'mw-revslider-placeholder' ],
-						$progressBar
+						$loadingSpinner
 					)
 				)
 			)

@@ -40,6 +40,78 @@
 	padding: 20px 10px;
 }
 
-.mw-revslider-placeholder .oo-ui-progressBarWidget {
+/* Loading spinner code borrowed from
+https://codepen.io/Volker_E/pen/yqNXMe */
+.mw-revslider-spinner {
+	white-space: nowrap;
+	display: block;
+	max-width: 56px;
 	margin: 60px auto;
+
+	.mw-revslider-bounce,
+	&:before,
+	&:after {
+		content: '';
+		background-color: #72777d;
+		display: block;
+		float: left;
+		width: 16px;
+		height: 16px;
+		border-radius: 100%;
+		-webkit-animation: bouncedelay 1600ms infinite ease-in-out both;
+		animation: bouncedelay 1600ms infinite ease-in-out both;
+		-webkit-animation-delay: -160ms;
+		animation-delay: -160ms;
+	}
+
+	&:before {
+		margin-right: 4px;
+		-webkit-animation-delay: -330ms;
+		animation-delay: -330ms;
+	}
+
+	&:after {
+		margin-left: 4px;
+		-webkit-animation-delay: 0s;
+		animation-delay: 0s;
+	}
+}
+
+// Loading spinner animations
+@-webkit-keyframes bouncedelay {
+	0%,
+	50%, // equals 800ms
+	100% {
+		-webkit-transform: scale( 0.625 );
+	}
+	20% { // equals 320ms
+		opacity: 0.87;
+		-webkit-transform: scale( 1 );
+	}
+}
+
+@-moz-keyframes bouncedelay {
+	0%,
+	50%, // equals 800ms
+	100% {
+		-moz-transform: scale( 0.625 );
+	}
+	20% { // equals 320ms
+		opacity: 0.87;
+		-moz-transform: scale( 1 );
+	}
+}
+
+@keyframes bouncedelay {
+	0%,
+	50%, // equals 800ms
+	100% {
+		-ms-transform: scale( 0.625 );
+		transform: scale( 0.625 );
+	}
+	20% { // equals 320ms
+		opacity: 0.87;
+		-ms-transform: scale( 1 );
+		transform: scale( 1 );
+	}
 }
