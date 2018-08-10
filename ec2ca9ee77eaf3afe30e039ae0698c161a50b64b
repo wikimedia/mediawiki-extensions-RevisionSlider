@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a3e4dff3_2311cd2f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-08-10T10:47:06Z",
+      "side": 1,
+      "message": "Slight mistake: When amending to upload a new version of the patch/commit, please leave the title as is. This will be the title that goes into the history and should describe the purpose of the overall patch.\n\nComments on what changed compared to the previous version of the patch do not necessarily need to go into the commit message.\n\nNote that gerrit works quite different from standard git/github in that regard. In gerrit we always amend to improve/fix patches. We do not build a chain of commits. Therefore the commit message for one patch needs to describe the general problem and does not (necessarily) take into account which steps the patch did take to get there. :-)",
+      "revId": "ec2ca9ee77eaf3afe30e039ae0698c161a50b64b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
