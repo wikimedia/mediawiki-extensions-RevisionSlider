@@ -11,5 +11,11 @@
 			}
 		);
 	}
+	$( '.mw-revslider-toggle-button' ).keypress( function ( event ) {
+		if ( event.which === 13 || event.which === 32 ) {
+			event.preventDefault();
+			$( '.mw-revslider-toggle-button' ).click();
+		}
+	} );
 
 }( mediaWiki, jQuery ) );
