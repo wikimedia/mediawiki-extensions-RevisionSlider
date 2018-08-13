@@ -46,6 +46,11 @@
 		dir: null,
 
 		/**
+		* @type {string}
+		*/
+		selectedUser: '',
+
+		/**
 		 * @type {jQuery}
 		 */
 		html: null,
@@ -381,19 +386,85 @@
 		 * @return {string|jQuery}
 		 */
 		makeUserLine: function ( userString, userGender ) {
+			var revs,
+				self = this,
+				$userLine,
+				$userBubble;
+			if ( typeof this.revisionList !== 'undefined' ) {
+				revs = this.revisionList.getRevisions();
+			}
+
 			if ( !userString ) {
 				return '';
 			}
-
 			if ( !userGender ) {
 				userGender = 'unknown';
 			}
-			return $( '<p>' ).append(
+
+			$userLine = $( '<p class="mw-revslider-username-row">' ).append(
 				$( '<strong>' ).text( mw.msg( 'revisionslider-label-username', userGender ) + mw.msg( 'colon-separator' ) ),
 				$( '<bdi>' ).append(
 					$( '<a>' ).addClass( 'mw-userlink' ).attr( 'href', mw.util.getUrl( this.getUserPage( userString ) ) ).text( this.stripInvalidCharacters( userString ) )
-				)
+				),
+				$userBubble = $( '<div>' ).addClass( 'mw-revslider-bubble' )
+					.on( 'click', function () {
+						if ( self.selectedUser !== userString ) {
+							$( '.mw-revslider-username-row' ).addClass( 'mw-highlight-user-row' );
+							$( this ).addClass( 'mw-revslider-highlite-bubble' );
+							self.highlightSameUserRevisions( userString, revs, 'addClass' );
+							self.selectedUser = userString;
+						} else {
+							$( '.mw-revslider-username-row' ).addClass( 'mw-highlight-user-row' );
+							$( this ).addClass( 'mw-revslider-highlite-bubble' );
+							self.highlightSameUserRevisions( userString, revs, 'removeClass' );
+							self.selectedUser = '';
+						}
+					} )
+					.on( {
+						mouseenter: function () {
+							if ( self.selectedUser !== userString ) {
+								$( '.mw-revslider-username-row' ).addClass( 'mw-highlight-user-row' );
+								$( this ).addClass( 'mw-revslider-highlite-bubble' );
+								self.highlightSameUserRevisions( userString, revs, 'addClass' );
+							}
+						},
+						mouseleave: function () {
+							if ( self.selectedUser !== userString ) {
+								$( '.mw-revslider-username-row' ).removeClass( 'mw-highlight-user-row' );
+								$( this ).removeClass( 'mw-revslider-highlite-bubble' );
+								self.highlightSameUserRevisions( userString, revs, 'removeClass' );
+							}
+						}
+					} )
 			);
+
+			if ( self.selectedUser === userString ) {
+				$userLine.addClass( 'mw-highlight-user-row' );
+				$userBubble.addClass( 'mw-revslider-highlite-bubble' );
+			}
+
+			return $userLine;
+
+		},
+
+		/**
+		* Highlights revisions of the sameUser
+		* @param {string} userString
+		* @param {Object[]} revs
+		* @param {string} event
+		*/
+		highlightSameUserRevisions: function ( userString, revs, event ) {
+			var i;
+			$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-revision-highlight' );
+			for ( i = 0; i < revs.length; i++ ) {
+				if ( userString === revs[ i ].getUser() ) {
+					if ( event === 'addClass' ) {
+						$( '[data-revid~="' + revs[ i ].id + '"]' ).parent().addClass( 'mw-revslider-revision-highlight' );
+					} else if ( event === 'removeClass' ) {
+						$( '[data-revid~="' + revs[ i ].id + '"]' ).parent().removeClass( 'mw-revslider-revision-highlight' );
+					}
+				}
+			}
 		},
 
 		/**
