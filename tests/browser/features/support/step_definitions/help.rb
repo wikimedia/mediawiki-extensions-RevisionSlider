@@ -1,6 +1,7 @@
 When(/^I am on the diff page and disabled the help dialog$/) do
-	step 'I am on the diff page'
-	browser.execute_script('mediaWiki.cookie.set( "-revslider-hide-help-dialogue", "1" );')
+  step 'I am on the diff page'
+  browser.execute_script('document.cookie = "mw-revslider-hide-help-dialogue=1; path=/";')
+  browser.execute_script('localStorage.setItem( "mw-revslider-hide-help-dialogue", "1" );')
 end
 
 When(/^I have closed the help dialog at the start$/) do
@@ -25,7 +26,7 @@ Given(/^The help dialog is hidden$/) do
 end
 
 Then(/^The help dialog should be visible/) do
-  expect(on(DiffPage).revisionslider_help_dialog_element.when_present).to be_visible
+  expect(on(DiffPage).revisionslider_help_dialog_element.when_present).to be_present
 end
 
 Then(/^The help dialog should not be present/) do
