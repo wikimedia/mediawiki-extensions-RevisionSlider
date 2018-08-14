@@ -15,8 +15,12 @@
 #   bundle exec cucumber
 #
 mw-vagrant-host: &default
-  mediawiki_url: http://127.0.0.1:8080/wiki/
+  mediawiki_url: http://en.mediawiki.localhost/index.php/
+  mediawiki_api_url: http://en.mediawiki.localhost/api.php
   user_factory: true
+  mediawiki_user: Tester
+  mediawiki_password: test
+
 
 mw-vagrant-guest:
   mediawiki_url: http://127.0.0.1/wiki/
