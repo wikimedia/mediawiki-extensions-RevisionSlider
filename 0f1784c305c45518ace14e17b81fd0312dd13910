@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d05bde97_5f5c77b7",
+        "filename": "modules/ext.RevisionSlider.lazy.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5092
+      },
+      "writtenOn": "2018-08-19T00:25:56Z",
+      "side": 1,
+      "message": "In place of \u0027value\u0027 as the function parameter, \u0027event\u0027 could be used, as that is what it is.",
+      "revId": "0f1784c305c45518ace14e17b81fd0312dd13910",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d01ebb9e_af39a0f7",
+        "filename": "modules/ext.RevisionSlider.lazy.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5092
+      },
+      "writtenOn": "2018-08-19T00:25:56Z",
+      "side": 1,
+      "message": "As per this resource https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/which, it looks like property \u0027which\u0027 is deprecated. Consider using \u0027key\u0027 instead:  https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key.",
+      "revId": "0f1784c305c45518ace14e17b81fd0312dd13910",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
