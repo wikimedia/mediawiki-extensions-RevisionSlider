@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a91f1fe_7b2a1429",
+        "filename": "modules/ext.RevisionSlider.lazy.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-08-19T04:06:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d05bde97_5f5c77b7",
+      "revId": "0f1784c305c45518ace14e17b81fd0312dd13910",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d01ebb9e_af39a0f7",
         "filename": "modules/ext.RevisionSlider.lazy.js",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2018-08-19T00:25:56Z",
       "side": 1,
       "message": "As per this resource https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/which, it looks like property \u0027which\u0027 is deprecated. Consider using \u0027key\u0027 instead:  https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key.",
+      "revId": "0f1784c305c45518ace14e17b81fd0312dd13910",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b6b3610a_d343f286",
+        "filename": "modules/ext.RevisionSlider.lazy.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-08-19T04:06:11Z",
+      "side": 1,
+      "message": "\u0027which\u0027 is working good in both the browsers Mozilla Firefox and aswell GoogleChrome but the \u0027key\u0027 is only supporting GoogleChrome, So as for that I have used \u0027which\u0027.",
+      "parentUuid": "d01ebb9e_af39a0f7",
       "revId": "0f1784c305c45518ace14e17b81fd0312dd13910",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
