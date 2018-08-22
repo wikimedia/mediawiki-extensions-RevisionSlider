@@ -6,7 +6,8 @@
 		toggleButton = OO.ui.ButtonWidget.static.infuse( $( '.mw-revslider-toggle-button' ) ),
 		initialize = function () {
 			var startTime = mw.now(),
-				api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) );
+				api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) ),
+				changeTags = [];
 
 			toggleButton.$element.children().attr( {
 				'aria-expanded': autoExpand,
@@ -18,52 +19,62 @@
 
 			mw.libs.revisionSlider.HelpDialog.init();
 
-			api.fetchRevisionData( mw.config.get( 'wgPageName' ), {
-				startId: mw.config.get( 'wgDiffNewId' ),
-				limit: mw.libs.revisionSlider.calculateRevisionsPerWindow( 160, 16 )
-			} ).then( function ( data ) {
-				var revs,
-					revisionList,
-					$container,
-					slider;
+			api.fetchAvailableChangeTags().then( function ( data ) {
+				if ( typeof data === 'object' &&
+					data.query &&
+					data.query.tags &&
+					data.query.tags.length > 0
+				) {
+					changeTags = data.query.tags;
+				}
+				api.fetchRevisionData( mw.config.get( 'wgPageName' ), {
+					startId: mw.config.get( 'wgDiffNewId' ),
+					limit: mw.libs.revisionSlider.calculateRevisionsPerWindow( 160, 16 ),
+					changeTags: changeTags
+				} ).then( function ( data ) {
+					var revs,
+						revisionList,
+						$container,
+						slider;
 
-				mw.track( 'timing.MediaWiki.RevisionSlider.timing.initFetchRevisionData', mw.now() - startTime );
+					mw.track( 'timing.MediaWiki.RevisionSlider.timing.initFetchRevisionData', mw.now() - startTime );
 
-				try {
-					revs = data.revisions;
-					revs.reverse();
+					try {
+						revs = data.revisions;
+						revs.reverse();
 
-					$container = $( '.mw-revslider-slider-wrapper' );
-					$container.attr( 'id', 'mw-revslider-slider-wrapper' );
+						$container = $( '.mw-revslider-slider-wrapper' );
+						$container.attr( 'id', 'mw-revslider-slider-wrapper' );
 
-					revisionList = new mw.libs.revisionSlider.RevisionList( mw.libs.revisionSlider.makeRevisions( revs ) );
-					revisionList.getView().setDir( $container.css( 'direction' ) || 'ltr' );
+						revisionList = new mw.libs.revisionSlider.RevisionList( mw.libs.revisionSlider.makeRevisions( revs ) );
+						revisionList.getView().setDir( $container.css( 'direction' ) || 'ltr' );
 
-					slider = new mw.libs.revisionSlider.Slider( revisionList );
-					slider.getView().render( $container );
-
-					$( window ).on( 'resize', OO.ui.throttle( function () {
+						slider = new mw.libs.revisionSlider.Slider( revisionList );
 						slider.getView().render( $container );
-					}, 250 ) );
 
-					if ( !settings.shouldHideHelpDialogue() ) {
-						mw.libs.revisionSlider.HelpDialog.show();
-						settings.setHideHelpDialogue( true );
+						$( window ).on( 'resize', OO.ui.throttle( function () {
+							slider.getView().render( $container );
+						}, 250 ) );
+
+						if ( !settings.shouldHideHelpDialogue() ) {
+							mw.libs.revisionSlider.HelpDialog.show();
+							settings.setHideHelpDialogue( true );
+						}
+
+						$( '.mw-revslider-placeholder' ).remove();
+						mw.track( 'timing.MediaWiki.RevisionSlider.timing.init', mw.now() - startTime );
+					} catch ( err ) {
+						$( '.mw-revslider-placeholder' )
+							.text( mw.message( 'revisionslider-loading-failed' ).text() );
+						mw.log.error( err );
+						mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
 					}
-
-					$( '.mw-revslider-placeholder' ).remove();
-					mw.track( 'timing.MediaWiki.RevisionSlider.timing.init', mw.now() - startTime );
-				} catch ( err ) {
+				}, function ( err ) {
 					$( '.mw-revslider-placeholder' )
 						.text( mw.message( 'revisionslider-loading-failed' ).text() );
 					mw.log.error( err );
 					mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
-				}
-			}, function ( err ) {
-				$( '.mw-revslider-placeholder' )
-					.text( mw.message( 'revisionslider-loading-failed' ).text() );
-				mw.log.error( err );
-				mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
+				} );
 			} );
 		},
 

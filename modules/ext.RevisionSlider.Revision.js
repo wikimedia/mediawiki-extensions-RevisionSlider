@@ -10,12 +10,15 @@
 		this.timestamp = data.timestamp;
 		this.minor = data.hasOwnProperty( 'minor' ) && ( data.minor || data.minor === '' );
 
-		// Comments and users can be suppressed thus we must check if they exist
+		// Comments, tags, and users can be suppressed thus we must check if they exist
 		if ( 'comment' in data ) {
 			this.comment = data.comment;
 		}
 		if ( 'parsedcomment' in data ) {
 			this.parsedComment = data.parsedcomment;
+		}
+		if ( 'tags' in data ) {
+			this.tags = data.tags;
 		}
 		if ( 'user' in data ) {
 			this.user = data.user;
@@ -40,6 +43,11 @@
 		 * @type {string}
 		 */
 		comment: '',
+
+		/**
+		 * @type {string[]}
+		 */
+		tags: [],
 
 		/**
 		 * @type {boolean}
@@ -111,6 +119,20 @@
 		 */
 		getComment: function () {
 			return this.comment;
+		},
+
+		/**
+		 * @return {string[]}
+		 */
+		getTags: function () {
+			return this.tags;
+		},
+
+		/**
+		 * @return {boolean}
+		 */
+		hasNoTags: function () {
+			return this.tags.length === 0;
 		},
 
 		/**

@@ -11,6 +11,25 @@
 		url: '',
 
 		/**
+		 * Fetches change tags
+		 *
+		 * @return {jQuery.jqXHR}
+		 */
+
+		fetchAvailableChangeTags: function () {
+			return $.ajax( {
+				url: this.url,
+				data: {
+					action: 'query',
+					list: 'tags',
+					tgprop: 'displayname',
+					tglimit: 500,
+					format: 'json'
+				}
+			} );
+		},
+
+		/**
 		 * Fetches a batch of revision data, including a gender setting for users who edited the revision
 		 *
 		 * @param {string} pageName
@@ -34,11 +53,16 @@
 					var revs = data.query.pages[ 0 ].revisions,
 						revContinue = data.continue,
 						genderData = options.knownUserGenders || {},
+						changeTags = options.changeTags || [],
 						unknown,
 						userNames;
 
 					if ( !revs ) {
 						return deferred.reject;
+					}
+
+					if ( changeTags && changeTags.length > 0 ) {
+						revs = self.getRevisionsWithNewTags( revs, changeTags );
 					}
 
 					// No need to query any gender data if masculine, feminine, and neutral are all
@@ -104,7 +128,7 @@
 				action: 'query',
 				prop: 'revisions',
 				format: 'json',
-				rvprop: 'ids|timestamp|user|comment|parsedcomment|size|flags',
+				rvprop: 'ids|timestamp|user|comment|parsedcomment|size|flags|tags',
 				titles: pageName,
 				formatversion: 2,
 				'continue': '',
@@ -178,6 +202,31 @@
 				genderData[ item.name ] = item.gender;
 			} );
 			return genderData;
+		},
+
+		/**
+		 * @param {Object[]} revs
+		 * @param {Object[]} changeTags
+		 * @return {Object[]}
+		 */
+		getRevisionsWithNewTags: function ( revs, changeTags ) {
+			revs.forEach( function ( rev ) {
+				var oldTags = rev.tags,
+					newTags = [];
+
+				if ( oldTags.length > 0 ) {
+					oldTags.forEach( function ( tag ) {
+						changeTags.forEach( function ( changeTag ) {
+							if ( changeTag.name === tag ) {
+								tag = changeTag.displayname;
+							}
+						} );
+						newTags.push( tag );
+					} );
+					rev.tags = newTags;
+				}
+			} );
+			return revs;
 		}
 	} );
 
