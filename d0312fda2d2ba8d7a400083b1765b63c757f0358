@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ed0ec928_a7bb0d27",
+        "filename": "modules/ext.RevisionSlider.lazy.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-08-28T10:46:07Z",
+      "side": 1,
+      "message": "When I use the space key on the lazy pane to expand the slider, the page scrolls down. ( because that\u0027s the \u0027normal\u0027 behavior of space on a page ). We don\u0027t want that :-).\n\nYou should be able to avoid this from happening by calling preventDefault() on the event.\n\nhttps://api.jquery.com/event.preventdefault/",
+      "range": {
+        "startLine": 15,
+        "startChar": 45,
+        "endLine": 15,
+        "endChar": 47
+      },
+      "revId": "d0312fda2d2ba8d7a400083b1765b63c757f0358",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
