@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "35a1060d_4e70bae5",
+        "filename": "modules/ext.RevisionSlider.Api.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5092
+      },
+      "writtenOn": "2018-08-29T06:32:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ba4ef71_85a3681c",
+      "revId": "68458a96202d8fc8d81fce6c2b6b143d6625236c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4814f861_5b4503f4",
         "filename": "modules/ext.RevisionSlider.Api.js",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2018-08-28T15:59:41Z",
       "side": 1,
       "message": "This is also Object[] I guess :-)",
+      "range": {
+        "startLine": 208,
+        "startChar": 13,
+        "endLine": 208,
+        "endChar": 19
+      },
+      "revId": "68458a96202d8fc8d81fce6c2b6b143d6625236c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3464fbec_4df048c0",
+        "filename": "modules/ext.RevisionSlider.Api.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 5092
+      },
+      "writtenOn": "2018-08-29T06:32:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4814f861_5b4503f4",
       "range": {
         "startLine": 208,
         "startChar": 13,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "73af3eae_3acc8d71",
+        "filename": "modules/ext.RevisionSlider.Api.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 5092
+      },
+      "writtenOn": "2018-08-29T06:32:50Z",
+      "side": 1,
+      "message": "Keeping the unknown tags in the list!",
+      "parentUuid": "0cc22b7b_a09e3903",
+      "range": {
+        "startLine": 211,
+        "startChar": 2,
+        "endLine": 211,
+        "endChar": 25
+      },
+      "revId": "68458a96202d8fc8d81fce6c2b6b143d6625236c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8c1ba731_2d494638",
         "filename": "modules/ext.RevisionSlider.Api.js",
         "patchSetId": 1
@@ -76,6 +142,30 @@
       "writtenOn": "2018-08-28T15:59:41Z",
       "side": 1,
       "message": "If we have an empty list of changeTags here the tags of the revision will be untouched and passed on as they are.\n\nIn theory you could skip the whole function when the changeTags list is empty or not set. :-)",
+      "range": {
+        "startLine": 218,
+        "startChar": 11,
+        "endLine": 218,
+        "endChar": 21
+      },
+      "revId": "68458a96202d8fc8d81fce6c2b6b143d6625236c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "822363c8_8d490471",
+        "filename": "modules/ext.RevisionSlider.Api.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5092
+      },
+      "writtenOn": "2018-08-29T06:32:50Z",
+      "side": 1,
+      "message": "With the new changes, calling the function only if the changeTags list is not empty.",
+      "parentUuid": "8c1ba731_2d494638",
       "range": {
         "startLine": 218,
         "startChar": 11,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "d4f4289d_e8066eb6",
+        "filename": "modules/ext.RevisionSlider.Api.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5092
+      },
+      "writtenOn": "2018-08-29T06:32:50Z",
+      "side": 1,
+      "message": "For the unknown tags, we are now returning the their code name. Getting rid of them from the list does not seem like a good idea ;-)",
+      "parentUuid": "cd82ebbe_94c066b4",
+      "range": {
+        "startLine": 226,
+        "startChar": 8,
+        "endLine": 226,
+        "endChar": 25
+      },
+      "revId": "68458a96202d8fc8d81fce6c2b6b143d6625236c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d7acf203_03c72b2b",
         "filename": "modules/ext.RevisionSlider.Revision.js",
         "patchSetId": 1
@@ -134,6 +248,30 @@
     },
     {
       "key": {
+        "uuid": "9ea14d44_df357115",
+        "filename": "modules/ext.RevisionSlider.Revision.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5092
+      },
+      "writtenOn": "2018-08-29T06:32:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7acf203_03c72b2b",
+      "range": {
+        "startLine": 48,
+        "startChar": 12,
+        "endLine": 48,
+        "endChar": 16
+      },
+      "revId": "68458a96202d8fc8d81fce6c2b6b143d6625236c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7e9e50e2_97450a15",
         "filename": "modules/ext.RevisionSlider.Revision.js",
         "patchSetId": 1
@@ -145,6 +283,30 @@
       "writtenOn": "2018-08-28T15:59:41Z",
       "side": 1,
       "message": "See above, better with {string[]}",
+      "range": {
+        "startLine": 125,
+        "startChar": 14,
+        "endLine": 125,
+        "endChar": 18
+      },
+      "revId": "68458a96202d8fc8d81fce6c2b6b143d6625236c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aab3ab7_04d4fcde",
+        "filename": "modules/ext.RevisionSlider.Revision.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5092
+      },
+      "writtenOn": "2018-08-29T06:32:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e9e50e2_97450a15",
       "range": {
         "startLine": 125,
         "startChar": 14,
