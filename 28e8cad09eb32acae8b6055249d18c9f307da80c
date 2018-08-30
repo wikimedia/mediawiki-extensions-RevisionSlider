@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0100ce38_0609623d",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 8
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-08-30T12:11:38Z",
+      "side": 1,
+      "message": "The are also obsolete now I figured.",
+      "range": {
+        "startLine": 200,
+        "startChar": 0,
+        "endLine": 201,
+        "endChar": 14
+      },
+      "revId": "28e8cad09eb32acae8b6055249d18c9f307da80c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898d624a_de812624",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 8
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-08-30T12:11:38Z",
+      "side": 1,
+      "message": "I just played with the CSS and realized, that these four are not needed actually with the new icon.",
+      "range": {
+        "startLine": 213,
+        "startChar": 0,
+        "endLine": 216,
+        "endChar": 17
+      },
+      "revId": "28e8cad09eb32acae8b6055249d18c9f307da80c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
