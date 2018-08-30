@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e8bdf71_463b4ad9",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-08-30T04:32:02Z",
+      "side": 1,
+      "message": "This is unrelated to this Task.",
+      "range": {
+        "startLine": 285,
+        "startChar": 2,
+        "endLine": 305,
+        "endChar": 62
+      },
+      "revId": "4105004c0378ece036c42ec34419d84add0e13d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
