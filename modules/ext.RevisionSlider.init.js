@@ -87,7 +87,7 @@
 		};
 
 	autoExpandButton = new OO.ui.ToggleButtonWidget( {
-		icon: 'pin',
+		icon: 'pushPin',
 		classes: [ 'mw-revslider-auto-expand-button' ],
 		title: mw.msg( autoExpand ?
 			'revisionslider-turn-off-auto-expand-title' :

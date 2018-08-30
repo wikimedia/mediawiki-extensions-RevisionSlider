@@ -61,6 +61,7 @@
 			},
 			"dependencies": [
 				"oojs-ui",
+				"oojs-ui.styles.icons-moderation",
 				"oojs-ui.styles.icons-movement",
 				"mediawiki.jqueryMsg",
 				"ext.RevisionSlider.util",
@@ -70,7 +71,6 @@
 				"ext.RevisionSlider.RevisionList",
 				"ext.RevisionSlider.HelpDialog",
 				"ext.RevisionSlider.Api",
-				"ext.RevisionSlider.icons",
 				"mediawiki.api",
 				"mediawiki.util"
 			],
@@ -202,20 +202,6 @@
 				"mediawiki.util",
 				"oojs-ui"
 			]
-		},
-		"ext.RevisionSlider.icons": {
-			"class": "ResourceLoaderImageModule",
-			"selectorWithoutVariant": ".mw-revslider-{name}-button .oo-ui-iconElement-icon",
-			"selectorWithVariant": ".mw-revslider-{name}-button .oo-ui-iconElement-icon.oo-ui-image-invert",
-			"variants": {
-				"invert": {
-					"color": "#ffffff",
-					"global": true
-				}
-			},
-			"images": {
-				"auto-expand": "resources/ext.RevisionSlider.icons/pin.svg"
-			}
 		},
 		"ext.RevisionSlider.HelpDialog": {
 			"scripts": [
