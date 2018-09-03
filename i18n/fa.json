@@ -11,7 +11,7 @@
 	"revisionslider": "RevisionSlider",
 	"revisionslider-preference-disable": "لغزنده نسخه‌ها را نمایش نده",
 	"revisionslider-desc": "یک نوار لغزنده را نشان داده و اجازه انتخاب و مقایسه برای تجدید نظر در صفحه تفاوت را نشان می‌دهد",
-	"revisionslider-toggle-label": "نمایش تاریخچه",
+	"revisionslider-toggle-label": "نمایش تاریخچه به صورت تعاملی",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte|بایت}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte|بایت}}",
 	"revisionslider-label-date": "تاریخ",
