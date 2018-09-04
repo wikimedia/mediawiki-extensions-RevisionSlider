@@ -45,7 +45,7 @@
 			} );
 			// Don't chain, so lastRequest is a jQuery.jqXHR object
 			this.lastRequest.then( function ( data ) {
-				var $data,
+				var $data, $newContentText,
 					$container = $( '.mw-revslider-container' ),
 					$contentText = $( '#mw-content-text' ),
 					$sidePanel = $( '#mw-panel' ),
@@ -56,12 +56,13 @@
 				// Add our current rendered slider into the newly loaded container
 				$data = $( data );
 				$data.find( '.mw-revslider-container' ).replaceWith( $container );
+				$newContentText = $data.find( '#mw-content-text' );
 
 				// Replace the elements on the page with the newly loaded elements
 				$catLinks.replaceWith( $data.find( '#catlinks' ) );
 				$sidePanel.replaceWith( $data.find( '#mw-panel' ) );
 				$printFooter.replaceWith( $data.find( '.printfooter' ) );
-				$contentText.replaceWith( $data.find( '#mw-content-text' ) );
+				$contentText.replaceWith( $newContentText );
 				// Update edit link
 				$( '#ca-edit a, #ca-ve-edit a' ).each( function () {
 					var uri = new mw.Uri( $( this ).attr( 'href' ) );
@@ -77,7 +78,7 @@
 
 				self.addHandlersToCoreLinks( sliderView );
 
-				mw.hook( 'wikipage.content' ).fire( $contentText );
+				mw.hook( 'wikipage.content' ).fire( $newContentText );
 				mw.hook( 'wikipage.diff' ).fire( $( 'body' ).find( 'table.diff' ) );
 
 			}, function ( xhr ) {
