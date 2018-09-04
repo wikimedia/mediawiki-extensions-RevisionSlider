@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "60b0331d_2d33e018",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-09-04T09:04:35Z",
+      "side": 1,
+      "message": "The first line in the commit message should explain what the patch does. In this case I assume it\u0027s \"Highlight revisions from the same user\".",
+      "revId": "b2bd2e228c9a0f4690b48c6c591f07e227394ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "02c20b52_0ad4ca1c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-09-04T09:04:35Z",
+      "side": 1,
+      "message": "Please mention the Phabricator ticket number here, in this form:\n\nBug: T136105",
+      "revId": "b2bd2e228c9a0f4690b48c6c591f07e227394ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ca4dcaa6_28a8ac1a",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-09-04T09:04:35Z",
+      "side": 1,
+      "message": "I assume you have an easier time when you use class\u003d\"…\" here.",
+      "range": {
+        "startLine": 391,
+        "startChar": 17,
+        "endLine": 391,
+        "endChar": 19
+      },
+      "revId": "b2bd2e228c9a0f4690b48c6c591f07e227394ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99ccc4bb_c19b92c9",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-09-04T09:04:35Z",
+      "side": 1,
+      "message": "There is no variable with this name in this code. I think you need a CSS selector here, as a string (in single quotes).\n\nOne possible solution I can think of is to use class names like \"mw-revisionslider-user-\u003cuserString\u003e\" where \u003cuserString\u003e is the actual (properly escaped) user name per line. The you can use the same CSS class name in this selector here to highlight all lines with a particular user name.",
+      "range": {
+        "startLine": 398,
+        "startChar": 9,
+        "endLine": 398,
+        "endChar": 17
+      },
+      "revId": "b2bd2e228c9a0f4690b48c6c591f07e227394ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
