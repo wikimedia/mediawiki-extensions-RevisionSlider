@@ -16,6 +16,24 @@
       "revId": "48396b78c7d9425c11cf977c1bbb4302399a47df",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "324fb72e_775bdcdb",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-09-04T09:30:10Z",
+      "side": 1,
+      "message": "This sentence was added in 2015, hidden in the much bigger edit https://www.mediawiki.org/wiki/Special:Diff/1409807. I disagree both with the idea to squash multiple logical units in one line, as well with an arbitrary order that doesn\u0027t help making code easier to read. As there is no tool in place that enforces any of this I consider this merely an advice – and not a good one, at least not in this situation. I will update the coding conventions accordingly.",
+      "parentUuid": "1dd0e9fd_f438cb25",
+      "revId": "48396b78c7d9425c11cf977c1bbb4302399a47df",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
