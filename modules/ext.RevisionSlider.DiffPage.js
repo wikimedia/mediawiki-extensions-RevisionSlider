@@ -45,24 +45,20 @@
 			} );
 			// Don't chain, so lastRequest is a jQuery.jqXHR object
 			this.lastRequest.then( function ( data ) {
-				var $data, $newContentText,
+				var $data = $( data ),
+					$contentText,
 					$container = $( '.mw-revslider-container' ),
-					$contentText = $( '#mw-content-text' ),
-					$sidePanel = $( '#mw-panel' ),
-					$catLinks = $( '#catlinks' ),
-					$printFooter = $( '.printfooter' ),
 					scrollLeft = $container.find( '.mw-revslider-revisions-container' ).scrollLeft();
 
 				// Add our current rendered slider into the newly loaded container
-				$data = $( data );
 				$data.find( '.mw-revslider-container' ).replaceWith( $container );
-				$newContentText = $data.find( '#mw-content-text' );
+				$contentText = $data.find( '#mw-content-text' );
 
-				// Replace the elements on the page with the newly loaded elements
-				$catLinks.replaceWith( $data.find( '#catlinks' ) );
-				$sidePanel.replaceWith( $data.find( '#mw-panel' ) );
-				$printFooter.replaceWith( $data.find( '.printfooter' ) );
-				$contentText.replaceWith( $newContentText );
+				// Replace elements on the page with the newly loaded elements, from top to bottom
+				$( '#mw-content-text' ).replaceWith( $contentText );
+				$( '.printfooter' ).replaceWith( $data.find( '.printfooter' ) );
+				$( '#catlinks' ).replaceWith( $data.find( '#catlinks' ) );
+				$( '#mw-panel' ).replaceWith( $data.find( '#mw-panel' ) );
 				// Update edit link
 				$( '#ca-edit a, #ca-ve-edit a' ).each( function () {
 					var uri = new mw.Uri( $( this ).attr( 'href' ) );
@@ -70,15 +66,17 @@
 					$( this ).attr( 'href', uri.toString() );
 				} );
 				// Update wgRevisionId (T161257), and wgDiffOldId/NewId
-				mw.config.set( 'wgRevisionId', diff );
-				mw.config.set( 'wgDiffOldId', oldid );
-				mw.config.set( 'wgDiffNewId', diff );
+				mw.config.set( {
+					wgRevisionId: diff,
+					wgDiffOldId: oldid,
+					wgDiffNewId: diff
+				} );
 
 				$( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
 
 				self.addHandlersToCoreLinks( sliderView );
 
-				mw.hook( 'wikipage.content' ).fire( $newContentText );
+				mw.hook( 'wikipage.content' ).fire( $contentText );
 				mw.hook( 'wikipage.diff' ).fire( $( 'body' ).find( 'table.diff' ) );
 
 			}, function ( xhr ) {
