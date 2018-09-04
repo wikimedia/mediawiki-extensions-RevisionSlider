@@ -353,7 +353,8 @@
 					this.makeCommentLine( revision ),
 					this.makePageSizeLine( revision.getSize() ),
 					this.makeChangeSizeLine( revision.getRelativeSize() ),
-					revision.isMinor() ? $( '<p>' ).text( mw.message( 'revisionslider-minoredit' ).text() ) : ''
+					revision.isMinor() ? $( '<p>' ).text( mw.message( 'revisionslider-minoredit' ).text() ) : '',
+					this.makeTagsLine( revision )
 				);
 			return new OO.ui.PopupWidget( {
 				$content: $tooltip,
@@ -422,6 +423,21 @@
 						rev.getParsedComment()
 					)
 				)
+			);
+		},
+
+		/**
+		 * Generates the HTML for the tags label
+		 *
+		 * @param {Revision} rev
+		 * @return {string|jQuery}
+		 */
+		makeTagsLine: function ( rev ) {
+			if ( rev.hasNoTags() ) {
+				return '';
+			}
+			return $( '<p>' ).append(
+				rev.getTags().join( '<br/>' )
 			);
 		},
 
