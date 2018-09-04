@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6590eb21_0bb08e12",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-04T14:04:16Z",
+      "side": 1,
+      "message": "This number could go in some constant/*easy-changable-variable* so its simpler to play with the threshold to see whats a reasonable value.",
+      "range": {
+        "startLine": 233,
+        "startChar": 27,
+        "endLine": 233,
+        "endChar": 30
+      },
+      "revId": "cbf1fe9bc4cc20d515fbd59ae325fb532053effc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a62d8529_938891ec",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-04T14:04:16Z",
+      "side": 1,
+      "message": "I thinks this curve now also needs to consider to \"cut-off\" the excluded 100 bytes. \n\nUntil now the log curve started at 0 and calculated its way up to the max. Now we cut off the first 100 x values and set the y for them. The log should therefore now probably consider 100 as its new 0.",
+      "revId": "cbf1fe9bc4cc20d515fbd59ae325fb532053effc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
