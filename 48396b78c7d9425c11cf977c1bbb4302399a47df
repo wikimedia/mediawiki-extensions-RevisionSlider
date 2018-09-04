@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1dd0e9fd_f438cb25",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 2663
+      },
+      "writtenOn": "2018-09-04T09:20:07Z",
+      "side": 1,
+      "message": "Variable declarations that don\u0027t assign a value are usually placed on the first line: https://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript#Declarations.",
+      "revId": "48396b78c7d9425c11cf977c1bbb4302399a47df",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
