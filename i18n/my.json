@@ -1,9 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ninjastrikers"
+			"Ninjastrikers",
+			"Dr Lotus Black"
 		]
 	},
+	"revisionslider-toggle-label": "ရာဇဝင်ကို အပြန်အလှန်အားဖြင့် ဝင်ကြည့်ရန်",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|ဘိုက်|ဘိုက်}}",
-	"revisionslider-change-size": "$1 {{PLURAL:$3|ဘိုက်|ဘိုက်}}"
+	"revisionslider-change-size": "$1 {{PLURAL:$3|ဘိုက်|ဘိုက်}}",
+	"revisionslider-label-date": "နေ့စွဲ",
+	"revisionslider-label-page-size": "စာမျက်နှာ အရွယ်အစား",
+	"revisionslider-label-change-size": "အရွယ်အစား ပြောင်းရန်",
+	"revisionslider-label-comment": "အကျဉ်းချုပ်ကို တည်းဖြတ်ရန်",
+	"revisionslider-label-username": "{{GENDER:$1|အသုံးပြုသူအမည်}}",
+	"revisionslider-minoredit": "အရေးမကြီးသော ​ပြင်​ဆင်​မှု ​ဖြစ်​သည်​",
+	"revisionslider-arrow-tooltip-newer": "ပိုသစ်သော ပြန်လည်ပြင်ဆင်မှုများကို ကြည့်ရန်",
+	"revisionslider-arrow-tooltip-older": "ပိုဟောင်းသော ပြန်လည်ပြင်ဆင်မှုများကို ကြည့်ရန်",
+	"revisionslider-show-help-tooltip": "အကူညီစာသား ပြရန်",
+	"revisionslider-previous-dialog": "ယခင်",
+	"revisionslider-next-dialog": "ရှေ့သို့",
+	"revisionslider-close-dialog": "ပိတ်ရန်"
 }
