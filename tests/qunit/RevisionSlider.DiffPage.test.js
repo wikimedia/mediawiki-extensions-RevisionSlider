@@ -21,8 +21,10 @@
 			] ) )
 			);
 
-		mw.config.set( 'wgDiffOldId', 1 );
-		mw.config.set( 'wgDiffNewId', 37 );
+		mw.config.set( {
+			wgDiffOldId: 1,
+			wgDiffNewId: 37
+		} );
 		sliderView.render( $( '<div>' ) );
 
 		histLength = history.length;
