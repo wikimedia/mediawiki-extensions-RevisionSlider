@@ -121,11 +121,11 @@
 				.append(
 					this.backwardArrowButton.$element,
 					this.renderRevisionsContainer( containerWidth, $revisions ),
-					this.forwardArrowButton.$element,
-					mw.libs.revisionSlider.HelpButtonView.render(),
-					$( '<div>' ).css( { clear: 'both' } ),
 					this.renderPointerContainer( containerWidth ),
-					this.pointerOlder.getLine().render(), this.pointerNewer.getLine().render()
+					this.forwardArrowButton.$element,
+					$( '<div>' ).css( { clear: 'both' } ),
+					this.pointerOlder.getLine().render(), this.pointerNewer.getLine().render(),
+					mw.libs.revisionSlider.HelpButtonView.render()
 				);
 
 			this.initPointers( $revisions );
@@ -215,16 +215,16 @@
 		renderPointerContainers: function () {
 			return [
 				$( '<div>' )
-					.addClass( 'mw-revslider-pointer-container-newer' )
-					.append(
-						$( '<div>' ).addClass( 'mw-revslider-slider-line' ),
-						this.pointerNewer.getView().render()
-					),
-				$( '<div>' )
 					.addClass( 'mw-revslider-pointer-container-older' )
 					.append(
 						$( '<div>' ).addClass( 'mw-revslider-slider-line' ),
 						this.pointerOlder.getView().render()
+					),
+				$( '<div>' )
+					.addClass( 'mw-revslider-pointer-container-newer' )
+					.append(
+						$( '<div>' ).addClass( 'mw-revslider-slider-line' ),
+						this.pointerNewer.getView().render()
 					)
 			];
 		},
@@ -240,11 +240,46 @@
 				$pointerNewer = this.pointerNewer.getView().getElement(),
 				self = this;
 
+			$pointerNewer.attr( 'tabindex', 0 );
+			$pointerOlder.attr( 'tabindex', 0 );
+
 			$( 'body' ).keydown( function ( e ) {
 				if ( e.which === 27 ) {
 					self.escapePressed = true;
 					$pointers.trigger( 'mouseup' );
 				}
+			} );
+
+			$pointerOlder.keydown( function ( event ) {
+				self.buildTabbingRulesOnKeyDown(
+					$pointerOlder,
+					event,
+					$revisions
+				);
+			} );
+
+			$pointerOlder.keyup( function ( event ) {
+				self.buildTabbingRulesOnKeyUp(
+					$pointerOlder,
+					event,
+					$revisions
+				);
+			} );
+
+			$pointerNewer.keydown( function ( event ) {
+				self.buildTabbingRulesOnKeyDown(
+					$pointerNewer,
+					event,
+					$revisions
+				);
+			} );
+
+			$pointerNewer.keyup( function ( event ) {
+				self.buildTabbingRulesOnKeyUp(
+					$pointerNewer,
+					event,
+					$revisions
+				);
 			} );
 
 			$pointers.on(
@@ -373,6 +408,93 @@
 			var self = this;
 			$revisions.find( '.mw-revslider-revision-wrapper' ).click( function ( event ) {
 				self.revisionWrapperClickHandler( event, $( this ) );
+			} );
+		},
+
+		/**
+		 * Build rules for tabbing when `keydown` event triggers on pointers
+		 *
+		 * @param {jQuery} $pointer
+		 * @param {Event} event
+		 * @param {jQuery} $revisions
+		 */
+		buildTabbingRulesOnKeyDown: function ( $pointer, event, $revisions ) {
+			var self = this,
+				oldPos = self.getOlderPointerPos(),
+				newPos = self.getNewerPointerPos(),
+				pointer = self.whichPointer( $pointer ),
+				offset = 0,
+				isNewer = pointer.getView().isNewerPointer(),
+				pos, $hoveredRevisionWrapper;
+
+			if ( event.which === 39 ) {
+				offset = 1;
+
+				if ( isNewer ) {
+					if ( newPos === self.slider.getNewestVisibleRevisionIndex() + 1 ) {
+						return;
+					}
+					self.setNewerPointerPos( newPos + 1 );
+				} else {
+					if ( oldPos !== newPos - 1 ) {
+						self.setOlderPointerPos( oldPos + 1 );
+					}
+				}
+			}
+
+			if ( event.which === 37 ) {
+				offset = -1;
+
+				if ( isNewer ) {
+					if ( oldPos !== newPos - 1 ) {
+						self.setNewerPointerPos( newPos - 1 );
+					}
+				} else {
+					if ( oldPos === self.slider.getOldestVisibleRevisionIndex() + 1 ) {
+						return;
+					}
+					self.setOlderPointerPos( oldPos - 1 );
+				}
+			}
+
+			self.resetRevisionStylesBasedOnPointerPosition( $revisions );
+			self.alignPointersAndLines( 1 );
+
+			pos = self.getRevisionPositionFromLeftOffset(
+				$pointer.offset().left + self.revisionWidth / 2
+			) + offset;
+
+			$hoveredRevisionWrapper = self.getRevElementAtPosition( $revisions, pos ).parent();
+			self.getRevisionListView().showTooltip( $hoveredRevisionWrapper );
+		},
+
+		/**
+		 * Build rules for tabbing when `keyup` event triggers on pointers
+		 *
+		 * @param {jQuery} $pointer
+		 * @param {Event} event
+		 * @param {jQuery} $revisions
+		 */
+		buildTabbingRulesOnKeyUp: function ( $pointer, event, $revisions ) {
+			var self = this,
+				diff, oldid;
+
+			if ( event.which !== 39 && event.which !== 37 ) {
+				return;
+			}
+
+			diff = self.getRevElementAtPosition(
+				$revisions, self.getNewerPointerPos()
+			).data( 'revid' );
+
+			oldid = self.getRevElementAtPosition(
+				$revisions, self.getOlderPointerPos()
+			).data( 'revid' );
+
+			this.lastRequest = self.refreshDiffView( diff, oldid, true );
+
+			this.lastRequest.then( function () {
+				$pointer.focus();
 			} );
 		},
 
@@ -538,12 +660,14 @@
 		 * @param {number} diff
 		 * @param {number} oldid
 		 * @param {boolean} pushState
+		 * @return {jQuery}
 		 */
 		refreshDiffView: function ( diff, oldid, pushState ) {
 			this.diffPage.refresh( diff, oldid, this );
 			if ( pushState ) {
 				this.diffPage.pushState( diff, oldid, this );
 			}
+			return this.diffPage.lastRequest;
 		},
 
 		showNextDiff: function () {
