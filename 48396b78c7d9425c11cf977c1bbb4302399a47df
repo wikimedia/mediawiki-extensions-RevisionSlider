@@ -52,6 +52,24 @@
       "revId": "48396b78c7d9425c11cf977c1bbb4302399a47df",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "315172be_01e8d6d2",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-09-11T09:31:04Z",
+      "side": 1,
+      "message": "When I write\n\nvar $first,\n    $second,\n    $third;\n\nI don\u0027t want to be forced to squash this in one line.\n\nWhen I write\n\nvar $first,\n    $second \u003d $( \u0027.foo\u0027 ),\n    $third;\n\nI don\u0027t want to be forced to reorder this.\n\nThat\u0027s all.",
+      "parentUuid": "4507b3f7_f9a61be1",
+      "revId": "48396b78c7d9425c11cf977c1bbb4302399a47df",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
