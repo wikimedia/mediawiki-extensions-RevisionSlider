@@ -16,7 +16,7 @@
 	"revisionslider-label-date": "Data",
 	"revisionslider-label-page-size": "Puslapio dydis",
 	"revisionslider-label-change-size": "Dydžio kitimas",
-	"revisionslider-label-comment": "Komentaras",
+	"revisionslider-label-comment": "Keitimo komentaras",
 	"revisionslider-label-username": "{{GENDER:$1|Naudotojo vardas|Naudotojos vardas}}",
 	"revisionslider-minoredit": "Tai smulkus pakeitimas",
 	"revisionslider-loading-failed": "Nepavyko įkelti versijų apžvalgos slankiklio.",
