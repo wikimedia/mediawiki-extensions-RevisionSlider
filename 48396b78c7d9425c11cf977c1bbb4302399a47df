@@ -34,6 +34,24 @@
       "revId": "48396b78c7d9425c11cf977c1bbb4302399a47df",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4507b3f7_f9a61be1",
+        "filename": "modules/ext.RevisionSlider.DiffPage.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2018-09-11T02:07:26Z",
+      "side": 1,
+      "message": "It is not the page that matters, it is our convention. And regardless of what is written on said page, it is true that we follow this in almost all MW js code. If not, then it is likely an oversight, not intentional.\n\nThis is the first time I hear active support for changing it (as opposed to not caring, and leaving it in whatever place it was to produce the smallest diff).\n\nI am totally open to changing it. But, perhaps that should be discussed and we can avoid small variations for minimal benefit, such as these?\n\nAs in other discussions, I don\u0027t actually have strong preferences for how we write our code. I\u0027ve got opinions on a few things, but by far the stronger thing I favour is consistency and ability to speed-read with the amount of least surprise or confusion. This adds to that surprise, because with the convention of assignments being after un-assignments, this looks like a mistake, and is distracting when having to understand the code.",
+      "parentUuid": "324fb72e_775bdcdb",
+      "revId": "48396b78c7d9425c11cf977c1bbb4302399a47df",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
