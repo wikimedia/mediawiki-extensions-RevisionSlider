@@ -17,11 +17,11 @@
 		$revisionWrapperDivs = $resultHtml.find( '.mw-revslider-revision-wrapper' );
 		$revisionDivs = $resultHtml.find( '.mw-revslider-revision' );
 
-		assert.equal( $revisionWrapperDivs.length, 3 );
-		assert.equal( $( $revisionDivs[ 0 ] ).attr( 'data-revid' ), 1 );
-		assert.equal( $( $revisionDivs[ 2 ] ).attr( 'data-revid' ), 37 );
-		assert.equal( $( $revisionDivs[ 1 ] ).css( 'width' ), '11px' );
-		assert.equal( $( $revisionDivs[ 1 ] ).css( 'height' ), '66px' ); // max relative size
+		assert.strictEqual( $revisionWrapperDivs.length, 3 );
+		assert.strictEqual( $( $revisionDivs[ 0 ] ).attr( 'data-revid' ), '1' );
+		assert.strictEqual( $( $revisionDivs[ 2 ] ).attr( 'data-revid' ), '37' );
+		assert.strictEqual( $( $revisionDivs[ 1 ] ).css( 'width' ), '11px' );
+		assert.strictEqual( $( $revisionDivs[ 1 ] ).css( 'height' ), '66px' ); // max relative size
 		assert.ok( $( $revisionDivs[ 1 ] ).hasClass( 'mw-revslider-revision-up' ) );
 		assert.ok( $( $revisionDivs[ 2 ] ).hasClass( 'mw-revslider-revision-down' ) );
 	} );
@@ -88,7 +88,7 @@
 
 		$userLineHtml = revisionListView.makeUserLine( null );
 
-		assert.equal( $userLineHtml, '' );
+		assert.strictEqual( $userLineHtml, '' );
 	} );
 
 	QUnit.test( 'user line is composed correctly', function ( assert ) {
@@ -97,7 +97,7 @@
 
 		$userLineHtml = revisionListView.makeUserLine( 'User1' );
 
-		assert.equal( $userLineHtml.find( 'a' ).text(), 'User1' );
+		assert.strictEqual( $userLineHtml.find( 'a' ).text(), 'User1' );
 		assert.ok( $userLineHtml.find( 'a' ).attr( 'href' ).match( /User:User1/ ) );
 	} );
 
@@ -107,7 +107,7 @@
 
 		$userLineHtml = revisionListView.makeUserLine( '127.0.0.1' );
 
-		assert.equal( $userLineHtml.find( 'a' ).text(), '127.0.0.1' );
+		assert.strictEqual( $userLineHtml.find( 'a' ).text(), '127.0.0.1' );
 		assert.ok( $userLineHtml.find( 'a' ).attr( 'href' ).match( /Special:Contributions\/127.0.0.1/ ) );
 	} );
 
@@ -120,7 +120,7 @@
 			parsedcomment: '   '
 		} ) );
 
-		assert.equal( $commentHtml, '' );
+		assert.strictEqual( $commentHtml, '' );
 	} );
 
 	QUnit.test( 'comment line is composed correctly', function ( assert ) {
@@ -132,7 +132,7 @@
 			parsedcomment: '<strong>Hello</strong>'
 		} ) );
 
-		assert.equal( $commentLineHtml.find( 'strong' ).length, 2 );
+		assert.strictEqual( $commentLineHtml.find( 'strong' ).length, 2 );
 	} );
 
 	QUnit.test( 'positive change is composed correctly', function ( assert ) {
@@ -141,8 +141,8 @@
 
 		$changeSizeLineHtml = revisionListView.makeChangeSizeLine( 9 );
 
-		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).length, 1 );
-		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).text(), '+9' );
+		assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).length, 1 );
+		assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).text(), '+9' );
 	} );
 
 	QUnit.test( 'negative change is composed correctly', function ( assert ) {
@@ -151,8 +151,8 @@
 
 		$changeSizeLineHtml = revisionListView.makeChangeSizeLine( -9 );
 
-		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-negative' ).length, 1 );
-		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-negative' ).text(), '-9' );
+		assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-negative' ).length, 1 );
+		assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-negative' ).text(), '-9' );
 	} );
 
 	QUnit.test( 'neutral change is composed correctly', function ( assert ) {
@@ -161,8 +161,8 @@
 
 		$changeSizeLineHtml = revisionListView.makeChangeSizeLine( 0 );
 
-		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-none' ).length, 1 );
-		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-none' ).text(), '0' );
+		assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-none' ).length, 1 );
+		assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-none' ).text(), '0' );
 	} );
 
 	QUnit.test( 'big change number is formatted correctly', function ( assert ) {
@@ -171,7 +171,7 @@
 
 		$changeSizeLineHtml = revisionListView.makeChangeSizeLine( 1000 );
 
-		assert.equal( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).text(), '+1,000' );
+		assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).text(), '+1,000' );
 	} );
 
 	QUnit.test( 'page size is formatted correctly', function ( assert ) {

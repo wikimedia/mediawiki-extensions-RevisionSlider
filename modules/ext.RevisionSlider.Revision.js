@@ -8,7 +8,7 @@
 		this.id = data.revid;
 		this.size = data.size;
 		this.timestamp = data.timestamp;
-		this.minor = data.hasOwnProperty( 'minor' ) && ( data.minor || data.minor === '' );
+		this.minor = !!data.minor || data.minor === '';
 
 		// Comments, tags, and users can be suppressed thus we must check if they exist
 		if ( 'comment' in data ) {

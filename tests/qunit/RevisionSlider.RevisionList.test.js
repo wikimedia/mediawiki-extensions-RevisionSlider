@@ -12,7 +12,7 @@
 			new Revision( { revid: 3, size: 13 } )
 		] );
 
-		assert.equal( revs.getBiggestChangeSize(), 16 );
+		assert.strictEqual( revs.getBiggestChangeSize(), 16 );
 	} );
 
 	QUnit.test( 'calculate relative size on init', function ( assert ) {
@@ -22,9 +22,9 @@
 			new Revision( { revid: 3, size: 13 } )
 		] );
 
-		assert.equal( revs.getRevisions()[ 0 ].getRelativeSize(), 5 );
-		assert.equal( revs.getRevisions()[ 1 ].getRelativeSize(), 16 );
-		assert.equal( revs.getRevisions()[ 2 ].getRelativeSize(), -8 );
+		assert.strictEqual( revs.getRevisions()[ 0 ].getRelativeSize(), 5 );
+		assert.strictEqual( revs.getRevisions()[ 1 ].getRelativeSize(), 16 );
+		assert.strictEqual( revs.getRevisions()[ 2 ].getRelativeSize(), -8 );
 	} );
 
 	QUnit.test( 'getUserGenders', function ( assert ) {
@@ -50,17 +50,17 @@
 		] );
 
 		revisions = list.getRevisions();
-		assert.equal( list.getLength(), 5 );
-		assert.equal( revisions[ 0 ].getId(), 1 );
-		assert.equal( revisions[ 0 ].getRelativeSize(), 5 );
-		assert.equal( revisions[ 1 ].getId(), 2 );
-		assert.equal( revisions[ 1 ].getRelativeSize(), 16 );
-		assert.equal( revisions[ 2 ].getId(), 3 );
-		assert.equal( revisions[ 2 ].getRelativeSize(), -8 );
-		assert.equal( revisions[ 3 ].getId(), 6 );
-		assert.equal( revisions[ 3 ].getRelativeSize(), 6 );
-		assert.equal( revisions[ 4 ].getId(), 8 );
-		assert.equal( revisions[ 4 ].getRelativeSize(), 6 );
+		assert.strictEqual( list.getLength(), 5 );
+		assert.strictEqual( revisions[ 0 ].getId(), 1 );
+		assert.strictEqual( revisions[ 0 ].getRelativeSize(), 5 );
+		assert.strictEqual( revisions[ 1 ].getId(), 2 );
+		assert.strictEqual( revisions[ 1 ].getRelativeSize(), 16 );
+		assert.strictEqual( revisions[ 2 ].getId(), 3 );
+		assert.strictEqual( revisions[ 2 ].getRelativeSize(), -8 );
+		assert.strictEqual( revisions[ 3 ].getId(), 6 );
+		assert.strictEqual( revisions[ 3 ].getRelativeSize(), 6 );
+		assert.strictEqual( revisions[ 4 ].getId(), 8 );
+		assert.strictEqual( revisions[ 4 ].getRelativeSize(), 6 );
 	} );
 
 	QUnit.test( 'Unshift prepends revisions to the beginning of the list', function ( assert ) {
@@ -76,17 +76,17 @@
 		] );
 
 		revisions = list.getRevisions();
-		assert.equal( list.getLength(), 5 );
-		assert.equal( revisions[ 0 ].getId(), 2 );
-		assert.equal( revisions[ 0 ].getRelativeSize(), 19 );
-		assert.equal( revisions[ 1 ].getId(), 4 );
-		assert.equal( revisions[ 1 ].getRelativeSize(), 6 );
-		assert.equal( revisions[ 2 ].getId(), 5 );
-		assert.equal( revisions[ 2 ].getRelativeSize(), -20 );
-		assert.equal( revisions[ 3 ].getId(), 6 );
-		assert.equal( revisions[ 3 ].getRelativeSize(), 16 );
-		assert.equal( revisions[ 4 ].getId(), 7 );
-		assert.equal( revisions[ 4 ].getRelativeSize(), -8 );
+		assert.strictEqual( list.getLength(), 5 );
+		assert.strictEqual( revisions[ 0 ].getId(), 2 );
+		assert.strictEqual( revisions[ 0 ].getRelativeSize(), 19 );
+		assert.strictEqual( revisions[ 1 ].getId(), 4 );
+		assert.strictEqual( revisions[ 1 ].getRelativeSize(), 6 );
+		assert.strictEqual( revisions[ 2 ].getId(), 5 );
+		assert.strictEqual( revisions[ 2 ].getRelativeSize(), -20 );
+		assert.strictEqual( revisions[ 3 ].getId(), 6 );
+		assert.strictEqual( revisions[ 3 ].getRelativeSize(), 16 );
+		assert.strictEqual( revisions[ 4 ].getId(), 7 );
+		assert.strictEqual( revisions[ 4 ].getRelativeSize(), -8 );
 	} );
 
 	QUnit.test( 'Unshift considers the size of the preceding revision if specified', function ( assert ) {
@@ -105,9 +105,9 @@
 		);
 
 		revisions = list.getRevisions();
-		assert.equal( list.getLength(), 5 );
-		assert.equal( revisions[ 0 ].getId(), 2 );
-		assert.equal( revisions[ 0 ].getRelativeSize(), 7 );
+		assert.strictEqual( list.getLength(), 5 );
+		assert.strictEqual( revisions[ 0 ].getId(), 2 );
+		assert.strictEqual( revisions[ 0 ].getRelativeSize(), 7 );
 	} );
 
 	QUnit.test( 'Slice returns a subset of the list', function ( assert ) {
@@ -121,11 +121,11 @@
 			slicedList = list.slice( 1, 3 ),
 			revisions = slicedList.getRevisions();
 
-		assert.equal( slicedList.getLength(), 2 );
-		assert.equal( revisions[ 0 ].getId(), 2 );
-		assert.equal( revisions[ 0 ].getRelativeSize(), 16 );
-		assert.equal( revisions[ 1 ].getId(), 3 );
-		assert.equal( revisions[ 1 ].getRelativeSize(), -8 );
+		assert.strictEqual( slicedList.getLength(), 2 );
+		assert.strictEqual( revisions[ 0 ].getId(), 2 );
+		assert.strictEqual( revisions[ 0 ].getRelativeSize(), 16 );
+		assert.strictEqual( revisions[ 1 ].getId(), 3 );
+		assert.strictEqual( revisions[ 1 ].getRelativeSize(), -8 );
 	} );
 
 	QUnit.test( 'Slice returns a subset of the list, end param omitted', function ( assert ) {
@@ -139,11 +139,11 @@
 			slicedList = list.slice( 1 ),
 			revisions = slicedList.getRevisions();
 
-		assert.equal( slicedList.getLength(), 4 );
-		assert.equal( revisions[ 0 ].getId(), 2 );
-		assert.equal( revisions[ 1 ].getId(), 3 );
-		assert.equal( revisions[ 2 ].getId(), 6 );
-		assert.equal( revisions[ 3 ].getId(), 8 );
+		assert.strictEqual( slicedList.getLength(), 4 );
+		assert.strictEqual( revisions[ 0 ].getId(), 2 );
+		assert.strictEqual( revisions[ 1 ].getId(), 3 );
+		assert.strictEqual( revisions[ 2 ].getId(), 6 );
+		assert.strictEqual( revisions[ 3 ].getId(), 8 );
 	} );
 
 	QUnit.test( 'makeRevisions converts revision data into list of Revision objects', function ( assert ) {
@@ -154,11 +154,11 @@
 			],
 			revisions = makeRevisions( revs );
 
-		assert.equal( revisions[ 0 ].getId(), 1 );
-		assert.equal( revisions[ 0 ].getSize(), 5 );
-		assert.equal( revisions[ 1 ].getId(), 2 );
-		assert.equal( revisions[ 1 ].getSize(), 21 );
-		assert.equal( revisions[ 2 ].getId(), 3 );
-		assert.equal( revisions[ 2 ].getSize(), 13 );
+		assert.strictEqual( revisions[ 0 ].getId(), 1 );
+		assert.strictEqual( revisions[ 0 ].getSize(), 5 );
+		assert.strictEqual( revisions[ 1 ].getId(), 2 );
+		assert.strictEqual( revisions[ 1 ].getSize(), 21 );
+		assert.strictEqual( revisions[ 2 ].getId(), 3 );
+		assert.strictEqual( revisions[ 2 ].getSize(), 13 );
 	} );
 }( mediaWiki ) );

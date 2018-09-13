@@ -12,7 +12,7 @@
 			pos = 42;
 
 		pointer.setPosition( pos );
-		assert.equal( pointer.getPosition(), pos );
+		assert.strictEqual( pointer.getPosition(), pos );
 	} );
 
 }( mediaWiki ) );

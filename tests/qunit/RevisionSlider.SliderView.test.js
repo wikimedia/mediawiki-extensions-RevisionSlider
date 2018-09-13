@@ -37,9 +37,9 @@
 		$revisionOld = $container.find( '.mw-revslider-revision-old' );
 		$revisionNew = $container.find( '.mw-revslider-revision-new' );
 		assert.ok( $revisionOld.length > 0 );
-		assert.equal( $revisionOld.attr( 'data-revid' ), 1 );
+		assert.strictEqual( $revisionOld.attr( 'data-revid' ), '1' );
 		assert.ok( $revisionNew.length > 0 );
-		assert.equal( $revisionNew.attr( 'data-revid' ), 37 );
+		assert.strictEqual( $revisionNew.attr( 'data-revid' ), '37' );
 	} );
 
 	QUnit.test( 'render throws an exception when no selected revisions provided', function ( assert ) {

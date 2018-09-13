@@ -19,9 +19,9 @@
 	QUnit.test( 'Has offset', function ( assert ) {
 		var pv = new PointerView( null, 'mw-revslider-pointer' );
 		pv.render();
-		assert.equal( pv.getOffset(), 0 );
+		assert.strictEqual( pv.getOffset(), 0 );
 
 		pv.getElement().addClass( 'mw-revslider-pointer-newer' );
-		assert.equal( pv.getOffset(), 16 );
+		assert.strictEqual( pv.getOffset(), 16 );
 	} );
 }( mediaWiki ) );

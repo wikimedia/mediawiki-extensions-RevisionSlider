@@ -20,13 +20,13 @@
 			] ),
 			slider = new Slider( revs );
 
-		assert.equal( slider.getRevisionList(), revs );
+		assert.strictEqual( slider.getRevisionList(), revs );
 	} );
 
 	QUnit.test( 'Given no revisions, first visible revision index is 0', function ( assert ) {
 		var slider = new Slider( makeNRevisions( 0 ) );
 
-		assert.equal( slider.getOldestVisibleRevisionIndex(), 0 );
+		assert.strictEqual( slider.getOldestVisibleRevisionIndex(), 0 );
 	} );
 
 	QUnit.test( 'Given 200 revisions sliding once increases oldestVisibleRevisionIndex by the number of revisions per window', function ( assert ) {
@@ -34,7 +34,7 @@
 		slider.setRevisionsPerWindow( 50 );
 		slider.slide( 1 );
 
-		assert.equal( slider.getOldestVisibleRevisionIndex(), 50 );
+		assert.strictEqual( slider.getOldestVisibleRevisionIndex(), 50 );
 	} );
 
 	QUnit.test( 'oldestVisibleRevisionIndex cannot be higher than revisions.length - revisionsPerWindow', function ( assert ) {
@@ -42,7 +42,7 @@
 		slider.setRevisionsPerWindow( 50 );
 		slider.slide( 1 );
 
-		assert.equal( slider.getOldestVisibleRevisionIndex(), 25 );
+		assert.strictEqual( slider.getOldestVisibleRevisionIndex(), 25 );
 	} );
 
 	QUnit.test( 'oldestVisibleRevisionIndex cannot be lower than 0', function ( assert ) {
@@ -51,7 +51,7 @@
 		slider.setRevisionsPerWindow( 20 );
 		slider.slide( -1 );
 
-		assert.equal( slider.getOldestVisibleRevisionIndex(), 0 );
+		assert.strictEqual( slider.getOldestVisibleRevisionIndex(), 0 );
 	} );
 
 }( mediaWiki ) );

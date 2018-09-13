@@ -31,7 +31,7 @@
 
 		diffPage.pushState( 3, 37, sliderView );
 
-		assert.equal( history.length, histLength + 1 );
+		assert.strictEqual( history.length, histLength + 1 );
 		assert.propEqual(
 			history.state,
 			{

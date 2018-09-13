@@ -16,15 +16,15 @@
 
 		mw.libs.revisionSlider.userOffset = 0;
 
-		assert.equal( rev.getSize(), data.size );
-		assert.equal( rev.getComment(), data.comment );
-		assert.equal( rev.getParsedComment(), data.parsedcomment );
-		assert.equal( rev.getUser(), data.user );
-		assert.equal( rev.getUserGender(), 'female' );
-		assert.equal( rev.isMinor(), false );
+		assert.strictEqual( rev.getSize(), data.size );
+		assert.strictEqual( rev.getComment(), data.comment );
+		assert.strictEqual( rev.getParsedComment(), data.parsedcomment );
+		assert.strictEqual( rev.getUser(), data.user );
+		assert.strictEqual( rev.getUserGender(), 'female' );
+		assert.strictEqual( rev.isMinor(), false );
 
 		if ( mw.config.get( 'wgUserLanguage' ) === 'en' ) {
-			assert.equal( rev.getFormattedDate(), '26 April 2016 10:27 AM' );
+			assert.strictEqual( rev.getFormattedDate(), '26 April 2016 10:27 AM' );
 		}
 	} );
 
@@ -33,7 +33,7 @@
 			minor: ''
 		} );
 
-		assert.equal( rev.isMinor(), true );
+		assert.strictEqual( rev.isMinor(), true );
 	} );
 
 	QUnit.test( 'isMinor with minor true', function ( assert ) {
@@ -41,14 +41,14 @@
 			minor: true
 		} );
 
-		assert.equal( rev.isMinor(), true );
+		assert.strictEqual( rev.isMinor(), true );
 	} );
 
 	QUnit.test( 'get and set relative size', function ( assert ) {
 		var size = 5,
 			rev = new Revision( {} );
 		rev.setRelativeSize( size );
-		assert.equal( rev.getRelativeSize(), size );
+		assert.strictEqual( rev.getRelativeSize(), size );
 	} );
 
 	QUnit.revisionSlider.testOrSkip( 'getFormattedDate, offset: 0', function ( assert ) {
@@ -58,7 +58,7 @@
 
 		mw.libs.revisionSlider.userOffset = 0;
 
-		assert.equal( rev.getFormattedDate(), '26 April 2016 10:27 AM' );
+		assert.strictEqual( rev.getFormattedDate(), '26 April 2016 10:27 AM' );
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
 	QUnit.revisionSlider.testOrSkip( 'getFormattedDate, offset: 120 (treat as hours, +2h)', function ( assert ) {
@@ -69,7 +69,7 @@
 		// Berlin = 120
 		mw.libs.revisionSlider.userOffset = 120;
 
-		assert.equal( rev.getFormattedDate(), '26 April 2016 12:27 PM' );
+		assert.strictEqual( rev.getFormattedDate(), '26 April 2016 12:27 PM' );
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
 	QUnit.revisionSlider.testOrSkip( 'getFormattedDate, negative offset: -420 (treat as hours, -7h)', function ( assert ) {
@@ -80,7 +80,7 @@
 		// San Francisco = -420
 		mw.libs.revisionSlider.userOffset = -420;
 
-		assert.equal( rev.getFormattedDate(), '26 April 2016 3:27 AM' );
+		assert.strictEqual( rev.getFormattedDate(), '26 April 2016 3:27 AM' );
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
 	QUnit.test( 'hasEmptyComment comment with whitespaces', function ( assert ) {
