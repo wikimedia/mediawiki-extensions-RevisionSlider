@@ -5,7 +5,8 @@
 			"Rubentl134",
 			"Dgstranz",
 			"-jem-",
-			"Fitoschido"
+			"Fitoschido",
+			"Jelou"
 		]
 	},
 	"revisionslider": "Deslizador de revisiones",
@@ -28,7 +29,7 @@
 	"revisionslider-arrow-tooltip-newer": "Ver revisiones más recientes",
 	"revisionslider-arrow-tooltip-older": "Ver revisiones anteriores",
 	"revisionslider-show-help-tooltip": "Mostrar el texto de ayuda",
-	"revisionslider-help-dialog-slide1": "El Deslizador de revisiones te ayuda a navegar y comparar revisiones en la página de diferencias. Está basado en una [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider solicitud comunitaria] de la lista de solicitudes técnicas de la comunidad germanoparlante. Se agradecerán los comentarios [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider aquí].",
+	"revisionslider-help-dialog-slide1": "El control deslizante de revisión te ayuda a navegar y comparar revisiones en la página diff. Se basa en una [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider solicitud de la comunidad] de la lista de solicitudes técnicas de la comunidad germanoparlante. Se agradecerán los comentarios [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider aquí].",
 	"revisionslider-help-dialog-slide2": "Cada barra representa una revisión de una página. Las barras de arriba muestran un crecimiento en el tamaño de la página, las barras de abajo muestran una reducción. En la imagen, la revisión 1 representa el contenido agregado, mientras que la revisión 2 representa la eliminación de contenido.",
 	"revisionslider-help-dialog-slide4": "Usa las flechas de avanzar y retroceder para moverte en el historial de revisiones y mostrar revisiones más nuevas y más antiguas.",
 	"revisionslider-tutorial": "Tutorial sobre el Deslizador de revisiones",
