@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "79dcfc24_bcae31d1",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-20T11:34:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba693794_e5b1c48f",
+      "revId": "8c2d58fe912e1e5a1fa2b8c3aaacef4a6eedebee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7217c636_38f223c8",
         "filename": "modules/ext.RevisionSlider.RevisionListView.js",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2018-09-20T04:04:18Z",
       "side": 1,
       "message": "Here you are using camelCase for `borderClass`. Change that to snake-case. Also, `borderClass` name does not look naice. It is a class that is obvious. Maybe change it to highlight-user-row or something..",
+      "revId": "8c2d58fe912e1e5a1fa2b8c3aaacef4a6eedebee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2c9bd402_897008e2",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-20T11:34:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7217c636_38f223c8",
       "revId": "8c2d58fe912e1e5a1fa2b8c3aaacef4a6eedebee",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ccaea670_0f3e36eb",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-20T11:34:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "390cc6d8_42e83ead",
+      "revId": "8c2d58fe912e1e5a1fa2b8c3aaacef4a6eedebee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c95c99de_e37bed50",
         "filename": "modules/ext.RevisionSlider.RevisionListView.js",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2018-09-20T04:04:18Z",
       "side": 1,
       "message": "H is capital in word \u0027Highlight\u0027; should be small.",
+      "revId": "8c2d58fe912e1e5a1fa2b8c3aaacef4a6eedebee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "93a5f2ba_da61c392",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-20T11:34:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c95c99de_e37bed50",
       "revId": "8c2d58fe912e1e5a1fa2b8c3aaacef4a6eedebee",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "77a0b830_35179eb6",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-20T11:34:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "736fe31f_968ec85c",
+      "revId": "8c2d58fe912e1e5a1fa2b8c3aaacef4a6eedebee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c426a3d7_c50a5232",
         "filename": "modules/ext.RevisionSlider.RevisionListView.js",
         "patchSetId": 13
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "3321f9ca_2b7ea9ee",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 13
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-20T11:34:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c426a3d7_c50a5232",
+      "revId": "8c2d58fe912e1e5a1fa2b8c3aaacef4a6eedebee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8529f54f_850c1632",
         "filename": "modules/ext.RevisionSlider.lazy.less",
         "patchSetId": 13
@@ -115,6 +223,24 @@
       "writtenOn": "2018-09-20T04:04:18Z",
       "side": 1,
       "message": "Looks like, this class is not used anywhere. You could get rid of this.",
+      "revId": "8c2d58fe912e1e5a1fa2b8c3aaacef4a6eedebee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f4423ce_ec2f833c",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 13
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-20T11:34:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8529f54f_850c1632",
       "revId": "8c2d58fe912e1e5a1fa2b8c3aaacef4a6eedebee",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false

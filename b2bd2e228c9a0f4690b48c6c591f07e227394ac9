@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ff9d13f_31edec32",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-20T11:34:01Z",
+      "side": 1,
+      "message": "Sure",
+      "parentUuid": "60b0331d_2d33e018",
+      "revId": "b2bd2e228c9a0f4690b48c6c591f07e227394ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "02c20b52_0ad4ca1c",
         "filename": "/COMMIT_MSG",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2018-09-04T09:04:35Z",
       "side": 1,
       "message": "Please mention the Phabricator ticket number here, in this form:\n\nBug: T136105",
+      "revId": "b2bd2e228c9a0f4690b48c6c591f07e227394ac9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a65069b3_2eb58938",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-20T11:34:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02c20b52_0ad4ca1c",
       "revId": "b2bd2e228c9a0f4690b48c6c591f07e227394ac9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
