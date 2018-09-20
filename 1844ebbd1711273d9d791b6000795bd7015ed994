@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "28886b21_0982b6da",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-09-20T15:37:21Z",
+      "side": 1,
+      "message": "This is misplaced in the if ( … ) { … }. Should be outside, probably in the first line:\n\nvar revs,\n    self \u003d this;",
+      "range": {
+        "startLine": 387,
+        "startChar": 4,
+        "endLine": 387,
+        "endChar": 16
+      },
+      "revId": "1844ebbd1711273d9d791b6000795bd7015ed994",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa62fc9_29d0bf6d",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-09-20T15:37:21Z",
+      "side": 1,
+      "message": "Does this work? \":hover\" is a pseudo-class that can not be set via code, but when the mouse hovers an element. I think this line is either broken, or jQuery ignores the \":hover\". Please remove it.\n\nSame a few more times below.",
+      "range": {
+        "startLine": 405,
+        "startChar": 16,
+        "endLine": 405,
+        "endChar": 42
+      },
+      "revId": "1844ebbd1711273d9d791b6000795bd7015ed994",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c4538412_69de2516",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 14
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-09-20T15:37:21Z",
+      "side": 1,
+      "message": "I\u0027m a little worried about this class name. It\u0027s a little generic. There might be other elements on the page with this name. Better prefix it, similar to the other class names:\n\n.mw-revslider-bubble\n\nDon\u0027t forget to adapt the code accordingly.",
+      "range": {
+        "startLine": 119,
+        "startChar": 1,
+        "endLine": 119,
+        "endChar": 7
+      },
+      "revId": "1844ebbd1711273d9d791b6000795bd7015ed994",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
