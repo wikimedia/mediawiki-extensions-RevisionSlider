@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f6fb4783_2a4a8778",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 15
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-25T15:33:09Z",
+      "side": 1,
+      "message": "This should also toggle I guess :-)",
+      "range": {
+        "startLine": 406,
+        "startChar": 16,
+        "endLine": 406,
+        "endChar": 24
+      },
+      "revId": "639dcde357b6e3338a56ad26b6a8f5efad53554e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7fe22a0e_3565739a",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 15
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-25T15:33:09Z",
+      "side": 1,
+      "message": "Better use strings or meaningful named constants here like so it\u0027s easier to read and understand that 2 means \"toggle\" ;-)",
+      "range": {
+        "startLine": 407,
+        "startChar": 13,
+        "endLine": 407,
+        "endChar": 14
+      },
+      "revId": "639dcde357b6e3338a56ad26b6a8f5efad53554e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fbddd3c3_10078f72",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 15
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-25T15:33:09Z",
+      "side": 1,
+      "message": "Don\u0027t forget, that you should remove all \"old\" highlighting before applying a new one, so you do not add up on highlighted things ...",
+      "range": {
+        "startLine": 434,
+        "startChar": 2,
+        "endLine": 434,
+        "endChar": 28
+      },
+      "revId": "639dcde357b6e3338a56ad26b6a8f5efad53554e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5128f29b_06f8100c",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 15
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-25T15:33:09Z",
+      "side": 1,
+      "message": "You could also use selectedUser \u003d\u003d\u003d revs[ i ].getUser() right away.\n\nAlso, since the for loop and condition here is the same in all three blocks, you could move the flag condition check into here and change the action applied depending on the flag.",
+      "range": {
+        "startLine": 441,
+        "startChar": 5,
+        "endLine": 441,
+        "endChar": 36
+      },
+      "revId": "639dcde357b6e3338a56ad26b6a8f5efad53554e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
