@@ -166,6 +166,24 @@
     },
     {
       "key": {
+        "uuid": "227914bc_27048dc3",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 16
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-26T13:45:06Z",
+      "side": 1,
+      "message": "You\u0027re right about the padding I just overlooked that it seems ^^\u0027.\n\nBut we sill should get rid of the fixed margin here. - If you use \"float: right;\" it will always move to the far right end of the line. This is more flexible so it does not extend too much.",
+      "parentUuid": "59f67559_70485655",
+      "revId": "dece112fb75d582f0e870ee322f0f4932723d625",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "76f25a31_6f10e596",
         "filename": "modules/ext.RevisionSlider.lazy.less",
         "patchSetId": 16
