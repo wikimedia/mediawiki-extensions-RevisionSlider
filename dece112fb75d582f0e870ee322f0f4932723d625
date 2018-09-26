@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7226ba84_9b36e07f",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 16
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T11:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7295e31b_97be1a63",
+      "revId": "dece112fb75d582f0e870ee322f0f4932723d625",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d43f7742_dbba407b",
         "filename": "modules/ext.RevisionSlider.lazy.less",
         "patchSetId": 16
@@ -30,6 +48,30 @@
       "writtenOn": "2018-09-26T10:46:30Z",
       "side": 1,
       "message": "I think border-radius: 100%; is more appropriate here. If you want a circle, that\u0027s the way to go.",
+      "range": {
+        "startLine": 123,
+        "startChar": 16,
+        "endLine": 123,
+        "endChar": 20
+      },
+      "revId": "dece112fb75d582f0e870ee322f0f4932723d625",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5fe24e0c_c0c0cbfd",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 16
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T11:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d43f7742_dbba407b",
       "range": {
         "startLine": 123,
         "startChar": 16,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "1b7cbc06_bc63f0c1",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 16
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T11:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b951839_a8bdf2bd",
+      "range": {
+        "startLine": 125,
+        "startChar": 13,
+        "endLine": 125,
+        "endChar": 16
+      },
+      "revId": "dece112fb75d582f0e870ee322f0f4932723d625",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f5767de9_1f959871",
         "filename": "modules/ext.RevisionSlider.lazy.less",
         "patchSetId": 16
@@ -76,6 +142,24 @@
       "writtenOn": "2018-09-26T10:46:30Z",
       "side": 1,
       "message": "To right-align the bubble you could use float: right; here instead and the use a margin-right: 2px; to have some space between the highlight border of the row and the bubble.",
+      "revId": "dece112fb75d582f0e870ee322f0f4932723d625",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "59f67559_70485655",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 16
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T11:52:38Z",
+      "side": 1,
+      "message": "I think As described in the mock-up Image we should not give the right padding I guess.",
+      "parentUuid": "f5767de9_1f959871",
       "revId": "dece112fb75d582f0e870ee322f0f4932723d625",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -99,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "35a5aebe_975dcb65",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 16
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T11:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "76f25a31_6f10e596",
+      "revId": "dece112fb75d582f0e870ee322f0f4932723d625",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3dd71314_6f5bc7a9",
         "filename": "modules/ext.RevisionSlider.lazy.less",
         "patchSetId": 16
@@ -110,6 +212,30 @@
       "writtenOn": "2018-09-26T10:46:30Z",
       "side": 1,
       "message": "No half pixels please :-).",
+      "range": {
+        "startLine": 136,
+        "startChar": 9,
+        "endLine": 136,
+        "endChar": 14
+      },
+      "revId": "dece112fb75d582f0e870ee322f0f4932723d625",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "34cd07c9_1122c76f",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 16
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T11:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3dd71314_6f5bc7a9",
       "range": {
         "startLine": 136,
         "startChar": 9,
@@ -145,6 +271,30 @@
     },
     {
       "key": {
+        "uuid": "f0629b63_edc24abf",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 16
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T11:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ceab6a7e_4282d001",
+      "range": {
+        "startLine": 138,
+        "startChar": 16,
+        "endLine": 138,
+        "endChar": 20
+      },
+      "revId": "dece112fb75d582f0e870ee322f0f4932723d625",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa8b54f5_65180aac",
         "filename": "modules/ext.RevisionSlider.lazy.less",
         "patchSetId": 16
@@ -168,6 +318,30 @@
     },
     {
       "key": {
+        "uuid": "44d25b8e_f4ebc767",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 16
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T11:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa8b54f5_65180aac",
+      "range": {
+        "startLine": 139,
+        "startChar": 16,
+        "endLine": 139,
+        "endChar": 22
+      },
+      "revId": "dece112fb75d582f0e870ee322f0f4932723d625",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4728d7f9_b70982d4",
         "filename": "modules/ext.RevisionSlider.lazy.less",
         "patchSetId": 16
@@ -179,6 +353,24 @@
       "writtenOn": "2018-09-26T10:46:30Z",
       "side": 1,
       "message": "Due to the added padding and the added border, the row expands, and \"jumps\" a bit from the right. You could re-adjust the layout a bit by adding a negative margin the takes the added border and padding into account. To do that just add a line\n\nmargin-left: -3px; ( 2px for the padding and 1 for the border )",
+      "revId": "dece112fb75d582f0e870ee322f0f4932723d625",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c76cfed_2b311d14",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 16
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T11:52:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4728d7f9_b70982d4",
       "revId": "dece112fb75d582f0e870ee322f0f4932723d625",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
