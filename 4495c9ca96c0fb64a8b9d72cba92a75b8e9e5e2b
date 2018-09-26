@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6f1d7f30_d66fdd29",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 18
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T17:30:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4d7f81e_82c5dfde",
+      "range": {
+        "startLine": 407,
+        "startChar": 6,
+        "endLine": 407,
+        "endChar": 11
+      },
+      "revId": "4495c9ca96c0fb64a8b9d72cba92a75b8e9e5e2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d4c3c8b6_02fbdd09",
         "filename": "modules/ext.RevisionSlider.RevisionListView.js",
         "patchSetId": 18
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "e6ec5877_0cb4d2df",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 18
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T17:30:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4c3c8b6_02fbdd09",
+      "range": {
+        "startLine": 415,
+        "startChar": 7,
+        "endLine": 415,
+        "endChar": 12
+      },
+      "revId": "4495c9ca96c0fb64a8b9d72cba92a75b8e9e5e2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d547bbc7_57cab64f",
         "filename": "modules/ext.RevisionSlider.RevisionListView.js",
         "patchSetId": 18
@@ -59,6 +107,30 @@
       "writtenOn": "2018-09-26T13:45:06Z",
       "side": 1,
       "message": "See above",
+      "range": {
+        "startLine": 421,
+        "startChar": 7,
+        "endLine": 421,
+        "endChar": 12
+      },
+      "revId": "4495c9ca96c0fb64a8b9d72cba92a75b8e9e5e2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cb2c76b3_359198b1",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 18
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T17:30:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d547bbc7_57cab64f",
       "range": {
         "startLine": 421,
         "startChar": 7,
@@ -117,6 +189,54 @@
     },
     {
       "key": {
+        "uuid": "609411f1_63b9cc04",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 18
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T17:30:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7450af6b_452a50e3",
+      "range": {
+        "startLine": 432,
+        "startChar": 2,
+        "endLine": 432,
+        "endChar": 3
+      },
+      "revId": "4495c9ca96c0fb64a8b9d72cba92a75b8e9e5e2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b9b8cfb_db4f6ed7",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 18
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T17:30:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98a1968e_28c004e9",
+      "range": {
+        "startLine": 432,
+        "startChar": 13,
+        "endLine": 432,
+        "endChar": 16
+      },
+      "revId": "4495c9ca96c0fb64a8b9d72cba92a75b8e9e5e2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "56056e86_61d96a34",
         "filename": "modules/ext.RevisionSlider.RevisionListView.js",
         "patchSetId": 18
@@ -128,6 +248,30 @@
       "writtenOn": "2018-09-26T13:45:06Z",
       "side": 1,
       "message": "Two things here:\n\n1.: You can just remove a class, even if it is not there. So you could just call removeClass on all these elements with an additional check.\n2.: Since you can just blindly remove the class from all elements you also do not have to go through the list of revisions for that step. \n\nYou could therefore \"reset\" all at once by removing the class from $( \u0027.mw-revslider-revision-wrapper\u0027 ); before the for lookp. \n\n( this jquery gives you the list of all \u0027.mw-revslider-revision-wrapper\u0027 elemnts and calling .removeClass on this will remove the class from all of these elements. )",
+      "range": {
+        "startLine": 438,
+        "startChar": 0,
+        "endLine": 440,
+        "endChar": 5
+      },
+      "revId": "4495c9ca96c0fb64a8b9d72cba92a75b8e9e5e2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f22efc90_9ca06095",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 18
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T17:30:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56056e86_61d96a34",
       "range": {
         "startLine": 438,
         "startChar": 0,
@@ -186,6 +330,30 @@
     },
     {
       "key": {
+        "uuid": "9023fb55_c1425923",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 18
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T17:30:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "287581d3_097b969f",
+      "range": {
+        "startLine": 415,
+        "startChar": 19,
+        "endLine": 415,
+        "endChar": 21
+      },
+      "revId": "4495c9ca96c0fb64a8b9d72cba92a75b8e9e5e2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "23b04341_36caf3c2",
         "filename": "modules/ext.RevisionSlider.less",
         "patchSetId": 18
@@ -197,6 +365,30 @@
       "writtenOn": "2018-09-26T13:45:06Z",
       "side": 1,
       "message": "Same here.",
+      "range": {
+        "startLine": 428,
+        "startChar": 19,
+        "endLine": 428,
+        "endChar": 21
+      },
+      "revId": "4495c9ca96c0fb64a8b9d72cba92a75b8e9e5e2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a2c31cc1_46ac2d00",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 18
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T17:30:10Z",
+      "side": 1,
+      "message": "Here If we use \u0027%\u0027 the shape is changing completely.",
+      "parentUuid": "23b04341_36caf3c2",
       "range": {
         "startLine": 428,
         "startChar": 19,

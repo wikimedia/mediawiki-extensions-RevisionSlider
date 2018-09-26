@@ -184,6 +184,24 @@
     },
     {
       "key": {
+        "uuid": "dfb6aa99_46d67f1b",
+        "filename": "modules/ext.RevisionSlider.lazy.less",
+        "patchSetId": 16
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-26T17:30:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "227914bc_27048dc3",
+      "revId": "dece112fb75d582f0e870ee322f0f4932723d625",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "76f25a31_6f10e596",
         "filename": "modules/ext.RevisionSlider.lazy.less",
         "patchSetId": 16
