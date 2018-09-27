@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c877b6eb_084966d2",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-27T10:04:55Z",
+      "side": 1,
+      "message": "I just realized, that the point container should probably move up to be appended before the forwardArrow. - Otherwise, when tabbing and both arrows are enabled, we will tab to the forward ( \"right\" ) arrow before reaching the pointers. :-)",
+      "revId": "24b339eb7f945a7a3810ee6bb5a04ce82a30dda6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "752bf5db_63f2fef4",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 3
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-27T10:04:55Z",
+      "side": 1,
+      "message": "Since the outline applies for \"all\" pointers you could move it up to the general point styles in line 232",
+      "revId": "24b339eb7f945a7a3810ee6bb5a04ce82a30dda6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5c787f2_5c60340f",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 3
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-27T10:04:55Z",
+      "side": 1,
+      "message": "To avoid duplication here you could put the \u0026:focus under the \u0026:hover separated by comma like\n\n\u0026:hover,\n\u0026:focus {",
+      "revId": "24b339eb7f945a7a3810ee6bb5a04ce82a30dda6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71f19d5b_e411e4ed",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 3
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-27T10:04:55Z",
+      "side": 1,
+      "message": "Same here :-)",
+      "revId": "24b339eb7f945a7a3810ee6bb5a04ce82a30dda6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
