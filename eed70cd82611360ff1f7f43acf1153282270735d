@@ -91,6 +91,29 @@
       "revId": "eed70cd82611360ff1f7f43acf1153282270735d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f4df9d48_37d045ec",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-27T04:24:45Z",
+      "side": 1,
+      "message": "This can be removed as this is unrelated to this task",
+      "range": {
+        "startLine": 342,
+        "startChar": 3,
+        "endLine": 351,
+        "endChar": 5
+      },
+      "revId": "eed70cd82611360ff1f7f43acf1153282270735d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
