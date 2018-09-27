@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ea9fb41_08fe409e",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-27T04:21:28Z",
+      "side": 1,
+      "message": "When I played with the CSS, I guess 2 seems good to me.",
+      "range": {
+        "startLine": 26,
+        "startChar": 12,
+        "endLine": 26,
+        "endChar": 13
+      },
+      "revId": "eed70cd82611360ff1f7f43acf1153282270735d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d727ced_bd9346e8",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-27T04:21:28Z",
+      "side": 1,
+      "message": "I think this should be increased to maybe to 76 or 86 as the maxRevisionHeight is also 66, So both get overlap.",
+      "range": {
+        "startLine": 31,
+        "startChar": 13,
+        "endLine": 31,
+        "endChar": 15
+      },
+      "revId": "eed70cd82611360ff1f7f43acf1153282270735d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d120efa_df36ebb4",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-27T04:21:28Z",
+      "side": 1,
+      "message": "You can declare this outside the if condition, As it is double declared now.",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 86,
+        "endChar": 18
+      },
+      "revId": "eed70cd82611360ff1f7f43acf1153282270735d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f649c60a_2534bb3e",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-09-27T04:21:28Z",
+      "side": 1,
+      "message": "if you follow above comment you can remove this.",
+      "range": {
+        "startLine": 102,
+        "startChar": 4,
+        "endLine": 102,
+        "endChar": 18
+      },
+      "revId": "eed70cd82611360ff1f7f43acf1153282270735d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
