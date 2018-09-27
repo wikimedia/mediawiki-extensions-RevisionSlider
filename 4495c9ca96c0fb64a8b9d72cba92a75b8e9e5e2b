@@ -398,6 +398,30 @@
       "revId": "4495c9ca96c0fb64a8b9d72cba92a75b8e9e5e2b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b219c6ba_cd8e5364",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 18
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-27T10:41:02Z",
+      "side": 1,
+      "message": "Oh - ok then that\u0027s fine :-).",
+      "parentUuid": "a2c31cc1_46ac2d00",
+      "range": {
+        "startLine": 428,
+        "startChar": 19,
+        "endLine": 428,
+        "endChar": 21
+      },
+      "revId": "4495c9ca96c0fb64a8b9d72cba92a75b8e9e5e2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }

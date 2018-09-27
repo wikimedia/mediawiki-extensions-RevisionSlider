@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ac66d0fe_7272725b",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 19
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-27T10:41:02Z",
+      "side": 1,
+      "message": "The border looks a bit strange and that\u0027s due to some fancy border hacks here, that we use to create some of the padding to the neighbor bars.\n\nYou could either set both CSS on the \"mw-revslider-revision-border-box\" class also setting the border color should be enough then.\n\nOr we just keep the border and don\u0027t change the color. It\u0027s specified in the ticket, but if it\u0027s too bothersome it should be also fine like it is now.",
+      "revId": "a50206a525abe7ea1920e22760188c54b52a66b6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
