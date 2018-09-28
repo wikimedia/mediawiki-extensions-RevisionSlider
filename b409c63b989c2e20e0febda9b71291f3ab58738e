@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e980d0f_1be9413e",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-28T06:59:21Z",
+      "side": 1,
+      "message": "As I mentioned before you could also add a condition here, that if the currentUser \u003d\u003d\u003d userString, you could already add the class for the highlight-user-row. \n\nThis makes sure, that if you select a user, leave the popup and come back again to the same popup or a popup from the same user, the user line will be marked as selected.",
+      "revId": "b409c63b989c2e20e0febda9b71291f3ab58738e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "861be8d7_53039e8f",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-28T06:59:21Z",
+      "side": 1,
+      "message": "What I wrote before also applies for the bubble. You could add a condition to check, if the currentUser equals the userString. If that\u0027s the case the bubble should be constructed with the \"mw-revslider-highlite-bubble\" right away. So you have the effect as described above.",
+      "revId": "b409c63b989c2e20e0febda9b71291f3ab58738e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b78bd463_7411ad0c",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 20
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-09-28T06:59:21Z",
+      "side": 1,
+      "message": "Thinking about it, the mouseenter and mouseleave events should not be removed here - instead you could add a condition further down, that if the selectedUser \u003d\u003d\u003d userString, there will be no action applied.\n\nThis way you will have the \"hover-effact\" back if someone clicks the bubble and \"unclicks\" it again.",
+      "range": {
+        "startLine": 420,
+        "startChar": 0,
+        "endLine": 420,
+        "endChar": 50
+      },
+      "revId": "b409c63b989c2e20e0febda9b71291f3ab58738e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
