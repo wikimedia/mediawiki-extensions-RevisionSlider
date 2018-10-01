@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38302a0c_c4b7cc1d",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 21
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-10-01T09:53:47Z",
+      "side": 1,
+      "message": "It will not work this way, because at that point, the row is not constructed yet. - You would have to do it further down, after it\u0027s build.",
+      "range": {
+        "startLine": 401,
+        "startChar": 0,
+        "endLine": 404,
+        "endChar": 4
+      },
+      "revId": "2cd02801b5efc073d385a68cb29b2196359a230d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ac267566_368c1d9d",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 21
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-10-01T09:53:47Z",
+      "side": 1,
+      "message": "So instead of returning the row right away you could store it in some variable, then have the if clause further down to add the highlighting on bubble and row, and return the result afterwards.",
+      "range": {
+        "startLine": 406,
+        "startChar": 3,
+        "endLine": 406,
+        "endChar": 9
+      },
+      "revId": "2cd02801b5efc073d385a68cb29b2196359a230d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ab95c808_b2e8745f",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 21
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-10-01T09:53:47Z",
+      "side": 1,
+      "message": "That\u0027s not exactly what I meant. See below :-)",
+      "revId": "2cd02801b5efc073d385a68cb29b2196359a230d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "29f3ae44_878a038b",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 21
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-10-01T09:53:47Z",
+      "side": 1,
+      "message": "If you change this to\n\nelse if ( self.selectedUser !\u003d\u003d userString )\n\nYou make sure the mouseenter and mouseleave effects are not triggered when the current user is selected already. But this way the events still stay intact and when the user \"unclicks\" the bubble they work as expected again.",
+      "range": {
+        "startLine": 419,
+        "startChar": 8,
+        "endLine": 419,
+        "endChar": 12
+      },
+      "revId": "2cd02801b5efc073d385a68cb29b2196359a230d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
