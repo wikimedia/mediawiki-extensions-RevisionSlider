@@ -6,6 +6,7 @@
 	},
 	"revisionslider-label-date": "Dato",
 	"revisionslider-label-page-size": "Sidestørrelse",
+	"revisionslider-label-change-size": "Ændre størrelse",
 	"revisionslider-label-username": "{{GENDER:$1|Brugernavn}}",
 	"revisionslider-minoredit": "Dette er en mindre ændring",
 	"revisionslider-previous-dialog": "Forrige",
