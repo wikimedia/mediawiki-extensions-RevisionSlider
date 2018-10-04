@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd290ba2_c4bb8c52",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 23
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-10-04T15:03:29Z",
+      "side": 1,
+      "message": "I think with one pixel more here the bubble fits better the border. 17 should do it.",
+      "range": {
+        "startLine": 411,
+        "startChar": 9,
+        "endLine": 411,
+        "endChar": 13
+      },
+      "revId": "b79074ff4a25ea8d8e5ba634f3dcd7171eea9ccc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0a7f565e_a628799c",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 23
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-10-04T15:03:29Z",
+      "side": 1,
+      "message": "Same here",
+      "range": {
+        "startLine": 412,
+        "startChar": 8,
+        "endLine": 412,
+        "endChar": 13
+      },
+      "revId": "b79074ff4a25ea8d8e5ba634f3dcd7171eea9ccc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "10de1b3d_20ec6cc0",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 23
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-10-04T15:03:29Z",
+      "side": 1,
+      "message": "Please add the \"mw-\" prefix to the class.",
+      "range": {
+        "startLine": 424,
+        "startChar": 1,
+        "endLine": 424,
+        "endChar": 10
+      },
+      "revId": "b79074ff4a25ea8d8e5ba634f3dcd7171eea9ccc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67325aa7_00da6472",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 23
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-10-04T15:03:29Z",
+      "side": 1,
+      "message": "The style is already set in the line above. No need to set it here again. :-)",
+      "range": {
+        "startLine": 426,
+        "startChar": 0,
+        "endLine": 426,
+        "endChar": 21
+      },
+      "revId": "b79074ff4a25ea8d8e5ba634f3dcd7171eea9ccc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cc5218e3_b2749087",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 23
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-10-04T15:03:29Z",
+      "side": 1,
+      "message": "We should use a radius of 40px here again. It looks better,",
+      "range": {
+        "startLine": 427,
+        "startChar": 16,
+        "endLine": 427,
+        "endChar": 21
+      },
+      "revId": "b79074ff4a25ea8d8e5ba634f3dcd7171eea9ccc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "97ecf2b7_db6e45bc",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 23
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-10-04T15:03:29Z",
+      "side": 1,
+      "message": "To get a bit of space between the border end on the left and the text I would add a 2px padding-left. \n\n( This was also the idea when having the margin set to -3px. ;-) )",
+      "revId": "b79074ff4a25ea8d8e5ba634f3dcd7171eea9ccc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c9f564e7_091434ab",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 23
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-10-04T15:03:29Z",
+      "side": 1,
+      "message": "Since we still have this annoying shaking of the line  when the highlight is added I would suggest the following:\n\nAdd the border and margins to the class row itself ( also when not highlighted ) but make the color transparent there.\n\nFor the highlight only set the color. So\n\n.mw-revslider-username-row {\n\tborder: 1px solid transparent;\n        ...\n}\n\n.mw-highlight-user-row {\n\tborder-color: #e0e0e0;\n}",
+      "range": {
+        "startLine": 424,
+        "startChar": 0,
+        "endLine": 429,
+        "endChar": 1
+      },
+      "revId": "b79074ff4a25ea8d8e5ba634f3dcd7171eea9ccc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
