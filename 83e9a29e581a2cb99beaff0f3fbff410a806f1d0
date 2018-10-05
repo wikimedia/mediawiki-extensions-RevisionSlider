@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "797b5f29_2c839261",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-10-05T10:24:07Z",
+      "side": 1,
+      "message": "Good thinking and it works - although a bit hacky ;-).\n\nIt really seems we have to reapply the focus when the update of the diff is done. Maybe we can do this somehow directly. \n\nFollowing the code we have:\n\nSliderView.refreshDiffView -\u003e DiffPage.refresh\n\nLooking at the latter brings us to Line 40 in DiffPage.js where the jQuery ajax request is executed to get the new diff. The request itself is asynchronous but $.ajax returns a jqXHR object that we can use to e.g. set callback functions for a finished request ( \\o/ ). See for example line 47.\n\nIf we pass this \"lastRequest\" jqXHR object down to the buildTabbingRulesOnKeyUp method we could set another \"then\"-callback to reset the focus directly after the request and the updates are finished.\n\nLuckily all methods in the chain do not return anything yet, so this should be easily possibly ( and also might be helpful for other things in the future ) :-).",
+      "revId": "83e9a29e581a2cb99beaff0f3fbff410a806f1d0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "149d519f_fe042efc",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 4
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-10-05T10:24:07Z",
+      "side": 1,
+      "message": "colon  :-)",
+      "range": {
+        "startLine": 258,
+        "startChar": 3,
+        "endLine": 258,
+        "endChar": 4
+      },
+      "revId": "83e9a29e581a2cb99beaff0f3fbff410a806f1d0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
