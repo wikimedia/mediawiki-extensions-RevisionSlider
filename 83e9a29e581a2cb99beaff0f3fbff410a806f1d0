@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "26228605_4432be61",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 5092
+      },
+      "writtenOn": "2018-10-06T00:41:07Z",
+      "side": 1,
+      "message": "Yes, it did seemed hacky to me :D This approach is much cleaner, I\u0027ve made the changes!!",
+      "parentUuid": "797b5f29_2c839261",
+      "revId": "83e9a29e581a2cb99beaff0f3fbff410a806f1d0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "149d519f_fe042efc",
         "filename": "modules/ext.RevisionSlider.less",
         "patchSetId": 4
