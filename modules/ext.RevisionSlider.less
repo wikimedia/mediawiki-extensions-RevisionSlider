@@ -230,6 +230,10 @@ of the frameless one (to fit the size of the toggle button */
 	height: 14px;
 	border-radius: 50%;
 
+	&:focus {
+		outline: 2px solid #36c;
+	}
+
 	&:hover,
 	&-cursor {
 		cursor: move; /* fallback if grab cursor is unsupported */
@@ -250,7 +254,8 @@ of the frameless one (to fit the size of the toggle button */
 		border: 1px solid @new;
 		.vertical-gradient( lighten( @new, 30% ), @new );
 
-		&:hover {
+		&:hover,
+		&:focus {
 			.vertical-gradient( lighten( @new, 40% ), @new );
 		}
 	}
@@ -260,7 +265,8 @@ of the frameless one (to fit the size of the toggle button */
 		border: 1px solid @oldHandle;
 		.vertical-gradient( lighten( @oldHandle, 30% ), @oldHandle );
 
-		&:hover {
+		&:hover,
+		&:focus {
 			.vertical-gradient( lighten( @oldHandle, 40% ), @oldHandle );
 		}
 	}
