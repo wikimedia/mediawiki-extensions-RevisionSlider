@@ -13,7 +13,7 @@
 			var helpButton, helpPopup;
 
 			helpButton = new OO.ui.ButtonWidget( {
-				icon: 'help',
+				icon: 'helpNotice',
 				framed: false,
 				classes: [ 'mw-revslider-show-help' ]
 			} );
