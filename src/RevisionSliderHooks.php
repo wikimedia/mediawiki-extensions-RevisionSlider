@@ -106,7 +106,7 @@ class RevisionSliderHooks {
 
 		$loadingSpinner = Html::rawElement(
 			'div', [ 'class' => 'mw-revslider-spinner' ],
-			Html::Element(
+			Html::element(
 				'div', [ 'class' => 'mw-revslider-bounce' ]
 			)
 		);
