@@ -167,20 +167,21 @@
 }
 
 .mw-revslider-arrow {
-	width: 22px;
+	width: 20px;
 	height: 142px;
+
 	&.oo-ui-buttonElement .oo-ui-buttonElement-button {
+		min-width: 0;
 		width: 20px;
+		min-height: 0;
 		height: 140px;
 		padding: 0;
-		min-height: 0;
-		min-width: 0;
 	}
 
 	&.oo-ui-iconElement > .oo-ui-buttonElement-button > .oo-ui-iconElement-icon {
-		left: 0;
-		width: 20px;
+		left: -1px; // `-1px` to make up for `border-width` of button
 		min-width: inherit;
+		width: 20px;
 		min-height: inherit;
 	}
 }
@@ -201,7 +202,7 @@
 of the frameless one (to fit the size of the toggle button */
 .mw-revslider-container .mw-revslider-auto-expand-button .oo-ui-buttonElement-button {
 	padding: 0;
-	box-sizing: border-box;
+	.box-sizing( border-box );
 	width: 1.875em;
 	height: 1.875em;
 	background-color: transparent;
