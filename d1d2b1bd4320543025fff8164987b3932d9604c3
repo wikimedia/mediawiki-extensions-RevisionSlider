@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22a41c66_c3339809",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4879
+      },
+      "writtenOn": "2018-11-04T14:18:47Z",
+      "side": 1,
+      "message": "Change Bug to Bug:",
+      "revId": "d1d2b1bd4320543025fff8164987b3932d9604c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
