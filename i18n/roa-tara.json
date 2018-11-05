@@ -5,6 +5,10 @@
 			"Macofe"
 		]
 	},
-	"revisionslider-label-comment": "Commende",
+	"revisionslider": "RevisionSlider",
+	"revisionslider-preference-disable": "No ffà 'ndrucà 'u RevisionSlider",
+	"revisionslider-label-comment": "Cange 'u riepiloghe",
+	"revisionslider-label-username": "{{GENDER:$1|Nome de l'utende}}:",
+	"revisionslider-minoredit": "Quiste jè 'nu cangiamende stuèdeche",
 	"revisionslider-arrow-tooltip-older": "'Ndruche le revisiune cchiù vicchije"
 }
