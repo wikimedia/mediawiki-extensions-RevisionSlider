@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "94296c84_d082206c",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2018-11-10T17:09:22Z",
+      "side": 1,
+      "message": "Why are you changing this?",
+      "revId": "66acce399ee3e6dd9c76b5b7d018d55c1c40e953",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8b99572e_222a718c",
         "filename": "modules/ext.RevisionSlider.less",
         "patchSetId": 1
@@ -13,6 +30,23 @@
       "writtenOn": "2018-11-10T12:14:49Z",
       "side": 1,
       "message": "add one Space",
+      "revId": "66acce399ee3e6dd9c76b5b7d018d55c1c40e953",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "47432f2d_c957eae1",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2018-11-10T17:09:22Z",
+      "side": 1,
+      "message": "It\u0027s not a good idea to start from left, as you don\u0027t know which browser window width the user is going for. \nAlso replace bottom with top.",
       "revId": "66acce399ee3e6dd9c76b5b7d018d55c1c40e953",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
