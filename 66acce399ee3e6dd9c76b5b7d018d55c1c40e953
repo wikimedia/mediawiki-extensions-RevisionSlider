@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8b99572e_222a718c",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 1
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 5575
+      },
+      "writtenOn": "2018-11-10T12:14:49Z",
+      "side": 1,
+      "message": "add one Space",
+      "revId": "66acce399ee3e6dd9c76b5b7d018d55c1c40e953",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
