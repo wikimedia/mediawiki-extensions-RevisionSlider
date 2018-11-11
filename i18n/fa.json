@@ -5,7 +5,8 @@
 			"MohammadtheEditor",
 			"Ebraminio",
 			"Ladsgroup",
-			"Obzord"
+			"Obzord",
+			"Physicsch"
 		]
 	},
 	"revisionslider": "RevisionSlider",
@@ -28,10 +29,10 @@
 	"revisionslider-arrow-tooltip-newer": "مشاهده نسخه های جدیدتر",
 	"revisionslider-arrow-tooltip-older": "مشاهده نسخه های قدیمی تر",
 	"revisionslider-show-help-tooltip": "نمایش متن راهنما",
-	"revisionslider-help-dialog-slide1": "نوار لغزنده نسخه کمک می کند تا شما را به حرکت و مقایسه تجدید نظر در صفحه تفاوت است. این است که در بر اساس [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider community wish] از لیست علاقه مندی های فنی جامعه آلمانی زبان. بازخورد بسیار قدردانی [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider اینجا].",
-	"revisionslider-help-dialog-slide2": "هر نوار نشان دهنده یک ویرایش از این صفحه. میله بر رشد نشان می‌دهد بالا در اندازه صفحه، کافه‌ها در پایین نشان می‌دهد کاهش. در تصویر، تجدید نظر ۱ نشان دهنده محتوای اضافه شده است، در حالی که نسخه ۲ نشان دهنده حذف محتوا.",
+	"revisionslider-help-dialog-slide1": "نوار لغزنده به شما برای حرکت و مقایسه ویرایش‌ها در صفحهٔ تفاوت کمک می‌کند. این ابزار بر اساس یکی از [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider آرزوها] از لیست آرزوهای فنی جامعه آلمانی زبان ایجاد شده است. از بازخوردهای شما [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider در اینجا] بسیار قدردانی می‌شود.",
+	"revisionslider-help-dialog-slide2": "هر نوار نشان‌دهنده یک نسخه از این صفحه است. میله‌های رو به بالا افزایش حجم مقاله و میله‌های رو به پایین کاهش حجم مقاله را نشان می‌دهد. در تصویر، نسخه ۱ مطلب اضافه شده است، در حالی که در نسخه ۲ محتوا حذف شده است.",
 	"revisionslider-help-dialog-slide3a": "<p>برای مقایسه دو نسخه خاص، نسخه‌ها را با استفاده از اشاره‌گر زرد و آبی انتخاب کنید.</p><p>اشاره‌گر آبی نسخه جدیدتر را کنترل می‌کند، اشاره‌گر زرد نسخه قدیمی را.</p><p>اشاره‌گرها را با گرفتن و رها کردن یا با کلیک بر خط لغزنده جابجا کنید.</p>",
-	"revisionslider-help-dialog-slide4": "استفاده از فلش رو به عقب و جلو به طول تاریخ تجدید نظر حرکت و نشان می دهد نسخه های قدیمی تر و جدیدتر.",
+	"revisionslider-help-dialog-slide4": "از اشاره‌گرهای رو به عقب و جلو برای حرکت در تاریخچهٔ ویرایشی و نمایش داده شدن نسخه‌های قدیمی‌تر و جدید‌تر استفاده کنید.",
 	"revisionslider-tutorial": "آموزش‌های اسلایدر بازبینی",
 	"revisionslider-previous-dialog": "قبلی",
 	"revisionslider-next-dialog": "بعدی",
