@@ -22,6 +22,30 @@
       "revId": "1675096c7be5ec2be4bcf702224c6a57dfb84056",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f5ec17e6_7cbad76c",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-11-13T15:15:21Z",
+      "side": 1,
+      "message": "The flip was done to make the older pointer appear before the newer pointer in the DOM. So tabbing through the interface works more naturally. - I guess reverting this for now is ok to avoid the interface being broken though ...",
+      "parentUuid": "3c27ba3e_82d8ea07",
+      "range": {
+        "startLine": 216,
+        "startChar": 3,
+        "endLine": 229,
+        "endChar": 5
+      },
+      "revId": "1675096c7be5ec2be4bcf702224c6a57dfb84056",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
