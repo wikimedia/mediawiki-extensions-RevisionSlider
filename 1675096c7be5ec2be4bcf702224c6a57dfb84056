@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3c27ba3e_82d8ea07",
+        "filename": "modules/ext.RevisionSlider.SliderView.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-11-13T14:44:28Z",
+      "side": 1,
+      "message": "This change flipped the two \u003cdiv\u003es returned by the function renderPointerContainers(), and caused T208238. Was there a reason to do this?\n\nI propose to revert this change: I0c03e47.",
+      "range": {
+        "startLine": 216,
+        "startChar": 3,
+        "endLine": 229,
+        "endChar": 5
+      },
+      "revId": "1675096c7be5ec2be4bcf702224c6a57dfb84056",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
