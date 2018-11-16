@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var Slider = mw.libs.revisionSlider.Slider,
 		RevisionList = mw.libs.revisionSlider.RevisionList,
 		Revision = mw.libs.revisionSlider.Revision,
@@ -54,4 +54,4 @@
 		assert.strictEqual( slider.getOldestVisibleRevisionIndex(), 0 );
 	} );
 
-}( mediaWiki ) );
+}() );

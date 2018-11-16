@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	/**
 	 * Module containing logic for the revision pointers
 	 *
@@ -58,4 +58,4 @@
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 	mw.libs.revisionSlider.Pointer = Pointer;
-}( mediaWiki, jQuery ) );
+}() );

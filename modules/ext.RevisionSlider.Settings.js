@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	/**
 	 * @constructor
 	 */
@@ -105,4 +105,4 @@
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 	mw.libs.revisionSlider.Settings = Settings;
-}( mediaWiki, jQuery ) );
+}() );

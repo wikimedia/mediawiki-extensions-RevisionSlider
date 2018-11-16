@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	/**
 	 * @param {string} apiUrl
 	 * @constructor
@@ -232,4 +232,4 @@
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 	mw.libs.revisionSlider.Api = Api;
-}( mediaWiki, jQuery ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	/* global moment:false */
 	/**
 	 * @param {Object} data - Containing keys `id`, `size`, `comment`, `parsedcomment`, `timestamp`, `user` and `minor`
@@ -184,4 +184,4 @@
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 	mw.libs.revisionSlider.Revision = Revision;
-}( mediaWiki, jQuery ) );
+}() );

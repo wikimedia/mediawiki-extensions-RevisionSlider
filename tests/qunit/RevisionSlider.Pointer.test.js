@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var Pointer = mw.libs.revisionSlider.Pointer;
 
 	QUnit.module( 'ext.RevisionSlider.Pointer' );
@@ -15,4 +15,4 @@
 		assert.strictEqual( pointer.getPosition(), pos );
 	} );
 
-}( mediaWiki ) );
+}() );

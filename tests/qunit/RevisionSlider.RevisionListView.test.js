@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	var RevisionListView = mw.libs.revisionSlider.RevisionListView,
 		RevisionList = mw.libs.revisionSlider.RevisionList,
 		Revision = mw.libs.revisionSlider.Revision;
@@ -183,4 +183,4 @@
 		assert.ok( $pageSizeLineHtml.text().match( /1,337/ ) );
 	} );
 
-}( mediaWiki, jQuery ) );
+}() );

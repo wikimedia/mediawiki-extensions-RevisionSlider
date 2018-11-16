@@ -1,4 +1,4 @@
-( function ( $ ) {
+( function () {
 	QUnit.revisionSlider = {};
 
 	$.extend( QUnit.revisionSlider, {
@@ -11,4 +11,4 @@
 			}
 		}
 	} );
-}( jQuery ) );
+}() );

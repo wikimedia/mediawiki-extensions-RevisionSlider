@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	var settings = new mw.libs.revisionSlider.Settings(),
 		autoExpand = settings.shouldAutoExpand(),
 		expanded = autoExpand,
@@ -156,4 +156,4 @@
 	expand();
 	initialize();
 
-}( mediaWiki, jQuery ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 
 	// originally taken from https://stackoverflow.com/questions/1517924/javascript-mapping-touch-events-to-mouse-events
@@ -117,4 +117,4 @@
 	mw.libs.revisionSlider.calculateRevisionsPerWindow = function ( margin, revisionWidth ) {
 		return Math.floor( ( $( '#mw-content-text' ).width() - margin ) / revisionWidth );
 	};
-}( mediaWiki, jQuery ) );
+}() );

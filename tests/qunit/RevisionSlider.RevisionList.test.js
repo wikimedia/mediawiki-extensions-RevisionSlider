@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var Revision = mw.libs.revisionSlider.Revision,
 		RevisionList = mw.libs.revisionSlider.RevisionList,
 		makeRevisions = mw.libs.revisionSlider.makeRevisions;
@@ -161,4 +161,4 @@
 		assert.strictEqual( revisions[ 2 ].getId(), 3 );
 		assert.strictEqual( revisions[ 2 ].getSize(), 13 );
 	} );
-}( mediaWiki ) );
+}() );

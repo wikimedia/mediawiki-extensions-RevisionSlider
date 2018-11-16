@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	/**
 	 * Module handling the slider logic of the RevisionSlider
 	 *
@@ -118,4 +118,4 @@
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 	mw.libs.revisionSlider.Slider = Slider;
-}( mediaWiki, jQuery ) );
+}() );

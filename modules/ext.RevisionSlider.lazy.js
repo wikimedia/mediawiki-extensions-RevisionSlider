@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	var settings = new mw.libs.revisionSlider.Settings(),
 		autoExpand = settings.shouldAutoExpand();
 
@@ -18,4 +18,4 @@
 		}
 	} );
 
-}( mediaWiki, jQuery ) );
+}() );

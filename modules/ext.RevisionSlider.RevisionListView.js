@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	/**
 	 * @param {RevisionList} revisionList
 	 * @param {string} [dir]
@@ -575,4 +575,4 @@
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 	mw.libs.revisionSlider.RevisionListView = RevisionListView;
-}( mediaWiki, jQuery ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	/**
 	 * Module containing presentation logic for the arrow buttons
 	 *
@@ -148,4 +148,4 @@
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 	mw.libs.revisionSlider.SliderArrowView = SliderArrowView;
-}( mediaWiki, jQuery ) );
+}() );

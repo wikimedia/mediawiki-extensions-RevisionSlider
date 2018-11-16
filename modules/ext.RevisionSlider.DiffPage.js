@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	/**
 	 * Module handling diff page reloading and the RevisionSlider browser history
 	 *
@@ -218,4 +218,4 @@
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 	mw.libs.revisionSlider.DiffPage = DiffPage;
-}( mediaWiki, jQuery ) );
+}() );

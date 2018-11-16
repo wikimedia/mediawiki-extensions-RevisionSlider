@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	/**
 	 * Module containing the RevisionSlider tutorial
 	 *
@@ -191,4 +191,4 @@
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 	mw.libs.revisionSlider.HelpDialog = HelpDialog;
-}( mediaWiki, jQuery ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	/**
 	 * Module containing presentation logic for the helper button
 	 */
@@ -51,4 +51,4 @@
 
 	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
 	mw.libs.revisionSlider.HelpButtonView = HelpButtonView;
-}( mediaWiki, jQuery ) );
+}() );

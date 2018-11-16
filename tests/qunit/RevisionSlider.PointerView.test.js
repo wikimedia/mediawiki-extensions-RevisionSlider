@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var PointerView = mw.libs.revisionSlider.PointerView;
 
 	QUnit.module( 'ext.RevisionSlider.PointerView' );
@@ -24,4 +24,4 @@
 		pv.getElement().addClass( 'mw-revslider-pointer-newer' );
 		assert.strictEqual( pv.getOffset(), 16 );
 	} );
-}( mediaWiki ) );
+}() );

@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	/**
 	 * @param {Revision[]} revs
 	 * @constructor
@@ -158,4 +158,4 @@
 			return new mw.libs.revisionSlider.Revision( revData );
 		} );
 	};
-}( mediaWiki, jQuery ) );
+}() );

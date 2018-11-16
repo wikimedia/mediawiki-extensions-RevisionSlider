@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var Revision = mw.libs.revisionSlider.Revision;
 
 	QUnit.module( 'ext.RevisionSlider.Revision' );
@@ -107,4 +107,4 @@
 		assert.notOk( rev.hasEmptyComment() );
 	} );
 
-}( mediaWiki ) );
+}() );
