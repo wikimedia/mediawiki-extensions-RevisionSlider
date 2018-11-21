@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "523843e5_fe2d3fbb",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2018-11-21T17:46:32Z",
+      "side": 1,
+      "message": "Please add a\n\n\"box-sizing: border-box;\"\n\nhere. It will solve the general problem with overlapping borders because it will make sure, that borders are kept inside of the boundaries and not added outside of the element....",
+      "revId": "4abe875d50b8215fb55c1a3e4b128ffdab520df0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
