@@ -8,7 +8,7 @@
 		]
 	},
 	"revisionslider-preference-disable": "Не приказуј клизач за измене",
-	"revisionslider-toggle-label": "Интерактиван преглед историје",
+	"revisionslider-toggle-label": "Интерактивна претрага историје",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|бајт|бајта|бајтова}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|бајт|бајта|бајтова}}",
 	"revisionslider-label-date": "Датум",
