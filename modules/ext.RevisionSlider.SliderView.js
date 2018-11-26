@@ -215,16 +215,16 @@
 		renderPointerContainers: function () {
 			return [
 				$( '<div>' )
-					.addClass( 'mw-revslider-pointer-container-newer' )
-					.append(
-						$( '<div>' ).addClass( 'mw-revslider-slider-line' ),
-						this.pointerNewer.getView().render()
-					),
-				$( '<div>' )
 					.addClass( 'mw-revslider-pointer-container-older' )
 					.append(
 						$( '<div>' ).addClass( 'mw-revslider-slider-line' ),
 						this.pointerOlder.getView().render()
+					),
+				$( '<div>' )
+					.addClass( 'mw-revslider-pointer-container-newer' )
+					.append(
+						$( '<div>' ).addClass( 'mw-revslider-slider-line' ),
+						this.pointerNewer.getView().render()
 					)
 			];
 		},
