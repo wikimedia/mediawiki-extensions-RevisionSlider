@@ -13,5 +13,6 @@
 	"revisionslider-label-username": "{{GENDER:$1|Uzantnomo}}",
 	"revisionslider-minoredit": "Ĉi tiu ŝanĝo estas redakteto",
 	"revisionslider-arrow-tooltip-newer": "Vidi pli novajn reviziojn",
-	"revisionslider-arrow-tooltip-older": "Vidi pli malnovajn reviziojn"
+	"revisionslider-arrow-tooltip-older": "Vidi pli malnovajn reviziojn",
+	"revisionslider-next-dialog": "Sekva"
 }

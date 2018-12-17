@@ -1,14 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"Saederup92"
+			"Saederup92",
+			"Weblars"
 		]
 	},
+	"revisionslider-toggle-label": "Gennemse historikken interaktivt",
 	"revisionslider-label-date": "Dato",
 	"revisionslider-label-page-size": "Sidestørrelse",
-	"revisionslider-label-change-size": "Ændre størrelse",
+	"revisionslider-label-change-size": "Ændret størrelse",
+	"revisionslider-label-comment": "Redigeringsopsummering",
 	"revisionslider-label-username": "{{GENDER:$1|Brugernavn}}",
 	"revisionslider-minoredit": "Dette er en mindre ændring",
+	"revisionslider-toggle-title-expand": "Åbn versionsskyderen",
+	"revisionslider-toggle-title-collapse": "Luk versionsskyderen",
+	"revisionslider-turn-on-auto-expand-title": "Vis versionsskyder som standard",
+	"revisionslider-arrow-tooltip-newer": "Se nyere versioner",
+	"revisionslider-arrow-tooltip-older": "Se ældre versioner",
+	"revisionslider-show-help-tooltip": "Vis hjælpetekst",
 	"revisionslider-previous-dialog": "Forrige",
 	"revisionslider-next-dialog": "Næste",
 	"revisionslider-close-dialog": "Luk"
