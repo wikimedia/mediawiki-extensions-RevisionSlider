@@ -13,7 +13,7 @@
 	"revisionslider": "Sivuvertailun vaakajana",
 	"revisionslider-preference-disable": "Älä näytä sivuvertailun vaakajanaa",
 	"revisionslider-desc": "Näyttää vaakajanan, joka mahdollistaa sivun eri versioiden valitsemisen ja vertailemisen sivun muutoshistoriassa",
-	"revisionslider-toggle-label": "Selaa historiaa",
+	"revisionslider-toggle-label": "Selaa historiaa interaktiivisesti",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|merkki|merkkiä}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|merkki|merkkiä}}",
 	"revisionslider-label-date": "Päiväys",
