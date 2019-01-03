@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"គីមស៊្រុន"
+		]
+	},
+	"revisionslider-toggle-label": "មើលប្រវត្តិបានរហ័ស",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|បៃ|បៃ}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|បៃ|បៃ}}",
+	"revisionslider-label-date": "កាលបរិច្ឆេទ",
+	"revisionslider-label-page-size": "ទំហំ​ទំព័រ",
+	"revisionslider-label-change-size": "ទំហំផ្លាស់ប្ដូរ",
+	"revisionslider-label-comment": "ចំណារពន្យល់ការកែប្រែ",
+	"revisionslider-label-username": "{{GENDER:$1|អត្តនាម}}",
+	"revisionslider-minoredit": "នេះជា​កំណែប្រែតិចតួចប៉ុណ្ណោះ",
+	"revisionslider-previous-dialog": "មុន",
+	"revisionslider-next-dialog": "បន្ទាប់",
+	"revisionslider-close-dialog": "បិទ"
+}
