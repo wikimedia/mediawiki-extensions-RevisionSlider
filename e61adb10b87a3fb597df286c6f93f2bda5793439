@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1c7101c7_05837336",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 1
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-01-14T08:50:40Z",
+      "side": 1,
+      "message": "This value is, as far as I understand, a calculated value. The original value this is derived from is probably the line-height of the parent element. This is set to 1.428571em. This particular value looks as weird as the currently l´suggested 17.67px, *but* the number 1.428571em already appears a lot in other code. I suggest to use that instead, if possible.",
+      "range": {
+        "startLine": 420,
+        "startChar": 9,
+        "endLine": 420,
+        "endChar": 16
+      },
+      "revId": "e61adb10b87a3fb597df286c6f93f2bda5793439",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
