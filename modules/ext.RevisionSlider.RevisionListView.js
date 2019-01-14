@@ -240,17 +240,10 @@
 		 * Hides the current tooltip immediately
 		 */
 		hideCurrentTooltip: function () {
-			var $highlightedRevisionWrapper = $( '.mw-revslider-revision-wrapper-hovered' ),
-				$currentTooltip = $( '.mw-revslider-revision-tooltip' );
-			if ( this.tooltipTimeout !== -1 ) {
-				window.clearTimeout( this.tooltipTimeout );
-			}
-			if ( $highlightedRevisionWrapper.length !== 0 ) {
-				$highlightedRevisionWrapper.removeClass( 'mw-revslider-revision-wrapper-hovered' );
-			}
-			if ( $currentTooltip.length !== 0 ) {
-				$currentTooltip.remove();
-			}
+			window.clearTimeout( this.tooltipTimeout );
+			$( '.mw-revslider-revision-wrapper-hovered' )
+				.removeClass( 'mw-revslider-revision-wrapper-hovered' );
+			$( '.mw-revslider-revision-tooltip' ).remove();
 		},
 
 		/**
@@ -259,14 +252,9 @@
 		 * @param {jQuery} $revisionWrapper
 		 */
 		hideTooltip: function ( $revisionWrapper ) {
-			var $currentTooltip = $( '.mw-revslider-revision-tooltip' );
 			this.tooltipTimeout = window.setTimeout( function () {
-				if ( $revisionWrapper.length !== 0 ) {
-					$revisionWrapper.removeClass( 'mw-revslider-revision-wrapper-hovered' );
-				}
-				if ( $currentTooltip.length !== 0 ) {
-					$currentTooltip.remove();
-				}
+				$revisionWrapper.removeClass( 'mw-revslider-revision-wrapper-hovered' );
+				$( '.mw-revslider-revision-tooltip' ).remove();
 			}, 500 );
 		},
 
