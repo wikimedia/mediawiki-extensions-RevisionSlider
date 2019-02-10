@@ -28,10 +28,10 @@
 				click: 'showDialog'
 			} );
 			helpButton.$element
-				.mouseover( function () {
+				.on( 'mouseover', function () {
 					helpPopup.toggle( true );
 				} )
-				.mouseout( function () {
+				.on( 'mouseout', function () {
 					helpPopup.toggle( false );
 				} )
 				.children().attr( {

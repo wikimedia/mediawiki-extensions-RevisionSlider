@@ -71,7 +71,7 @@
 					if ( mw.msg( 'revisionslider-label-username', 'male' ) === unknown &&
 						mw.msg( 'revisionslider-label-username', 'female' ) === unknown
 					) {
-						return deferred.resolve( { revisions: revs, 'continue': revContinue } );
+						return deferred.resolve( { revisions: revs, continue: revContinue } );
 					}
 
 					userNames = self.getUniqueUserNamesWithUnknownGender( revs, genderData );
@@ -92,7 +92,7 @@
 								}
 							} );
 
-							deferred.resolve( { revisions: revs, 'continue': revContinue } );
+							deferred.resolve( { revisions: revs, continue: revContinue } );
 						} )
 						.fail( deferred.reject );
 				} )
@@ -131,7 +131,7 @@
 				rvprop: 'ids|timestamp|user|comment|parsedcomment|size|flags|tags',
 				titles: pageName,
 				formatversion: 2,
-				'continue': '',
+				continue: '',
 				rvlimit: 500,
 				rvdir: dir
 			};

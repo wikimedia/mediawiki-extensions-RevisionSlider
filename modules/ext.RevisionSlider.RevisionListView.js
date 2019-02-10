@@ -115,8 +115,8 @@
 									.addClass( 'mw-revslider-pointer mw-revslider-pointer-ghost' )
 							)
 						)
-						.mouseenter( setHovered )
-						.mouseleave( unsetHovered )
+						.on( 'mouseenter', setHovered )
+						.on( 'mouseleave', unsetHovered )
 					);
 			}
 
@@ -390,7 +390,7 @@
 				userGender = 'unknown';
 			}
 
-			$userLine = $( '<p class="mw-revslider-username-row">' ).append(
+			$userLine = $( '<p>' ).addClass( 'mw-revslider-username-row' ).append(
 				$( '<strong>' ).text( mw.msg( 'revisionslider-label-username', userGender ) + mw.msg( 'colon-separator' ) ),
 				$( '<bdi>' ).append(
 					$( '<a>' ).addClass( 'mw-userlink' ).attr( 'href', mw.util.getUrl( this.getUserPage( userString ) ) ).text( this.stripInvalidCharacters( userString ) )

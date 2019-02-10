@@ -186,15 +186,15 @@
 				.addClass( 'mw-revslider-pointer-container' )
 				.css( pointerContainerStyle )
 				.append( this.renderPointerContainers() )
-				.click( function ( event ) {
+				.on( 'click', function ( event ) {
 					self.pointerContainerClickHandler( event );
 				} )
-				.mouseout( function () {
+				.on( 'mouseout', function () {
 					if ( !self.isDragged ) {
 						self.getRevisionListView().unsetAllHovered();
 					}
 				} )
-				.mouseover( function ( event ) {
+				.on( 'mouseover', function ( event ) {
 					if ( !self.isDragged ) {
 						lastMouseMoveRevisionPos = self.showTooltipsOnMouseMoveHandler(
 							event,
@@ -202,7 +202,7 @@
 						);
 					}
 				} )
-				.mousemove( function ( event ) {
+				.on( 'mousemove', function ( event ) {
 					if ( !self.isDragged ) {
 						lastMouseMoveRevisionPos = self.showTooltipsOnMouseMoveHandler(
 							event,
@@ -243,14 +243,14 @@
 			$pointerNewer.attr( 'tabindex', 0 );
 			$pointerOlder.attr( 'tabindex', 0 );
 
-			$( 'body' ).keydown( function ( e ) {
+			$( 'body' ).on( 'keydown', function ( e ) {
 				if ( e.which === 27 ) {
 					self.escapePressed = true;
 					$pointers.trigger( 'mouseup' );
 				}
 			} );
 
-			$pointerOlder.keydown( function ( event ) {
+			$pointerOlder.on( 'keydown', function ( event ) {
 				self.buildTabbingRulesOnKeyDown(
 					$pointerOlder,
 					event,
@@ -258,7 +258,7 @@
 				);
 			} );
 
-			$pointerOlder.keyup( function ( event ) {
+			$pointerOlder.on( 'keyup', function ( event ) {
 				self.buildTabbingRulesOnKeyUp(
 					$pointerOlder,
 					event,
@@ -266,7 +266,7 @@
 				);
 			} );
 
-			$pointerNewer.keydown( function ( event ) {
+			$pointerNewer.on( 'keydown', function ( event ) {
 				self.buildTabbingRulesOnKeyDown(
 					$pointerNewer,
 					event,
@@ -274,7 +274,7 @@
 				);
 			} );
 
-			$pointerNewer.keyup( function ( event ) {
+			$pointerNewer.on( 'keyup', function ( event ) {
 				self.buildTabbingRulesOnKeyUp(
 					$pointerNewer,
 					event,
@@ -406,7 +406,7 @@
 		 */
 		addClickHandlerToRevisions: function ( $revisions ) {
 			var self = this;
-			$revisions.find( '.mw-revslider-revision-wrapper' ).click( function ( event ) {
+			$revisions.find( '.mw-revslider-revision-wrapper' ).on( 'click', function ( event ) {
 				self.revisionWrapperClickHandler( event, $( this ) );
 			} );
 		},
@@ -494,7 +494,7 @@
 			this.lastRequest = self.refreshDiffView( diff, oldid, true );
 
 			this.lastRequest.then( function () {
-				$pointer.focus();
+				$pointer.trigger( 'focus' );
 			} );
 		},
 
@@ -868,6 +868,8 @@
 		 * Fades out the lines for the pointers
 		 */
 		fadeOutPointerLines: function () {
+			// FIXME: Use CSS transition
+			// eslint-disable-next-line jquery/no-fade
 			$( '.mw-revslider-pointer-line' ).fadeTo( 0, 0.3 );
 		},
 
@@ -875,6 +877,8 @@
 		 * Fades in the lines for the pointers
 		 */
 		fadeInPointerLines: function () {
+			// FIXME: Use CSS transition
+			// eslint-disable-next-line jquery/no-fade
 			$( '.mw-revslider-pointer-line' ).fadeTo( 0, 1 );
 		},
 
@@ -919,6 +923,7 @@
 				animateObj.scrollLeft = this.getRtlScrollLeft( $animatedElement, animateObj.scrollLeft );
 			}
 
+			// eslint-disable-next-line jquery/no-animate
 			$animatedElement.animate(
 				animateObj,
 				duration,

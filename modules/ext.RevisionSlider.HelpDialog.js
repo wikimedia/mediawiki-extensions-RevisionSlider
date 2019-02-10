@@ -170,7 +170,7 @@
 
 		$( 'body' )
 			.append( windowManager.$element )
-			.click( function ( event ) {
+			.on( 'click', function ( event ) {
 				if ( $( event.target ).hasClass( 'mw-revslider-help-dialog' ) ) {
 					HelpDialog.hide();
 				}

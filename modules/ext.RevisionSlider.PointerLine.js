@@ -138,13 +138,13 @@
 					width: $table.width() + 'px',
 					'margin-right': -$table.width() / 2 + 'px',
 					'margin-left': 0,
-					'float': 'right'
+					float: 'right'
 				} );
 				$( $olderUnderLineDiv ).css( {
 					width: $table.width() + 'px',
 					'margin-right': -$table.width() / 2 + 'px',
 					'margin-left': 0,
-					'float': 'right'
+					float: 'right'
 				} );
 			} else {
 				$upperLineDiv.addClass( 'mw-revslider-right-line' );
@@ -154,13 +154,13 @@
 					width: $table.width() + 'px',
 					'margin-left': -$table.width() / 2 + 'px',
 					'margin-right': 0,
-					'float': 'left'
+					float: 'left'
 				} );
 				$( $olderUnderLineDiv ).css( {
 					width: $table.width() + 'px',
 					'margin-left': -$table.width() / 2 + 'px',
 					'margin-right': 0,
-					'float': 'left'
+					float: 'left'
 				} );
 			}
 

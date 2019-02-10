@@ -205,11 +205,11 @@
 		 * @param {SliderView} sliderView
 		 */
 		addHandlersToCoreLinks: function ( sliderView ) {
-			$( '#differences-nextlink' ).click( function () {
+			$( '#differences-nextlink' ).on( 'click', function () {
 				sliderView.showNextDiff();
 				return false;
 			} );
-			$( '#differences-prevlink' ).click( function () {
+			$( '#differences-prevlink' ).on( 'click', function () {
 				sliderView.showPrevDiff();
 				return false;
 			} );

@@ -48,9 +48,9 @@
 			backwardArrowButton.$element
 				.attr( 'data-dir', -1 )
 				.children().attr( 'aria-label', mw.msg( 'revisionslider-arrow-tooltip-older' ) )
-				.mouseover( { button: backwardArrowButton, popup: backwardArrowPopup }, this.showPopup )
-				.mouseout( { popup: backwardArrowPopup }, this.hidePopup )
-				.focusin( { button: backwardArrowButton }, this.arrowFocusHandler );
+				.on( 'mouseover', { button: backwardArrowButton, popup: backwardArrowPopup }, this.showPopup )
+				.on( 'mouseout', { popup: backwardArrowPopup }, this.hidePopup )
+				.on( 'focusin', { button: backwardArrowButton }, this.arrowFocusHandler );
 
 			$( 'body' ).append( backwardArrowPopup.$element );
 
@@ -90,9 +90,9 @@
 			forwardArrowButton.$element
 				.attr( 'data-dir', 1 )
 				.children().attr( 'aria-label', mw.msg( 'revisionslider-arrow-tooltip-newer' ) )
-				.mouseover( { button: forwardArrowButton, popup: forwardArrowPopup }, this.showPopup )
-				.mouseout( { popup: forwardArrowPopup }, this.hidePopup )
-				.focusin( { button: forwardArrowButton }, this.arrowFocusHandler );
+				.on( 'mouseover', { button: forwardArrowButton, popup: forwardArrowPopup }, this.showPopup )
+				.on( 'mouseout', { popup: forwardArrowPopup }, this.hidePopup )
+				.on( 'focusin', { button: forwardArrowButton }, this.arrowFocusHandler );
 
 			$( 'body' ).append( forwardArrowPopup.$element );
 
@@ -141,7 +141,7 @@
 		arrowFocusHandler: function ( e ) {
 			var button = e.data.button;
 			if ( button.isDisabled() ) {
-				button.$element.find( 'a.oo-ui-buttonElement-button' ).blur();
+				button.$element.find( 'a.oo-ui-buttonElement-button' ).trigger( 'blur' );
 			}
 		}
 	} );
