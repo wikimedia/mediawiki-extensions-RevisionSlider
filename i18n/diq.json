@@ -6,6 +6,8 @@
 			"Mirzali"
 		]
 	},
+	"revisionslider-page-size": "$1 {{PLURAL:$2|bayt|bayti}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|bayt|bayti}}",
 	"revisionslider-label-date": "Tarix",
 	"revisionslider-label-page-size": "Ebadê pele",
 	"revisionslider-label-change-size": "Ebati bıvurnê",
