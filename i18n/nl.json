@@ -4,7 +4,8 @@
 			"Sjoerddebruin",
 			"MrLeopold",
 			"Wiki13",
-			"Romaine"
+			"Romaine",
+			"Xbaked potatox"
 		]
 	},
 	"revisionslider": "Paginageschiedenisbalk",
@@ -16,7 +17,7 @@
 	"revisionslider-label-date": "Datum",
 	"revisionslider-label-page-size": "Paginagrootte",
 	"revisionslider-label-change-size": "Wijziging in grootte",
-	"revisionslider-label-comment": "Bewerkingssamenvatting",
+	"revisionslider-label-comment": "Opmerkingen",
 	"revisionslider-label-username": "{{GENDER:$1|Gebruikersnaam}}",
 	"revisionslider-minoredit": "Dit is een kleine bewerking",
 	"revisionslider-loading-failed": "De paginageschiedenisbalk kan niet worden geladen.",
