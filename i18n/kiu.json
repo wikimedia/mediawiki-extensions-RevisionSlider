@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mirzali"
+		]
+	},
+	"revisionslider-label-username": "{{GENDER:$1|Namê karberi}}"
+}
