@@ -393,27 +393,27 @@
 				userGender = 'unknown';
 			}
 
-			$userLine = $( '<p>' ).addClass( 'mw-revslider-username-row' ).append(
+			$userLine = $( '<p>' ).addClass( 'mw-revslider-highlightable-row' ).append(
 				$( '<strong>' ).text( mw.msg( 'revisionslider-label-username', userGender ) + mw.msg( 'colon-separator' ) ),
 				$( '<bdi>' ).append(
 					$( '<a>' ).addClass( 'mw-userlink' ).attr( 'href', mw.util.getUrl( this.getUserPage( userString ) ) ).text( this.stripInvalidCharacters( userString ) )
 				),
 				$userBubble = $( '<div>' ).addClass( 'mw-revslider-bubble' )
 					.on( 'click', function () {
-						$tagLine = $userLine.siblings( 'div' ).children( 'div.mw-revslider-tag-row' );
-						$tagLine.removeClass( 'mw-highlight-tag-row' );
+						$tagLine = $userLine.siblings( 'div' ).children( 'div.mw-revslider-highlightable-row' );
+						$tagLine.removeClass( 'mw-revslider-highlight' );
 
 						$tagBubble = $tagLine.children( 'div.mw-revslider-bubble' );
 						$tagBubble.removeClass( 'mw-revslider-highlite-bubble' );
 
 						if ( self.selectedUser !== userString ) {
-							$( '.mw-revslider-username-row' ).addClass( 'mw-highlight-user-row' );
+							$( '.mw-revslider-highlightable-row' ).addClass( 'mw-revslider-highlight' );
 							$( this ).addClass( 'mw-revslider-highlite-bubble' );
 							self.highlightSameUserRevisions( userString, 'addClass' );
 							self.selectedUser = userString;
 							self.selectedTag = '';
 						} else {
-							$( '.mw-revslider-username-row' ).addClass( 'mw-highlight-user-row' );
+							$( '.mw-revslider-highlightable-row' ).addClass( 'mw-revslider-highlight' );
 							$( this ).addClass( 'mw-revslider-highlite-bubble' );
 							self.highlightSameUserRevisions( userString, 'removeClass' );
 							self.selectedUser = '';
@@ -422,14 +422,14 @@
 					.on( {
 						mouseenter: function () {
 							if ( self.selectedUser !== userString ) {
-								$( '.mw-revslider-username-row' ).addClass( 'mw-highlight-user-row' );
+								$( '.mw-revslider-highlightable-row' ).addClass( 'mw-revslider-highlight' );
 								$( this ).addClass( 'mw-revslider-highlite-bubble' );
 								self.highlightSameUserRevisions( userString, 'addClass' );
 							}
 						},
 						mouseleave: function () {
 							if ( self.selectedUser !== userString ) {
-								$( '.mw-revslider-username-row' ).removeClass( 'mw-highlight-user-row' );
+								$( '.mw-revslider-highlightable-row' ).removeClass( 'mw-revslider-highlight' );
 								$( this ).removeClass( 'mw-revslider-highlite-bubble' );
 								self.highlightSameUserRevisions( userString, 'removeClass' );
 
@@ -443,7 +443,7 @@
 
 			if ( self.selectedUser === userString ) {
 				self.selectedTag = '';
-				$userLine.addClass( 'mw-highlight-user-row' );
+				$userLine.addClass( 'mw-revslider-highlight' );
 				$userBubble.addClass( 'mw-revslider-highlite-bubble' );
 			}
 
@@ -522,7 +522,7 @@
 			$tagLines = $( '<div>' );
 
 			for ( i = 0; i < tags.length; i++ ) {
-				$tagLine = $( '<div>' ).addClass( 'mw-revslider-tag-row' ).append(
+				$tagLine = $( '<div>' ).addClass( 'mw-revslider-highlightable-row' ).append(
 					tags[ i ],
 					$tagBubble = $( '<div>' ).addClass( 'mw-revslider-bubble' )
 						.on( 'click mouseenter mouseleave', updateTagLineHighlighting ),
@@ -531,7 +531,7 @@
 
 				if ( self.selectedTag === tags[ i ] ) {
 					self.selectedUser = '';
-					$tagLine.addClass( 'mw-highlight-tag-row' );
+					$tagLine.addClass( 'mw-revslider-highlight' );
 					$tagLine.find( $tagBubble ).addClass( 'mw-revslider-highlite-bubble' );
 				}
 
@@ -555,7 +555,7 @@
 
 			if ( event.type === 'mouseenter' ) {
 				if ( self.selectedTag !== tagName ) {
-					$tagLine.addClass( 'mw-highlight-tag-row' );
+					$tagLine.addClass( 'mw-revslider-highlight' );
 					$tagBubble.addClass( 'mw-revslider-highlite-bubble' );
 					self.highlightSameTagRevisions( tagName, 'addClass' );
 				}
@@ -563,7 +563,7 @@
 
 			if ( event.type === 'mouseleave' ) {
 				if ( self.selectedTag !== tagName ) {
-					$tagLine.removeClass( 'mw-highlight-tag-row' );
+					$tagLine.removeClass( 'mw-revslider-highlight' );
 					$tagBubble.removeClass( 'mw-revslider-highlite-bubble' );
 					self.highlightSameTagRevisions( tagName, 'removeClass' );
 
@@ -578,16 +578,16 @@
 			}
 
 			if ( event.type === 'click' ) {
-				$userLine = $tagLine.parent().siblings( 'p.mw-revslider-username-row' );
+				$userLine = $tagLine.parent().siblings( 'p.mw-revslider-highlightable-row' );
 				$userBubble = $userLine.children( 'div.mw-revslider-bubble' );
 
-				$userLine.removeClass( 'mw-highlight-user-row' );
+				$userLine.removeClass( 'mw-revslider-highlight' );
 				$userBubble.removeClass( 'mw-revslider-highlite-bubble' );
 
-				$tagLine.siblings().removeClass( 'mw-highlight-tag-row' );
+				$tagLine.siblings().removeClass( 'mw-revslider-highlight' );
 				$tagLine.siblings().children().removeClass( 'mw-revslider-highlite-bubble' );
 
-				$tagLine.addClass( 'mw-highlight-tag-row' );
+				$tagLine.addClass( 'mw-revslider-highlight' );
 				$tagBubble.addClass( 'mw-revslider-highlite-bubble' );
 
 				if ( self.selectedTag !== tagName ) {
@@ -599,7 +599,6 @@
 					self.selectedTag = '';
 				}
 			}
-
 		},
 
 		/**
