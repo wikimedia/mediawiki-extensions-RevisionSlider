@@ -383,8 +383,9 @@
 			var self = this,
 				$userLine,
 				$userBubble,
-				$tagLine,
-				$tagBubble;
+				updateUserLineHighlighting = function ( event ) {
+					self.setUserFilterEvents( $( this ), userString, event );
+				};
 
 			if ( !userString ) {
 				return '';
@@ -399,46 +400,7 @@
 					$( '<a>' ).addClass( 'mw-userlink' ).attr( 'href', mw.util.getUrl( this.getUserPage( userString ) ) ).text( this.stripInvalidCharacters( userString ) )
 				),
 				$userBubble = $( '<div>' ).addClass( 'mw-revslider-bubble' )
-					.on( 'click', function () {
-						$tagLine = $userLine.siblings( 'div' ).children( 'div.mw-revslider-highlightable-row' );
-						$tagLine.removeClass( 'mw-revslider-highlight' );
-
-						$tagBubble = $tagLine.children( 'div.mw-revslider-bubble' );
-						$tagBubble.removeClass( 'mw-revslider-highlite-bubble' );
-
-						if ( self.selectedUser !== userString ) {
-							$( '.mw-revslider-highlightable-row' ).addClass( 'mw-revslider-highlight' );
-							$( this ).addClass( 'mw-revslider-highlite-bubble' );
-							self.highlightSameUserRevisions( userString, 'addClass' );
-							self.selectedUser = userString;
-							self.selectedTag = '';
-						} else {
-							$( '.mw-revslider-highlightable-row' ).addClass( 'mw-revslider-highlight' );
-							$( this ).addClass( 'mw-revslider-highlite-bubble' );
-							self.highlightSameUserRevisions( userString, 'removeClass' );
-							self.selectedUser = '';
-						}
-					} )
-					.on( {
-						mouseenter: function () {
-							if ( self.selectedUser !== userString ) {
-								$( '.mw-revslider-highlightable-row' ).addClass( 'mw-revslider-highlight' );
-								$( this ).addClass( 'mw-revslider-highlite-bubble' );
-								self.highlightSameUserRevisions( userString, 'addClass' );
-							}
-						},
-						mouseleave: function () {
-							if ( self.selectedUser !== userString ) {
-								$( '.mw-revslider-highlightable-row' ).removeClass( 'mw-revslider-highlight' );
-								$( this ).removeClass( 'mw-revslider-highlite-bubble' );
-								self.highlightSameUserRevisions( userString, 'removeClass' );
-
-								if ( self.selectedTag ) {
-									self.highlightSameTagRevisions( self.selectedTag, 'addClass' );
-								}
-							}
-						}
-					} )
+					.on( 'click mouseenter mouseleave', updateUserLineHighlighting )
 			);
 
 			if ( self.selectedUser === userString ) {
@@ -448,6 +410,65 @@
 			}
 
 			return $userLine;
+		},
+
+		/**
+		 * Set user filter events for revisions
+		 * @param {jQuery} $userBubble
+		 * @param {string} userName
+		 * @param {Event} event
+		 */
+		setUserFilterEvents: function ( $userBubble, userName, event ) {
+			var self = this,
+				$userLine = $userBubble.parent(),
+				$tagLine, $tagBubble;
+
+			if ( event.type === 'mouseenter' ) {
+				if ( self.selectedUser !== userName ) {
+					$userLine.addClass( 'mw-revslider-highlight' );
+					$userBubble.addClass( 'mw-revslider-highlite-bubble' );
+					self.highlightSameUserRevisions( userName, 'addClass' );
+				}
+			}
+
+			if ( event.type === 'mouseleave' ) {
+				if ( self.selectedUser !== userName ) {
+					$userLine.removeClass( 'mw-revslider-highlight' );
+					$userBubble.removeClass( 'mw-revslider-highlite-bubble' );
+					self.highlightSameUserRevisions( userName, 'removeClass' );
+
+					if ( self.selectedUser ) {
+						self.highlightSameUserRevisions( self.selectedUser, 'addClass' );
+					}
+
+					if ( self.selectedTag ) {
+						self.highlightSameTagRevisions( self.selectedTag, 'addClass' );
+					}
+				}
+			}
+
+			if ( event.type === 'click' ) {
+				$tagLine = $userLine.parent().siblings( 'p.mw-revslider-highlightable-row' );
+				$tagBubble = $tagLine.children( 'div.mw-revslider-bubble' );
+
+				$tagLine.removeClass( 'mw-revslider-highlight' );
+				$tagBubble.removeClass( 'mw-revslider-highlite-bubble' );
+
+				$userLine.siblings().removeClass( 'mw-revslider-highlight' );
+				$userLine.siblings().children().removeClass( 'mw-revslider-highlite-bubble' );
+
+				$userLine.addClass( 'mw-revslider-highlight' );
+				$userBubble.addClass( 'mw-revslider-highlite-bubble' );
+
+				if ( self.selectedUser !== userName ) {
+					self.highlightSameUserRevisions( userName, 'addClass' );
+					self.selectedUser = userName;
+					self.selectedTag = '';
+				} else {
+					self.highlightSameUserRevisions( userName, 'removeClass' );
+					self.selectedUser = '';
+				}
+			}
 		},
 
 		/**
@@ -511,7 +532,7 @@
 			var self = this,
 				tags, $tagLines, i, $tagLine, $tagBubble,
 				updateTagLineHighlighting = function ( event ) {
-					self.setTagFilter( $( this ), event );
+					self.setTagFilterEvents( $( this ), event );
 				};
 
 			if ( rev.hasNoTags() ) {
@@ -543,11 +564,11 @@
 		},
 
 		/**
-		* Set tag filter for revisions
+		* Set tag filter events for revisions
 		* @param {jQuery} $tagBubble
 		* @param {Event} event
 		*/
-		setTagFilter: function ( $tagBubble, event ) {
+		setTagFilterEvents: function ( $tagBubble, event ) {
 			var self = this,
 				$tagLine = $tagBubble.parent(),
 				tagName = $tagLine.data( 'tag-name' ),
