@@ -380,15 +380,11 @@
 		 * @return {string|jQuery}
 		 */
 		makeUserLine: function ( userString, userGender ) {
-			var revs,
-				self = this,
+			var self = this,
 				$userLine,
 				$userBubble,
 				$tagLine,
 				$tagBubble;
-			if ( typeof this.revisionList !== 'undefined' ) {
-				revs = this.revisionList.getRevisions();
-			}
 
 			if ( !userString ) {
 				return '';
@@ -413,13 +409,13 @@
 						if ( self.selectedUser !== userString ) {
 							$( '.mw-revslider-username-row' ).addClass( 'mw-highlight-user-row' );
 							$( this ).addClass( 'mw-revslider-highlite-bubble' );
-							self.highlightSameUserRevisions( userString, revs, 'addClass' );
+							self.highlightSameUserRevisions( userString, 'addClass' );
 							self.selectedUser = userString;
 							self.selectedTag = '';
 						} else {
 							$( '.mw-revslider-username-row' ).addClass( 'mw-highlight-user-row' );
 							$( this ).addClass( 'mw-revslider-highlite-bubble' );
-							self.highlightSameUserRevisions( userString, revs, 'removeClass' );
+							self.highlightSameUserRevisions( userString, 'removeClass' );
 							self.selectedUser = '';
 						}
 					} )
@@ -428,14 +424,14 @@
 							if ( self.selectedUser !== userString ) {
 								$( '.mw-revslider-username-row' ).addClass( 'mw-highlight-user-row' );
 								$( this ).addClass( 'mw-revslider-highlite-bubble' );
-								self.highlightSameUserRevisions( userString, revs, 'addClass' );
+								self.highlightSameUserRevisions( userString, 'addClass' );
 							}
 						},
 						mouseleave: function () {
 							if ( self.selectedUser !== userString ) {
 								$( '.mw-revslider-username-row' ).removeClass( 'mw-highlight-user-row' );
 								$( this ).removeClass( 'mw-revslider-highlite-bubble' );
-								self.highlightSameUserRevisions( userString, revs, 'removeClass' );
+								self.highlightSameUserRevisions( userString, 'removeClass' );
 
 								if ( self.selectedTag ) {
 									self.highlightSameTagRevisions( self.selectedTag, 'addClass' );
@@ -452,18 +448,19 @@
 			}
 
 			return $userLine;
-
 		},
 
 		/**
 		* Highlights revisions of the sameUser
 		* @param {string} userString
-		* @param {Object[]} revs
 		* @param {string} event
 		*/
-		highlightSameUserRevisions: function ( userString, revs, event ) {
-			var i;
+		highlightSameUserRevisions: function ( userString, event ) {
+			var i,
+				revs = this.revisionList.getRevisions();
+
 			$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-revision-highlight' );
+
 			for ( i = 0; i < revs.length; i++ ) {
 				if ( userString === revs[ i ].getUser() ) {
 					if ( event === 'addClass' ) {
@@ -552,7 +549,6 @@
 		*/
 		setTagFilter: function ( $tagBubble, event ) {
 			var self = this,
-				revs = this.revisionList.getRevisions(),
 				$tagLine = $tagBubble.parent(),
 				tagName = $tagLine.data( 'tag-name' ),
 				$userLine, $userBubble;
@@ -576,7 +572,7 @@
 					}
 
 					if ( self.selectedUser ) {
-						self.highlightSameUserRevisions( self.selectedUser, revs, 'addClass' );
+						self.highlightSameUserRevisions( self.selectedUser, 'addClass' );
 					}
 				}
 			}
@@ -614,6 +610,7 @@
 		highlightSameTagRevisions: function ( tagName, event ) {
 			var i, j, revTags,
 				revs = this.revisionList.getRevisions();
+
 			$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-revision-highlight' );
 
 			for ( i = 0; i < revs.length; i++ ) {
