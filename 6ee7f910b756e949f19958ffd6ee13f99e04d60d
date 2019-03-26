@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "24147864_c4ffcb46",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-03-26T13:11:33Z",
+      "side": 1,
+      "message": "This needs to be an `else if` or part of a switch.\n\nSame for the next if() on the same level below.",
+      "range": {
+        "startLine": 568,
+        "startChar": 3,
+        "endLine": 568,
+        "endChar": 5
+      },
+      "revId": "6ee7f910b756e949f19958ffd6ee13f99e04d60d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5b76e9f8_392bc05c",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-03-26T13:11:33Z",
+      "side": 1,
+      "message": "Why this selector? Can the data-revid\u003d\"…\" attribute actually contain *multiple* revision IDs? If not, the ~ needs to be removed.\n\nSame below.",
+      "range": {
+        "startLine": 624,
+        "startChar": 22,
+        "endLine": 624,
+        "endChar": 24
+      },
+      "revId": "6ee7f910b756e949f19958ffd6ee13f99e04d60d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1d605350_37b4fe3d",
+        "filename": "modules/ext.RevisionSlider.RevisionListView.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-03-26T13:11:33Z",
+      "side": 1,
+      "message": "Just replace this with:\n\n ….parent()[event]( \u0027mw-…\u0027 );\n\nThis will call a method with the name stored in the variable `event`.\n\nThis way the heavy if-else is not needed any more.\n\nAnother option is to replace the `event` string with a boolean, and use JQuerys toggleClass() feature to add/remove the class.",
+      "range": {
+        "startLine": 624,
+        "startChar": 51,
+        "endLine": 624,
+        "endChar": 69
+      },
+      "revId": "6ee7f910b756e949f19958ffd6ee13f99e04d60d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
