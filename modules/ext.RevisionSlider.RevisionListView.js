@@ -393,7 +393,7 @@
 				userGender = 'unknown';
 			}
 
-			$userLine = $( '<p>' ).addClass( 'mw-revslider-highlightable-row' ).append(
+			$userLine = $( '<p>' ).addClass( 'mw-revslider-highlightable-row mw-revslider-username-row' ).append(
 				$( '<strong>' ).text( mw.msg( 'revisionslider-label-username', userGender ) + mw.msg( 'colon-separator' ) ),
 				$( '<bdi>' ).append(
 					$( '<a>' ).addClass( 'mw-userlink' ).attr( 'href', mw.util.getUrl( this.getUserPage( userString ) ) ).text( this.stripInvalidCharacters( userString ) )
@@ -522,7 +522,7 @@
 			$tagLines = $( '<div>' );
 
 			for ( i = 0; i < tags.length; i++ ) {
-				$tagLine = $( '<div>' ).addClass( 'mw-revslider-highlightable-row' ).append(
+				$tagLine = $( '<div>' ).addClass( 'mw-revslider-highlightable-row mw-revslider-tag-row' ).append(
 					tags[ i ],
 					$tagBubble = $( '<div>' ).addClass( 'mw-revslider-bubble' )
 						.on( 'click mouseenter mouseleave', updateTagLineHighlighting ),
