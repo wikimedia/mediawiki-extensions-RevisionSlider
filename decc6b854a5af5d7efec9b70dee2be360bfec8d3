@@ -33,6 +33,91 @@
       "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81f2191d_1e19f0a3",
+        "filename": "tests/selenium/specs/filterhighlighting.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2019-03-29T12:02:29Z",
+      "side": 1,
+      "message": "Tests should be simple. The above three lines should probably be just one.\n\nSomething like: DiffPage.prepareForTest( title );\n\nAny complexity needs to be moved to page object.",
+      "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52f19a2c_1fb0410f",
+        "filename": "tests/selenium/specs/filterhighlighting.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2019-03-29T12:02:29Z",
+      "side": 1,
+      "message": "Hard-coding pauses is an anti-pattern. Please use waitUntil().\n\nhttps://webdriver.io/docs/api/browser/waitUntil.html",
+      "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f05ec214_e6b1f95d",
+        "filename": "tests/selenium/specs/filterhighlighting.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2019-03-29T12:02:29Z",
+      "side": 1,
+      "message": "Tests should be simple. The above four lines should probably be just one.\n\nSomething like: DiffPage.hightlightRevisions();\n\nAny complexity needs to be moved to page object.",
+      "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f13b740d_89ad7253",
+        "filename": "tests/selenium/specs/filterhighlighting.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2019-03-29T12:02:29Z",
+      "side": 1,
+      "message": "The same as above.",
+      "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ee3a8be_a40b62c4",
+        "filename": "tests/selenium/specs/filterhighlighting.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2019-03-29T12:02:29Z",
+      "side": 1,
+      "message": "The same as above.",
+      "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
