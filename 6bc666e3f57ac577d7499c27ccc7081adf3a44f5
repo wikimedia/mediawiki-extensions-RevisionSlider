@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "20634111_a7dde1b4",
+        "filename": "tests/selenium/pageobjects/diff.page.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-03-29T17:10:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00cc1ed2_36223d92",
+      "revId": "6bc666e3f57ac577d7499c27ccc7081adf3a44f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5acc82a1_80a4228e",
         "filename": "tests/selenium/pageobjects/diff.page.js",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2019-03-29T11:31:02Z",
       "side": 1,
       "message": "Is there a reason not to use Api.edit()?",
+      "revId": "6bc666e3f57ac577d7499c27ccc7081adf3a44f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d277514d_c38dd406",
+        "filename": "tests/selenium/pageobjects/diff.page.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-03-29T17:10:53Z",
+      "side": 1,
+      "message": "I need an edit with a tag. Can\u0027t do that with Api.edit.",
+      "parentUuid": "5acc82a1_80a4228e",
       "revId": "6bc666e3f57ac577d7499c27ccc7081adf3a44f5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "076abc35_e2ba8baa",
+        "filename": "tests/selenium/pageobjects/diff.page.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-03-29T17:10:53Z",
+      "side": 1,
+      "message": "I want to have an edit from a different user. So I could either create one, login and edit with that one. Or use an anonymous edit like this :-).",
+      "parentUuid": "532090fb_fd1ce400",
+      "revId": "6bc666e3f57ac577d7499c27ccc7081adf3a44f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "053f368f_471e5016",
         "filename": "tests/selenium/specs/revisionslider.js",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2019-03-29T11:31:02Z",
       "side": 1,
       "message": "This test doesn\u0027t really check that it\u0027s configured correctly. It just checks if the extension is listed at Special:Version. That\u0027s _some_ assurance that it\u0027s configured correctly, but I would still consider this test to lie. ;)",
+      "revId": "6bc666e3f57ac577d7499c27ccc7081adf3a44f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "988f6dc1_d83b2de7",
+        "filename": "tests/selenium/specs/revisionslider.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-03-29T17:10:53Z",
+      "side": 1,
+      "message": "I change the text. I still somehow like that little sanity check ^^\u0027",
+      "parentUuid": "053f368f_471e5016",
       "revId": "6bc666e3f57ac577d7499c27ccc7081adf3a44f5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true

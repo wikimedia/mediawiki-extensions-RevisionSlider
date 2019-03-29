@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fda70e98_2db4c5c2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-03-29T17:10:53Z",
+      "side": 1,
+      "message": "Ah yeah, my bad. Good point.",
+      "parentUuid": "223882bf_565eafe2",
+      "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3087ae71_e829b6a0",
         "filename": "/COMMIT_MSG",
         "patchSetId": 7
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "c73eeb01_a352bd89",
+        "filename": "tests/selenium/specs/filterhighlighting.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-03-29T17:10:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81f2191d_1e19f0a3",
+      "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "52f19a2c_1fb0410f",
         "filename": "tests/selenium/specs/filterhighlighting.js",
         "patchSetId": 7
@@ -64,6 +100,24 @@
       "writtenOn": "2019-03-29T12:02:29Z",
       "side": 1,
       "message": "Hard-coding pauses is an anti-pattern. Please use waitUntil().\n\nhttps://webdriver.io/docs/api/browser/waitUntil.html",
+      "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e31cdad6_a1106599",
+        "filename": "tests/selenium/specs/filterhighlighting.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-03-29T17:10:53Z",
+      "side": 1,
+      "message": "That part was a bit tricky but done.",
+      "parentUuid": "52f19a2c_1fb0410f",
       "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "6545a88a_1d63ab5e",
+        "filename": "tests/selenium/specs/filterhighlighting.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-03-29T17:10:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f05ec214_e6b1f95d",
+      "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f13b740d_89ad7253",
         "filename": "tests/selenium/specs/filterhighlighting.js",
         "patchSetId": 7
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "6f7ff489_8578082e",
+        "filename": "tests/selenium/specs/filterhighlighting.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-03-29T17:10:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f13b740d_89ad7253",
+      "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9ee3a8be_a40b62c4",
         "filename": "tests/selenium/specs/filterhighlighting.js",
         "patchSetId": 7
@@ -115,6 +205,24 @@
       "writtenOn": "2019-03-29T12:02:29Z",
       "side": 1,
       "message": "The same as above.",
+      "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec3a39c5_a54bcf92",
+        "filename": "tests/selenium/specs/filterhighlighting.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-03-29T17:10:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ee3a8be_a40b62c4",
       "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
