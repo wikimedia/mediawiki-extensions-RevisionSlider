@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "223882bf_565eafe2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2019-03-29T11:53:44Z",
+      "side": 1,
+      "message": "It\u0027s not really _npm_ selenium tests. It\u0027s just a package manager. ;) _node_ selenium tests?",
+      "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3087ae71_e829b6a0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2019-03-29T11:53:44Z",
+      "side": 1,
+      "message": "The same as above.",
+      "revId": "decc6b854a5af5d7efec9b70dee2be360bfec8d3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
