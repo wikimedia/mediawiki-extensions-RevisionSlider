@@ -2,14 +2,16 @@ const Page = require( 'wdio-mediawiki/Page' ),
 	Api = require( 'wdio-mediawiki/Api' ),
 	BlankPage = require( 'wdio-mediawiki/BlankPage' ),
 	Util = require( 'wdio-mediawiki/Util' ),
-	MWBot = require( 'mwbot' );
+	MWBot = require( 'mwbot' ),
+	USER_BUBBLE_SELECTOR = '.mw-revslider-username-row .mw-revslider-bubble',
+	TAG_BUBBLE_SELECTOR = '.mw-revslider-tag-row:last-of-type .mw-revslider-bubble';
 
 class DiffPage extends Page {
 	get rsMain() { return browser.element( '.mw-revslider-revision-slider' ); }
 	get rsToggleButton() { return browser.element( '.mw-revslider-toggle-button' ); }
 
-	get rsUserFilterBubble() { return browser.element( '.mw-revslider-username-row .mw-revslider-bubble' ); }
-	get rsTagFilterBubble() { return browser.element( '.mw-revslider-tag-row:last-of-type .mw-revslider-bubble' ); }
+	get rsUserFilterBubble() { return browser.element( USER_BUBBLE_SELECTOR ); }
+	get rsTagFilterBubble() { return browser.element( TAG_BUBBLE_SELECTOR ); }
 
 	getRevision( num ) { return browser.element( '.mw-revslider-revision[data-pos="' + num + '"]' ); }
 
@@ -139,6 +141,10 @@ class DiffPage extends Page {
 	dwellRevision( num ) {
 		browser.moveToObject( '.mw-revslider-revision[data-pos="' + num + '"]' );
 		browser.waitForVisible( '.mw-revslider-revision-tooltip-' + num );
+	}
+
+	dwellTagFilterBubble() {
+		browser.moveToObject( TAG_BUBBLE_SELECTOR );
 	}
 
 	abondonBubbleDwell() {
