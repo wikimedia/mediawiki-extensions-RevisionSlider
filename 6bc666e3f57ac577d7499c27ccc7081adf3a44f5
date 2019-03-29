@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "abf40864_240dd9f9",
+        "filename": "tests/selenium/pageobjects/diff.page.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-03-29T17:17:03Z",
+      "side": 1,
+      "message": "Ok ah, yes and no. \n\nSo I kind of need the EditPage here, see my comment inline. ( or at least its is very convenient ). \n\nThe EditPage is also used needed in the node browser tests for TwoColConflict. So IMO it should be added to wdio-mediawiki",
+      "parentUuid": "20634111_a7dde1b4",
+      "revId": "6bc666e3f57ac577d7499c27ccc7081adf3a44f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5acc82a1_80a4228e",
         "filename": "tests/selenium/pageobjects/diff.page.js",
         "patchSetId": 6
