@@ -68,6 +68,30 @@
       "revId": "1e269f4e8c5343cdd5fb188712d3d70520a3c770",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87c33ae9_4570f272",
+        "filename": "tests/selenium/specs/revisionslider.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 487
+      },
+      "writtenOn": "2019-03-30T09:32:44Z",
+      "side": 1,
+      "message": "See also https://gerrit.wikimedia.org/r/c/mediawiki/extensions/RevisionSlider/+/499855/6/tests/selenium/specs/revisionslider.js#6",
+      "parentUuid": "bf9e536d_ffbc5076",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 4
+      },
+      "revId": "1e269f4e8c5343cdd5fb188712d3d70520a3c770",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
