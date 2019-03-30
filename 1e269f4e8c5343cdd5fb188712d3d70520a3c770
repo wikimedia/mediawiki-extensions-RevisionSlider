@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "63dc3ad2_44798031",
+        "filename": "tests/selenium/pageobjects/diff.page.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2019-03-30T02:08:18Z",
+      "side": 1,
+      "message": "This is outside the scope of the repo, thus unstable.\n\nHaving said that, it seems this is only needed for making an edit, which you\u0027ll probably want to do via the API instead.\n\nIf it does end up needing to interact with the UI of the edit page, it shouldn\u0027t need the page from mediawiki/core; rather it would define its own Page subclass for the UI elements it needs. After all, the extension would only be testing it if it also changes or owns the UI in some way.\n\nInheriting such things from a central place tends to make the code harder to maintain and debug for not much added value.",
+      "range": {
+        "startLine": 4,
+        "startChar": 22,
+        "endLine": 4,
+        "endChar": 37
+      },
+      "revId": "1e269f4e8c5343cdd5fb188712d3d70520a3c770",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a1d819cf_de43ab97",
+        "filename": "tests/selenium/pageobjects/diff.page.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2019-03-30T02:08:18Z",
+      "side": 1,
+      "message": "This must be specified in package.json. Right now it works by accident because mediawiki/core\u0027s node_modules directory is higher up in the chain, which has its own version that can change separately from this.",
+      "range": {
+        "startLine": 6,
+        "startChar": 8,
+        "endLine": 6,
+        "endChar": 28
+      },
+      "revId": "1e269f4e8c5343cdd5fb188712d3d70520a3c770",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
