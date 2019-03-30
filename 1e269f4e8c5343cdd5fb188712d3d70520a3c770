@@ -45,6 +45,29 @@
       "revId": "1e269f4e8c5343cdd5fb188712d3d70520a3c770",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf9e536d_ffbc5076",
+        "filename": "tests/selenium/specs/revisionslider.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2019-03-30T02:10:34Z",
+      "side": 1,
+      "message": "This is not testing any frontend or backend code from the extension. It is testing that Special:Version works, which is a core feature end-to-end. Doesn\u0027t seem appropriate for the extension to be testing?\n\nI don\u0027t really mind the simple test being here, it\u0027s just that based on past experience, if I don\u0027t say anything now, it\u0027ll soon end up in every other extension :)",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 4
+      },
+      "revId": "1e269f4e8c5343cdd5fb188712d3d70520a3c770",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
