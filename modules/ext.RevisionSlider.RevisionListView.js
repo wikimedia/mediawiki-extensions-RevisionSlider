@@ -429,36 +429,34 @@
 
 			self.removeRevisionHighlight();
 
-			if ( event.type === 'mouseenter' ) {
-				$userLine.addClass( 'mw-revslider-highlight' );
-				$userBubble.addClass( 'mw-revslider-highlite-bubble' );
-				self.highlightSameUserRevisions( userName );
-			}
-
-			if ( event.type === 'mouseleave' ) {
-				$userLine.removeClass( 'mw-revslider-highlight' );
-				$userBubble.removeClass( 'mw-revslider-highlite-bubble' );
-
-				if ( self.selectedUser ) {
-					self.highlightSameUserRevisions( self.selectedUser );
-				}
-
-				if ( self.selectedTag ) {
-					self.highlightSameTagRevisions( self.selectedTag );
-				}
-			}
-
-			if ( event.type === 'click' ) {
-				oldUser = self.selectedUser;
-				self.resetRevisionHighlighting();
-
-				$userLine.addClass( 'mw-revslider-highlight' );
-				$userBubble.addClass( 'mw-revslider-highlite-bubble' );
-
-				if ( oldUser !== userName ) {
+			switch ( event.type ) {
+				case 'mouseenter':
+					$userLine.addClass( 'mw-revslider-highlight' );
+					$userBubble.addClass( 'mw-revslider-highlite-bubble' );
 					self.highlightSameUserRevisions( userName );
-					self.selectedUser = userName;
-				}
+					break;
+				case 'mouseleave':
+					$userLine.removeClass( 'mw-revslider-highlight' );
+					$userBubble.removeClass( 'mw-revslider-highlite-bubble' );
+					if ( self.selectedUser ) {
+						self.highlightSameUserRevisions( self.selectedUser );
+					}
+					if ( self.selectedTag ) {
+						self.highlightSameTagRevisions( self.selectedTag );
+					}
+					break;
+				case 'click':
+					oldUser = self.selectedUser;
+					self.resetRevisionHighlighting();
+
+					$userLine.addClass( 'mw-revslider-highlight' );
+					$userBubble.addClass( 'mw-revslider-highlite-bubble' );
+
+					if ( oldUser !== userName ) {
+						self.highlightSameUserRevisions( userName );
+						self.selectedUser = userName;
+					}
+					break;
 			}
 		},
 
@@ -566,36 +564,34 @@
 
 			self.removeRevisionHighlight();
 
-			if ( event.type === 'mouseenter' ) {
-				$tagLine.addClass( 'mw-revslider-highlight' );
-				$tagBubble.addClass( 'mw-revslider-highlite-bubble' );
-				self.highlightSameTagRevisions( tagName );
-			}
-
-			if ( event.type === 'mouseleave' ) {
-				$tagLine.removeClass( 'mw-revslider-highlight' );
-				$tagBubble.removeClass( 'mw-revslider-highlite-bubble' );
-
-				if ( self.selectedTag ) {
-					self.highlightSameTagRevisions( self.selectedTag );
-				}
-
-				if ( self.selectedUser ) {
-					self.highlightSameUserRevisions( self.selectedUser );
-				}
-			}
-
-			if ( event.type === 'click' ) {
-				oldTag = self.selectedTag;
-				self.resetRevisionHighlighting();
-
-				$tagLine.addClass( 'mw-revslider-highlight' );
-				$tagBubble.addClass( 'mw-revslider-highlite-bubble' );
-
-				if ( oldTag !== tagName ) {
+			switch ( event.type ) {
+				case 'mouseenter':
+					$tagLine.addClass( 'mw-revslider-highlight' );
+					$tagBubble.addClass( 'mw-revslider-highlite-bubble' );
 					self.highlightSameTagRevisions( tagName );
-					self.selectedTag = tagName;
-				}
+					break;
+				case 'mouseleave':
+					$tagLine.removeClass( 'mw-revslider-highlight' );
+					$tagBubble.removeClass( 'mw-revslider-highlite-bubble' );
+					if ( self.selectedTag ) {
+						self.highlightSameTagRevisions( self.selectedTag );
+					}
+					if ( self.selectedUser ) {
+						self.highlightSameUserRevisions( self.selectedUser );
+					}
+					break;
+				case 'click':
+					oldTag = self.selectedTag;
+					self.resetRevisionHighlighting();
+
+					$tagLine.addClass( 'mw-revslider-highlight' );
+					$tagBubble.addClass( 'mw-revslider-highlite-bubble' );
+
+					if ( oldTag !== tagName ) {
+						self.highlightSameTagRevisions( tagName );
+						self.selectedTag = tagName;
+					}
+					break;
 			}
 		},
 
