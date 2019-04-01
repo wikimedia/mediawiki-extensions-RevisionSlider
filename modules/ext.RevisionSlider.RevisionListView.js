@@ -436,14 +436,7 @@
 					self.highlightSameUserRevisions( userName );
 					break;
 				case 'mouseleave':
-					$userLine.removeClass( 'mw-revslider-highlight' );
-					$userBubble.removeClass( 'mw-revslider-highlite-bubble' );
-					if ( self.selectedUser ) {
-						self.highlightSameUserRevisions( self.selectedUser );
-					}
-					if ( self.selectedTag ) {
-						self.highlightSameTagRevisions( self.selectedTag );
-					}
+					self.reApplySavedHighlighting( $userLine, $userBubble );
 					break;
 				case 'click':
 					oldUser = self.selectedUser;
@@ -571,14 +564,7 @@
 					self.highlightSameTagRevisions( tagName );
 					break;
 				case 'mouseleave':
-					$tagLine.removeClass( 'mw-revslider-highlight' );
-					$tagBubble.removeClass( 'mw-revslider-highlite-bubble' );
-					if ( self.selectedTag ) {
-						self.highlightSameTagRevisions( self.selectedTag );
-					}
-					if ( self.selectedUser ) {
-						self.highlightSameUserRevisions( self.selectedUser );
-					}
+					self.reApplySavedHighlighting( $tagLine, $tagBubble );
 					break;
 				case 'click':
 					oldTag = self.selectedTag;
@@ -611,6 +597,22 @@
 							.addClass( 'mw-revslider-revision-highlight' );
 					}
 				}
+			}
+		},
+
+		/**
+		 * Re-apply highlighting from saved state
+		 * @param {jQuery} $line
+		 * @param {jQuery} $bubble
+		 */
+		reApplySavedHighlighting: function ( $line, $bubble ) {
+			$line.removeClass( 'mw-revslider-highlight' );
+			$bubble.removeClass( 'mw-revslider-highlite-bubble' );
+			if ( self.selectedTag ) {
+				self.highlightSameTagRevisions( self.selectedTag );
+			}
+			if ( self.selectedUser ) {
+				self.highlightSameUserRevisions( self.selectedUser );
 			}
 		},
 
