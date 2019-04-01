@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "859eacc7_3cb3ea27",
+        "filename": "tests/selenium/pageobjects/diff.page.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-04-01T11:36:55Z",
+      "side": 1,
+      "message": "Ack. I\u0027m creating a different user now, using the bot to make that extra edit.",
+      "parentUuid": "63dc3ad2_44798031",
+      "range": {
+        "startLine": 4,
+        "startChar": 22,
+        "endLine": 4,
+        "endChar": 37
+      },
+      "revId": "1e269f4e8c5343cdd5fb188712d3d70520a3c770",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a1d819cf_de43ab97",
         "filename": "tests/selenium/pageobjects/diff.page.js",
         "patchSetId": 11
@@ -36,6 +60,30 @@
       "writtenOn": "2019-03-30T02:08:18Z",
       "side": 1,
       "message": "This must be specified in package.json. Right now it works by accident because mediawiki/core\u0027s node_modules directory is higher up in the chain, which has its own version that can change separately from this.",
+      "range": {
+        "startLine": 6,
+        "startChar": 8,
+        "endLine": 6,
+        "endChar": 28
+      },
+      "revId": "1e269f4e8c5343cdd5fb188712d3d70520a3c770",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "03220294_88e35fd0",
+        "filename": "tests/selenium/pageobjects/diff.page.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-04-01T11:36:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1d819cf_de43ab97",
       "range": {
         "startLine": 6,
         "startChar": 8,
@@ -83,6 +131,30 @@
       "side": 1,
       "message": "See also https://gerrit.wikimedia.org/r/c/mediawiki/extensions/RevisionSlider/+/499855/6/tests/selenium/specs/revisionslider.js#6",
       "parentUuid": "bf9e536d_ffbc5076",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 4
+      },
+      "revId": "1e269f4e8c5343cdd5fb188712d3d70520a3c770",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "936f5eac_9e0d1e13",
+        "filename": "tests/selenium/specs/revisionslider.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-04-01T11:36:55Z",
+      "side": 1,
+      "message": "Ack. I removed the whole test ;-).",
+      "parentUuid": "87c33ae9_4570f272",
       "range": {
         "startLine": 4,
         "startChar": 0,
