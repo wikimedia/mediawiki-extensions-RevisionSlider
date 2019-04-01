@@ -423,28 +423,28 @@
 				$userLine = $userBubble.parent(),
 				oldUser;
 
+			if ( self.selectedUser === userName && event.type !== 'click' ) {
+				return;
+			}
+
+			self.removeRevisionHighlight();
+
 			if ( event.type === 'mouseenter' ) {
-				if ( self.selectedUser !== userName ) {
-					$userLine.addClass( 'mw-revslider-highlight' );
-					$userBubble.addClass( 'mw-revslider-highlite-bubble' );
-					self.removeRevisionHighlight();
-					self.highlightSameUserRevisions( userName );
-				}
+				$userLine.addClass( 'mw-revslider-highlight' );
+				$userBubble.addClass( 'mw-revslider-highlite-bubble' );
+				self.highlightSameUserRevisions( userName );
 			}
 
 			if ( event.type === 'mouseleave' ) {
-				if ( self.selectedUser !== userName ) {
-					$userLine.removeClass( 'mw-revslider-highlight' );
-					$userBubble.removeClass( 'mw-revslider-highlite-bubble' );
-					self.removeRevisionHighlight();
+				$userLine.removeClass( 'mw-revslider-highlight' );
+				$userBubble.removeClass( 'mw-revslider-highlite-bubble' );
 
-					if ( self.selectedUser ) {
-						self.highlightSameUserRevisions( self.selectedUser );
-					}
+				if ( self.selectedUser ) {
+					self.highlightSameUserRevisions( self.selectedUser );
+				}
 
-					if ( self.selectedTag ) {
-						self.highlightSameTagRevisions( self.selectedTag );
-					}
+				if ( self.selectedTag ) {
+					self.highlightSameTagRevisions( self.selectedTag );
 				}
 			}
 
@@ -560,28 +560,28 @@
 				tagName = $tagLine.data( 'tag-name' ),
 				oldTag;
 
+			if ( self.selectedTag === tagName && event.type !== 'click' ) {
+				return;
+			}
+
+			self.removeRevisionHighlight();
+
 			if ( event.type === 'mouseenter' ) {
-				if ( self.selectedTag !== tagName ) {
-					$tagLine.addClass( 'mw-revslider-highlight' );
-					$tagBubble.addClass( 'mw-revslider-highlite-bubble' );
-					self.removeRevisionHighlight();
-					self.highlightSameTagRevisions( tagName );
-				}
+				$tagLine.addClass( 'mw-revslider-highlight' );
+				$tagBubble.addClass( 'mw-revslider-highlite-bubble' );
+				self.highlightSameTagRevisions( tagName );
 			}
 
 			if ( event.type === 'mouseleave' ) {
-				if ( self.selectedTag !== tagName ) {
-					$tagLine.removeClass( 'mw-revslider-highlight' );
-					$tagBubble.removeClass( 'mw-revslider-highlite-bubble' );
-					self.removeRevisionHighlight();
+				$tagLine.removeClass( 'mw-revslider-highlight' );
+				$tagBubble.removeClass( 'mw-revslider-highlite-bubble' );
 
-					if ( self.selectedTag ) {
-						self.highlightSameTagRevisions( self.selectedTag );
-					}
+				if ( self.selectedTag ) {
+					self.highlightSameTagRevisions( self.selectedTag );
+				}
 
-					if ( self.selectedUser ) {
-						self.highlightSameUserRevisions( self.selectedUser );
-					}
+				if ( self.selectedUser ) {
+					self.highlightSameUserRevisions( self.selectedUser );
 				}
 			}
 
@@ -626,10 +626,9 @@
 		},
 
 		/**
-		 * Completely resets revision highlighting state
+		 * Resets highlighting setting state
 		 */
 		resetRevisionHighlighting: function () {
-			this.removeRevisionHighlight();
 			$( '.mw-revslider-highlightable-row' ).removeClass( 'mw-revslider-highlight' );
 			$( '.mw-revslider-bubble' ).removeClass( 'mw-revslider-highlite-bubble' );
 			this.selectedTag = '';
