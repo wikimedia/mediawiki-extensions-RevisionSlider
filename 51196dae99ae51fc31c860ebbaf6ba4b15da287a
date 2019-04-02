@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "67c390a4_82811929",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 2
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-04-02T16:59:33Z",
+      "side": 1,
+      "message": "That\u0027s a weirdly specific number. Where does it come from? Why not, let\u0027s say, 3em?",
+      "range": {
+        "startLine": 435,
+        "startChar": 16,
+        "endLine": 435,
+        "endChar": 26
+      },
+      "revId": "51196dae99ae51fc31c860ebbaf6ba4b15da287a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
