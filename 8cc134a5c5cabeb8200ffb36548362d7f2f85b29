@@ -22,6 +22,30 @@
       "revId": "8cc134a5c5cabeb8200ffb36548362d7f2f85b29",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b2f5ab18_d0ce78bf",
+        "filename": "tests/selenium/pageobjects/diff.page.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-04-02T06:46:13Z",
+      "side": 1,
+      "message": "\"$\" can also be used with xpath. In this case it selects the parent element. :-)\n\nSee https://webdriver.io/docs/selectors.html#xpath",
+      "parentUuid": "6b3d1641_58b100c3",
+      "range": {
+        "startLine": 148,
+        "startChar": 37,
+        "endLine": 148,
+        "endChar": 39
+      },
+      "revId": "8cc134a5c5cabeb8200ffb36548362d7f2f85b29",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
