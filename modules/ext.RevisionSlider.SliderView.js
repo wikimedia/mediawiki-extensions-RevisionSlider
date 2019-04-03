@@ -869,7 +869,7 @@
 		 */
 		fadeOutPointerLines: function () {
 			// FIXME: Use CSS transition
-			// eslint-disable-next-line jquery/no-fade
+			// eslint-disable-next-line no-jquery/no-fade
 			$( '.mw-revslider-pointer-line' ).fadeTo( 0, 0.3 );
 		},
 
@@ -878,7 +878,7 @@
 		 */
 		fadeInPointerLines: function () {
 			// FIXME: Use CSS transition
-			// eslint-disable-next-line jquery/no-fade
+			// eslint-disable-next-line no-jquery/no-fade
 			$( '.mw-revslider-pointer-line' ).fadeTo( 0, 1 );
 		},
 
@@ -923,7 +923,7 @@
 				animateObj.scrollLeft = this.getRtlScrollLeft( $animatedElement, animateObj.scrollLeft );
 			}
 
-			// eslint-disable-next-line jquery/no-animate
+			// eslint-disable-next-line no-jquery/no-animate
 			$animatedElement.animate(
 				animateObj,
 				duration,
