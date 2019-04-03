@@ -46,6 +46,30 @@
       "revId": "51196dae99ae51fc31c860ebbaf6ba4b15da287a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5e7cb329_bd9fd396",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 2
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-04-03T08:46:32Z",
+      "side": 1,
+      "message": "How should anybody know this and update this when the line height changes?\n\nWhen the goal is to just have half a circle left and right, just set this to something ridiculously height that covers all possible line heights now and in the future, e.g. 5em or 100px or something like this.\n\nWhatever the value is, a comment explaining it would be very helpful.",
+      "parentUuid": "1c25d049_cc390fe8",
+      "range": {
+        "startLine": 435,
+        "startChar": 16,
+        "endLine": 435,
+        "endChar": 26
+      },
+      "revId": "51196dae99ae51fc31c860ebbaf6ba4b15da287a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
