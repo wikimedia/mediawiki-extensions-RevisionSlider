@@ -70,6 +70,30 @@
       "revId": "51196dae99ae51fc31c860ebbaf6ba4b15da287a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e892073b_cb1588a0",
+        "filename": "modules/ext.RevisionSlider.less",
+        "patchSetId": 2
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 1883
+      },
+      "writtenOn": "2019-04-03T09:01:02Z",
+      "side": 1,
+      "message": "Right, done. I was kind of unaware, that setting this to a ridiculous high number will just give you round edges. - Because setting it to 100% has a quite different result. - Thanks!",
+      "parentUuid": "5e7cb329_bd9fd396",
+      "range": {
+        "startLine": 435,
+        "startChar": 16,
+        "endLine": 435,
+        "endChar": 26
+      },
+      "revId": "51196dae99ae51fc31c860ebbaf6ba4b15da287a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
