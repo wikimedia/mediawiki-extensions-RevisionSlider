@@ -1,7 +1,8 @@
 {
 	"private": true,
 	"scripts": {
-		"test": "grunt test"
+		"test": "grunt test",
+		"selenium-test": "wdio tests/selenium/wdio.conf.js"
 	},
 	"devDependencies": {
 		"eslint-config-wikimedia": "0.11.0",
@@ -10,6 +11,11 @@
 		"grunt-eslint": "21.0.0",
 		"grunt-jsonlint": "1.1.0",
 		"grunt-stylelint": "0.10.1",
-		"stylelint-config-wikimedia": "0.5.0"
+		"mwbot": "1.0.10",
+		"stylelint-config-wikimedia": "0.5.0",
+		"wdio-mediawiki": "0.3.0",
+		"wdio-mocha-framework": "0.6.4",
+		"wdio-spec-reporter": "0.1.5",
+		"webdriverio": "4.14.4"
 	}
 }
