@@ -3,9 +3,11 @@
 		"authors": [
 			"Kumkumuk",
 			"Macofe",
-			"Mirzali"
+			"Mirzali",
+			"Orbot707"
 		]
 	},
+	"revisionslider-preference-disable": "RevisionSlideri memocnê",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bayt|bayti}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bayt|bayti}}",
 	"revisionslider-label-date": "Tarix",
