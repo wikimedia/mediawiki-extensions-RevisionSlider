@@ -608,11 +608,11 @@
 		reApplySavedHighlighting: function ( $line, $bubble ) {
 			$line.removeClass( 'mw-revslider-highlight' );
 			$bubble.removeClass( 'mw-revslider-highlite-bubble' );
-			if ( self.selectedTag ) {
-				self.highlightSameTagRevisions( self.selectedTag );
+			if ( this.selectedTag ) {
+				this.highlightSameTagRevisions( this.selectedTag );
 			}
-			if ( self.selectedUser ) {
-				self.highlightSameUserRevisions( self.selectedUser );
+			if ( this.selectedUser ) {
+				this.highlightSameUserRevisions( this.selectedUser );
 			}
 		},
 

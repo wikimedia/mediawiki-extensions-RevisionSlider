@@ -117,4 +117,30 @@ describe( 'RevisionSlider filter highlighting', function () {
 			'does not highlight revisions without the selected tag'
 		);
 	} );
+
+	it( 're-applies highlight when I selected a user but hover and on-hover a tag filter', function () {
+		DiffPage.dwellRevision( 4 );
+		DiffPage.clickUserFilterBubble();
+		DiffPage.dwellTagFilterBubble();
+		DiffPage.abondonBubbleDwell();
+
+		assert(
+			DiffPage.highlightsBubble( DiffPage.rsUserFilterBubble ),
+			'the user filter bubble should still be highlighted'
+		);
+		assert(
+			!DiffPage.highlightsBubble( DiffPage.rsTagFilterBubble ),
+			'the tag filter bubble should not be highlighted'
+		);
+		assert(
+			DiffPage.highlightsRevision( 1 ) &&
+			DiffPage.highlightsRevision( 2 ) &&
+			DiffPage.highlightsRevision( 4 ),
+			'does highlight revisions from the selected user'
+		);
+		assert(
+			!DiffPage.highlightsRevision( 3 ),
+			'does not highlight revisions from a different user'
+		);
+	} );
 } );
