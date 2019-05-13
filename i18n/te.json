@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chaduvari",
+			"Veeven"
+		]
+	},
+	"revisionslider": "రివిజన్ స్లైడర్",
+	"revisionslider-preference-disable": "రివిజన్ స్లైడరును చూపవద్దు",
+	"revisionslider-desc": "తేడాల పేజీలో వివిధ కూర్పులను ఎంచుకుని, పోల్చి చూసుకునేందుకు ఒక స్లైడరును చూపిస్తుంది.",
+	"revisionslider-toggle-label": "పేజీ చరిత్రను అడుగుతూ చూడండి",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|బైటు|బైట్లు}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|బైటు|బైట్లు}}",
+	"revisionslider-label-date": "తేదీ",
+	"revisionslider-label-page-size": "పేజీ పరిమాణం",
+	"revisionslider-label-change-size": "మార్పు పరిమాణం",
+	"revisionslider-label-comment": "దిద్దుబాటు సారాంశం",
+	"revisionslider-label-username": "{{GENDER:$1|వాడుకరి పేరు}}",
+	"revisionslider-minoredit": "ఇది చిన్న దిద్దుబాటు",
+	"revisionslider-loading-failed": "రివిజన్ స్లైడరు లోడవడం విఫలమైంది",
+	"revisionslider-toggle-title-expand": "రివిజను స్లైడరును తెరువు",
+	"revisionslider-toggle-title-collapse": "రివిజను స్లైడరును మూసివెయ్యి",
+	"revisionslider-turn-on-auto-expand-title": "రివిజను స్లైడరును ఎల్లప్పుడూ తెరిచే ఉంచు",
+	"revisionslider-turn-off-auto-expand-title": "రివిజను స్లైడరును ఆటోమాటిగ్గా విస్తరించవద్దు",
+	"revisionslider-arrow-tooltip-newer": "కొత్త కూర్పులను చూడండి",
+	"revisionslider-arrow-tooltip-older": "పాత కూర్పులను చూడండి",
+	"revisionslider-show-help-tooltip": "సహాయం పాఠ్యాన్ని చూపించు",
+	"revisionslider-help-dialog-slide2": "ఒక్కొక్క పట్టీ ఒక్కో కూర్పును సూచిస్తుంది. పైన ఉన్న పట్టీలు పేజీ పరిమాణం పెరగడాన్ని, కింద ఉన్న పట్టీలు తగ్గడాన్నీ సూచిస్తాయి. ఈ బొమ్మలో కూర్పు 1 పాఠ్యం చేర్పును, కూర్పు 2 పాఠ్యం తొలగింపునూ సూచిస్తాయి.",
+	"revisionslider-help-dialog-slide4": "వెనుక, ముందు బాణాలను వాడి కూర్పుల చరిత్రలో పాత కొత్త కూర్పులను చూడవచ్చు.",
+	"revisionslider-tutorial": "రివిజన్ స్లైడరు పాఠం",
+	"revisionslider-previous-dialog": "మునుపటి",
+	"revisionslider-next-dialog": "తదుపరి",
+	"revisionslider-close-dialog": "మూసివేయి"
+}
