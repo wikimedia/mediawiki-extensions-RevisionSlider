@@ -9,7 +9,7 @@
 		]
 	},
 	"revisionslider-preference-disable": "판 슬라이더를 보지 않기",
-	"revisionslider-toggle-label": "상호 작용적으로 역사 찾아보기",
+	"revisionslider-toggle-label": "입체적으로 역사 찾아보기",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|바이트}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|바이트}}",
 	"revisionslider-label-date": "날짜",
