@@ -96,6 +96,7 @@
 							.addClass( 'mw-revslider-revision' )
 							.attr( 'data-revid', revs[ i ].getId() )
 							.attr( 'data-pos', positionOffset + i + 1 )
+							.attr( 'data-user', revs[ i ].getUser() )
 							.css( {
 								height: relativeChangeSize + 'px',
 								width: this.revisionWidth + 'px',
@@ -459,15 +460,8 @@
 		* @param {boolean} highlight
 		*/
 		highlightSameUserRevisions: function ( userString ) {
-			var i,
-				revs = this.revisionList.getRevisions();
-
-			for ( i = 0; i < revs.length; i++ ) {
-				if ( userString === revs[ i ].getUser() ) {
-					$( '[data-revid="' + revs[ i ].id + '"]' ).parent()
-						.toggleClass( 'mw-revslider-revision-highlight' );
-				}
-			}
+			$( '[data-user="' + userString + '"]' ).parent()
+				.toggleClass( 'mw-revslider-revision-highlight' );
 		},
 
 		/**
