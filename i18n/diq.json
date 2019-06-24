@@ -8,6 +8,7 @@
 		]
 	},
 	"revisionslider-preference-disable": "Luwayışê revizyoni memocnê",
+	"revisionslider-toggle-label": "Çım bıerze verorê pela",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bayt|bayti}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bayt|bayti}}",
 	"revisionslider-label-date": "Tarix",
@@ -15,6 +16,7 @@
 	"revisionslider-label-change-size": "Ebati bıvurnê",
 	"revisionslider-label-comment": "Mışewre",
 	"revisionslider-label-username": "{{GENDER:$1|Nameyê karberi}}",
+	"revisionslider-tutorial": "Musnayoğê xizkerdoğê revizyoni",
 	"revisionslider-previous-dialog": "Verên",
-	"revisionslider-close-dialog": "Kip ke"
+	"revisionslider-close-dialog": "Racın"
 }
