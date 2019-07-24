@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ильнар"
+			"Ильнар",
+			"Ерней"
 		]
 	},
 	"revisionslider": "Юрамалар гизгече",
@@ -12,7 +13,7 @@
 	"revisionslider-label-date": "Дата",
 	"revisionslider-label-page-size": "Битнең зурлыгы",
 	"revisionslider-label-change-size": "Төзәтмәләр зурлыгы",
-	"revisionslider-label-comment": "Искәрмә",
+	"revisionslider-label-comment": "Төзәтмә аңлатмасы",
 	"revisionslider-label-username": "{{GENDER:$1|Кулланучы}}",
 	"revisionslider-minoredit": "Бу кече үзгәртү",
 	"revisionslider-loading-failed": "Юрамалар гизгечен ачып булмады.",

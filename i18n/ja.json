@@ -6,12 +6,13 @@
 			"にょきにょき",
 			"Mirinano",
 			"Yusuke1109",
-			"Omotecho"
+			"Omotecho",
+			"Afaz"
 		]
 	},
 	"revisionslider": "リビジョンスライダー",
 	"revisionslider-preference-disable": "リビジョンスライダーを表示しない",
-	"revisionslider-desc": "版間の差分を表示する際にスライダーを使って版の選択ができるようになります。",
+	"revisionslider-desc": "版間の差分を表示する際にスライダーを使って版の選択ができるようにする",
 	"revisionslider-toggle-label": "履歴の双方向閲覧",
 	"revisionslider-page-size": "$1{{PLURAL:$2|バイト}}",
 	"revisionslider-change-size": "$1{{PLURAL:$3|バイト}}",
