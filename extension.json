@@ -63,6 +63,7 @@
 				"oojs-ui",
 				"oojs-ui.styles.icons-moderation",
 				"oojs-ui.styles.icons-movement",
+				"oojs-ui.styles.indicators",
 				"mediawiki.jqueryMsg",
 				"ext.RevisionSlider.util",
 				"ext.RevisionSlider.Settings",
