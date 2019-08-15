@@ -46,6 +46,9 @@
 		},
 		"ext.RevisionSlider.init": {
 			"scripts": [
+				"modules/ext.RevisionSlider.Revision.js",
+				"modules/ext.RevisionSlider.Api.js",
+				"modules/ext.RevisionSlider.util.js",
 				"modules/ext.RevisionSlider.init.js"
 			],
 			"styles": [
@@ -60,21 +63,20 @@
 				]
 			},
 			"dependencies": [
+				"moment",
 				"oojs-ui",
 				"oojs-ui.styles.icons-moderation",
 				"oojs-ui.styles.icons-movement",
 				"mediawiki.jqueryMsg",
-				"ext.RevisionSlider.util",
 				"ext.RevisionSlider.Settings",
 				"ext.RevisionSlider.Slider",
-				"ext.RevisionSlider.Revision",
 				"ext.RevisionSlider.RevisionList",
 				"ext.RevisionSlider.HelpDialog",
-				"ext.RevisionSlider.Api",
 				"mediawiki.api",
 				"mediawiki.util"
 			],
 			"messages": [
+				"revisionslider-label-username",
 				"revisionslider-show-help-tooltip",
 				"revisionslider-loading-failed",
 				"revisionslider-toggle-title-expand",
@@ -86,19 +88,6 @@
 		"ext.RevisionSlider.noscript": {
 			"styles": "modules/ext.RevisionSlider.noscript.css"
 		},
-		"ext.RevisionSlider.util": {
-			"scripts": [
-				"modules/ext.RevisionSlider.util.js"
-			]
-		},
-		"ext.RevisionSlider.Api": {
-			"scripts": [
-				"modules/ext.RevisionSlider.Api.js"
-			],
-			"messages": [
-				"revisionslider-label-username"
-			]
-		},
 		"ext.RevisionSlider.Settings": {
 			"scripts": [
 				"modules/ext.RevisionSlider.Settings.js"
@@ -109,53 +98,27 @@
 				"mediawiki.cookie"
 			]
 		},
-		"ext.RevisionSlider.Revision": {
-			"scripts": [
-				"modules/ext.RevisionSlider.Revision.js"
-			],
-			"dependencies": [
-				"moment"
-			]
-		},
 		"ext.RevisionSlider.Pointer": {
 			"scripts": [
+				"modules/ext.RevisionSlider.PointerLine.js",
+				"modules/ext.RevisionSlider.PointerView.js",
 				"modules/ext.RevisionSlider.Pointer.js"
-			],
-			"dependencies": [
-				"ext.RevisionSlider.PointerView",
-				"ext.RevisionSlider.PointerLine"
-			]
-		},
-		"ext.RevisionSlider.PointerView": {
-			"scripts": [
-				"modules/ext.RevisionSlider.PointerView.js"
-			]
-		},
-		"ext.RevisionSlider.PointerLine": {
-			"scripts": [
-				"modules/ext.RevisionSlider.PointerLine.js"
 			]
 		},
 		"ext.RevisionSlider.Slider": {
 			"scripts": [
+				"modules/ext.RevisionSlider.DiffPage.js",
+				"modules/ext.RevisionSlider.util.js",
+				"modules/ext.RevisionSlider.SliderView.js",
+				"modules/ext.RevisionSlider.SliderArrowView.js",
 				"modules/ext.RevisionSlider.Slider.js"
 			],
 			"dependencies": [
-				"ext.RevisionSlider.SliderView"
-			]
-		},
-		"ext.RevisionSlider.SliderView": {
-			"scripts": [
-				"modules/ext.RevisionSlider.SliderView.js",
-				"modules/ext.RevisionSlider.SliderArrowView.js"
-			],
-			"dependencies": [
 				"jquery.ui.draggable",
+				"mediawiki.Uri",
 				"mediawiki.util",
 				"oojs-ui",
 				"oojs-ui.styles.icons-movement",
-				"ext.RevisionSlider.util",
-				"ext.RevisionSlider.DiffPage",
 				"ext.RevisionSlider.HelpDialog",
 				"ext.RevisionSlider.Pointer"
 			],
@@ -164,27 +127,11 @@
 				"revisionslider-arrow-tooltip-older"
 			]
 		},
-		"ext.RevisionSlider.DiffPage": {
-			"scripts": [
-				"modules/ext.RevisionSlider.DiffPage.js"
-			],
-			"dependencies": [
-				"mediawiki.Uri",
-				"mediawiki.util"
-			]
-		},
 		"ext.RevisionSlider.RevisionList": {
 			"scripts": [
+				"modules/ext.RevisionSlider.Revision.js",
+				"modules/ext.RevisionSlider.RevisionListView.js",
 				"modules/ext.RevisionSlider.RevisionList.js"
-			],
-			"dependencies": [
-				"ext.RevisionSlider.Revision",
-				"ext.RevisionSlider.RevisionListView"
-			]
-		},
-		"ext.RevisionSlider.RevisionListView": {
-			"scripts": [
-				"modules/ext.RevisionSlider.RevisionListView.js"
 			],
 			"messages": [
 				"colon-separator",
@@ -198,6 +145,7 @@
 				"revisionslider-minoredit"
 			],
 			"dependencies": [
+				"moment",
 				"mediawiki.language",
 				"mediawiki.util",
 				"oojs-ui"

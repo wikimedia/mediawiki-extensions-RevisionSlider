@@ -3,7 +3,7 @@
 		RevisionList = mw.libs.revisionSlider.RevisionList,
 		Revision = mw.libs.revisionSlider.Revision;
 
-	QUnit.module( 'ext.RevisionSlider.RevisionListView' );
+	QUnit.module( 'ext.RevisionSlider.RevisionList' );
 
 	QUnit.test( 'render adds revisions', function ( assert ) {
 		var revisionListView = new RevisionListView( new RevisionList( [
