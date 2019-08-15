@@ -11,7 +11,7 @@
 	"revisionslider": "Paginageschiedenisbalk",
 	"revisionslider-preference-disable": "Laat de paginageschiedenisbalk niet zien",
 	"revisionslider-desc": "Laat een balk zien tijdens het vergelijken van versies, waarmee andere versies kunnen worden geselecteerd en met elkaar kunnen worden vergeleken",
-	"revisionslider-toggle-label": "Door geschiedenis bladeren",
+	"revisionslider-toggle-label": "Interactief door geschiedenis bladeren",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte|bytes}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte|bytes}}",
 	"revisionslider-label-date": "Datum",
