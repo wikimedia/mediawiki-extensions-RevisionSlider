@@ -96,7 +96,7 @@ class RevisionSliderHooks {
 
 		$toggleButton = new OOUI\ButtonWidget( [
 			'label' => ( new Message( 'revisionslider-toggle-label' ) )->text(),
-			'icon' => 'expand',
+			'indicator' => 'down',
 			'classes' => [ 'mw-revslider-toggle-button' ],
 			'infusable' => true,
 			'framed' => false,
