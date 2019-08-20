@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bluegram"
+			"Bluegram",
+			"Horus"
 		]
 	},
+	"revisionslider-preference-disable": "ไม่แสดงแถบเลื่อนรุ่น",
 	"revisionslider-previous-dialog": "ก่อนหน้า",
 	"revisionslider-close-dialog": "ปิด"
 }
