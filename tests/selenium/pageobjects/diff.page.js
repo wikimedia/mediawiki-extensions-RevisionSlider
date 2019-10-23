@@ -15,23 +15,8 @@ class DiffPage extends Page {
 
 	getRevision( num ) { return browser.element( '.mw-revslider-revision[data-pos="' + num + '"]' ); }
 
-	resourceLoaderModuleStatus( moduleName, moduleStatus, errMsg ) {
-		// Word of caution: browser.waitUntil returns a Timer class NOT a Promise.
-		// Webdriver IO will run waitUntil synchronously so not returning it will
-		// block JavaScript execution while returning it will not.
-		// http://webdriver.io/api/utility/waitUntil.html
-		// https://github.com/webdriverio/webdriverio/blob/master/lib/utils/Timer.js
-		browser.waitUntil( () => {
-			const result = browser.execute( ( module ) => {
-				return typeof mw !== 'undefined' &&
-				mw.loader.getState( module.name ) === module.status;
-			}, { status: moduleStatus, name: moduleName } );
-			return result.value;
-		}, 10000, errMsg );
-	}
-
 	ready() {
-		this.resourceLoaderModuleStatus( 'ext.RevisionSlider.lazyJs', 'ready', 'RevisionSlider did not load' );
+		Util.waitForModuleState( 'ext.RevisionSlider.lazyJs' );
 	}
 
 	prepareFilterTests() {
