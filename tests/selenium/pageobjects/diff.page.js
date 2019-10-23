@@ -35,7 +35,7 @@ class DiffPage extends Page {
 	}
 
 	prepareFilterTests() {
-		let title = Util.getTestString( 'revisionslider-test-' );
+		const title = Util.getTestString( 'revisionslider-test-' );
 		BlankPage.open();
 		this.toggleHelpDialog( false );
 		this.hasPageWithDifferentEdits( title );
@@ -55,7 +55,7 @@ class DiffPage extends Page {
 	 * @param {boolean} [show] Defaults to true.
 	 */
 	toggleHelpDialog( show ) {
-		let hide = show === false;
+		const hide = show === false;
 		browser.localStorage( 'POST', { key: 'mw-revslider-hide-help-dialogue', value: hide ? '1' : '0' } );
 	}
 
@@ -93,7 +93,7 @@ class DiffPage extends Page {
 	 * @param {string} title Article to edit.
 	 */
 	addTaggedEditToPage( title ) {
-		let bot = new MWBot();
+		const bot = new MWBot();
 
 		browser.call( function () {
 			return bot.loginGetEditToken( {
@@ -115,9 +115,9 @@ class DiffPage extends Page {
 	 * @param {string} title Article to edit.
 	 */
 	addTaggedOtherUserEditToPage( title ) {
-		let bot = new MWBot();
-		let otherUser = Util.getTestString( 'User-' );
-		let otherUserPassword = Util.getTestString();
+		const bot = new MWBot();
+		const otherUser = Util.getTestString( 'User-' );
+		const otherUserPassword = Util.getTestString();
 		browser.call( function () {
 			return Api.createAccount( otherUser, otherUserPassword );
 		} );
