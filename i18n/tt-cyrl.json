@@ -12,7 +12,7 @@
 	"revisionslider-change-size": "$1 {{PLURAL:$3|байт}}",
 	"revisionslider-label-date": "Дата",
 	"revisionslider-label-page-size": "Битнең зурлыгы",
-	"revisionslider-label-change-size": "Төзәтмәләр зурлыгы",
+	"revisionslider-label-change-size": "Үзгәреш зурлыгы",
 	"revisionslider-label-comment": "Төзәтмә аңлатмасы",
 	"revisionslider-label-username": "{{GENDER:$1|Кулланучы}}",
 	"revisionslider-minoredit": "Бу кече үзгәртү",
