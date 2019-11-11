@@ -14,7 +14,7 @@
 	"revisionslider-label-date": "Dato",
 	"revisionslider-label-page-size": "Sidestørrelse",
 	"revisionslider-label-change-size": "Endringsstørrelse",
-	"revisionslider-label-comment": "Redigeringssammendrag",
+	"revisionslider-label-comment": "Redigeringsforklaring",
 	"revisionslider-label-username": "{{GENDER:$1|Brukernavn}}",
 	"revisionslider-minoredit": "Dette er en mindre redigering",
 	"revisionslider-loading-failed": "Klarte ikke å laste revisjonsskyvelinja.",
