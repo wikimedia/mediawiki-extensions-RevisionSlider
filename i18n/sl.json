@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Janezdrilc",
-			"Dbc334"
+			"Dbc334",
+			"Eleassar"
 		]
 	},
 	"revisionslider": "Redakcijski drsnik",
 	"revisionslider-preference-disable": "Ne prikaži redakcijskega drsnika",
 	"revisionslider-desc": "Prikaže drsnik, ki omogoča izbiranje in primerjanje med posameznimi redakcijami na primerjalni strani",
-	"revisionslider-toggle-label": "Brskaj po zgodovini interaktivno",
+	"revisionslider-toggle-label": "Brskajte po zgodovini interaktivno",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|znak|znaka|znaki|znakov}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|znak|znaka|znaki|znakov}}",
 	"revisionslider-label-date": "Datum",
