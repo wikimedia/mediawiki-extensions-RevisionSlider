@@ -157,8 +157,7 @@ class RevisionSliderHooks {
 				'ext.RevisionSlider.Slider',
 				'ext.RevisionSlider.RevisionList',
 				'ext.RevisionSlider.HelpDialog',
-				'jquery.ui.draggable',
-				'jquery.ui.tooltip',
+				'jquery.ui',
 				'oojs-ui'
 			],
 			'localBasePath' => dirname( __DIR__ ),
