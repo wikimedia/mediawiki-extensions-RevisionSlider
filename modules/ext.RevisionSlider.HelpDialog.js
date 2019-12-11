@@ -89,15 +89,13 @@
 		 * @return {OO.ui.PanelLayout}
 		 */
 		getSlide3: function () {
-			var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } ),
-				msgKey = 'revisionslider-help-dialog-slide3a',
-				className = 'mw-revslider-help-dialog-slide-3a';
+			var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
 			slide.$element
-				.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-portrait ' + className + ' mw-revslider-column-image' ) )
+				.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-portrait mw-revslider-help-dialog-slide-3a mw-revslider-column-image' ) )
 				.append(
 					$( '<div>' ).addClass( 'mw-revslider-column-text mw-revslider-help-dialog-text' )
-						.html( mw.message( msgKey ).parse() )
+						.html( mw.message( 'revisionslider-help-dialog-slide3a' ).parse() )
 				)
 				.append( $( '<div>' ).css( 'clear', 'both' ) );
 
@@ -108,11 +106,10 @@
 		 * @return {OO.ui.PanelLayout}
 		 */
 		getSlide4: function () {
-			var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } ),
-				className = 'mw-revslider-help-dialog-slide-4a';
+			var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
 			slide.$element
-				.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape ' + className ) )
+				.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape mw-revslider-help-dialog-slide-4a' ) )
 				.append(
 					$( '<p>' ).addClass( 'mw-revslider-help-dialog-text' )
 						.text( mw.msg( 'revisionslider-help-dialog-slide4' ) )

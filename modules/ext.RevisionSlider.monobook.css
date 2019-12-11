@@ -3,5 +3,6 @@
    not inside this globalWrapper, and thus need a separate CSS rule.
    Once this issue is fixed, this rule can be removed. (T166231) */
 .mw-revslider-tooltip {
+	/* stylelint-disable-next-line unit-blacklist */
 	font-size: 0.8rem;
 }
