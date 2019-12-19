@@ -1,19 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Teslaton"
+			"Teslaton",
+			"Luky001"
 		]
 	},
 	"revisionslider": "Posuvník revízií",
 	"revisionslider-preference-disable": "Nezobrazovať posuvník revízií",
 	"revisionslider-desc": "Na stránke s rozdielmi zobrazuje posuvník umožňujúci výber a porovnanie revízií.",
-	"revisionslider-toggle-label": "Prechádzať históriu",
+	"revisionslider-toggle-label": "Interaktívne prechádzať históriu",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bajt|bajty|bajtov}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bajt|bajty|bajtov}}",
 	"revisionslider-label-date": "Dátum",
 	"revisionslider-label-page-size": "Veľkosť stránky",
 	"revisionslider-label-change-size": "Veľkosť zmeny",
-	"revisionslider-label-comment": "Zhrnutie",
+	"revisionslider-label-comment": "Zhrnutie úprav",
 	"revisionslider-label-username": "{{GENDER:$1|Používateľské meno}}",
 	"revisionslider-minoredit": "Toto je drobná úprava",
 	"revisionslider-loading-failed": "Posuvník revízií sa nepodarilo načítať.",
