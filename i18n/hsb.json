@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"J budissin"
+		]
+	},
+	"revisionslider": "Listowak přez wersije",
+	"revisionslider-preference-disable": "Listowak přez wersije njepokazać",
+	"revisionslider-desc": "Pokazuje lajstu, z kotrejž zmóžnja so wuběranje a přirunanje wersijow na přirunanskej stronje.",
+	"revisionslider-toggle-label": "Stawizny wersijow interaktiwnje přepytać",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|bajt|bajtaj|bajty|bajtow}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|bajt|bajtaj|bajty|bajtow}}",
+	"revisionslider-label-date": "Datum",
+	"revisionslider-label-page-size": "Wulkosć strony",
+	"revisionslider-label-change-size": "Wulkosć změny",
+	"revisionslider-label-comment": "Zjeće změnow",
+	"revisionslider-label-username": "Mjeno {{GENDER:$1|wužiwarja|wužiwarki}}",
+	"revisionslider-minoredit": "To je snadna změna",
+	"revisionslider-loading-failed": "Listowak njehodźeše so začitać.",
+	"revisionslider-toggle-title-expand": "Listowak přez wersije wočinić",
+	"revisionslider-toggle-title-collapse": "Listowak přez wersije schować",
+	"revisionslider-turn-on-auto-expand-title": "Listowak přez wersije přeco wočinić",
+	"revisionslider-turn-off-auto-expand-title": "Listowak přez wersije awtomatisce njewočinić",
+	"revisionslider-arrow-tooltip-newer": "Nowše wersije sej wobhladać",
+	"revisionslider-arrow-tooltip-older": "Starše wersije sej wobhladać",
+	"revisionslider-show-help-tooltip": "Pomocny tekst pokazać",
+	"revisionslider-help-dialog-slide1": "Listowak přez wersije pomha tebi při nawigaciji a přirunanju wersijow na přirunanskej stronje. Je wušoł z [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider přeća] němskorěčneho zhromadźenstwa. Měnjenja wo funkciji so [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider tule] jara waža.",
+	"revisionslider-help-dialog-slide2": "Kóžda hrjada zwobraznja jednu wersiju strony. Horje pokazowace hrjady steja za rozrosć wulkosće strony, dele pokazowace za pomjeńšenje wulkosće. We wobrazu pokaza wersija 1 přidaty wobsah, mjeztym zo pokaza wersija 2 wotstronjenje wobsaha.",
+	"revisionslider-help-dialog-slide3a": "<p>Zo by jednotliwej wersiji přirunał(a), wubjer wersiji z pomocu žołteho a módreho knefla.</p><p>Módry knefl kontroluje nowšu wersiju, žołty knefl staršu.</p><p>Přesuń kneflej z tym, zo jej ćehnješ a wotpołožiš abo na lajstu listowaka kliknješ.</p>",
+	"revisionslider-help-dialog-slide4": "Wužiwaj kłokaj doprědka a dozady, zo by přez stawizny wersijow listował(a) a starše abo nowe wersije widźał(a).",
+	"revisionslider-tutorial": "Nawod za listowak přez wersije",
+	"revisionslider-previous-dialog": "Wróćo",
+	"revisionslider-next-dialog": "Dale",
+	"revisionslider-close-dialog": "Začinić"
+}
