@@ -72,9 +72,9 @@ class RevisionSliderHooks {
 		$stats->increment( 'RevisionSlider.event.hookinit' );
 
 		$timeOffset = $config->get( 'LocalTZoffset' );
-		if ( is_null( $config->get( 'Localtimezone' ) ) ) {
+		if ( $config->get( 'Localtimezone' ) === null ) {
 			$timeOffset = 0;
-		} elseif ( is_null( $timeOffset ) ) {
+		} elseif ( $timeOffset === null ) {
 			$timeOffset = 0;
 		}
 
