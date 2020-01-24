@@ -10,6 +10,9 @@
 		this.diffPage = new mw.libs.revisionSlider.DiffPage( this.slider.getRevisionList() );
 	};
 
+	/**
+	 * @class mw.libs.revisionSlider.SliderView
+	 */
 	$.extend( SliderView.prototype, {
 		revisionWidth: 16,
 

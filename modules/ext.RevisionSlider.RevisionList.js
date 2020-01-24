@@ -9,6 +9,9 @@
 		this.view = new mw.libs.revisionSlider.RevisionListView( this );
 	};
 
+	/**
+	 * @class mw.libs.revisionSlider.RevisionList
+	 */
 	$.extend( RevisionList.prototype, {
 		/**
 		 * @type {Revision[]}

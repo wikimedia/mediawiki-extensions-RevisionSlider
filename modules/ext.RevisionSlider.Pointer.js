@@ -10,6 +10,9 @@
 		this.line = new mw.libs.revisionSlider.PointerLine( this, name );
 	};
 
+	/**
+	 * @class mw.libs.revisionSlider.Pointer
+	 */
 	$.extend( Pointer.prototype, {
 		/**
 		 * @type {number}

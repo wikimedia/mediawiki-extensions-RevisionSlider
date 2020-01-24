@@ -9,6 +9,9 @@
 		this.sliderView = sliderView;
 	};
 
+	/**
+	 * @class mw.libs.revisionSlider.SliderArrowView
+	 */
 	$.extend( SliderArrowView.prototype, {
 		/**
 		 * @type {SliderView}

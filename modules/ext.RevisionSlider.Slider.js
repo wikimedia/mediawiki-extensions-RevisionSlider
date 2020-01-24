@@ -10,6 +10,9 @@
 		this.view = new mw.libs.revisionSlider.SliderView( this );
 	};
 
+	/**
+	 * @class mw.libs.revisionSlider.Slider
+	 */
 	$.extend( Slider.prototype, {
 		/**
 		 * @type {RevisionList}
