@@ -11,6 +11,9 @@
 		this.name = name;
 	};
 
+	/**
+	 * @class mw.libs.revisionSlider.PointerView
+	 */
 	$.extend( PointerView.prototype, {
 		/**
 		 * @type {string}

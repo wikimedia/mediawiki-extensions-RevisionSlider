@@ -28,6 +28,9 @@
 		}
 	};
 
+	/**
+	 * @class mw.libs.revisionSlider.Revision
+	 */
 	$.extend( Revision.prototype, {
 		/**
 		 * @type {number}

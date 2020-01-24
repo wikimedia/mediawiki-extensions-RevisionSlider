@@ -7,6 +7,9 @@
 		this.autoExpand = this.loadBoolean( 'autoexpand' );
 	};
 
+	/**
+	 * @class mw.libs.revisionSlider.Settings
+	 */
 	$.extend( Settings.prototype, {
 		/**
 		 * @type {boolean}

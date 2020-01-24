@@ -7,6 +7,9 @@
 		this.url = apiUrl;
 	};
 
+	/**
+	 * @class mw.libs.revisionSlider.Api
+	 */
 	$.extend( Api.prototype, {
 		url: '',
 

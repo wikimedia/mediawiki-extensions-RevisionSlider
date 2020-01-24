@@ -9,6 +9,9 @@
 		this.dir = dir;
 	};
 
+	/**
+	 * @class mw.libs.revisionSlider.RevisionListView
+	 */
 	$.extend( RevisionListView.prototype, {
 		/**
 		 * @type {RevisionList}

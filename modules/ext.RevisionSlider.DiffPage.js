@@ -8,6 +8,9 @@
 		this.lastRequest = null;
 	};
 
+	/**
+	 * @class mw.libs.revisionSlider.DiffPage
+	 */
 	$.extend( DiffPage.prototype, {
 		/**
 		 * Refreshes the diff view with two given revision IDs

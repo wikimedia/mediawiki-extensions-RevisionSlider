@@ -26,6 +26,9 @@
 		{ label: mw.msg( 'revisionslider-close-dialog' ), flags: 'primary', modes: 'last', classes: [ 'mw-revslider-help-close-end' ] }
 	];
 
+	/**
+	 * @class mw.libs.revisionSlider.HelpDialog
+	 */
 	$.extend( HelpDialog.prototype, {
 		/**
 		 * @type {OO.ui.PanelLayout[]}
