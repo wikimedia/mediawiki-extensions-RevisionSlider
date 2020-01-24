@@ -194,14 +194,8 @@
 		"remoteExtPath": "RevisionSlider"
 	},
 	"Hooks": {
-		"DiffViewHeader": [
-			"RevisionSliderHooks::onDiffViewHeader"
-		],
-		"GetPreferences": [
-			"RevisionSliderHooks::onGetPreferences"
-		],
-		"ResourceLoaderTestModules": [
-			"RevisionSliderHooks::onResourceLoaderTestModules"
-		]
+		"DiffViewHeader": "RevisionSliderHooks::onDiffViewHeader",
+		"GetPreferences": "RevisionSliderHooks::onGetPreferences",
+		"ResourceLoaderTestModules": "RevisionSliderHooks::onResourceLoaderTestModules"
 	}
 }
