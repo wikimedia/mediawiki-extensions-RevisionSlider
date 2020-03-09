@@ -18,7 +18,7 @@
 	"revisionslider-label-date": "Tarih",
 	"revisionslider-label-page-size": "Sayfa boyutu",
 	"revisionslider-label-change-size": "Boyut değişikliği",
-	"revisionslider-label-comment": "Özeti düzenle",
+	"revisionslider-label-comment": "Değişiklik özeti",
 	"revisionslider-label-username": "{{GENDER:$1|Kullanıcı adı}}",
 	"revisionslider-minoredit": "Bu bir küçük değişiklik",
 	"revisionslider-loading-failed": "Sürüm kaydırıcı yüklenemedi.",
