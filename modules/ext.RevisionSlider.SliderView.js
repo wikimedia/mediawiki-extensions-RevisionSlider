@@ -4,10 +4,14 @@
  * @external RevisionListView
  * @external Slider
  */
-var HelpButtonView = require( 'ext.RevisionSlider.HelpDialog' ).HelpButtonView,
+var DiffPage = require( './ext.RevisionSlider.DiffPage.js' ),
+	HelpButtonView = require( 'ext.RevisionSlider.HelpDialog' ).HelpButtonView,
 	makeRevisions = require( 'ext.RevisionSlider.RevisionList' ).makeRevisions,
 	Pointer = require( 'ext.RevisionSlider.Pointer' ).Pointer,
-	RevisionListView = require( 'ext.RevisionSlider.RevisionList' ).RevisionListView;
+	RevisionListView = require( 'ext.RevisionSlider.RevisionList' ).RevisionListView,
+	RevisionSliderApi = require( './ext.RevisionSlider.Api.js' ),
+	SliderArrowView = require( './ext.RevisionSlider.SliderArrowView.js' ),
+	utils = require( './ext.RevisionSlider.util.js' );
 
 /**
  * Module handling the view logic of the RevisionSlider slider
@@ -18,12 +22,9 @@ var HelpButtonView = require( 'ext.RevisionSlider.HelpDialog' ).HelpButtonView,
  */
 function SliderView( slider ) {
 	this.slider = slider;
-	this.diffPage = new mw.libs.revisionSlider.DiffPage( this.slider.getRevisionList() );
+	this.diffPage = new DiffPage( this.slider.getRevisionList() );
 }
 
-/**
- * @class mw.libs.revisionSlider.SliderView
- */
 $.extend( SliderView.prototype, {
 	revisionWidth: 16,
 
@@ -112,12 +113,12 @@ $.extend( SliderView.prototype, {
 	render: function ( $container ) {
 		var containerWidth = this.calculateSliderContainerWidth(),
 			$revisions = this.getRevisionListView().render( this.revisionWidth ),
-			sliderArrowView = new mw.libs.revisionSlider.SliderArrowView( this );
+			sliderArrowView = new SliderArrowView( this );
 
 		this.dir = $container.css( 'direction' ) || 'ltr';
 
 		if ( this.dir === 'rtl' ) {
-			this.rtlScrollLeftType = mw.libs.revisionSlider.determineRtlScrollType();
+			this.rtlScrollLeftType = utils.determineRtlScrollType();
 		}
 
 		this.pointerOlder = this.pointerOlder || new Pointer( 'mw-revslider-pointer-older' );
@@ -298,7 +299,7 @@ $.extend( SliderView.prototype, {
 
 		$pointers.on(
 			'touchstart touchmove touchend touchcancel touchleave',
-			mw.libs.revisionSlider.touchEventConverter
+			utils.touchEventConverter
 		);
 
 		$pointerOlder.draggable( this.buildDraggableOptions(
@@ -616,7 +617,7 @@ $.extend( SliderView.prototype, {
 
 	getRevisionPositionFromLeftOffset: function ( leftOffset ) {
 		var $revisions = this.getRevisionsElement(),
-			revisionsX = mw.libs.revisionSlider.correctElementOffsets( $revisions.offset() ).left,
+			revisionsX = utils.correctElementOffsets( $revisions.offset() ).left,
 			pos = Math.ceil( Math.abs( leftOffset - revisionsX ) / this.revisionWidth );
 
 		if ( this.dir === 'rtl' ) {
@@ -901,7 +902,7 @@ $.extend( SliderView.prototype, {
 	calculateSliderContainerWidth: function () {
 		return Math.min(
 			this.slider.getRevisionList().getLength(),
-			mw.libs.revisionSlider.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth )
+			utils.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth )
 		) * this.revisionWidth;
 	},
 
@@ -1014,10 +1015,10 @@ $.extend( SliderView.prototype, {
 	 * @param {jQuery} $slider
 	 */
 	addNewerRevisionsIfNeeded: function ( $slider ) {
-		var api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) ),
+		var api = new RevisionSliderApi( mw.util.wikiScript( 'api' ) ),
 			self = this,
 			revisions = this.slider.getRevisionList().getRevisions(),
-			revisionCount = mw.libs.revisionSlider.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth ),
+			revisionCount = utils.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth ),
 			revs;
 		if ( this.noMoreNewerRevisions || !this.slider.isAtEnd() ) {
 			return;
@@ -1047,10 +1048,10 @@ $.extend( SliderView.prototype, {
 	 * @param {jQuery} $slider
 	 */
 	addOlderRevisionsIfNeeded: function ( $slider ) {
-		var api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) ),
+		var api = new RevisionSliderApi( mw.util.wikiScript( 'api' ) ),
 			self = this,
 			revisions = this.slider.getRevisionList().getRevisions(),
-			revisionCount = mw.libs.revisionSlider.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth ),
+			revisionCount = utils.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth ),
 			revs,
 			precedingRevisionSize = 0;
 		if ( this.noMoreOlderRevisions || !this.slider.isAtStart() ) {
@@ -1234,5 +1235,4 @@ $.extend( SliderView.prototype, {
 	}
 } );
 
-mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-mw.libs.revisionSlider.SliderView = SliderView;
+module.exports = SliderView;

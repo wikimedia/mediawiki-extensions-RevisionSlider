@@ -1,5 +1,5 @@
-var SliderView = mw.libs.revisionSlider.SliderView,
-	Slider = mw.libs.revisionSlider.Slider,
+var Slider = require( 'ext.RevisionSlider.Slider' ).Slider,
+	SliderView = require( 'ext.RevisionSlider.Slider' ).SliderView,
 	Revision = require( 'ext.RevisionSlider.RevisionList' ).Revision,
 	RevisionList = require( 'ext.RevisionSlider.RevisionList' ).RevisionList,
 	startHistoryState, startHref;

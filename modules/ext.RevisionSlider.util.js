@@ -1,7 +1,5 @@
-mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-
 // originally taken from https://stackoverflow.com/questions/1517924/javascript-mapping-touch-events-to-mouse-events
-mw.libs.revisionSlider.touchEventConverter = function ( event ) {
+function touchEventConverter( event ) {
 	var first = event.changedTouches[ 0 ],
 		type, simulatedEvent;
 
@@ -46,10 +44,10 @@ mw.libs.revisionSlider.touchEventConverter = function ( event ) {
 	}
 
 	first.target.dispatchEvent( simulatedEvent );
-};
+}
 
 // fixes issues with zoomed Chrome on touch see https://github.com/jquery/jquery/issues/3187
-mw.libs.revisionSlider.correctElementOffsets = function ( offset ) {
+function correctElementOffsets( offset ) {
 	var prevStyle, docWidth, docRect,
 		isChrome = /chrom(e|ium)/.test( navigator.userAgent.toLowerCase() );
 
@@ -74,14 +72,14 @@ mw.libs.revisionSlider.correctElementOffsets = function ( offset ) {
 	}
 
 	return offset;
-};
+}
 
 /**
  * Based on jQuery RTL Scroll Type Detector plugin by othree: https://github.com/othree/jquery.rtl-scroll-type
  *
  * @return {string} - 'default', 'negative' or 'reverse'
  */
-mw.libs.revisionSlider.determineRtlScrollType = function () {
+function determineRtlScrollType() {
 	var isChrome = /chrom(e|ium)/.test( navigator.userAgent.toLowerCase() ),
 		$dummy;
 
@@ -111,8 +109,15 @@ mw.libs.revisionSlider.determineRtlScrollType = function () {
 		}
 	}
 	return 'reverse';
-};
+}
 
-mw.libs.revisionSlider.calculateRevisionsPerWindow = function ( margin, revisionWidth ) {
+function calculateRevisionsPerWindow( margin, revisionWidth ) {
 	return Math.floor( ( $( '#mw-content-text' ).width() - margin ) / revisionWidth );
+}
+
+module.exports = {
+	calculateRevisionsPerWindow: calculateRevisionsPerWindow,
+	correctElementOffsets: correctElementOffsets,
+	determineRtlScrollType: determineRtlScrollType,
+	touchEventConverter: touchEventConverter
 };

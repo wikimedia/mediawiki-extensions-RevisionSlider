@@ -1,4 +1,4 @@
-var Slider = mw.libs.revisionSlider.Slider,
+var Slider = require( 'ext.RevisionSlider.Slider' ).Slider,
 	RevisionListModule = require( 'ext.RevisionSlider.RevisionList' ),
 	Revision = RevisionListModule.Revision,
 	RevisionList = RevisionListModule.RevisionList;

@@ -11,9 +11,6 @@ function DiffPage() {
 	this.lastRequest = null;
 }
 
-/**
- * @class mw.libs.revisionSlider.DiffPage
- */
 $.extend( DiffPage.prototype, {
 	/**
 	 * Refreshes the diff view with two given revision IDs
@@ -222,5 +219,4 @@ $.extend( DiffPage.prototype, {
 	}
 } );
 
-mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-mw.libs.revisionSlider.DiffPage = DiffPage;
+module.exports = DiffPage;

@@ -127,13 +127,13 @@
 			]
 		},
 		"ext.RevisionSlider.Slider": {
-			"scripts": [
+			"packageFiles": [
+				"modules/ext.RevisionSlider.Slider.js",
 				"modules/ext.RevisionSlider.Api.js",
 				"modules/ext.RevisionSlider.DiffPage.js",
 				"modules/ext.RevisionSlider.util.js",
 				"modules/ext.RevisionSlider.SliderView.js",
-				"modules/ext.RevisionSlider.SliderArrowView.js",
-				"modules/ext.RevisionSlider.Slider.js"
+				"modules/ext.RevisionSlider.SliderArrowView.js"
 			],
 			"dependencies": [
 				"jquery.ui",

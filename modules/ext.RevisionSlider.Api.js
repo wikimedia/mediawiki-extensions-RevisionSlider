@@ -6,9 +6,6 @@ function Api( apiUrl ) {
 	this.url = apiUrl;
 }
 
-/**
- * @class mw.libs.revisionSlider.Api
- */
 $.extend( Api.prototype, {
 	url: '',
 
@@ -235,5 +232,4 @@ $.extend( Api.prototype, {
 	}
 } );
 
-mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-mw.libs.revisionSlider.Api = Api;
+module.exports = Api;

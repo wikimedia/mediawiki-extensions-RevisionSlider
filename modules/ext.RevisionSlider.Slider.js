@@ -2,6 +2,8 @@
  * @external RevisionList
  * @external SliderView
  */
+var SliderView = require( './ext.RevisionSlider.SliderView.js' );
+
 /**
  * Module handling the slider logic of the RevisionSlider
  *
@@ -11,12 +13,9 @@
  */
 function Slider( revisions ) {
 	this.revisions = revisions;
-	this.view = new mw.libs.revisionSlider.SliderView( this );
+	this.view = new SliderView( this );
 }
 
-/**
- * @class mw.libs.revisionSlider.Slider
- */
 $.extend( Slider.prototype, {
 	/**
 	 * @type {RevisionList}
@@ -123,5 +122,10 @@ $.extend( Slider.prototype, {
 	}
 } );
 
-mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-mw.libs.revisionSlider.Slider = Slider;
+module.exports = {
+	Api: require( './ext.RevisionSlider.Api.js' ),
+	DiffPage: require( './ext.RevisionSlider.DiffPage.js' ),
+	Slider: Slider,
+	SliderView: SliderView,
+	utils: require( './ext.RevisionSlider.util.js' )
+};

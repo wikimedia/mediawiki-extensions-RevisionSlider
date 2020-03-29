@@ -1,6 +1,7 @@
-var DiffPage = mw.libs.revisionSlider.DiffPage,
-	SliderView = mw.libs.revisionSlider.SliderView,
-	Slider = mw.libs.revisionSlider.Slider,
+var SliderModule = require( 'ext.RevisionSlider.Slider' ),
+	DiffPage = SliderModule.DiffPage,
+	SliderView = SliderModule.SliderView,
+	Slider = SliderModule.Slider,
 	RevisionList = require( 'ext.RevisionSlider.RevisionList' ).RevisionList,
 	Revision = require( 'ext.RevisionSlider.RevisionList' ).Revision;
 
