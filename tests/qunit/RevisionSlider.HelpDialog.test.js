@@ -1,5 +1,5 @@
 ( function () {
-	var HelpDialog = mw.libs.revisionSlider.HelpDialog;
+	var HelpDialog = require( 'ext.RevisionSlider.HelpDialog' ).HelpDialog;
 
 	QUnit.module( 'ext.RevisionSlider.HelpDialog' );
 

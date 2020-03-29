@@ -45,10 +45,9 @@
 		},
 
 		showDialog: function () {
-			mw.libs.revisionSlider.HelpDialog.show();
+			require( 'ext.RevisionSlider.HelpDialog' ).HelpDialog.show();
 		}
 	};
 
-	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-	mw.libs.revisionSlider.HelpButtonView = HelpButtonView;
+	module.exports = HelpButtonView;
 }() );

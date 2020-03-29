@@ -1,14 +1,16 @@
 ( function () {
+	var HelpButtonView = require( 'ext.RevisionSlider.HelpDialog' ).HelpButtonView;
+
 	/**
 	 * Module handling the view logic of the RevisionSlider slider
 	 *
 	 * @param {Slider} slider
 	 * @constructor
 	 */
-	var SliderView = function ( slider ) {
+	function SliderView( slider ) {
 		this.slider = slider;
 		this.diffPage = new mw.libs.revisionSlider.DiffPage( this.slider.getRevisionList() );
-	};
+	}
 
 	/**
 	 * @class mw.libs.revisionSlider.SliderView
@@ -128,7 +130,7 @@
 					this.forwardArrowButton.$element,
 					$( '<div>' ).css( { clear: 'both' } ),
 					this.pointerOlder.getLine().render(), this.pointerNewer.getLine().render(),
-					mw.libs.revisionSlider.HelpButtonView.render()
+					HelpButtonView.render()
 				);
 
 			this.initPointers( $revisions );

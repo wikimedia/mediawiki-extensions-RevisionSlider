@@ -175,7 +175,7 @@
 			]
 		},
 		"ext.RevisionSlider.HelpDialog": {
-			"scripts": [
+			"packageFiles": [
 				"modules/ext.RevisionSlider.HelpDialog.js",
 				"modules/ext.RevisionSlider.HelpButtonView.js"
 			],
