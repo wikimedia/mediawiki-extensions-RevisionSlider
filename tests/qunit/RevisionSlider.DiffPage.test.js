@@ -1,8 +1,8 @@
 var DiffPage = mw.libs.revisionSlider.DiffPage,
 	SliderView = mw.libs.revisionSlider.SliderView,
 	Slider = mw.libs.revisionSlider.Slider,
-	RevisionList = mw.libs.revisionSlider.RevisionList,
-	Revision = mw.libs.revisionSlider.Revision;
+	RevisionList = require( 'ext.RevisionSlider.RevisionList' ).RevisionList,
+	Revision = require( 'ext.RevisionSlider.RevisionList' ).Revision;
 
 QUnit.module( 'ext.RevisionSlider.DiffPage' );
 

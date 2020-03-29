@@ -13,9 +13,6 @@ function RevisionListView( revisionList, dir ) {
 	this.dir = dir;
 }
 
-/**
- * @class mw.libs.revisionSlider.RevisionListView
- */
 $.extend( RevisionListView.prototype, {
 	/**
 	 * @type {RevisionList}
@@ -698,5 +695,4 @@ $.extend( RevisionListView.prototype, {
 	}
 } );
 
-mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-mw.libs.revisionSlider.RevisionListView = RevisionListView;
+module.exports = RevisionListView;

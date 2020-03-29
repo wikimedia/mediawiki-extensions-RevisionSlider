@@ -1,6 +1,7 @@
 var Settings = require( 'ext.RevisionSlider.Settings' ),
 	settings = new Settings(),
 	HelpDialog = require( 'ext.RevisionSlider.HelpDialog' ).HelpDialog,
+	RevisionListModule = require( 'ext.RevisionSlider.RevisionList' ),
 	autoExpand = settings.shouldAutoExpand(),
 	expanded = autoExpand,
 	autoExpandButton,
@@ -17,7 +18,11 @@ function initialize() {
 	} );
 
 	mw.track( 'counter.MediaWiki.RevisionSlider.event.init' );
-	mw.libs.revisionSlider.userOffset = mw.user.options.get( 'timecorrection' ) ? mw.user.options.get( 'timecorrection' ).split( '|' )[ 1 ] : mw.config.get( 'extRevisionSliderTimeOffset' );
+	RevisionListModule.setUserOffset(
+		mw.user.options.get( 'timecorrection' ) ?
+			mw.user.options.get( 'timecorrection' ).split( '|' )[ 1 ] :
+			mw.config.get( 'extRevisionSliderTimeOffset' )
+	);
 
 	HelpDialog.init();
 
@@ -48,8 +53,8 @@ function initialize() {
 				$container = $( '.mw-revslider-slider-wrapper' );
 				$container.attr( 'id', 'mw-revslider-slider-wrapper' );
 
-				revisionList = new mw.libs.revisionSlider.RevisionList(
-					mw.libs.revisionSlider.makeRevisions( revs ),
+				revisionList = new RevisionListModule.RevisionList(
+					RevisionListModule.makeRevisions( revs ),
 					changeTags
 				);
 				revisionList.getView().setDir( $container.css( 'direction' ) || 'ltr' );

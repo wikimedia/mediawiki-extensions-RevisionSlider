@@ -1,4 +1,5 @@
-var Revision = mw.libs.revisionSlider.Revision;
+var RevisionListModule = require( 'ext.RevisionSlider.RevisionList' ),
+	Revision = RevisionListModule.Revision;
 
 QUnit.module( 'ext.RevisionSlider.Revision' );
 
@@ -13,7 +14,7 @@ QUnit.test( 'create Revision', function ( assert ) {
 		},
 		rev = new Revision( data );
 
-	mw.libs.revisionSlider.userOffset = 0;
+	RevisionListModule.setUserOffset( 0 );
 
 	assert.strictEqual( rev.getSize(), data.size );
 	assert.strictEqual( rev.getComment(), data.comment );
@@ -55,7 +56,7 @@ QUnit.revisionSlider.testOrSkip( 'getFormattedDate, offset: 0', function ( asser
 		timestamp: '2016-04-26T10:27:14Z' // 10:27, 26 Apr 2016
 	} );
 
-	mw.libs.revisionSlider.userOffset = 0;
+	RevisionListModule.setUserOffset( 0 );
 
 	assert.strictEqual( rev.getFormattedDate(), '26 April 2016 10:27 AM' );
 }, mw.config.get( 'wgUserLanguage' ) !== 'en' );
@@ -66,7 +67,7 @@ QUnit.revisionSlider.testOrSkip( 'getFormattedDate, offset: 120 (treat as hours,
 	} );
 
 	// Berlin = 120
-	mw.libs.revisionSlider.userOffset = 120;
+	RevisionListModule.setUserOffset( 120 );
 
 	assert.strictEqual( rev.getFormattedDate(), '26 April 2016 12:27 PM' );
 }, mw.config.get( 'wgUserLanguage' ) !== 'en' );
@@ -77,7 +78,7 @@ QUnit.revisionSlider.testOrSkip( 'getFormattedDate, negative offset: -420 (treat
 	} );
 
 	// San Francisco = -420
-	mw.libs.revisionSlider.userOffset = -420;
+	RevisionListModule.setUserOffset( -420 );
 
 	assert.strictEqual( rev.getFormattedDate(), '26 April 2016 3:27 AM' );
 }, mw.config.get( 'wgUserLanguage' ) !== 'en' );

@@ -1,6 +1,7 @@
-var Revision = mw.libs.revisionSlider.Revision,
-	RevisionList = mw.libs.revisionSlider.RevisionList,
-	makeRevisions = mw.libs.revisionSlider.makeRevisions;
+var RevisionListModule = require( 'ext.RevisionSlider.RevisionList' ),
+	Revision = RevisionListModule.Revision,
+	RevisionList = RevisionListModule.RevisionList,
+	makeRevisions = RevisionListModule.makeRevisions;
 
 QUnit.module( 'ext.RevisionSlider.RevisionList' );
 

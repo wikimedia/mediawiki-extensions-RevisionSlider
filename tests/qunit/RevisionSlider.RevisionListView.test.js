@@ -1,6 +1,7 @@
-var RevisionListView = mw.libs.revisionSlider.RevisionListView,
-	RevisionList = mw.libs.revisionSlider.RevisionList,
-	Revision = mw.libs.revisionSlider.Revision;
+var RevisionListModule = require( 'ext.RevisionSlider.RevisionList' ),
+	Revision = RevisionListModule.Revision,
+	RevisionList = RevisionListModule.RevisionList,
+	RevisionListView = RevisionListModule.RevisionListView;
 
 QUnit.module( 'ext.RevisionSlider.RevisionListView' );
 
@@ -41,7 +42,7 @@ QUnit.test( 'tooltip is composed correctly', function ( assert ) {
 
 	revision.setRelativeSize( 210 );
 
-	mw.libs.revisionSlider.userOffset = 0;
+	RevisionListModule.setUserOffset( 0 );
 
 	tooltip = revisionListView.makeTooltip( revision, {} );
 	tooltipHtml = tooltip.$element.html();
@@ -68,7 +69,7 @@ QUnit.revisionSlider.testOrSkip( 'tooltip is composed correctly with en lang', f
 
 	revision.setRelativeSize( 2100 );
 
-	mw.libs.revisionSlider.userOffset = 0;
+	RevisionListModule.setUserOffset( 0 );
 
 	tooltip = revisionListView.makeTooltip( revision, {} );
 	tooltipHtml = tooltip.$element.html();

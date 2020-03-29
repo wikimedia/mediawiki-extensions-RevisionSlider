@@ -1,6 +1,7 @@
 var Slider = mw.libs.revisionSlider.Slider,
-	RevisionList = mw.libs.revisionSlider.RevisionList,
-	Revision = mw.libs.revisionSlider.Revision;
+	RevisionListModule = require( 'ext.RevisionSlider.RevisionList' ),
+	Revision = RevisionListModule.Revision,
+	RevisionList = RevisionListModule.RevisionList;
 
 function makeNRevisions( n ) {
 	var revs = [],
