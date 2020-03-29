@@ -121,10 +121,10 @@
 			]
 		},
 		"ext.RevisionSlider.Pointer": {
-			"scripts": [
+			"packageFiles": [
+				"modules/ext.RevisionSlider.Pointer.js",
 				"modules/ext.RevisionSlider.PointerLine.js",
-				"modules/ext.RevisionSlider.PointerView.js",
-				"modules/ext.RevisionSlider.Pointer.js"
+				"modules/ext.RevisionSlider.PointerView.js"
 			]
 		},
 		"ext.RevisionSlider.Slider": {

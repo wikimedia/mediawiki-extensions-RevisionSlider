@@ -1,5 +1,5 @@
 ( function () {
-	var PointerView = mw.libs.revisionSlider.PointerView;
+	var PointerView = require( 'ext.RevisionSlider.Pointer' ).PointerView;
 
 	QUnit.module( 'ext.RevisionSlider.PointerView' );
 

@@ -16,9 +16,6 @@
 		this.name = name;
 	};
 
-	/**
-	 * @class mw.libs.revisionSlider.PointerView
-	 */
 	$.extend( PointerView.prototype, {
 		/**
 		 * @type {string}
@@ -163,6 +160,5 @@
 		}
 	} );
 
-	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-	mw.libs.revisionSlider.PointerView = PointerView;
+	module.exports = PointerView;
 }() );

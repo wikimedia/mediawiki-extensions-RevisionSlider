@@ -5,7 +5,8 @@
  * @external Slider
  */
 ( function () {
-	var HelpButtonView = require( 'ext.RevisionSlider.HelpDialog' ).HelpButtonView;
+	var HelpButtonView = require( 'ext.RevisionSlider.HelpDialog' ).HelpButtonView,
+		Pointer = require( 'ext.RevisionSlider.Pointer' ).Pointer;
 
 	/**
 	 * Module handling the view logic of the RevisionSlider slider
@@ -118,8 +119,8 @@
 				this.rtlScrollLeftType = mw.libs.revisionSlider.determineRtlScrollType();
 			}
 
-			this.pointerOlder = this.pointerOlder || new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-older' );
-			this.pointerNewer = this.pointerNewer || new mw.libs.revisionSlider.Pointer( 'mw-revslider-pointer-newer' );
+			this.pointerOlder = this.pointerOlder || new Pointer( 'mw-revslider-pointer-older' );
+			this.pointerNewer = this.pointerNewer || new Pointer( 'mw-revslider-pointer-newer' );
 
 			this.backwardArrowButton = sliderArrowView.renderBackwardArrow();
 			this.forwardArrowButton = sliderArrowView.renderForwardArrow();

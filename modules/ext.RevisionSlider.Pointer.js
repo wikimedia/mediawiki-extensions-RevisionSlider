@@ -3,6 +3,9 @@
  * @external PointerView
  */
 ( function () {
+	var PointerLine = require( './ext.RevisionSlider.PointerLine.js' ),
+		PointerView = require( './ext.RevisionSlider.PointerView.js' );
+
 	/**
 	 * Module containing logic for the revision pointers
 	 *
@@ -10,14 +13,11 @@
 	 * @param {string} name
 	 * @constructor
 	 */
-	var Pointer = function ( name ) {
-		this.view = new mw.libs.revisionSlider.PointerView( this, name );
-		this.line = new mw.libs.revisionSlider.PointerLine( this, name );
-	};
+	function Pointer( name ) {
+		this.view = new PointerView( this, name );
+		this.line = new PointerLine( this, name );
+	}
 
-	/**
-	 * @class mw.libs.revisionSlider.Pointer
-	 */
 	$.extend( Pointer.prototype, {
 		/**
 		 * @type {number}
@@ -64,6 +64,9 @@
 		}
 	} );
 
-	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-	mw.libs.revisionSlider.Pointer = Pointer;
+	module.exports = {
+		Pointer: Pointer,
+		PointerLine: PointerLine,
+		PointerView: PointerView
+	};
 }() );

@@ -15,9 +15,6 @@
 		this.name = name;
 	};
 
-	/**
-	 * @class mw.libs.revisionSlider.PointerLine
-	 */
 	$.extend( PointerLine.prototype, {
 		/**
 		 * @type {string}
@@ -233,6 +230,5 @@
 
 	} );
 
-	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-	mw.libs.revisionSlider.PointerLine = PointerLine;
+	module.exports = PointerLine;
 }() );

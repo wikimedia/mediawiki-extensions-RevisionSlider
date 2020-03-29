@@ -1,5 +1,5 @@
 ( function () {
-	var Pointer = mw.libs.revisionSlider.Pointer;
+	var Pointer = require( 'ext.RevisionSlider.Pointer' ).Pointer;
 
 	QUnit.module( 'ext.RevisionSlider.Pointer' );
 
