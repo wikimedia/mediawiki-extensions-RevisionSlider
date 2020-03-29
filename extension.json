@@ -47,7 +47,6 @@
 			"scripts": [
 				"modules/ext.RevisionSlider.Revision.js",
 				"modules/ext.RevisionSlider.Api.js",
-				"modules/ext.RevisionSlider.util.js",
 				"modules/ext.RevisionSlider.init.js"
 			],
 			"styles": [
