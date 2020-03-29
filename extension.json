@@ -59,7 +59,7 @@
 			]
 		},
 		"ext.RevisionSlider.lazyJs": {
-			"scripts": [
+			"packageFiles": [
 				"modules/ext.RevisionSlider.lazy.js"
 			],
 			"dependencies": [
