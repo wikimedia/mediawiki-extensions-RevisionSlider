@@ -7,9 +7,6 @@
 		this.autoExpand = this.loadBoolean( 'autoexpand' );
 	};
 
-	/**
-	 * @class mw.libs.revisionSlider.Settings
-	 */
 	$.extend( Settings.prototype, {
 		/**
 		 * @type {boolean}
@@ -106,6 +103,5 @@
 		}
 	} );
 
-	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-	mw.libs.revisionSlider.Settings = Settings;
+	module.exports = Settings;
 }() );
