@@ -1,7 +1,7 @@
 ( function () {
 	var Revision = mw.libs.revisionSlider.Revision;
 
-	QUnit.module( 'ext.RevisionSlider.RevisionList' );
+	QUnit.module( 'ext.RevisionSlider.Revision' );
 
 	QUnit.test( 'create Revision', function ( assert ) {
 		var data = {

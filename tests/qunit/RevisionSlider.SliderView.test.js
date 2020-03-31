@@ -5,7 +5,7 @@
 		Revision = mw.libs.revisionSlider.Revision,
 		startHistoryState, startHref;
 
-	QUnit.module( 'ext.RevisionSlider.Slider' );
+	QUnit.module( 'ext.RevisionSlider.SliderView' );
 
 	QUnit.testStart( function () {
 		startHistoryState = history.state;

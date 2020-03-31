@@ -1,7 +1,7 @@
 ( function () {
 	var PointerView = mw.libs.revisionSlider.PointerView;
 
-	QUnit.module( 'ext.RevisionSlider.Pointer' );
+	QUnit.module( 'ext.RevisionSlider.PointerView' );
 
 	QUnit.test( 'Initialize PointerView', function ( assert ) {
 		assert.ok( ( new PointerView( null, 'mw-revslider-pointer' ) ).render().hasClass( 'mw-revslider-pointer' ) );

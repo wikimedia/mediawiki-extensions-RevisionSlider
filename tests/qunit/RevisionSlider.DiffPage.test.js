@@ -5,7 +5,7 @@
 		RevisionList = mw.libs.revisionSlider.RevisionList,
 		Revision = mw.libs.revisionSlider.Revision;
 
-	QUnit.module( 'ext.RevisionSlider.Slider' );
+	QUnit.module( 'ext.RevisionSlider.DiffPage' );
 
 	QUnit.test( 'Initialize DiffPage', function ( assert ) {
 		assert.ok( ( new DiffPage() ) );
