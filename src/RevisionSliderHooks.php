@@ -135,37 +135,6 @@ class RevisionSliderHooks {
 	}
 
 	/**
-	 * @param array[] &$testModules
-	 * @param ResourceLoader $rl
-	 */
-	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader $rl ) {
-		$testModules['qunit']['ext.RevisionSlider.tests'] = [
-			'scripts' => [
-				'tests/qunit/QUnit.revisionSlider.testOrSkip.js',
-				'tests/qunit/RevisionSlider.Revision.test.js',
-				'tests/qunit/RevisionSlider.Pointer.test.js',
-				'tests/qunit/RevisionSlider.PointerView.test.js',
-				'tests/qunit/RevisionSlider.Slider.test.js',
-				'tests/qunit/RevisionSlider.SliderView.test.js',
-				'tests/qunit/RevisionSlider.RevisionList.test.js',
-				'tests/qunit/RevisionSlider.RevisionListView.test.js',
-				'tests/qunit/RevisionSlider.DiffPage.test.js',
-				'tests/qunit/RevisionSlider.HelpDialog.test.js',
-			],
-			'dependencies' => [
-				'ext.RevisionSlider.Pointer',
-				'ext.RevisionSlider.Slider',
-				'ext.RevisionSlider.RevisionList',
-				'ext.RevisionSlider.HelpDialog',
-				'jquery.ui',
-				'oojs-ui'
-			],
-			'localBasePath' => dirname( __DIR__ ),
-			'remoteExtPath' => 'RevisionSlider',
-		];
-	}
-
-	/**
 	 * @param User $user
 	 * @param array[] &$preferences
 	 */

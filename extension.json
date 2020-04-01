@@ -28,6 +28,30 @@
 	"AutoloadClasses": {
 		"RevisionSliderHooks": "src/RevisionSliderHooks.php"
 	},
+	"QUnitTestModule": {
+		"scripts": [
+			"QUnit.revisionSlider.testOrSkip.js",
+			"RevisionSlider.Revision.test.js",
+			"RevisionSlider.Pointer.test.js",
+			"RevisionSlider.PointerView.test.js",
+			"RevisionSlider.Slider.test.js",
+			"RevisionSlider.SliderView.test.js",
+			"RevisionSlider.RevisionList.test.js",
+			"RevisionSlider.RevisionListView.test.js",
+			"RevisionSlider.DiffPage.test.js",
+			"RevisionSlider.HelpDialog.test.js"
+		],
+		"dependencies": [
+			"ext.RevisionSlider.Pointer",
+			"ext.RevisionSlider.Slider",
+			"ext.RevisionSlider.RevisionList",
+			"ext.RevisionSlider.HelpDialog",
+			"jquery.ui",
+			"oojs-ui"
+		],
+		"localBasePath": "tests/qunit",
+		"remoteExtPath": "RevisionSlider/tests/qunit"
+	},
 	"ResourceModules": {
 		"ext.RevisionSlider.lazyCss": {
 			"styles": [
@@ -193,7 +217,6 @@
 	},
 	"Hooks": {
 		"DiffViewHeader": "RevisionSliderHooks::onDiffViewHeader",
-		"GetPreferences": "RevisionSliderHooks::onGetPreferences",
-		"ResourceLoaderTestModules": "RevisionSliderHooks::onResourceLoaderTestModules"
+		"GetPreferences": "RevisionSliderHooks::onGetPreferences"
 	}
 }
