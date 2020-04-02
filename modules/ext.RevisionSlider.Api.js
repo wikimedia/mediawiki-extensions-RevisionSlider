@@ -224,7 +224,10 @@
 								tag = changeTag.displayname;
 							}
 						} );
-						newTags.push( tag );
+						// Remove hidden tags (tags with no displayname)
+						if ( tag ) {
+							newTags.push( tag );
+						}
 					} );
 					rev.tags = newTags;
 				}
