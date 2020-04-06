@@ -111,7 +111,7 @@
 			"styles": "modules/ext.RevisionSlider.noscript.css"
 		},
 		"ext.RevisionSlider.Settings": {
-			"scripts": [
+			"packageFiles": [
 				"modules/ext.RevisionSlider.Settings.js"
 			],
 			"dependencies": [

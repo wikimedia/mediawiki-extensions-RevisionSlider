@@ -1,5 +1,6 @@
 ( function () {
-	var settings = new mw.libs.revisionSlider.Settings(),
+	var Settings = require( 'ext.RevisionSlider.Settings' ),
+		settings = new Settings(),
 		autoExpand = settings.shouldAutoExpand(),
 		expanded = autoExpand,
 		autoExpandButton,
