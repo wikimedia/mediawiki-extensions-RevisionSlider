@@ -68,10 +68,9 @@
 			]
 		},
 		"ext.RevisionSlider.init": {
-			"scripts": [
-				"modules/ext.RevisionSlider.Revision.js",
-				"modules/ext.RevisionSlider.Api.js",
-				"modules/ext.RevisionSlider.init.js"
+			"packageFiles": [
+				"modules/ext.RevisionSlider.init.js",
+				"modules/ext.RevisionSlider.Revision.js"
 			],
 			"styles": [
 				"modules/ext.RevisionSlider.less"
@@ -130,6 +129,7 @@
 		},
 		"ext.RevisionSlider.Slider": {
 			"scripts": [
+				"modules/ext.RevisionSlider.Api.js",
 				"modules/ext.RevisionSlider.DiffPage.js",
 				"modules/ext.RevisionSlider.util.js",
 				"modules/ext.RevisionSlider.SliderView.js",
