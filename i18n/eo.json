@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robin van der Vliet",
 			"Macofe",
-			"Orikrin1998"
+			"Orikrin1998",
+			"Robin van der Vliet"
 		]
 	},
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bitoko|bitokoj}}",

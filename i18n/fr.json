@@ -1,15 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko",
-			"Yasten",
-			"Wladek92",
-			"Trial",
-			"Macofe",
-			"Mabroukb",
 			"Derugon",
+			"Gomoko",
+			"Mabroukb",
+			"Macofe",
 			"Pols12",
-			"The RedBurn"
+			"The RedBurn",
+			"Trial",
+			"Wladek92",
+			"Yasten"
 		]
 	},
 	"revisionslider": "RevisionSlider",
