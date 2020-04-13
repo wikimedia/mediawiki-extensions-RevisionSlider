@@ -1,10 +1,12 @@
 ( function () {
 	/**
 	 * @param {Revision[]} revs
+	 * @param {Object[]} availableTags
 	 * @constructor
 	 */
-	var RevisionList = function ( revs ) {
+	var RevisionList = function ( revs, availableTags ) {
 		this.revisions = [];
+		this.availableTags = availableTags;
 		this.initialize( revs );
 		this.view = new mw.libs.revisionSlider.RevisionListView( this );
 	};
@@ -74,6 +76,13 @@
 			return this.view;
 		},
 
+		/**
+		 * @return {Object[]}
+		 */
+		getAvailableTags: function () {
+			return this.availableTags;
+		},
+
 		getUserGenders: function () {
 			var userGenders = {};
 			this.revisions.forEach( function ( revision ) {
@@ -131,7 +140,7 @@
 		 * @return {RevisionList}
 		 */
 		slice: function ( begin, end ) {
-			var slicedList = new mw.libs.revisionSlider.RevisionList( [] );
+			var slicedList = new mw.libs.revisionSlider.RevisionList( [], this.getAvailableTags() );
 			slicedList.view = new mw.libs.revisionSlider.RevisionListView( slicedList );
 			slicedList.revisions = this.revisions.slice( begin, end );
 			return slicedList;

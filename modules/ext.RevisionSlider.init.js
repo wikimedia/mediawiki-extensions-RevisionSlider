@@ -47,7 +47,10 @@
 						$container = $( '.mw-revslider-slider-wrapper' );
 						$container.attr( 'id', 'mw-revslider-slider-wrapper' );
 
-						revisionList = new mw.libs.revisionSlider.RevisionList( mw.libs.revisionSlider.makeRevisions( revs ) );
+						revisionList = new mw.libs.revisionSlider.RevisionList(
+							mw.libs.revisionSlider.makeRevisions( revs ),
+							changeTags
+						);
 						revisionList.getView().setDir( $container.css( 'direction' ) || 'ltr' );
 
 						slider = new mw.libs.revisionSlider.Slider( revisionList );

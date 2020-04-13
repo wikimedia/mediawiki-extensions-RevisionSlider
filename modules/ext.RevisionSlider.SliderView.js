@@ -1016,7 +1016,8 @@
 				startId: revisions[ revisions.length - 1 ].getId(),
 				dir: 'newer',
 				limit: revisionCount + 1,
-				knownUserGenders: this.slider.getRevisionList().getUserGenders()
+				knownUserGenders: this.slider.getRevisionList().getUserGenders(),
+				changeTags: this.slider.getRevisionList().getAvailableTags()
 			} ).then( function ( data ) {
 				revs = data.revisions.slice( 1 );
 				if ( revs.length === 0 ) {
@@ -1051,7 +1052,8 @@
 				// fetch an extra revision if there are more older revision than the current "window",
 				// this makes it possible to correctly set a size of the bar related to the oldest revision to add
 				limit: revisionCount + 2,
-				knownUserGenders: this.slider.getRevisionList().getUserGenders()
+				knownUserGenders: this.slider.getRevisionList().getUserGenders(),
+				changeTags: this.slider.getRevisionList().getAvailableTags()
 			} ).then( function ( data ) {
 				revs = data.revisions.slice( 1 ).reverse();
 				if ( revs.length === 0 ) {
