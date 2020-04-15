@@ -5,6 +5,7 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks( 'grunt-banana-checker' );
 	grunt.loadNpmTasks( 'grunt-eslint' );
 	grunt.loadNpmTasks( 'grunt-stylelint' );
+	grunt.loadNpmTasks( 'grunt-svgmin' );
 
 	grunt.initConfig( {
 		eslint: {
@@ -24,9 +25,46 @@ module.exports = function ( grunt ) {
 				'!{vendor,node_modules}/**'
 			]
 		},
-		banana: conf.MessagesDirs
+		banana: conf.MessagesDirs,
+		// SVG Optimization
+		svgmin: {
+			options: {
+				js2svg: {
+					indent: '\t',
+					pretty: true
+				},
+				multipass: true,
+				plugins: [ {
+					cleanupIDs: false
+				}, {
+					removeDesc: false
+				}, {
+					removeRasterImages: true
+				}, {
+					removeTitle: false
+				}, {
+					removeViewBox: false
+				}, {
+					removeXMLProcInst: false
+				}, {
+					sortAttrs: true
+				} ]
+			},
+			all: {
+				files: [ {
+					expand: true,
+					cwd: 'resources',
+					src: [
+						'**/*.svg'
+					],
+					dest: 'resources/',
+					ext: '.svg'
+				} ]
+			}
+		}
 	} );
 
+	grunt.registerTask( 'minify', 'svgmin' );
 	grunt.registerTask( 'test', [ 'eslint', 'stylelint', 'banana' ] );
 	grunt.registerTask( 'default', 'test' );
 };
