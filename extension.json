@@ -25,8 +25,8 @@
 			"i18n"
 		]
 	},
-	"AutoloadClasses": {
-		"RevisionSliderHooks": "src/RevisionSliderHooks.php"
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extensions\\RevisionSlider\\": "src/"
 	},
 	"QUnitTestModule": {
 		"scripts": [
@@ -216,7 +216,7 @@
 		"remoteExtPath": "RevisionSlider"
 	},
 	"Hooks": {
-		"DiffViewHeader": "RevisionSliderHooks::onDiffViewHeader",
-		"GetPreferences": "RevisionSliderHooks::onGetPreferences"
+		"DiffViewHeader": "MediaWiki\\Extensions\\RevisionSlider\\RevisionSliderHooks::onDiffViewHeader",
+		"GetPreferences": "MediaWiki\\Extensions\\RevisionSlider\\RevisionSliderHooks::onGetPreferences"
 	}
 }

@@ -1,6 +1,16 @@
 <?php
 
+namespace MediaWiki\Extensions\RevisionSlider;
+
+use Config;
+use DifferenceEngine;
+use Html;
 use MediaWiki\MediaWikiServices;
+use Message;
+use OOUI\ButtonWidget;
+use RequestContext;
+use Revision;
+use User;
 
 /**
  * RevisionSlider extension hooks
@@ -94,7 +104,7 @@ class RevisionSliderHooks {
 		$out->addJsConfigVars( 'extRevisionSliderTimeOffset', intval( $timeOffset ) );
 		$out->enableOOUI();
 
-		$toggleButton = new OOUI\ButtonWidget( [
+		$toggleButton = new ButtonWidget( [
 			'label' => ( new Message( 'revisionslider-toggle-label' ) )->text(),
 			'indicator' => 'down',
 			'classes' => [ 'mw-revslider-toggle-button' ],
