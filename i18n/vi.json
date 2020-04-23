@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Minh Nguyen",
+			"Phjtieudoc",
 			"Quenhitran"
 		]
 	},
@@ -14,7 +15,7 @@
 	"revisionslider-label-date": "Ngày tháng",
 	"revisionslider-label-page-size": "Kích thước trang",
 	"revisionslider-label-change-size": "Kích thước thay đổi",
-	"revisionslider-label-comment": "Tóm lược",
+	"revisionslider-label-comment": "Tóm lược sửa đổi",
 	"revisionslider-label-username": "{{GENDER:$1}}Tên người dùng",
 	"revisionslider-minoredit": "Đây là một sửa đổi nhỏ",
 	"revisionslider-loading-failed": "Không thể tải thanh trượt phiên bản.",
