@@ -2,18 +2,17 @@ const Page = require( 'wdio-mediawiki/Page' ),
 	Api = require( 'wdio-mediawiki/Api' ),
 	BlankPage = require( 'wdio-mediawiki/BlankPage' ),
 	Util = require( 'wdio-mediawiki/Util' ),
-	MWBot = require( 'mwbot' ),
 	USER_BUBBLE_SELECTOR = '.mw-revslider-username-row .mw-revslider-bubble',
 	TAG_BUBBLE_SELECTOR = '.mw-revslider-tag-row:last-of-type .mw-revslider-bubble';
 
 class DiffPage extends Page {
-	get rsMain() { return browser.element( '.mw-revslider-revision-slider' ); }
-	get rsToggleButton() { return browser.element( '.mw-revslider-toggle-button' ); }
+	get rsMain() { return $( '.mw-revslider-revision-slider' ); }
+	get rsToggleButton() { return $( '.mw-revslider-toggle-button' ); }
 
-	get rsUserFilterBubble() { return browser.element( USER_BUBBLE_SELECTOR ); }
-	get rsTagFilterBubble() { return browser.element( TAG_BUBBLE_SELECTOR ); }
+	get rsUserFilterBubble() { return $( USER_BUBBLE_SELECTOR ); }
+	get rsTagFilterBubble() { return $( TAG_BUBBLE_SELECTOR ); }
 
-	getRevision( num ) { return browser.element( '.mw-revslider-revision[data-pos="' + num + '"]' ); }
+	getRevision( num ) { return $( '.mw-revslider-revision[data-pos="' + num + '"]' ); }
 
 	ready() {
 		Util.waitForModuleState( 'ext.RevisionSlider.lazyJs' );
@@ -29,7 +28,7 @@ class DiffPage extends Page {
 
 	openSlider() {
 		this.rsToggleButton.click();
-		this.rsMain.waitForVisible();
+		this.rsMain.waitForDisplayed( { timeout: 10000 } );
 	}
 
 	open( title ) {
@@ -40,8 +39,11 @@ class DiffPage extends Page {
 	 * @param {boolean} [show] Defaults to true.
 	 */
 	toggleHelpDialog( show ) {
-		const hide = show === false;
-		browser.localStorage( 'POST', { key: 'mw-revslider-hide-help-dialogue', value: hide ? '1' : '0' } );
+		var hide = show === false;
+		hide = hide ? '1' : '0';
+		browser.execute( function ( hide ) {
+			this.localStorage.setItem( 'mw-revslider-hide-help-dialogue', hide );
+		}, hide );
 	}
 
 	/**
@@ -60,14 +62,16 @@ class DiffPage extends Page {
 	 * @param {string} title Article to edit.
 	 */
 	addTwoUserEditsToPage( title ) {
-		browser.call( function () {
-			return Api.edit(
+		browser.call( async () => {
+			var bot = await Api.bot();
+			return await bot.edit(
 				title,
 				'RevisionSlider-Test-Text One'
 			);
 		} );
-		browser.call( function () {
-			return Api.edit(
+		browser.call( async () => {
+			var bot = await Api.bot();
+			return await bot.edit(
 				title,
 				'RevisionSlider-Test-Text Two'
 			);
@@ -78,21 +82,14 @@ class DiffPage extends Page {
 	 * @param {string} title Article to edit.
 	 */
 	addTaggedEditToPage( title ) {
-		const bot = new MWBot();
-
-		browser.call( function () {
-			return bot.loginGetEditToken( {
-				apiUrl: `${browser.options.baseUrl}/api.php`,
-				username: browser.options.username,
-				password: browser.options.password
-			} ).then( function () {
-				return bot.edit(
-					title,
-					'',
-					'RevisionSlider-Test-Tagged',
-					{ tags: 'mw-blank' }
-				);
-			} );
+		browser.call( async () =>{
+			var bot = await Api.bot();
+			return await bot.edit(
+				title,
+				'',
+				'RevisionSlider-Test-Tagged',
+				{ tags: 'mw-blank' }
+			);
 		} );
 	}
 
@@ -100,41 +97,37 @@ class DiffPage extends Page {
 	 * @param {string} title Article to edit.
 	 */
 	addTaggedOtherUserEditToPage( title ) {
-		const bot = new MWBot();
 		const otherUser = Util.getTestString( 'User-' );
 		const otherUserPassword = Util.getTestString();
-		browser.call( function () {
-			return Api.createAccount( otherUser, otherUserPassword );
+		browser.call( async () => {
+			const bot = await Api.bot();
+			return await Api.createAccount( bot, otherUser, otherUserPassword );
 		} );
 
-		browser.call( function () {
-			return bot.loginGetEditToken( {
-				apiUrl: `${browser.options.baseUrl}/api.php`,
-				username: otherUser,
-				password: otherUserPassword
-			} ).then( function () {
-				return bot.edit(
-					title,
-					'RevisionSlider-Test-Other-Text with tag',
-					'RevisionSlider-Test-Other-Tagged',
-					{ tags: 'mw-replace' }
-				);
-			} );
+		browser.call( async () => {
+			const bot = await Api.bot( otherUser, otherUserPassword );
+			return await bot.edit(
+				title,
+				'RevisionSlider-Test-Other-Text with tag',
+				'RevisionSlider-Test-Other-Tagged',
+				{ tags: 'mw-replace' }
+			);
+
 		} );
 	}
 
 	dwellRevision( num ) {
-		browser.moveToObject( '.mw-revslider-revision[data-pos="' + num + '"]' );
-		browser.waitForVisible( '.mw-revslider-revision-tooltip-' + num );
+		$( '.mw-revslider-revision[data-pos="' + num + '"]' ).moveTo();
+		$( '.mw-revslider-revision-tooltip-' + num ).waitForDisplayed();
 	}
 
 	dwellTagFilterBubble() {
-		browser.moveToObject( TAG_BUBBLE_SELECTOR );
+		$( TAG_BUBBLE_SELECTOR ).moveTo();
 	}
 
 	abondonBubbleDwell() {
 		// make sure we do not dwell the line/bubble after clicking
-		browser.moveToObject( '.mw-revslider-revision-tooltip p:first-of-type' );
+		$( '.mw-revslider-revision-tooltip p:first-of-type' ).moveTo();
 	}
 
 	clickUserFilterBubble() {
