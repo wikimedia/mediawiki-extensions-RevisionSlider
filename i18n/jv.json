@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Diki Ananta",
 			"NoiX180"
 		]
 	},
@@ -14,7 +15,7 @@
 	"revisionslider-label-page-size": "Gedhéné kaca",
 	"revisionslider-label-change-size": "Gedhéné owahan",
 	"revisionslider-label-comment": "Tanggepan",
-	"revisionslider-label-username": "{{GENDER:$1|Panganggo}}",
+	"revisionslider-label-username": "{{GENDER:$1|Naraguna}}",
 	"revisionslider-minoredit": "Iki besutan cikil",
 	"revisionslider-loading-failed": "Panyalindra owahan wurung kamot.",
 	"revisionslider-toggle-title-expand": "Bukak panyalindra owahan",
