@@ -4,6 +4,28 @@
 			"PiefPafPier"
 		]
 	},
+	"revisionslider": "Ferzje-skoknop",
 	"revisionslider-preference-disable": "De ferzje-skoknop net sjen litte",
-	"revisionslider-toggle-label": "Skiednis ynteraktyf trochsjen"
+	"revisionslider-desc": "Jout in skoknop dy't it selektearjen en ferlykjen fan ferzjes op ferskilsiden mooglik makket",
+	"revisionslider-toggle-label": "Skiednis ynteraktyf trochsjen",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|byte|bytes}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|byte|bytes}}",
+	"revisionslider-label-date": "Datum",
+	"revisionslider-label-page-size": "Sidegrutte",
+	"revisionslider-label-change-size": "Wizigingsgrutte",
+	"revisionslider-label-comment": "Bewurkingsgearfetting",
+	"revisionslider-label-username": "{{GENDER:$1|Meidochnamme}}",
+	"revisionslider-minoredit": "Dit is fan lytse betsjutting",
+	"revisionslider-loading-failed": "De ferzje-skoknop koe net laden wurde.",
+	"revisionslider-toggle-title-expand": "Ferzje-skoknop iepenje",
+	"revisionslider-toggle-title-collapse": "Ferzje-skoknop ynklappe",
+	"revisionslider-turn-on-auto-expand-title": "De ferzje-skoknop altyd útklappe",
+	"revisionslider-turn-off-auto-expand-title": "De ferzje-skoknop net automatysk útklappe",
+	"revisionslider-arrow-tooltip-newer": "Nijere ferzjes besjen",
+	"revisionslider-arrow-tooltip-older": "Aldere ferzjes besjen",
+	"revisionslider-show-help-tooltip": "Helptekst werjaan",
+	"revisionslider-tutorial": "Utlis ferzje-skoknop",
+	"revisionslider-previous-dialog": "Werom",
+	"revisionslider-next-dialog": "Fierder",
+	"revisionslider-close-dialog": "Slute"
 }
