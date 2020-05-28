@@ -24,6 +24,8 @@
 	"revisionslider-arrow-tooltip-newer": "Nijere ferzjes besjen",
 	"revisionslider-arrow-tooltip-older": "Aldere ferzjes besjen",
 	"revisionslider-show-help-tooltip": "Helptekst werjaan",
+	"revisionslider-help-dialog-slide1": "De ferzje-skoknop helpt jo mei it trochsjen en ferlykjen fan ferzjes op ferskilsiden. It is fuortkommen út in technyske [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider winsk] fan de Dútsktalige mienskip. Weromkeppeling wurdt [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider hjir] tige op priis steld.",
+	"revisionslider-help-dialog-slide4": "Brûk de pylken efterút en foarút om troch de ferzjeskiednis te gean, en âldere en nijere ferzjes wer te jaan.",
 	"revisionslider-tutorial": "Utlis ferzje-skoknop",
 	"revisionslider-previous-dialog": "Werom",
 	"revisionslider-next-dialog": "Fierder",
