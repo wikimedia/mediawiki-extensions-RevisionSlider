@@ -26,7 +26,7 @@
 	"revisionslider-show-help-tooltip": "Helptekst werjaan",
 	"revisionslider-help-dialog-slide1": "De ferzje-skoknop helpt jo mei it trochsjen en ferlykjen fan ferzjes op ferskilsiden. It is fuortkommen út in technyske [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider winsk] fan de Dútsktalige mienskip. Weromkeppeling wurdt [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider hjir] tige op priis steld.",
 	"revisionslider-help-dialog-slide2": "Eltse stêf stiet foar in sideferzje. De stêven boppe litte it grutter wurden fan 'e side sjen, de stêven ûnder it lytser wurden. Yn it plaatsje ferbyldet ferzje 1 taheakke ynhâld, oarsom ferbyldet ferzje 2 ynhâld fuortheljen.",
-	"revisionslider-help-dialog-slide3a": "<p>Selektearje de ferzjes mei de twa kleure knoppen, om beskate ferzjes te ferlykjen.</p><p>De boppeste knop regelet de nijere ferzje, de ûnderste knop is foar de âldere ferzje.</p><p>Ferset de knoppen troch ferslepen of klikken op de skoline.</p>",
+	"revisionslider-help-dialog-slide3a": "<p>Selektearje de ferzjes mei de twa kleure knoppen, om beskate ferzjes te ferlykjen.</p><p>De boppeste knop regelet de nijere ferzje, de ûnderste knop is foar de âldere ferzje.</p><p>Ferset de knoppen troch ferslepen of klikken by de skoline lâns.</p>",
 	"revisionslider-help-dialog-slide4": "Brûk de pylken efterút en foarút om troch de ferzjeskiednis te gean, en âldere en nijere ferzjes wer te jaan.",
 	"revisionslider-tutorial": "Utlis ferzje-skoknop",
 	"revisionslider-previous-dialog": "Werom",
