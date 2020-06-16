@@ -1,19 +1,6 @@
 {
 	"root": true,
 	"extends": [
-		"wikimedia/server",
-		"wikimedia/language/es2017",
-		"wikimedia/jquery"
-	],
-	"env": {
-		"mocha": true
-	},
-	"globals": {
-		"browser": false,
-		"mw": false
-	},
-	"rules": {
-		"no-console": 0,
-		"no-jquery/no-global-selector": "off"
-	}
+		"wikimedia/selenium"
+	]
 }

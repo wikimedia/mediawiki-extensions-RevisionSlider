@@ -1,7 +1,11 @@
+/**
+ * @external SliderView
+ */
 ( function () {
 	/**
 	 * Module containing presentation logic for the arrow buttons
 	 *
+	 * @class SliderArroView
 	 * @param {SliderView} sliderView
 	 * @constructor
 	 */

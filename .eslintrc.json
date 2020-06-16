@@ -1,21 +1,13 @@
 {
 	"root": true,
-	"env": {
-		"commonjs": true
-	},
 	"extends": [
 		"wikimedia/client",
 		"wikimedia/jquery",
 		"wikimedia/mediawiki"
 	],
-	"globals": {
-		"OO": false
-	},
 	"rules": {
 		"max-len": "off",
 		"no-jquery/no-global-selector": "off",
-		"no-jquery/no-class-state": "off",
-		"mediawiki/class-doc": "warn",
-		"mediawiki/valid-package-file-require": "warn"
+		"no-jquery/no-class-state": "off"
 	}
 }

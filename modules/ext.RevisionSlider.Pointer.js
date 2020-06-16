@@ -1,7 +1,12 @@
+/**
+ * @external PointerLine
+ * @external PointerView
+ */
 ( function () {
 	/**
 	 * Module containing logic for the revision pointers
 	 *
+	 * @class Pointer
 	 * @param {string} name
 	 * @constructor
 	 */

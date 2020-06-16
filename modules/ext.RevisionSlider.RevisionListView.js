@@ -1,5 +1,10 @@
+/**
+ * @external Revision
+ * @external RevisionList
+ */
 ( function () {
 	/**
+	 * @class RevisionListView
 	 * @param {RevisionList} revisionList
 	 * @param {string} [dir]
 	 * @constructor
@@ -49,13 +54,13 @@
 		dir: null,
 
 		/**
-		* @type {string}
-		*/
+		 * @type {string}
+		 */
 		selectedUser: '',
 
 		/**
-		* @type {string}
-		*/
+		 * @type {string}
+		 */
 		selectedTag: '',
 
 		/**
@@ -284,6 +289,7 @@
 			this.hideCurrentTooltip();
 
 			tooltip = this.makeTooltip( revision, $revisionWrapper );
+			// eslint-disable-next-line mediawiki/class-doc
 			tooltip.$element.addClass( 'mw-revslider-revision-tooltip-' + pos );
 
 			$( 'body' ).append( tooltip.$element );
@@ -418,6 +424,7 @@
 
 		/**
 		 * Set user filter events for revisions
+		 *
 		 * @param {jQuery} $userBubble
 		 * @param {string} userName
 		 * @param {Event} event
@@ -458,10 +465,11 @@
 		},
 
 		/**
-		* Highlights revisions of the sameUser
-		* @param {string} userString
-		* @param {boolean} highlight
-		*/
+		 * Highlights revisions of the sameUser
+		 *
+		 * @param {string} userString
+		 * @param {boolean} highlight
+		 */
 		highlightSameUserRevisions: function ( userString ) {
 			$( '[data-user="' + userString + '"]' ).parent()
 				.toggleClass( 'mw-revslider-revision-highlight' );
@@ -538,10 +546,11 @@
 		},
 
 		/**
-		* Set tag filter events for revisions
-		* @param {jQuery} $tagBubble
-		* @param {Event} event
-		*/
+		 * Set tag filter events for revisions
+		 *
+		 * @param {jQuery} $tagBubble
+		 * @param {Event} event
+		 */
 		setTagFilterEvents: function ( $tagBubble, event ) {
 			var self = this,
 				$tagLine = $tagBubble.parent(),
@@ -579,9 +588,10 @@
 		},
 
 		/**
-		* Highlights same tag revisions
-		* @param {string} tagName
-		*/
+		 * Highlights same tag revisions
+		 *
+		 * @param {string} tagName
+		 */
 		highlightSameTagRevisions: function ( tagName ) {
 			var i, j, revTags,
 				revs = this.revisionList.getRevisions();
@@ -599,6 +609,7 @@
 
 		/**
 		 * Re-apply highlighting from saved state
+		 *
 		 * @param {jQuery} $line
 		 * @param {jQuery} $bubble
 		 */
@@ -661,6 +672,8 @@
 				changeSizeClass = 'mw-revslider-change-negative';
 			}
 
+			// Classes are documented above
+			// eslint-disable-next-line mediawiki/class-doc
 			$changeNumber = $( '<span>' )
 				.addClass( changeSizeClass )
 				.attr( {

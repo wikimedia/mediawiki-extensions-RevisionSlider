@@ -1,7 +1,11 @@
+/**
+ * @external Pointer
+ */
 ( function () {
 	/**
 	 * Module containing presentation logic for the revision pointer lines
 	 *
+	 * @class PointerLine
 	 * @param {Pointer} pointer
 	 * @param {string} name
 	 * @constructor
@@ -44,8 +48,7 @@
 		 *
 		 * @param {jQuery} $sourcePointer
 		 * @param {jQuery} $targetColumn
-		 *
-		 * @return {int} distance between the given elements
+		 * @return {number} distance between the given elements
 		 */
 		calculateDistance: function ( $sourcePointer, $targetColumn ) {
 			return ( $targetColumn.offset().left + $targetColumn.width() / 2 ) -
@@ -174,11 +177,15 @@
 		 * Initializes the DOM element with the line-box for drawing the lines
 		 */
 		initialize: function () {
+			// eslint-disable-next-line mediawiki/class-doc
 			this.$html = $( '<div>' )
 				.addClass( 'mw-revslider-pointer-line ' + this.name )
 				.append(
+					// eslint-disable-next-line mediawiki/class-doc
 					$( '<div>' ).addClass( 'mw-revslider-pointer-line-upper ' + this.name ),
+					// eslint-disable-next-line mediawiki/class-doc
 					$( '<div>' ).addClass( 'mw-revslider-pointer-line-lower ' + this.name ),
+					// eslint-disable-next-line mediawiki/class-doc
 					$( '<div>' ).addClass( 'mw-revslider-pointer-line-underline ' + this.name )
 				);
 		},

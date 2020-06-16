@@ -1,4 +1,6 @@
-var assert = require( 'assert' ),
+'use strict';
+
+const assert = require( 'assert' ),
 	DiffPage = require( '../pageobjects/diff.page' );
 
 describe( 'RevisionSlider filter highlighting', function () {

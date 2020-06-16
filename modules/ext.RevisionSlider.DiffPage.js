@@ -1,7 +1,11 @@
+/**
+ * @external SliderView
+ */
 ( function () {
 	/**
 	 * Module handling diff page reloading and the RevisionSlider browser history
 	 *
+	 * @class Diffpage
 	 * @constructor
 	 */
 	var DiffPage = function () {

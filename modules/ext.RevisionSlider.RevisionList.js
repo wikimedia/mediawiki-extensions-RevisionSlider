@@ -1,5 +1,10 @@
+/**
+ * @external Revision
+ * @external RevisionListView
+ */
 ( function () {
 	/**
+	 * @class RevisionList
 	 * @param {Revision[]} revs
 	 * @param {Object[]} availableTags
 	 * @constructor

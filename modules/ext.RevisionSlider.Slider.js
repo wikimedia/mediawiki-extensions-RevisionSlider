@@ -1,7 +1,12 @@
+/**
+ * @external RevisionList
+ * @external SliderView
+ */
 ( function () {
 	/**
 	 * Module handling the slider logic of the RevisionSlider
 	 *
+	 * @class Slider
 	 * @param {RevisionList} revisions
 	 * @constructor
 	 */

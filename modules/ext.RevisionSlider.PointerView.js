@@ -1,7 +1,12 @@
+/**
+ * @external Pointer
+ * @external Slider
+ */
 ( function () {
 	/**
 	 * Module containing presentation logic for the revision pointers
 	 *
+	 * @class PointerView
 	 * @param {Pointer} pointer
 	 * @param {string} name
 	 * @constructor
@@ -34,6 +39,7 @@
 		 * Initializes the DOM element
 		 */
 		initialize: function () {
+			// eslint-disable-next-line mediawiki/class-doc
 			this.$html = $( '<div>' )
 				.addClass( 'mw-revslider-pointer mw-revslider-pointer-cursor ' + this.name );
 		},

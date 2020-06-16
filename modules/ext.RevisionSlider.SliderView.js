@@ -1,7 +1,14 @@
+/**
+ * @external DiffPage
+ * @external Pointer
+ * @external RevisionListView
+ * @external Slider
+ */
 ( function () {
 	/**
 	 * Module handling the view logic of the RevisionSlider slider
 	 *
+	 * @class SliderView
 	 * @param {Slider} slider
 	 * @constructor
 	 */

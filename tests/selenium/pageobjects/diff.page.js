@@ -1,3 +1,5 @@
+'use strict';
+
 const Page = require( 'wdio-mediawiki/Page' ),
 	Api = require( 'wdio-mediawiki/Api' ),
 	BlankPage = require( 'wdio-mediawiki/BlankPage' ),
@@ -39,8 +41,7 @@ class DiffPage extends Page {
 	 * @param {boolean} [show] Defaults to true.
 	 */
 	toggleHelpDialog( show ) {
-		var hide = show === false;
-		hide = hide ? '1' : '0';
+		const hide = ( show === false ) ? '1' : '0';
 		browser.execute( function ( hide ) {
 			this.localStorage.setItem( 'mw-revslider-hide-help-dialogue', hide );
 		}, hide );
@@ -63,14 +64,14 @@ class DiffPage extends Page {
 	 */
 	addTwoUserEditsToPage( title ) {
 		browser.call( async () => {
-			var bot = await Api.bot();
+			const bot = await Api.bot();
 			return await bot.edit(
 				title,
 				'RevisionSlider-Test-Text One'
 			);
 		} );
 		browser.call( async () => {
-			var bot = await Api.bot();
+			const bot = await Api.bot();
 			return await bot.edit(
 				title,
 				'RevisionSlider-Test-Text Two'
@@ -82,8 +83,8 @@ class DiffPage extends Page {
 	 * @param {string} title Article to edit.
 	 */
 	addTaggedEditToPage( title ) {
-		browser.call( async () =>{
-			var bot = await Api.bot();
+		browser.call( async () => {
+			const bot = await Api.bot();
 			return await bot.edit(
 				title,
 				'',
