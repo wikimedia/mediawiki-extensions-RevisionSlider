@@ -43,7 +43,6 @@
 			backwardArrowPopup = new OO.ui.PopupWidget( {
 				$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-older' ) ),
 				$floatableContainer: backwardArrowButton.$element,
-				padded: true,
 				width: 200,
 				classes: [ 'mw-revslider-tooltip', 'mw-revslider-arrow-tooltip' ]
 			} );
@@ -85,7 +84,6 @@
 			forwardArrowPopup = new OO.ui.PopupWidget( {
 				$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-newer' ) ),
 				$floatableContainer: forwardArrowButton.$element,
-				padded: true,
 				width: 200,
 				classes: [ 'mw-revslider-tooltip', 'mw-revslider-arrow-tooltip' ]
 			} );

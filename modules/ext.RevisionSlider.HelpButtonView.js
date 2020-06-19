@@ -20,7 +20,6 @@
 			helpPopup = new OO.ui.PopupWidget( {
 				$content: $( '<p>' ).text( mw.msg( 'revisionslider-show-help-tooltip' ) ),
 				$floatableContainer: helpButton.$element,
-				padded: true,
 				width: 200,
 				classes: [ 'mw-revslider-tooltip', 'mw-revslider-help-tooltip' ]
 			} );
