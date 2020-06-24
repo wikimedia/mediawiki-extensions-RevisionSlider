@@ -9,7 +9,6 @@ use MediaWiki\MediaWikiServices;
 use Message;
 use OOUI\ButtonWidget;
 use RequestContext;
-use Revision;
 use User;
 
 /**
@@ -42,17 +41,15 @@ class RevisionSliderHooks {
 
 	/**
 	 * @param DifferenceEngine $diff
-	 * @param Revision|null $oldRev
-	 * @param Revision|null $newRev
 	 * @suppress SecurityCheck-XSS Issue with OOUI, see T193837 for more information
 	 */
-	public static function onDiffViewHeader(
-		DifferenceEngine $diff,
-		Revision $oldRev = null,
-		Revision $newRev = null
-	) {
-		// sometimes $oldRev can be null (e.g. missing rev), and perhaps also $newRev (T167359)
-		if ( !( $oldRev instanceof Revision ) || !( $newRev instanceof Revision ) ) {
+	public static function onDifferenceEngineViewHeader( DifferenceEngine $diff ) {
+		$oldRevRecord = $diff->getOldRevision();
+		$newRevRecord = $diff->getNewRevision();
+
+		// sometimes the old revision can be null (e.g. missing rev), and perhaps also the
+		// new one (T167359)
+		if ( $oldRevRecord === null || $newRevRecord === null ) {
 			return;
 		}
 
@@ -73,8 +70,15 @@ class RevisionSliderHooks {
 
 		/**
 		 * Do not show the RevisionSlider when revisions from two different pages are being compared
+		 *
+		 * Since RevisionRecord::getPageAsLinkTarget only returns a LinkTarget, which doesn't
+		 * have an equals method, compare manually by namespace and text
 		 */
-		if ( !$oldRev->getTitle()->equals( $newRev->getTitle() ) ) {
+		$oldTitle = $oldRevRecord->getPageAsLinkTarget();
+		$newTitle = $newRevRecord->getPageAsLinkTarget();
+		if ( $oldTitle->getNamespace() !== $newTitle->getNamespace() ||
+			$oldTitle->getDBKey() !== $newTitle->getDBKey()
+		) {
 			return;
 		}
 

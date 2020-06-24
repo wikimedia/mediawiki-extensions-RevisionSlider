@@ -15,7 +15,7 @@
 	"type": "other",
 	"manifest_version": 2,
 	"requires": {
-		"MediaWiki": ">= 1.34.0"
+		"MediaWiki": ">= 1.35.0"
 	},
 	"ConfigRegistry": {
 		"revisionslider": "GlobalVarConfig::newInstance"
@@ -216,7 +216,7 @@
 		"remoteExtPath": "RevisionSlider"
 	},
 	"Hooks": {
-		"DiffViewHeader": "MediaWiki\\Extensions\\RevisionSlider\\RevisionSliderHooks::onDiffViewHeader",
+		"DifferenceEngineViewHeader": "MediaWiki\\Extensions\\RevisionSlider\\RevisionSliderHooks::onDifferenceEngineViewHeader",
 		"GetPreferences": "MediaWiki\\Extensions\\RevisionSlider\\RevisionSliderHooks::onGetPreferences"
 	}
 }
