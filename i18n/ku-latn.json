@@ -3,6 +3,7 @@
 		"authors": [
 			"George Animal",
 			"Ghybu",
+			"Guherto",
 			"Macofe"
 		]
 	},
@@ -11,7 +12,7 @@
 	"revisionslider-label-date": "Dem",
 	"revisionslider-label-page-size": "Mezinahiya rûpelê",
 	"revisionslider-label-change-size": "Mezinahiya guherandinê",
-	"revisionslider-label-comment": "Şîrove",
+	"revisionslider-label-comment": "Kurteya guhertinê",
 	"revisionslider-label-username": "{{GENDER:$1|Navê bikarhêner}}",
 	"revisionslider-minoredit": "Ev guhertineke biçûk e",
 	"revisionslider-arrow-tooltip-newer": "Revîzyonên nûtir bibîne",
