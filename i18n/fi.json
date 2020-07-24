@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"01miki10",
 			"Alluk.",
 			"Lebiega",
 			"Nike",
@@ -20,7 +21,7 @@
 	"revisionslider-label-page-size": "Sivun koko",
 	"revisionslider-label-change-size": "Muutoksen koko",
 	"revisionslider-label-comment": "Muokkausyhteenveto",
-	"revisionslider-label-username": "{{GENDER:$1|Käyttäjätunnus}}",
+	"revisionslider-label-username": "{{GENDER:$1|Käyttäjänimi}}",
 	"revisionslider-minoredit": "Tämä on pieni muutos",
 	"revisionslider-loading-failed": "Sivuvertailun vaakajanan lataaminen epäonnistui.",
 	"revisionslider-toggle-title-expand": "Avaa sivuvertailun vaakajana",
