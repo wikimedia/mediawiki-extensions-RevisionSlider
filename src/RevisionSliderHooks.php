@@ -54,7 +54,8 @@ class RevisionSliderHooks {
 		}
 
 		// do not show on MobileDiff page
-		if ( $diff->getTitle()->isSpecial( 'MobileDiff' ) ) {
+		// Note: Since T245172, DifferenceEngine::getTitle() is the title of the page being diffed.
+		if ( $diff->getOutput()->getTitle()->isSpecial( 'MobileDiff' ) ) {
 			return;
 		}
 
