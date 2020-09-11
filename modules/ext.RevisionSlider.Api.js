@@ -80,13 +80,13 @@
 					userNames = self.getUniqueUserNamesWithUnknownGender( revs, genderData );
 
 					userXhr = self.fetchUserGenderData( userNames )
-						.done( function ( data ) {
-							if ( typeof data === 'object' &&
-								data.query &&
-								data.query.users &&
-								data.query.users.length > 0
+						.done( function ( data2 ) {
+							if ( typeof data2 === 'object' &&
+								data2.query &&
+								data2.query.users &&
+								data2.query.users.length > 0
 							) {
-								$.extend( genderData, self.getUserGenderData( data.query.users, genderData ) );
+								$.extend( genderData, self.getUserGenderData( data2.query.users, genderData ) );
 							}
 
 							revs.forEach( function ( rev ) {

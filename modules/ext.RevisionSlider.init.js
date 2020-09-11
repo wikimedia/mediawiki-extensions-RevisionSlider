@@ -32,7 +32,7 @@
 					startId: mw.config.get( 'wgDiffNewId' ),
 					limit: mw.libs.revisionSlider.calculateRevisionsPerWindow( 160, 16 ),
 					changeTags: changeTags
-				} ).then( function ( data ) {
+				} ).then( function ( data2 ) {
 					var revs,
 						revisionList,
 						$container,
@@ -41,7 +41,7 @@
 					mw.track( 'timing.MediaWiki.RevisionSlider.timing.initFetchRevisionData', mw.now() - startTime );
 
 					try {
-						revs = data.revisions;
+						revs = data2.revisions;
 						revs.reverse();
 
 						$container = $( '.mw-revslider-slider-wrapper' );

@@ -42,8 +42,8 @@ class DiffPage extends Page {
 	 */
 	toggleHelpDialog( show ) {
 		const hide = ( show === false ) ? '1' : '0';
-		browser.execute( function ( hide ) {
-			this.localStorage.setItem( 'mw-revslider-hide-help-dialogue', hide );
+		browser.execute( function ( h ) {
+			this.localStorage.setItem( 'mw-revslider-hide-help-dialogue', h );
 		}, hide );
 	}
 

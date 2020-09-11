@@ -51,8 +51,8 @@
 				tryCount: 0
 			} );
 			// Don't chain, so lastRequest is a jQuery.jqXHR object
-			this.lastRequest.then( function ( data ) {
-				var $data = $( data ),
+			this.lastRequest.then( function ( data2 ) {
+				var $data = $( data2 ),
 					$contentText,
 					$container = $( '.mw-revslider-container' ),
 					scrollLeft = $container.find( '.mw-revslider-revisions-container' ).scrollLeft();
