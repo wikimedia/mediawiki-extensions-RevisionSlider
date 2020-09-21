@@ -1,6 +1,7 @@
 ( function () {
 	var Settings = require( 'ext.RevisionSlider.Settings' ),
 		settings = new Settings(),
+		HelpDialog = require( 'ext.RevisionSlider.HelpDialog' ).HelpDialog,
 		autoExpand = settings.shouldAutoExpand(),
 		expanded = autoExpand,
 		autoExpandButton,
@@ -18,7 +19,7 @@
 			mw.track( 'counter.MediaWiki.RevisionSlider.event.init' );
 			mw.libs.revisionSlider.userOffset = mw.user.options.get( 'timecorrection' ) ? mw.user.options.get( 'timecorrection' ).split( '|' )[ 1 ] : mw.config.get( 'extRevisionSliderTimeOffset' );
 
-			mw.libs.revisionSlider.HelpDialog.init();
+			HelpDialog.init();
 
 			api.fetchAvailableChangeTags().then( function ( data ) {
 				if ( typeof data === 'object' &&
@@ -61,7 +62,7 @@
 						}, 250 ) );
 
 						if ( !settings.shouldHideHelpDialogue() ) {
-							mw.libs.revisionSlider.HelpDialog.show();
+							HelpDialog.show();
 							settings.setHideHelpDialogue( true );
 						}
 

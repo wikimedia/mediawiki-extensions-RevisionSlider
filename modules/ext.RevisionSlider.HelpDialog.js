@@ -5,9 +5,9 @@
 	 * @param {Object} config
 	 * @constructor
 	 */
-	var HelpDialog = function ( config ) {
+	function HelpDialog( config ) {
 		HelpDialog.super.call( this, config );
-	};
+	}
 
 	OO.inheritClass( HelpDialog, OO.ui.ProcessDialog );
 
@@ -26,9 +26,6 @@
 		{ label: mw.msg( 'revisionslider-close-dialog' ), flags: 'primary', modes: 'last', classes: [ 'mw-revslider-help-close-end' ] }
 	];
 
-	/**
-	 * @class mw.libs.revisionSlider.HelpDialog
-	 */
 	$.extend( HelpDialog.prototype, {
 		/**
 		 * @type {OO.ui.PanelLayout[]}
@@ -189,6 +186,8 @@
 		};
 	};
 
-	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-	mw.libs.revisionSlider.HelpDialog = HelpDialog;
+	module.exports = {
+		HelpButtonView: require( './ext.RevisionSlider.HelpButtonView.js' ),
+		HelpDialog: HelpDialog
+	};
 }() );
