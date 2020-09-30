@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Daud I.F. Argana",
 			"Macofe",
 			"Rachmat.Wahidi",
 			"Rachmat04",
@@ -28,7 +29,7 @@
 	"revisionslider-show-help-tooltip": "Tampilkan teks bantuan",
 	"revisionslider-help-dialog-slide1": "Seluncur revisi membantu Anda dalam bernavigasi dan membandingkan revisi pada halaman riwayat. Ekstensi ini dibuat berdasarkan [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider permintaan komunitas] dari komunitas teknis berbahasa Jerman. Umpan balik Anda sangat diharapkan [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider di sini].",
 	"revisionslider-help-dialog-slide2": "Setiap batang mewakilkan sebuah revisi halaman. Batang yang berada di atas menunjukkan peningkatan ukuran halaman. Batang yang berada di bawah menunjukkan pengurangan. Pada gambar ini, pada revisi 1 ada konten yang ditambah, sedangkan pada revisi 2 ada konten yang dihapus",
-	"revisionslider-help-dialog-slide3a": "<p>Untuk membandingkan revisi-revisi tertentu, pilih revisi tersebut dengan menggunakan kenop kuning dan biru.</p><p>Kenop biru mengendalikan revisi yang lebih baru, sedangkan kenop biru terhubung ke revisi yang lebih lama.</p><p>Pindahkan posisi kenop dengan menyeret dan melepasnya atau mengeklik pada garis seluncur.</p>",
+	"revisionslider-help-dialog-slide3a": "<p>Untuk membandingkan revisi-revisi tertentu, pilih revisi tersebut dengan menggunakan dua kenop berwarna.</p><p>Kenop yang atas mengendalikan revisi yang lebih baru, sedangkan kenop yang bawah terhubung ke revisi yang lebih lama.</p><p>Pindahkan posisi kenop dengan menyeret dan melepasnya atau mengeklik pada garis seluncur.</p>",
 	"revisionslider-help-dialog-slide4": "Gunakan panah mundur dan maju untuk berpindah melintasi riwayat revisi dan menampilkan revisi yang lebih lama dan yang lebih baru.",
 	"revisionslider-tutorial": "Tutorial seluncur revisi",
 	"revisionslider-previous-dialog": "Sebelumnya",

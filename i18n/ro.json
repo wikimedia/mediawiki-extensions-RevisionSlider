@@ -4,5 +4,18 @@
 			"NGC 54"
 		]
 	},
-	"revisionslider-toggle-label": "Navighează interactiv prin istoric"
+	"revisionslider-toggle-label": "Navighează interactiv prin istoric",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|octet|octeți}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|octet|octeți}}",
+	"revisionslider-label-date": "Dată",
+	"revisionslider-label-change-size": "Mărimea schimbării",
+	"revisionslider-label-comment": "Descrierea modificării",
+	"revisionslider-label-username": "{{GENDER:$1|Nume de utilizator|Nume de utilizatoare|Nume de utilizator}}",
+	"revisionslider-minoredit": "Aceasta este o modificare minoră",
+	"revisionslider-arrow-tooltip-newer": "Vezi revizii mai noi",
+	"revisionslider-arrow-tooltip-older": "Vezi revizii mai vechi",
+	"revisionslider-tutorial": "Tutorialul trecătorului prin revizii",
+	"revisionslider-previous-dialog": "Înapoi",
+	"revisionslider-next-dialog": "Înainte",
+	"revisionslider-close-dialog": "Închide"
 }
