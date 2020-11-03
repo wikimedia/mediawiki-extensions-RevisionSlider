@@ -28,7 +28,7 @@
 	"revisionslider-toggle-title-collapse": "Pienennä sivuvertailun vaakajana",
 	"revisionslider-turn-on-auto-expand-title": "Laajenna sivuvertailun vaakajana automaattisesti",
 	"revisionslider-turn-off-auto-expand-title": "Älä laajenna sivuvertailun vaakajanaa automaattisesti",
-	"revisionslider-arrow-tooltip-newer": "Näe uudemmat korjaukset",
+	"revisionslider-arrow-tooltip-newer": "Katso uudempia versioita",
 	"revisionslider-arrow-tooltip-older": "Katso aikaisempia versioita",
 	"revisionslider-show-help-tooltip": "Näytä ohjeteksti",
 	"revisionslider-help-dialog-slide1": "Sivuvertailun vaakajana auttaa vertailemaan muutoksia sivulla, joka näyttää erot eri versioiden välillä. Se perustuu saksankielisen muokkaajayhteisön tech-toivelistalla esittämään [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider pyyntöön]. Palautetta otetaan vastaan [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider täällä].",
