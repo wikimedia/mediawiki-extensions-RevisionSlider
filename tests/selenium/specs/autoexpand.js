@@ -70,4 +70,14 @@ describe( 'RevisionSlider expand', function () {
 			'the auto expand button should be off'
 		);
 	} );
+
+	it( ' hides when collapsed manually', function () {
+		DiffPage.openSlider();
+		DiffPage.rsToggleButton.click();
+
+		assert(
+			!DiffPage.rsMain.isDisplayed(),
+			'the RevisionSlider wrapper should be hidden'
+		);
+	} );
 } );
