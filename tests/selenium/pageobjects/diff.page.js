@@ -10,6 +10,7 @@ const Page = require( 'wdio-mediawiki/Page' ),
 class DiffPage extends Page {
 	get rsMain() { return $( '.mw-revslider-revision-slider' ); }
 	get rsToggleButton() { return $( '.mw-revslider-toggle-button' ); }
+	get rsAutoExpandButton() { return $( '.mw-revslider-auto-expand-button' ); }
 
 	get rsUserFilterBubble() { return $( USER_BUBBLE_SELECTOR ); }
 	get rsTagFilterBubble() { return $( TAG_BUBBLE_SELECTOR ); }
@@ -18,6 +19,14 @@ class DiffPage extends Page {
 
 	ready() {
 		Util.waitForModuleState( 'ext.RevisionSlider.lazyJs' );
+	}
+
+	prepareSimpleTests() {
+		const title = Util.getTestString( 'revisionslider-test-' );
+		BlankPage.open();
+		this.toggleHelpDialog( false );
+		this.addUserEditsToPage( title, 2 );
+		this.open( title );
 	}
 
 	prepareFilterTests() {
@@ -45,6 +54,12 @@ class DiffPage extends Page {
 		browser.execute( function ( h ) {
 			this.localStorage.setItem( 'mw-revslider-hide-help-dialogue', h );
 		}, hide );
+	}
+
+	resetAutoExpand() {
+		browser.execute( function () {
+			this.localStorage.setItem( 'mw-revslider-autoexpand', '0' );
+		} );
 	}
 
 	/**
