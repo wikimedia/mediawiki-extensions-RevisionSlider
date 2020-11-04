@@ -65,14 +65,14 @@ class DiffPage extends Page {
 	addTwoUserEditsToPage( title ) {
 		browser.call( async () => {
 			const bot = await Api.bot();
-			return await bot.edit(
+			return bot.edit(
 				title,
 				'RevisionSlider-Test-Text One'
 			);
 		} );
 		browser.call( async () => {
 			const bot = await Api.bot();
-			return await bot.edit(
+			return bot.edit(
 				title,
 				'RevisionSlider-Test-Text Two'
 			);
@@ -85,7 +85,7 @@ class DiffPage extends Page {
 	addTaggedEditToPage( title ) {
 		browser.call( async () => {
 			const bot = await Api.bot();
-			return await bot.edit(
+			return bot.edit(
 				title,
 				'',
 				'RevisionSlider-Test-Tagged',
@@ -107,7 +107,7 @@ class DiffPage extends Page {
 
 		browser.call( async () => {
 			const bot = await Api.bot( otherUser, otherUserPassword );
-			return await bot.edit(
+			return bot.edit(
 				title,
 				'RevisionSlider-Test-Other-Text with tag',
 				'RevisionSlider-Test-Other-Tagged',
