@@ -54,29 +54,25 @@ class DiffPage extends Page {
 	 * @param {string} title Article to edit.
 	 */
 	hasPageWithDifferentEdits( title ) {
-		this.addTwoUserEditsToPage( title );
+		this.addUserEditsToPage( title, 2 );
 		this.addTaggedOtherUserEditToPage( title );
 		this.addTaggedEditToPage( title );
 	}
 
 	/**
 	 * @param {string} title Article to edit.
+	 * @param {number} num Number of different edits to add.
 	 */
-	addTwoUserEditsToPage( title ) {
-		browser.call( async () => {
-			const bot = await Api.bot();
-			return bot.edit(
-				title,
-				'RevisionSlider-Test-Text One'
-			);
-		} );
-		browser.call( async () => {
-			const bot = await Api.bot();
-			return bot.edit(
-				title,
-				'RevisionSlider-Test-Text Two'
-			);
-		} );
+	addUserEditsToPage( title, num ) {
+		for ( let i = 0; i < num; i++ ) {
+			browser.call( async () => {
+				const bot = await Api.bot();
+				return bot.edit(
+					title,
+					'RevisionSlider-Test-Text ' + i
+				);
+			} );
+		}
 	}
 
 	/**
