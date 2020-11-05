@@ -11,21 +11,55 @@ class DiffPage extends Page {
 	get rsMain() { return $( '.mw-revslider-revision-slider' ); }
 	get rsToggleButton() { return $( '.mw-revslider-toggle-button' ); }
 	get rsAutoExpandButton() { return $( '.mw-revslider-auto-expand-button' ); }
+	get rsLoading() { return $( '.mw-revslider-diff-loading' ); }
+
+	get rsPointerOlder() { return $( '.mw-revslider-pointer-older' ); }
+	get rsPointerNewer() { return $( '.mw-revslider-pointer-newer' ); }
+	isOlderPointerOn( num ) {
+		return this.rsPointerOlder.getAttribute( 'data-pos' ) === num.toString();
+	}
+	isNewerPointerOn( num ) {
+		return this.rsPointerNewer.getAttribute( 'data-pos' ) === num.toString();
+	}
+
+	get rsSummaryOlder() { return $( '#mw-diff-otitle3' ); }
+	get rsSummaryNewer() { return $( '#mw-diff-ntitle3' ); }
+	showsOlderSummary( num ) {
+		return this.rsSummaryOlder.getText().indexOf( 'Summary ' + num ) !== -1;
+	}
+	showsNewerSummary( num ) {
+		return this.rsSummaryNewer.getText().indexOf( 'Summary ' + num ) !== -1;
+	}
 
 	get rsUserFilterBubble() { return $( USER_BUBBLE_SELECTOR ); }
 	get rsTagFilterBubble() { return $( TAG_BUBBLE_SELECTOR ); }
 
 	getRevision( num ) { return $( '.mw-revslider-revision[data-pos="' + num + '"]' ); }
+	getRevisionUp( num ) {
+		return $(
+			'//div[contains(@class,"mw-revslider-revision")][@data-pos="' + num + '"]' +
+			'/following-sibling::div[contains(@class,"revision-wrapper-up")]'
+		);
+	}
+	getRevisionDown( num ) {
+		return $(
+			'//div[contains(@class,"mw-revslider-revision")][@data-pos="' + num + '"]' +
+			'/following-sibling::div[contains(@class,"revision-wrapper-down")]'
+		);
+	}
 
 	ready() {
 		Util.waitForModuleState( 'ext.RevisionSlider.lazyJs' );
 	}
 
-	prepareSimpleTests() {
+	/**
+	 * @param {number} num Number of different edits.
+	 */
+	prepareSimpleTests( num ) {
 		const title = Util.getTestString( 'revisionslider-test-' );
 		BlankPage.open();
 		this.toggleHelpDialog( false );
-		this.addUserEditsToPage( title, 2 );
+		this.addUserEditsToPage( title, num );
 		this.open( title );
 	}
 
@@ -79,12 +113,13 @@ class DiffPage extends Page {
 	 * @param {number} num Number of different edits to add.
 	 */
 	addUserEditsToPage( title, num ) {
-		for ( let i = 0; i < num; i++ ) {
+		for ( let i = 1; i <= num; i++ ) {
 			browser.call( async () => {
 				const bot = await Api.bot();
 				return bot.edit(
 					title,
-					'RevisionSlider-Test-Text ' + i
+					'RevisionSlider-Test-Text ' + i,
+					'RevisionSlider-Test-Summary ' + i
 				);
 			} );
 		}
@@ -125,6 +160,13 @@ class DiffPage extends Page {
 				{ tags: 'mw-replace' }
 			);
 
+		} );
+	}
+
+	waitUntilFinishedLoading() {
+		this.rsLoading.waitForExist( {
+			timeout: 2000,
+			reverse: true
 		} );
 	}
 

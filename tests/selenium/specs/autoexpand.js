@@ -6,7 +6,7 @@ const assert = require( 'assert' ),
 describe( 'RevisionSlider expand', function () {
 
 	before( function () {
-		DiffPage.prepareSimpleTests();
+		DiffPage.prepareSimpleTests( 2 );
 	} );
 
 	beforeEach( function () {
