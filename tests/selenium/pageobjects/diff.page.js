@@ -13,6 +13,9 @@ class DiffPage extends Page {
 	get rsAutoExpandButton() { return $( '.mw-revslider-auto-expand-button' ); }
 	get rsLoading() { return $( '.mw-revslider-diff-loading' ); }
 
+	get rsEditOlderButton() { return $( '#differences-prevlink' ); }
+	get rsEditNewerButton() { return $( '#differences-nextlink' ); }
+
 	get rsPointerOlder() { return $( '.mw-revslider-pointer-older' ); }
 	get rsPointerNewer() { return $( '.mw-revslider-pointer-newer' ); }
 	isOlderPointerOn( num ) {
