@@ -12,6 +12,9 @@ class DiffPage extends Page {
 	get rsToggleButton() { return $( '.mw-revslider-toggle-button' ); }
 	get rsAutoExpandButton() { return $( '.mw-revslider-auto-expand-button' ); }
 	get rsLoading() { return $( '.mw-revslider-diff-loading' ); }
+	waitUntilLoaded() {
+		this.rsLoading.waitForDisplayed( { reverse: true } );
+	}
 
 	get rsEditOlderButton() { return $( '#differences-prevlink' ); }
 	get rsEditNewerButton() { return $( '#differences-nextlink' ); }
@@ -204,6 +207,16 @@ class DiffPage extends Page {
 
 	highlightsBubble( el ) {
 		return el.getAttribute( 'class' ).indexOf( 'mw-revslider-highlite-bubble' ) !== -1;
+	}
+
+	dragOlderPointerTo( num ) {
+		$( '.mw-revslider-pointer-older' )
+			.dragAndDrop( this.getRevision( num ) );
+	}
+
+	dragNewerPointerTo( num ) {
+		$( '.mw-revslider-pointer-newer' )
+			.dragAndDrop( this.getRevision( num ) );
 	}
 }
 

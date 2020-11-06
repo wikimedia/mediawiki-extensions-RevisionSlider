@@ -15,14 +15,3 @@ Feature: RevisionSlider pointers
 #    And the newer pointer should be on revision 4
 #    And revision 3 should be loaded on the left of the diff
 #    And revision 4 should be loaded on the right of the diff
-
-  Scenario: RevisionSlider pointers can be dragged
-    When I have loaded the RevisionSlider and dismissed the help dialog
-    And I drag the older pointer to revision 3
-    And I wait until the diff has loaded
-    And I drag the newer pointer to revision 4
-    And I wait until the diff has loaded
-    Then the older pointer should be on revision 3
-    And the newer pointer should be on revision 4
-    And revision 3 should be loaded on the left of the diff
-    And revision 4 should be loaded on the right of the diff
