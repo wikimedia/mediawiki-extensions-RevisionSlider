@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"BrennodAloisi",
 			"Cedric31"
 		]
 	},
 	"revisionslider-toggle-label": "Navigar dins l'istoric",
+	"revisionslider-show-help-tooltip": "Mostrar lo tèxt d’ajuda",
 	"revisionslider-tutorial": "Tutorial del cursor de revision",
 	"revisionslider-previous-dialog": "Precedent",
 	"revisionslider-next-dialog": "Seguent",
