@@ -54,6 +54,15 @@ class DiffPage extends Page {
 		);
 	}
 
+	get backwardsArrow() { return $( '.mw-revslider-arrow-backwards' ); }
+	get forwardsArrow() { return $( '.mw-revslider-arrow-forwards' ); }
+	isBackwardsArrowDisabled() {
+		return this.backwardsArrow.getAttribute( 'aria-disabled' ) === 'true';
+	}
+	isForwardsArrowDisabled() {
+		return this.forwardsArrow.getAttribute( 'aria-disabled' ) === 'true';
+	}
+
 	ready() {
 		Util.waitForModuleState( 'ext.RevisionSlider.lazyJs' );
 	}
@@ -213,10 +222,18 @@ class DiffPage extends Page {
 		$( '.mw-revslider-pointer-older' )
 			.dragAndDrop( this.getRevision( num ) );
 	}
-
 	dragNewerPointerTo( num ) {
 		$( '.mw-revslider-pointer-newer' )
 			.dragAndDrop( this.getRevision( num ) );
+	}
+	waitForSliding() {
+		// Roundabout way of detecting when the animation has stopped, by checking for a
+		// side-effect performed at the end of animation.  See ext.RevisionSlider.SliderView .
+		browser.waitUntil(
+			() => !$( '.mw-revslider-pointer-newer.ui-draggable-disabled' ).isDisplayed()
+		);
+		// Hopefully avoid a race condition while the animation completion callback finishes.
+		browser.pause( 100 );
 	}
 }
 
