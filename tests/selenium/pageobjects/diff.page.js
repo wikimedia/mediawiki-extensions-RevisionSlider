@@ -169,13 +169,6 @@ class DiffPage extends Page {
 		} );
 	}
 
-	waitUntilFinishedLoading() {
-		this.rsLoading.waitForExist( {
-			timeout: 2000,
-			reverse: true
-		} );
-	}
-
 	dwellRevision( num ) {
 		$( '.mw-revslider-revision[data-pos="' + num + '"]' ).moveTo();
 		$( '.mw-revslider-revision-tooltip-' + num ).waitForDisplayed();

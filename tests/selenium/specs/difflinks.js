@@ -13,7 +13,7 @@ describe( 'RevisionSlider diff links', function () {
 
 	it( ' older edit diff link can be clicked', function () {
 		DiffPage.rsEditOlderButton.click();
-		DiffPage.waitUntilFinishedLoading();
+		DiffPage.waitUntilLoaded();
 
 		assert( DiffPage.isOlderPointerOn( 2 ) );
 		assert( DiffPage.isNewerPointerOn( 3 ) );
@@ -23,10 +23,10 @@ describe( 'RevisionSlider diff links', function () {
 
 	it( ' newer edit diff link can be clicked', function () {
 		DiffPage.rsEditOlderButton.click();
-		DiffPage.waitUntilFinishedLoading();
+		DiffPage.waitUntilLoaded();
 
 		DiffPage.rsEditNewerButton.click();
-		DiffPage.waitUntilFinishedLoading();
+		DiffPage.waitUntilLoaded();
 
 		assert( DiffPage.isOlderPointerOn( 3 ) );
 		assert( DiffPage.isNewerPointerOn( 4 ) );

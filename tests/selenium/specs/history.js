@@ -22,17 +22,17 @@ describe( 'RevisionSlider history', function () {
 		// On a page with 4 revisions, the default positions are 3 → 4.
 		DiffPage.getRevisionDown( 1 ).click();
 		// Positions are 1 → 4 now.
-		DiffPage.waitUntilFinishedLoading();
+		DiffPage.waitUntilLoaded();
 		DiffPage.getRevisionUp( 2 ).click();
 		// Positions are 1 → 2 now.
-		DiffPage.waitUntilFinishedLoading();
+		DiffPage.waitUntilLoaded();
 
 		browser.back();
-		DiffPage.waitUntilFinishedLoading();
+		DiffPage.waitUntilLoaded();
 		browser.back();
-		DiffPage.waitUntilFinishedLoading();
+		DiffPage.waitUntilLoaded();
 		browser.forward();
-		DiffPage.waitUntilFinishedLoading();
+		DiffPage.waitUntilLoaded();
 
 		// 2 steps back and 1 forward is the same as 1 back, i.e. positions should be 1 → 4 now.
 		assert( DiffPage.isOlderPointerOn( 1 ) );
@@ -43,16 +43,16 @@ describe( 'RevisionSlider history', function () {
 
 	it( ' can be accessed using browser back and forward buttons after dragging', function () {
 		DiffPage.rsPointerOlder.dragAndDrop( DiffPage.getRevision( 1 ) );
-		DiffPage.waitUntilFinishedLoading();
+		DiffPage.waitUntilLoaded();
 		DiffPage.rsPointerNewer.dragAndDrop( DiffPage.getRevision( 2 ) );
-		DiffPage.waitUntilFinishedLoading();
+		DiffPage.waitUntilLoaded();
 
 		browser.back();
-		DiffPage.waitUntilFinishedLoading();
+		DiffPage.waitUntilLoaded();
 		browser.back();
-		DiffPage.waitUntilFinishedLoading();
+		DiffPage.waitUntilLoaded();
 		browser.forward();
-		DiffPage.waitUntilFinishedLoading();
+		DiffPage.waitUntilLoaded();
 
 		assert( DiffPage.isOlderPointerOn( 1 ) );
 		assert( DiffPage.isNewerPointerOn( 4 ) );
