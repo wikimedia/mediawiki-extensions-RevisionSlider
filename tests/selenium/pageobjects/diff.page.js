@@ -62,6 +62,9 @@ class DiffPage extends Page {
 	isForwardsArrowDisabled() {
 		return this.forwardsArrow.getAttribute( 'aria-disabled' ) === 'true';
 	}
+	waitForSliding() {
+		this.waitForAnimation( $( '.mw-revslider-revisions-container' ) );
+	}
 
 	ready() {
 		Util.waitForModuleState( 'ext.RevisionSlider.lazyJs' );
@@ -217,14 +220,15 @@ class DiffPage extends Page {
 	dragNewerPointerTo( num ) {
 		this.rsPointerNewer.dragAndDrop( this.getRevision( num ) );
 	}
-	waitForSliding() {
-		// Roundabout way of detecting when the animation has stopped, by checking for a
-		// side-effect performed at the end of animation.  See ext.RevisionSlider.SliderView .
-		browser.waitUntil(
-			() => !$( '.mw-revslider-pointer-newer.ui-draggable-disabled' ).isDisplayed()
-		);
-		// Hopefully avoid a race condition while the animation completion callback finishes.
-		browser.pause( 100 );
+
+	waitForAnimation( el ) {
+		browser.execute( ( elem ) => {
+			setInterval( function () {
+				if ( $( elem ).filter( ':not(animated)' ) ) {
+					clearInterval();
+				}
+			}, 500 );
+		}, el );
 	}
 }
 
