@@ -6,7 +6,7 @@ const assert = require( 'assert' ),
 describe( 'RevisionSlider pointers', function () {
 
 	before( function () {
-		DiffPage.prepareSimpleTests( 5 );
+		DiffPage.prepareSimpleTests( 3 );
 	} );
 
 	beforeEach( function () {
@@ -20,35 +20,35 @@ describe( 'RevisionSlider pointers', function () {
 
 	it( ' can be dragged', function () {
 		assert(
-			DiffPage.isOlderPointerOn( 4 ),
+			DiffPage.isOlderPointerOn( 2 ),
 			'older pointer should be on previous revision'
 		);
 		assert(
-			DiffPage.isNewerPointerOn( 5 ),
+			DiffPage.isNewerPointerOn( 3 ),
 			'newer pointer should be on current revision'
 		);
 
-		DiffPage.dragOlderPointerTo( 3 );
+		DiffPage.dragOlderPointerTo( 1 );
 		DiffPage.waitUntilLoaded();
 
-		DiffPage.dragNewerPointerTo( 4 );
+		DiffPage.dragNewerPointerTo( 2 );
 		DiffPage.waitUntilLoaded();
 
 		assert(
-			DiffPage.isOlderPointerOn( 3 ),
-			'older pointer should be on revision 3'
+			DiffPage.isOlderPointerOn( 1 ),
+			'older pointer should be on revision 1'
 		);
 		assert(
-			DiffPage.isNewerPointerOn( 4 ),
-			'newer pointer should be on revision 4'
+			DiffPage.isNewerPointerOn( 2 ),
+			'newer pointer should be on revision 2'
 		);
 		assert(
-			DiffPage.showsOlderSummary( 3 ),
-			'revision 3 should be loaded on the left of the diff'
+			DiffPage.showsOlderSummary( 1 ),
+			'revision 1 should be loaded on the left of the diff'
 		);
 		assert(
-			DiffPage.showsNewerSummary( 4 ),
-			'revision 4 should be loaded on the right of the diff'
+			DiffPage.showsNewerSummary( 2 ),
+			'revision 2 should be loaded on the right of the diff'
 		);
 	} );
 } );

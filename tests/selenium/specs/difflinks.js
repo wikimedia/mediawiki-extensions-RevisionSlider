@@ -6,7 +6,7 @@ const assert = require( 'assert' ),
 describe( 'RevisionSlider diff links', function () {
 
 	beforeEach( function () {
-		DiffPage.prepareSimpleTests( 4 );
+		DiffPage.prepareSimpleTests( 3 );
 		DiffPage.ready();
 		DiffPage.openSlider();
 	} );
@@ -15,10 +15,10 @@ describe( 'RevisionSlider diff links', function () {
 		DiffPage.rsEditOlderButton.click();
 		DiffPage.waitUntilLoaded();
 
-		assert( DiffPage.isOlderPointerOn( 2 ) );
-		assert( DiffPage.isNewerPointerOn( 3 ) );
-		assert( DiffPage.showsOlderSummary( 2 ) );
-		assert( DiffPage.showsNewerSummary( 3 ) );
+		assert( DiffPage.isOlderPointerOn( 1 ) );
+		assert( DiffPage.isNewerPointerOn( 2 ) );
+		assert( DiffPage.showsOlderSummary( 1 ) );
+		assert( DiffPage.showsNewerSummary( 2 ) );
 	} );
 
 	it( ' newer edit diff link can be clicked', function () {
@@ -28,9 +28,9 @@ describe( 'RevisionSlider diff links', function () {
 		DiffPage.rsEditNewerButton.click();
 		DiffPage.waitUntilLoaded();
 
-		assert( DiffPage.isOlderPointerOn( 3 ) );
-		assert( DiffPage.isNewerPointerOn( 4 ) );
-		assert( DiffPage.showsOlderSummary( 3 ) );
-		assert( DiffPage.showsNewerSummary( 4 ) );
+		assert( DiffPage.isOlderPointerOn( 2 ) );
+		assert( DiffPage.isNewerPointerOn( 3 ) );
+		assert( DiffPage.showsOlderSummary( 2 ) );
+		assert( DiffPage.showsNewerSummary( 3 ) );
 	} );
 } );
