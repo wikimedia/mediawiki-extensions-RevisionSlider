@@ -212,12 +212,10 @@ class DiffPage extends Page {
 	}
 
 	dragOlderPointerTo( num ) {
-		$( '.mw-revslider-pointer-older' )
-			.dragAndDrop( this.getRevision( num ) );
+		this.rsPointerOlder.dragAndDrop( this.getRevision( num ) );
 	}
 	dragNewerPointerTo( num ) {
-		$( '.mw-revslider-pointer-newer' )
-			.dragAndDrop( this.getRevision( num ) );
+		this.rsPointerNewer.dragAndDrop( this.getRevision( num ) );
 	}
 	waitForSliding() {
 		// Roundabout way of detecting when the animation has stopped, by checking for a

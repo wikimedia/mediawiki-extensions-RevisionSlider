@@ -42,9 +42,9 @@ describe( 'RevisionSlider history', function () {
 	} );
 
 	it( ' can be accessed using browser back and forward buttons after dragging', function () {
-		DiffPage.rsPointerOlder.dragAndDrop( DiffPage.getRevision( 1 ) );
+		DiffPage.dragOlderPointerTo( 1 );
 		DiffPage.waitUntilLoaded();
-		DiffPage.rsPointerNewer.dragAndDrop( DiffPage.getRevision( 2 ) );
+		DiffPage.dragNewerPointerTo( 2 );
 		DiffPage.waitUntilLoaded();
 
 		browser.back();
