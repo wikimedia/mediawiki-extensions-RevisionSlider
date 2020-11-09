@@ -14,6 +14,13 @@ exports.config = {
 	// Use in a test as `browser.options.<key>`.
 	// Defaults are for convenience with MediaWiki-Vagrant
 
+	// ==================
+	// Runner Configuration
+	// ==================
+	runner: 'local',
+	// The standalone chromedriver uses "/wd/hub".
+	path: '/wd/hub',
+
 	// Wiki admin
 	mwUser: process.env.MEDIAWIKI_USER || 'Admin',
 	mwPwd: process.env.MEDIAWIKI_PASSWORD || 'vagrant',
