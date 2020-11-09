@@ -119,16 +119,16 @@ class DiffPage extends Page {
 	 * @param {number} num Number of different edits to add.
 	 */
 	addUserEditsToPage( title, num ) {
-		for ( let i = 1; i <= num; i++ ) {
-			browser.call( async () => {
-				const bot = await Api.bot();
-				return bot.edit(
+		browser.call( async () => {
+			const bot = await Api.bot();
+			for ( let i = 1; i <= num; i++ ) {
+				await bot.edit(
 					title,
 					'RevisionSlider-Test-Text ' + i,
 					'RevisionSlider-Test-Summary ' + i
 				);
-			} );
-		}
+			}
+		} );
 	}
 
 	/**
