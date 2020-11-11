@@ -54,6 +54,10 @@ class DiffPage extends Page {
 		);
 	}
 
+	getTooltip( num ) {
+		return $( '.mw-revslider-revision-tooltip-' + num );
+	}
+
 	get backwardsArrow() { return $( '.mw-revslider-arrow-backwards' ); }
 	get forwardsArrow() { return $( '.mw-revslider-arrow-forwards' ); }
 	isBackwardsArrowDisabled() {
@@ -182,8 +186,8 @@ class DiffPage extends Page {
 	}
 
 	dwellRevision( num ) {
-		$( '.mw-revslider-revision[data-pos="' + num + '"]' ).moveTo();
-		$( '.mw-revslider-revision-tooltip-' + num ).waitForDisplayed();
+		this.getRevision( num ).moveTo();
+		this.getTooltip( num ).waitForDisplayed();
 	}
 
 	dwellTagFilterBubble() {
