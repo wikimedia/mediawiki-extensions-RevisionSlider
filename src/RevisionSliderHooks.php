@@ -21,22 +21,11 @@ use User;
 class RevisionSliderHooks {
 
 	/**
-	 * @var Config
+	 * @return Config The RevisionSlider extensions config
 	 */
-	private static $config;
-
-	/**
-	 * Returns the RevisionSlider extensions config.
-	 *
-	 * @return Config
-	 */
-	private static function getConfig() {
-		if ( self::$config === null ) {
-			self::$config = MediaWikiServices::getInstance()
-				->getConfigFactory()
-				->makeConfig( 'revisionslider' );
-		}
-		return self::$config;
+	private static function getConfig() : Config {
+		return MediaWikiServices::getInstance()->getConfigFactory()
+			->makeConfig( 'revisionslider' );
 	}
 
 	/**
@@ -61,7 +50,6 @@ class RevisionSliderHooks {
 
 		$services = MediaWikiServices::getInstance();
 		$userOptionsLookup = $services->getUserOptionsLookup();
-		$config = self::getConfig();
 
 		/**
 		 * If the user is logged in and has explictly requested to disable the extension don't load.
@@ -88,6 +76,7 @@ class RevisionSliderHooks {
 		$stats = $services->getStatsdDataFactory();
 		$stats->increment( 'RevisionSlider.event.hookinit' );
 
+		$config = self::getConfig();
 		$timeOffset = $config->get( 'LocalTZoffset' );
 		if ( $config->get( 'Localtimezone' ) === null ) {
 			$timeOffset = 0;
