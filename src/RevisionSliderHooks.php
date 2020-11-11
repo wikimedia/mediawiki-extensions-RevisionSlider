@@ -59,13 +59,15 @@ class RevisionSliderHooks {
 			return;
 		}
 
+		$services = MediaWikiServices::getInstance();
+		$userOptionsLookup = $services->getUserOptionsLookup();
 		$config = self::getConfig();
 
 		/**
 		 * If the user is logged in and has explictly requested to disable the extension don't load.
 		 */
 		$user = $diff->getUser();
-		if ( !$user->isAnon() && $user->getBoolOption( 'revisionslider-disable' ) ) {
+		if ( !$user->isAnon() && $userOptionsLookup->getBoolOption( $user, 'revisionslider-disable' ) ) {
 			return;
 		}
 
@@ -83,7 +85,7 @@ class RevisionSliderHooks {
 			return;
 		}
 
-		$stats = MediaWikiServices::getInstance()->getStatsdDataFactory();
+		$stats = $services->getStatsdDataFactory();
 		$stats->increment( 'RevisionSlider.event.hookinit' );
 
 		$timeOffset = $config->get( 'LocalTZoffset' );
@@ -93,7 +95,7 @@ class RevisionSliderHooks {
 			$timeOffset = 0;
 		}
 
-		$autoExpand = $user->getBoolOption( 'userjs-revslider-autoexpand' );
+		$autoExpand = $userOptionsLookup->getBoolOption( $user, 'userjs-revslider-autoexpand' );
 
 		$out = RequestContext::getMain()->getOutput();
 		// Load styles on page load to avoid FOUC
@@ -158,7 +160,8 @@ class RevisionSliderHooks {
 			'type' => 'toggle',
 			'label-message' => 'revisionslider-preference-disable',
 			'section' => 'rendering/diffs',
-			'default' => $user->getBoolOption( 'revisionslider-disable' ),
+			'default' => MediaWikiServices::getInstance()
+				->getUserOptionsLookup()->getBoolOption( $user, 'revisionslider-disable' ),
 		];
 	}
 
