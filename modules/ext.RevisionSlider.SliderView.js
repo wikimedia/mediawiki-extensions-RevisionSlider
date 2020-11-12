@@ -347,7 +347,7 @@
 		 * Handler for click events on the pointer container element. Forwards these events to the generic handler for
 		 * revision clicks.
 		 *
-		 * @param {Event} event
+		 * @param {MouseEvent} event
 		 */
 		pointerContainerClickHandler: function ( event ) {
 			var clickedPos = this.getRevisionPositionFromLeftOffset( event.pageX ),
@@ -361,7 +361,7 @@
 		 * Handler for click events on a revisionWrapper element. Forwards these events to the generic handler for
 		 * revision clicks.
 		 *
-		 * @param {Event} event
+		 * @param {MouseEvent} event
 		 * @param {jQuery} $revisionWrapper
 		 */
 		revisionWrapperClickHandler: function ( event, $revisionWrapper ) {
@@ -428,7 +428,7 @@
 		 * Build rules for tabbing when `keydown` event triggers on pointers
 		 *
 		 * @param {jQuery} $pointer
-		 * @param {Event} event
+		 * @param {KeyboardEvent} event
 		 * @param {jQuery} $revisions
 		 */
 		buildTabbingRulesOnKeyDown: function ( $pointer, event, $revisions ) {
@@ -485,7 +485,7 @@
 		 * Build rules for tabbing when `keyup` event triggers on pointers
 		 *
 		 * @param {jQuery} $pointer
-		 * @param {Event} event
+		 * @param {KeyboardEvent} event
 		 * @param {jQuery} $revisions
 		 */
 		buildTabbingRulesOnKeyUp: function ( $pointer, event, $revisions ) {

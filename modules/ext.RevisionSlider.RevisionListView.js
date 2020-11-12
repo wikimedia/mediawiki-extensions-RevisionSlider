@@ -151,7 +151,7 @@
 
 		/**
 		 * @param {jQuery} $revisionWrapper
-		 * @param {Event} event
+		 * @param {MouseEvent} event
 		 */
 		setRevisionHovered: function ( $revisionWrapper, event ) {
 			var hasMovedTop = event.pageY - $revisionWrapper.offset().top < $revisionWrapper.height() / 2,
@@ -427,7 +427,7 @@
 		 *
 		 * @param {jQuery} $userBubble
 		 * @param {string} userName
-		 * @param {Event} event
+		 * @param {MouseEvent} event
 		 */
 		setUserFilterEvents: function ( $userBubble, userName, event ) {
 			var self = this,
@@ -468,7 +468,6 @@
 		 * Highlights revisions of the sameUser
 		 *
 		 * @param {string} userString
-		 * @param {boolean} highlight
 		 */
 		highlightSameUserRevisions: function ( userString ) {
 			$( '[data-user="' + userString + '"]' ).parent()
@@ -549,7 +548,7 @@
 		 * Set tag filter events for revisions
 		 *
 		 * @param {jQuery} $tagBubble
-		 * @param {Event} event
+		 * @param {MouseEvent} event
 		 */
 		setTagFilterEvents: function ( $tagBubble, event ) {
 			var self = this,
