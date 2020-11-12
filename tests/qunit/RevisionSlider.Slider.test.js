@@ -1,15 +1,16 @@
 ( function () {
 	var Slider = mw.libs.revisionSlider.Slider,
 		RevisionList = mw.libs.revisionSlider.RevisionList,
-		Revision = mw.libs.revisionSlider.Revision,
-		makeNRevisions = function ( n ) {
-			var revs = [],
-				i;
-			for ( i = 0; i < n; i++ ) {
-				revs.push( new Revision( { revid: i + 1, user: 'Fooo' } ) );
-			}
-			return new RevisionList( revs );
-		};
+		Revision = mw.libs.revisionSlider.Revision;
+
+	function makeNRevisions( n ) {
+		var revs = [],
+			i;
+		for ( i = 0; i < n; i++ ) {
+			revs.push( new Revision( { revid: i + 1, user: 'Fooo' } ) );
+		}
+		return new RevisionList( revs );
+	}
 
 	QUnit.module( 'ext.RevisionSlider.Slider' );
 

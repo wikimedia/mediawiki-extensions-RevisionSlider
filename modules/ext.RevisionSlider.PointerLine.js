@@ -10,10 +10,10 @@
 	 * @param {string} name
 	 * @constructor
 	 */
-	var PointerLine = function ( pointer, name ) {
+	function PointerLine( pointer, name ) {
 		this.pointer = pointer;
 		this.name = name;
-	};
+	}
 
 	$.extend( PointerLine.prototype, {
 		/**

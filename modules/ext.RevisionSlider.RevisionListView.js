@@ -9,10 +9,10 @@
 	 * @param {string} [dir]
 	 * @constructor
 	 */
-	var RevisionListView = function ( revisionList, dir ) {
+	function RevisionListView( revisionList, dir ) {
 		this.revisionList = revisionList;
 		this.dir = dir;
-	};
+	}
 
 	/**
 	 * @class mw.libs.revisionSlider.RevisionListView
@@ -77,15 +77,7 @@
 			var revs = this.revisionList.getRevisions(),
 				maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() ),
 				self = this,
-				i, diffSize, relativeChangeSize,
-				setHovered = function ( event ) {
-					if ( self.allowHover ) {
-						self.setRevisionHovered( $( this ), event );
-					}
-				},
-				unsetHovered = function () {
-					self.unsetRevisionHovered( $( this ) );
-				};
+				i, diffSize, relativeChangeSize;
 
 			positionOffset = positionOffset || 0;
 			this.revisionWidth = revisionTickWidth;
@@ -129,8 +121,14 @@
 									.addClass( 'mw-revslider-pointer mw-revslider-pointer-ghost' )
 							)
 						)
-						.on( 'mouseenter', setHovered )
-						.on( 'mouseleave', unsetHovered )
+						.on( 'mouseenter', function ( event ) {
+							if ( self.allowHover ) {
+								self.setRevisionHovered( $( this ), event );
+							}
+						} )
+						.on( 'mouseleave', function () {
+							self.unsetRevisionHovered( $( this ) );
+						} )
 					);
 			}
 
@@ -392,10 +390,7 @@
 		makeUserLine: function ( userString, userGender ) {
 			var self = this,
 				$userLine,
-				$userBubble,
-				updateUserLineHighlighting = function ( event ) {
-					self.setUserFilterEvents( $( this ), userString, event );
-				};
+				$userBubble;
 
 			if ( !userString ) {
 				return '';
@@ -410,7 +405,9 @@
 					$( '<a>' ).addClass( 'mw-userlink' ).attr( 'href', mw.util.getUrl( this.getUserPage( userString ) ) ).text( this.stripInvalidCharacters( userString ) )
 				),
 				$userBubble = $( '<div>' ).addClass( 'mw-revslider-bubble' )
-					.on( 'click mouseenter mouseleave', updateUserLineHighlighting )
+					.on( 'click mouseenter mouseleave', function ( event ) {
+						self.setUserFilterEvents( $( this ), userString, event );
+					} )
 			);
 
 			if ( self.selectedUser === userString ) {
@@ -512,10 +509,7 @@
 		 */
 		makeTagsLine: function ( rev ) {
 			var self = this,
-				tags, $tagLines, i, $tagLine, $tagBubble,
-				updateTagLineHighlighting = function ( event ) {
-					self.setTagFilterEvents( $( this ), event );
-				};
+				tags, $tagLines, i, $tagLine, $tagBubble;
 
 			if ( rev.hasNoTags() ) {
 				return '';
@@ -528,7 +522,9 @@
 				$tagLine = $( '<div>' ).addClass( 'mw-revslider-highlightable-row mw-revslider-tag-row' ).append(
 					tags[ i ],
 					$tagBubble = $( '<div>' ).addClass( 'mw-revslider-bubble' )
-						.on( 'click mouseenter mouseleave', updateTagLineHighlighting ),
+						.on( 'click mouseenter mouseleave', function ( event ) {
+							self.setTagFilterEvents( $( this ), event );
+						} ),
 					'<br>'
 				);
 

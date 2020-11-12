@@ -5,102 +5,103 @@
 		autoExpand = settings.shouldAutoExpand(),
 		expanded = autoExpand,
 		autoExpandButton,
-		toggleButton = OO.ui.ButtonWidget.static.infuse( $( '.mw-revslider-toggle-button' ) ),
-		initialize = function () {
-			var startTime = mw.now(),
-				api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) ),
-				changeTags = [];
+		toggleButton = OO.ui.ButtonWidget.static.infuse( $( '.mw-revslider-toggle-button' ) );
 
-			toggleButton.$element.children().attr( {
-				'aria-expanded': autoExpand,
-				'aria-controls': 'mw-revslider-slider-wrapper'
-			} );
+	function initialize() {
+		var startTime = mw.now(),
+			api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) ),
+			changeTags = [];
 
-			mw.track( 'counter.MediaWiki.RevisionSlider.event.init' );
-			mw.libs.revisionSlider.userOffset = mw.user.options.get( 'timecorrection' ) ? mw.user.options.get( 'timecorrection' ).split( '|' )[ 1 ] : mw.config.get( 'extRevisionSliderTimeOffset' );
+		toggleButton.$element.children().attr( {
+			'aria-expanded': autoExpand,
+			'aria-controls': 'mw-revslider-slider-wrapper'
+		} );
 
-			HelpDialog.init();
+		mw.track( 'counter.MediaWiki.RevisionSlider.event.init' );
+		mw.libs.revisionSlider.userOffset = mw.user.options.get( 'timecorrection' ) ? mw.user.options.get( 'timecorrection' ).split( '|' )[ 1 ] : mw.config.get( 'extRevisionSliderTimeOffset' );
 
-			api.fetchAvailableChangeTags().then( function ( data ) {
-				if ( typeof data === 'object' &&
-					data.query &&
-					data.query.tags &&
-					data.query.tags.length > 0
-				) {
-					changeTags = data.query.tags;
-				}
-				api.fetchRevisionData( mw.config.get( 'wgPageName' ), {
-					startId: mw.config.get( 'wgDiffNewId' ),
-					limit: mw.libs.revisionSlider.calculateRevisionsPerWindow( 160, 16 ),
-					changeTags: changeTags
-				} ).then( function ( data2 ) {
-					var revs,
-						revisionList,
-						$container,
-						slider;
+		HelpDialog.init();
 
-					mw.track( 'timing.MediaWiki.RevisionSlider.timing.initFetchRevisionData', mw.now() - startTime );
+		api.fetchAvailableChangeTags().then( function ( data ) {
+			if ( typeof data === 'object' &&
+				data.query &&
+				data.query.tags &&
+				data.query.tags.length > 0
+			) {
+				changeTags = data.query.tags;
+			}
+			api.fetchRevisionData( mw.config.get( 'wgPageName' ), {
+				startId: mw.config.get( 'wgDiffNewId' ),
+				limit: mw.libs.revisionSlider.calculateRevisionsPerWindow( 160, 16 ),
+				changeTags: changeTags
+			} ).then( function ( data2 ) {
+				var revs,
+					revisionList,
+					$container,
+					slider;
 
-					try {
-						revs = data2.revisions;
-						revs.reverse();
+				mw.track( 'timing.MediaWiki.RevisionSlider.timing.initFetchRevisionData', mw.now() - startTime );
 
-						$container = $( '.mw-revslider-slider-wrapper' );
-						$container.attr( 'id', 'mw-revslider-slider-wrapper' );
+				try {
+					revs = data2.revisions;
+					revs.reverse();
 
-						revisionList = new mw.libs.revisionSlider.RevisionList(
-							mw.libs.revisionSlider.makeRevisions( revs ),
-							changeTags
-						);
-						revisionList.getView().setDir( $container.css( 'direction' ) || 'ltr' );
+					$container = $( '.mw-revslider-slider-wrapper' );
+					$container.attr( 'id', 'mw-revslider-slider-wrapper' );
 
-						slider = new mw.libs.revisionSlider.Slider( revisionList );
+					revisionList = new mw.libs.revisionSlider.RevisionList(
+						mw.libs.revisionSlider.makeRevisions( revs ),
+						changeTags
+					);
+					revisionList.getView().setDir( $container.css( 'direction' ) || 'ltr' );
+
+					slider = new mw.libs.revisionSlider.Slider( revisionList );
+					slider.getView().render( $container );
+
+					$( window ).on( 'resize', OO.ui.throttle( function () {
 						slider.getView().render( $container );
+					}, 250 ) );
 
-						$( window ).on( 'resize', OO.ui.throttle( function () {
-							slider.getView().render( $container );
-						}, 250 ) );
-
-						if ( !settings.shouldHideHelpDialogue() ) {
-							HelpDialog.show();
-							settings.setHideHelpDialogue( true );
-						}
-
-						$( '.mw-revslider-placeholder' ).remove();
-						mw.track( 'timing.MediaWiki.RevisionSlider.timing.init', mw.now() - startTime );
-					} catch ( err ) {
-						$( '.mw-revslider-placeholder' )
-							.text( mw.message( 'revisionslider-loading-failed' ).text() );
-						mw.log.error( err );
-						mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
+					if ( !settings.shouldHideHelpDialogue() ) {
+						HelpDialog.show();
+						settings.setHideHelpDialogue( true );
 					}
-				}, function ( err ) {
+
+					$( '.mw-revslider-placeholder' ).remove();
+					mw.track( 'timing.MediaWiki.RevisionSlider.timing.init', mw.now() - startTime );
+				} catch ( err ) {
 					$( '.mw-revslider-placeholder' )
 						.text( mw.message( 'revisionslider-loading-failed' ).text() );
 					mw.log.error( err );
 					mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
-				} );
+				}
+			}, function ( err ) {
+				$( '.mw-revslider-placeholder' )
+					.text( mw.message( 'revisionslider-loading-failed' ).text() );
+				mw.log.error( err );
+				mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
 			} );
-		},
+		} );
+	}
 
-		expand = function () {
-			toggleButton.setTitle( mw.message( 'revisionslider-toggle-title-collapse' ).text() );
-			$( '.mw-revslider-container' ).removeClass( 'mw-revslider-container-collapsed' )
-				.addClass( 'mw-revslider-container-expanded' );
-			$( '.mw-revslider-slider-wrapper' ).show();
-			$( '.mw-revslider-auto-expand-button' ).show();
-			toggleButton.$element.children().attr( 'aria-expanded', 'true' );
-			expanded = true;
-		},
+	function expand() {
+		toggleButton.setTitle( mw.message( 'revisionslider-toggle-title-collapse' ).text() );
+		$( '.mw-revslider-container' ).removeClass( 'mw-revslider-container-collapsed' )
+			.addClass( 'mw-revslider-container-expanded' );
+		$( '.mw-revslider-slider-wrapper' ).show();
+		$( '.mw-revslider-auto-expand-button' ).show();
+		toggleButton.$element.children().attr( 'aria-expanded', 'true' );
+		expanded = true;
+	}
 
-		collapse = function () {
-			toggleButton.setTitle( mw.message( 'revisionslider-toggle-title-expand' ).text() );
-			$( '.mw-revslider-container' ).removeClass( 'mw-revslider-container-expanded' )
-				.addClass( 'mw-revslider-container-collapsed' );
-			$( '.mw-revslider-slider-wrapper' ).hide();
-			$( '.mw-revslider-auto-expand-button' ).hide();
-			toggleButton.$element.children().attr( 'aria-expanded', 'false' );
-		};
+	function collapse() {
+		toggleButton.setTitle( mw.message( 'revisionslider-toggle-title-expand' ).text() );
+		$( '.mw-revslider-container' ).removeClass( 'mw-revslider-container-expanded' )
+			.addClass( 'mw-revslider-container-collapsed' );
+		$( '.mw-revslider-slider-wrapper' ).hide();
+		$( '.mw-revslider-auto-expand-button' ).hide();
+		toggleButton.$element.children().attr( 'aria-expanded', 'false' );
+	}
 
 	autoExpandButton = new OO.ui.ToggleButtonWidget( {
 		icon: 'pushPin',

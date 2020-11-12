@@ -10,10 +10,10 @@
 	 * @param {RevisionList} revisions
 	 * @constructor
 	 */
-	var Slider = function ( revisions ) {
+	function Slider( revisions ) {
 		this.revisions = revisions;
 		this.view = new mw.libs.revisionSlider.SliderView( this );
-	};
+	}
 
 	/**
 	 * @class mw.libs.revisionSlider.Slider

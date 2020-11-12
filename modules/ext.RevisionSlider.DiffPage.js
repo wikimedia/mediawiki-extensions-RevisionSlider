@@ -8,9 +8,9 @@
 	 * @class Diffpage
 	 * @constructor
 	 */
-	var DiffPage = function () {
+	function DiffPage() {
 		this.lastRequest = null;
-	};
+	}
 
 	/**
 	 * @class mw.libs.revisionSlider.DiffPage
