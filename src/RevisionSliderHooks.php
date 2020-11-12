@@ -8,7 +8,6 @@ use Html;
 use MediaWiki\MediaWikiServices;
 use Message;
 use OOUI\ButtonWidget;
-use RequestContext;
 use User;
 
 /**
@@ -86,7 +85,7 @@ class RevisionSliderHooks {
 
 		$autoExpand = $userOptionsLookup->getBoolOption( $user, 'userjs-revslider-autoexpand' );
 
-		$out = RequestContext::getMain()->getOutput();
+		$out = $diff->getOutput();
 		// Load styles on page load to avoid FOUC
 		$out->addModuleStyles( 'ext.RevisionSlider.lazyCss' );
 		if ( $autoExpand ) {
