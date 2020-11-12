@@ -69,8 +69,7 @@
 		},
 		"ext.RevisionSlider.init": {
 			"packageFiles": [
-				"modules/ext.RevisionSlider.init.js",
-				"modules/ext.RevisionSlider.Revision.js"
+				"modules/ext.RevisionSlider.init.js"
 			],
 			"styles": [
 				"modules/ext.RevisionSlider.less"
