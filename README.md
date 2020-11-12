@@ -20,3 +20,6 @@ For the tests run:
 
 ## QUnit Tests
 See https://www.mediawiki.org/wiki/Manual:JavaScript_unit_testing#Run_the_tests
+
+## Browser Tests
+See tests/selenium/README.md
