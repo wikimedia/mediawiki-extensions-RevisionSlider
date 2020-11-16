@@ -2,10 +2,10 @@
 	/**
 	 * @constructor
 	 */
-	var Settings = function () {
+	function Settings() {
 		this.hideHelpDialogue = this.loadBoolean( 'hide-help-dialogue' );
 		this.autoExpand = this.loadBoolean( 'autoexpand' );
-	};
+	}
 
 	$.extend( Settings.prototype, {
 		/**

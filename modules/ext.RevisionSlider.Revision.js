@@ -4,7 +4,7 @@
 	 * @param {Object} data - Containing keys `id`, `size`, `comment`, `parsedcomment`, `timestamp`, `user` and `minor`
 	 * @constructor
 	 */
-	var Revision = function ( data ) {
+	function Revision( data ) {
 		this.id = data.revid;
 		this.size = data.size;
 		this.timestamp = data.timestamp;
@@ -26,7 +26,7 @@
 				this.userGender = data.userGender;
 			}
 		}
-	};
+	}
 
 	/**
 	 * @class mw.libs.revisionSlider.Revision

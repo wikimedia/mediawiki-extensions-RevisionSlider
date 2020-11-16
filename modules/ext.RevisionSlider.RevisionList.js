@@ -9,12 +9,12 @@
 	 * @param {Object[]} availableTags
 	 * @constructor
 	 */
-	var RevisionList = function ( revs, availableTags ) {
+	function RevisionList( revs, availableTags ) {
 		this.revisions = [];
 		this.availableTags = availableTags;
 		this.initialize( revs );
 		this.view = new mw.libs.revisionSlider.RevisionListView( this );
-	};
+	}
 
 	/**
 	 * @class mw.libs.revisionSlider.RevisionList

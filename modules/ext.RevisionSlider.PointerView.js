@@ -11,10 +11,10 @@
 	 * @param {string} name
 	 * @constructor
 	 */
-	var PointerView = function ( pointer, name ) {
+	function PointerView( pointer, name ) {
 		this.pointer = pointer;
 		this.name = name;
-	};
+	}
 
 	$.extend( PointerView.prototype, {
 		/**

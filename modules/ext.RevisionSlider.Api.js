@@ -3,9 +3,9 @@
 	 * @param {string} apiUrl
 	 * @constructor
 	 */
-	var Api = function ( apiUrl ) {
+	function Api( apiUrl ) {
 		this.url = apiUrl;
-	};
+	}
 
 	/**
 	 * @class mw.libs.revisionSlider.Api

@@ -9,9 +9,9 @@
 	 * @param {SliderView} sliderView
 	 * @constructor
 	 */
-	var SliderArrowView = function ( sliderView ) {
+	function SliderArrowView( sliderView ) {
 		this.sliderView = sliderView;
-	};
+	}
 
 	/**
 	 * @class mw.libs.revisionSlider.SliderArrowView
