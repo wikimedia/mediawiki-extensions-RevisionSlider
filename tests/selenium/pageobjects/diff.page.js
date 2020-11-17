@@ -76,11 +76,12 @@ class DiffPage extends Page {
 
 	/**
 	 * @param {number} num Number of different edits.
+	 * @param {boolean} [showHelp] Display help dialog. Defaults to false.
 	 */
-	prepareSimpleTests( num ) {
+	prepareSimpleTests( num, showHelp = false ) {
 		const title = Util.getTestString( 'revisionslider-test-' );
 		BlankPage.open();
-		this.toggleHelpDialog( false );
+		this.toggleHelpDialog( showHelp );
 		this.addUserEditsToPage( title, num );
 		this.open( title );
 	}
@@ -101,6 +102,9 @@ class DiffPage extends Page {
 	open( title ) {
 		super.openTitle( title, { type: 'revision', diff: '' } );
 	}
+
+	get helpDialog() { return $( '.mw-revslider-help-dialog' ); }
+	get nextHelpButton() { return $( '.mw-revslider-help-next' ); }
 
 	/**
 	 * @param {boolean} [show] Defaults to true.
