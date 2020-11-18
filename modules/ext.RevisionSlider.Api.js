@@ -1,4 +1,5 @@
 /**
+ * @class Api
  * @param {string} apiUrl
  * @constructor
  */

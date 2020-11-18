@@ -1,6 +1,7 @@
 /**
  * Module containing the RevisionSlider tutorial
  *
+ * @class HelpDialog
  * @param {Object} config
  * @constructor
  */

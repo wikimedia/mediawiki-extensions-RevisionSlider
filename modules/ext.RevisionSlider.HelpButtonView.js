@@ -1,4 +1,5 @@
 /**
+ * @class HelpButtonView
  * Module containing presentation logic for the helper button
  */
 var HelpButtonView = {
