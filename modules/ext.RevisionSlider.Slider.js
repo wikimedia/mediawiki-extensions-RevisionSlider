@@ -2,128 +2,126 @@
  * @external RevisionList
  * @external SliderView
  */
-( function () {
+/**
+ * Module handling the slider logic of the RevisionSlider
+ *
+ * @class Slider
+ * @param {RevisionList} revisions
+ * @constructor
+ */
+function Slider( revisions ) {
+	this.revisions = revisions;
+	this.view = new mw.libs.revisionSlider.SliderView( this );
+}
+
+/**
+ * @class mw.libs.revisionSlider.Slider
+ */
+$.extend( Slider.prototype, {
 	/**
-	 * Module handling the slider logic of the RevisionSlider
+	 * @type {RevisionList}
+	 */
+	revisions: null,
+
+	/**
+	 * @type {number}
+	 */
+	oldestVisibleRevisionIndex: 0,
+
+	/**
+	 * @type {number}
+	 */
+	revisionsPerWindow: 0,
+
+	/**
+	 * @type {SliderView}
+	 */
+	view: null,
+
+	/**
+	 * @return {RevisionList}
+	 */
+	getRevisionList: function () {
+		return this.revisions;
+	},
+
+	/**
+	 * @return {SliderView}
+	 */
+	getView: function () {
+		return this.view;
+	},
+
+	/**
+	 * Sets the number of revisions that are visible at once (depending on browser window size)
 	 *
-	 * @class Slider
-	 * @param {RevisionList} revisions
-	 * @constructor
+	 * @param {number} n
 	 */
-	function Slider( revisions ) {
-		this.revisions = revisions;
-		this.view = new mw.libs.revisionSlider.SliderView( this );
-	}
+	setRevisionsPerWindow: function ( n ) {
+		this.revisionsPerWindow = n;
+	},
 
 	/**
-	 * @class mw.libs.revisionSlider.Slider
+	 * @return {number}
 	 */
-	$.extend( Slider.prototype, {
-		/**
-		 * @type {RevisionList}
-		 */
-		revisions: null,
+	getRevisionsPerWindow: function () {
+		return this.revisionsPerWindow;
+	},
 
-		/**
-		 * @type {number}
-		 */
-		oldestVisibleRevisionIndex: 0,
+	/**
+	 * Returns the index of the oldest revision that is visible in the current window
+	 *
+	 * @return {number}
+	 */
+	getOldestVisibleRevisionIndex: function () {
+		return this.oldestVisibleRevisionIndex;
+	},
 
-		/**
-		 * @type {number}
-		 */
-		revisionsPerWindow: 0,
+	/**
+	 * Returns the index of the newest revision that is visible in the current window
+	 *
+	 * @return {number}
+	 */
+	getNewestVisibleRevisionIndex: function () {
+		return this.oldestVisibleRevisionIndex + this.revisionsPerWindow - 1;
+	},
 
-		/**
-		 * @type {SliderView}
-		 */
-		view: null,
+	/**
+	 * @return {boolean}
+	 */
+	isAtStart: function () {
+		return this.getOldestVisibleRevisionIndex() === 0 || this.revisions.getLength() <= this.revisionsPerWindow;
+	},
 
-		/**
-		 * @return {RevisionList}
-		 */
-		getRevisionList: function () {
-			return this.revisions;
-		},
+	/**
+	 * @return {boolean}
+	 */
+	isAtEnd: function () {
+		return this.getNewestVisibleRevisionIndex() === this.revisions.getLength() - 1 || this.revisions.getLength() <= this.revisionsPerWindow;
+	},
 
-		/**
-		 * @return {SliderView}
-		 */
-		getView: function () {
-			return this.view;
-		},
+	/**
+	 * Sets the index of the first revision that is visible in the current window
+	 *
+	 * @param {number} value
+	 */
+	setFirstVisibleRevisionIndex: function ( value ) {
+		this.oldestVisibleRevisionIndex = value;
+	},
 
-		/**
-		 * Sets the number of revisions that are visible at once (depending on browser window size)
-		 *
-		 * @param {number} n
-		 */
-		setRevisionsPerWindow: function ( n ) {
-			this.revisionsPerWindow = n;
-		},
+	/**
+	 * Sets the new oldestVisibleRevisionIndex after sliding in a direction
+	 *
+	 * @param {number} direction - Either -1, 0 or 1
+	 */
+	slide: function ( direction ) {
+		var highestPossibleFirstRev = this.revisions.getLength() - this.revisionsPerWindow;
 
-		/**
-		 * @return {number}
-		 */
-		getRevisionsPerWindow: function () {
-			return this.revisionsPerWindow;
-		},
+		this.oldestVisibleRevisionIndex += direction * this.revisionsPerWindow;
+		this.oldestVisibleRevisionIndex = Math.min( this.oldestVisibleRevisionIndex, highestPossibleFirstRev );
+		this.oldestVisibleRevisionIndex = Math.max( 0, this.oldestVisibleRevisionIndex );
+	}
+} );
 
-		/**
-		 * Returns the index of the oldest revision that is visible in the current window
-		 *
-		 * @return {number}
-		 */
-		getOldestVisibleRevisionIndex: function () {
-			return this.oldestVisibleRevisionIndex;
-		},
-
-		/**
-		 * Returns the index of the newest revision that is visible in the current window
-		 *
-		 * @return {number}
-		 */
-		getNewestVisibleRevisionIndex: function () {
-			return this.oldestVisibleRevisionIndex + this.revisionsPerWindow - 1;
-		},
-
-		/**
-		 * @return {boolean}
-		 */
-		isAtStart: function () {
-			return this.getOldestVisibleRevisionIndex() === 0 || this.revisions.getLength() <= this.revisionsPerWindow;
-		},
-
-		/**
-		 * @return {boolean}
-		 */
-		isAtEnd: function () {
-			return this.getNewestVisibleRevisionIndex() === this.revisions.getLength() - 1 || this.revisions.getLength() <= this.revisionsPerWindow;
-		},
-
-		/**
-		 * Sets the index of the first revision that is visible in the current window
-		 *
-		 * @param {number} value
-		 */
-		setFirstVisibleRevisionIndex: function ( value ) {
-			this.oldestVisibleRevisionIndex = value;
-		},
-
-		/**
-		 * Sets the new oldestVisibleRevisionIndex after sliding in a direction
-		 *
-		 * @param {number} direction - Either -1, 0 or 1
-		 */
-		slide: function ( direction ) {
-			var highestPossibleFirstRev = this.revisions.getLength() - this.revisionsPerWindow;
-
-			this.oldestVisibleRevisionIndex += direction * this.revisionsPerWindow;
-			this.oldestVisibleRevisionIndex = Math.min( this.oldestVisibleRevisionIndex, highestPossibleFirstRev );
-			this.oldestVisibleRevisionIndex = Math.max( 0, this.oldestVisibleRevisionIndex );
-		}
-	} );
-
-	mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-	mw.libs.revisionSlider.Slider = Slider;
-}() );
+mw.libs.revisionSlider = mw.libs.revisionSlider || {};
+mw.libs.revisionSlider.Slider = Slider;
