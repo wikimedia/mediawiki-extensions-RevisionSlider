@@ -2,6 +2,10 @@ var Settings = require( 'ext.RevisionSlider.Settings' ),
 	settings = new Settings(),
 	HelpDialog = require( 'ext.RevisionSlider.HelpDialog' ).HelpDialog,
 	RevisionListModule = require( 'ext.RevisionSlider.RevisionList' ),
+	SliderModule = require( 'ext.RevisionSlider.Slider' ),
+	RevisionSliderApi = SliderModule.Api,
+	Slider = SliderModule.Slider,
+	utils = SliderModule.utils,
 	autoExpand = settings.shouldAutoExpand(),
 	expanded = autoExpand,
 	autoExpandButton,
@@ -9,7 +13,7 @@ var Settings = require( 'ext.RevisionSlider.Settings' ),
 
 function initialize() {
 	var startTime = mw.now(),
-		api = new mw.libs.revisionSlider.Api( mw.util.wikiScript( 'api' ) ),
+		api = new RevisionSliderApi( mw.util.wikiScript( 'api' ) ),
 		changeTags = [];
 
 	toggleButton.$element.children().attr( {
@@ -36,7 +40,7 @@ function initialize() {
 		}
 		api.fetchRevisionData( mw.config.get( 'wgPageName' ), {
 			startId: mw.config.get( 'wgDiffNewId' ),
-			limit: mw.libs.revisionSlider.calculateRevisionsPerWindow( 160, 16 ),
+			limit: utils.calculateRevisionsPerWindow( 160, 16 ),
 			changeTags: changeTags
 		} ).then( function ( data2 ) {
 			var revs,
@@ -59,7 +63,7 @@ function initialize() {
 				);
 				revisionList.getView().setDir( $container.css( 'direction' ) || 'ltr' );
 
-				slider = new mw.libs.revisionSlider.Slider( revisionList );
+				slider = new Slider( revisionList );
 				slider.getView().render( $container );
 
 				$( window ).on( 'resize', OO.ui.throttle( function () {

@@ -12,9 +12,6 @@ function SliderArrowView( sliderView ) {
 	this.sliderView = sliderView;
 }
 
-/**
- * @class mw.libs.revisionSlider.SliderArrowView
- */
 $.extend( SliderArrowView.prototype, {
 	/**
 	 * @type {SliderView}
@@ -150,5 +147,4 @@ $.extend( SliderArrowView.prototype, {
 	}
 } );
 
-mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-mw.libs.revisionSlider.SliderArrowView = SliderArrowView;
+module.exports = SliderArrowView;
