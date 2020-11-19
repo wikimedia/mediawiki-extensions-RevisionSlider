@@ -2,6 +2,10 @@
  * @external Revision
  * @external RevisionListView
  */
+var RevisionModule = require( './ext.RevisionSlider.Revision.js' ),
+	Revision = RevisionModule.Revision,
+	RevisionListView = require( './ext.RevisionSlider.RevisionListView.js' );
+
 /**
  * @class RevisionList
  * @param {Revision[]} revs
@@ -12,12 +16,9 @@ function RevisionList( revs, availableTags ) {
 	this.revisions = [];
 	this.availableTags = availableTags;
 	this.initialize( revs );
-	this.view = new mw.libs.revisionSlider.RevisionListView( this );
+	this.view = new RevisionListView( this );
 }
 
-/**
- * @class mw.libs.revisionSlider.RevisionList
- */
 $.extend( RevisionList.prototype, {
 	/**
 	 * @type {Revision[]}
@@ -144,8 +145,8 @@ $.extend( RevisionList.prototype, {
 	 * @return {RevisionList}
 	 */
 	slice: function ( begin, end ) {
-		var slicedList = new mw.libs.revisionSlider.RevisionList( [], this.getAvailableTags() );
-		slicedList.view = new mw.libs.revisionSlider.RevisionListView( slicedList );
+		var slicedList = new RevisionList( [], this.getAvailableTags() );
+		slicedList.view = new RevisionListView( slicedList );
 		slicedList.revisions = this.revisions.slice( begin, end );
 		return slicedList;
 	},
@@ -159,9 +160,6 @@ $.extend( RevisionList.prototype, {
 	}
 } );
 
-mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-mw.libs.revisionSlider.RevisionList = RevisionList;
-
 /**
  * Transforms an array of revision data returned by MediaWiki API (including user gender information) into
  * an array of Revision objects
@@ -169,8 +167,16 @@ mw.libs.revisionSlider.RevisionList = RevisionList;
  * @param {Array} revs
  * @return {Revision[]}
  */
-mw.libs.revisionSlider.makeRevisions = function ( revs ) {
+function makeRevisions( revs ) {
 	return revs.map( function ( revData ) {
-		return new mw.libs.revisionSlider.Revision( revData );
+		return new Revision( revData );
 	} );
+}
+
+module.exports = {
+	Revision: Revision,
+	RevisionList: RevisionList,
+	RevisionListView: RevisionListView,
+	makeRevisions: makeRevisions,
+	setUserOffset: RevisionModule.setUserOffset
 };

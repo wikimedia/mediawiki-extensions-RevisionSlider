@@ -150,10 +150,10 @@
 			]
 		},
 		"ext.RevisionSlider.RevisionList": {
-			"scripts": [
+			"packageFiles": [
+				"modules/ext.RevisionSlider.RevisionList.js",
 				"modules/ext.RevisionSlider.Revision.js",
-				"modules/ext.RevisionSlider.RevisionListView.js",
-				"modules/ext.RevisionSlider.RevisionList.js"
+				"modules/ext.RevisionSlider.RevisionListView.js"
 			],
 			"messages": [
 				"colon-separator",

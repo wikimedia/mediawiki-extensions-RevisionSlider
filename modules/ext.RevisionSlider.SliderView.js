@@ -5,7 +5,9 @@
  * @external Slider
  */
 var HelpButtonView = require( 'ext.RevisionSlider.HelpDialog' ).HelpButtonView,
-	Pointer = require( 'ext.RevisionSlider.Pointer' ).Pointer;
+	makeRevisions = require( 'ext.RevisionSlider.RevisionList' ).makeRevisions,
+	Pointer = require( 'ext.RevisionSlider.Pointer' ).Pointer,
+	RevisionListView = require( 'ext.RevisionSlider.RevisionList' ).RevisionListView;
 
 /**
  * Module handling the view logic of the RevisionSlider slider
@@ -592,7 +594,6 @@ $.extend( SliderView.prototype, {
 
 		return ( isNewer && this.getOlderPointerPos() >= this.slider.getNewestVisibleRevisionIndex() + 1 ) ||
 			( !isNewer && this.getNewerPointerPos() <= this.slider.getOldestVisibleRevisionIndex() + 1 );
-
 	},
 
 	draggableDragAction: function ( event, ui, pointer, lastValidLeftPos ) {
@@ -1092,13 +1093,13 @@ $.extend( SliderView.prototype, {
 			revisionsToRender,
 			$addedRevisions;
 
-		this.slider.getRevisionList().push( mw.libs.revisionSlider.makeRevisions( revs ) );
+		this.slider.getRevisionList().push( makeRevisions( revs ) );
 
 		// Pushed revisions have their relative sizes set correctly with regard to the last previously
 		// loaded revision. This should be taken into account when rendering newly loaded revisions (tooltip)
 		revisionsToRender = this.slider.getRevisionList().slice( revPositionOffset );
 
-		$addedRevisions = new mw.libs.revisionSlider.RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth, revPositionOffset );
+		$addedRevisions = new RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth, revPositionOffset );
 
 		$addedRevisions.find( '.mw-revslider-revision-wrapper' ).each( function () {
 			$revisions.append( $( this ) );
@@ -1134,7 +1135,7 @@ $.extend( SliderView.prototype, {
 			$oldRevElement,
 			scrollLeft;
 
-		this.slider.getRevisionList().unshift( mw.libs.revisionSlider.makeRevisions( revs ), precedingRevisionSize );
+		this.slider.getRevisionList().unshift( makeRevisions( revs ), precedingRevisionSize );
 
 		$slider.find( '.mw-revslider-revision' ).each( function () {
 			$( this ).attr( 'data-pos', parseInt( $( this ).attr( 'data-pos' ), 10 ) + revs.length );
@@ -1144,7 +1145,7 @@ $.extend( SliderView.prototype, {
 		// loaded revision. This should be taken into account when rendering newly loaded revisions (tooltip)
 		revisionsToRender = this.slider.getRevisionList().slice( 0, revs.length );
 
-		$addedRevisions = new mw.libs.revisionSlider.RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth );
+		$addedRevisions = new RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth );
 
 		this.addClickHandlerToRevisions( this.getRevisionsElement() );
 

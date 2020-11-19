@@ -1,5 +1,8 @@
+var userOffset;
+
 /* global moment:false */
 /**
+ * @class Revision
  * @param {Object} data - Containing keys `id`, `size`, `comment`, `parsedcomment`, `timestamp`, `user` and `minor`
  * @constructor
  */
@@ -27,9 +30,6 @@ function Revision( data ) {
 	}
 }
 
-/**
- * @class mw.libs.revisionSlider.Revision
- */
 $.extend( Revision.prototype, {
 	/**
 	 * @type {number}
@@ -144,7 +144,7 @@ $.extend( Revision.prototype, {
 	 * @return {string}
 	 */
 	formatDate: function ( rawDate ) {
-		var offset = parseInt( mw.libs.revisionSlider.userOffset );
+		var offset = parseInt( userOffset );
 		return moment( rawDate ).utcOffset( offset ).format( 'LLL' );
 	},
 
@@ -184,5 +184,7 @@ $.extend( Revision.prototype, {
 	}
 } );
 
-mw.libs.revisionSlider = mw.libs.revisionSlider || {};
-mw.libs.revisionSlider.Revision = Revision;
+module.exports = {
+	Revision: Revision,
+	setUserOffset: function ( offset ) { userOffset = offset; }
+};
