@@ -1,5 +1,4 @@
-var RevisionModule = require( './ext.RevisionSlider.Revision.js' ),
-	Revision = RevisionModule.Revision,
+var Revision = require( './ext.RevisionSlider.Revision.js' ).Revision,
 	RevisionListView = require( './ext.RevisionSlider.RevisionListView.js' );
 
 /**
@@ -165,9 +164,6 @@ function makeRevisions( revs ) {
 }
 
 module.exports = {
-	Revision: Revision,
 	RevisionList: RevisionList,
-	RevisionListView: RevisionListView,
-	makeRevisions: makeRevisions,
-	setUserOffset: RevisionModule.setUserOffset
+	makeRevisions: makeRevisions
 };

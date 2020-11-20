@@ -2,8 +2,8 @@ var SliderModule = require( 'ext.RevisionSlider.Slider' ),
 	DiffPage = SliderModule.DiffPage,
 	SliderView = SliderModule.SliderView,
 	Slider = SliderModule.Slider,
-	RevisionList = require( 'ext.RevisionSlider.RevisionList' ).RevisionList,
-	Revision = require( 'ext.RevisionSlider.RevisionList' ).Revision;
+	RevisionList = SliderModule.RevisionList,
+	Revision = SliderModule.Revision;
 
 QUnit.module( 'ext.RevisionSlider.DiffPage' );
 

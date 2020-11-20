@@ -1,7 +1,7 @@
-var Slider = require( 'ext.RevisionSlider.Slider' ).Slider,
-	RevisionListModule = require( 'ext.RevisionSlider.RevisionList' ),
-	Revision = RevisionListModule.Revision,
-	RevisionList = RevisionListModule.RevisionList;
+var SliderModule = require( 'ext.RevisionSlider.Slider' ),
+	Slider = SliderModule.Slider,
+	Revision = SliderModule.Revision,
+	RevisionList = SliderModule.RevisionList;
 
 function makeNRevisions( n ) {
 	var revs = [];

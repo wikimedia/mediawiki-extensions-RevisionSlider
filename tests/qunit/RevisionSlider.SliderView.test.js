@@ -1,7 +1,8 @@
-var Slider = require( 'ext.RevisionSlider.Slider' ).Slider,
-	SliderView = require( 'ext.RevisionSlider.Slider' ).SliderView,
-	Revision = require( 'ext.RevisionSlider.RevisionList' ).Revision,
-	RevisionList = require( 'ext.RevisionSlider.RevisionList' ).RevisionList,
+var SliderModule = require( 'ext.RevisionSlider.Slider' ),
+	Slider = SliderModule.Slider,
+	SliderView = SliderModule.SliderView,
+	Revision = SliderModule.Revision,
+	RevisionList = SliderModule.RevisionList,
 	startHistoryState, startHref;
 
 QUnit.module( 'ext.RevisionSlider.SliderView' );
