@@ -5,7 +5,7 @@
  * @external Slider
  */
 var DiffPage = require( './ext.RevisionSlider.DiffPage.js' ),
-	HelpButtonView = require( 'ext.RevisionSlider.HelpDialog' ).HelpButtonView,
+	HelpButtonView = require( './ext.RevisionSlider.HelpButtonView.js' ),
 	makeRevisions = require( 'ext.RevisionSlider.RevisionList' ).makeRevisions,
 	Pointer = require( './ext.RevisionSlider.Pointer.js' ),
 	RevisionListView = require( 'ext.RevisionSlider.RevisionList' ).RevisionListView,

@@ -186,7 +186,4 @@ HelpDialog.init = function () {
 	};
 };
 
-module.exports = {
-	HelpButtonView: require( './ext.RevisionSlider.HelpButtonView.js' ),
-	HelpDialog: HelpDialog
-};
+module.exports = HelpDialog;

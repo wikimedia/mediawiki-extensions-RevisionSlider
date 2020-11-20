@@ -44,7 +44,7 @@ var HelpButtonView = {
 	},
 
 	showDialog: function () {
-		require( 'ext.RevisionSlider.HelpDialog' ).HelpDialog.show();
+		require( './ext.RevisionSlider.HelpDialog.js' ).show();
 	}
 };
 
