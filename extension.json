@@ -42,7 +42,6 @@
 			"RevisionSlider.HelpDialog.test.js"
 		],
 		"dependencies": [
-			"ext.RevisionSlider.Pointer",
 			"ext.RevisionSlider.Slider",
 			"ext.RevisionSlider.RevisionList",
 			"ext.RevisionSlider.HelpDialog",
@@ -119,21 +118,17 @@
 				"mediawiki.cookie"
 			]
 		},
-		"ext.RevisionSlider.Pointer": {
-			"packageFiles": [
-				"modules/ext.RevisionSlider.Pointer.js",
-				"modules/ext.RevisionSlider.PointerLine.js",
-				"modules/ext.RevisionSlider.PointerView.js"
-			]
-		},
 		"ext.RevisionSlider.Slider": {
 			"packageFiles": [
 				"modules/ext.RevisionSlider.Slider.js",
 				"modules/ext.RevisionSlider.Api.js",
 				"modules/ext.RevisionSlider.DiffPage.js",
-				"modules/ext.RevisionSlider.util.js",
+				"modules/ext.RevisionSlider.Pointer.js",
+				"modules/ext.RevisionSlider.PointerLine.js",
+				"modules/ext.RevisionSlider.PointerView.js",
+				"modules/ext.RevisionSlider.SliderArrowView.js",
 				"modules/ext.RevisionSlider.SliderView.js",
-				"modules/ext.RevisionSlider.SliderArrowView.js"
+				"modules/ext.RevisionSlider.util.js"
 			],
 			"dependencies": [
 				"jquery.ui",
@@ -141,8 +136,7 @@
 				"mediawiki.util",
 				"oojs-ui",
 				"oojs-ui.styles.icons-movement",
-				"ext.RevisionSlider.HelpDialog",
-				"ext.RevisionSlider.Pointer"
+				"ext.RevisionSlider.HelpDialog"
 			],
 			"messages": [
 				"revisionslider-arrow-tooltip-newer",

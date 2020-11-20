@@ -1,4 +1,4 @@
-var Pointer = require( 'ext.RevisionSlider.Pointer' ).Pointer;
+var Pointer = require( 'ext.RevisionSlider.Slider' ).private.Pointer;
 
 QUnit.module( 'ext.RevisionSlider.Pointer' );
 

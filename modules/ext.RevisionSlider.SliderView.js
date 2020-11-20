@@ -7,7 +7,7 @@
 var DiffPage = require( './ext.RevisionSlider.DiffPage.js' ),
 	HelpButtonView = require( 'ext.RevisionSlider.HelpDialog' ).HelpButtonView,
 	makeRevisions = require( 'ext.RevisionSlider.RevisionList' ).makeRevisions,
-	Pointer = require( 'ext.RevisionSlider.Pointer' ).Pointer,
+	Pointer = require( './ext.RevisionSlider.Pointer.js' ),
 	RevisionListView = require( 'ext.RevisionSlider.RevisionList' ).RevisionListView,
 	RevisionSliderApi = require( './ext.RevisionSlider.Api.js' ),
 	SliderArrowView = require( './ext.RevisionSlider.SliderArrowView.js' ),

@@ -1,4 +1,4 @@
-var PointerView = require( 'ext.RevisionSlider.Pointer' ).PointerView;
+var PointerView = require( 'ext.RevisionSlider.Slider' ).private.PointerView;
 
 QUnit.module( 'ext.RevisionSlider.PointerView' );
 

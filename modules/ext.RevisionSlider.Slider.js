@@ -127,5 +127,10 @@ module.exports = {
 	DiffPage: require( './ext.RevisionSlider.DiffPage.js' ),
 	Slider: Slider,
 	SliderView: SliderView,
-	utils: require( './ext.RevisionSlider.util.js' )
+	utils: require( './ext.RevisionSlider.util.js' ),
+
+	private: {
+		Pointer: require( './ext.RevisionSlider.Pointer.js' ),
+		PointerView: require( './ext.RevisionSlider.PointerView.js' )
+	}
 };
