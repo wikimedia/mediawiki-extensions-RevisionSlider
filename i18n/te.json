@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Arjunaraoc",
 			"Chaduvari",
 			"Veeven"
 		]
@@ -8,7 +9,7 @@
 	"revisionslider": "రివిజన్ స్లైడర్",
 	"revisionslider-preference-disable": "రివిజన్ స్లైడరును చూపవద్దు",
 	"revisionslider-desc": "తేడాల పేజీలో వివిధ కూర్పులను ఎంచుకుని, పోల్చి చూసుకునేందుకు ఒక స్లైడరును చూపిస్తుంది.",
-	"revisionslider-toggle-label": "పేజీ చరిత్రను అడుగుతూ చూడండి",
+	"revisionslider-toggle-label": "పేజీ చరిత్రపటంలో ఎంపిక ద్వారా తేడాలు చూడండి",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|బైటు|బైట్లు}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|బైటు|బైట్లు}}",
 	"revisionslider-label-date": "తేదీ",
