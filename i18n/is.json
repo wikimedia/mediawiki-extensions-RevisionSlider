@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sveinn í Felli"
+			"Sveinn í Felli",
+			"Þjarkur"
 		]
 	},
+	"revisionslider-toggle-label": "Fletta í gegnum breytingarskrá",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bæti}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bæti}}",
 	"revisionslider-label-date": "Dagsetning",
