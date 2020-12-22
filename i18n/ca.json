@@ -4,6 +4,7 @@
 			"Alvaro Vidal-Abarca",
 			"Fitoschido",
 			"Medol",
+			"Mguix",
 			"Townie"
 		]
 	},
@@ -22,7 +23,7 @@
 	"revisionslider-loading-failed": "No s'ha pogut carregar el control lliscant de revisions.",
 	"revisionslider-toggle-title-expand": "Obrir el control lliscant de revisions",
 	"revisionslider-toggle-title-collapse": "Amaga el control lliscant de revisions",
-	"revisionslider-turn-on-auto-expand-title": "Mostra sempre el control lliscant de revisions",
+	"revisionslider-turn-on-auto-expand-title": "Mostrar sempre el control lliscant de revisions",
 	"revisionslider-turn-off-auto-expand-title": "No mostrar automàticament el control lliscant de revisions",
 	"revisionslider-arrow-tooltip-newer": "Veure revisions més noves",
 	"revisionslider-arrow-tooltip-older": "Veure revisions més antigues",
