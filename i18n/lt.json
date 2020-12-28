@@ -4,13 +4,14 @@
 			"Eitvys200",
 			"Macofe",
 			"Manvydasz",
+			"Tomasdd",
 			"Zygimantus"
 		]
 	},
 	"revisionslider": "Versijų apžvalga",
 	"revisionslider-preference-disable": "Nerodyti versijų apžvalgos",
 	"revisionslider-desc": "Rodo slankiklį skirtumų tarp puslapio versijų puslapyje, leidžiantį pasirinkti ir palyginti versijas",
-	"revisionslider-toggle-label": "Naršyti istoriją",
+	"revisionslider-toggle-label": "Naršyti istoriją interaktyviai",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|baitas|baitai|baitų}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|baitas|baitai|baitų}}",
 	"revisionslider-label-date": "Data",
