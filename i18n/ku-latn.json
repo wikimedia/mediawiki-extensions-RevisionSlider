@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Balyozxane",
+			"Bikarhêner",
 			"George Animal",
 			"Ghybu",
 			"Guherto",
 			"Macofe"
 		]
 	},
-	"revisionslider-toggle-label": "Li dîroka rûpelê bigere",
+	"revisionslider-toggle-label": "Bi înteraktîvî li dîroka rûpelê bigere",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte|bayt}}",
 	"revisionslider-label-date": "Dem",
 	"revisionslider-label-page-size": "Mezinahiya rûpelê",
