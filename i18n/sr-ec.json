@@ -14,7 +14,7 @@
 	"revisionslider-label-date": "Датум",
 	"revisionslider-label-page-size": "Величина странице",
 	"revisionslider-label-change-size": "Промена величине",
-	"revisionslider-label-comment": "Резиме измене",
+	"revisionslider-label-comment": "Опис измене",
 	"revisionslider-label-username": "{{GENDER:$1|Корисничко име}}",
 	"revisionslider-minoredit": "Ово је мања измена",
 	"revisionslider-toggle-title-expand": "Отвори клизач за измене",
