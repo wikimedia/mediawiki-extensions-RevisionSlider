@@ -148,8 +148,6 @@ class RevisionSliderHooks {
 			'type' => 'toggle',
 			'label-message' => 'revisionslider-preference-disable',
 			'section' => 'rendering/diffs',
-			'default' => MediaWikiServices::getInstance()
-				->getUserOptionsLookup()->getBoolOption( $user, 'revisionslider-disable' ),
 		];
 	}
 
