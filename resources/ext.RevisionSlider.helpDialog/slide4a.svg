@@ -22,9 +22,9 @@
 		<ellipse cx="680.85" cy="-2246.2" opacity=".367" rx="8.257" ry="8.678"/>
 		<circle cx="680.36" cy="-2246.9" r="8.132" fill="url(#d)" stroke="#fbc459"/>
 		<path fill="#fff" stroke="#dadada" stroke-width="1.621" d="M616.29-2310h23.158v120.66H616.29z"/>
-		<path fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.956" d="M630.81-2255.9l-9.15 6.663 9.098 6.698"/>
+		<path fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.956" d="m630.81-2255.9-9.15 6.663 9.098 6.698"/>
 		<path fill="#fff" stroke="#dadada" stroke-width="1.621" d="M881.79-2310h-23.158v120.66h23.158z"/>
-		<path fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.956" d="M867.27-2258.1l9.15 6.664-9.097 6.698"/>
+		<path fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.956" d="m867.27-2258.1 9.15 6.664-9.097 6.698"/>
 		<path fill="#fff" d="M640.57-2310.7h216.57v121H640.57z" opacity=".572"/>
 	</g>
 </svg>

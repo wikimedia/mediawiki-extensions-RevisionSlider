@@ -2,10 +2,10 @@
 	<path fill="#e3e3e3" d="M64.868 52.444h16.213V30.982H64.868zm16.214.001h16.213V0H81.082z"/>
 	<path fill="#bcbcbc" d="M97.295 52.443h16.213V17.037H97.295zm16.213 0h16.213v31.149h-16.213z"/>
 	<path fill="#e3e3e3" d="M129.722 52.443h16.213V76.06h-16.213zm16.213 0h16.213v46.873h-16.213zm16.213 0h16.213V17.037h-16.213zM0 52.754h16.213v27.968H0zm16.213 0h16.213v38.96H16.213zm16.213-.001H48.64V76.37H32.426zm16.214.001h16.213V17.348H48.64z"/>
-	<text x="-57.616" y="-3552.105" font-family="sans-serif" font-size="16.617" font-weight="400" letter-spacing="0" transform="translate(158.05 3589.3)" word-spacing="0" style="line-height:125%">
+	<text x="-57.616" y="-3552.105" font-family="sans-serif" font-size="16.617" font-weight="400" letter-spacing="0" style="line-height:125%" transform="translate(158.05 3589.3)" word-spacing="0">
 		<tspan x="-57.616" y="-3552.105">1</tspan>
 	</text>
-	<text x="-42.057" y="-3518.404" font-family="sans-serif" font-size="16.617" font-weight="400" letter-spacing="0" transform="translate(158.05 3589.3)" word-spacing="0" style="line-height:125%">
+	<text x="-42.057" y="-3518.404" font-family="sans-serif" font-size="16.617" font-weight="400" letter-spacing="0" style="line-height:125%" transform="translate(158.05 3589.3)" word-spacing="0">
 		<tspan x="-42.057" y="-3518.404">2</tspan>
 	</text>
 </svg>
