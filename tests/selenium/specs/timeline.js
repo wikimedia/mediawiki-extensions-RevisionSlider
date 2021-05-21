@@ -25,7 +25,7 @@ describe( 'RevisionSlider timeline arrows', function () {
 	} );
 
 	it( ' should be enabled with adequate revisions', function () {
-		browser.setWindowSize( 80, 600 );
+		browser.setWindowSize( 400, 600 );
 		DiffPage.prepareSimpleTests( 9 );
 		DiffPage.ready();
 		DiffPage.openSlider();
