@@ -96,7 +96,12 @@ class DiffPage extends Page {
 
 	openSlider() {
 		this.rsToggleButton.click();
-		this.rsMain.waitForDisplayed( { timeout: 10000 } );
+		try {
+			this.rsMain.waitForDisplayed( { timeout: 2500 } );
+		} catch ( e ) {
+			this.rsToggleButton.click();
+			this.rsMain.waitForDisplayed();
+		}
 	}
 
 	open( title ) {
