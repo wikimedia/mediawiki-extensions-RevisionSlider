@@ -148,6 +148,10 @@ $.extend( RevisionListView.prototype, {
 	 * @param {MouseEvent} event
 	 */
 	setRevisionHovered: function ( $revisionWrapper, event ) {
+		if ( !$revisionWrapper.length ) {
+			return;
+		}
+
 		var hasMovedTop = event.pageY - $revisionWrapper.offset().top < $revisionWrapper.height() / 2,
 			isOlderTop = $revisionWrapper.hasClass( 'mw-revslider-revision-older' ) && hasMovedTop,
 			isNewerBottom = $revisionWrapper.hasClass( 'mw-revslider-revision-newer' ) && !hasMovedTop,
