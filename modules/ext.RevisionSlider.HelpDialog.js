@@ -16,14 +16,30 @@ HelpDialog.static.name = 'revisionslider-tutorial';
 HelpDialog.static.actions = [
 	{
 		action: 'next',
+		modes: [ 'initial', 'middle' ],
 		label: mw.msg( 'revisionslider-next-dialog' ),
 		flags: [ 'primary', 'progressive' ],
-		modes: [ 'initial', 'middle' ],
 		classes: [ 'mw-revslider-help-next' ]
 	},
-	{ action: 'previous', flags: 'safe', label: mw.msg( 'revisionslider-previous-dialog' ), modes: [ 'middle', 'last' ], classes: [ 'mw-revslider-help-previous' ] },
-	{ label: mw.msg( 'revisionslider-close-dialog' ), flags: 'safe', modes: 'initial', classes: [ 'mw-revslider-help-close-start' ] },
-	{ label: mw.msg( 'revisionslider-close-dialog' ), flags: 'primary', modes: 'last', classes: [ 'mw-revslider-help-close-end' ] }
+	{
+		action: 'previous',
+		modes: [ 'middle', 'last' ],
+		label: mw.msg( 'revisionslider-previous-dialog' ),
+		flags: 'safe',
+		classes: [ 'mw-revslider-help-previous' ]
+	},
+	{
+		modes: 'initial',
+		label: mw.msg( 'revisionslider-close-dialog' ),
+		flags: 'safe',
+		classes: [ 'mw-revslider-help-close-start' ]
+	},
+	{
+		modes: 'last',
+		label: mw.msg( 'revisionslider-close-dialog' ),
+		flags: 'primary',
+		classes: [ 'mw-revslider-help-close-end' ]
+	}
 ];
 
 $.extend( HelpDialog.prototype, {

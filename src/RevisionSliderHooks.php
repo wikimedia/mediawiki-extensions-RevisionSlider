@@ -54,7 +54,7 @@ class RevisionSliderHooks {
 		 * If the user is logged in and has explictly requested to disable the extension don't load.
 		 */
 		$user = $diff->getUser();
-		if ( !$user->isAnon() && $userOptionsLookup->getBoolOption( $user, 'revisionslider-disable' ) ) {
+		if ( $user->isRegistered() && $userOptionsLookup->getBoolOption( $user, 'revisionslider-disable' ) ) {
 			return;
 		}
 

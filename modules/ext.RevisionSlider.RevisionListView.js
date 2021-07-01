@@ -214,9 +214,10 @@ $.extend( RevisionListView.prototype, {
 	 * @param {jQuery} $revisionWrapper
 	 */
 	unsetRevisionGhosts: function ( $revisionWrapper ) {
-		$revisionWrapper.children().removeClass( 'mw-revslider-revision-hovered' );
-		$revisionWrapper.prev().children().removeClass( 'mw-revslider-revision-hovered' );
-		$revisionWrapper.next().children().removeClass( 'mw-revslider-revision-hovered' );
+		$revisionWrapper.children()
+			.add( $revisionWrapper.prev().children() )
+			.add( $revisionWrapper.next().children() )
+			.removeClass( 'mw-revslider-revision-hovered' );
 	},
 
 	/**
