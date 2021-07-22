@@ -22,7 +22,7 @@ class RevisionSliderHooks {
 	/**
 	 * @return Config The RevisionSlider extensions config
 	 */
-	private static function getConfig() : Config {
+	private static function getConfig(): Config {
 		return MediaWikiServices::getInstance()->getConfigFactory()
 			->makeConfig( 'revisionslider' );
 	}
