@@ -8,5 +8,6 @@
 	"revisionslider-toggle-label": "Navigado interagiva di la historio dil artiklo",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bicoko*|bicoki*}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bicoko*|bicoki*}}",
-	"revisionslider-minoredit": "Ico esas mikra redaktajo"
+	"revisionslider-minoredit": "Ico esas mikra redaktajo",
+	"revisionslider-close-dialog": "Klozez"
 }
