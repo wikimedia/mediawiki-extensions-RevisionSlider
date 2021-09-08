@@ -29,7 +29,6 @@ class RevisionSliderHooks {
 
 	/**
 	 * @param DifferenceEngine $diff
-	 * @suppress SecurityCheck-XSS Issue with OOUI, see T193837 for more information
 	 */
 	public static function onDifferenceEngineViewHeader( DifferenceEngine $diff ) {
 		$oldRevRecord = $diff->getOldRevision();
