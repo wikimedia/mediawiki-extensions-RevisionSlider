@@ -4,5 +4,7 @@
 			"Ajeje Brazorf"
 		]
 	},
+	"revisionslider-page-size": "$1 {{PLURAL:$3|byte}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|byte}}",
 	"revisionslider-close-dialog": "Chiudi"
 }
