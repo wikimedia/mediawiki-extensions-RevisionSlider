@@ -217,5 +217,8 @@
 	"Hooks": {
 		"DifferenceEngineViewHeader": "MediaWiki\\Extensions\\RevisionSlider\\RevisionSliderHooks::onDifferenceEngineViewHeader",
 		"GetPreferences": "MediaWiki\\Extensions\\RevisionSlider\\RevisionSliderHooks::onGetPreferences"
+	},
+	"DefaultUserOptions": {
+		"revisionslider-disable": false
 	}
 }
