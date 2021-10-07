@@ -21,9 +21,7 @@ QUnit.test( 'render adds the slider view with defined revisions selected', funct
 			new Revision( { revid: 1, size: 5, comment: 'Comment1', user: 'User1' } ),
 			new Revision( { revid: 3, size: 21, comment: 'Comment2', user: 'User2' } ),
 			new Revision( { revid: 37, size: 13, comment: 'Comment3', user: 'User3' } )
-		] ) ) ),
-		$revisionOld,
-		$revisionNew;
+		] ) ) );
 
 	mw.config.set( {
 		wgDiffOldId: 1,
@@ -33,8 +31,8 @@ QUnit.test( 'render adds the slider view with defined revisions selected', funct
 	view.render( $container );
 
 	assert.ok( $container.find( '.mw-revslider-revision-slider' ).length > 0 );
-	$revisionOld = $container.find( '.mw-revslider-revision-old' );
-	$revisionNew = $container.find( '.mw-revslider-revision-new' );
+	var $revisionOld = $container.find( '.mw-revslider-revision-old' );
+	var $revisionNew = $container.find( '.mw-revslider-revision-new' );
 	assert.ok( $revisionOld.length > 0 );
 	assert.strictEqual( $revisionOld.attr( 'data-revid' ), '1' );
 	assert.ok( $revisionNew.length > 0 );

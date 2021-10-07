@@ -1,10 +1,10 @@
 // originally taken from https://stackoverflow.com/questions/1517924/javascript-mapping-touch-events-to-mouse-events
 function touchEventConverter( event ) {
-	var first = event.changedTouches[ 0 ],
-		type, simulatedEvent;
+	var first = event.changedTouches[ 0 ];
 
 	event.preventDefault();
 
+	var type;
 	switch ( event.type ) {
 		case 'touchstart':
 			type = 'mousedown';
@@ -19,6 +19,7 @@ function touchEventConverter( event ) {
 			return;
 	}
 
+	var simulatedEvent;
 	if ( typeof MouseEvent !== 'undefined' ) {
 		simulatedEvent = new MouseEvent( type, {
 			bubbles: true,
@@ -48,8 +49,7 @@ function touchEventConverter( event ) {
 
 // fixes issues with zoomed Chrome on touch see https://github.com/jquery/jquery/issues/3187
 function correctElementOffsets( offset ) {
-	var prevStyle, docWidth, docRect,
-		isChrome = /chrom(e|ium)/.test( navigator.userAgent.toLowerCase() );
+	var isChrome = /chrom(e|ium)/.test( navigator.userAgent.toLowerCase() );
 
 	// since this problem only seems to appear with Chrome just use this in Chrome
 	if ( !isChrome ) {
@@ -57,14 +57,14 @@ function correctElementOffsets( offset ) {
 	}
 
 	// get document element width without scrollbar
-	prevStyle = document.body.style.overflow || '';
+	var prevStyle = document.body.style.overflow || '';
 	document.body.style.overflow = 'hidden';
-	docWidth = document.documentElement.clientWidth;
+	var docWidth = document.documentElement.clientWidth;
 	document.body.style.overflow = prevStyle;
 
 	// determine if the viewport has been scaled
 	if ( docWidth / window.innerWidth !== 1 ) {
-		docRect = document.documentElement.getBoundingClientRect();
+		var docRect = document.documentElement.getBoundingClientRect();
 		offset = {
 			top: offset.top - window.pageYOffset - docRect.top,
 			left: offset.left - window.pageXOffset - docRect.left
@@ -80,8 +80,7 @@ function correctElementOffsets( offset ) {
  * @return {string} - 'default', 'negative' or 'reverse'
  */
 function determineRtlScrollType() {
-	var isChrome = /chrom(e|ium)/.test( navigator.userAgent.toLowerCase() ),
-		$dummy;
+	var isChrome = /chrom(e|ium)/.test( navigator.userAgent.toLowerCase() );
 
 	// in Chrome V8 5.8.283 and 5.9.211 the detection below gives wrong results leading to strange behavior
 	// Chrome V8 6.0 seems to fix that issue so this workaround can be removed then
@@ -89,7 +88,7 @@ function determineRtlScrollType() {
 		return 'default';
 	}
 
-	$dummy = $( '<div>' )
+	var $dummy = $( '<div>' )
 		.css( {
 			dir: 'rtl',
 			width: '4px',

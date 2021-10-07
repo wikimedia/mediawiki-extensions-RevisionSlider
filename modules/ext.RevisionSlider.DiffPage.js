@@ -49,13 +49,12 @@ $.extend( DiffPage.prototype, {
 		// Don't chain, so lastRequest is a jQuery.jqXHR object
 		this.lastRequest.then( function ( data2 ) {
 			var $data = $( data2 ),
-				$contentText,
 				$container = $( '.mw-revslider-container' ),
 				scrollLeft = $container.find( '.mw-revslider-revisions-container' ).scrollLeft();
 
 			// Add our current rendered slider into the newly loaded container
 			$data.find( '.mw-revslider-container' ).replaceWith( $container );
-			$contentText = $data.find( '#mw-content-text' );
+			var $contentText = $data.find( '#mw-content-text' );
 
 			// Replace elements on the page with the newly loaded elements, from top to bottom
 			$( '#mw-content-text' ).replaceWith( $contentText );

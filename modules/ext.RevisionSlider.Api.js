@@ -42,20 +42,18 @@ $.extend( Api.prototype, {
 	 * @return {jQuery.promise}
 	 */
 	fetchRevisionData: function ( pageName, options ) {
-		var xhr, userXhr,
+		var userXhr,
 			deferred = $.Deferred(),
 			self = this;
 
 		options = options || {};
 
-		xhr = this.fetchRevisions( pageName, options )
+		var xhr = this.fetchRevisions( pageName, options )
 			.done( function ( data ) {
 				var revs = data.query.pages[ 0 ].revisions,
 					revContinue = data.continue,
 					genderData = options.knownUserGenders || {},
-					changeTags = options.changeTags || [],
-					unknown,
-					userNames;
+					changeTags = options.changeTags || [];
 
 				if ( !revs ) {
 					return deferred.reject;
@@ -67,14 +65,14 @@ $.extend( Api.prototype, {
 
 				// No need to query any gender data if masculine, feminine, and neutral are all
 				// the same anyway
-				unknown = mw.msg( 'revisionslider-label-username', 'unknown' );
+				var unknown = mw.msg( 'revisionslider-label-username', 'unknown' );
 				if ( mw.msg( 'revisionslider-label-username', 'male' ) === unknown &&
 					mw.msg( 'revisionslider-label-username', 'female' ) === unknown
 				) {
 					return deferred.resolve( { revisions: revs, continue: revContinue } );
 				}
 
-				userNames = self.getUniqueUserNamesWithUnknownGender( revs, genderData );
+				var userNames = self.getUniqueUserNamesWithUnknownGender( revs, genderData );
 
 				userXhr = self.fetchUserGenderData( userNames )
 					.done( function ( data2 ) {
@@ -120,11 +118,9 @@ $.extend( Api.prototype, {
 	 * @return {jQuery.jqXHR}
 	 */
 	fetchRevisions: function ( pageName, options ) {
-		var dir, data;
-
 		options = options || {};
-		dir = 'dir' in options ? options.dir : 'older';
-		data = {
+		var dir = 'dir' in options ? options.dir : 'older';
+		var data = {
 			action: 'query',
 			prop: 'revisions',
 			format: 'json',

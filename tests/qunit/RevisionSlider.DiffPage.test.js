@@ -12,8 +12,7 @@ QUnit.test( 'Initialize DiffPage', function ( assert ) {
 } );
 
 QUnit.test( 'Push state', function ( assert ) {
-	var histLength,
-		diffPage = new DiffPage(),
+	var diffPage = new DiffPage(),
 		sliderView = new SliderView( new Slider( new RevisionList( [
 			new Revision( { revid: 1, comment: '' } ),
 			new Revision( { revid: 3, comment: '' } ),
@@ -27,7 +26,7 @@ QUnit.test( 'Push state', function ( assert ) {
 	} );
 	sliderView.render( $( '<div>' ) );
 
-	histLength = history.length;
+	var histLength = history.length;
 
 	diffPage.pushState( 3, 37, sliderView );
 

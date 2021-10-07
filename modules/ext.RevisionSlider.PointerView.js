@@ -101,14 +101,14 @@ $.extend( PointerView.prototype, {
 	 */
 	animateTo: function ( posInPx, revisionWidth, baseDuration ) {
 		var animatePos = { left: posInPx },
-			currentPos = this.getElement().position(),
-			distance, duration;
+			currentPos = this.getElement().position();
+
 		baseDuration = typeof baseDuration !== 'undefined' ? baseDuration : 100;
 		if ( this.getElement().css( 'direction' ) === 'rtl' ) {
 			animatePos.left = this.getAdjustedLeftPositionWhenRtl( animatePos.left );
 		}
-		distance = Math.abs( animatePos.left - currentPos.left ) / revisionWidth;
-		duration = baseDuration * Math.log( 5 + distance );
+		var distance = Math.abs( animatePos.left - currentPos.left ) / revisionWidth;
+		var duration = baseDuration * Math.log( 5 + distance );
 		return this.getElement().animate( animatePos, duration, 'linear' );
 	},
 

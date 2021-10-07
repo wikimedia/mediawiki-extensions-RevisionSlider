@@ -36,10 +36,8 @@ $.extend( RevisionList.prototype, {
 	 * @param {Revision[]} revs
 	 */
 	initialize: function ( revs ) {
-		var i, rev;
-
-		for ( i = 0; i < revs.length; i++ ) {
-			rev = revs[ i ];
+		for ( var i = 0; i < revs.length; i++ ) {
+			var rev = revs[ i ];
 			rev.setRelativeSize( i > 0 ? rev.getSize() - revs[ i - 1 ].getSize() : rev.getSize() );
 
 			this.revisions.push( rev );
@@ -50,10 +48,9 @@ $.extend( RevisionList.prototype, {
 	 * @return {number}
 	 */
 	getBiggestChangeSize: function () {
-		var max = 0,
-			i;
+		var max = 0;
 
-		for ( i = 0; i < this.revisions.length; i++ ) {
+		for ( var i = 0; i < this.revisions.length; i++ ) {
 			max = Math.max( max, Math.abs( this.revisions[ i ].getRelativeSize() ) );
 		}
 
@@ -104,9 +101,8 @@ $.extend( RevisionList.prototype, {
 	 * @param {Revision[]} revs
 	 */
 	push: function ( revs ) {
-		var i, rev;
-		for ( i = 0; i < revs.length; i++ ) {
-			rev = revs[ i ];
+		for ( var i = 0; i < revs.length; i++ ) {
+			var rev = revs[ i ];
 			rev.setRelativeSize(
 				i > 0 ?
 					rev.getSize() - revs[ i - 1 ].getSize() :
@@ -124,13 +120,12 @@ $.extend( RevisionList.prototype, {
 	 * @param {number} sizeBefore optional size of the revision preceding the first of revs, defaults to 0
 	 */
 	unshift: function ( revs, sizeBefore ) {
-		var originalFirstRev = this.revisions[ 0 ],
-			i, rev;
+		var originalFirstRev = this.revisions[ 0 ];
 		sizeBefore = sizeBefore || 0;
 
 		originalFirstRev.setRelativeSize( originalFirstRev.getSize() - revs[ revs.length - 1 ].getSize() );
-		for ( i = revs.length - 1; i >= 0; i-- ) {
-			rev = revs[ i ];
+		for ( var i = revs.length - 1; i >= 0; i-- ) {
+			var rev = revs[ i ];
 			rev.setRelativeSize( i > 0 ? rev.getSize() - revs[ i - 1 ].getSize() : rev.getSize() - sizeBefore );
 
 			this.revisions.unshift( rev );

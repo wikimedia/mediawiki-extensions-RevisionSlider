@@ -39,17 +39,16 @@ QUnit.test( 'getUserGenders', function ( assert ) {
 
 QUnit.test( 'Push appends revisions to the end of the list', function ( assert ) {
 	var list = new RevisionList( [
-			new Revision( { revid: 1, size: 5 } ),
-			new Revision( { revid: 2, size: 21 } ),
-			new Revision( { revid: 3, size: 13 } )
-		] ),
-		revisions;
+		new Revision( { revid: 1, size: 5 } ),
+		new Revision( { revid: 2, size: 21 } ),
+		new Revision( { revid: 3, size: 13 } )
+	] );
 	list.push( [
 		new Revision( { revid: 6, size: 19 } ),
 		new Revision( { revid: 8, size: 25 } )
 	] );
 
-	revisions = list.getRevisions();
+	var revisions = list.getRevisions();
 	assert.strictEqual( list.getLength(), 5 );
 	assert.strictEqual( revisions[ 0 ].getId(), 1 );
 	assert.strictEqual( revisions[ 0 ].getRelativeSize(), 5 );
@@ -65,17 +64,16 @@ QUnit.test( 'Push appends revisions to the end of the list', function ( assert )
 
 QUnit.test( 'Unshift prepends revisions to the beginning of the list', function ( assert ) {
 	var list = new RevisionList( [
-			new Revision( { revid: 5, size: 5 } ),
-			new Revision( { revid: 6, size: 21 } ),
-			new Revision( { revid: 7, size: 13 } )
-		] ),
-		revisions;
+		new Revision( { revid: 5, size: 5 } ),
+		new Revision( { revid: 6, size: 21 } ),
+		new Revision( { revid: 7, size: 13 } )
+	] );
 	list.unshift( [
 		new Revision( { revid: 2, size: 19 } ),
 		new Revision( { revid: 4, size: 25 } )
 	] );
 
-	revisions = list.getRevisions();
+	var revisions = list.getRevisions();
 	assert.strictEqual( list.getLength(), 5 );
 	assert.strictEqual( revisions[ 0 ].getId(), 2 );
 	assert.strictEqual( revisions[ 0 ].getRelativeSize(), 19 );
@@ -91,11 +89,10 @@ QUnit.test( 'Unshift prepends revisions to the beginning of the list', function 
 
 QUnit.test( 'Unshift considers the size of the preceding revision if specified', function ( assert ) {
 	var list = new RevisionList( [
-			new Revision( { revid: 5, size: 5 } ),
-			new Revision( { revid: 6, size: 21 } ),
-			new Revision( { revid: 7, size: 13 } )
-		] ),
-		revisions;
+		new Revision( { revid: 5, size: 5 } ),
+		new Revision( { revid: 6, size: 21 } ),
+		new Revision( { revid: 7, size: 13 } )
+	] );
 	list.unshift(
 		[
 			new Revision( { revid: 2, size: 19 } ),
@@ -104,7 +101,7 @@ QUnit.test( 'Unshift considers the size of the preceding revision if specified',
 		12
 	);
 
-	revisions = list.getRevisions();
+	var revisions = list.getRevisions();
 	assert.strictEqual( list.getLength(), 5 );
 	assert.strictEqual( revisions[ 0 ].getId(), 2 );
 	assert.strictEqual( revisions[ 0 ].getRelativeSize(), 7 );

@@ -4,9 +4,8 @@ var Slider = require( 'ext.RevisionSlider.Slider' ).Slider,
 	RevisionList = RevisionListModule.RevisionList;
 
 function makeNRevisions( n ) {
-	var revs = [],
-		i;
-	for ( i = 0; i < n; i++ ) {
+	var revs = [];
+	for ( var i = 0; i < n; i++ ) {
 		revs.push( new Revision( { revid: i + 1, user: 'Fooo' } ) );
 	}
 	return new RevisionList( revs );

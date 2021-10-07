@@ -58,12 +58,10 @@ $.extend( PointerLine.prototype, {
 	 * @param {jQuery} $targetColumn
 	 */
 	setCssProperties: function ( $sourcePointer, $targetColumn ) {
-		var distance, widthToSet, leftToSet;
+		var distance = this.calculateDistance( $sourcePointer, $targetColumn );
 
-		distance = this.calculateDistance( $sourcePointer, $targetColumn );
-
-		widthToSet = Math.abs( distance );
-		leftToSet = ( $targetColumn.offset().left + $targetColumn.width() / 2 ) -
+		var widthToSet = Math.abs( distance );
+		var leftToSet = ( $targetColumn.offset().left + $targetColumn.width() / 2 ) -
 			$( '.mw-revslider-revision-slider' ).offset().left;
 
 		if ( distance > 0 ) {
@@ -99,24 +97,23 @@ $.extend( PointerLine.prototype, {
 	 * @return {boolean}
 	 */
 	drawLine: function () {
-		var $upperLineDiv = this.$html.find( '.mw-revslider-pointer-line-upper' ),
-			$lowerLineDiv = this.$html.find( '.mw-revslider-pointer-line-lower' ),
-			$newerUnderLineDiv = this.$html.find( '.mw-revslider-pointer-line-underline.mw-revslider-pointer-newer' ),
-			$olderUnderLineDiv = this.$html.find( '.mw-revslider-pointer-line-underline.mw-revslider-pointer-older' ),
-			$sourcePointer = this.pointer.getView().getElement(),
-			$table = $( '.diff-otitle' ),
-			$targetColumn;
-
 		if ( this.offsetNotAvailable() ) {
 			// offset is not available in QUnit tests so skip calculation and drawing
 			return false;
 		}
 
+		var $upperLineDiv = this.$html.find( '.mw-revslider-pointer-line-upper' ),
+			$lowerLineDiv = this.$html.find( '.mw-revslider-pointer-line-lower' ),
+			$newerUnderLineDiv = this.$html.find( '.mw-revslider-pointer-line-underline.mw-revslider-pointer-newer' ),
+			$olderUnderLineDiv = this.$html.find( '.mw-revslider-pointer-line-underline.mw-revslider-pointer-older' ),
+			$sourcePointer = this.pointer.getView().getElement(),
+			$table = $( '.diff-otitle' );
+
 		var isNewer = this.pointer.getView().isNewerPointer();
 		$lowerLineDiv.add( $upperLineDiv ).add( $newerUnderLineDiv ).add( $olderUnderLineDiv )
 			.toggleClass( 'mw-revslider-lower-color', !isNewer )
 			.toggleClass( 'mw-revslider-upper-color', isNewer );
-		$targetColumn = isNewer ? $( '.diff-ntitle' ) : $table;
+		var $targetColumn = isNewer ? $( '.diff-ntitle' ) : $table;
 
 		this.setCssProperties( $sourcePointer, $targetColumn );
 
