@@ -1,8 +1,4 @@
 /**
- * @external Pointer
- * @external Slider
- */
-/**
  * Module containing presentation logic for the revision pointers
  *
  * @class PointerView

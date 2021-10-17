@@ -1,7 +1,4 @@
 /**
- * @external Pointer
- */
-/**
  * Module containing presentation logic for the revision pointer lines
  *
  * @class PointerLine

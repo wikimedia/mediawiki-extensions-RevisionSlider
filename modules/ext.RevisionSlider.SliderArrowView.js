@@ -1,7 +1,4 @@
 /**
- * @external SliderView
- */
-/**
  * Module containing presentation logic for the arrow buttons
  *
  * @class SliderArroView

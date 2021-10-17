@@ -1,7 +1,3 @@
-/**
- * @external RevisionList
- * @external SliderView
- */
 var SliderView = require( './ext.RevisionSlider.SliderView.js' );
 
 /**

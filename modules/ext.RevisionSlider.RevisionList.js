@@ -1,7 +1,3 @@
-/**
- * @external Revision
- * @external RevisionListView
- */
 var RevisionModule = require( './ext.RevisionSlider.Revision.js' ),
 	Revision = RevisionModule.Revision,
 	RevisionListView = require( './ext.RevisionSlider.RevisionListView.js' );

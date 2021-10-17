@@ -1,8 +1,4 @@
 /**
- * @external Revision
- * @external RevisionList
- */
-/**
  * @class RevisionListView
  * @param {RevisionList} revisionList
  * @param {string} [dir]
