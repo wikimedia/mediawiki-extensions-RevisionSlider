@@ -3,6 +3,7 @@
 		"authors": [
 			"Leszek Manicki (WMDE)",
 			"Macofe",
+			"Michel Bakni",
 			"Shbib Al-Subaie",
 			"ديفيد",
 			"زكريا",
@@ -13,7 +14,7 @@
 	"revisionslider": "مقارن النسخ",
 	"revisionslider-preference-disable": "لا تظهر مقارن النسخ",
 	"revisionslider-desc": "إظهار مقارن النسخ لمقارنة نسختين من الصفحة",
-	"revisionslider-toggle-label": "تصفح التاريخ بشكل تفاعلي",
+	"revisionslider-toggle-label": "تصفح التاريخ تفاعلياً",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|بايت}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|بايت}}",
 	"revisionslider-label-date": "التاريخ",
