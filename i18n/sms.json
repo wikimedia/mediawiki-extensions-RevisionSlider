@@ -4,5 +4,6 @@
 			"Yupik"
 		]
 	},
-	"revisionslider-label-date": "Peiʹvvmieʹrr"
+	"revisionslider-label-date": "Peiʹvvmieʹrr",
+	"revisionslider-label-username": "{{GENDER:$1|Õõʹnninõmm}}"
 }

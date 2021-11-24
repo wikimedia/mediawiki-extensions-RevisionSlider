@@ -1,13 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Joao Xavier"
+			"Joao Xavier",
+			"JSantos"
 		]
 	},
 	"revisionslider-preference-disable": "Ne montrez la kronologio di revizuri (RevisionSlider)",
 	"revisionslider-toggle-label": "Navigado interagiva di la historio dil artiklo",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bicoko*|bicoki*}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bicoko*|bicoki*}}",
+	"revisionslider-label-date": "Dato",
 	"revisionslider-minoredit": "Ico esas mikra redaktajo",
 	"revisionslider-close-dialog": "Klozez"
 }
