@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"SawJaemin"
+		]
+	},
+	"revisionslider-page-size": "=$1 {{PLURAL:$2|ဘါဧံ}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|ဘါဧံ}}",
+	"revisionslider-arrow-tooltip-newer": "ကွၢ် တၢ်မၤဘၣ်က့ၤတၢ်အသီတဖၣ်",
+	"revisionslider-arrow-tooltip-older": "ကွၢ် တၢ်မၤဘၣ်က့ၤတၢ်လၢလီၢ်လံၤတဖၣ်"
+}

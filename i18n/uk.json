@@ -6,12 +6,13 @@
 			"Green Zero",
 			"Macofe",
 			"Piramidion",
-			"Ата"
+			"Ата",
+			"DDPAT"
 		]
 	},
 	"revisionslider": "RevisionSlider",
-	"revisionslider-preference-disable": "Не показувати Слайдер версій",
-	"revisionslider-desc": "Показує слайдер для вибору і порівняння версій на сторінці порівняння версій",
+	"revisionslider-preference-disable": "Не показувати повзунок версії",
+	"revisionslider-desc": "Показує повзунок, що дозволяє вибирати та порівнювати версії на сторінці різниці",
 	"revisionslider-toggle-label": "Інтерактивний перегляд історії",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|байт|байти|байтів}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|байт|байти|байтів}}",
@@ -22,8 +23,8 @@
 	"revisionslider-label-username": "{{GENDER:$1|Ім'я користувача}}",
 	"revisionslider-minoredit": "Це незначна зміна",
 	"revisionslider-loading-failed": "Не вдалося завантажити слайдер версій.",
-	"revisionslider-toggle-title-expand": "Відкрити Слайдер версій",
-	"revisionslider-toggle-title-collapse": "Згорнути Слайдер версій",
+	"revisionslider-toggle-title-expand": "Відкрити слайдер версії",
+	"revisionslider-toggle-title-collapse": "Згорнути слайдер версії",
 	"revisionslider-turn-on-auto-expand-title": "Завжди розкривати слайдер версій",
 	"revisionslider-turn-off-auto-expand-title": "Не розкривати слайдер версій автоматично",
 	"revisionslider-arrow-tooltip-newer": "Дивитися новіші версії",
@@ -33,7 +34,7 @@
 	"revisionslider-help-dialog-slide2": "Кожен стовпець є версією сторінки. Стовпці угорі показують збільшення розміру сторінки, стовпці внизу — зменшення. На зображенні версія 1 показує додавання вмісту, тоді як версія 2 показує вилучення вмісту.",
 	"revisionslider-help-dialog-slide3a": "<p>Для порівняння певних версій, оберіть версії, використовуючи два вказівники різних кольорів.</p><p>Верхній вказівник контролює новішу версію, тоді як нижній — вказує положення старішої версії.</p><p>Пересувайте вказівники, перетягуючи їх, або натискаючи на відповідний стовпець.</p>",
 	"revisionslider-help-dialog-slide4": "Використовуйте стрілки назад та вперед для пересування по історії та показу старіших та новіших версій.",
-	"revisionslider-tutorial": "Інструкція з використання Слайдера версій",
+	"revisionslider-tutorial": "Інструкція з використання слайдера версій",
 	"revisionslider-previous-dialog": "Попередня",
 	"revisionslider-next-dialog": "Наступна",
 	"revisionslider-close-dialog": "Закрити"

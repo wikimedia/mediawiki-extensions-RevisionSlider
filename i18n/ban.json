@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chinamoonroll"
+		]
+	},
+	"revisionslider": "RévisiPanyorogan",
+	"revisionslider-preference-disable": "Sampunang nyinahang panyorogan révisi",
+	"revisionslider-toggle-label": "Jelajahin lelintihan sacara interaktif",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|bita}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|bita}}",
+	"revisionslider-label-date": "Tanggal",
+	"revisionslider-label-page-size": "Ukuran kaca",
+	"revisionslider-label-change-size": "Ukuran gentosan",
+	"revisionslider-label-comment": "Uah ringkesan",
+	"revisionslider-label-username": "{{GENDER:$1|Wastan sang anganggé}}",
+	"revisionslider-minoredit": "Puniki uahan alit"
+}

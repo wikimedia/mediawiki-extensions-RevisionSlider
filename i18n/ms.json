@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tofeiku"
+		]
+	},
+	"revisionslider": "GelangsarSemakan",
+	"revisionslider-preference-disable": "Jangan tunjukkan gelangsar semakan",
+	"revisionslider-desc": "Menunjukkan gelangsar membenaekan pemilihan dan perbandingan semakan di laman perbezaan",
+	"revisionslider-toggle-label": "Layar sejarah secara interaktif",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|bait}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|bait}}",
+	"revisionslider-label-date": "Tarikh",
+	"revisionslider-label-page-size": "Saiz laman",
+	"revisionslider-label-change-size": "Saiz perubahan",
+	"revisionslider-label-comment": "Ringkasan suntingan",
+	"revisionslider-label-username": "{{GENDER:$1|Nama pengguna}}",
+	"revisionslider-minoredit": "Ini suntingan kecil",
+	"revisionslider-loading-failed": "Gelangsar semakan gagal dimuat.",
+	"revisionslider-toggle-title-expand": "Buka gelangsar semakan",
+	"revisionslider-toggle-title-collapse": "Runtuhkan gelangsar semakan",
+	"revisionslider-turn-on-auto-expand-title": "Sentiasa kembangkan gelangsar semakan",
+	"revisionslider-turn-off-auto-expand-title": "Jangan kembangkan automatik gelangsar semakan",
+	"revisionslider-arrow-tooltip-newer": "Lihat semakan baru",
+	"revisionslider-arrow-tooltip-older": "Lihat semakan lama",
+	"revisionslider-show-help-tooltip": "Tunjukkan teks bantuan",
+	"revisionslider-help-dialog-slide1": "Gelangsar semakan membantu anda memandu arah dan membanding semakan di laman perbezaan. Ia berdasarkan [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider hajat masyarakat] daripada senarai teknikal masyarakat berbahasa Jerman. Maklum balas amatlah dihargai [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider di sini].",
+	"revisionslider-help-dialog-slide2": "Setiap palang melambangkan satu semakan laman. Palang di atas menunjukkan perkembangan saiz laman, palang di bawah menunjukkan pengurangan. Dalam imej tersebut, semakan 1 melambangkan kandungan yang ditambah, manakala semakan 2 melambangkan pembuangan kandungan.",
+	"revisionslider-help-dialog-slide3a": "<p>Untuk bandingkan semakan tertentu, pilih semakan menggunakan dua tombol berwarna.</p><p>Tombol atas mengawal semakan baru, tombol bawah memetakan semakan lama.</p><p>Gerakkan tombol dengan menyeret dan meletak atau tekan pasa garis gelangsar.</p>",
+	"revisionslider-help-dialog-slide4": "Guna anak panah ke belajang dan ke depan untuk bergerak sepanjang sejarah semakan dan tunjukkan semakan lama dan baru.",
+	"revisionslider-tutorial": "Tutorial gelangsar semakan",
+	"revisionslider-previous-dialog": "Sebelumnya",
+	"revisionslider-next-dialog": "Seterusnya",
+	"revisionslider-close-dialog": "Tutup"
+}
