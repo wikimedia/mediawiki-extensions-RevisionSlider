@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bugoslav",
-			"MaGa"
+			"MaGa",
+			"Ponor"
 		]
 	},
 	"revisionslider": "Grafički prikazivač izmjena",
@@ -27,7 +28,7 @@
 	"revisionslider-show-help-tooltip": "Pomoć",
 	"revisionslider-help-dialog-slide1": "Grafički prikazivač izmjena pomaže u orijentaciji i usporedbi među izmjenama na stranici. Temeljen je na [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider željama zajednice] njemačkog govornog područja. Cijenimo povratne informacije [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider ovdje].",
 	"revisionslider-help-dialog-slide2": "Svaki stupac predstavlja izmjenu stranice. Stupci prema gore predstavljaju povećanje (tj. dodavanje sadržaja), a stupci prema dolje smanjenje veličine stranice (tj. uklanjanje sadržaja).",
-	"revisionslider-help-dialog-slide3a": "<p>Da biste usporedili određene izmjene, označite ih rabeći žuti i plavi kružić.</p><p>Plavim kružićem označavate noviju izmjenu, a žutim stariju.</p><p>Pomičite kružiće povlačenjem i otpuštanjem ili kliknite na liniju odgovarajuće boje.</p>",
+	"revisionslider-help-dialog-slide3a": "<p>Izmjene koje želite usporediti označite dvama obojenim kružićima.</p><p>Gornji kružić označava noviju izmjenu, a donji stariju.</p><p>Kružiće povucite i otpustite ili ih premjestite pritiskom na crtu odgovarajuće boje.</p>",
 	"revisionslider-help-dialog-slide4": "Strjelicama lijevo i desno pomičete se kroz povijest izmjena prikazujući pri tom starije ili novije izmjene.",
 	"revisionslider-tutorial": "Priručnik grafičkog prikazivača izmjena",
 	"revisionslider-previous-dialog": "Natrag",
