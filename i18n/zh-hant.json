@@ -5,10 +5,11 @@
 			"Cwlin0416",
 			"Kly",
 			"Liuxinyu970226",
+			"Winston Sung",
 			"一個正常人"
 		]
 	},
-	"revisionslider": "修訂時間軸",
+	"revisionslider": "修訂時間軸（RevisionSlider）",
 	"revisionslider-preference-disable": "不要顯示修訂時間軸",
 	"revisionslider-desc": "在修訂版本差異頁面上顯示時間軸，同時可供選擇並比較修訂版本間的差異",
 	"revisionslider-toggle-label": "互動式瀏覽歷史",
