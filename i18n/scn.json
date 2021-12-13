@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"revisionslider-page-size": "$1 {{PLURAL:$2|byte}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|byte}}",
+	"revisionslider-label-username": "{{GENDER:$1|Nomu utenti}}",
+	"revisionslider-minoredit": "Chistu è nu canciamentu nicu",
+	"revisionslider-close-dialog": "Chiudi"
+}

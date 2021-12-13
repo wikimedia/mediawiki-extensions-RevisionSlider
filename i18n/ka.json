@@ -4,7 +4,8 @@
 			"David1010",
 			"MIKHEIL",
 			"Macofe",
-			"Otogi"
+			"Otogi",
+			"Გიო ოქრო"
 		]
 	},
 	"revisionslider": "ვერსიის სლაიდერი",
@@ -13,7 +14,8 @@
 	"revisionslider-label-date": "თარიღი",
 	"revisionslider-label-page-size": "გვერდის ზომა",
 	"revisionslider-label-change-size": "ზომის შეცვლა",
-	"revisionslider-label-comment": "კომენტარი",
+	"revisionslider-label-comment": "რედაქტირების რეზიუმე",
+	"revisionslider-label-username": "მომხმარებლის სახელი",
 	"revisionslider-minoredit": "ეს არის მცირე რედაქტირება",
 	"revisionslider-loading-failed": "ვერსიის სლაიდერის ჩატვირთვა ვერ მოხერხდა.",
 	"revisionslider-toggle-title-expand": "ვერსიის სლაიდერის გახსნა",

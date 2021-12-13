@@ -2,10 +2,26 @@
 	"@metadata": {
 		"authors": [
 			"Bluegram",
-			"Horus"
+			"Horus",
+			"Aefgh39622"
 		]
 	},
-	"revisionslider-preference-disable": "ไม่แสดงแถบเลื่อนรุ่น",
+	"revisionslider-preference-disable": "ไม่แสดงแถบเลื่อนรุ่นแก้ไข",
+	"revisionslider-toggle-label": "เรียกดูประวัติแบบโต้ตอบ",
+	"revisionslider-label-date": "วันที่",
+	"revisionslider-label-page-size": "ขนาดหน้า",
+	"revisionslider-label-change-size": "ขนาดการเปลี่ยนแปลง",
+	"revisionslider-label-comment": "ความย่อการแก้ไข",
+	"revisionslider-label-username": "{{GENDER:$1|ชื่อผู้ใช้}}",
+	"revisionslider-minoredit": "เป็นการแก้ไขเล็กน้อย",
+	"revisionslider-toggle-title-expand": "เปิดแถบเลื่อนรุ่นแก้ไข",
+	"revisionslider-toggle-title-collapse": "ยุบแถบเลื่อนรุ่นแก้ไข",
+	"revisionslider-turn-on-auto-expand-title": "ขยายแถบเลื่อนรุ่นแก้ไขเสมอ",
+	"revisionslider-turn-off-auto-expand-title": "อย่าขยายแถบเลื่อนรุ่นแก้ไขโดยอัตโนมัติ",
+	"revisionslider-arrow-tooltip-newer": "ดูรุ่นที่ใหม่กว่า",
+	"revisionslider-arrow-tooltip-older": "ดูรุ่นที่เก่ากว่า",
+	"revisionslider-show-help-tooltip": "แสดงข้อความวิธีใช้",
 	"revisionslider-previous-dialog": "ก่อนหน้า",
+	"revisionslider-next-dialog": "ถัดไป",
 	"revisionslider-close-dialog": "ปิด"
 }

@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"NGC 54"
+		]
+	},
+	"revisionslider-preference-disable": "Nu afișa trecătorul prin revizii",
+	"revisionslider-desc": "Afișează un trecător care permite selectarea și compararea reviziilor pe o pagină de diferență",
+	"revisionslider-toggle-label": "Navighează interactiv prin istoric",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|octet|octeți}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|octet|octeți}}",
+	"revisionslider-label-date": "Dată",
+	"revisionslider-label-page-size": "Dimensiunea paginii",
+	"revisionslider-label-change-size": "Mărimea schimbării",
+	"revisionslider-label-comment": "Descrierea modificării",
+	"revisionslider-label-username": "{{GENDER:$1|Nume de utilizator|Nume de utilizatoare|Nume de utilizator}}",
+	"revisionslider-minoredit": "Aceasta este o modificare minoră",
+	"revisionslider-loading-failed": "Încărcarea trecătorului prin revizii a eșuat.",
+	"revisionslider-toggle-title-expand": "Deschide trecătorul prin revizii",
+	"revisionslider-toggle-title-collapse": "Restrânge trecătorul prin revizii",
+	"revisionslider-turn-on-auto-expand-title": "Extinde mereu trecătorul prin revizii",
+	"revisionslider-turn-off-auto-expand-title": "Nu extinde automat trecătorul prin revizii",
+	"revisionslider-arrow-tooltip-newer": "Vezi revizii mai noi",
+	"revisionslider-arrow-tooltip-older": "Vezi revizii mai vechi",
+	"revisionslider-show-help-tooltip": "Arată textul de ajutor",
+	"revisionslider-help-dialog-slide1": "Trecătorul prin revizii vă ajută să navigați și să comparați revizii pe o pagină de diferență. Este bazat pe o [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider dorință a comunității] de la comunitatea vorbitoare de germană a listei de dorințe tehnice. Părerea este apreciată foarte mult [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider aici].",
+	"revisionslider-help-dialog-slide2": "Fiecare bară reprezintă o revizie a paginii. Barele din partea de sus arată creșterea dimensiunii paginii, barele din partea de jos arată o reducere. În imagine, versiunea 1 reprezintă conținut adăugat, în timp ce versiunea 2 reprezintă eliminarea conținutului.",
+	"revisionslider-help-dialog-slide3a": "<p>Pentru a compara anumite revizii, selectați reviziile folosind cele două butoane colorate.</p><p>Butonul superior controlează versiunea mai nouă, butonul inferior trece la versiunea mai veche.</p><p>Mutați butoane prin tragere sau lăsare sau făcând clic pe linia glisantă.</p>",
+	"revisionslider-help-dialog-slide4": "Utilizați săgețile înapoi și înainte pentru a vă deplasa prin istoricul reviziilor și pentru a afișa reviziile mai vechi și mai noi.",
+	"revisionslider-tutorial": "Tutorialul trecătorului prin revizii",
+	"revisionslider-previous-dialog": "Înapoi",
+	"revisionslider-next-dialog": "Înainte",
+	"revisionslider-close-dialog": "Închide"
+}

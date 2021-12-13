@@ -31,7 +31,7 @@
 	"revisionslider-show-help-tooltip": "Mostrar texto de ajuda",
 	"revisionslider-help-dialog-slide1": "A barra de revisões auxilia na navegação e comparação de revisões na página de diferença entre edições (dif). Foi concebida após [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider solicitação] da comunidade técnica alemã. A sua opinião é muito bem-vinda [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider aqui].",
 	"revisionslider-help-dialog-slide2": "Cada barra representa uma revisão da página. As barras no topo mostram o crescimento no tamanho da página, enquanto que na base é mostrada uma redução. Na imagem, a revisão 1 representa o conteúdo adicionado, enquanto a revisão 2 representa a remoção de conteúdo.",
-	"revisionslider-help-dialog-slide3a": "<p>Para comparar certas revisões, selecione-as usando os botões amarelo e azul.</p><p>O botão azul controla a revisão mais recente e o amarelo a mais antiga.</p><p>Mova os botões arrastando e soltando-os, ou clique na linha da barra.</p>",
+	"revisionslider-help-dialog-slide3a": "<p>Para comparar certas revisões, selecione-as usando os dois botões coloridos.</p><p>O botão superior controla a revisão mais recente, o inferior é mapeado para a mais antiga.</p><p>Mova os botões arrastando e soltando-os, ou clique na linha da barra.</p>",
 	"revisionslider-help-dialog-slide4": "Utilize as setas de avanço e retrocesso para consultar o histórico de revisões e mostrar as mais antigas e mais recentes.",
 	"revisionslider-tutorial": "Guia da barra de revisões",
 	"revisionslider-previous-dialog": "Anterior",

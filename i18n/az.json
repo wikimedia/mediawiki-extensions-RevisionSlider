@@ -2,18 +2,20 @@
 	"@metadata": {
 		"authors": [
 			"Serkanland",
-			"Toghrul Rahimli"
+			"Toghrul Rahimli",
+			"NMW03"
 		]
 	},
 	"revisionslider": "TarixçəSürüşdürcüsü",
+	"revisionslider-preference-disable": "Versiya sürüşdürücüsü göstərmə",
 	"revisionslider-desc": "Səhifənin tarixçələri arasındakı fərqləri sürüşdürərək görməyə imkan verir.",
-	"revisionslider-toggle-label": "Tarixçəni yüklə",
+	"revisionslider-toggle-label": "Tarixə interaktiv şəkildə baxın",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bayt|bayt}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bayt|bayt}}",
 	"revisionslider-label-date": "Tarix",
 	"revisionslider-label-page-size": "Səhifə ölçüsü",
 	"revisionslider-label-change-size": "Dəyişiklik ölçüsü",
-	"revisionslider-label-comment": "Şərh",
+	"revisionslider-label-comment": "Xülasəni redaktə edin",
 	"revisionslider-label-username": "{{GENDER:$1|İstifadəçi adı}}",
 	"revisionslider-minoredit": "Bu, kiçik redaktədir",
 	"revisionslider-loading-failed": "Tarixçə sürüşdürücüsü yüklənmədi",

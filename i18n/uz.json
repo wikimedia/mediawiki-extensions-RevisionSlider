@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Malikxan"
+		]
+	},
+	"revisionslider": "RevizionSlayderi",
+	"revisionslider-preference-disable": "Revizion slayderi boshqa koʻrsatilmasin",
+	"revisionslider-toggle-label": "Tarixni interaktiv tarzda koʻrib chiqish",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|bayt}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|bayt}}",
+	"revisionslider-label-date": "Sana",
+	"revisionslider-label-page-size": "Sahifa oʻlchami",
+	"revisionslider-label-change-size": "Oʻzgarish oʻlchami",
+	"revisionslider-label-comment": "Qisqa izohni tahrirlash",
+	"revisionslider-label-username": "{{GENDER:$1|Foydalanuvchi nomi}}",
+	"revisionslider-minoredit": "Bu kichik tahrir",
+	"revisionslider-loading-failed": "Revizion slayderi yuklanmadi.",
+	"revisionslider-toggle-title-expand": "Revizion slayderini ochish",
+	"revisionslider-toggle-title-collapse": "Revizion slayderini yigʻish",
+	"revisionslider-turn-on-auto-expand-title": "Doimo revizion slayderi yoyilsin",
+	"revisionslider-turn-off-auto-expand-title": "Revizion slayderi avtomatik tarzda yoyilmasin",
+	"revisionslider-arrow-tooltip-newer": "Yangi revizionlarga qarang",
+	"revisionslider-arrow-tooltip-older": "Eski revizionlarga qarang",
+	"revisionslider-show-help-tooltip": "Yordam matniga razm solish",
+	"revisionslider-previous-dialog": "Avvalgisi",
+	"revisionslider-next-dialog": "Keyingisi",
+	"revisionslider-close-dialog": "Yopish"
+}

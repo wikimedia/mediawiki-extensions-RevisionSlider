@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Abbas dhothar"
+		]
+	},
+	"revisionslider-page-size": "$1 {{PLURAL:$2|بائیٹ|بائیٹس}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|بائیٹ|بائیٹس}}",
+	"revisionslider-minoredit": "ایہ اک معمولی ترمیم اے"
+}
