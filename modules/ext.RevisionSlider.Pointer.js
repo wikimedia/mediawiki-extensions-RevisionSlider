@@ -59,8 +59,4 @@ $.extend( Pointer.prototype, {
 	}
 } );
 
-module.exports = {
-	Pointer: Pointer,
-	PointerLine: PointerLine,
-	PointerView: PointerView
-};
+module.exports = Pointer;
