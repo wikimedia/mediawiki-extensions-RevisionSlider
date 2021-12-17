@@ -1,4 +1,4 @@
-var HelpDialog = require( 'ext.RevisionSlider.HelpDialog' ).HelpDialog;
+var HelpDialog = require( 'ext.RevisionSlider.Slider' ).HelpDialog;
 
 QUnit.module( 'ext.RevisionSlider.HelpDialog' );
 

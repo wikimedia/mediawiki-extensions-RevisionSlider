@@ -121,6 +121,7 @@ $.extend( Slider.prototype, {
 module.exports = {
 	Api: require( './ext.RevisionSlider.Api.js' ),
 	DiffPage: require( './ext.RevisionSlider.DiffPage.js' ),
+	HelpDialog: require( './ext.RevisionSlider.HelpDialog.js' ),
 	Slider: Slider,
 	SliderView: SliderView,
 	utils: require( './ext.RevisionSlider.util.js' ),
