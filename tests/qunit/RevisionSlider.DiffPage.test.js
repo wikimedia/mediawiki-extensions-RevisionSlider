@@ -7,10 +7,6 @@ var SliderModule = require( 'ext.RevisionSlider.Slider' ),
 
 QUnit.module( 'ext.RevisionSlider.DiffPage' );
 
-QUnit.test( 'Initialize DiffPage', function ( assert ) {
-	assert.ok( ( new DiffPage() ) );
-} );
-
 QUnit.test( 'Push state', function ( assert ) {
 	var diffPage = new DiffPage(),
 		sliderView = new SliderView( new Slider( new RevisionList( [

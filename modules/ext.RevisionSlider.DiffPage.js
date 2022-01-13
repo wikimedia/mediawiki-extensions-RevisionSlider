@@ -172,7 +172,7 @@ $.extend( DiffPage.prototype, {
 	 */
 	getExtraDiffPageParams: function () {
 		var params = {},
-			paramArray = location.search.substr( 1 ).split( '&' ).filter( function ( elem ) {
+			paramArray = location.search.slice( 1 ).split( '&' ).filter( function ( elem ) {
 				return elem.indexOf( '=' ) > 0 && elem.match( /^(diff|oldid)=/ ) === null;
 			} );
 		paramArray.forEach( function ( elem ) {

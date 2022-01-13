@@ -21,7 +21,7 @@ QUnit.test( 'create Revision', function ( assert ) {
 	assert.strictEqual( rev.getParsedComment(), data.parsedcomment );
 	assert.strictEqual( rev.getUser(), data.user );
 	assert.strictEqual( rev.getUserGender(), 'female' );
-	assert.strictEqual( rev.isMinor(), false );
+	assert.false( rev.isMinor() );
 
 	if ( mw.config.get( 'wgUserLanguage' ) === 'en' ) {
 		assert.strictEqual( rev.getFormattedDate(), '26 April 2016 10:27 AM' );
@@ -33,7 +33,7 @@ QUnit.test( 'isMinor with minor empty string', function ( assert ) {
 		minor: ''
 	} );
 
-	assert.strictEqual( rev.isMinor(), true );
+	assert.true( rev.isMinor() );
 } );
 
 QUnit.test( 'isMinor with minor true', function ( assert ) {
@@ -41,7 +41,7 @@ QUnit.test( 'isMinor with minor true', function ( assert ) {
 		minor: true
 	} );
 
-	assert.strictEqual( rev.isMinor(), true );
+	assert.true( rev.isMinor() );
 } );
 
 QUnit.test( 'get and set relative size', function ( assert ) {
@@ -88,7 +88,7 @@ QUnit.test( 'hasEmptyComment comment with whitespaces', function ( assert ) {
 		comment: '   '
 	} );
 
-	assert.ok( rev.hasEmptyComment() );
+	assert.true( rev.hasEmptyComment() );
 } );
 
 QUnit.test( 'hasEmptyComment comment with chars', function ( assert ) {
@@ -96,7 +96,7 @@ QUnit.test( 'hasEmptyComment comment with chars', function ( assert ) {
 		comment: ' comment '
 	} );
 
-	assert.notOk( rev.hasEmptyComment() );
+	assert.false( rev.hasEmptyComment() );
 } );
 
 QUnit.test( 'hasEmptyComment comment with unicode chars', function ( assert ) {
@@ -104,5 +104,5 @@ QUnit.test( 'hasEmptyComment comment with unicode chars', function ( assert ) {
 		comment: 'ברוכים'
 	} );
 
-	assert.notOk( rev.hasEmptyComment() );
+	assert.false( rev.hasEmptyComment() );
 } );

@@ -31,12 +31,12 @@ QUnit.test( 'render adds the slider view with defined revisions selected', funct
 
 	view.render( $container );
 
-	assert.ok( $container.find( '.mw-revslider-revision-slider' ).length > 0 );
+	assert.strictEqual( $container.find( '.mw-revslider-revision-slider' ).length, 1 );
 	var $revisionOld = $container.find( '.mw-revslider-revision-old' );
 	var $revisionNew = $container.find( '.mw-revslider-revision-new' );
-	assert.ok( $revisionOld.length > 0 );
+	assert.strictEqual( $revisionOld.length, 1 );
 	assert.strictEqual( $revisionOld.attr( 'data-revid' ), '1' );
-	assert.ok( $revisionNew.length > 0 );
+	assert.strictEqual( $revisionNew.length, 1 );
 	assert.strictEqual( $revisionNew.attr( 'data-revid' ), '37' );
 } );
 

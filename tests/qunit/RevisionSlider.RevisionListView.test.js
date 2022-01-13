@@ -21,8 +21,8 @@ QUnit.test( 'render adds revisions', function ( assert ) {
 	assert.strictEqual( $( $revisionDivs[ 2 ] ).attr( 'data-revid' ), '37' );
 	assert.strictEqual( $( $revisionDivs[ 1 ] ).css( 'width' ), '11px' );
 	assert.strictEqual( $( $revisionDivs[ 1 ] ).css( 'height' ), '66px' ); // max relative size
-	assert.ok( $( $revisionDivs[ 1 ] ).hasClass( 'mw-revslider-revision-up' ) );
-	assert.ok( $( $revisionDivs[ 2 ] ).hasClass( 'mw-revslider-revision-down' ) );
+	assert.true( $( $revisionDivs[ 1 ] ).hasClass( 'mw-revslider-revision-up' ) );
+	assert.true( $( $revisionDivs[ 2 ] ).hasClass( 'mw-revslider-revision-down' ) );
 } );
 
 QUnit.test( 'tooltip is composed correctly', function ( assert ) {
@@ -44,10 +44,10 @@ QUnit.test( 'tooltip is composed correctly', function ( assert ) {
 	var tooltip = revisionListView.makeTooltip( revision, {} );
 	var tooltipHtml = tooltip.$element.html();
 
-	assert.ok( tooltipHtml.match( /User1/ ), 'Test the user.' );
-	assert.ok( tooltipHtml.match( /Hello/ ), 'Test the comment.' );
-	assert.ok( tooltipHtml.match( /230/ ), 'Test the page size.' );
-	assert.ok( tooltipHtml.match( /\+210/ ), 'Test the change size.' );
+	assert.true( /User1/.test( tooltipHtml ), 'Test the user.' );
+	assert.true( /Hello/.test( tooltipHtml ), 'Test the comment.' );
+	assert.true( /230/.test( tooltipHtml ), 'Test the page size.' );
+	assert.true( /\+210/.test( tooltipHtml ), 'Test the change size.' );
 } );
 
 QUnit.revisionSlider.testOrSkip( 'tooltip is composed correctly with en lang', function ( assert ) {
@@ -69,12 +69,12 @@ QUnit.revisionSlider.testOrSkip( 'tooltip is composed correctly with en lang', f
 	var tooltip = revisionListView.makeTooltip( revision, {} );
 	var tooltipHtml = tooltip.$element.html();
 
-	assert.ok( tooltipHtml.match( /User1/ ), 'Test the user.' );
-	assert.ok( tooltipHtml.match( /Hello/ ), 'Test the comment.' );
-	assert.ok( tooltipHtml.match( /2,300/ ), 'Test the page size.' );
-	assert.ok( tooltipHtml.match( /\+2,100/ ), 'Test the change size.' );
-	assert.ok( tooltipHtml.match( /26 April 2016 10:27 AM/ ), 'Test the date.' );
-	assert.ok( tooltipHtml.match( /minor/ ), 'Test minor.' );
+	assert.true( /User1/.test( tooltipHtml ), 'Test the user.' );
+	assert.true( /Hello/.test( tooltipHtml ), 'Test the comment.' );
+	assert.true( /2,300/.test( tooltipHtml ), 'Test the page size.' );
+	assert.true( /\+2,100/.test( tooltipHtml ), 'Test the change size.' );
+	assert.true( /26 April 2016 10:27 AM/.test( tooltipHtml ), 'Test the date.' );
+	assert.true( /minor/.test( tooltipHtml ), 'Test minor.' );
 }, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
 QUnit.test( 'empty user leads to no user line', function ( assert ) {
@@ -91,7 +91,7 @@ QUnit.test( 'user line is composed correctly', function ( assert ) {
 	var $userLineHtml = revisionListView.makeUserLine( 'User1' );
 
 	assert.strictEqual( $userLineHtml.find( 'a' ).text(), 'User1' );
-	assert.ok( $userLineHtml.find( 'a' ).attr( 'href' ).match( /User:User1/ ) );
+	assert.true( /User:User1/.test( $userLineHtml.find( 'a' ).attr( 'href' ) ) );
 } );
 
 QUnit.test( 'IP user line is composed correctly', function ( assert ) {
@@ -100,7 +100,7 @@ QUnit.test( 'IP user line is composed correctly', function ( assert ) {
 	var $userLineHtml = revisionListView.makeUserLine( '127.0.0.1' );
 
 	assert.strictEqual( $userLineHtml.find( 'a' ).text(), '127.0.0.1' );
-	assert.ok( $userLineHtml.find( 'a' ).attr( 'href' ).match( /Special:Contributions\/127.0.0.1/ ) );
+	assert.true( /Special:Contributions\/127.0.0.1/.test( $userLineHtml.find( 'a' ).attr( 'href' ) ) );
 } );
 
 QUnit.test( 'empty comment leads to no comment line', function ( assert ) {
@@ -165,5 +165,5 @@ QUnit.test( 'page size is formatted correctly', function ( assert ) {
 
 	var $pageSizeLineHtml = revisionListView.makePageSizeLine( 1337 );
 
-	assert.ok( $pageSizeLineHtml.text().match( /1,337/ ) );
+	assert.true( /1,337/.test( $pageSizeLineHtml.text() ) );
 } );

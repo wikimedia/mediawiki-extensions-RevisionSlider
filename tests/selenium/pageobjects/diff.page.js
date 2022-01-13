@@ -31,10 +31,10 @@ class DiffPage extends Page {
 	get rsSummaryOlder() { return $( '#mw-diff-otitle3' ); }
 	get rsSummaryNewer() { return $( '#mw-diff-ntitle3' ); }
 	showsOlderSummary( num ) {
-		return this.rsSummaryOlder.getText().indexOf( 'Summary ' + num ) !== -1;
+		return this.rsSummaryOlder.getText().includes( 'Summary ' + num );
 	}
 	showsNewerSummary( num ) {
-		return this.rsSummaryNewer.getText().indexOf( 'Summary ' + num ) !== -1;
+		return this.rsSummaryNewer.getText().includes( 'Summary ' + num );
 	}
 
 	get rsUserFilterBubble() { return $( USER_BUBBLE_SELECTOR ); }
@@ -220,11 +220,11 @@ class DiffPage extends Page {
 
 	highlightsRevision( num ) {
 		return this.getRevision( num ).$( '..' )
-			.getAttribute( 'class' ).indexOf( 'mw-revslider-revision-highlight' ) !== -1;
+			.getAttribute( 'class' ).includes( 'mw-revslider-revision-highlight' );
 	}
 
 	highlightsBubble( el ) {
-		return el.getAttribute( 'class' ).indexOf( 'mw-revslider-highlite-bubble' ) !== -1;
+		return el.getAttribute( 'class' ).includes( 'mw-revslider-highlite-bubble' );
 	}
 
 	dragOlderPointerTo( num ) {

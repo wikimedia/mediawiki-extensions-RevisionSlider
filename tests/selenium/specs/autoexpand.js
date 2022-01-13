@@ -40,7 +40,7 @@ describe( 'RevisionSlider expand', function () {
 
 		assert(
 			DiffPage.rsAutoExpandButton.getAttribute( 'class' )
-				.indexOf( 'oo-ui-toggleWidget-on' ) !== -1,
+				.includes( 'oo-ui-toggleWidget-on' ),
 			'the auto expand button should be on'
 		);
 		assert(
@@ -65,8 +65,8 @@ describe( 'RevisionSlider expand', function () {
 			'the RevisionSlider wrapper should be visible'
 		);
 		assert(
-			DiffPage.rsAutoExpandButton.getAttribute( 'class' )
-				.indexOf( 'oo-ui-toggleWidget-on' ) === -1,
+			!DiffPage.rsAutoExpandButton.getAttribute( 'class' )
+				.includes( 'oo-ui-toggleWidget-on' ),
 			'the auto expand button should be off'
 		);
 	} );

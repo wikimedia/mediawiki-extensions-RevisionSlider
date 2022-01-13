@@ -3,16 +3,16 @@ var PointerView = require( 'ext.RevisionSlider.Slider' ).private.PointerView;
 QUnit.module( 'ext.RevisionSlider.PointerView' );
 
 QUnit.test( 'Initialize PointerView', function ( assert ) {
-	assert.ok( ( new PointerView( null, 'mw-revslider-pointer' ) ).render().hasClass( 'mw-revslider-pointer' ) );
+	assert.true( ( new PointerView( null, 'mw-revslider-pointer' ) ).render().hasClass( 'mw-revslider-pointer' ) );
 } );
 
 QUnit.test( 'Is newer pointer', function ( assert ) {
 	var pv = new PointerView( null, 'mw-revslider-pointer' );
 	pv.render();
-	assert.notOk( pv.isNewerPointer() );
+	assert.false( pv.isNewerPointer() );
 
 	pv.getElement().addClass( 'mw-revslider-pointer-newer' );
-	assert.ok( pv.isNewerPointer() );
+	assert.true( pv.isNewerPointer() );
 } );
 
 QUnit.test( 'Has offset', function ( assert ) {
