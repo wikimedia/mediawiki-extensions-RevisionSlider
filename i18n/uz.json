@@ -10,7 +10,7 @@
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bayt}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bayt}}",
 	"revisionslider-label-date": "Sana",
-	"revisionslider-label-page-size": "Sahifa oʻlchami",
+	"revisionslider-label-page-size": "Sahifa hajmi",
 	"revisionslider-label-change-size": "Oʻzgarish oʻlchami",
 	"revisionslider-label-comment": "Qisqa izohni tahrirlash",
 	"revisionslider-label-username": "{{GENDER:$1|Foydalanuvchi nomi}}",
