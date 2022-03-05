@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\Extensions\RevisionSlider;
+namespace MediaWiki\Extension\RevisionSlider;
 
 use Config;
 use DifferenceEngine;

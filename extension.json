@@ -26,7 +26,7 @@
 		]
 	},
 	"AutoloadNamespaces": {
-		"MediaWiki\\Extensions\\RevisionSlider\\": "src/"
+		"MediaWiki\\Extension\\RevisionSlider\\": "src/"
 	},
 	"QUnitTestModule": {
 		"scripts": [
@@ -185,8 +185,8 @@
 		"remoteExtPath": "RevisionSlider"
 	},
 	"Hooks": {
-		"DifferenceEngineViewHeader": "MediaWiki\\Extensions\\RevisionSlider\\RevisionSliderHooks::onDifferenceEngineViewHeader",
-		"GetPreferences": "MediaWiki\\Extensions\\RevisionSlider\\RevisionSliderHooks::onGetPreferences"
+		"DifferenceEngineViewHeader": "MediaWiki\\Extension\\RevisionSlider\\RevisionSliderHooks::onDifferenceEngineViewHeader",
+		"GetPreferences": "MediaWiki\\Extension\\RevisionSlider\\RevisionSliderHooks::onGetPreferences"
 	},
 	"DefaultUserOptions": {
 		"revisionslider-disable": false
