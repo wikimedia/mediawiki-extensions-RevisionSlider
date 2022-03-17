@@ -111,7 +111,7 @@ $.extend( HelpDialog.prototype, {
 			.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-portrait mw-revslider-help-dialog-slide-3a mw-revslider-column-image' ) )
 			.append(
 				$( '<div>' ).addClass( 'mw-revslider-column-text mw-revslider-help-dialog-text' )
-					.html( mw.message( 'revisionslider-help-dialog-slide3a' ).parse() )
+					.text( mw.msg( 'revisionslider-help-dialog-slide3a' ) )
 			)
 			.append( $( '<div>' ).css( 'clear', 'both' ) );
 

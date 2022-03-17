@@ -26,7 +26,7 @@
 	"revisionslider-show-help-tooltip": "Show help text",
 	"revisionslider-help-dialog-slide1": "The revision slider helps you to navigate and compare revisions on the diff page. It is based on a [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider community wish] from the German-speaking community technical wishlist. Feedback is very much appreciated [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider here].",
 	"revisionslider-help-dialog-slide2": "Each bar represents a page revision. Bars on the top show growth in size of the page, bars on the bottom show a reduction. In the image, revision 1 represents added content, while revision 2 represents removal of content.",
-	"revisionslider-help-dialog-slide3a": "<p>To compare certain revisions, select the revisions using the two colored knobs.</p><p>The upper knob controls the newer revision, the lower knob maps to the older revision.</p><p>Move the knobs by drag and drop or clicking on the slider line.</p>",
+	"revisionslider-help-dialog-slide3a": "To compare certain revisions, select the revisions using the two colored knobs.\n\nThe upper knob controls the newer revision, the lower knob maps to the older revision.\n\nMove the knobs by drag and drop or clicking on the slider line.",
 	"revisionslider-help-dialog-slide4": "Use the backward and forward arrows to move through revision history and show older and newer revisions.",
 	"revisionslider-tutorial": "Revision slider tutorial",
 	"revisionslider-previous-dialog": "Previous",
