@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Beginneruser",
 			"Ebraminio",
 			"Ladsgroup",
 			"MohammadtheEditor",
@@ -18,7 +19,7 @@
 	"revisionslider-label-date": "تاریخ",
 	"revisionslider-label-page-size": "حجم صفحه",
 	"revisionslider-label-change-size": "تغییر اندازه",
-	"revisionslider-label-comment": "خلاصه ویرایش",
+	"revisionslider-label-comment": "خلاصهٔ ویرایش",
 	"revisionslider-label-username": "{{GENDER:$1|نام کاربری}}:",
 	"revisionslider-minoredit": "این ویرایش، جزئی است",
 	"revisionslider-loading-failed": "نوار لغزنده نسخه در بارگذاری شکست خورد",
