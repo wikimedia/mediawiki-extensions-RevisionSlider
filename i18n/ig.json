@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Pasjoesscc",
 			"Ukabia"
 		]
 	},
-	"revisionslider-label-username": "{{GENDER:$1|Ahàǹjìème}}"
+	"revisionslider-label-username": "{{GENDER:$1|Ahàǹjìème}}",
+	"revisionslider-help-dialog-slide3a": "Iji tụlekọrị ta ụfọdụ mmegharị, họrọ mmegharị site n'iji ebe mpịdo aka abụọ nwere ụcha.\n\n\nEbe mpịdo dị n'elu na-achịkwa mmegharị ọhụrụ, ebe mpịdo nke abụọ na-aga na mmegharị ochie.\n\nWegharịa ebe mpịdo site n'ibugharị ya."
 }
