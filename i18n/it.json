@@ -31,7 +31,7 @@
 	"revisionslider-show-help-tooltip": "Mostra testo di aiuto",
 	"revisionslider-help-dialog-slide1": "Revision Slider ti consente di navigare e confrontare diverse versioni di una pagina (diff). È stata creata per realizzare una [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider proposta] espressa dalla comunità germanofona tra le richieste tecniche della comunità. Ogni commento sarà il benvenuto su [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider questa pagina].",
 	"revisionslider-help-dialog-slide2": "Ogni barra rappresenta una diversa versione della pagina. Le barre che sporgono verso l'alto mostrano un aumento della grandezza della pagina, le barre verso il basso, invece, una riduzione. Nell'immagine, la modifica 1 rappresenta un aggiunta di contenuti, mentre la modifica 2 una rimozione di contenuti.",
-	"revisionslider-help-dialog-slide3a": "<p>Per confrontare determinate modifiche ad una pagina seleziona le versioni usando i bottoni di due colori.</p><p>Il bottone superiore indica la più recente delle modifiche da controllare, quello inferiore la più vecchia.</p><p>Sposta i bottoni trascinandoli o cliccando su una barra.</p>",
+	"revisionslider-help-dialog-slide3a": "Per confrontare determinate modifiche ad una pagina seleziona le versioni usando i bottoni di due colori.\nIl bottone superiore indica la più recente delle modifiche da controllare, quello inferiore la più vecchia.\nSposta i bottoni trascinandoli o cliccando su una barra.",
 	"revisionslider-help-dialog-slide4": "Usa le frecce avanti e indietro per muoverti tra la cronologia e mostrare versioni più vecchie o più recenti.",
 	"revisionslider-tutorial": "Tutorial del Revision Slider",
 	"revisionslider-previous-dialog": "Precedente",
