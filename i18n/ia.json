@@ -26,7 +26,7 @@
 	"revisionslider-show-help-tooltip": "Monstrar texto de adjuta",
 	"revisionslider-help-dialog-slide1": "Le versionario te adjuta a explorar e comparar versiones sur le pagina de differentias. Illo ha essite disveloppate secundo un [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider proposition technic] del communitate germanophone. Omne [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider commentos] esserea multo benvenite.",
 	"revisionslider-help-dialog-slide2": "Cata barra representa un version de un pagina. Le barras superior monstra le crescimento in dimension del pagina, le barras inferior monstra un reduction. In le imagine, le version 1 representa un addition de contento e le version 2 representa un remotion de contento.",
-	"revisionslider-help-dialog-slide3a": "<p>Pro comparar certe versiones, selige le versiones con le duo buttones colorate.</p><p>Le button superior controla le version plus nove, le button inferior corresponde al version plus ancian.</p><p>Pro displaciar le buttones, trahe e depone los, o clicca sur le linea glissator.</p>",
+	"revisionslider-help-dialog-slide3a": "Pro comparar certe versiones, selige le versiones con le duo buttones colorate.\n\nLe button superior controla le version plus recente; le button inferior corresponde al version plus ancian.\n\nPro displaciar le buttones, trahe e depone los, o clicca sur le linea glissator.",
 	"revisionslider-help-dialog-slide4": "Usa le flechas avante e retro pro mover te per le historia de versiones e monstrar versiones plus ancian e plus nove.",
 	"revisionslider-tutorial": "Como functiona le versionario",
 	"revisionslider-previous-dialog": "Precedente",
