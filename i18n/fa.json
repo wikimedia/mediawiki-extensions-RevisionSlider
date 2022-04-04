@@ -21,7 +21,7 @@
 	"revisionslider-label-change-size": "تغییر اندازه",
 	"revisionslider-label-comment": "خلاصهٔ ویرایش",
 	"revisionslider-label-username": "{{GENDER:$1|نام کاربری}}:",
-	"revisionslider-minoredit": "این ویرایش، جزئی است",
+	"revisionslider-minoredit": "این یک ویرایش جزئی است",
 	"revisionslider-loading-failed": "نوار لغزنده نسخه در بارگذاری شکست خورد",
 	"revisionslider-toggle-title-expand": "گسترش نوار لغزنده نسخه",
 	"revisionslider-toggle-title-collapse": "بستن کشویی نوار لغزنده",
