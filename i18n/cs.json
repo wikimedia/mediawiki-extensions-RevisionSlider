@@ -29,7 +29,7 @@
 	"revisionslider-show-help-tooltip": "Zobrazit text nápovědy",
 	"revisionslider-help-dialog-slide1": "Posuvník revizí pomáhá najít a porovnávat revize v rozdílu verzí. Je vytvořen na základě [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider přání německy mluvící komunity]. Velmi oceníme [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider komentáře].",
 	"revisionslider-help-dialog-slide2": "Každý sloupec představuje revizi stránky. Sloupce nahoru zobrazují nárůst velikosti stránky, sloupce dolů pak zmenšení. Na obrázku představuje revize 1 přidání obsahu, zatímco revize 2 jeho odebrání.",
-	"revisionslider-help-dialog-slide3a": "<p>Pro porovnání konkrétních revizí je vyberte pomocí dvou barevných knoflíků.</p><p>Horní knoflík ovládá novější revizi, dolní knoflík označuje starší revizi.</p><p>Knoflíky můžete přesouvat stisknutím a tažením nebo kliknutím na osu posuvníku.</p>",
+	"revisionslider-help-dialog-slide3a": "Pro porovnání konkrétních revizí je vyberte pomocí dvou barevných knoflíků.\n\nHorní knoflík ovládá novější revizi, dolní knoflík označuje starší revizi.\n\nKnoflíky můžete přesouvat stisknutím a tažením nebo kliknutím na osu posuvníku.",
 	"revisionslider-help-dialog-slide4": "Pomocí šipek vpřed a vzad se můžete posouvat historií verzí a zobrazovat starší či novější verze.",
 	"revisionslider-tutorial": "Průvodce časovou osou historie",
 	"revisionslider-previous-dialog": "Předchozí",
