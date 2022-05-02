@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Akapochtli"
+			"Akapochtli",
+			"Languaeditor"
 		]
 	},
-	"revisionslider-label-username": "{{GENDER:$1|Tequitiuhcatocaitl}}"
+	"revisionslider-label-username": "{{GENDER:$1|Tekitiketl}}"
 }
