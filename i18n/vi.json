@@ -9,7 +9,7 @@
 	"revisionslider": "Thanh trượt Phiên bản",
 	"revisionslider-preference-disable": "Ẩn thanh trượt phiên bản",
 	"revisionslider-desc": "Hiển thị thanh trượt cho phép lựa chọn và so sánh các phiên bản của một trang",
-	"revisionslider-toggle-label": "Duyệt lịch sử",
+	"revisionslider-toggle-label": "Duyệt lịch sử tương tác",
 	"revisionslider-page-size": "$1 {{PLURAL:$2}}byte",
 	"revisionslider-change-size": "$1 {{PLURAL:$3}}byte",
 	"revisionslider-label-date": "Ngày tháng",
