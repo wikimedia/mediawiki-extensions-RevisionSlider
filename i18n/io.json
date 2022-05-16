@@ -11,5 +11,7 @@
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bicoko*|bicoki*}}",
 	"revisionslider-label-date": "Dato",
 	"revisionslider-minoredit": "Ico esas mikra redaktajo",
+	"revisionslider-previous-dialog": "Antea",
+	"revisionslider-next-dialog": "Sequanta",
 	"revisionslider-close-dialog": "Klozez"
 }

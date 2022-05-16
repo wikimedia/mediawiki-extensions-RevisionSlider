@@ -8,11 +8,12 @@
 			"Rapsar",
 			"Vito Genovese",
 			"MuratTheTurkish",
-			"Sezgin İbiş"
+			"Sezgin İbiş",
+			"Joseph"
 		]
 	},
 	"revisionslider": "RevisionSlider",
-	"revisionslider-preference-disable": "Sürümü kaydırıcısını gösterme",
+	"revisionslider-preference-disable": "Sürüm kaydırıcısını gösterme",
 	"revisionslider-desc": "Farklı bir sayfada sürümlerin seçilmesine ve karşılaştırılmasına izin veren bir kaydırıcı gösterir",
 	"revisionslider-toggle-label": "Etkileşimli olarak geçmişe göz at",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bayt|bayt}}",
