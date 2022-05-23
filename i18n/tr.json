@@ -8,6 +8,7 @@
 			"Joseph",
 			"MuratTheTurkish",
 			"Rapsar",
+			"SaldırganSincap",
 			"Sezgin İbiş",
 			"Vito Genovese"
 		]
@@ -34,7 +35,7 @@
 	"revisionslider-show-help-tooltip": "Yardım metnini göster",
 	"revisionslider-help-dialog-slide1": "Sürüm kaydırıcısı, fark sayfasındaki sürümlerde gezinmenize ve karşılaştırmanıza yardımcı olur. Almanca konuşan topluluk teknik istek listesinden gelen bir [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider topluluk isteğine] dayanmaktadır. Geri bildirim [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider burada] çok takdir edilmektedir.",
 	"revisionslider-help-dialog-slide2": "Her bar çubuğu sayfadaki bir sürümü işaret eder. Alanın ortasından geçen çizginin üzerindeki barlar büyümeyi, altındaki barlar ise azalmayı göstermektedir. Sürüm 1 eklenmeyi temsil ederken, sürüm 2 içerikten yapılan çıkarmaları gösterir.",
-	"revisionslider-help-dialog-slide3a": "<p>Belirli sürümleri karşılaştırmak için, iki renkli düğmeyi kullanarak sürümleri seçin.</p><p>Üst düğme yeni sürümünü kontrol eder, alt düğme eski sürümü ile eşleşir.</p><p>Düğmeleri sürükleyip bırakarak veya kaydırma çizgisine tıklayarak hareket ettirin.</p>",
+	"revisionslider-help-dialog-slide3a": "Belirli revizyonları karşılaştırmak için iki renkli düğmeyi kullanarak revizyonları seçin.\n\nÜst düğme daha yeni revizyonu kontrol eder, alt düğme eski revizyonla eşleşir.\n\nSürükle bırak yöntemiyle veya kaydırma çubuğuna tıklayarak düğmeleri hareket ettirin.",
 	"revisionslider-help-dialog-slide4": "Sürüm geçmişinde hareket etmek için önceki ve sonraki oklarını kullanarak daha eski ve yeni sürümleri görebilirsiniz.",
 	"revisionslider-tutorial": "Sürüm kaydırıcı eğitimi",
 	"revisionslider-previous-dialog": "Önceki",
