@@ -1,18 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Artsiom91"
+			"Artsiom91",
+			"No Sleep till Krupki"
 		]
 	},
 	"revisionslider-preference-disable": "Не паказваць RevisionSlider",
 	"revisionslider-desc": "Паказвае слайдар, які дазваляе выбраць і параўнаць версіі на старонцы розніцы версій",
-	"revisionslider-toggle-label": "Навігацыя па гісторыі",
+	"revisionslider-toggle-label": "Інтэрактыўны прагляд гісторыі",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|байт|байты|байтаў}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|байт|байты|байтаў}}",
 	"revisionslider-label-date": "Дата",
 	"revisionslider-label-page-size": "Памер старонкі",
 	"revisionslider-label-change-size": "Памер змены",
-	"revisionslider-label-comment": "Тлумачэнне",
+	"revisionslider-label-comment": "Тлумачэнне праўкі",
 	"revisionslider-label-username": "{{GENDER:$1|Удзельнік|Удзельніца}}",
 	"revisionslider-minoredit": "Гэта дробная праўка",
 	"revisionslider-loading-failed": "Не атрымалася загрузіць слайдар версій.",
@@ -25,7 +26,7 @@
 	"revisionslider-show-help-tooltip": "Паказаць тэкст даведкі",
 	"revisionslider-help-dialog-slide1": "Слайдар версій дапамагае рухацца па гісторыі старонкі і параўноўваць версіі. Ён заснаваны на [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider пажаданні супольнасці] ад нямецкамоўнага спісу тэхнічных пажаданняў. Усе заўвагі і пажаданні накіроўвайце [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider на адмысловы адрас].",
 	"revisionslider-help-dialog-slide2": "Кожны слупок прадстаўляе версію старонкі. Вышэйшыя за лінію слупкі паказваюць павелічэнне памеру старонкі, а ніжэйшыя за лінію слупкі паказваюць памяншэнне. На малюнку змена 1 паказвае даданне зместу, а змена 2 паказвае выдаленне зместу.",
-	"revisionslider-help-dialog-slide3a": "<p>Каб параўнаць пэўныя версіі, выберыце іх, выкарыстоўваючы жоўні і сіні паказальнікі.</p><p>Сіні паказальнік кантралюе навейшую версію, а жоўты паказальнік — старэйшую версію.</p><p>Перамяшчайце пазначальнікі шляхам перацягвання або клікаючы на лінію слайдара.</p>",
+	"revisionslider-help-dialog-slide3a": "Каб параўнаць пэўныя вэрсіі, абярыце версіі з дапамогай двух каляровых кулек.\n\nВерхняя кулька кантралюе навейшую версію, ніжэйшая кулька — старэйшую версію.\n\nПерасоўвайце кулькі перацягваннем або націскайце на лініі слайдэру.",
 	"revisionslider-help-dialog-slide4": "Выкарыстоўвайце стрэлкі направа і налева для перамяшчэння па гісторыі старонкі і прагляду старэйшых і навейшых версій.",
 	"revisionslider-tutorial": "Інструкцыя па слайдару версій",
 	"revisionslider-previous-dialog": "Папярэдняя",
