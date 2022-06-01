@@ -5,10 +5,13 @@
 			"Garam",
 			"Jonghaya",
 			"Macofe",
-			"Ykhwong"
+			"Ykhwong",
+			"Bluehill"
 		]
 	},
+	"revisionslider": "판슬라이더",
 	"revisionslider-preference-disable": "판 슬라이더를 보지 않기",
+	"revisionslider-desc": "차이 문서에서 판을 선택하고 비교할 수 있는 슬라이더를 표시합니다",
 	"revisionslider-toggle-label": "입체적으로 역사 찾아보기",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|바이트}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|바이트}}",
