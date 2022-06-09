@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrisportelli"
+		]
+	},
+	"revisionslider-toggle-label": "Esplora l-kronoloġija b'mod interattiv",
+	"revisionslider-label-date": "Data",
+	"revisionslider-label-page-size": "Daqs tal-paġna",
+	"revisionslider-label-change-size": "Biddel id-daqs",
+	"revisionslider-label-comment": "Taqsira",
+	"revisionslider-label-username": "{{GENDER:$1|Isem tal-utent}}",
+	"revisionslider-minoredit": "Din hija modifika minuri",
+	"revisionslider-arrow-tooltip-newer": "Ara verżjonijiet iġded",
+	"revisionslider-arrow-tooltip-older": "Ara verżjonijiet eqdem",
+	"revisionslider-help-dialog-slide4": "Uża l-vleġġeġ ta' wara u quddiem biex timxi fil-kronoloġija u tara verżjonijiet eqdem u iġded.",
+	"revisionslider-previous-dialog": "Ta' qabel",
+	"revisionslider-next-dialog": "Li jmiss",
+	"revisionslider-close-dialog": "Agħlaq"
+}
