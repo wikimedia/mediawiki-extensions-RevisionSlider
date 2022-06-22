@@ -15,7 +15,6 @@ $.extend( Api.prototype, {
 	 *
 	 * @return {jQuery.jqXHR}
 	 */
-
 	fetchAvailableChangeTags: function () {
 		return $.ajax( {
 			url: this.url,
@@ -33,12 +32,12 @@ $.extend( Api.prototype, {
 	 * Fetches a batch of revision data, including a gender setting for users who edited the revision
 	 *
 	 * @param {string} pageName
-	 * @param {Object} options Options
+	 * @param {Object} options
 	 * @param {string} [options.dir='older'] Sort direction
 	 * @param {number} [options.limit=500] Result limit
-	 * @param {number} [options.startId] Start ID
-	 * @param {number} [options.endId] End ID
-	 * @param {Object} [options.knownUserGenders] Known user genders
+	 * @param {number} [options.startId]
+	 * @param {number} [options.endId]
+	 * @param {Object.<string,string>} [options.knownUserGenders]
 	 * @return {jQuery.promise}
 	 */
 	fetchRevisionData: function ( pageName, options ) {
@@ -53,7 +52,7 @@ $.extend( Api.prototype, {
 				var revs = data.query.pages[ 0 ].revisions,
 					revContinue = data.continue,
 					genderData = options.knownUserGenders || {},
-					changeTags = options.changeTags || [];
+					changeTags = options.changeTags;
 
 				if ( !revs ) {
 					return deferred.reject;
@@ -85,7 +84,7 @@ $.extend( Api.prototype, {
 						}
 
 						revs.forEach( function ( rev ) {
-							if ( 'user' in rev && rev.user in genderData ) {
+							if ( rev.user in genderData ) {
 								rev.userGender = genderData[ rev.user ];
 							}
 						} );
@@ -110,16 +109,15 @@ $.extend( Api.prototype, {
 	 * Fetches up to 500 revisions at a time
 	 *
 	 * @param {string} pageName
-	 * @param {Object} [options] Options
+	 * @param {Object} [options]
 	 * @param {string} [options.dir='older'] Sort direction
 	 * @param {number} [options.limit=500] Result limit
-	 * @param {number} [options.startId] Start ID
-	 * @param {number} [options.endId] End ID
+	 * @param {number} [options.startId]
+	 * @param {number} [options.endId]
 	 * @return {jQuery.jqXHR}
 	 */
 	fetchRevisions: function ( pageName, options ) {
 		options = options || {};
-		var dir = 'dir' in options ? options.dir : 'older';
 		var data = {
 			action: 'query',
 			prop: 'revisions',
@@ -129,7 +127,7 @@ $.extend( Api.prototype, {
 			formatversion: 2,
 			continue: '',
 			rvlimit: 500,
-			rvdir: dir
+			rvdir: options.dir || 'older'
 		};
 
 		if ( 'startId' in options ) {
@@ -173,29 +171,31 @@ $.extend( Api.prototype, {
 
 	/**
 	 * @param {Object[]} revs
-	 * @param {Object} knownUserGenders
+	 * @param {Object.<string,string>} knownUserGenders
 	 * @return {string[]}
 	 */
 	getUniqueUserNamesWithUnknownGender: function ( revs, knownUserGenders ) {
 		var allUsers = revs.map( function ( rev ) {
-			return 'user' in rev && !( 'anon' in rev ) ? rev.user : '';
+			return !( 'anon' in rev ) && rev.user;
 		} );
-		return allUsers.filter( function ( value, index, array ) {
-			return value !== '' && !( value in knownUserGenders ) && array.indexOf( value ) === index;
+		return allUsers.filter( function ( name, index ) {
+			// Anonymous users don't have a name
+			return name && !( name in knownUserGenders ) &&
+				// This filters duplicates by rejecting all but the first one
+				allUsers.indexOf( name ) === index;
 		} );
 	},
 
 	/**
-	 * @param {Object[]} data
-	 * @return {Object}
+	 * @param {Object[]} users
+	 * @return {Object.<string,string>}
 	 */
-	getUserGenderData: function ( data ) {
-		var genderData = {},
-			usersWithGender = data.filter( function ( item ) {
-				return 'gender' in item && item.gender !== 'unknown';
-			} );
-		usersWithGender.forEach( function ( item ) {
-			genderData[ item.name ] = item.gender;
+	getUserGenderData: function ( users ) {
+		var genderData = {};
+		users.forEach( function ( user ) {
+			if ( user.gender && user.gender !== 'unknown' ) {
+				genderData[ user.name ] = user.gender;
+			}
 		} );
 		return genderData;
 	},
@@ -207,23 +207,19 @@ $.extend( Api.prototype, {
 	 */
 	getRevisionsWithNewTags: function ( revs, changeTags ) {
 		revs.forEach( function ( rev ) {
-			var oldTags = rev.tags,
-				newTags = [];
-
-			if ( oldTags.length > 0 ) {
-				oldTags.forEach( function ( tag ) {
-					changeTags.forEach( function ( changeTag ) {
-						if ( changeTag.name === tag ) {
-							tag = changeTag.displayname;
-						}
-					} );
-					// Remove hidden tags (tags with no displayname)
-					if ( tag ) {
-						newTags.push( tag );
+			rev.tags = rev.tags.map( function ( tag ) {
+				changeTags.some( function ( changeTag ) {
+					if ( tag === changeTag.name ) {
+						tag = changeTag.displayname;
+						return true;
 					}
+					return false;
 				} );
-				rev.tags = newTags;
-			}
+				return tag;
+			} ).filter( function ( tag ) {
+				// Remove hidden tags (tags with no displayname)
+				return tag;
+			} );
 		} );
 		return revs;
 	}
