@@ -14,7 +14,7 @@
 		]
 	},
 	"revisionslider": "RevisionSlider",
-	"revisionslider-preference-disable": "Ne pas montrer la glissière des versions",
+	"revisionslider-preference-disable": "Ne pas afficher la glissière des versions",
 	"revisionslider-desc": "Affiche une glissière permettant de sélectionner et comparer les versions sur une page de diff",
 	"revisionslider-toggle-label": "Navigation interactive dans l’historique",
 	"revisionslider-page-size": "$1 octet{{PLURAL:$2||s}}",
