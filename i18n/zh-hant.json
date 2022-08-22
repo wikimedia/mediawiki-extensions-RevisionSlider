@@ -31,7 +31,7 @@
 	"revisionslider-show-help-tooltip": "顯示說明文字",
 	"revisionslider-help-dialog-slide1": "修訂時間軸可以在您於差異頁面比較修訂版本時，協助並引導您。此功能是根據德語維基社群技術願望清單的[//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider 社群願望]為基礎。歡迎您踴躍[//www.mediawiki.org/wiki/Extension_talk:RevisionSlider 於此處提供回饋]。",
 	"revisionslider-help-dialog-slide2": "每個縱條代表一個頁面修訂版本。在時間軸之上的縱條顯示頁面增加的大小，時間軸下方的縱條代表減少的大小。在圖片中，修訂版本1代表內容增加，而修訂版本2代表內容減少。",
-	"revisionslider-help-dialog-slide3a": "<p>若要比較特定修訂版本，請使用雙色旋鈕選擇修訂版本。</p><p>上方旋鈕控制較新的編輯，下方旋鈕表示較舊的編輯。</p><p>您可以透過拖曳或點擊縱條來移動旋鈕。</p>",
+	"revisionslider-help-dialog-slide3a": "若要比較特定修訂版本，請使用雙色旋鈕選擇修訂版本。\n\n上方旋鈕控制較新的編輯，下方旋鈕表示較舊的編輯。\n\n您可以透過拖曳或點擊縱條來移動旋鈕。",
 	"revisionslider-help-dialog-slide4": "使用向後及向前箭頭在修訂歷史之間移動，以顯示較舊或較新的修訂版本。",
 	"revisionslider-tutorial": "修訂時間軸教學",
 	"revisionslider-previous-dialog": "上一步",
