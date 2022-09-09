@@ -37,7 +37,7 @@ function initialize() {
 			changeTags = data.query.tags;
 		}
 		api.fetchRevisionData( mw.config.get( 'wgPageName' ), {
-			startId: mw.config.get( 'wgDiffNewId' ),
+			startId: Math.max( mw.config.get( 'wgDiffOldId' ), mw.config.get( 'wgDiffNewId' ) ),
 			limit: utils.calculateRevisionsPerWindow( 160, 16 ),
 			changeTags: changeTags
 		} ).then( function ( data2 ) {
