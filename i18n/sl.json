@@ -8,7 +8,7 @@
 	},
 	"revisionslider": "Redakcijski drsnik",
 	"revisionslider-preference-disable": "Ne prikaži redakcijskega drsnika",
-	"revisionslider-desc": "Prikaže drsnik, ki omogoča izbiranje in primerjanje med posameznimi redakcijami na primerjalni strani",
+	"revisionslider-desc": "Prikaže drsnik, ki omogoča izbiranje in primerjanje posameznih redakcij na primerjalni strani",
 	"revisionslider-toggle-label": "Pregledujte zgodovino interaktivno",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|znak|znaka|znaki|znakov}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|znak|znaka|znaki|znakov}}",
