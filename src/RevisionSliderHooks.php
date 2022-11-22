@@ -75,11 +75,9 @@ class RevisionSliderHooks {
 		$stats->increment( 'RevisionSlider.event.hookinit' );
 
 		$config = self::getConfig();
-		$timeOffset = $config->get( 'LocalTZoffset' );
-		if ( $config->get( 'Localtimezone' ) === null ) {
-			$timeOffset = 0;
-		} elseif ( $timeOffset === null ) {
-			$timeOffset = 0;
+		$timeOffset = 0;
+		if ( $config->get( 'Localtimezone' ) !== null ) {
+			$timeOffset = $config->get( 'LocalTZoffset' ) ?? 0;
 		}
 
 		$autoExpand = $userOptionsLookup->getBoolOption( $user, 'userjs-revslider-autoexpand' );
