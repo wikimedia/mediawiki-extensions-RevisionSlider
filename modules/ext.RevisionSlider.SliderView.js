@@ -20,45 +20,24 @@ function SliderView( slider ) {
 }
 
 $.extend( SliderView.prototype, {
+
 	revisionWidth: 16,
-
 	containerMargin: 140,
-
 	outerMargin: 20,
 
-	/**
-	 * @type {jQuery}
-	 */
+	/** @type {jQuery} */
 	$element: null,
-
-	/**
-	 * @type {DiffPage}
-	 */
+	/** @type {DiffPage} */
 	diffPage: null,
-
-	/**
-	 * @type {Slider}
-	 */
+	/** @type {Slider} */
 	slider: null,
-
-	/**
-	 * @type {Pointer}
-	 */
+	/** @type {Pointer} */
 	pointerOlder: null,
-
-	/**
-	 * @type {Pointer}
-	 */
+	/** @type {Pointer} */
 	pointerNewer: null,
-
-	/**
-	 * @type {OO.ui.ButtonWidget}
-	 */
+	/** @type {OO.ui.ButtonWidget} */
 	backwardArrowButton: null,
-
-	/**
-	 * @type {OO.ui.ButtonWidget}
-	 */
+	/** @type {OO.ui.ButtonWidget} */
 	forwardArrowButton: null,
 
 	/**
@@ -72,36 +51,19 @@ $.extend( SliderView.prototype, {
 	 */
 	rtlScrollLeftType: 'default',
 
-	/**
-	 * @type {boolean}
-	 */
+	/** @type {boolean} */
 	noMoreNewerRevisions: false,
-
-	/**
-	 * @type {boolean}
-	 */
+	/** @type {boolean} */
 	noMoreOlderRevisions: false,
-
-	/**
-	 * @type {string}
-	 */
+	/** @type {string|null} */
 	dir: null,
-
-	/**
-	 * @type {boolean}
-	 */
+	/** @type {boolean} */
 	isDragged: false,
-
+	/** @type {boolean} */
 	escapePressed: false,
-
-	/**
-	 * {number}
-	 */
+	/** @type {number|null} */
 	lastOldPointerPosition: null,
-
-	/**
-	 * {number}
-	 */
+	/** @type {number|null} */
 	lastNewPointerPosition: null,
 
 	render: function ( $container ) {
@@ -307,18 +269,22 @@ $.extend( SliderView.prototype, {
 		) );
 	},
 
+	/** @returns {number} */
 	getOlderPointerPos: function () {
 		return this.pointerOlder.getPosition();
 	},
 
+	/** @returns {number} */
 	getNewerPointerPos: function () {
 		return this.pointerNewer.getPosition();
 	},
 
+	/** @returns {number} */
 	setOlderPointerPos: function ( pos ) {
 		return this.pointerOlder.setPosition( pos );
 	},
 
+	/** @returns {number} */
 	setNewerPointerPos: function ( pos ) {
 		return this.pointerNewer.setPosition( pos );
 	},
