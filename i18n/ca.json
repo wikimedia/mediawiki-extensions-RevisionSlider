@@ -12,7 +12,7 @@
 	"revisionslider-preference-disable": "No mostrar el control lliscant de revisions",
 	"revisionslider-desc": "Mostra un control lliscant que permet seleccionar i comparar revisions en una pàgina de diferències",
 	"revisionslider-toggle-label": "Exploració interactiva de l'historial",
-	"revisionslider-page-size": "$1 {{PLURAL:$2|octet|octets}}",
+	"revisionslider-page-size": "$1 octet{{PLURAL:$2||s}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|octet|octets}}",
 	"revisionslider-label-date": "Data",
 	"revisionslider-label-page-size": "Mida de la pàgina",
