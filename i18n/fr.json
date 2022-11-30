@@ -18,7 +18,7 @@
 	"revisionslider-desc": "Affiche une glissière permettant de sélectionner et comparer les versions sur une page de diff",
 	"revisionslider-toggle-label": "Navigation interactive dans l’historique",
 	"revisionslider-page-size": "$1 octet{{PLURAL:$2||s}}",
-	"revisionslider-change-size": "$1 octet{{PLURAL:$3||s}}",
+	"revisionslider-change-size": "$1 octet{{PLURAL:$3||s}}",
 	"revisionslider-label-date": "Date",
 	"revisionslider-label-page-size": "Longueur de la page",
 	"revisionslider-label-change-size": "Évolution de la taille",
