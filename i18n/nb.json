@@ -27,7 +27,7 @@
 	"revisionslider-show-help-tooltip": "Vis hjelpetekst",
 	"revisionslider-help-dialog-slide1": "Revisjonsskyvelinja lar deg navigere og sammenligne revisjoner av en artikkel. Den baserer seg på et [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider ønske] fra den tekniske ønskelisten til tyskspråklige brukersamfunnet. Vi tar gjerne imot tilbakemeldinger [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider her].",
 	"revisionslider-help-dialog-slide2": "Hver stabel viser til en siderevisjon. Stabler som peker oppover viser at artikkelstørrelsen har økt, mens stabler som peker nedover viser at den har sunket. I eksempelet over har det blitt lagt til innhold i revisjon 1, mens det har blitt fjernet innhold i revisjon 2.",
-	"revisionslider-help-dialog-slide3a": "<p>For å sammenligne bestemte revisjoner, velg revisjonene ved hjelp av to fargede markører.</p><p>Den øverste markøren kontrollerer den nyeste revisjonen, mens den nederste kontrollerer den eldste.</p><p>Flytt markørene ved å dra og slippe dem eller ved å klikke på skyvelinjen.</p>",
+	"revisionslider-help-dialog-slide3a": "For å sammenligne bestemte revisjoner, velg revisjonene ved hjelp av to fargede markører.\n\nDen øverste markøren kontrollerer den nyeste revisjonen, mens den nederste kontrollerer den eldste.\n\nFlytt markørene ved å dra og slippe dem eller ved å klikke på skyvelinjen.",
 	"revisionslider-help-dialog-slide4": "Bruk frem- og tilbakepilene for å bla gjennom revisjonhistorikken og vise eldre og nyere revisjoner.",
 	"revisionslider-tutorial": "Veiviser for revisjonsskyvelinja",
 	"revisionslider-previous-dialog": "Forrige",
