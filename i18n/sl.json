@@ -16,7 +16,7 @@
 	"revisionslider-label-page-size": "Velikost strani",
 	"revisionslider-label-change-size": "Sprememba velikosti",
 	"revisionslider-label-comment": "Povzetek urejanja",
-	"revisionslider-label-username": "{{GENDER:$1|Uporabniško|Uporabničino}} ime",
+	"revisionslider-label-username": "{{GENDER:$1|Uporabniško}} ime",
 	"revisionslider-minoredit": "Manjše urejanje",
 	"revisionslider-loading-failed": "Redakcijski drsnik se ni uspel naložiti.",
 	"revisionslider-toggle-title-expand": "Odpri redakcijski drsnik",
