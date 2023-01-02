@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Artsiom91",
-			"No Sleep till Krupki"
+			"No Sleep till Krupki",
+			"Plaga med"
 		]
 	},
 	"revisionslider-preference-disable": "Не паказваць RevisionSlider",
-	"revisionslider-desc": "Паказвае слайдар, які дазваляе выбраць і параўнаць версіі на старонцы розніцы версій",
+	"revisionslider-desc": "Паказвае паўзунок, які дазваляе выбраць і параўнаць версіі на старонцы розніцы версій",
 	"revisionslider-toggle-label": "Інтэрактыўны прагляд гісторыі",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|байт|байты|байтаў}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|байт|байты|байтаў}}",
