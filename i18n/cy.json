@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Afalau"
+		]
+	},
+	"revisionslider-preference-disable": "Peidiwch â dangos yr offeryn cymharu",
+	"revisionslider-desc": "Yn dangos offeryn sy'n galluogi dewis a chymharu golygiadau ar dudalen 'cyf'",
+	"revisionslider-toggle-label": "Pori'r hanes yn rhyngweithiol",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|beit}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|beit}}",
+	"revisionslider-label-date": "Dyddiad",
+	"revisionslider-label-page-size": "Maint y dudalen",
+	"revisionslider-label-change-size": "Newid ym maint",
+	"revisionslider-label-comment": "Crynodeb",
+	"revisionslider-label-username": "{{GENDER:$1|Enw defnyddiwr}}",
+	"revisionslider-minoredit": "Golygiad bach",
+	"revisionslider-loading-failed": "Ni ellir llwytho'r offeryn cymharu.",
+	"revisionslider-toggle-title-expand": "Agor yr offeryn cymharu",
+	"revisionslider-toggle-title-collapse": "Crebachu'r offeryn cymharu",
+	"revisionslider-turn-on-auto-expand-title": "Ehangu'r offeryn cymharu bob tro",
+	"revisionslider-turn-off-auto-expand-title": "Peidiwch ag ehangu'r offeryn cymharu yn awtomatig",
+	"revisionslider-arrow-tooltip-newer": "Gweld newidiadau mwy diweddar",
+	"revisionslider-arrow-tooltip-older": "Gweld newidiadau hŷn",
+	"revisionslider-show-help-tooltip": "Cymorth",
+	"revisionslider-help-dialog-slide1": "Mae'r offeryn cymharu yn eich helpu chi i weld a chymharu newidiadau ar y dudalen 'gwahan'. Daeth hwn o [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider gais] technegol gan y gymuned Almaeneg. Rydym yn gwerthfawrogi unrhyw adborth [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider yma].",
+	"revisionslider-help-dialog-slide2": "Mae pob bar yn dangos golygiad. Mae'r bariau sy'n mynd i fyny yn dangos cynnydd ym maint y dudalen, a'r bariau sy'n mynd i lawr yn dangos gostyngiad. Yn y ddelwedd, mae golygiad 1 yn dangos mwy o gynnwys, tra bod golygiad 2 yn dangos bod cynnwys wedi cael ei ddileu.",
+	"revisionslider-help-dialog-slide3a": "Er mwyn cymharu golygiadau penodol, dewiswch y golygiadau gan ddefnyddio'r ddau bwynt.\n\nMae'r bwynt uchaf yn rheoli'r golygiad mwy ddiweddar, a'r bwynt isaf yn dangos y golygiad hŷn.\n\nGallwch symud y pwyntiau trwy lusgo a gollwng neu glicio ar y llinell.",
+	"revisionslider-help-dialog-slide4": "Defnyddiwch y saethau i bori'r hanes golygu a dangos golygiadau hŷn a newydd.",
+	"revisionslider-tutorial": "Cymorth ar yr offeryn cymharu",
+	"revisionslider-previous-dialog": "Cynt",
+	"revisionslider-next-dialog": "Nesaf",
+	"revisionslider-close-dialog": "Cau"
+}
