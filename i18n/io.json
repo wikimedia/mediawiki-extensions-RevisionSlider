@@ -10,6 +10,7 @@
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bicoko*|bicoki*}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bicoko*|bicoki*}}",
 	"revisionslider-label-date": "Dato",
+	"revisionslider-label-username": "{{GENDER:$1|Uzero-nomo}}",
 	"revisionslider-minoredit": "Ico esas mikra redaktajo",
 	"revisionslider-previous-dialog": "Antea",
 	"revisionslider-next-dialog": "Sequanta",
