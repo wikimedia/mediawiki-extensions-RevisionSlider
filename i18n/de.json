@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brettchenweber",
 			"Cornelius Kibelka (WMDE)",
 			"Kghbln",
 			"Metalhead64",
@@ -9,7 +10,7 @@
 	},
 	"revisionslider": "Versionsblätterer",
 	"revisionslider-preference-disable": "Den Versionsblätterer nicht anzeigen",
-	"revisionslider-desc": "Bietet ein Navigationsleiste mit der das Auswählen und Vergleichen von Versionen in einer Vergleichsansicht einfacher möglich wird",
+	"revisionslider-desc": "Bietet eine Navigationsleiste, mit der das Auswählen und Vergleichen von Versionen in einer Vergleichsansicht einfacher möglich wird",
 	"revisionslider-toggle-label": "Versionsgeschichte interaktiv durchsuchen",
 	"revisionslider-page-size": "{{PLURAL:$2|Ein Byte|$1 Bytes}}",
 	"revisionslider-change-size": "{{PLURAL:$3|Ein Byte|$1 Bytes}}",
