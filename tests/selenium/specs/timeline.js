@@ -5,48 +5,48 @@ const assert = require( 'assert' ),
 
 describe( 'RevisionSlider timeline arrows', function () {
 
-	afterEach( function () {
-		browser.refresh();
+	afterEach( async function () {
+		await browser.refresh();
 	} );
 
-	it( ' should be disabled with 3 revisions', function () {
-		DiffPage.prepareSimpleTests( 3 );
+	it( ' should be disabled with 3 revisions', async function () {
+		await DiffPage.prepareSimpleTests( 3 );
 		DiffPage.ready();
-		DiffPage.openSlider();
+		await DiffPage.openSlider();
 
 		assert(
-			DiffPage.isBackwardsArrowDisabled(),
+			await DiffPage.isBackwardsArrowDisabled(),
 			'backwards arrow should be disabled'
 		);
 		assert(
-			DiffPage.isForwardsArrowDisabled(),
+			await DiffPage.isForwardsArrowDisabled(),
 			'forwards arrow should be disabled'
 		);
 	} );
 
-	it( ' should be enabled with adequate revisions', function () {
-		browser.setWindowSize( 400, 600 );
-		DiffPage.prepareSimpleTests( 9 );
+	it( ' should be enabled with adequate revisions', async function () {
+		await browser.setWindowSize( 400, 600 );
+		await DiffPage.prepareSimpleTests( 9 );
 		DiffPage.ready();
-		DiffPage.openSlider();
+		await DiffPage.openSlider();
 
-		DiffPage.backwardsArrow.click();
-		DiffPage.waitForSliding();
+		await DiffPage.backwardsArrow.click();
+		await DiffPage.waitForSliding();
 
 		assert(
-			!DiffPage.isForwardsArrowDisabled(),
+			!await DiffPage.isForwardsArrowDisabled(),
 			'forwards arrow should be enabled'
 		);
 
-		DiffPage.forwardsArrow.click();
+		await DiffPage.forwardsArrow.click();
 		DiffPage.waitForSliding();
 
 		assert(
-			!DiffPage.isBackwardsArrowDisabled(),
+			!await DiffPage.isBackwardsArrowDisabled(),
 			'backwards arrow should be enabled'
 		);
 		assert(
-			DiffPage.isForwardsArrowDisabled(),
+			await DiffPage.isForwardsArrowDisabled(),
 			'forwards arrow should be disabled'
 		);
 	} );

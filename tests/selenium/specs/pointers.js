@@ -5,49 +5,49 @@ const assert = require( 'assert' ),
 
 describe( 'RevisionSlider pointers', function () {
 
-	before( function () {
-		DiffPage.prepareSimpleTests( 3 );
+	before( async function () {
+		await DiffPage.prepareSimpleTests( 3 );
 	} );
 
-	beforeEach( function () {
+	beforeEach( async function () {
 		DiffPage.ready();
-		DiffPage.openSlider();
+		await DiffPage.openSlider();
 	} );
 
-	afterEach( function () {
-		browser.refresh();
+	afterEach( async function () {
+		await browser.refresh();
 	} );
 
-	it( ' can be dragged', function () {
+	it( ' can be dragged', async function () {
 		assert(
-			DiffPage.isOlderPointerOn( 2 ),
+			await DiffPage.isOlderPointerOn( 2 ),
 			'older pointer should be on previous revision'
 		);
 		assert(
-			DiffPage.isNewerPointerOn( 3 ),
+			await DiffPage.isNewerPointerOn( 3 ),
 			'newer pointer should be on current revision'
 		);
 
-		DiffPage.dragOlderPointerTo( 1 );
-		DiffPage.waitUntilLoaded();
+		await DiffPage.dragOlderPointerTo( 1 );
+		await DiffPage.waitUntilLoaded();
 
-		DiffPage.dragNewerPointerTo( 2 );
-		DiffPage.waitUntilLoaded();
+		await DiffPage.dragNewerPointerTo( 2 );
+		await DiffPage.waitUntilLoaded();
 
 		assert(
-			DiffPage.isOlderPointerOn( 1 ),
+			await DiffPage.isOlderPointerOn( 1 ),
 			'older pointer should be on revision 1'
 		);
 		assert(
-			DiffPage.isNewerPointerOn( 2 ),
+			await DiffPage.isNewerPointerOn( 2 ),
 			'newer pointer should be on revision 2'
 		);
 		assert(
-			DiffPage.showsOlderSummary( 1 ),
+			await DiffPage.showsOlderSummary( 1 ),
 			'revision 1 should be loaded on the left of the diff'
 		);
 		assert(
-			DiffPage.showsNewerSummary( 2 ),
+			await DiffPage.showsNewerSummary( 2 ),
 			'revision 2 should be loaded on the right of the diff'
 		);
 	} );
