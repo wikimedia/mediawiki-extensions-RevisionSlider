@@ -49,8 +49,8 @@ https://codepen.io/Volker_E/pen/yqNXMe */
 	margin: 60px auto;
 
 	.mw-revslider-bounce,
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		content: '';
 		background-color: #72777d;
 		display: block;
@@ -62,12 +62,12 @@ https://codepen.io/Volker_E/pen/yqNXMe */
 		animation-delay: -160ms;
 	}
 
-	&:before {
+	&::before {
 		margin-right: 4px;
 		animation-delay: -330ms;
 	}
 
-	&:after {
+	&::after {
 		margin-left: 4px;
 		animation-delay: 0s;
 	}

@@ -2,7 +2,6 @@
 	"extends": "stylelint-config-wikimedia",
 	"rules": {
 		"unit-disallowed-list": null,
-		"declaration-property-unit-disallowed-list": null,
-		"selector-pseudo-element-colon-notation": null
+		"declaration-property-unit-disallowed-list": null
 	}
 }
