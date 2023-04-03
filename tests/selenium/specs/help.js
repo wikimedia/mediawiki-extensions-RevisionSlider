@@ -5,52 +5,52 @@ const assert = require( 'assert' ),
 
 describe( 'RevisionSlider help', function () {
 
-	before( function () {
-		DiffPage.prepareSimpleTests( 2, true );
+	before( async function () {
+		await DiffPage.prepareSimpleTests( 2, true );
 	} );
 
-	beforeEach( function () {
+	beforeEach( async function () {
 		DiffPage.ready();
-		DiffPage.openSlider();
+		await DiffPage.openSlider();
 	} );
 
-	afterEach( function () {
-		browser.refresh();
-		DiffPage.toggleHelpDialog( true );
+	afterEach( async function () {
+		await browser.refresh();
+		await DiffPage.toggleHelpDialog( true );
 	} );
 
-	it( 'tutorial is present on first load', function () {
+	it( 'tutorial is present on first load', async function () {
 
 		assert(
-			DiffPage.helpDialog.isDisplayed(), 'help dialog should be visible'
+			await DiffPage.helpDialog.isDisplayed(), 'help dialog should be visible'
 		);
 
 	} );
 
-	it( 'tutorial is not present after it was dismissed once', function () {
+	it( 'tutorial is not present after it was dismissed once', async function () {
 
-		DiffPage.toggleHelpDialog( false );
+		await DiffPage.toggleHelpDialog( false );
 
-		browser.refresh();
-		DiffPage.openSlider();
+		await browser.refresh();
+		await DiffPage.openSlider();
 
 		assert(
-			!DiffPage.helpDialog.isDisplayed(), 'help dialog should not be present'
+			!await DiffPage.helpDialog.isDisplayed(), 'help dialog should not be present'
 		);
 
 	} );
 
-	it( 'tutorial sequence works', function () {
+	it( 'tutorial sequence works', async function () {
 
-		DiffPage.nextHelpButton.click();
-		DiffPage.nextHelpButton.click();
-		DiffPage.nextHelpButton.click();
+		await DiffPage.nextHelpButton.click();
+		await DiffPage.nextHelpButton.click();
+		await DiffPage.nextHelpButton.click();
 
-		browser.refresh();
-		DiffPage.openSlider();
+		await browser.refresh();
+		await DiffPage.openSlider();
 
 		assert(
-			!DiffPage.helpDialog.isDisplayed(), 'help dialog should not be present'
+			!await DiffPage.helpDialog.isDisplayed(), 'help dialog should not be present'
 		);
 
 	} );

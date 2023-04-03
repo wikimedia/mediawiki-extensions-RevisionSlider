@@ -12,8 +12,8 @@ class DiffPage extends Page {
 	get rsToggleButton() { return $( '.mw-revslider-toggle-button' ); }
 	get rsAutoExpandButton() { return $( '.mw-revslider-auto-expand-button' ); }
 	get rsLoading() { return $( '.mw-revslider-diff-loading' ); }
-	waitUntilLoaded() {
-		this.rsLoading.waitForDisplayed( { reverse: true } );
+	async waitUntilLoaded() {
+		await this.rsLoading.waitForDisplayed( { reverse: true } );
 	}
 
 	get rsEditOlderButton() { return $( '#differences-prevlink' ); }
@@ -21,20 +21,22 @@ class DiffPage extends Page {
 
 	get rsPointerOlder() { return $( '.mw-revslider-pointer-older' ); }
 	get rsPointerNewer() { return $( '.mw-revslider-pointer-newer' ); }
-	isOlderPointerOn( num ) {
-		return this.rsPointerOlder.getAttribute( 'data-pos' ) === num.toString();
+	async isOlderPointerOn( num ) {
+		return await this.rsPointerOlder.getAttribute( 'data-pos' ) === num.toString();
 	}
-	isNewerPointerOn( num ) {
-		return this.rsPointerNewer.getAttribute( 'data-pos' ) === num.toString();
+	async isNewerPointerOn( num ) {
+		return await this.rsPointerNewer.getAttribute( 'data-pos' ) === num.toString();
 	}
 
 	get rsSummaryOlder() { return $( '#mw-diff-otitle3' ); }
 	get rsSummaryNewer() { return $( '#mw-diff-ntitle3' ); }
-	showsOlderSummary( num ) {
-		return this.rsSummaryOlder.getText().includes( 'Summary ' + num );
+	async showsOlderSummary( num ) {
+		const summary = await this.rsSummaryOlder.getText();
+		return await summary.includes( 'Summary ' + num );
 	}
-	showsNewerSummary( num ) {
-		return this.rsSummaryNewer.getText().includes( 'Summary ' + num );
+	async showsNewerSummary( num ) {
+		const summary = await this.rsSummaryNewer.getText();
+		return await summary.includes( 'Summary ' + num );
 	}
 
 	get rsUserFilterBubble() { return $( USER_BUBBLE_SELECTOR ); }
@@ -60,11 +62,11 @@ class DiffPage extends Page {
 
 	get backwardsArrow() { return $( '.mw-revslider-arrow-backwards' ); }
 	get forwardsArrow() { return $( '.mw-revslider-arrow-forwards' ); }
-	isBackwardsArrowDisabled() {
-		return this.backwardsArrow.getAttribute( 'aria-disabled' ) === 'true';
+	async isBackwardsArrowDisabled() {
+		return await this.backwardsArrow.getAttribute( 'aria-disabled' ) === 'true';
 	}
-	isForwardsArrowDisabled() {
-		return this.forwardsArrow.getAttribute( 'aria-disabled' ) === 'true';
+	async isForwardsArrowDisabled() {
+		return await this.forwardsArrow.getAttribute( 'aria-disabled' ) === 'true';
 	}
 	waitForSliding() {
 		this.waitForAnimation( $( '.mw-revslider-revisions-container' ) );
@@ -78,29 +80,29 @@ class DiffPage extends Page {
 	 * @param {number} num Number of different edits.
 	 * @param {boolean} [showHelp] Display help dialog. Defaults to false.
 	 */
-	prepareSimpleTests( num, showHelp = false ) {
+	async prepareSimpleTests( num, showHelp = false ) {
 		const title = Util.getTestString( 'revisionslider-test-' );
-		BlankPage.open();
-		this.toggleHelpDialog( showHelp );
-		this.addUserEditsToPage( title, num );
+		await BlankPage.open();
+		await this.toggleHelpDialog( showHelp );
+		await this.addUserEditsToPage( title, num );
 		this.open( title );
 	}
 
-	prepareFilterTests() {
-		const title = Util.getTestString( 'revisionslider-test-' );
-		BlankPage.open();
-		this.toggleHelpDialog( false );
-		this.hasPageWithDifferentEdits( title );
-		this.open( title );
+	async prepareFilterTests() {
+		const title = await Util.getTestString( 'revisionslider-test-' );
+		await BlankPage.open();
+		await this.toggleHelpDialog( false );
+		await this.hasPageWithDifferentEdits( title );
+		await this.open( title );
 	}
 
-	openSlider() {
-		this.rsToggleButton.click();
+	async openSlider() {
+		await this.rsToggleButton.click();
 		try {
-			this.rsMain.waitForDisplayed( { timeout: 2500 } );
+			await this.rsMain.waitForDisplayed( { timeout: 2500 } );
 		} catch ( e ) {
-			this.rsToggleButton.click();
-			this.rsMain.waitForDisplayed();
+			await this.rsToggleButton.click();
+			await this.rsMain.waitForDisplayed();
 		}
 	}
 
@@ -114,16 +116,16 @@ class DiffPage extends Page {
 	/**
 	 * @param {boolean} [show] Defaults to true.
 	 */
-	toggleHelpDialog( show ) {
+	async toggleHelpDialog( show ) {
 		const hide = ( show === false ) ? '1' : '0';
-		browser.execute( function ( h ) {
-			this.localStorage.setItem( 'mw-revslider-hide-help-dialogue', h );
+		await browser.execute( async function ( h ) {
+			await this.localStorage.setItem( 'mw-revslider-hide-help-dialogue', h );
 		}, hide );
 	}
 
-	resetAutoExpand() {
-		browser.execute( function () {
-			this.localStorage.setItem( 'mw-revslider-autoexpand', '0' );
+	async resetAutoExpand() {
+		await browser.execute( async function () {
+			await this.localStorage.setItem( 'mw-revslider-autoexpand', '0' );
 		} );
 	}
 
@@ -133,18 +135,18 @@ class DiffPage extends Page {
 	 *
 	 * @param {string} title Article to edit.
 	 */
-	hasPageWithDifferentEdits( title ) {
-		this.addUserEditsToPage( title, 2 );
-		this.addTaggedOtherUserEditToPage( title );
-		this.addTaggedEditToPage( title );
+	async hasPageWithDifferentEdits( title ) {
+		await this.addUserEditsToPage( title, 2 );
+		await this.addTaggedOtherUserEditToPage( title );
+		await this.addTaggedEditToPage( title );
 	}
 
 	/**
 	 * @param {string} title Article to edit.
 	 * @param {number} num Number of different edits to add.
 	 */
-	addUserEditsToPage( title, num ) {
-		browser.call( async () => {
+	async addUserEditsToPage( title, num ) {
+		await browser.call( async () => {
 			const bot = await Api.bot();
 			for ( let i = 1; i <= num; i++ ) {
 				await bot.edit(
@@ -174,15 +176,15 @@ class DiffPage extends Page {
 	/**
 	 * @param {string} title Article to edit.
 	 */
-	addTaggedOtherUserEditToPage( title ) {
-		const otherUser = Util.getTestString( 'User-' );
-		const otherUserPassword = Util.getTestString();
-		browser.call( async () => {
+	async addTaggedOtherUserEditToPage( title ) {
+		const otherUser = await Util.getTestString( 'User-' );
+		const otherUserPassword = await Util.getTestString();
+		await browser.call( async () => {
 			const bot = await Api.bot();
 			return await Api.createAccount( bot, otherUser, otherUserPassword );
 		} );
 
-		browser.call( async () => {
+		await browser.call( async () => {
 			const bot = await Api.bot( otherUser, otherUserPassword );
 			return bot.edit(
 				title,
@@ -194,44 +196,45 @@ class DiffPage extends Page {
 		} );
 	}
 
-	dwellRevision( num ) {
-		this.getRevision( num ).moveTo();
-		this.getTooltip( num ).waitForDisplayed();
+	async dwellRevision( num ) {
+		await this.getRevision( num ).moveTo();
+		await this.getTooltip( num ).waitForDisplayed();
 	}
 
-	dwellTagFilterBubble() {
-		$( TAG_BUBBLE_SELECTOR ).moveTo();
+	async dwellTagFilterBubble() {
+		await $( TAG_BUBBLE_SELECTOR ).moveTo();
 	}
 
-	abondonBubbleDwell() {
+	async abondonBubbleDwell() {
 		// make sure we do not dwell the line/bubble after clicking
-		$( '.mw-revslider-revision-tooltip p:first-of-type' ).moveTo();
+		await $( '.mw-revslider-revision-tooltip p:first-of-type' ).moveTo();
 	}
 
-	clickUserFilterBubble() {
-		this.rsUserFilterBubble.click();
-		this.abondonBubbleDwell();
+	async clickUserFilterBubble() {
+		await this.rsUserFilterBubble.click();
+		await this.abondonBubbleDwell();
 	}
 
-	clickTagFilterBubble() {
-		this.rsTagFilterBubble.click();
-		this.abondonBubbleDwell();
+	async clickTagFilterBubble() {
+		await this.rsTagFilterBubble.click();
+		await this.abondonBubbleDwell();
 	}
 
-	highlightsRevision( num ) {
-		return this.getRevision( num ).$( '..' )
-			.getAttribute( 'class' ).includes( 'mw-revslider-revision-highlight' );
+	async highlightsRevision( num ) {
+		const attr = await this.getRevision( num ).$( '..' ).getAttribute( 'class' );
+		return await attr.includes( 'mw-revslider-revision-highlight' );
 	}
 
-	highlightsBubble( el ) {
-		return el.getAttribute( 'class' ).includes( 'mw-revslider-highlite-bubble' );
+	async highlightsBubble( el ) {
+		const element = await el.getAttribute( 'class' );
+		return await element.includes( 'mw-revslider-highlite-bubble' );
 	}
 
-	dragOlderPointerTo( num ) {
-		this.rsPointerOlder.dragAndDrop( this.getRevision( num ) );
+	async dragOlderPointerTo( num ) {
+		await this.rsPointerOlder.dragAndDrop( await this.getRevision( num ) );
 	}
-	dragNewerPointerTo( num ) {
-		this.rsPointerNewer.dragAndDrop( this.getRevision( num ) );
+	async dragNewerPointerTo( num ) {
+		await this.rsPointerNewer.dragAndDrop( await this.getRevision( num ) );
 	}
 
 	waitForAnimation( el ) {

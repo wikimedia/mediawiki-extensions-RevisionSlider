@@ -5,78 +5,78 @@ const assert = require( 'assert' ),
 
 describe( 'RevisionSlider expand', function () {
 
-	before( function () {
-		DiffPage.prepareSimpleTests( 2 );
+	before( async function () {
+		await DiffPage.prepareSimpleTests( 2 );
 	} );
 
-	beforeEach( function () {
+	beforeEach( async function () {
 		DiffPage.ready();
 	} );
 
-	afterEach( function () {
-		DiffPage.resetAutoExpand();
-		browser.refresh();
+	afterEach( async function () {
+		await DiffPage.resetAutoExpand();
+		await browser.refresh();
 	} );
 
-	it( ' does not automatically expand by default', function () {
+	it( ' does not automatically expand by default', async function () {
 		assert(
-			DiffPage.rsToggleButton.isDisplayed(),
+			await DiffPage.rsToggleButton.isDisplayed(),
 			'there should be a RevisionSlider expand button'
 		);
 		assert(
-			!DiffPage.rsMain.isDisplayed(),
+			!await DiffPage.rsMain.isDisplayed(),
 			'the RevisionSlider wrapper should be hidden'
 		);
 	} );
 
-	it( ' expands automatically when auto expand is on', function () {
-		DiffPage.openSlider();
-		DiffPage.rsAutoExpandButton.click();
+	it( ' expands automatically when auto expand is on', async function () {
+		await DiffPage.openSlider();
+		await DiffPage.rsAutoExpandButton.click();
 
-		browser.refresh();
+		await browser.refresh();
 		DiffPage.ready();
 
-		DiffPage.rsMain.waitForDisplayed( { timeout: 10000 } );
+		await DiffPage.rsMain.waitForDisplayed( { timeout: 10000 } );
 
+		const classAttr = await DiffPage.rsAutoExpandButton.getAttribute( 'class' );
 		assert(
-			DiffPage.rsAutoExpandButton.getAttribute( 'class' )
-				.includes( 'oo-ui-toggleWidget-on' ),
+			classAttr.includes( 'oo-ui-toggleWidget-on' ),
 			'the auto expand button should be on'
 		);
 		assert(
-			DiffPage.rsMain.isDisplayed(),
+			await DiffPage.rsMain.isDisplayed(),
 			'the RevisionSlider wrapper should be visible'
 		);
 	} );
 
-	it( ' does not expand automatically when auto expand is off', function () {
-		DiffPage.openSlider();
-		DiffPage.rsAutoExpandButton.click();
-		DiffPage.rsAutoExpandButton.click();
+	it( ' does not expand automatically when auto expand is off', async function () {
+		await DiffPage.openSlider();
+		await DiffPage.rsAutoExpandButton.click();
+		await DiffPage.rsAutoExpandButton.click();
 
-		browser.refresh();
+		await browser.refresh();
 		DiffPage.ready();
 
 		// this includes clicking the toggle button
 		// an auto-expanded slider would be closed then
-		DiffPage.openSlider();
+		await DiffPage.openSlider();
+		const classAttr = await DiffPage.rsAutoExpandButton.getAttribute( 'class' );
 		assert(
-			DiffPage.rsMain.isDisplayed(),
+			await DiffPage.rsMain.isDisplayed(),
 			'the RevisionSlider wrapper should be visible'
 		);
 		assert(
-			!DiffPage.rsAutoExpandButton.getAttribute( 'class' )
-				.includes( 'oo-ui-toggleWidget-on' ),
+			!( await classAttr.includes( 'oo-ui-toggleWidget-on' ) ),
 			'the auto expand button should be off'
 		);
 	} );
 
-	it( ' hides when collapsed manually', function () {
-		DiffPage.openSlider();
-		DiffPage.rsToggleButton.click();
+	it( ' hides when collapsed manually', async function () {
+		await DiffPage.openSlider();
+		await DiffPage.rsToggleButton.click();
 
 		assert(
-			!DiffPage.rsMain.isDisplayed(),
+			!await DiffPage.rsMain.isDisplayed(),
 			'the RevisionSlider wrapper should be hidden'
 		);
 	} );
