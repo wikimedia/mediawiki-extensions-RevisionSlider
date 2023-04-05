@@ -4,5 +4,7 @@
 			"Yupik"
 		]
 	},
-	"revisionslider-next-dialog": "Čuovvovaš"
+	"revisionslider-label-username": "{{GENDER:$1|Geavaheaddjinamma}}",
+	"revisionslider-next-dialog": "Čuovvovaš",
+	"revisionslider-close-dialog": "Gidde"
 }
