@@ -185,8 +185,14 @@
 		"remoteExtPath": "RevisionSlider"
 	},
 	"Hooks": {
-		"DifferenceEngineViewHeader": "MediaWiki\\Extension\\RevisionSlider\\RevisionSliderHooks::onDifferenceEngineViewHeader",
-		"GetPreferences": "MediaWiki\\Extension\\RevisionSlider\\RevisionSliderHooks::onGetPreferences"
+		"DifferenceEngineViewHeader": "RevisionSliderHooks",
+		"GetPreferences": "RevisionSliderHooks"
+	},
+	"HookHandlers": {
+		"RevisionSliderHooks": {
+			"class": "MediaWiki\\Extension\\RevisionSlider\\RevisionSliderHooks",
+			"services": [ "ConfigFactory", "UserOptionsLookup", "StatsdDataFactory" ]
+		}
 	},
 	"DefaultUserOptions": {
 		"revisionslider-disable": false
