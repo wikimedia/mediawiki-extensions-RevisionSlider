@@ -214,7 +214,7 @@ $.extend( SliderView.prototype, {
 		$pointerNewer.attr( 'tabindex', 0 );
 		$pointerOlder.attr( 'tabindex', 0 );
 
-		$( 'body' ).on( 'keydown', function ( e ) {
+		$( document.body ).on( 'keydown', function ( e ) {
 			if ( e.which === 27 ) {
 				self.escapePressed = true;
 				$pointers.trigger( 'mouseup' );

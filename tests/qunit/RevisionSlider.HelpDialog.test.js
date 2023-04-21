@@ -16,7 +16,7 @@ QUnit.test( 'Initialize HelpDialog', function ( assert ) {
 		return $container.html();
 	}
 
-	$( 'body' ).append( windowManager.$element );
+	$( document.body ).append( windowManager.$element );
 	windowManager.addWindows( [ helpDialog ] );
 
 	assert.strictEqual( helpDialog.slides.length, 4 );

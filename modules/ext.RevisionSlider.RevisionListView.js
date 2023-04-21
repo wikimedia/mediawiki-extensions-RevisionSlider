@@ -284,7 +284,7 @@ $.extend( RevisionListView.prototype, {
 		// eslint-disable-next-line mediawiki/class-doc
 		tooltip.$element.addClass( 'mw-revslider-revision-tooltip-' + pos );
 
-		$( 'body' ).append( tooltip.$element );
+		$( document.body ).append( tooltip.$element );
 		tooltip.toggle( true );
 
 		$revisionWrapper.addClass( 'mw-revslider-revision-wrapper-hovered' );

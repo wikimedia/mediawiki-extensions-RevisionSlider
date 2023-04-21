@@ -36,7 +36,7 @@ var HelpButtonView = {
 				'aria-label': mw.msg( 'revisionslider-show-help-tooltip' )
 			} );
 
-		$( 'body' ).append( helpPopup.$element );
+		$( document.body ).append( helpPopup.$element );
 
 		return helpButton.$element;
 	},

@@ -48,7 +48,7 @@ $.extend( SliderArrowView.prototype, {
 			.on( 'mouseout', { popup: backwardArrowPopup }, this.hidePopup )
 			.on( 'focusin', { button: backwardArrowButton }, this.arrowFocusHandler );
 
-		$( 'body' ).append( backwardArrowPopup.$element );
+		$( document.body ).append( backwardArrowPopup.$element );
 
 		return backwardArrowButton;
 	},
@@ -86,7 +86,7 @@ $.extend( SliderArrowView.prototype, {
 			.on( 'mouseout', { popup: forwardArrowPopup }, this.hidePopup )
 			.on( 'focusin', { button: forwardArrowButton }, this.arrowFocusHandler );
 
-		$( 'body' ).append( forwardArrowPopup.$element );
+		$( document.body ).append( forwardArrowPopup.$element );
 
 		return forwardArrowButton;
 	},

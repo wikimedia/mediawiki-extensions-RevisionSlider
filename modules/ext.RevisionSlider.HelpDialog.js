@@ -180,7 +180,7 @@ $.extend( HelpDialog.prototype, {
 HelpDialog.init = function () {
 	var windowManager = new OO.ui.WindowManager();
 
-	$( 'body' )
+	$( document.body )
 		.append( windowManager.$element )
 		.on( 'click', function ( event ) {
 			if ( $( event.target ).hasClass( 'mw-revslider-help-dialog' ) ) {
