@@ -353,7 +353,7 @@ $.extend( RevisionListView.prototype, {
 				this.makeCommentLine( revision ),
 				this.makePageSizeLine( revision.getSize() ),
 				this.makeChangeSizeLine( revision.getRelativeSize() ),
-				revision.isMinor() ? $( '<p>' ).text( mw.message( 'revisionslider-minoredit' ).text() ) : '',
+				revision.isMinor() ? $( '<p>' ).text( mw.msg( 'revisionslider-minoredit' ) ) : '',
 				this.makeTagsLine( revision )
 			);
 		return new OO.ui.PopupWidget( {

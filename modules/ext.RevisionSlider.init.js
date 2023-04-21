@@ -72,13 +72,13 @@ function initialize() {
 				mw.track( 'timing.MediaWiki.RevisionSlider.timing.init', mw.now() - startTime );
 			} catch ( err ) {
 				$( '.mw-revslider-placeholder' )
-					.text( mw.message( 'revisionslider-loading-failed' ).text() );
+					.text( mw.msg( 'revisionslider-loading-failed' ) );
 				mw.log.error( err );
 				mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
 			}
 		}, function ( err ) {
 			$( '.mw-revslider-placeholder' )
-				.text( mw.message( 'revisionslider-loading-failed' ).text() );
+				.text( mw.msg( 'revisionslider-loading-failed' ) );
 			mw.log.error( err );
 			mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
 		} );
@@ -86,7 +86,7 @@ function initialize() {
 }
 
 function expand() {
-	toggleButton.setTitle( mw.message( 'revisionslider-toggle-title-collapse' ).text() );
+	toggleButton.setTitle( mw.msg( 'revisionslider-toggle-title-collapse' ) );
 	$( '.mw-revslider-container' ).removeClass( 'mw-revslider-container-collapsed' )
 		.addClass( 'mw-revslider-container-expanded' );
 	$( '.mw-revslider-slider-wrapper' ).show();
@@ -96,7 +96,7 @@ function expand() {
 }
 
 function collapse() {
-	toggleButton.setTitle( mw.message( 'revisionslider-toggle-title-expand' ).text() );
+	toggleButton.setTitle( mw.msg( 'revisionslider-toggle-title-expand' ) );
 	$( '.mw-revslider-container' ).removeClass( 'mw-revslider-container-expanded' )
 		.addClass( 'mw-revslider-container-collapsed' );
 	$( '.mw-revslider-slider-wrapper' ).hide();
