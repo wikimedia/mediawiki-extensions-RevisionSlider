@@ -7,6 +7,7 @@ use ConfigFactory;
 use Html;
 use Liuggio\StatsdClient\Factory\StatsdDataFactory;
 use MediaWiki\Diff\Hook\DifferenceEngineViewHeaderHook;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\User\UserOptionsLookup;
 use Message;
@@ -89,8 +90,8 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 		$this->statsdDataFactory->increment( 'RevisionSlider.event.hookinit' );
 
 		$timeOffset = 0;
-		if ( $this->config->get( 'Localtimezone' ) !== null ) {
-			$timeOffset = $this->config->get( 'LocalTZoffset' ) ?? 0;
+		if ( $this->config->get( MainConfigNames::Localtimezone ) !== null ) {
+			$timeOffset = $this->config->get( MainConfigNames::LocalTZoffset ) ?? 0;
 		}
 
 		$autoExpand = $this->userOptionsLookup->getBoolOption( $user, 'userjs-revslider-autoexpand' );
