@@ -107,7 +107,7 @@ $.extend( SliderView.prototype, {
 		this.resetRevisionStylesBasedOnPointerPosition( $revisions );
 		this.addClickHandlerToRevisions( $revisions );
 
-		$container.html( this.$element );
+		$container.empty().append( this.$element );
 
 		this.slideView( Math.floor( ( this.getNewerPointerPos() - 1 ) / this.slider.getRevisionsPerWindow() ), 0 );
 		this.diffPage.addHandlersToCoreLinks( this );
