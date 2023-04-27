@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Merrahtar"
+		]
+	},
+	"revisionslider-page-size": "$1 {{PLURAL:$2|ба̄ййт|ба̄йт|ба̄ййтэ}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|ба̄ййт|ба̄йт|ба̄ййтэ}}",
+	"revisionslider-label-date": "Да̄та",
+	"revisionslider-label-page-size": "Лыст ме̄ррь",
+	"revisionslider-label-change-size": "Вуайхэз ме̄ррь",
+	"revisionslider-label-comment": "Вуайхэзэ баяс",
+	"revisionslider-minoredit": "Тэдта лӣ удць вуайхэсс",
+	"revisionslider-next-dialog": "Пуэдтӭй",
+	"revisionslider-close-dialog": "Ка̄һтӭ"
+}
