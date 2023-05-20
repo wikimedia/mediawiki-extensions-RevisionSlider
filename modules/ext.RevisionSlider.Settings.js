@@ -59,7 +59,7 @@ $.extend( Settings.prototype, {
 	 */
 	loadSetting: function ( name, defaultValue ) {
 		var setting;
-		if ( !mw.user.isAnon() ) {
+		if ( mw.user.isNamed() ) {
 			setting = mw.user.options.get( 'userjs-revslider-' + name );
 		} else {
 			setting = mw.storage.get( 'mw-revslider-' + name );
@@ -85,7 +85,7 @@ $.extend( Settings.prototype, {
 	 * @param {string} value
 	 */
 	saveSetting: function ( name, value ) {
-		if ( !mw.user.isAnon() ) {
+		if ( mw.user.isNamed() ) {
 			( new mw.Api() ).saveOption( 'userjs-revslider-' + name, value );
 		} else {
 			if ( !mw.storage.set( 'mw-revslider-' + name, value ) ) {
