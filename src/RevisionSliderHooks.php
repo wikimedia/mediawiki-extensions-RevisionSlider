@@ -69,7 +69,7 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 		 * If the user is logged in and has explictly requested to disable the extension don't load.
 		 */
 		$user = $differenceEngine->getUser();
-		if ( $user->isRegistered() && $this->userOptionsLookup->getBoolOption( $user, 'revisionslider-disable' ) ) {
+		if ( $user->isNamed() && $this->userOptionsLookup->getBoolOption( $user, 'revisionslider-disable' ) ) {
 			return;
 		}
 
