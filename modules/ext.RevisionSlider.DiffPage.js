@@ -156,10 +156,8 @@ $.extend( DiffPage.prototype, {
 	getStateUrl: function ( diff, oldid ) {
 		var url = mw.util.wikiScript( 'index' ) + '?diff=' + diff + '&oldid=' + oldid,
 			params = this.getExtraDiffPageParams();
-		if ( Object.keys( params ).length > 0 ) {
-			Object.keys( params ).forEach( function ( key ) {
-				url += '&' + key + '=' + params[ key ];
-			} );
+		for ( var key in params ) {
+			url += '&' + key + '=' + params[ key ];
 		}
 		return url;
 	},
