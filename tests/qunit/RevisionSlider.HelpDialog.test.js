@@ -1,9 +1,8 @@
-var HelpDialog = require( 'ext.RevisionSlider.Slider' ).HelpDialog;
-
 QUnit.module( 'ext.RevisionSlider.HelpDialog' );
 
 QUnit.test( 'Initialize HelpDialog', function ( assert ) {
-	var helpDialog = new HelpDialog(),
+	const HelpDialog = require( 'ext.RevisionSlider.Slider' ).HelpDialog;
+	const helpDialog = new HelpDialog(),
 		windowManager = new OO.ui.WindowManager();
 
 	function getSlideTextHtml( slide ) {
@@ -11,7 +10,7 @@ QUnit.test( 'Initialize HelpDialog', function ( assert ) {
 	}
 
 	function addLinkTargets( parsedMessage ) {
-		var $container = $( '<div>' ).html( parsedMessage );
+		const $container = $( '<div>' ).html( parsedMessage );
 		$container.find( 'a' ).attr( 'target', '_blank' );
 		return $container.html();
 	}

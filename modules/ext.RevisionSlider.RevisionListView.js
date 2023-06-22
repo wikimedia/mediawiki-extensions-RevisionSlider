@@ -66,7 +66,7 @@ $.extend( RevisionListView.prototype, {
 	 * @return {jQuery}
 	 */
 	render: function ( revisionTickWidth, positionOffset ) {
-		var revs = this.revisionList.getRevisions(),
+		const revs = this.revisionList.getRevisions(),
 			maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() ),
 			self = this;
 
@@ -75,9 +75,9 @@ $.extend( RevisionListView.prototype, {
 
 		this.$html = $( '<div>' ).addClass( 'mw-revslider-revisions' );
 
-		for ( var i = 0; i < revs.length; i++ ) {
-			var diffSize = revs[ i ].getRelativeSize();
-			var relativeChangeSize = this.calcRelativeChangeSize( diffSize, maxChangeSizeLogged );
+		for ( let i = 0; i < revs.length; i++ ) {
+			const diffSize = revs[ i ].getRelativeSize();
+			const relativeChangeSize = this.calcRelativeChangeSize( diffSize, maxChangeSizeLogged );
 
 			this.$html
 				.append( $( '<div>' )
@@ -147,10 +147,10 @@ $.extend( RevisionListView.prototype, {
 			return;
 		}
 
-		var hasMovedTop = event.pageY - $revisionWrapper.offset().top < $revisionWrapper.height() / 2,
+		const hasMovedTop = event.pageY - $revisionWrapper.offset().top < $revisionWrapper.height() / 2,
 			isOlderTop = $revisionWrapper.hasClass( 'mw-revslider-revision-older' ) && hasMovedTop,
-			isNewerBottom = $revisionWrapper.hasClass( 'mw-revslider-revision-newer' ) && !hasMovedTop,
-			$neighborRevisionWrapper = $revisionWrapper;
+			isNewerBottom = $revisionWrapper.hasClass( 'mw-revslider-revision-newer' ) && !hasMovedTop;
+		let $neighborRevisionWrapper = $revisionWrapper;
 
 		this.showTooltip( $revisionWrapper );
 
@@ -219,12 +219,12 @@ $.extend( RevisionListView.prototype, {
 	 * @param {jQuery} $renderedList
 	 */
 	adjustRevisionSizes: function ( $renderedList ) {
-		var revs = this.revisionList.getRevisions(),
+		const revs = this.revisionList.getRevisions(),
 			maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() );
 
-		for ( var i = 0; i < revs.length; i++ ) {
-			var diffSize = revs[ i ].getRelativeSize();
-			var relativeChangeSize = this.calcRelativeChangeSize( diffSize, maxChangeSizeLogged );
+		for ( let i = 0; i < revs.length; i++ ) {
+			const diffSize = revs[ i ].getRelativeSize();
+			const relativeChangeSize = this.calcRelativeChangeSize( diffSize, maxChangeSizeLogged );
 
 			$renderedList.find( '.mw-revslider-revision[data-pos="' + ( i + 1 ) + '"]' ).css( {
 				height: relativeChangeSize + 'px',
@@ -271,7 +271,7 @@ $.extend( RevisionListView.prototype, {
 	 * @param {jQuery} $revisionWrapper
 	 */
 	showTooltip: function ( $revisionWrapper ) {
-		var pos = +$revisionWrapper.find( '.mw-revslider-revision' ).attr( 'data-pos' ),
+		const pos = +$revisionWrapper.find( '.mw-revslider-revision' ).attr( 'data-pos' ),
 			revId = +$revisionWrapper.find( '.mw-revslider-revision' ).attr( 'data-revid' ),
 			revision = this.getRevisionWithId( revId );
 		if ( revision === null ) {
@@ -280,7 +280,7 @@ $.extend( RevisionListView.prototype, {
 
 		this.hideCurrentTooltip();
 
-		var tooltip = this.makeTooltip( revision, $revisionWrapper );
+		const tooltip = this.makeTooltip( revision, $revisionWrapper );
 		// eslint-disable-next-line mediawiki/class-doc
 		tooltip.$element.addClass( 'mw-revslider-revision-tooltip-' + pos );
 
@@ -295,7 +295,7 @@ $.extend( RevisionListView.prototype, {
 	 * @return {Revision|null}
 	 */
 	getRevisionWithId: function ( revId ) {
-		var matchedRevision = null;
+		let matchedRevision = null;
 		this.revisionList.revisions.forEach( function ( revision ) {
 			if ( revision.getId() === revId ) {
 				matchedRevision = revision;
@@ -308,7 +308,7 @@ $.extend( RevisionListView.prototype, {
 	 * Sets event handlers on tooltips so they do not disappear when hovering over them
 	 */
 	keepTooltipsOnHover: function () {
-		var self = this;
+		const self = this;
 
 		$( document )
 			.on( 'mouseenter', '.mw-revslider-revision-tooltip', function () {
@@ -323,7 +323,7 @@ $.extend( RevisionListView.prototype, {
 	 * Sets an event handler to close tooltips when clicking somewhere outside
 	 */
 	closeTooltipsOnClick: function () {
-		var self = this;
+		const self = this;
 
 		$( document )
 			.on( 'click', function ( event ) {
@@ -342,7 +342,7 @@ $.extend( RevisionListView.prototype, {
 	 * @return {OO.ui.PopupWidget}
 	 */
 	makeTooltip: function ( revision, $revisionWrapper ) {
-		var $tooltip = $( '<div>' )
+		const $tooltip = $( '<div>' )
 			.append(
 				$( '<p>' ).append(
 					$( '<strong>' ).text( mw.msg( 'revisionslider-label-date' ) + mw.msg( 'colon-separator' ) ),
@@ -382,7 +382,7 @@ $.extend( RevisionListView.prototype, {
 	 * @return {string|jQuery}
 	 */
 	makeUserLine: function ( userString, userGender ) {
-		var self = this;
+		const self = this;
 
 		if ( !userString ) {
 			return '';
@@ -391,11 +391,11 @@ $.extend( RevisionListView.prototype, {
 			userGender = 'unknown';
 		}
 
-		var $userBubble = $( '<div>' ).addClass( 'mw-revslider-bubble' )
+		const $userBubble = $( '<div>' ).addClass( 'mw-revslider-bubble' )
 			.on( 'click mouseenter mouseleave', function ( event ) {
 				self.setUserFilterEvents( $( this ), userString, event );
 			} );
-		var $userLine = $( '<p>' ).addClass( 'mw-revslider-highlightable-row mw-revslider-username-row' ).append(
+		const $userLine = $( '<p>' ).addClass( 'mw-revslider-highlightable-row mw-revslider-username-row' ).append(
 			$( '<strong>' ).text( mw.msg( 'revisionslider-label-username', userGender ) + mw.msg( 'colon-separator' ) ),
 			$( '<bdi>' ).append(
 				$( '<a>' ).addClass( 'mw-userlink' ).attr( 'href', mw.util.getUrl( this.getUserPage( userString ) ) ).text( this.stripInvalidCharacters( userString ) )
@@ -420,7 +420,7 @@ $.extend( RevisionListView.prototype, {
 	 * @param {MouseEvent} event
 	 */
 	setUserFilterEvents: function ( $userBubble, userName, event ) {
-		var self = this,
+		const self = this,
 			$userLine = $userBubble.parent();
 
 		if ( self.selectedUser === userName && event.type !== 'click' ) {
@@ -429,6 +429,7 @@ $.extend( RevisionListView.prototype, {
 
 		self.removeRevisionHighlight();
 
+		let oldUser;
 		switch ( event.type ) {
 			case 'mouseenter':
 				$userLine.addClass( 'mw-revslider-highlight' );
@@ -439,7 +440,7 @@ $.extend( RevisionListView.prototype, {
 				self.reApplySavedHighlighting( $userLine, $userBubble );
 				break;
 			case 'click':
-				var oldUser = self.selectedUser;
+				oldUser = self.selectedUser;
 				self.resetRevisionHighlighting();
 
 				$userLine.addClass( 'mw-revslider-highlight' );
@@ -499,21 +500,21 @@ $.extend( RevisionListView.prototype, {
 	 * @return {string|jQuery}
 	 */
 	makeTagsLine: function ( rev ) {
-		var self = this;
+		const self = this;
 
 		if ( rev.hasNoTags() ) {
 			return '';
 		}
 
-		var tags = rev.getTags();
-		var $tagLines = $( '<div>' );
+		const tags = rev.getTags();
+		const $tagLines = $( '<div>' );
 
-		for ( var i = 0; i < tags.length; i++ ) {
-			var $tagBubble = $( '<div>' ).addClass( 'mw-revslider-bubble' )
+		for ( let i = 0; i < tags.length; i++ ) {
+			const $tagBubble = $( '<div>' ).addClass( 'mw-revslider-bubble' )
 				.on( 'click mouseenter mouseleave', function ( event ) {
 					self.setTagFilterEvents( $( this ), event );
 				} );
-			var $tagLine = $( '<div>' ).addClass( 'mw-revslider-highlightable-row mw-revslider-tag-row' ).append(
+			const $tagLine = $( '<div>' ).addClass( 'mw-revslider-highlightable-row mw-revslider-tag-row' ).append(
 				tags[ i ],
 				$tagBubble,
 				'<br>'
@@ -539,7 +540,7 @@ $.extend( RevisionListView.prototype, {
 	 * @param {MouseEvent} event
 	 */
 	setTagFilterEvents: function ( $tagBubble, event ) {
-		var self = this,
+		const self = this,
 			$tagLine = $tagBubble.parent(),
 			tagName = $tagLine.data( 'tag-name' );
 
@@ -549,6 +550,7 @@ $.extend( RevisionListView.prototype, {
 
 		self.removeRevisionHighlight();
 
+		let oldTag;
 		switch ( event.type ) {
 			case 'mouseenter':
 				$tagLine.addClass( 'mw-revslider-highlight' );
@@ -559,7 +561,7 @@ $.extend( RevisionListView.prototype, {
 				self.reApplySavedHighlighting( $tagLine, $tagBubble );
 				break;
 			case 'click':
-				var oldTag = self.selectedTag;
+				oldTag = self.selectedTag;
 				self.resetRevisionHighlighting();
 
 				$tagLine.addClass( 'mw-revslider-highlight' );
@@ -579,11 +581,11 @@ $.extend( RevisionListView.prototype, {
 	 * @param {string} tagName
 	 */
 	highlightSameTagRevisions: function ( tagName ) {
-		var revs = this.revisionList.getRevisions();
+		const revs = this.revisionList.getRevisions();
 
-		for ( var i = 0; i < revs.length; i++ ) {
-			var revTags = revs[ i ].getTags();
-			for ( var j = 0; j < revTags.length; j++ ) {
+		for ( let i = 0; i < revs.length; i++ ) {
+			const revTags = revs[ i ].getTags();
+			for ( let j = 0; j < revTags.length; j++ ) {
 				if ( tagName === revTags[ j ] ) {
 					$( '[data-revid="' + revs[ i ].id + '"]' ).parent()
 						.addClass( 'mw-revslider-revision-highlight' );
@@ -646,7 +648,7 @@ $.extend( RevisionListView.prototype, {
 	 * @return {jQuery}
 	 */
 	makeChangeSizeLine: function ( relativeSize ) {
-		var changeSizeClass = 'mw-revslider-change-none',
+		let changeSizeClass = 'mw-revslider-change-none',
 			leadingSign = '';
 
 		if ( relativeSize > 0 ) {
@@ -658,7 +660,7 @@ $.extend( RevisionListView.prototype, {
 
 		// Classes are documented above
 		// eslint-disable-next-line mediawiki/class-doc
-		var $changeNumber = $( '<span>' )
+		const $changeNumber = $( '<span>' )
 			.addClass( changeSizeClass )
 			.attr( {
 				dir: 'ltr' // Make sure that minus/plus is on the left

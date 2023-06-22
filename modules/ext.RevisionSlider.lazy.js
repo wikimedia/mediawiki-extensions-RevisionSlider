@@ -1,4 +1,4 @@
-var Settings = require( 'ext.RevisionSlider.Settings' ),
+const Settings = require( 'ext.RevisionSlider.Settings' ),
 	settings = new Settings(),
 	autoExpand = settings.shouldAutoExpand();
 

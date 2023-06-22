@@ -69,7 +69,7 @@ $.extend( HelpDialog.prototype, {
 	 * @return {OO.ui.PanelLayout}
 	 */
 	getSlide1: function () {
-		var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
+		const slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
 		slide.$element
 			.append(
@@ -89,7 +89,7 @@ $.extend( HelpDialog.prototype, {
 	 * @return {OO.ui.PanelLayout}
 	 */
 	getSlide2: function () {
-		var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
+		const slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
 		slide.$element
 			.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape mw-revslider-help-dialog-slide-2' ) )
@@ -105,7 +105,7 @@ $.extend( HelpDialog.prototype, {
 	 * @return {OO.ui.PanelLayout}
 	 */
 	getSlide3: function () {
-		var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
+		const slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
 		slide.$element
 			.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-portrait mw-revslider-help-dialog-slide-3a mw-revslider-column-image' ) )
@@ -122,7 +122,7 @@ $.extend( HelpDialog.prototype, {
 	 * @return {OO.ui.PanelLayout}
 	 */
 	getSlide4: function () {
-		var slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
+		const slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
 		slide.$element
 			.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape mw-revslider-help-dialog-slide-4a' ) )
@@ -178,7 +178,7 @@ $.extend( HelpDialog.prototype, {
  * Initializes the help dialog
  */
 HelpDialog.init = function () {
-	var windowManager = new OO.ui.WindowManager();
+	const windowManager = new OO.ui.WindowManager();
 
 	$( document.body )
 		.append( windowManager.$element )
@@ -188,7 +188,7 @@ HelpDialog.init = function () {
 			}
 		} );
 
-	var dialog;
+	let dialog;
 	HelpDialog.show = function () {
 		dialog = new HelpDialog( { size: 'medium', classes: [ 'mw-revslider-help-dialog' ] } );
 		windowManager.addWindows( [ dialog ] );

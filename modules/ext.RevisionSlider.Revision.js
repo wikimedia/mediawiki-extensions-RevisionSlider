@@ -1,4 +1,4 @@
-var userOffset;
+let userOffset;
 
 /* global moment:false */
 /**
@@ -144,7 +144,7 @@ $.extend( Revision.prototype, {
 	 * @return {string}
 	 */
 	formatDate: function ( rawDate ) {
-		var offset = parseInt( userOffset );
+		const offset = parseInt( userOffset );
 		return moment( rawDate ).utcOffset( offset ).format( 'LLL' );
 	},
 

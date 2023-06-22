@@ -1,4 +1,4 @@
-var PointerLine = require( './ext.RevisionSlider.PointerLine.js' ),
+const PointerLine = require( './ext.RevisionSlider.PointerLine.js' ),
 	PointerView = require( './ext.RevisionSlider.PointerView.js' );
 
 /**

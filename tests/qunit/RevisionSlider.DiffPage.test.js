@@ -1,14 +1,14 @@
-var SliderModule = require( 'ext.RevisionSlider.Slider' ),
-	DiffPage = SliderModule.DiffPage,
-	SliderView = SliderModule.SliderView,
-	Slider = SliderModule.Slider,
-	RevisionList = SliderModule.RevisionList,
-	Revision = SliderModule.Revision;
-
 QUnit.module( 'ext.RevisionSlider.DiffPage' );
 
 QUnit.test( 'Push state', function ( assert ) {
-	var diffPage = new DiffPage(),
+	const SliderModule = require( 'ext.RevisionSlider.Slider' ),
+		DiffPage = SliderModule.DiffPage,
+		SliderView = SliderModule.SliderView,
+		Slider = SliderModule.Slider,
+		RevisionList = SliderModule.RevisionList,
+		Revision = SliderModule.Revision;
+
+	const diffPage = new DiffPage(),
 		sliderView = new SliderView( new Slider( new RevisionList( [
 			new Revision( { revid: 1, comment: '' } ),
 			new Revision( { revid: 3, comment: '' } ),
@@ -22,7 +22,7 @@ QUnit.test( 'Push state', function ( assert ) {
 	} );
 	sliderView.render( $( '<div>' ) );
 
-	var histLength = history.length;
+	const histLength = history.length;
 
 	diffPage.pushState( 3, 37, sliderView );
 

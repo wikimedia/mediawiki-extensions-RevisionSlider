@@ -55,10 +55,10 @@ $.extend( PointerLine.prototype, {
 	 * @param {jQuery} $targetColumn
 	 */
 	setCssProperties: function ( $sourcePointer, $targetColumn ) {
-		var distance = this.calculateDistance( $sourcePointer, $targetColumn );
+		const distance = this.calculateDistance( $sourcePointer, $targetColumn );
 
-		var widthToSet = Math.abs( distance );
-		var leftToSet = ( $targetColumn.offset().left + $targetColumn.width() / 2 ) -
+		const widthToSet = Math.abs( distance );
+		let leftToSet = ( $targetColumn.offset().left + $targetColumn.width() / 2 ) -
 			$( '.mw-revslider-revision-slider' ).offset().left;
 
 		if ( distance > 0 ) {
@@ -99,18 +99,18 @@ $.extend( PointerLine.prototype, {
 			return false;
 		}
 
-		var $upperLineDiv = this.$html.find( '.mw-revslider-pointer-line-upper' ),
+		const $upperLineDiv = this.$html.find( '.mw-revslider-pointer-line-upper' ),
 			$lowerLineDiv = this.$html.find( '.mw-revslider-pointer-line-lower' ),
 			$newerUnderLineDiv = this.$html.find( '.mw-revslider-pointer-line-underline.mw-revslider-pointer-newer' ),
 			$olderUnderLineDiv = this.$html.find( '.mw-revslider-pointer-line-underline.mw-revslider-pointer-older' ),
 			$sourcePointer = this.pointer.getView().getElement(),
 			$table = $( '.diff-otitle' );
 
-		var isNewer = this.pointer.getView().isNewerPointer();
+		const isNewer = this.pointer.getView().isNewerPointer();
 		$lowerLineDiv.add( $upperLineDiv ).add( $newerUnderLineDiv ).add( $olderUnderLineDiv )
 			.toggleClass( 'mw-revslider-lower-color', !isNewer )
 			.toggleClass( 'mw-revslider-upper-color', isNewer );
-		var $targetColumn = isNewer ? $( '.diff-ntitle' ) : $table;
+		const $targetColumn = isNewer ? $( '.diff-ntitle' ) : $table;
 
 		this.setCssProperties( $sourcePointer, $targetColumn );
 

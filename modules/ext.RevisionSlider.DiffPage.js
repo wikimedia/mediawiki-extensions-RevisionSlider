@@ -18,7 +18,7 @@ $.extend( DiffPage.prototype, {
 	 * @param {number} [retryAttempt=0]
 	 */
 	refresh: function ( diff, oldid, sliderView, retryAttempt ) {
-		var self = this,
+		const self = this,
 			retryLimit = 2,
 			data = {
 				diff: diff,
@@ -45,13 +45,13 @@ $.extend( DiffPage.prototype, {
 		} );
 		// Don't chain, so lastRequest is a jQuery.jqXHR object
 		this.lastRequest.then( function ( data2 ) {
-			var $data = $( data2 ),
+			const $data = $( data2 ),
 				$container = $( '.mw-revslider-container' ),
 				scrollLeft = $container.find( '.mw-revslider-revisions-container' ).scrollLeft();
 
 			// Add our current rendered slider into the newly loaded container
 			$data.find( '.mw-revslider-container' ).replaceWith( $container );
-			var $contentText = $data.find( '#mw-content-text' );
+			const $contentText = $data.find( '#mw-content-text' );
 
 			// Replace elements on the page with the newly loaded elements, from top to bottom
 			$( '#mw-content-text' ).replaceWith( $contentText );
@@ -60,7 +60,7 @@ $.extend( DiffPage.prototype, {
 			$( '#mw-panel' ).replaceWith( $data.find( '#mw-panel' ) );
 			// Update edit link
 			$( '#ca-edit a, #ca-ve-edit a' ).each( function () {
-				var uri = new mw.Uri( $( this ).attr( 'href' ) );
+				const uri = new mw.Uri( $( this ).attr( 'href' ) );
 				uri.query.oldid = diff;
 				$( this ).attr( 'href', uri.toString() );
 			} );
@@ -154,9 +154,9 @@ $.extend( DiffPage.prototype, {
 	 * @return {string}
 	 */
 	getStateUrl: function ( diff, oldid ) {
-		var url = mw.util.wikiScript( 'index' ) + '?diff=' + diff + '&oldid=' + oldid,
-			params = this.getExtraDiffPageParams();
-		for ( var key in params ) {
+		let url = mw.util.wikiScript( 'index' ) + '?diff=' + diff + '&oldid=' + oldid;
+		const params = this.getExtraDiffPageParams();
+		for ( const key in params ) {
 			url += '&' + key + '=' + params[ key ];
 		}
 		return url;
@@ -169,12 +169,12 @@ $.extend( DiffPage.prototype, {
 	 * @return {Object}
 	 */
 	getExtraDiffPageParams: function () {
-		var params = {},
+		const params = {},
 			paramArray = location.search.slice( 1 ).split( '&' ).filter( function ( elem ) {
 				return elem.indexOf( '=' ) > 0 && elem.match( /^(diff|oldid)=/ ) === null;
 			} );
 		paramArray.forEach( function ( elem ) {
-			var pair = elem.split( '=', 2 );
+			const pair = elem.split( '=', 2 );
 			params[ pair[ 0 ] ] = pair[ 1 ];
 		} );
 		return params;

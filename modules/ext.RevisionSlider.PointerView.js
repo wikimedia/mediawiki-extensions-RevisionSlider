@@ -96,15 +96,15 @@ $.extend( PointerView.prototype, {
 	 * @return {jQuery}
 	 */
 	animateTo: function ( posInPx, revisionWidth, baseDuration ) {
-		var animatePos = { left: posInPx },
+		const animatePos = { left: posInPx },
 			currentPos = this.getElement().position();
 
 		baseDuration = typeof baseDuration !== 'undefined' ? baseDuration : 100;
 		if ( this.getElement().css( 'direction' ) === 'rtl' ) {
 			animatePos.left = this.getAdjustedLeftPositionWhenRtl( animatePos.left );
 		}
-		var distance = Math.abs( animatePos.left - currentPos.left ) / revisionWidth;
-		var duration = baseDuration * Math.log( 5 + distance );
+		const distance = Math.abs( animatePos.left - currentPos.left ) / revisionWidth;
+		const duration = baseDuration * Math.log( 5 + distance );
 		return this.getElement().animate( animatePos, duration, 'linear' );
 	},
 
@@ -116,7 +116,7 @@ $.extend( PointerView.prototype, {
 	 * @return {jQuery}
 	 */
 	slideToPosition: function ( slider, duration ) {
-		var relativePos = this.pointer.getPosition() - slider.getOldestVisibleRevisionIndex();
+		const relativePos = this.pointer.getPosition() - slider.getOldestVisibleRevisionIndex();
 		return this.animateTo( ( relativePos - 1 ) * slider.getView().revisionWidth, slider.getView().revisionWidth, duration );
 	},
 
@@ -144,7 +144,7 @@ $.extend( PointerView.prototype, {
 	 * @return {jQuery}
 	 */
 	slideToSideOrPosition: function ( slider, duration ) {
-		var firstVisibleRev = slider.getOldestVisibleRevisionIndex(),
+		const firstVisibleRev = slider.getOldestVisibleRevisionIndex(),
 			posBeforeSlider = this.pointer.getPosition() < firstVisibleRev,
 			isVisible = !posBeforeSlider && this.pointer.getPosition() <= firstVisibleRev + slider.getRevisionsPerWindow();
 		if ( isVisible ) {

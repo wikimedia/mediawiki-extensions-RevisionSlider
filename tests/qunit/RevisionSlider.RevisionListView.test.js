@@ -1,169 +1,171 @@
-var SliderModule = require( 'ext.RevisionSlider.Slider' ),
-	Revision = SliderModule.Revision,
-	RevisionList = SliderModule.RevisionList,
-	RevisionListView = SliderModule.RevisionListView;
+( function () {
+	const SliderModule = require( 'ext.RevisionSlider.Slider' ),
+		Revision = SliderModule.Revision,
+		RevisionList = SliderModule.RevisionList,
+		RevisionListView = SliderModule.RevisionListView;
 
-QUnit.module( 'ext.RevisionSlider.RevisionListView' );
+	QUnit.module( 'ext.RevisionSlider.RevisionListView' );
 
-QUnit.test( 'render adds revisions', function ( assert ) {
-	var revisionListView = new RevisionListView( new RevisionList( [
-		new Revision( { revid: 1, size: 5, comment: '' } ),
-		new Revision( { revid: 3, size: 213, comment: '' } ),
-		new Revision( { revid: 37, size: 100, comment: '' } )
-	] ) );
+	QUnit.test( 'render adds revisions', function ( assert ) {
+		const revisionListView = new RevisionListView( new RevisionList( [
+			new Revision( { revid: 1, size: 5, comment: '' } ),
+			new Revision( { revid: 3, size: 213, comment: '' } ),
+			new Revision( { revid: 37, size: 100, comment: '' } )
+		] ) );
 
-	var $resultHtml = revisionListView.render( 11 );
-	var $revisionWrapperDivs = $resultHtml.find( '.mw-revslider-revision-wrapper' );
-	var $revisionDivs = $resultHtml.find( '.mw-revslider-revision' );
+		const $resultHtml = revisionListView.render( 11 );
+		const $revisionWrapperDivs = $resultHtml.find( '.mw-revslider-revision-wrapper' );
+		const $revisionDivs = $resultHtml.find( '.mw-revslider-revision' );
 
-	assert.strictEqual( $revisionWrapperDivs.length, 3 );
-	assert.strictEqual( $( $revisionDivs[ 0 ] ).attr( 'data-revid' ), '1' );
-	assert.strictEqual( $( $revisionDivs[ 2 ] ).attr( 'data-revid' ), '37' );
-	assert.strictEqual( $( $revisionDivs[ 1 ] ).css( 'width' ), '11px' );
-	assert.strictEqual( $( $revisionDivs[ 1 ] ).css( 'height' ), '66px' ); // max relative size
-	assert.true( $( $revisionDivs[ 1 ] ).hasClass( 'mw-revslider-revision-up' ) );
-	assert.true( $( $revisionDivs[ 2 ] ).hasClass( 'mw-revslider-revision-down' ) );
-} );
+		assert.strictEqual( $revisionWrapperDivs.length, 3 );
+		assert.strictEqual( $( $revisionDivs[ 0 ] ).attr( 'data-revid' ), '1' );
+		assert.strictEqual( $( $revisionDivs[ 2 ] ).attr( 'data-revid' ), '37' );
+		assert.strictEqual( $( $revisionDivs[ 1 ] ).css( 'width' ), '11px' );
+		assert.strictEqual( $( $revisionDivs[ 1 ] ).css( 'height' ), '66px' ); // max relative size
+		assert.true( $( $revisionDivs[ 1 ] ).hasClass( 'mw-revslider-revision-up' ) );
+		assert.true( $( $revisionDivs[ 2 ] ).hasClass( 'mw-revslider-revision-down' ) );
+	} );
 
-QUnit.test( 'tooltip is composed correctly', function ( assert ) {
-	var revisionListView = new RevisionListView(),
-		revision = new Revision( {
-			revid: 1,
-			size: 230,
+	QUnit.test( 'tooltip is composed correctly', function ( assert ) {
+		const revisionListView = new RevisionListView(),
+			revision = new Revision( {
+				revid: 1,
+				size: 230,
+				comment: 'Hello',
+				parsedcomment: '<strong>Hello</strong>',
+				timestamp: '2016-04-26T10:27:14Z', // 10:27, 26 Apr 2016
+				user: 'User1',
+				minor: true
+			} );
+
+		revision.setRelativeSize( 210 );
+
+		SliderModule.setUserOffset( 0 );
+
+		const tooltip = revisionListView.makeTooltip( revision, {} );
+		const tooltipHtml = tooltip.$element.html();
+
+		assert.true( /User1/.test( tooltipHtml ), 'Test the user.' );
+		assert.true( /Hello/.test( tooltipHtml ), 'Test the comment.' );
+		assert.true( /230/.test( tooltipHtml ), 'Test the page size.' );
+		assert.true( /\+210/.test( tooltipHtml ), 'Test the change size.' );
+	} );
+
+	QUnit.revisionSlider.testOrSkip( 'tooltip is composed correctly with en lang', function ( assert ) {
+		const revisionListView = new RevisionListView(),
+			revision = new Revision( {
+				revid: 1,
+				size: 2300,
+				comment: 'Hello',
+				parsedcomment: '<strong>Hello</strong>',
+				timestamp: '2016-04-26T10:27:14Z', // 10:27, 26 Apr 2016
+				user: 'User1',
+				minor: true
+			} );
+
+		revision.setRelativeSize( 2100 );
+
+		SliderModule.setUserOffset( 0 );
+
+		const tooltip = revisionListView.makeTooltip( revision, {} );
+		const tooltipHtml = tooltip.$element.html();
+
+		assert.true( /User1/.test( tooltipHtml ), 'Test the user.' );
+		assert.true( /Hello/.test( tooltipHtml ), 'Test the comment.' );
+		assert.true( /2,300/.test( tooltipHtml ), 'Test the page size.' );
+		assert.true( /\+2,100/.test( tooltipHtml ), 'Test the change size.' );
+		assert.true( /26 April 2016 10:27 AM/.test( tooltipHtml ), 'Test the date.' );
+		assert.true( /minor/.test( tooltipHtml ), 'Test minor.' );
+	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
+
+	QUnit.test( 'empty user leads to no user line', function ( assert ) {
+		const revisionListView = new RevisionListView();
+
+		const $userLineHtml = revisionListView.makeUserLine( null );
+
+		assert.strictEqual( $userLineHtml, '' );
+	} );
+
+	QUnit.test( 'user line is composed correctly', function ( assert ) {
+		const revisionListView = new RevisionListView();
+
+		const $userLineHtml = revisionListView.makeUserLine( 'User1' );
+
+		assert.strictEqual( $userLineHtml.find( 'a' ).text(), 'User1' );
+		assert.true( /User:User1/.test( $userLineHtml.find( 'a' ).attr( 'href' ) ) );
+	} );
+
+	QUnit.test( 'IP user line is composed correctly', function ( assert ) {
+		const revisionListView = new RevisionListView();
+
+		const $userLineHtml = revisionListView.makeUserLine( '127.0.0.1' );
+
+		assert.strictEqual( $userLineHtml.find( 'a' ).text(), '127.0.0.1' );
+		assert.true( /Special:Contributions\/127.0.0.1/.test( $userLineHtml.find( 'a' ).attr( 'href' ) ) );
+	} );
+
+	QUnit.test( 'empty comment leads to no comment line', function ( assert ) {
+		const revisionListView = new RevisionListView();
+
+		const $commentHtml = revisionListView.makeCommentLine( new Revision( {
+			comment: '   ',
+			parsedcomment: '   '
+		} ) );
+
+		assert.strictEqual( $commentHtml, '' );
+	} );
+
+	QUnit.test( 'comment line is composed correctly', function ( assert ) {
+		const revisionListView = new RevisionListView();
+
+		const $commentLineHtml = revisionListView.makeCommentLine( new Revision( {
 			comment: 'Hello',
-			parsedcomment: '<strong>Hello</strong>',
-			timestamp: '2016-04-26T10:27:14Z', // 10:27, 26 Apr 2016
-			user: 'User1',
-			minor: true
-		} );
+			parsedcomment: '<strong>Hello</strong>'
+		} ) );
 
-	revision.setRelativeSize( 210 );
+		assert.strictEqual( $commentLineHtml.find( 'strong' ).length, 2 );
+	} );
 
-	SliderModule.setUserOffset( 0 );
+	QUnit.test( 'positive change is composed correctly', function ( assert ) {
+		const revisionListView = new RevisionListView();
 
-	var tooltip = revisionListView.makeTooltip( revision, {} );
-	var tooltipHtml = tooltip.$element.html();
+		const $changeSizeLineHtml = revisionListView.makeChangeSizeLine( 9 );
 
-	assert.true( /User1/.test( tooltipHtml ), 'Test the user.' );
-	assert.true( /Hello/.test( tooltipHtml ), 'Test the comment.' );
-	assert.true( /230/.test( tooltipHtml ), 'Test the page size.' );
-	assert.true( /\+210/.test( tooltipHtml ), 'Test the change size.' );
-} );
+		assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).length, 1 );
+		assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).text(), '+9' );
+	} );
 
-QUnit.revisionSlider.testOrSkip( 'tooltip is composed correctly with en lang', function ( assert ) {
-	var revisionListView = new RevisionListView(),
-		revision = new Revision( {
-			revid: 1,
-			size: 2300,
-			comment: 'Hello',
-			parsedcomment: '<strong>Hello</strong>',
-			timestamp: '2016-04-26T10:27:14Z', // 10:27, 26 Apr 2016
-			user: 'User1',
-			minor: true
-		} );
+	QUnit.test( 'negative change is composed correctly', function ( assert ) {
+		const revisionListView = new RevisionListView();
 
-	revision.setRelativeSize( 2100 );
+		const $changeSizeLineHtml = revisionListView.makeChangeSizeLine( -9 );
 
-	SliderModule.setUserOffset( 0 );
+		assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-negative' ).length, 1 );
+		assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-negative' ).text(), '-9' );
+	} );
 
-	var tooltip = revisionListView.makeTooltip( revision, {} );
-	var tooltipHtml = tooltip.$element.html();
+	QUnit.test( 'neutral change is composed correctly', function ( assert ) {
+		const revisionListView = new RevisionListView();
 
-	assert.true( /User1/.test( tooltipHtml ), 'Test the user.' );
-	assert.true( /Hello/.test( tooltipHtml ), 'Test the comment.' );
-	assert.true( /2,300/.test( tooltipHtml ), 'Test the page size.' );
-	assert.true( /\+2,100/.test( tooltipHtml ), 'Test the change size.' );
-	assert.true( /26 April 2016 10:27 AM/.test( tooltipHtml ), 'Test the date.' );
-	assert.true( /minor/.test( tooltipHtml ), 'Test minor.' );
-}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
+		const $changeSizeLineHtml = revisionListView.makeChangeSizeLine( 0 );
 
-QUnit.test( 'empty user leads to no user line', function ( assert ) {
-	var revisionListView = new RevisionListView();
+		assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-none' ).length, 1 );
+		assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-none' ).text(), '0' );
+	} );
 
-	var $userLineHtml = revisionListView.makeUserLine( null );
+	QUnit.test( 'big change number is formatted correctly', function ( assert ) {
+		const revisionListView = new RevisionListView();
 
-	assert.strictEqual( $userLineHtml, '' );
-} );
+		const $changeSizeLineHtml = revisionListView.makeChangeSizeLine( 1000 );
 
-QUnit.test( 'user line is composed correctly', function ( assert ) {
-	var revisionListView = new RevisionListView();
+		assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).text(), '+1,000' );
+	} );
 
-	var $userLineHtml = revisionListView.makeUserLine( 'User1' );
+	QUnit.test( 'page size is formatted correctly', function ( assert ) {
+		const revisionListView = new RevisionListView();
 
-	assert.strictEqual( $userLineHtml.find( 'a' ).text(), 'User1' );
-	assert.true( /User:User1/.test( $userLineHtml.find( 'a' ).attr( 'href' ) ) );
-} );
+		const $pageSizeLineHtml = revisionListView.makePageSizeLine( 1337 );
 
-QUnit.test( 'IP user line is composed correctly', function ( assert ) {
-	var revisionListView = new RevisionListView();
-
-	var $userLineHtml = revisionListView.makeUserLine( '127.0.0.1' );
-
-	assert.strictEqual( $userLineHtml.find( 'a' ).text(), '127.0.0.1' );
-	assert.true( /Special:Contributions\/127.0.0.1/.test( $userLineHtml.find( 'a' ).attr( 'href' ) ) );
-} );
-
-QUnit.test( 'empty comment leads to no comment line', function ( assert ) {
-	var revisionListView = new RevisionListView();
-
-	var $commentHtml = revisionListView.makeCommentLine( new Revision( {
-		comment: '   ',
-		parsedcomment: '   '
-	} ) );
-
-	assert.strictEqual( $commentHtml, '' );
-} );
-
-QUnit.test( 'comment line is composed correctly', function ( assert ) {
-	var revisionListView = new RevisionListView();
-
-	var $commentLineHtml = revisionListView.makeCommentLine( new Revision( {
-		comment: 'Hello',
-		parsedcomment: '<strong>Hello</strong>'
-	} ) );
-
-	assert.strictEqual( $commentLineHtml.find( 'strong' ).length, 2 );
-} );
-
-QUnit.test( 'positive change is composed correctly', function ( assert ) {
-	var revisionListView = new RevisionListView();
-
-	var $changeSizeLineHtml = revisionListView.makeChangeSizeLine( 9 );
-
-	assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).length, 1 );
-	assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).text(), '+9' );
-} );
-
-QUnit.test( 'negative change is composed correctly', function ( assert ) {
-	var revisionListView = new RevisionListView();
-
-	var $changeSizeLineHtml = revisionListView.makeChangeSizeLine( -9 );
-
-	assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-negative' ).length, 1 );
-	assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-negative' ).text(), '-9' );
-} );
-
-QUnit.test( 'neutral change is composed correctly', function ( assert ) {
-	var revisionListView = new RevisionListView();
-
-	var $changeSizeLineHtml = revisionListView.makeChangeSizeLine( 0 );
-
-	assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-none' ).length, 1 );
-	assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-none' ).text(), '0' );
-} );
-
-QUnit.test( 'big change number is formatted correctly', function ( assert ) {
-	var revisionListView = new RevisionListView();
-
-	var $changeSizeLineHtml = revisionListView.makeChangeSizeLine( 1000 );
-
-	assert.strictEqual( $changeSizeLineHtml.find( '.mw-revslider-change-positive' ).text(), '+1,000' );
-} );
-
-QUnit.test( 'page size is formatted correctly', function ( assert ) {
-	var revisionListView = new RevisionListView();
-
-	var $pageSizeLineHtml = revisionListView.makePageSizeLine( 1337 );
-
-	assert.true( /1,337/.test( $pageSizeLineHtml.text() ) );
-} );
+		assert.true( /1,337/.test( $pageSizeLineHtml.text() ) );
+	} );
+}() );

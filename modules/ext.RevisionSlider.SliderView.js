@@ -1,4 +1,4 @@
-var DiffPage = require( './ext.RevisionSlider.DiffPage.js' ),
+const DiffPage = require( './ext.RevisionSlider.DiffPage.js' ),
 	HelpButtonView = require( './ext.RevisionSlider.HelpButtonView.js' ),
 	makeRevisions = require( './ext.RevisionSlider.RevisionList.js' ).makeRevisions,
 	Pointer = require( './ext.RevisionSlider.Pointer.js' ),
@@ -67,7 +67,7 @@ $.extend( SliderView.prototype, {
 	lastNewPointerPosition: null,
 
 	render: function ( $container ) {
-		var containerWidth = this.calculateSliderContainerWidth(),
+		const containerWidth = this.calculateSliderContainerWidth(),
 			$revisions = this.getRevisionListView().render( this.revisionWidth ),
 			sliderArrowView = new SliderArrowView( this );
 
@@ -138,10 +138,10 @@ $.extend( SliderView.prototype, {
 	 * @return {jQuery} the pointer container
 	 */
 	renderPointerContainer: function ( containerWidth ) {
-		var pointerContainerPosition = 53,
-			pointerContainerWidth = containerWidth + this.revisionWidth - 1,
-			pointerContainerStyle, lastMouseMoveRevisionPos,
-			self = this;
+		const self = this;
+		const pointerContainerWidth = containerWidth + this.revisionWidth - 1;
+		let pointerContainerPosition = 53,
+			pointerContainerStyle, lastMouseMoveRevisionPos;
 
 		pointerContainerStyle = { left: pointerContainerPosition + 'px', width: pointerContainerWidth + 'px' };
 		if ( this.dir === 'rtl' ) {
@@ -206,7 +206,7 @@ $.extend( SliderView.prototype, {
 	 * @param {jQuery} $revisions
 	 */
 	initPointers: function ( $revisions ) {
-		var $pointers = this.$element.find( '.mw-revslider-pointer' ),
+		const $pointers = this.$element.find( '.mw-revslider-pointer' ),
 			$pointerOlder = this.pointerOlder.getView().getElement(),
 			$pointerNewer = this.pointerNewer.getView().getElement(),
 			self = this;
@@ -296,14 +296,14 @@ $.extend( SliderView.prototype, {
 	},
 
 	showTooltipsOnMouseMoveHandler: function ( event, lastValidPosition ) {
-		var pos = this.getRevisionPositionFromLeftOffset( event.pageX );
+		const pos = this.getRevisionPositionFromLeftOffset( event.pageX );
 
 		if ( pos === lastValidPosition ) {
 			return pos;
 		}
 
-		var $hoveredRevisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), pos ).parent();
-		var $lastRevisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), lastValidPosition ).parent();
+		const $hoveredRevisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), pos ).parent();
+		const $lastRevisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), lastValidPosition ).parent();
 		this.getRevisionListView().unsetRevisionGhosts( $lastRevisionWrapper );
 		this.getRevisionListView().setRevisionHovered( $hoveredRevisionWrapper, event );
 
@@ -317,7 +317,7 @@ $.extend( SliderView.prototype, {
 	 * @param {MouseEvent} event
 	 */
 	pointerContainerClickHandler: function ( event ) {
-		var clickedPos = this.getRevisionPositionFromLeftOffset( event.pageX ),
+		const clickedPos = this.getRevisionPositionFromLeftOffset( event.pageX ),
 			$revisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), clickedPos ).parent(),
 			hasClickedTop = event.pageY - $revisionWrapper.offset().top < $revisionWrapper.height() / 2;
 
@@ -332,7 +332,7 @@ $.extend( SliderView.prototype, {
 	 * @param {jQuery} $revisionWrapper
 	 */
 	revisionWrapperClickHandler: function ( event, $revisionWrapper ) {
-		var hasClickedTop = event.pageY - $revisionWrapper.offset().top < $revisionWrapper.height() / 2,
+		const hasClickedTop = event.pageY - $revisionWrapper.offset().top < $revisionWrapper.height() / 2,
 			clickedPos = +$revisionWrapper.find( '.mw-revslider-revision' ).attr( 'data-pos' );
 
 		this.handleRevisionClick( $revisionWrapper, clickedPos, hasClickedTop );
@@ -346,7 +346,7 @@ $.extend( SliderView.prototype, {
 	 * @param {boolean} hasClickedTop
 	 */
 	handleRevisionClick: function ( $revisionWrapper, clickedPos, hasClickedTop ) {
-		var newNewerPointerPos, newOlderPointerPos;
+		let newNewerPointerPos, newOlderPointerPos;
 
 		if ( hasClickedTop &&
 			( $revisionWrapper.hasClass( 'mw-revslider-revision-newer' ) ||
@@ -385,7 +385,7 @@ $.extend( SliderView.prototype, {
 	 * @param {jQuery} $revisions
 	 */
 	addClickHandlerToRevisions: function ( $revisions ) {
-		var self = this;
+		const self = this;
 		$revisions.find( '.mw-revslider-revision-wrapper' ).on( 'click', function ( event ) {
 			self.revisionWrapperClickHandler( event, $( this ) );
 		} );
@@ -399,12 +399,12 @@ $.extend( SliderView.prototype, {
 	 * @param {jQuery} $revisions
 	 */
 	buildTabbingRulesOnKeyDown: function ( $pointer, event, $revisions ) {
-		var self = this,
+		const self = this,
 			oldPos = self.getOlderPointerPos(),
 			newPos = self.getNewerPointerPos(),
 			pointer = self.whichPointer( $pointer ),
-			offset = 0,
 			isNewer = pointer.getView().isNewerPointer();
+		let offset = 0;
 
 		if ( event.which === 39 ) {
 			offset = 1;
@@ -439,11 +439,11 @@ $.extend( SliderView.prototype, {
 		self.resetRevisionStylesBasedOnPointerPosition( $revisions );
 		self.alignPointersAndLines( 1 );
 
-		var pos = self.getRevisionPositionFromLeftOffset(
+		const pos = self.getRevisionPositionFromLeftOffset(
 			$pointer.offset().left + self.revisionWidth / 2
 		) + offset;
 
-		var $hoveredRevisionWrapper = self.getRevElementAtPosition( $revisions, pos ).parent();
+		const $hoveredRevisionWrapper = self.getRevElementAtPosition( $revisions, pos ).parent();
 		self.getRevisionListView().showTooltip( $hoveredRevisionWrapper );
 	},
 
@@ -455,17 +455,17 @@ $.extend( SliderView.prototype, {
 	 * @param {jQuery} $revisions
 	 */
 	buildTabbingRulesOnKeyUp: function ( $pointer, event, $revisions ) {
-		var self = this;
+		const self = this;
 
 		if ( event.which !== 39 && event.which !== 37 ) {
 			return;
 		}
 
-		var diff = self.getRevElementAtPosition(
+		const diff = self.getRevElementAtPosition(
 			$revisions, self.getNewerPointerPos()
 		).data( 'revid' );
 
-		var oldid = self.getRevElementAtPosition(
+		const oldid = self.getRevElementAtPosition(
 			$revisions, self.getOlderPointerPos()
 		).data( 'revid' );
 
@@ -484,8 +484,8 @@ $.extend( SliderView.prototype, {
 	 * @return {Object}
 	 */
 	buildDraggableOptions: function ( $revisions, containmentClass ) {
-		var lastValidLeftPos,
-			self = this;
+		let lastValidLeftPos;
+		const self = this;
 
 		return {
 			axis: 'x',
@@ -504,10 +504,9 @@ $.extend( SliderView.prototype, {
 				self.lastNewPointerPosition = self.getNewerPointerPos();
 			},
 			stop: function () {
-				var $p = $( this ),
+				const $p = $( this ),
 					relativeIndex = self.getRelativePointerIndex( $p ),
-					pointer = self.whichPointer( $p ),
-					diff, oldid;
+					pointer = self.whichPointer( $p );
 
 				self.isDragged = false;
 				self.getRevisionListView().enableHover();
@@ -521,11 +520,11 @@ $.extend( SliderView.prototype, {
 
 				pointer.setPosition( self.slider.getOldestVisibleRevisionIndex() + relativeIndex );
 
-				diff = self.getRevElementAtPosition(
+				const diff = self.getRevElementAtPosition(
 					$revisions, self.getNewerPointerPos()
 				).data( 'revid' );
 
-				oldid = self.getRevElementAtPosition(
+				const oldid = self.getRevElementAtPosition(
 					$revisions, self.getOlderPointerPos()
 				).data( 'revid' );
 
@@ -553,7 +552,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	pointerIsBlockedByOther: function ( pointerElement ) {
-		var pointer = this.whichPointer( $( pointerElement ) ),
+		const pointer = this.whichPointer( $( pointerElement ) ),
 			isNewer = pointer.getView().isNewerPointer();
 
 		return ( isNewer && this.getOlderPointerPos() >= this.slider.getNewestVisibleRevisionIndex() + 1 ) ||
@@ -561,7 +560,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	draggableDragAction: function ( event, ui, pointer, lastValidLeftPos ) {
-		var pos = this.getRevisionPositionFromLeftOffset(
+		const pos = this.getRevisionPositionFromLeftOffset(
 			$( pointer ).offset().left + this.revisionWidth / 2
 		);
 
@@ -569,17 +568,17 @@ $.extend( SliderView.prototype, {
 			return pos;
 		}
 
-		var $revisions = this.getRevisionsElement();
-		var $hoveredRevisionWrapper = this.getRevElementAtPosition( $revisions, pos ).parent();
+		const $revisions = this.getRevisionsElement();
+		const $hoveredRevisionWrapper = this.getRevElementAtPosition( $revisions, pos ).parent();
 		this.getRevisionListView().showTooltip( $hoveredRevisionWrapper );
 
 		return pos;
 	},
 
 	getRevisionPositionFromLeftOffset: function ( leftOffset ) {
-		var $revisions = this.getRevisionsElement(),
-			revisionsX = utils.correctElementOffsets( $revisions.offset() ).left,
-			pos = Math.ceil( Math.abs( leftOffset - revisionsX ) / this.revisionWidth );
+		const $revisions = this.getRevisionsElement(),
+			revisionsX = utils.correctElementOffsets( $revisions.offset() ).left;
+		let pos = Math.ceil( Math.abs( leftOffset - revisionsX ) / this.revisionWidth );
 
 		if ( this.dir === 'rtl' ) {
 			// pre-loading the revisions on the right side leads to shifted position numbers
@@ -620,8 +619,8 @@ $.extend( SliderView.prototype, {
 	 * @return {number}
 	 */
 	getRelativePointerIndex: function ( $pointer ) {
-		var pos = $pointer.position().left,
-			pointer = this.whichPointer( $pointer );
+		let pos = $pointer.position().left;
+		const pointer = this.whichPointer( $pointer );
 
 		if ( this.dir === 'rtl' ) {
 			pos = pointer.getView().getAdjustedLeftPositionWhenRtl( pos );
@@ -745,9 +744,9 @@ $.extend( SliderView.prototype, {
 	},
 
 	updateOlderSliderLineCSS: function () {
-		var widthToSet = ( this.getOlderDistanceToOldest() + this.getDistanceBetweenPointers() ) *
-				this.revisionWidth,
-			marginToSet = -this.revisionWidth / 2;
+		let widthToSet = ( this.getOlderDistanceToOldest() + this.getDistanceBetweenPointers() ) *
+				this.revisionWidth;
+		const marginToSet = -this.revisionWidth / 2;
 
 		widthToSet = Math.min( widthToSet, this.calculateSliderContainerWidth() + this.revisionWidth );
 
@@ -757,7 +756,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	updateNewerSliderLineCSS: function () {
-		var widthToSet = ( this.getNewerDistanceToNewest() + this.getDistanceBetweenPointers() + 2 ) *
+		let widthToSet = ( this.getNewerDistanceToNewest() + this.getDistanceBetweenPointers() + 2 ) *
 				this.revisionWidth,
 			marginToSet = ( this.getOlderDistanceToOldest() * this.revisionWidth ) -
 				this.revisionWidth / 2;
@@ -802,11 +801,11 @@ $.extend( SliderView.prototype, {
 	 * @param {jQuery} $revisions
 	 */
 	resetRevisionStylesBasedOnPointerPosition: function ( $revisions ) {
-		var olderRevPosition = this.getOlderPointerPos(),
+		const olderRevPosition = this.getOlderPointerPos(),
 			newerRevPosition = this.getNewerPointerPos(),
 			startPosition = this.slider.getOldestVisibleRevisionIndex(),
-			endPosition = this.slider.getNewestVisibleRevisionIndex(),
-			positionIndex = startPosition;
+			endPosition = this.slider.getNewestVisibleRevisionIndex();
+		let positionIndex = startPosition;
 
 		$revisions.find( 'div.mw-revslider-revision' )
 			.removeClass( 'mw-revslider-revision-old mw-revslider-revision-new' );
@@ -874,7 +873,7 @@ $.extend( SliderView.prototype, {
 	 * @param {number|string} [duration]
 	 */
 	slideView: function ( direction, duration ) {
-		var $animatedElement = this.$element.find( '.mw-revslider-revisions-container' ),
+		const $animatedElement = this.$element.find( '.mw-revslider-revisions-container' ),
 			self = this;
 
 		this.slider.slide( direction );
@@ -892,7 +891,7 @@ $.extend( SliderView.prototype, {
 			this.forwardArrowButton.setDisabled( false );
 		}
 
-		var animateObj = { scrollLeft: this.slider.getOldestVisibleRevisionIndex() * this.revisionWidth };
+		const animateObj = { scrollLeft: this.slider.getOldestVisibleRevisionIndex() * this.revisionWidth };
 		if ( this.dir === 'rtl' ) {
 			animateObj.scrollLeft = this.getRtlScrollLeft( $animatedElement, animateObj.scrollLeft );
 		}
@@ -943,7 +942,7 @@ $.extend( SliderView.prototype, {
 	 * @param {number|string} [duration]
 	 */
 	alignPointersAndLines: function ( duration ) {
-		var self = this;
+		const self = this;
 
 		this.fadeOutPointerLines();
 
@@ -975,7 +974,7 @@ $.extend( SliderView.prototype, {
 	 * @param {jQuery} $slider
 	 */
 	addNewerRevisionsIfNeeded: function ( $slider ) {
-		var api = new RevisionSliderApi( mw.util.wikiScript( 'api' ) ),
+		const api = new RevisionSliderApi( mw.util.wikiScript( 'api' ) ),
 			self = this,
 			revisions = this.slider.getRevisionList().getRevisions(),
 			revisionCount = utils.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth );
@@ -989,7 +988,7 @@ $.extend( SliderView.prototype, {
 			knownUserGenders: this.slider.getRevisionList().getUserGenders(),
 			changeTags: this.slider.getRevisionList().getAvailableTags()
 		} ).then( function ( data ) {
-			var revs = data.revisions.slice( 1 );
+			const revs = data.revisions.slice( 1 );
 			if ( revs.length === 0 ) {
 				self.noMoreNewerRevisions = true;
 				return;
@@ -1007,11 +1006,11 @@ $.extend( SliderView.prototype, {
 	 * @param {jQuery} $slider
 	 */
 	addOlderRevisionsIfNeeded: function ( $slider ) {
-		var api = new RevisionSliderApi( mw.util.wikiScript( 'api' ) ),
+		const api = new RevisionSliderApi( mw.util.wikiScript( 'api' ) ),
 			self = this,
 			revisions = this.slider.getRevisionList().getRevisions(),
-			revisionCount = utils.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth ),
-			precedingRevisionSize = 0;
+			revisionCount = utils.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth );
+		let precedingRevisionSize = 0;
 		if ( this.noMoreOlderRevisions || !this.slider.isAtStart() ) {
 			return;
 		}
@@ -1024,7 +1023,7 @@ $.extend( SliderView.prototype, {
 			knownUserGenders: this.slider.getRevisionList().getUserGenders(),
 			changeTags: this.slider.getRevisionList().getAvailableTags()
 		} ).then( function ( data ) {
-			var revs = data.revisions.slice( 1 ).reverse();
+			let revs = data.revisions.slice( 1 ).reverse();
 			if ( revs.length === 0 ) {
 				self.noMoreOlderRevisions = true;
 				return;
@@ -1047,16 +1046,16 @@ $.extend( SliderView.prototype, {
 	 * @param {Array} revs
 	 */
 	addRevisionsAtEnd: function ( $slider, revs ) {
-		var revPositionOffset = this.slider.getRevisionList().getLength(),
+		const revPositionOffset = this.slider.getRevisionList().getLength(),
 			$revisions = $slider.find( '.mw-revslider-revisions-container .mw-revslider-revisions' );
 
 		this.slider.getRevisionList().push( makeRevisions( revs ) );
 
 		// Pushed revisions have their relative sizes set correctly with regard to the last previously
 		// loaded revision. This should be taken into account when rendering newly loaded revisions (tooltip)
-		var revisionsToRender = this.slider.getRevisionList().slice( revPositionOffset );
+		const revisionsToRender = this.slider.getRevisionList().slice( revPositionOffset );
 
-		var $addedRevisions = new RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth, revPositionOffset );
+		const $addedRevisions = new RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth, revPositionOffset );
 
 		$addedRevisions.find( '.mw-revslider-revision-wrapper' ).each( function () {
 			$revisions.append( $( this ) );
@@ -1082,10 +1081,10 @@ $.extend( SliderView.prototype, {
 	 *                                        used to correctly determine first revision's relative size
 	 */
 	addRevisionsAtStart: function ( $slider, revs, precedingRevisionSize ) {
-		var self = this,
-			$revisions = $slider.find( '.mw-revslider-revisions-container .mw-revslider-revisions' ),
-			$revisionContainer = $slider.find( '.mw-revslider-revisions-container' ),
-			revisionStyleResetRequired = false;
+		const self = this;
+		const $revisions = $slider.find( '.mw-revslider-revisions-container .mw-revslider-revisions' );
+		const $revisionContainer = $slider.find( '.mw-revslider-revisions-container' );
+		let revisionStyleResetRequired = false;
 
 		this.slider.getRevisionList().unshift( makeRevisions( revs ), precedingRevisionSize );
 
@@ -1095,9 +1094,9 @@ $.extend( SliderView.prototype, {
 
 		// Pushed (unshifted) revisions have their relative sizes set correctly with regard to the last previously
 		// loaded revision. This should be taken into account when rendering newly loaded revisions (tooltip)
-		var revisionsToRender = this.slider.getRevisionList().slice( 0, revs.length );
+		const revisionsToRender = this.slider.getRevisionList().slice( 0, revs.length );
 
-		var $addedRevisions = new RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth );
+		const $addedRevisions = new RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth );
 
 		this.addClickHandlerToRevisions( this.getRevisionsElement() );
 
@@ -1105,7 +1104,7 @@ $.extend( SliderView.prototype, {
 			this.setOlderPointerPos( this.getOlderPointerPos() + revisionsToRender.getLength() );
 		} else {
 			// Special case: old revision has been previously not loaded, need to initialize correct position
-			var $oldRevElement = this.getOldRevElement( $addedRevisions );
+			const $oldRevElement = this.getOldRevElement( $addedRevisions );
 			if ( $oldRevElement.length !== 0 ) {
 				this.setOlderPointerPos( $oldRevElement.data( 'pos' ) );
 				revisionStyleResetRequired = true;
@@ -1124,11 +1123,11 @@ $.extend( SliderView.prototype, {
 
 		this.slider.setFirstVisibleRevisionIndex( this.slider.getOldestVisibleRevisionIndex() + revisionsToRender.getLength() );
 
-		var revIdOld = self.getRevElementAtPosition( $revisions, this.getOlderPointerPos() ).data( 'revid' );
-		var revIdNew = self.getRevElementAtPosition( $revisions, this.getNewerPointerPos() ).data( 'revid' );
+		const revIdOld = self.getRevElementAtPosition( $revisions, this.getOlderPointerPos() ).data( 'revid' );
+		const revIdNew = self.getRevElementAtPosition( $revisions, this.getNewerPointerPos() ).data( 'revid' );
 		this.diffPage.replaceState( revIdNew, revIdOld, this );
 
-		var scrollLeft = this.slider.getOldestVisibleRevisionIndex() * this.revisionWidth;
+		const scrollLeft = this.slider.getOldestVisibleRevisionIndex() * this.revisionWidth;
 		$revisionContainer.scrollLeft( scrollLeft );
 		if ( this.dir === 'rtl' ) {
 			$revisionContainer.scrollLeft( self.getRtlScrollLeft( $revisionContainer, scrollLeft ) );
@@ -1148,7 +1147,7 @@ $.extend( SliderView.prototype, {
 	 * @return {boolean}
 	 */
 	shouldExpandSlider: function ( $slider ) {
-		var sliderWidth = $slider.width(),
+		const sliderWidth = $slider.width(),
 			maxAvailableWidth = this.calculateSliderContainerWidth() + this.containerMargin;
 
 		return !( this.noMoreNewerRevisions && this.noMoreOlderRevisions ) && sliderWidth < maxAvailableWidth;
@@ -1158,13 +1157,13 @@ $.extend( SliderView.prototype, {
 	 * @param {jQuery} $slider
 	 */
 	expandSlider: function ( $slider ) {
-		var containerWidth = this.calculateSliderContainerWidth();
+		const containerWidth = this.calculateSliderContainerWidth();
 
 		$slider.css( { width: ( containerWidth + this.containerMargin ) + 'px' } );
 		$slider.find( '.mw-revslider-revisions-container' ).css( { width: containerWidth + 'px' } );
 		$slider.find( '.mw-revslider-pointer-container' ).css( { width: containerWidth + this.revisionWidth - 1 + 'px' } );
 
-		var expandedRevisionWindowCapacity = $slider.find( '.mw-revslider-revisions-container' ).width() / this.revisionWidth;
+		const expandedRevisionWindowCapacity = $slider.find( '.mw-revslider-revisions-container' ).width() / this.revisionWidth;
 		this.slider.setRevisionsPerWindow( expandedRevisionWindowCapacity );
 
 		this.slideView( Math.floor( ( this.getNewerPointerPos() - 1 ) / expandedRevisionWindowCapacity ), 0 );

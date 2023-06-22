@@ -58,7 +58,7 @@ $.extend( Settings.prototype, {
 	 * @return {string|boolean}
 	 */
 	loadSetting: function ( name, defaultValue ) {
-		var setting;
+		let setting;
 		if ( mw.user.isNamed() ) {
 			setting = mw.user.options.get( 'userjs-revslider-' + name );
 		} else {

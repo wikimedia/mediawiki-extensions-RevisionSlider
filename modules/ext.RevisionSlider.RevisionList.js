@@ -1,4 +1,4 @@
-var Revision = require( './ext.RevisionSlider.Revision.js' ).Revision,
+const Revision = require( './ext.RevisionSlider.Revision.js' ).Revision,
 	RevisionListView = require( './ext.RevisionSlider.RevisionListView.js' );
 
 /**
@@ -31,8 +31,8 @@ $.extend( RevisionList.prototype, {
 	 * @param {Revision[]} revs
 	 */
 	initialize: function ( revs ) {
-		for ( var i = 0; i < revs.length; i++ ) {
-			var rev = revs[ i ];
+		for ( let i = 0; i < revs.length; i++ ) {
+			const rev = revs[ i ];
 			rev.setRelativeSize( i > 0 ? rev.getSize() - revs[ i - 1 ].getSize() : rev.getSize() );
 
 			this.revisions.push( rev );
@@ -43,9 +43,9 @@ $.extend( RevisionList.prototype, {
 	 * @return {number}
 	 */
 	getBiggestChangeSize: function () {
-		var max = 0;
+		let max = 0;
 
-		for ( var i = 0; i < this.revisions.length; i++ ) {
+		for ( let i = 0; i < this.revisions.length; i++ ) {
 			max = Math.max( max, Math.abs( this.revisions[ i ].getRelativeSize() ) );
 		}
 
@@ -81,7 +81,7 @@ $.extend( RevisionList.prototype, {
 	},
 
 	getUserGenders: function () {
-		var userGenders = {};
+		const userGenders = {};
 		this.revisions.forEach( function ( revision ) {
 			if ( revision.getUser() ) {
 				userGenders[ revision.getUser() ] = revision.getUserGender();
@@ -96,8 +96,8 @@ $.extend( RevisionList.prototype, {
 	 * @param {Revision[]} revs
 	 */
 	push: function ( revs ) {
-		for ( var i = 0; i < revs.length; i++ ) {
-			var rev = revs[ i ];
+		for ( let i = 0; i < revs.length; i++ ) {
+			const rev = revs[ i ];
 			rev.setRelativeSize(
 				i > 0 ?
 					rev.getSize() - revs[ i - 1 ].getSize() :
@@ -115,12 +115,12 @@ $.extend( RevisionList.prototype, {
 	 * @param {number} sizeBefore optional size of the revision preceding the first of revs, defaults to 0
 	 */
 	unshift: function ( revs, sizeBefore ) {
-		var originalFirstRev = this.revisions[ 0 ];
+		const originalFirstRev = this.revisions[ 0 ];
 		sizeBefore = sizeBefore || 0;
 
 		originalFirstRev.setRelativeSize( originalFirstRev.getSize() - revs[ revs.length - 1 ].getSize() );
-		for ( var i = revs.length - 1; i >= 0; i-- ) {
-			var rev = revs[ i ];
+		for ( let i = revs.length - 1; i >= 0; i-- ) {
+			const rev = revs[ i ];
 			rev.setRelativeSize( i > 0 ? rev.getSize() - revs[ i - 1 ].getSize() : rev.getSize() - sizeBefore );
 
 			this.revisions.unshift( rev );
@@ -135,7 +135,7 @@ $.extend( RevisionList.prototype, {
 	 * @return {RevisionList}
 	 */
 	slice: function ( begin, end ) {
-		var slicedList = new RevisionList( [], this.getAvailableTags() );
+		const slicedList = new RevisionList( [], this.getAvailableTags() );
 		slicedList.view = new RevisionListView( slicedList );
 		slicedList.revisions = this.revisions.slice( begin, end );
 		return slicedList;

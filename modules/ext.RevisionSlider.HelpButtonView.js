@@ -2,7 +2,7 @@
  * @class HelpButtonView
  * Module containing presentation logic for the helper button
  */
-var HelpButtonView = {
+const HelpButtonView = {
 
 	/**
 	 * Renders the help button and renders and adds the popup for it.
@@ -10,12 +10,12 @@ var HelpButtonView = {
 	 * @return {jQuery} the help button object
 	 */
 	render: function () {
-		var helpButton = new OO.ui.ButtonWidget( {
+		const helpButton = new OO.ui.ButtonWidget( {
 			icon: 'helpNotice',
 			framed: false,
 			classes: [ 'mw-revslider-show-help' ]
 		} );
-		var helpPopup = new OO.ui.PopupWidget( {
+		const helpPopup = new OO.ui.PopupWidget( {
 			$content: $( '<p>' ).text( mw.msg( 'revisionslider-show-help-tooltip' ) ),
 			$floatableContainer: helpButton.$element,
 			width: 200,

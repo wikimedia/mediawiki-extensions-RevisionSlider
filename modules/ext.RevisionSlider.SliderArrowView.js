@@ -22,7 +22,7 @@ $.extend( SliderArrowView.prototype, {
 	 * @return {OO.ui.ButtonWidget}
 	 */
 	renderBackwardArrow: function () {
-		var backwardArrowButton = new OO.ui.ButtonWidget( {
+		const backwardArrowButton = new OO.ui.ButtonWidget( {
 			icon: 'previous',
 			width: 20,
 			height: 140,
@@ -30,7 +30,7 @@ $.extend( SliderArrowView.prototype, {
 			classes: [ 'mw-revslider-arrow', 'mw-revslider-arrow-backwards' ]
 		} );
 
-		var backwardArrowPopup = new OO.ui.PopupWidget( {
+		const backwardArrowPopup = new OO.ui.PopupWidget( {
 			$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-older' ) ),
 			$floatableContainer: backwardArrowButton.$element,
 			width: 200,
@@ -60,7 +60,7 @@ $.extend( SliderArrowView.prototype, {
 	 * @return {OO.ui.ButtonWidget}
 	 */
 	renderForwardArrow: function () {
-		var forwardArrowButton = new OO.ui.ButtonWidget( {
+		const forwardArrowButton = new OO.ui.ButtonWidget( {
 			icon: 'next',
 			width: 20,
 			height: 140,
@@ -68,7 +68,7 @@ $.extend( SliderArrowView.prototype, {
 			classes: [ 'mw-revslider-arrow', 'mw-revslider-arrow-forwards' ]
 		} );
 
-		var forwardArrowPopup = new OO.ui.PopupWidget( {
+		const forwardArrowPopup = new OO.ui.PopupWidget( {
 			$content: $( '<p>' ).text( mw.msg( 'revisionslider-arrow-tooltip-newer' ) ),
 			$floatableContainer: forwardArrowButton.$element,
 			width: 200,
@@ -92,7 +92,7 @@ $.extend( SliderArrowView.prototype, {
 	},
 
 	showPopup: function ( e ) {
-		var button = e.data.button,
+		const button = e.data.button,
 			popup = e.data.popup;
 		if ( typeof button !== 'undefined' && button.isDisabled() ) {
 			return;
@@ -105,7 +105,7 @@ $.extend( SliderArrowView.prototype, {
 	},
 
 	hidePopup: function ( e ) {
-		var popup = e.data.popup;
+		const popup = e.data.popup;
 		popup.toggle( false );
 	},
 
@@ -131,7 +131,7 @@ $.extend( SliderArrowView.prototype, {
 	 * @param {jQuery.Event} e
 	 */
 	arrowFocusHandler: function ( e ) {
-		var button = e.data.button;
+		const button = e.data.button;
 		if ( button.isDisabled() ) {
 			button.$element.find( 'a.oo-ui-buttonElement-button' ).trigger( 'blur' );
 		}

@@ -1,4 +1,4 @@
-var SliderView = require( './ext.RevisionSlider.SliderView.js' );
+const SliderView = require( './ext.RevisionSlider.SliderView.js' );
 
 /**
  * Module handling the slider logic of the RevisionSlider
@@ -110,7 +110,7 @@ $.extend( Slider.prototype, {
 	 * @param {number} direction - Either -1, 0 or 1
 	 */
 	slide: function ( direction ) {
-		var highestPossibleFirstRev = this.revisions.getLength() - this.revisionsPerWindow;
+		const highestPossibleFirstRev = this.revisions.getLength() - this.revisionsPerWindow;
 
 		this.oldestVisibleRevisionIndex += direction * this.revisionsPerWindow;
 		this.oldestVisibleRevisionIndex = Math.min( this.oldestVisibleRevisionIndex, highestPossibleFirstRev );

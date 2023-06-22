@@ -41,16 +41,16 @@ $.extend( Api.prototype, {
 	 * @return {jQuery.promise}
 	 */
 	fetchRevisionData: function ( pageName, options ) {
-		var userXhr,
-			deferred = $.Deferred(),
+		const deferred = $.Deferred(),
 			self = this;
+		let userXhr;
 
 		options = options || {};
 
-		var xhr = this.fetchRevisions( pageName, options )
+		const xhr = this.fetchRevisions( pageName, options )
 			.done( function ( data ) {
-				var revs = data.query.pages[ 0 ].revisions,
-					revContinue = data.continue,
+				let revs = data.query.pages[ 0 ].revisions;
+				const revContinue = data.continue,
 					genderData = options.knownUserGenders || {},
 					changeTags = options.changeTags;
 
@@ -64,14 +64,14 @@ $.extend( Api.prototype, {
 
 				// No need to query any gender data if masculine, feminine, and neutral are all
 				// the same anyway
-				var unknown = mw.msg( 'revisionslider-label-username', 'unknown' );
+				const unknown = mw.msg( 'revisionslider-label-username', 'unknown' );
 				if ( mw.msg( 'revisionslider-label-username', 'male' ) === unknown &&
 					mw.msg( 'revisionslider-label-username', 'female' ) === unknown
 				) {
 					return deferred.resolve( { revisions: revs, continue: revContinue } );
 				}
 
-				var userNames = self.getUniqueUserNamesWithUnknownGender( revs, genderData );
+				const userNames = self.getUniqueUserNamesWithUnknownGender( revs, genderData );
 
 				userXhr = self.fetchUserGenderData( userNames )
 					.done( function ( data2 ) {
@@ -118,7 +118,7 @@ $.extend( Api.prototype, {
 	 */
 	fetchRevisions: function ( pageName, options ) {
 		options = options || {};
-		var data = {
+		const data = {
 			action: 'query',
 			prop: 'revisions',
 			format: 'json',
@@ -175,7 +175,7 @@ $.extend( Api.prototype, {
 	 * @return {string[]}
 	 */
 	getUniqueUserNamesWithUnknownGender: function ( revs, knownUserGenders ) {
-		var allUsers = revs.map( function ( rev ) {
+		const allUsers = revs.map( function ( rev ) {
 			return !( 'anon' in rev ) && rev.user;
 		} );
 		return allUsers.filter( function ( name, index ) {
@@ -191,7 +191,7 @@ $.extend( Api.prototype, {
 	 * @return {Object.<string,string>}
 	 */
 	getUserGenderData: function ( users ) {
-		var genderData = {};
+		const genderData = {};
 		users.forEach( function ( user ) {
 			if ( user.gender && user.gender !== 'unknown' ) {
 				genderData[ user.name ] = user.gender;
