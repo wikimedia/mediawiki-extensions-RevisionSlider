@@ -130,10 +130,7 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 		$out->prependHTML(
 			Html::rawElement(
 				'div',
-				[
-					'class' => 'mw-revslider-container',
-					'aria-hidden' => 'true'
-				],
+				[ 'class' => 'mw-revslider-container' ],
 				$toggleButton .
 				Html::rawElement(
 					'div',
