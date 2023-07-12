@@ -1,8 +1,35 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nirajan pant"
+			"Nirajan pant",
+			"बडा काजी"
 		]
 	},
-	"revisionslider-label-comment": "सम्पादन सारांश"
+	"revisionslider": "संशोधन स्लाइडर",
+	"revisionslider-preference-disable": "संशोधन स्लाइडर नदेखाउनुहोस्",
+	"revisionslider-desc": "फरक पृष्ठमा संशोधनहरूको चयन र तुलना गर्न अनुमति दिने स्लाइडर देखाउँछ",
+	"revisionslider-toggle-label": "अन्तरक्रियात्मक रूपमा इतिहास हेर्नुहोस्",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|बाइट|बाइटहरू}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|बाइट|बाइटहरू}}",
+	"revisionslider-label-date": "मिति",
+	"revisionslider-label-page-size": "पृष्ठ आकार",
+	"revisionslider-label-change-size": "आकार परिवर्तन गर्नुहोस्",
+	"revisionslider-label-comment": "सम्पादन सारांश",
+	"revisionslider-label-username": "{{GENDER:$1|प्रयोगकर्ता}}",
+	"revisionslider-minoredit": "यो सानो सम्पादन हो",
+	"revisionslider-loading-failed": "संशोधन स्लाइडर लोड हुन असफल भयो।",
+	"revisionslider-toggle-title-expand": "संशोधन स्लाइडर खोल्नुहोस्",
+	"revisionslider-toggle-title-collapse": "संशोधन स्लाइडर संक्षिप्त गर्नुहोस्",
+	"revisionslider-turn-on-auto-expand-title": "सधैं संशोधन स्लाइडर विस्तार गर्नुहोस्",
+	"revisionslider-turn-off-auto-expand-title": "स्वतः संशोधन स्लाइडर विस्तार नगर्नुहोस्",
+	"revisionslider-arrow-tooltip-newer": "नयाँ संशोधनहरू हेर्नुहोस्",
+	"revisionslider-arrow-tooltip-older": "पुराना संशोधनहरू हेर्नुहोस्",
+	"revisionslider-show-help-tooltip": "मद्दत पाठ देखाउनुहोस्",
+	"revisionslider-help-dialog-slide1": "संशोधन स्लाइडरले तपाईंलाई नेभिगेट गर्न र भिन्न पृष्ठमा संशोधनहरू तुलना गर्न मद्दत गर्दछ। यो जर्मन-भाषी समुदाय प्राविधिक इच्छा सूचीबाट [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider समुदाय इच्छा] मा आधारित छ। प्रतिक्रिया धेरै सराहनीय छ [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider यहाँ]।",
+	"revisionslider-help-dialog-slide2": "प्रत्येक पट्टीले पृष्ठ संशोधनलाई प्रतिनिधित्व गर्दछ। शीर्षमा रहेको बारहरूले पृष्ठको आकारमा वृद्धि देखाउँछन्, तलका बारहरूले कमी देखाउँछन्। छविमा, संशोधन १ ले थपिएको सामग्रीलाई प्रतिनिधित्व गर्दछ, जबकि संशोधन २ ले सामग्री हटाउने प्रतिनिधित्व गर्दछ।",
+	"revisionslider-help-dialog-slide4": "संशोधन इतिहासमा सार्न र पुरानो र नयाँ संशोधनहरू देखाउन पछाडि र अगाडि तीरहरू प्रयोग गर्नुहोस्।",
+	"revisionslider-tutorial": "संशोधन स्लाइडर मद्दत",
+	"revisionslider-previous-dialog": "अघिल्लो",
+	"revisionslider-next-dialog": "अर्को",
+	"revisionslider-close-dialog": "बन्द गर्नुहोस्"
 }
