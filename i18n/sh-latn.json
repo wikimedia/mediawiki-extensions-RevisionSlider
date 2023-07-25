@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"Winston Sung"
+		]
+	},
+	"revisionslider": "Klizač izmjena",
+	"revisionslider-preference-disable": "Ne prikazuj Klizač izmjena",
+	"revisionslider-desc": "Prikazuje klizač za izabiranje i upoređivanje izmjena na stranici s razlikama",
+	"revisionslider-toggle-label": "Interaktivna pretraga historije",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|bajt|bajta|bajtova}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|bajt|bajta|bajtova}}",
+	"revisionslider-label-date": "Datum",
+	"revisionslider-label-page-size": "Veličina stranice",
+	"revisionslider-label-change-size": "Promjena veličine",
+	"revisionslider-label-comment": "Sažetak izmjene",
+	"revisionslider-label-username": "{{GENDER:$1|Korisničko ime}}",
+	"revisionslider-minoredit": "Ovo je manja izmjena",
+	"revisionslider-loading-failed": "Klizač izmjena ne se učita.",
+	"revisionslider-toggle-title-expand": "Otvori klizač izmjena",
+	"revisionslider-toggle-title-collapse": "Sklopi klizač izmjena",
+	"revisionslider-turn-on-auto-expand-title": "Uvijek raširi klizač izmjena",
+	"revisionslider-turn-off-auto-expand-title": "Ne raširuj klizač izmjena automatski",
+	"revisionslider-arrow-tooltip-newer": "Pogledajte novije izmjene",
+	"revisionslider-arrow-tooltip-older": "Pogledajte starije izmjene",
+	"revisionslider-show-help-tooltip": "Prikaži pomoć",
+	"revisionslider-help-dialog-slide1": "Klizač izmjena pomaže Vam da pretražujete i uporedite izmjene na stranici s razlikama. Izrađena je [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider želja] zajednice njemačkog jezika. Vrlo bismo cijenimo ako [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider ovdje] dali nam svoje povratne informacije.",
+	"revisionslider-help-dialog-slide2": "Svaki stupac predstavlja izmjenu stranice. Stupci prema gore predstavljaju povećanje stranice u veličini, a stupci prema dolje predstavljaju smanjenje. Na datoj slici, izmjena 1 predstavlja dodan sadržaj, a izmjena 2 predstavlja uklonjanje sadržaja.",
+	"revisionslider-previous-dialog": "Prethodna",
+	"revisionslider-next-dialog": "Sljedeće",
+	"revisionslider-close-dialog": "Zatvori"
+}
