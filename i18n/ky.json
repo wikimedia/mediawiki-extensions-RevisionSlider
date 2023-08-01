@@ -4,5 +4,8 @@
 			"Bosogo"
 		]
 	},
+	"revisionslider-page-size": "$1 {{PLURAL:$2|байт}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|байт}}",
+	"revisionslider-label-date": "Дата",
 	"revisionslider-close-dialog": "Жабуу"
 }
