@@ -15,7 +15,7 @@
 	"type": "other",
 	"manifest_version": 2,
 	"requires": {
-		"MediaWiki": ">= 1.41.0"
+		"MediaWiki": ">= 1.41"
 	},
 	"ConfigRegistry": {
 		"revisionslider": "GlobalVarConfig::newInstance"
@@ -191,7 +191,11 @@
 	"HookHandlers": {
 		"RevisionSliderHooks": {
 			"class": "MediaWiki\\Extension\\RevisionSlider\\RevisionSliderHooks",
-			"services": [ "ConfigFactory", "UserOptionsLookup", "StatsdDataFactory" ]
+			"services": [
+				"ConfigFactory",
+				"UserOptionsLookup",
+				"StatsdDataFactory"
+			]
 		}
 	},
 	"DefaultUserOptions": {
