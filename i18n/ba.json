@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Macofe",
-			"Ләйсән"
+			"Ләйсән",
+			"З. ӘЙЛЕ"
 		]
 	},
-	"revisionslider-label-comment": "Аңлатма",
+	"revisionslider-label-comment": "Үҙгәртеүҙәр тасуирламаһы",
 	"revisionslider-arrow-tooltip-newer": "Яңы үҙгәртеүҙәрҙе ҡарарға",
 	"revisionslider-arrow-tooltip-older": "Элекке версияны ҡарарға"
 }
