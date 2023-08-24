@@ -431,6 +431,10 @@ $.extend( SliderView.prototype, {
 				}
 				this.setOlderPointerPos( oldPos - 1 );
 			}
+		} else if ( event.which !== OO.ui.Keys.ENTER ) {
+			// FIXME: The code below was never designed for the enter key, only for left/right. Add
+			//  proper enter key handling that mimics the toggle behavior of PopupButtonWidget.
+			return;
 		}
 
 		this.resetRevisionStylesBasedOnPointerPosition( $revisions );
