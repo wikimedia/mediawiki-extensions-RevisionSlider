@@ -215,7 +215,7 @@ $.extend( SliderView.prototype, {
 		$pointerOlder.attr( 'tabindex', 0 );
 
 		$( document.body ).on( 'keydown', function ( e ) {
-			if ( e.which === 27 ) {
+			if ( e.which === OO.ui.Keys.ESCAPE ) {
 				self.escapePressed = true;
 				$pointers.trigger( 'mouseup' );
 			}
@@ -405,7 +405,7 @@ $.extend( SliderView.prototype, {
 			isNewer = pointer.getView().isNewerPointer();
 		let offset = 0;
 
-		if ( event.which === 39 ) {
+		if ( event.which === OO.ui.Keys.RIGHT ) {
 			offset = 1;
 
 			if ( isNewer ) {
@@ -418,9 +418,7 @@ $.extend( SliderView.prototype, {
 					this.setOlderPointerPos( oldPos + 1 );
 				}
 			}
-		}
-
-		if ( event.which === 37 ) {
+		} else if ( event.which === OO.ui.Keys.LEFT ) {
 			offset = -1;
 
 			if ( isNewer ) {
@@ -454,7 +452,7 @@ $.extend( SliderView.prototype, {
 	 * @param {jQuery} $revisions
 	 */
 	buildTabbingRulesOnKeyUp: function ( $pointer, event, $revisions ) {
-		if ( event.which !== 39 && event.which !== 37 ) {
+		if ( event.which !== OO.ui.Keys.RIGHT && event.which !== OO.ui.Keys.LEFT ) {
 			return;
 		}
 
