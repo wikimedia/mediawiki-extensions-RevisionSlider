@@ -420,35 +420,34 @@ $.extend( RevisionListView.prototype, {
 	 * @param {MouseEvent} event
 	 */
 	setUserFilterEvents: function ( $userBubble, userName, event ) {
-		const self = this,
-			$userLine = $userBubble.parent();
+		const $userLine = $userBubble.parent();
 
-		if ( self.selectedUser === userName && event.type !== 'click' ) {
+		if ( this.selectedUser === userName && event.type !== 'click' ) {
 			return;
 		}
 
-		self.removeRevisionHighlight();
+		this.removeRevisionHighlight();
 
 		let oldUser;
 		switch ( event.type ) {
 			case 'mouseenter':
 				$userLine.addClass( 'mw-revslider-highlight' );
 				$userBubble.addClass( 'mw-revslider-highlite-bubble' );
-				self.highlightSameUserRevisions( userName );
+				this.highlightSameUserRevisions( userName );
 				break;
 			case 'mouseleave':
-				self.reApplySavedHighlighting( $userLine, $userBubble );
+				this.reApplySavedHighlighting( $userLine, $userBubble );
 				break;
 			case 'click':
-				oldUser = self.selectedUser;
-				self.resetRevisionHighlighting();
+				oldUser = this.selectedUser;
+				this.resetRevisionHighlighting();
 
 				$userLine.addClass( 'mw-revslider-highlight' );
 				$userBubble.addClass( 'mw-revslider-highlite-bubble' );
 
 				if ( oldUser !== userName ) {
-					self.highlightSameUserRevisions( userName );
-					self.selectedUser = userName;
+					this.highlightSameUserRevisions( userName );
+					this.selectedUser = userName;
 				}
 				break;
 		}
@@ -540,36 +539,35 @@ $.extend( RevisionListView.prototype, {
 	 * @param {MouseEvent} event
 	 */
 	setTagFilterEvents: function ( $tagBubble, event ) {
-		const self = this,
-			$tagLine = $tagBubble.parent(),
+		const $tagLine = $tagBubble.parent(),
 			tagName = $tagLine.data( 'tag-name' );
 
-		if ( self.selectedTag === tagName && event.type !== 'click' ) {
+		if ( this.selectedTag === tagName && event.type !== 'click' ) {
 			return;
 		}
 
-		self.removeRevisionHighlight();
+		this.removeRevisionHighlight();
 
 		let oldTag;
 		switch ( event.type ) {
 			case 'mouseenter':
 				$tagLine.addClass( 'mw-revslider-highlight' );
 				$tagBubble.addClass( 'mw-revslider-highlite-bubble' );
-				self.highlightSameTagRevisions( tagName );
+				this.highlightSameTagRevisions( tagName );
 				break;
 			case 'mouseleave':
-				self.reApplySavedHighlighting( $tagLine, $tagBubble );
+				this.reApplySavedHighlighting( $tagLine, $tagBubble );
 				break;
 			case 'click':
-				oldTag = self.selectedTag;
-				self.resetRevisionHighlighting();
+				oldTag = this.selectedTag;
+				this.resetRevisionHighlighting();
 
 				$tagLine.addClass( 'mw-revslider-highlight' );
 				$tagBubble.addClass( 'mw-revslider-highlite-bubble' );
 
 				if ( oldTag !== tagName ) {
-					self.highlightSameTagRevisions( tagName );
-					self.selectedTag = tagName;
+					this.highlightSameTagRevisions( tagName );
+					this.selectedTag = tagName;
 				}
 				break;
 		}
