@@ -4,19 +4,13 @@ function touchEventConverter( event ) {
 
 	event.preventDefault();
 
-	let type;
-	switch ( event.type ) {
-		case 'touchstart':
-			type = 'mousedown';
-			break;
-		case 'touchmove':
-			type = 'mousemove';
-			break;
-		case 'touchend':
-			type = 'mouseup';
-			break;
-		default:
-			return;
+	const type = {
+		touchstart: 'mousedown',
+		touchmove: 'mousemove',
+		touchend: 'mouseup'
+	}[ event.type ];
+	if ( !type ) {
+		return;
 	}
 
 	let simulatedEvent;
