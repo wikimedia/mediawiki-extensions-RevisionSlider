@@ -502,11 +502,11 @@ $.extend( RevisionListView.prototype, {
 	makeTagsLine: function ( rev ) {
 		const self = this;
 
-		if ( rev.hasNoTags() ) {
+		const tags = rev.getTags();
+		if ( !tags.length ) {
 			return '';
 		}
 
-		const tags = rev.getTags();
 		const $tagLines = $( '<div>' );
 
 		for ( let i = 0; i < tags.length; i++ ) {

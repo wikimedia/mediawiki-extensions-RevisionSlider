@@ -131,13 +131,6 @@ $.extend( Revision.prototype, {
 	},
 
 	/**
-	 * @return {boolean}
-	 */
-	hasNoTags: function () {
-		return this.tags.length === 0;
-	},
-
-	/**
 	 * Uses moment.js to format the date
 	 *
 	 * @param {string} rawDate
