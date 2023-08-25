@@ -7,7 +7,6 @@
 	QUnit.test( 'create Revision', function ( assert ) {
 		const data = {
 				size: 5,
-				comment: 'hello',
 				parsedcomment: '<b>hello</b>',
 				timestamp: '2016-04-26T10:27:14Z', // 10:27, 26 Apr 2016
 				user: 'meh',
@@ -18,7 +17,6 @@
 		SliderModule.setUserOffset( 0 );
 
 		assert.strictEqual( rev.getSize(), data.size );
-		assert.strictEqual( rev.getComment(), data.comment );
 		assert.strictEqual( rev.getParsedComment(), data.parsedcomment );
 		assert.strictEqual( rev.getUser(), data.user );
 		assert.strictEqual( rev.getUserGender(), 'female' );
@@ -83,28 +81,4 @@
 
 		assert.strictEqual( rev.getFormattedDate(), '26 April 2016 3:27 AM' );
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
-
-	QUnit.test( 'hasEmptyComment comment with whitespaces', function ( assert ) {
-		const rev = new Revision( {
-			comment: '   '
-		} );
-
-		assert.true( rev.hasEmptyComment() );
-	} );
-
-	QUnit.test( 'hasEmptyComment comment with chars', function ( assert ) {
-		const rev = new Revision( {
-			comment: ' comment '
-		} );
-
-		assert.false( rev.hasEmptyComment() );
-	} );
-
-	QUnit.test( 'hasEmptyComment comment with unicode chars', function ( assert ) {
-		const rev = new Revision( {
-			comment: 'ברוכים'
-		} );
-
-		assert.false( rev.hasEmptyComment() );
-	} );
 }() );

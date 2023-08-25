@@ -3,7 +3,7 @@ let userOffset;
 /* global moment:false */
 /**
  * @class Revision
- * @param {Object} data - Containing keys `id`, `size`, `comment`, `parsedcomment`, `timestamp`, `user` and `minor`
+ * @param {Object} data - Containing keys `id`, `size`, `parsedcomment`, `timestamp`, `user` and `minor`
  * @constructor
  */
 function Revision( data ) {
@@ -13,21 +13,10 @@ function Revision( data ) {
 	this.minor = !!data.minor || data.minor === '';
 
 	// Comments, tags, and users can be suppressed thus we must check if they exist
-	if ( 'comment' in data ) {
-		this.comment = data.comment;
-	}
-	if ( 'parsedcomment' in data ) {
-		this.parsedComment = data.parsedcomment;
-	}
-	if ( 'tags' in data ) {
-		this.tags = data.tags;
-	}
-	if ( 'user' in data ) {
-		this.user = data.user;
-		if ( 'userGender' in data ) {
-			this.userGender = data.userGender;
-		}
-	}
+	this.parsedComment = data.parsedcomment || '';
+	this.tags = data.tags || [];
+	this.user = data.user || '';
+	this.userGender = data.userGender || '';
 }
 
 $.extend( Revision.prototype, {
@@ -40,11 +29,6 @@ $.extend( Revision.prototype, {
 	 * @type {number}
 	 */
 	size: 0,
-
-	/**
-	 * @type {string}
-	 */
-	comment: '',
 
 	/**
 	 * @type {string[]}
@@ -107,20 +91,6 @@ $.extend( Revision.prototype, {
 	 */
 	getParsedComment: function () {
 		return this.parsedComment;
-	},
-
-	/**
-	 * @return {boolean}
-	 */
-	hasEmptyComment: function () {
-		return this.getComment().trim().length === 0;
-	},
-
-	/**
-	 * @return {string}
-	 */
-	getComment: function () {
-		return this.comment;
 	},
 
 	/**
