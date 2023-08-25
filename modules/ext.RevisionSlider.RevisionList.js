@@ -31,12 +31,7 @@ $.extend( RevisionList.prototype, {
 	 * @param {Revision[]} revs
 	 */
 	initialize: function ( revs ) {
-		for ( let i = 0; i < revs.length; i++ ) {
-			const rev = revs[ i ];
-			rev.setRelativeSize( i > 0 ? rev.getSize() - revs[ i - 1 ].getSize() : rev.getSize() );
-
-			this.revisions.push( rev );
-		}
+		this.push( revs );
 	},
 
 	/**
@@ -96,15 +91,13 @@ $.extend( RevisionList.prototype, {
 	 * @param {Revision[]} revs
 	 */
 	push: function ( revs ) {
+		const last = this.revisions[ this.revisions.length - 1 ];
+		let sizeBefore = last ? last.getSize() : 0;
 		for ( let i = 0; i < revs.length; i++ ) {
 			const rev = revs[ i ];
-			rev.setRelativeSize(
-				i > 0 ?
-					rev.getSize() - revs[ i - 1 ].getSize() :
-					rev.getSize() - this.revisions[ this.revisions.length - 1 ].getSize()
-			);
-
+			rev.setRelativeSize( rev.getSize() - sizeBefore );
 			this.revisions.push( rev );
+			sizeBefore = rev.getSize();
 		}
 	},
 
