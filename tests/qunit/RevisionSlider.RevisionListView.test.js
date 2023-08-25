@@ -31,7 +31,6 @@
 			revision = new Revision( {
 				revid: 1,
 				size: 230,
-				comment: 'Hello',
 				parsedcomment: '<strong>Hello</strong>',
 				timestamp: '2016-04-26T10:27:14Z', // 10:27, 26 Apr 2016
 				user: 'User1',
@@ -56,7 +55,6 @@
 			revision = new Revision( {
 				revid: 1,
 				size: 2300,
-				comment: 'Hello',
 				parsedcomment: '<strong>Hello</strong>',
 				timestamp: '2016-04-26T10:27:14Z', // 10:27, 26 Apr 2016
 				user: 'User1',
@@ -108,7 +106,6 @@
 		const revisionListView = new RevisionListView();
 
 		const $commentHtml = revisionListView.makeCommentLine( new Revision( {
-			comment: '   ',
 			parsedcomment: '   '
 		} ) );
 
@@ -119,7 +116,6 @@
 		const revisionListView = new RevisionListView();
 
 		const $commentLineHtml = revisionListView.makeCommentLine( new Revision( {
-			comment: 'Hello',
 			parsedcomment: '<strong>Hello</strong>'
 		} ) );
 

@@ -122,7 +122,7 @@ $.extend( Api.prototype, {
 			action: 'query',
 			prop: 'revisions',
 			format: 'json',
-			rvprop: 'ids|timestamp|user|comment|parsedcomment|size|flags|tags',
+			rvprop: 'ids|timestamp|user|parsedcomment|size|flags|tags',
 			titles: pageName,
 			formatversion: 2,
 			continue: '',

@@ -478,16 +478,15 @@ $.extend( RevisionListView.prototype, {
 	 * @return {string|jQuery}
 	 */
 	makeCommentLine: function ( rev ) {
-		if ( rev.hasEmptyComment() ) {
+		const html = rev.getParsedComment();
+		if ( !html.trim().length ) {
 			return '';
 		}
 
 		return $( '<p>' ).append(
 			$( '<strong>' ).text( mw.msg( 'revisionslider-label-comment' ) + mw.msg( 'colon-separator' ) ),
 			$( '<em>' ).append(
-				$( '<bdi>' ).append(
-					rev.getParsedComment()
-				)
+				$( '<bdi>' ).append( html )
 			)
 		);
 	},
