@@ -114,7 +114,7 @@ $.extend( RevisionListView.prototype, {
 					)
 					.on( 'mouseenter', function ( event ) {
 						if ( self.allowHover ) {
-							self.setRevisionHovered( $( this ), event );
+							self.setRevisionHoveredFromMouseEvent( $( this ), event );
 						}
 					} )
 					.on( 'mouseleave', function () {
@@ -142,7 +142,7 @@ $.extend( RevisionListView.prototype, {
 	 * @param {jQuery} $revisionWrapper
 	 * @param {MouseEvent} event
 	 */
-	setRevisionHovered: function ( $revisionWrapper, event ) {
+	setRevisionHoveredFromMouseEvent: function ( $revisionWrapper, event ) {
 		if ( !$revisionWrapper.length ) {
 			return;
 		}
@@ -266,7 +266,7 @@ $.extend( RevisionListView.prototype, {
 	},
 
 	/**
-	 * Hides the previous tooltip and shows the new one
+	 * Hides the previous tooltip and shows the new one. Also styles a revision as hovered.
 	 *
 	 * @param {jQuery} $revisionWrapper
 	 */
@@ -278,6 +278,11 @@ $.extend( RevisionListView.prototype, {
 			return;
 		}
 
+		if ( $( '.mw-revslider-revision-tooltip-' + pos ).length ) {
+			window.clearTimeout( this.tooltipTimeout );
+			return;
+		}
+
 		this.hideCurrentTooltip();
 
 		const tooltip = this.makeTooltip( revision, $revisionWrapper );
@@ -286,7 +291,7 @@ $.extend( RevisionListView.prototype, {
 
 		$( document.body ).append( tooltip.$element );
 		tooltip.toggle( true );
-
+		// TODO this line should move somewhere else
 		$revisionWrapper.addClass( 'mw-revslider-revision-wrapper-hovered' );
 	},
 
