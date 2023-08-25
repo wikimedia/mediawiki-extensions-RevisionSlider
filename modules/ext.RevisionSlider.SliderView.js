@@ -497,7 +497,7 @@ $.extend( SliderView.prototype, {
 				self.isDragged = true;
 				self.getRevisionListView().disableHover();
 				self.setPointerDragCursor();
-				self.fadeOutPointerLines();
+				self.fadeOutPointerLines( true );
 				self.escapePressed = false;
 				self.lastOldPointerPosition = self.getOlderPointerPos();
 				self.lastNewPointerPosition = self.getNewerPointerPos();
@@ -830,7 +830,7 @@ $.extend( SliderView.prototype, {
 	 * Redraws the lines for the pointers
 	 */
 	redrawPointerLines: function () {
-		this.fadeInPointerLines();
+		this.fadeOutPointerLines( false );
 		$( '.mw-revslider-pointer-line-upper, .mw-revslider-pointer-line-lower' )
 			.removeClass( 'mw-revslider-bottom-line mw-revslider-left-line mw-revslider-right-line' );
 		this.pointerOlder.getLine().drawLine();
@@ -838,21 +838,10 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
-	 * Fades out the lines for the pointers
+	 * @param {boolean} fade
 	 */
-	fadeOutPointerLines: function () {
-		// FIXME: Use CSS transition
-		// eslint-disable-next-line no-jquery/no-fade
-		$( '.mw-revslider-pointer-line' ).fadeTo( 0, 0.3 );
-	},
-
-	/**
-	 * Fades in the lines for the pointers
-	 */
-	fadeInPointerLines: function () {
-		// FIXME: Use CSS transition
-		// eslint-disable-next-line no-jquery/no-fade
-		$( '.mw-revslider-pointer-line' ).fadeTo( 0, 1 );
+	fadeOutPointerLines: function ( fade ) {
+		$( '.mw-revslider-pointer-line' ).css( 'opacity', fade ? 0.3 : '' );
 	},
 
 	/**
@@ -943,7 +932,7 @@ $.extend( SliderView.prototype, {
 	alignPointersAndLines: function ( duration ) {
 		const self = this;
 
-		this.fadeOutPointerLines();
+		this.fadeOutPointerLines( true );
 
 		this.pointerOlder.getView()
 			.slideToSideOrPosition( this.slider, duration )
