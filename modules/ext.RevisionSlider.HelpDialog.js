@@ -71,14 +71,11 @@ $.extend( HelpDialog.prototype, {
 	getSlide1: function () {
 		const slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
-		slide.$element
-			.append(
-				$( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape mw-revslider-help-dialog-slide-1' )
-			)
-			.append(
-				$( '<p>' ).addClass( 'mw-revslider-help-dialog-text' )
-					.html( mw.message( 'revisionslider-help-dialog-slide1' ).parse() )
-			);
+		slide.$element.append(
+			$( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape mw-revslider-help-dialog-slide-1' ),
+			$( '<p>' ).addClass( 'mw-revslider-help-dialog-text' )
+				.html( mw.message( 'revisionslider-help-dialog-slide1' ).parse() )
+		);
 
 		slide.$element.find( 'a' ).attr( 'target', '_blank' );
 
@@ -91,12 +88,11 @@ $.extend( HelpDialog.prototype, {
 	getSlide2: function () {
 		const slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
-		slide.$element
-			.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape mw-revslider-help-dialog-slide-2' ) )
-			.append(
-				$( '<p>' ).addClass( 'mw-revslider-help-dialog-text' )
-					.text( mw.msg( 'revisionslider-help-dialog-slide2' ) )
-			);
+		slide.$element.append(
+			$( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape mw-revslider-help-dialog-slide-2' ),
+			$( '<p>' ).addClass( 'mw-revslider-help-dialog-text' )
+				.text( mw.msg( 'revisionslider-help-dialog-slide2' ) )
+		);
 
 		return slide;
 	},
@@ -107,13 +103,12 @@ $.extend( HelpDialog.prototype, {
 	getSlide3: function () {
 		const slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
-		slide.$element
-			.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-portrait mw-revslider-help-dialog-slide-3a mw-revslider-column-image' ) )
-			.append(
-				$( '<div>' ).addClass( 'mw-revslider-column-text mw-revslider-help-dialog-text' )
-					.text( mw.msg( 'revisionslider-help-dialog-slide3a' ) )
-			)
-			.append( $( '<div>' ).css( 'clear', 'both' ) );
+		slide.$element.append(
+			$( '<div>' ).addClass( 'mw-revslider-help-dialog-image-portrait mw-revslider-help-dialog-slide-3a mw-revslider-column-image' ),
+			$( '<div>' ).addClass( 'mw-revslider-column-text mw-revslider-help-dialog-text' )
+				.text( mw.msg( 'revisionslider-help-dialog-slide3a' ) ),
+			$( '<div>' ).css( 'clear', 'both' )
+		);
 
 		return slide;
 	},
@@ -124,12 +119,11 @@ $.extend( HelpDialog.prototype, {
 	getSlide4: function () {
 		const slide = new OO.ui.PanelLayout( { $: this.$, padded: true, expanded: false } );
 
-		slide.$element
-			.append( $( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape mw-revslider-help-dialog-slide-4a' ) )
-			.append(
-				$( '<p>' ).addClass( 'mw-revslider-help-dialog-text' )
-					.text( mw.msg( 'revisionslider-help-dialog-slide4' ) )
-			);
+		slide.$element.append(
+			$( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape mw-revslider-help-dialog-slide-4a' ),
+			$( '<p>' ).addClass( 'mw-revslider-help-dialog-text' )
+				.text( mw.msg( 'revisionslider-help-dialog-slide4' ) )
+		);
 
 		return slide;
 	},
