@@ -100,14 +100,11 @@ $.extend( DiffPage.prototype, {
 	 * @param {SliderView} sliderView
 	 */
 	replaceState: function ( diff, oldid, sliderView ) {
-		// IE9 does not have history.replaceState()
-		if ( typeof history.replaceState === 'function' ) {
-			history.replaceState(
-				this.getStateObject( diff, oldid, sliderView ),
-				$( document ).find( 'title' ).text(),
-				this.getStateUrl( diff, oldid )
-			);
-		}
+		history.replaceState(
+			this.getStateObject( diff, oldid, sliderView ),
+			$( document ).find( 'title' ).text(),
+			this.getStateUrl( diff, oldid )
+		);
 	},
 
 	/**
@@ -118,14 +115,11 @@ $.extend( DiffPage.prototype, {
 	 * @param {SliderView} sliderView
 	 */
 	pushState: function ( diff, oldid, sliderView ) {
-		// IE9 does not have history.pushState()
-		if ( typeof history.pushState === 'function' ) {
-			history.pushState(
-				this.getStateObject( diff, oldid, sliderView ),
-				$( document ).find( 'title' ).text(),
-				this.getStateUrl( diff, oldid )
-			);
-		}
+		history.pushState(
+			this.getStateObject( diff, oldid, sliderView ),
+			$( document ).find( 'title' ).text(),
+			this.getStateUrl( diff, oldid )
+		);
 	},
 
 	/**
