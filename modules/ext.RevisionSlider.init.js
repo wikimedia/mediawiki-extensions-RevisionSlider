@@ -89,8 +89,7 @@ function expand() {
 	toggleButton.setTitle( mw.msg( 'revisionslider-toggle-title-collapse' ) );
 	$( '.mw-revslider-container' ).removeClass( 'mw-revslider-container-collapsed' )
 		.addClass( 'mw-revslider-container-expanded' );
-	$( '.mw-revslider-slider-wrapper' ).show();
-	$( '.mw-revslider-auto-expand-button' ).show();
+	$( '.mw-revslider-slider-wrapper, .mw-revslider-auto-expand-button' ).show();
 	toggleButton.$element.children().attr( 'aria-expanded', 'true' );
 	expanded = true;
 }
@@ -99,8 +98,7 @@ function collapse() {
 	toggleButton.setTitle( mw.msg( 'revisionslider-toggle-title-expand' ) );
 	$( '.mw-revslider-container' ).removeClass( 'mw-revslider-container-expanded' )
 		.addClass( 'mw-revslider-container-collapsed' );
-	$( '.mw-revslider-slider-wrapper' ).hide();
-	$( '.mw-revslider-auto-expand-button' ).hide();
+	$( '.mw-revslider-slider-wrapper, .mw-revslider-auto-expand-button' ).hide();
 	toggleButton.$element.children().attr( 'aria-expanded', 'false' );
 }
 
