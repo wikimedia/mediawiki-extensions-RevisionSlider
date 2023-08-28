@@ -289,7 +289,14 @@ $.extend( RevisionListView.prototype, {
 		// eslint-disable-next-line mediawiki/class-doc
 		tooltip.$element.addClass( 'mw-revslider-revision-tooltip-' + pos );
 
-		$( document.body ).append( tooltip.$element );
+		const $focusedRevisionPointer = $( '.mw-revslider-pointer[data-pos="' + pos + '"]' );
+		if ( $focusedRevisionPointer.length ) {
+			// Make sure tooltips are added next to the pointer so they can be reached when tabbing
+			$focusedRevisionPointer.parent().append( tooltip.$element );
+		} else {
+			$( document.body ).append( tooltip.$element );
+		}
+
 		tooltip.toggle( true );
 		// TODO this line should move somewhere else
 		$revisionWrapper.addClass( 'mw-revslider-revision-wrapper-hovered' );
