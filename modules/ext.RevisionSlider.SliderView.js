@@ -219,6 +219,13 @@ $.extend( SliderView.prototype, {
 			}
 		} );
 
+		$pointers.on( 'focus', function ( event ) {
+			self.onPointerFocus(
+				event,
+				$revisions
+			);
+		} );
+
 		$pointerOlder.on( 'keydown', function ( event ) {
 			self.buildTabbingRulesOnKeyDown(
 				$pointerOlder,
@@ -358,6 +365,15 @@ $.extend( SliderView.prototype, {
 	addClickHandlerToRevisions: function ( $revisions ) {
 		$revisions.find( '.mw-revslider-revision-wrapper' )
 			.on( 'click', this.revisionsClickHandler.bind( this ) );
+	},
+
+	onPointerFocus: function ( event, $revisions ) {
+		const $hoveredRevisionWrapper = this.getRevElementAtPosition(
+			$revisions,
+			this.whichPointer( $( event.target ) ).getPosition()
+		).parent();
+		this.getRevisionListView().showTooltip( $hoveredRevisionWrapper );
+
 	},
 
 	/**
