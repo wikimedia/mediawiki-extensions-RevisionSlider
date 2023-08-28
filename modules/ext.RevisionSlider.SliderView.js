@@ -157,9 +157,7 @@ $.extend( SliderView.prototype, {
 			.addClass( 'mw-revslider-pointer-container' )
 			.css( pointerContainerStyle )
 			.append( this.renderPointerContainers() )
-			.on( 'click', function ( event ) {
-				self.pointerContainerClickHandler( event );
-			} )
+			.on( 'click', this.revisionsClickHandler.bind( this ) )
 			.on( 'mouseout', function () {
 				if ( !self.isDragged ) {
 					self.getRevisionListView().unsetAllHovered();
@@ -311,41 +309,14 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
-	 * Handler for click events on the pointer container element. Forwards these events to the generic handler for
-	 * revision clicks.
+	 * React on clicks on a revision element and move pointers
 	 *
 	 * @param {MouseEvent} event
 	 */
-	pointerContainerClickHandler: function ( event ) {
+	revisionsClickHandler: function ( event ) {
 		const clickedPos = this.getRevisionPositionFromLeftOffset( event.pageX ),
 			$revisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), clickedPos ).parent(),
 			hasClickedTop = event.pageY - $revisionWrapper.offset().top < $revisionWrapper.height() / 2;
-
-		this.handleRevisionClick( $revisionWrapper, clickedPos, hasClickedTop );
-	},
-
-	/**
-	 * Handler for click events on a revisionWrapper element. Forwards these events to the generic handler for
-	 * revision clicks.
-	 *
-	 * @param {MouseEvent} event
-	 * @param {jQuery} $revisionWrapper
-	 */
-	revisionWrapperClickHandler: function ( event, $revisionWrapper ) {
-		const hasClickedTop = event.pageY - $revisionWrapper.offset().top < $revisionWrapper.height() / 2,
-			clickedPos = +$revisionWrapper.find( '.mw-revslider-revision' ).attr( 'data-pos' );
-
-		this.handleRevisionClick( $revisionWrapper, clickedPos, hasClickedTop );
-	},
-
-	/**
-	 * React on clicks on a revision element and move pointers
-	 *
-	 * @param {jQuery} $revisionWrapper
-	 * @param {number} clickedPos
-	 * @param {boolean} hasClickedTop
-	 */
-	handleRevisionClick: function ( $revisionWrapper, clickedPos, hasClickedTop ) {
 		let newNewerPointerPos, newOlderPointerPos;
 
 		if ( hasClickedTop &&
@@ -385,10 +356,8 @@ $.extend( SliderView.prototype, {
 	 * @param {jQuery} $revisions
 	 */
 	addClickHandlerToRevisions: function ( $revisions ) {
-		const self = this;
-		$revisions.find( '.mw-revslider-revision-wrapper' ).on( 'click', function ( event ) {
-			self.revisionWrapperClickHandler( event, $( this ) );
-		} );
+		$revisions.find( '.mw-revslider-revision-wrapper' )
+			.on( 'click', this.revisionsClickHandler.bind( this ) );
 	},
 
 	/**
