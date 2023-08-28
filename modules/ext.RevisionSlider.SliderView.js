@@ -223,6 +223,7 @@ $.extend( SliderView.prototype, {
 			.on( 'focus', function ( event ) {
 				self.onPointerFocus( event, $revisions );
 			} )
+			.on( 'blur', this.getRevisionListView().onFocusBlur.bind( this.getRevisionListView() ) )
 			.on( 'keydown', function ( event ) {
 				self.buildTabbingRulesOnKeyDown( $( this ), event, $revisions );
 			} )
