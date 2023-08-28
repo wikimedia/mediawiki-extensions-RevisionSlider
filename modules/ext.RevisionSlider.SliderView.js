@@ -769,16 +769,11 @@ $.extend( SliderView.prototype, {
 	},
 
 	setSliderLineCSS: function ( $lineContainer, widthToSet, marginToSet ) {
+		$lineContainer.css( 'width', widthToSet );
 		if ( this.dir === 'ltr' ) {
-			$lineContainer.css( {
-				width: widthToSet,
-				'margin-left': marginToSet
-			} );
+			$lineContainer.css( 'margin-left', marginToSet );
 		} else {
-			$lineContainer.css( {
-				width: widthToSet,
-				'margin-right': marginToSet + this.revisionWidth
-			} );
+			$lineContainer.css( 'margin-right', marginToSet + this.revisionWidth );
 		}
 	},
 

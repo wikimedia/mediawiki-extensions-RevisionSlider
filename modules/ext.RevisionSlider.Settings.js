@@ -62,10 +62,8 @@ $.extend( Settings.prototype, {
 		if ( mw.user.isNamed() ) {
 			setting = mw.user.options.get( 'userjs-revslider-' + name );
 		} else {
-			setting = mw.storage.get( 'mw-revslider-' + name );
-			if ( !setting ) {
-				setting = mw.cookie.get( '-revslider-' + name );
-			}
+			setting = mw.storage.get( 'mw-revslider-' + name ) ||
+				mw.cookie.get( '-revslider-' + name );
 		}
 
 		return setting !== null && setting !== false ? setting : defaultValue;
