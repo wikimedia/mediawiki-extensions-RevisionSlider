@@ -219,49 +219,20 @@ $.extend( SliderView.prototype, {
 			}
 		} );
 
-		$pointers.on( 'focus', function ( event ) {
-			self.onPointerFocus(
-				event,
-				$revisions
+		$pointers
+			.on( 'focus', function ( event ) {
+				self.onPointerFocus( event, $revisions );
+			} )
+			.on( 'keydown', function ( event ) {
+				self.buildTabbingRulesOnKeyDown( $( this ), event, $revisions );
+			} )
+			.on( 'keyup', function ( event ) {
+				self.buildTabbingRulesOnKeyUp( $( this ), event, $revisions );
+			} )
+			.on(
+				'touchstart touchmove touchend touchcancel touchleave',
+				utils.touchEventConverter
 			);
-		} );
-
-		$pointerOlder.on( 'keydown', function ( event ) {
-			self.buildTabbingRulesOnKeyDown(
-				$pointerOlder,
-				event,
-				$revisions
-			);
-		} );
-
-		$pointerOlder.on( 'keyup', function ( event ) {
-			self.buildTabbingRulesOnKeyUp(
-				$pointerOlder,
-				event,
-				$revisions
-			);
-		} );
-
-		$pointerNewer.on( 'keydown', function ( event ) {
-			self.buildTabbingRulesOnKeyDown(
-				$pointerNewer,
-				event,
-				$revisions
-			);
-		} );
-
-		$pointerNewer.on( 'keyup', function ( event ) {
-			self.buildTabbingRulesOnKeyUp(
-				$pointerNewer,
-				event,
-				$revisions
-			);
-		} );
-
-		$pointers.on(
-			'touchstart touchmove touchend touchcancel touchleave',
-			utils.touchEventConverter
-		);
 
 		$pointerOlder.draggable( this.buildDraggableOptions(
 			$revisions,
@@ -339,12 +310,12 @@ $.extend( SliderView.prototype, {
 			newNewerPointerPos = this.pointerNewer.getPosition();
 			newOlderPointerPos = clickedPos;
 		} else {
+			newNewerPointerPos = clickedPos;
+			newOlderPointerPos = clickedPos;
 			if ( hasClickedTop ) {
-				newNewerPointerPos = clickedPos;
-				newOlderPointerPos = clickedPos - 1;
+				newOlderPointerPos--;
 			} else {
-				newNewerPointerPos = clickedPos + 1;
-				newOlderPointerPos = clickedPos;
+				newNewerPointerPos++;
 			}
 		}
 
@@ -710,11 +681,7 @@ $.extend( SliderView.prototype, {
 			// Note: this is currently caught in init.js
 			throw new Error( 'RS-revs-not-specified' );
 		}
-		if ( $oldRevElement.length !== 0 ) {
-			this.setOlderPointerPos( $oldRevElement.data( 'pos' ) );
-		} else {
-			this.setOlderPointerPos( -1 );
-		}
+		this.setOlderPointerPos( $oldRevElement.length ? $oldRevElement.data( 'pos' ) : -1 );
 		this.setNewerPointerPos( $newRevElement.data( 'pos' ) );
 		this.resetSliderLines();
 	},
@@ -848,16 +815,8 @@ $.extend( SliderView.prototype, {
 		this.pointerOlder.getView().getElement().draggable( 'disable' );
 		this.pointerNewer.getView().getElement().draggable( 'disable' );
 
-		if ( this.slider.isAtStart() ) {
-			this.backwardArrowButton.setDisabled( true );
-		} else {
-			this.backwardArrowButton.setDisabled( false );
-		}
-		if ( this.slider.isAtEnd() ) {
-			this.forwardArrowButton.setDisabled( true );
-		} else {
-			this.forwardArrowButton.setDisabled( false );
-		}
+		this.backwardArrowButton.setDisabled( this.slider.isAtStart() );
+		this.forwardArrowButton.setDisabled( this.slider.isAtEnd() );
 
 		const animateObj = { scrollLeft: this.slider.getOldestVisibleRevisionIndex() * this.revisionWidth };
 		if ( this.dir === 'rtl' ) {
