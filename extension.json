@@ -71,14 +71,6 @@
 			"styles": [
 				"modules/ext.RevisionSlider.less"
 			],
-			"skinStyles": {
-				"monobook": [
-					"modules/ext.RevisionSlider.monobook.css"
-				],
-				"modern": [
-					"modules/ext.RevisionSlider.modern.css"
-				]
-			},
 			"dependencies": [
 				"moment",
 				"oojs-ui",
