@@ -1,3 +1,4 @@
+@import 'mediawiki.skin.variables.less';
 @import 'mediawiki.mixins';
 
 @new: #1e6db8;
@@ -29,11 +30,11 @@
 }
 
 .mw-revslider-revision-up {
-	border-bottom: 2px solid transparent;
+	border-bottom: @border-width-thick @border-style-base @border-color-transparent;
 }
 
 .mw-revslider-revision-down {
-	border-top: 2px solid transparent;
+	border-top: @border-width-thick @border-style-base @border-color-transparent;
 }
 
 .mw-revslider-revision-new,
@@ -48,19 +49,19 @@
 .mw-revslider-revision-border-box {
 	height: 100%;
 	width: 100%;
-	border-left: 1px solid #fff;
+	border-left: @border-width-base @border-style-base #fff;
 	box-sizing: border-box;
 
 	.mw-revslider-revision-old & {
-		border-bottom: 2px solid @old;
+		border-bottom: @border-width-thick @border-style-base @old;
 	}
 
 	.mw-revslider-revision-new & {
-		border-bottom: 2px solid @new;
+		border-bottom: @border-width-thick @border-style-base @new;
 	}
 
 	.mw-revslider-revision-highlight & {
-		border: 1px solid #72777d;
+		border: @border-width-base @border-style-base #72777d;
 		background-color: #7f7f7f;
 	}
 }
@@ -93,13 +94,13 @@
 .mw-revslider-revision-hovered {
 	&.mw-revslider-revision-wrapper-up .mw-revslider-pointer-ghost {
 		background-color: lighten( @new, 30% );
-		border: 2px solid @new;
+		border: @border-width-thick @border-style-base @new;
 		bottom: -4px;
 	}
 
 	&.mw-revslider-revision-wrapper-down .mw-revslider-pointer-ghost {
 		background-color: lighten( @oldHandle, 30% );
-		border: 2px solid @oldHandle;
+		border: @border-width-thick @border-style-base @oldHandle;
 		top: -1px;
 	}
 }
@@ -146,8 +147,8 @@
 	}
 
 	.mw-revslider-highlightable-row {
-		border: 1px solid transparent;
-		border-radius: 5em;
+		border: @border-width-base @border-style-base @border-color-transparent;
+		border-radius: @border-radius-pill;
 		margin-left: -8px;
 		padding-left: 7px;
 
@@ -215,7 +216,7 @@ of the frameless one (to fit the size of the toggle button */
 	padding: 0;
 	width: 1.875em;
 	height: 1.875em;
-	background-color: transparent;
+	background-color: @border-color-transparent;
 	border: 0;
 }
 
@@ -243,10 +244,10 @@ of the frameless one (to fit the size of the toggle button */
 	z-index: 1;
 	width: 14px;
 	height: 14px;
-	border-radius: 50%;
+	border-radius: @border-radius-circle;
 
 	&:focus {
-		outline: 2px solid #36c;
+		outline: @border-width-thick @border-style-base @outline-color-progressive--focus;
 	}
 
 	&:hover,
@@ -266,7 +267,7 @@ of the frameless one (to fit the size of the toggle button */
 
 	&.mw-revslider-pointer-newer {
 		top: -6px;
-		border: 1px solid @new;
+		border: @border-width-base @border-style-base @new;
 		.vertical-gradient( lighten( @new, 30% ), @new );
 
 		&:hover,
@@ -277,7 +278,7 @@ of the frameless one (to fit the size of the toggle button */
 
 	&.mw-revslider-pointer-older {
 		top: 4px;
-		border: 1px solid @oldHandle;
+		border: @border-width-base @border-style-base @oldHandle;
 		.vertical-gradient( lighten( @oldHandle, 30% ), @oldHandle );
 
 		&:hover,
@@ -293,12 +294,12 @@ of the frameless one (to fit the size of the toggle button */
 	.mw-revslider-pointer-container-newer & {
 		margin-top: -12px;
 		margin-bottom: 4px;
-		border-bottom: 4px solid fade( @new, 50% );
+		border-bottom: 4px @border-style-base fade( @new, 50% );
 	}
 
 	.mw-revslider-pointer-container-older & {
 		margin-top: 8px;
-		border-top: 4px solid fade( @old, 50% );
+		border-top: 4px @border-style-base fade( @old, 50% );
 	}
 
 	.mw-revslider-pointer-container-newer:hover & {
@@ -367,7 +368,7 @@ of the frameless one (to fit the size of the toggle button */
 
 .mw-revslider-pointer-line-upper,
 .mw-revslider-pointer-line-lower {
-	border: 0 solid transparent;
+	border: 0 @border-style-base @border-color-transparent;
 }
 
 .mw-revslider-pointer-line {
@@ -378,16 +379,16 @@ of the frameless one (to fit the size of the toggle button */
 
 	.mw-revslider-left-line {
 		/* @noflip */
-		border-left-width: 2px;
+		border-left-width: @border-width-thick;
 	}
 
 	.mw-revslider-right-line {
 		/* @noflip */
-		border-right-width: 2px;
+		border-right-width: @border-width-thick;
 	}
 
 	.mw-revslider-bottom-line {
-		border-bottom-width: 2px;
+		border-bottom-width: @border-width-thick;
 	}
 
 	.mw-revslider-lower-color {
@@ -420,14 +421,14 @@ of the frameless one (to fit the size of the toggle button */
 }
 
 .mw-revslider-pointer-line-underline {
-	border-bottom: 2px solid;
+	border-bottom: @border-width-thick @border-style-base;
 }
 
 .mw-revslider-bubble {
 	height: 1.428571em;
 	width: 1.428571em;
 	background-color: #ccc;
-	border-radius: 100%;
+	border-radius: @border-radius-circle;
 	display: inline-block;
 	float: right;
 }
