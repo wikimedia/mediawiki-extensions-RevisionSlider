@@ -118,7 +118,8 @@ $.extend( RevisionListView.prototype, {
 						}
 					} )
 					.on( 'mouseleave', function () {
-						self.unsetRevisionHovered( $( this ) );
+						self.unsetAllHovered();
+						self.hideCurrentTooltipWithDelay();
 					} )
 				);
 		}
@@ -179,39 +180,13 @@ $.extend( RevisionListView.prototype, {
 
 	/**
 	 * @param {jQuery} $revisionWrapper
-	 * @return {number}
-	 */
-	getRevisionWrapperPos: function ( $revisionWrapper ) {
-		return +$revisionWrapper.find( '.mw-revslider-revision' ).attr( 'data-pos' );
-	},
-
-	/**
-	 * @param {jQuery} $revisionWrapper
 	 */
 	setRevisionGhost: function ( $revisionWrapper ) {
 		$revisionWrapper.addClass( 'mw-revslider-revision-hovered' );
 	},
 
-	/**
-	 * @param {jQuery} $revisionWrapper
-	 */
-	unsetRevisionHovered: function ( $revisionWrapper ) {
-		this.unsetRevisionGhosts( $revisionWrapper );
-		this.hideTooltip( $revisionWrapper );
-	},
-
 	unsetAllHovered: function () {
 		$( '.mw-revslider-revision-wrapper-up, .mw-revslider-revision-wrapper-down' )
-			.removeClass( 'mw-revslider-revision-hovered' );
-	},
-
-	/**
-	 * @param {jQuery} $revisionWrapper
-	 */
-	unsetRevisionGhosts: function ( $revisionWrapper ) {
-		$revisionWrapper.children()
-			.add( $revisionWrapper.prev().children() )
-			.add( $revisionWrapper.next().children() )
 			.removeClass( 'mw-revslider-revision-hovered' );
 	},
 
@@ -254,15 +229,10 @@ $.extend( RevisionListView.prototype, {
 	},
 
 	/**
-	 * Hides the tooltip after 500ms
-	 *
-	 * @param {jQuery} $revisionWrapper
+	 * Hides the current tooltip after 500ms
 	 */
-	hideTooltip: function ( $revisionWrapper ) {
-		this.tooltipTimeout = window.setTimeout( function () {
-			$revisionWrapper.removeClass( 'mw-revslider-revision-wrapper-hovered' );
-			$( '.mw-revslider-revision-tooltip' ).remove();
-		}, 500 );
+	hideCurrentTooltipWithDelay: function () {
+		this.tooltipTimeout = window.setTimeout( this.hideCurrentTooltip.bind( this ), 500 );
 	},
 
 	/**
@@ -342,7 +312,7 @@ $.extend( RevisionListView.prototype, {
 				window.clearTimeout( self.tooltipTimeout );
 			} )
 			.on( 'mouseleave', '.mw-revslider-revision-tooltip', function () {
-				self.hideTooltip( $( '.mw-revslider-revision-wrapper-hovered' ) );
+				self.hideCurrentTooltipWithDelay();
 			} );
 	},
 

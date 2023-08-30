@@ -280,8 +280,7 @@ $.extend( SliderView.prototype, {
 		}
 
 		const $hoveredRevisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), pos ).parent();
-		const $lastRevisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), lastValidPosition ).parent();
-		this.getRevisionListView().unsetRevisionGhosts( $lastRevisionWrapper );
+		this.getRevisionListView().unsetAllHovered();
 		this.getRevisionListView().setRevisionHoveredFromMouseEvent( $hoveredRevisionWrapper, event );
 
 		return pos;
