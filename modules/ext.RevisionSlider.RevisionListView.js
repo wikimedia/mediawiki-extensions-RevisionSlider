@@ -266,6 +266,19 @@ $.extend( RevisionListView.prototype, {
 	},
 
 	/**
+	 * Hides the current tooltip when the focus moves away and not to a pointer or tooltip
+	 *
+	 * @param {jQuery.Event} event
+	 */
+	onFocusBlur: function ( event ) {
+		const $outElement = $( event.relatedTarget );
+		if ( $outElement.hasClass( '.mw-revslider-pointer' ) || $outElement.closest( '.mw-revslider-revision-tooltip' ).length ) {
+			return;
+		}
+		this.hideCurrentTooltip();
+	},
+
+	/**
 	 * Hides the previous tooltip and shows the new one. Also styles a revision as hovered.
 	 *
 	 * @param {jQuery} $revisionWrapper
@@ -287,7 +300,9 @@ $.extend( RevisionListView.prototype, {
 
 		const tooltip = this.makeTooltip( revision, $revisionWrapper );
 		// eslint-disable-next-line mediawiki/class-doc
-		tooltip.$element.addClass( 'mw-revslider-revision-tooltip-' + pos );
+		tooltip.$element
+			.addClass( 'mw-revslider-revision-tooltip-' + pos )
+			.on( 'focusout', this.onFocusBlur.bind( this ) );
 
 		const $focusedRevisionPointer = $( '.mw-revslider-pointer[data-pos="' + pos + '"]' );
 		if ( $focusedRevisionPointer.length ) {
