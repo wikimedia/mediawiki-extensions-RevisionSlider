@@ -125,7 +125,7 @@ $.extend( RevisionListView.prototype, {
 					} )
 					.on( 'mouseleave', function () {
 						self.unsetAllHovered();
-						self.hideCurrentTooltipWithDelay();
+						self.removeCurrentRevisionFocusWithDelay();
 					} )
 				);
 		}
@@ -154,7 +154,7 @@ $.extend( RevisionListView.prototype, {
 			return;
 		}
 
-		this.showTooltip( $revisionWrapper );
+		this.setRevisionFocus( $revisionWrapper );
 
 		const hasMovedTop = event.pageY - $revisionWrapper.offset().top < $revisionWrapper.height() / 2,
 			isOlderTop = $revisionWrapper.hasClass( 'mw-revslider-revision-older' ) && hasMovedTop,
@@ -230,22 +230,42 @@ $.extend( RevisionListView.prototype, {
 	},
 
 	/**
-	 * Hides the current tooltip immediately
+	 * Clears the current revision focus and removes highlights and tooltip
 	 */
-	hideCurrentTooltip: function () {
+	removeCurrentRevisionFocus: function () {
 		window.clearTimeout( this.tooltipTimeout );
-		$( '.mw-revslider-revision-wrapper-hovered' )
-			.removeClass( 'mw-revslider-revision-wrapper-hovered' );
+		this.removeCurrentRevisionFocusHighlight();
 		$( '.mw-revslider-revision-tooltip' ).remove();
 	},
 
 	/**
-	 * Hides the current tooltip after 500ms
+	 * Removes the current revision focus after 500ms
 	 *
 	 * @private
 	 */
-	hideCurrentTooltipWithDelay: function () {
-		this.tooltipTimeout = window.setTimeout( this.hideCurrentTooltip.bind( this ), 500 );
+	removeCurrentRevisionFocusWithDelay: function () {
+		this.tooltipTimeout = window.setTimeout( this.removeCurrentRevisionFocus.bind( this ), 500 );
+	},
+
+	removeCurrentRevisionFocusHighlight: function () {
+		$( '.mw-revslider-revision-wrapper-hovered' )
+			.removeClass( 'mw-revslider-revision-wrapper-hovered' );
+	},
+
+	/**
+	 * Sets the revision focus adding highlights and tooltip
+	 *
+	 * @param {jQuery} $revisionWrapper
+	 */
+	setRevisionFocus: function ( $revisionWrapper ) {
+		if ( $revisionWrapper.hasClass( 'mw-revslider-revision-wrapper-hovered' ) ) {
+			window.clearTimeout( this.tooltipTimeout );
+			return;
+		}
+		this.removeCurrentRevisionFocus();
+
+		this.showTooltip( $revisionWrapper );
+		$revisionWrapper.addClass( 'mw-revslider-revision-wrapper-hovered' );
 	},
 
 	/**
@@ -258,7 +278,7 @@ $.extend( RevisionListView.prototype, {
 		if ( $outElement.hasClass( '.mw-revslider-pointer' ) || $outElement.closest( '.mw-revslider-revision-tooltip' ).length ) {
 			return;
 		}
-		this.hideCurrentTooltip();
+		this.removeCurrentRevisionFocus();
 	},
 
 	/**
@@ -272,18 +292,8 @@ $.extend( RevisionListView.prototype, {
 		const pos = +$revision.attr( 'data-pos' );
 
 		const revision = this.revisions.find( ( rev ) => rev.getId() === revId );
-		if ( !revision ) {
-			return;
-		}
-
-		if ( $( '.mw-revslider-revision-tooltip-' + pos ).length ) {
-			window.clearTimeout( this.tooltipTimeout );
-			return;
-		}
-
-		this.hideCurrentTooltip();
-
 		const tooltip = this.makeTooltip( revision, $revisionWrapper );
+
 		// eslint-disable-next-line mediawiki/class-doc
 		tooltip.$element
 			.addClass( 'mw-revslider-revision-tooltip-' + pos )
@@ -298,8 +308,6 @@ $.extend( RevisionListView.prototype, {
 		}
 
 		tooltip.toggle( true );
-		// TODO this line should move somewhere else
-		$revisionWrapper.addClass( 'mw-revslider-revision-wrapper-hovered' );
 	},
 
 	/**
@@ -315,7 +323,7 @@ $.extend( RevisionListView.prototype, {
 				window.clearTimeout( self.tooltipTimeout );
 			} )
 			.on( 'mouseleave', '.mw-revslider-revision-tooltip', function () {
-				self.hideCurrentTooltipWithDelay();
+				self.removeCurrentRevisionFocusWithDelay();
 			} );
 	},
 
@@ -332,7 +340,7 @@ $.extend( RevisionListView.prototype, {
 				const $inside = $( event.target )
 					.closest( '.mw-revslider-revision-tooltip, .mw-revslider-revisions-container' );
 				if ( !$inside.length ) {
-					self.hideCurrentTooltip();
+					self.removeCurrentRevisionFocus();
 				}
 			} );
 	},

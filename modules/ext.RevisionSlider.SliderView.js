@@ -371,7 +371,7 @@ $.extend( SliderView.prototype, {
 			$revisions,
 			this.whichPointer( $( event.target ) ).getPosition()
 		).parent();
-		this.getRevisionListView().showTooltip( $hoveredRevisionWrapper );
+		this.getRevisionListView().setRevisionFocus( $hoveredRevisionWrapper );
 
 	},
 
@@ -430,9 +430,9 @@ $.extend( SliderView.prototype, {
 		const $hoveredRevisionWrapper = this.getRevElementAtPosition( $revisions, pos ).parent();
 
 		if ( $( '.mw-revslider-revision-tooltip' ).length && event.which === OO.ui.Keys.ENTER ) {
-			this.getRevisionListView().hideCurrentTooltip();
+			this.getRevisionListView().removeCurrentRevisionFocus();
 		} else {
-			this.getRevisionListView().showTooltip( $hoveredRevisionWrapper );
+			this.getRevisionListView().setRevisionFocus( $hoveredRevisionWrapper );
 		}
 
 	},
@@ -573,7 +573,7 @@ $.extend( SliderView.prototype, {
 
 		const $revisions = this.getRevisionsElement();
 		const $hoveredRevisionWrapper = this.getRevElementAtPosition( $revisions, pos ).parent();
-		this.getRevisionListView().showTooltip( $hoveredRevisionWrapper );
+		this.getRevisionListView().setRevisionFocus( $hoveredRevisionWrapper );
 
 		return pos;
 	},
