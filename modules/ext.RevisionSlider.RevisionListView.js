@@ -422,7 +422,7 @@ $.extend( RevisionListView.prototype, {
 			.on( 'click mouseenter mouseleave', function ( event ) {
 				self.setUserFilterEvents( $( this ), userString, event );
 			} );
-		const $userLine = $( '<p>' ).addClass( 'mw-revslider-highlightable-row mw-revslider-username-row' ).append(
+		const $userLine = $( '<p>' ).addClass( 'mw-revslider-filter-highlightable-row mw-revslider-username-row' ).append(
 			$( '<strong>' ).text( mw.msg( 'revisionslider-label-username', userGender ) + mw.msg( 'colon-separator' ) ),
 			$( '<bdi>' ).append(
 				$( '<a>' ).addClass( 'mw-userlink' ).attr( 'href', mw.util.getUrl( this.getUserPage( userString ) ) ).text( this.stripInvalidCharacters( userString ) )
@@ -432,8 +432,8 @@ $.extend( RevisionListView.prototype, {
 
 		if ( self.selectedUser === userString ) {
 			self.selectedTag = '';
-			$userLine.addClass( 'mw-revslider-highlight' );
-			$userBubble.addClass( 'mw-revslider-highlite-bubble' );
+			$userLine.addClass( 'mw-revslider-filter-highlight' );
+			$userBubble.addClass( 'mw-revslider-filter-highlight-bubble' );
 		}
 
 		return $userLine;
@@ -453,27 +453,27 @@ $.extend( RevisionListView.prototype, {
 			return;
 		}
 
-		this.removeRevisionHighlight();
+		this.removeRevisionFilterHighlighting();
 
 		let oldUser;
 		switch ( event.type ) {
 			case 'mouseenter':
-				$userLine.addClass( 'mw-revslider-highlight' );
-				$userBubble.addClass( 'mw-revslider-highlite-bubble' );
-				this.highlightSameUserRevisions( userName );
+				$userLine.addClass( 'mw-revslider-filter-highlight' );
+				$userBubble.addClass( 'mw-revslider-filter-highlight-bubble' );
+				this.filterHighlightSameUserRevisions( userName );
 				break;
 			case 'mouseleave':
-				this.reApplySavedHighlighting( $userLine, $userBubble );
+				this.reApplySavedFilterHighlighting( $userLine, $userBubble );
 				break;
 			case 'click':
 				oldUser = this.selectedUser;
-				this.resetRevisionHighlighting();
+				this.resetRevisionFilterHighlighting();
 
-				$userLine.addClass( 'mw-revslider-highlight' );
-				$userBubble.addClass( 'mw-revslider-highlite-bubble' );
+				$userLine.addClass( 'mw-revslider-filter-highlight' );
+				$userBubble.addClass( 'mw-revslider-filter-highlight-bubble' );
 
 				if ( oldUser !== userName ) {
-					this.highlightSameUserRevisions( userName );
+					this.filterHighlightSameUserRevisions( userName );
 					this.selectedUser = userName;
 				}
 				break;
@@ -485,9 +485,9 @@ $.extend( RevisionListView.prototype, {
 	 *
 	 * @param {string} userString
 	 */
-	highlightSameUserRevisions: function ( userString ) {
+	filterHighlightSameUserRevisions: function ( userString ) {
 		$( '[data-user="' + userString + '"]' ).parent()
-			.toggleClass( 'mw-revslider-revision-highlight' );
+			.toggleClass( 'mw-revslider-revision-filter-highlight' );
 	},
 
 	/**
@@ -539,7 +539,7 @@ $.extend( RevisionListView.prototype, {
 				.on( 'click mouseenter mouseleave', function ( event ) {
 					self.setTagFilterEvents( $( this ), event );
 				} );
-			const $tagLine = $( '<div>' ).addClass( 'mw-revslider-highlightable-row mw-revslider-tag-row' ).append(
+			const $tagLine = $( '<div>' ).addClass( 'mw-revslider-filter-highlightable-row mw-revslider-tag-row' ).append(
 				tags[ i ],
 				$tagBubble,
 				'<br>'
@@ -547,8 +547,8 @@ $.extend( RevisionListView.prototype, {
 
 			if ( self.selectedTag === tags[ i ] ) {
 				self.selectedUser = '';
-				$tagLine.addClass( 'mw-revslider-highlight' );
-				$tagLine.find( $tagBubble ).addClass( 'mw-revslider-highlite-bubble' );
+				$tagLine.addClass( 'mw-revslider-filter-highlight' );
+				$tagLine.find( $tagBubble ).addClass( 'mw-revslider-filter-highlight-bubble' );
 			}
 
 			$tagLine.attr( 'data-tag-name', tags[ i ] );
@@ -572,27 +572,27 @@ $.extend( RevisionListView.prototype, {
 			return;
 		}
 
-		this.removeRevisionHighlight();
+		this.removeRevisionFilterHighlighting();
 
 		let oldTag;
 		switch ( event.type ) {
 			case 'mouseenter':
-				$tagLine.addClass( 'mw-revslider-highlight' );
-				$tagBubble.addClass( 'mw-revslider-highlite-bubble' );
-				this.highlightSameTagRevisions( tagName );
+				$tagLine.addClass( 'mw-revslider-filter-highlight' );
+				$tagBubble.addClass( 'mw-revslider-filter-highlight-bubble' );
+				this.filterHighlightSameTagRevisions( tagName );
 				break;
 			case 'mouseleave':
-				this.reApplySavedHighlighting( $tagLine, $tagBubble );
+				this.reApplySavedFilterHighlighting( $tagLine, $tagBubble );
 				break;
 			case 'click':
 				oldTag = this.selectedTag;
-				this.resetRevisionHighlighting();
+				this.resetRevisionFilterHighlighting();
 
-				$tagLine.addClass( 'mw-revslider-highlight' );
-				$tagBubble.addClass( 'mw-revslider-highlite-bubble' );
+				$tagLine.addClass( 'mw-revslider-filter-highlight' );
+				$tagBubble.addClass( 'mw-revslider-filter-highlight-bubble' );
 
 				if ( oldTag !== tagName ) {
-					this.highlightSameTagRevisions( tagName );
+					this.filterHighlightSameTagRevisions( tagName );
 					this.selectedTag = tagName;
 				}
 				break;
@@ -600,11 +600,11 @@ $.extend( RevisionListView.prototype, {
 	},
 
 	/**
-	 * Highlights same tag revisions
+	 * Highlight same tag revisions
 	 *
 	 * @param {string} tagName
 	 */
-	highlightSameTagRevisions: function ( tagName ) {
+	filterHighlightSameTagRevisions: function ( tagName ) {
 		const revs = this.revisionList.getRevisions();
 
 		for ( let i = 0; i < revs.length; i++ ) {
@@ -612,42 +612,42 @@ $.extend( RevisionListView.prototype, {
 			for ( let j = 0; j < revTags.length; j++ ) {
 				if ( tagName === revTags[ j ] ) {
 					$( '[data-revid="' + revs[ i ].id + '"]' ).parent()
-						.addClass( 'mw-revslider-revision-highlight' );
+						.addClass( 'mw-revslider-revision-filter-highlight' );
 				}
 			}
 		}
 	},
 
 	/**
-	 * Re-apply highlighting from saved state
+	 * Re-apply filter highlighting from saved state
 	 *
 	 * @param {jQuery} $line
 	 * @param {jQuery} $bubble
 	 */
-	reApplySavedHighlighting: function ( $line, $bubble ) {
-		$line.removeClass( 'mw-revslider-highlight' );
-		$bubble.removeClass( 'mw-revslider-highlite-bubble' );
+	reApplySavedFilterHighlighting: function ( $line, $bubble ) {
+		$line.removeClass( 'mw-revslider-filter-highlight' );
+		$bubble.removeClass( 'mw-revslider-filter-highlight-bubble' );
 		if ( this.selectedTag ) {
-			this.highlightSameTagRevisions( this.selectedTag );
+			this.filterHighlightSameTagRevisions( this.selectedTag );
 		}
 		if ( this.selectedUser ) {
-			this.highlightSameUserRevisions( this.selectedUser );
+			this.filterHighlightSameUserRevisions( this.selectedUser );
 		}
 	},
 
 	/**
-	 * Removes the highlighting from the revisions
+	 * Removes the filter highlighting from the revisions
 	 */
-	removeRevisionHighlight: function () {
-		$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-revision-highlight' );
+	removeRevisionFilterHighlighting: function () {
+		$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-revision-filter-highlight' );
 	},
 
 	/**
-	 * Resets highlighting setting state
+	 * Resets filter highlighting from setting state
 	 */
-	resetRevisionHighlighting: function () {
-		$( '.mw-revslider-highlightable-row' ).removeClass( 'mw-revslider-highlight' );
-		$( '.mw-revslider-bubble' ).removeClass( 'mw-revslider-highlite-bubble' );
+	resetRevisionFilterHighlighting: function () {
+		$( '.mw-revslider-filter-highlightable-row' ).removeClass( 'mw-revslider-filter-highlight' );
+		$( '.mw-revslider-bubble' ).removeClass( 'mw-revslider-filter-highlight-bubble' );
 		this.selectedTag = '';
 		this.selectedUser = '';
 	},

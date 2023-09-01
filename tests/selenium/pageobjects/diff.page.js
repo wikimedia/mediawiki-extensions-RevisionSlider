@@ -222,12 +222,12 @@ class DiffPage extends Page {
 
 	async highlightsRevision( num ) {
 		const attr = await this.getRevision( num ).$( '..' ).getAttribute( 'class' );
-		return await attr.includes( 'mw-revslider-revision-highlight' );
+		return await attr.includes( 'mw-revslider-revision-filter-highlight' );
 	}
 
 	async highlightsBubble( el ) {
 		const element = await el.getAttribute( 'class' );
-		return await element.includes( 'mw-revslider-highlite-bubble' );
+		return await element.includes( 'mw-revslider-filter-highlight-bubble' );
 	}
 
 	async dragOlderPointerTo( num ) {
