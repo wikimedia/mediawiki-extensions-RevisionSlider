@@ -143,16 +143,16 @@ $.extend( RevisionListView.prototype, {
 	 * @param {MouseEvent} event
 	 */
 	setRevisionHoveredFromMouseEvent: function ( $revisionWrapper, event ) {
-		if ( !$revisionWrapper.length ) {
+		if ( !$revisionWrapper.length || $( event.target ).closest( '.mw-revslider-revision-tooltip' ).length ) {
 			return;
 		}
+
+		this.showTooltip( $revisionWrapper );
 
 		const hasMovedTop = event.pageY - $revisionWrapper.offset().top < $revisionWrapper.height() / 2,
 			isOlderTop = $revisionWrapper.hasClass( 'mw-revslider-revision-older' ) && hasMovedTop,
 			isNewerBottom = $revisionWrapper.hasClass( 'mw-revslider-revision-newer' ) && !hasMovedTop;
 		let $neighborRevisionWrapper = $revisionWrapper;
-
-		this.showTooltip( $revisionWrapper );
 
 		if ( isOlderTop ) {
 			$neighborRevisionWrapper = $revisionWrapper.prev();
