@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\RevisionSlider;
 use Config;
 use ConfigFactory;
 use Html;
-use Liuggio\StatsdClient\Factory\StatsdDataFactory;
+use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
 use MediaWiki\Diff\Hook\DifferenceEngineViewHeaderHook;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
@@ -22,24 +22,14 @@ use OOUI\ButtonWidget;
  */
 class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferencesHook {
 
-	/** @var Config */
-	private $config;
+	private Config $config;
+	private UserOptionsLookup $userOptionsLookup;
+	private StatsdDataFactoryInterface $statsdDataFactory;
 
-	/** @var UserOptionsLookup */
-	private $userOptionsLookup;
-
-	/** @var StatsdDataFactory */
-	private $statsdDataFactory;
-
-	/**
-	 * @param ConfigFactory $configFactory
-	 * @param UserOptionsLookup $userOptionsLookup
-	 * @param StatsdDataFactory $statsdDataFactory
-	 */
 	public function __construct(
 		ConfigFactory $configFactory,
 		UserOptionsLookup $userOptionsLookup,
-		StatsdDataFactory $statsdDataFactory
+		StatsdDataFactoryInterface $statsdDataFactory
 	) {
 		$this->config = $configFactory->makeConfig( 'revisionslider' );
 		$this->userOptionsLookup = $userOptionsLookup;
