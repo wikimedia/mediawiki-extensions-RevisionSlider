@@ -629,10 +629,9 @@ $.extend( RevisionListView.prototype, {
 	 * @return {jQuery}
 	 */
 	makePageSizeLine: function ( size ) {
-		return $( '<p>' ).append(
-			$( '<strong>' ).text( mw.msg( 'revisionslider-label-page-size' ) + mw.msg( 'colon-separator' ) ),
-			mw.msg( 'revisionslider-page-size', mw.language.convertNumber( size ), size )
-		);
+		return $( '<p>' )
+			.text( mw.msg( 'revisionslider-page-size', mw.language.convertNumber( size ), size ) )
+			.prepend( $( '<strong>' ).text( mw.msg( 'revisionslider-label-page-size' ) + mw.msg( 'colon-separator' ) ) );
 	},
 
 	/**
