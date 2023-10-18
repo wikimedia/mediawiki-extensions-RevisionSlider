@@ -17,6 +17,8 @@ const DiffPage = require( './ext.RevisionSlider.DiffPage.js' ),
 function SliderView( slider ) {
 	this.slider = slider;
 	this.diffPage = new DiffPage( this.slider.getRevisionList() );
+	this.diffPage.addHandlersToCoreLinks( this );
+	this.diffPage.initOnPopState( this );
 }
 
 $.extend( SliderView.prototype, {
@@ -110,9 +112,7 @@ $.extend( SliderView.prototype, {
 		$container.empty().append( this.$element );
 
 		this.slideView( Math.floor( ( this.getNewerPointerPos() - 1 ) / this.slider.getRevisionsPerWindow() ), 0 );
-		this.diffPage.addHandlersToCoreLinks( this );
 		this.diffPage.replaceState( mw.config.get( 'wgDiffNewId' ), mw.config.get( 'wgDiffOldId' ), this );
-		this.diffPage.initOnPopState( this );
 	},
 
 	/**
