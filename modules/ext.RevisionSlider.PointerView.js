@@ -23,7 +23,7 @@ $.extend( PointerView.prototype, {
 	pointer: null,
 
 	/**
-	 * @type {jQuery}
+	 * @type {jQuery|null}
 	 */
 	$html: null,
 
@@ -41,11 +41,11 @@ $.extend( PointerView.prototype, {
 	 */
 	render: function () {
 		this.initialize();
-		return this.getElement();
+		return this.$html;
 	},
 
 	/**
-	 * @return {jQuery}
+	 * @return {jQuery|null} Null if not initialized
 	 */
 	getElement: function () {
 		return this.$html;
@@ -57,22 +57,13 @@ $.extend( PointerView.prototype, {
 	 * @return {boolean}
 	 */
 	isNewerPointer: function () {
-		return this.getElement().hasClass( 'mw-revslider-pointer-newer' );
-	},
-
-	/**
-	 * Returns the offset (margin-left) depending on whether its the newer or older pointer
-	 *
-	 * @return {number}
-	 */
-	getOffset: function () {
-		return this.isNewerPointer() ? 16 : 0;
+		return this.$html.hasClass( 'mw-revslider-pointer-newer' );
 	},
 
 	// For correct positioning of the pointer in the RTL mode the left position is flipped in the container.
 	// 30 pixel have to be added to cover the arrow and its margin.
 	getAdjustedLeftPositionWhenRtl: function ( pos ) {
-		return this.getElement().offsetParent().width() - pos - 30;
+		return this.$html.offsetParent().width() - pos - 30;
 	},
 
 	/**
@@ -81,10 +72,10 @@ $.extend( PointerView.prototype, {
 	 * @param {number} pos
 	 */
 	setDataPositionAttribute: function ( pos ) {
-		if ( this.getElement() === null ) {
+		if ( !this.$html ) {
 			this.initialize();
 		}
-		this.getElement().attr( 'data-pos', pos );
+		this.$html.attr( 'data-pos', pos );
 	},
 
 	/**
@@ -97,15 +88,16 @@ $.extend( PointerView.prototype, {
 	 */
 	animateTo: function ( posInPx, revisionWidth, baseDuration ) {
 		const animatePos = { left: posInPx },
-			currentPos = this.getElement().position();
+			currentPos = this.$html.position();
 
 		baseDuration = typeof baseDuration !== 'undefined' ? baseDuration : 100;
-		if ( this.getElement().css( 'direction' ) === 'rtl' ) {
+		if ( this.$html.css( 'direction' ) === 'rtl' ) {
 			animatePos.left = this.getAdjustedLeftPositionWhenRtl( animatePos.left );
 		}
 		const distance = Math.abs( animatePos.left - currentPos.left ) / revisionWidth;
 		const duration = baseDuration * Math.log( 5 + distance );
-		return this.getElement().animate( animatePos, duration, 'linear' );
+		// eslint-disable-next-line no-jquery/no-animate
+		return this.$html.animate( animatePos, duration, 'linear' );
 	},
 
 	/**
@@ -129,11 +121,10 @@ $.extend( PointerView.prototype, {
 	 * @return {jQuery}
 	 */
 	slideToSide: function ( slider, posBeforeSlider, duration ) {
-		if ( posBeforeSlider ) {
-			return this.animateTo( this.getOffset() - 2 * slider.getView().revisionWidth, slider.getView().revisionWidth, duration );
-		} else {
-			return this.animateTo( slider.getRevisionsPerWindow() * slider.getView().revisionWidth + this.getOffset(), slider.getView().revisionWidth, duration );
-		}
+		const margin = this.isNewerPointer() ? 16 : 0;
+		let x = slider.getView().revisionWidth;
+		x *= posBeforeSlider ? -2 : slider.getRevisionsPerWindow();
+		return this.animateTo( x + margin, slider.getView().revisionWidth, duration );
 	},
 
 	/**
