@@ -324,8 +324,9 @@ $.extend( RevisionListView.prototype, {
 
 		$( document )
 			.on( 'click', function ( event ) {
-				if ( $( event.target ).closest( '.mw-revslider-revision-tooltip' ).length === 0 &&
-					$( event.target ).closest( '.mw-revslider-revisions-container' ).length === 0 ) {
+				const $inside = $( event.target )
+					.closest( '.mw-revslider-revision-tooltip, .mw-revslider-revisions-container' );
+				if ( !$inside.length ) {
 					self.hideCurrentTooltip();
 				}
 			} );
