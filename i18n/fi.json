@@ -3,6 +3,7 @@
 		"authors": [
 			"01miki10",
 			"Alluk.",
+			"Jack Phoenix",
 			"Lebiega",
 			"Nike",
 			"Pxos",
@@ -33,9 +34,9 @@
 	"revisionslider-show-help-tooltip": "Näytä ohjeteksti",
 	"revisionslider-help-dialog-slide1": "Sivuvertailun vaakajana auttaa vertailemaan muutoksia sivulla, joka näyttää erot eri versioiden välillä. Se perustuu saksankielisen muokkaajayhteisön tech-toivelistalla esittämään [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider pyyntöön]. Palautetta otetaan vastaan [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider täällä].",
 	"revisionslider-help-dialog-slide2": "Jokainen palkki kuvaa sivulle tehtyä muokkausta. Ylhäällä olevat palkit kuvaavat sivun koon kasvua ja alhaalla olevat palkit sivun koon vähenemistä. Kuvassa muokkaus 1 on lisännyt sisältöä sivulle, kun taas muokkaus 2 vähentänyt sitä.",
-	"revisionslider-help-dialog-slide3a": "<p>Vertaillaksesi haluamiasi muokkauksia valitse muokkaukset kahta värillistä osoitinta siirtämällä.</p><p>Ylempi osoitin säätelee uusinta näytettävää muokkausta, alempi puolestaan vanhinta.</p><p>Siirrä osoittimia raahaamalla ja pudottamalla tai klikkaa suoraan haluamaasi palkkia.</p>",
+	"revisionslider-help-dialog-slide3a": "Vertaillaksesi haluamiasi muokkauksia valitse muokkaukset kahta värillistä osoitinta siirtämällä.\n\nYlempi osoitin säätelee uusinta näytettävää muokkausta, alempi puolestaan vanhinta.\n\nSiirrä osoittimia raahaamalla ja pudottamalla tai napsauta suoraan haluamaasi palkkia.",
 	"revisionslider-help-dialog-slide4": "Vasemmalle ja oikealle osoittavilla nuolilla voit liikkua muutoshistoriassa ja katsella vanhempia sekä uudempia muokkauksia.",
-	"revisionslider-tutorial": "Opastus sivuvertailun vaakajanan käyttöön",
+	"revisionslider-tutorial": "Sivuvertailun vaakajanan käyttö",
 	"revisionslider-previous-dialog": "Edellinen",
 	"revisionslider-next-dialog": "Seuraava",
 	"revisionslider-close-dialog": "Sulje"
