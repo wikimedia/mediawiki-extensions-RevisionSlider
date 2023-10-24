@@ -39,6 +39,7 @@ $.extend( PointerLine.prototype, {
 	/**
 	 * Calculate the relative distance in between the given pointer and column
 	 *
+	 * @private
 	 * @param {jQuery} $sourcePointer
 	 * @param {jQuery} $targetColumn
 	 * @return {number} distance between the given elements
@@ -51,6 +52,7 @@ $.extend( PointerLine.prototype, {
 	/**
 	 * Calculate and set line's width and position with the given pointer and column
 	 *
+	 * @private
 	 * @param {jQuery} $sourcePointer
 	 * @param {jQuery} $targetColumn
 	 */
@@ -79,9 +81,9 @@ $.extend( PointerLine.prototype, {
 	/**
 	 * Check if the target column is located right form the source pointer
 	 *
+	 * @private
 	 * @param {jQuery} $sourcePointer
 	 * @param {jQuery} $targetColumn
-	 *
 	 * @return {boolean}
 	 */
 	targetColumnIsRightFromPointer: function ( $sourcePointer, $targetColumn ) {
@@ -156,6 +158,7 @@ $.extend( PointerLine.prototype, {
 	 * Adds colored top-borders for the diff columns fitting the line colors between pointers and columns
 	 *
 	 * @param {boolean} [show=true]
+	 * @private
 	 */
 	addColoredColumnBorders: function ( show ) {
 		show = show !== false;
@@ -165,6 +168,8 @@ $.extend( PointerLine.prototype, {
 
 	/**
 	 * Remove colored top-borders for the diff columns fitting the line colors between pointers and columns
+	 *
+	 * @private
 	 */
 	removeColoredColumnBorders: function () {
 		this.addColoredColumnBorders( false );
@@ -172,6 +177,8 @@ $.extend( PointerLine.prototype, {
 
 	/**
 	 * Sets the hooks to draw the column borders
+	 *
+	 * @private
 	 */
 	setColumnBorderHooks: function () {
 		mw.hook( 'wikipage.diff' ).add( this.addColoredColumnBorders );

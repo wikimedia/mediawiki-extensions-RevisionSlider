@@ -185,6 +185,7 @@ $.extend( RevisionListView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {jQuery} $revisionWrapper
 	 */
 	setRevisionGhost: function ( $revisionWrapper ) {
@@ -214,6 +215,7 @@ $.extend( RevisionListView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {number} diffSize
 	 * @return {number}
 	 */
@@ -239,6 +241,8 @@ $.extend( RevisionListView.prototype, {
 
 	/**
 	 * Hides the current tooltip after 500ms
+	 *
+	 * @private
 	 */
 	hideCurrentTooltipWithDelay: function () {
 		this.tooltipTimeout = window.setTimeout( this.hideCurrentTooltip.bind( this ), 500 );
@@ -300,6 +304,8 @@ $.extend( RevisionListView.prototype, {
 
 	/**
 	 * Sets event handlers on tooltips so they do not disappear when hovering over them
+	 *
+	 * @private
 	 */
 	keepTooltipsOnHover: function () {
 		const self = this;
@@ -315,6 +321,8 @@ $.extend( RevisionListView.prototype, {
 
 	/**
 	 * Sets an event handler to close tooltips when clicking somewhere outside
+	 *
+	 * @private
 	 */
 	closeTooltipsOnClick: function () {
 		const self = this;
@@ -331,6 +339,7 @@ $.extend( RevisionListView.prototype, {
 	/**
 	 * Generates the HTML for a tooltip that appears on hover above each revision on the slider
 	 *
+	 * @private
 	 * @param {Revision} revision
 	 * @param {jQuery} $revisionWrapper
 	 * @return {OO.ui.PopupWidget}
@@ -361,6 +370,7 @@ $.extend( RevisionListView.prototype, {
 	/**
 	 * Generates a link to user page or to contributions page for IP addresses
 	 *
+	 * @private
 	 * @param {string} user
 	 * @return {string}
 	 */
@@ -371,6 +381,7 @@ $.extend( RevisionListView.prototype, {
 	/**
 	 * Generates the HTML for the user label
 	 *
+	 * @private
 	 * @param {string} userString
 	 * @param {string} [userGender='unknown']
 	 * @return {string|jQuery}
@@ -409,6 +420,7 @@ $.extend( RevisionListView.prototype, {
 	/**
 	 * Set user filter events for revisions
 	 *
+	 * @private
 	 * @param {jQuery} $userBubble
 	 * @param {string} userName
 	 * @param {MouseEvent} event
@@ -450,6 +462,7 @@ $.extend( RevisionListView.prototype, {
 	/**
 	 * Highlights revisions of the sameUser
 	 *
+	 * @private
 	 * @param {string} userString
 	 */
 	filterHighlightSameUserRevisions: function ( userString ) {
@@ -458,6 +471,7 @@ $.extend( RevisionListView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {string} s
 	 * @return {string}
 	 */
@@ -468,6 +482,7 @@ $.extend( RevisionListView.prototype, {
 	/**
 	 * Generates the HTML for the comment label
 	 *
+	 * @private
 	 * @param {Revision} rev
 	 * @return {string|jQuery}
 	 */
@@ -488,6 +503,7 @@ $.extend( RevisionListView.prototype, {
 	/**
 	 * Generates the HTML for the tags label
 	 *
+	 * @private
 	 * @param {Revision} rev
 	 * @return {string|jQuery}
 	 */
@@ -528,6 +544,7 @@ $.extend( RevisionListView.prototype, {
 	/**
 	 * Set tag filter events for revisions
 	 *
+	 * @private
 	 * @param {jQuery} $tagBubble
 	 * @param {MouseEvent} event
 	 */
@@ -569,6 +586,7 @@ $.extend( RevisionListView.prototype, {
 	/**
 	 * Highlight same tag revisions
 	 *
+	 * @private
 	 * @param {string} tagName
 	 */
 	filterHighlightSameTagRevisions: function ( tagName ) {
@@ -588,6 +606,7 @@ $.extend( RevisionListView.prototype, {
 	/**
 	 * Re-apply filter highlighting from saved state
 	 *
+	 * @private
 	 * @param {jQuery} $line
 	 * @param {jQuery} $bubble
 	 */
@@ -604,6 +623,8 @@ $.extend( RevisionListView.prototype, {
 
 	/**
 	 * Removes the filter highlighting from the revisions
+	 *
+	 * @private
 	 */
 	removeRevisionFilterHighlighting: function () {
 		$( '.mw-revslider-revision-wrapper' ).removeClass( 'mw-revslider-revision-filter-highlight' );
@@ -611,6 +632,8 @@ $.extend( RevisionListView.prototype, {
 
 	/**
 	 * Resets filter highlighting from setting state
+	 *
+	 * @private
 	 */
 	resetRevisionFilterHighlighting: function () {
 		$( '.mw-revslider-filter-highlightable-row' ).removeClass( 'mw-revslider-filter-highlight' );
@@ -622,6 +645,7 @@ $.extend( RevisionListView.prototype, {
 	/**
 	 * Generates the HTML for the page size label
 	 *
+	 * @private
 	 * @param {number} size
 	 * @return {jQuery}
 	 */
@@ -635,6 +659,7 @@ $.extend( RevisionListView.prototype, {
 	/**
 	 * Generates the HTML for the change size label
 	 *
+	 * @private
 	 * @param {number} relativeSize
 	 * @return {jQuery}
 	 */

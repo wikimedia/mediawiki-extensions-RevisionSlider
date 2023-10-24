@@ -125,6 +125,7 @@ $.extend( DiffPage.prototype, {
 	/**
 	 * Gets a state object to be used with history.replaceState and history.pushState
 	 *
+	 * @private
 	 * @param {number} diff
 	 * @param {number} oldid
 	 * @param {SliderView} sliderView
@@ -143,6 +144,7 @@ $.extend( DiffPage.prototype, {
 	/**
 	 * Gets a URL to be used with history.replaceState and history.pushState
 	 *
+	 * @private
 	 * @param {number} diff
 	 * @param {number} oldid
 	 * @return {string}
@@ -160,6 +162,7 @@ $.extend( DiffPage.prototype, {
 	 * Returns an object containing all possible parameters that should be included in diff URLs
 	 * when selected revisions change, e.g. uselang
 	 *
+	 * @private
 	 * @return {Object}
 	 */
 	getExtraDiffPageParams: function () {
