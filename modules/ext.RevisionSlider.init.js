@@ -12,7 +12,6 @@ let expanded = autoExpand;
 function initialize() {
 	const startTime = mw.now();
 	const api = new RevisionSliderApi( mw.util.wikiScript( 'api' ) );
-	let changeTags = [];
 
 	toggleButton.$element.children().attr( {
 		'aria-expanded': autoExpand,
@@ -29,13 +28,7 @@ function initialize() {
 	HelpDialog.init();
 
 	api.fetchAvailableChangeTags().then( function ( data ) {
-		if ( typeof data === 'object' &&
-			data.query &&
-			data.query.tags &&
-			data.query.tags.length > 0
-		) {
-			changeTags = data.query.tags;
-		}
+		const changeTags = data && data.query && data.query.tags || [];
 		api.fetchRevisionData( mw.config.get( 'wgPageName' ), {
 			startId: Math.max( mw.config.get( 'wgDiffOldId' ), mw.config.get( 'wgDiffNewId' ) ),
 			limit: utils.calculateRevisionsPerWindow( 160, 16 ),

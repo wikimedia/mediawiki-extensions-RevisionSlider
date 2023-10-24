@@ -61,7 +61,7 @@ $.extend( Revision.prototype, {
 	userGender: '',
 
 	/**
-	 * @type {number}
+	 * @type {number} Warning, only set for Revision objects that are part of a RevisionList
 	 */
 	relativeSize: 0,
 
