@@ -28,15 +28,6 @@ $.extend( PointerLine.prototype, {
 	$html: null,
 
 	/**
-	 * Check if the offset method is available for the diff element
-	 *
-	 * @return {boolean}
-	 */
-	offsetNotAvailable: function () {
-		return typeof $( '.diff-ntitle' ).offset() === 'undefined';
-	},
-
-	/**
 	 * Calculate the relative distance in between the given pointer and column
 	 *
 	 * @param {jQuery} $sourcePointer
@@ -92,34 +83,35 @@ $.extend( PointerLine.prototype, {
 	 * Draws the line between pointer and column by setting borders, position and width of the line box
 	 */
 	drawLine: function () {
-		if ( this.offsetNotAvailable() ) {
-			// offset is not available in QUnit tests so skip calculation and drawing
+		const isNewer = this.pointer.getView().isNewerPointer();
+		const $targetColumn = $( isNewer ? '.diff-ntitle' : '.diff-otitle' );
+
+		// don't draw lines when the diff view is not as expected or offset not available
+		if ( !$targetColumn.length || !$targetColumn.offset() ) {
 			return;
 		}
 
 		const $upperLineDiv = this.$html.find( '.mw-revslider-pointer-line-upper' ),
 			$lowerLineDiv = this.$html.find( '.mw-revslider-pointer-line-lower' ),
 			$underline = this.$html.find( '.mw-revslider-pointer-line-underline' ),
-			$sourcePointer = this.pointer.getView().getElement(),
-			$table = $( '.diff-otitle' );
+			$sourcePointer = this.pointer.getView().getElement();
 
-		const isNewer = this.pointer.getView().isNewerPointer();
 		$lowerLineDiv.add( $upperLineDiv ).add( $underline )
 			.toggleClass( 'mw-revslider-lower-color', !isNewer )
 			.toggleClass( 'mw-revslider-upper-color', isNewer );
-		const $targetColumn = isNewer ? $( '.diff-ntitle' ) : $table;
 
 		this.setCssProperties( $sourcePointer, $targetColumn );
 
+		const columnWidth = $targetColumn.width();
 		$upperLineDiv.addClass( 'mw-revslider-bottom-line' );
-		$underline.css( 'width', $table.width() + 'px' );
+		$underline.css( 'width', columnWidth + 'px' );
 
 		if ( this.targetColumnIsRightFromPointer( $sourcePointer, $targetColumn ) ) {
 			$upperLineDiv.addClass( 'mw-revslider-left-line' );
 			$lowerLineDiv.addClass( 'mw-revslider-right-line' );
 
 			$underline.css( {
-				'margin-right': -$table.width() / 2 + 'px',
+				'margin-right': -columnWidth / 2 + 'px',
 				'margin-left': 0,
 				float: 'right'
 			} );
@@ -128,7 +120,7 @@ $.extend( PointerLine.prototype, {
 			$lowerLineDiv.addClass( 'mw-revslider-left-line' );
 
 			$underline.css( {
-				'margin-left': -$table.width() / 2 + 'px',
+				'margin-left': -columnWidth / 2 + 'px',
 				'margin-right': 0,
 				float: 'left'
 			} );
