@@ -579,12 +579,9 @@ $.extend( RevisionListView.prototype, {
 		const revs = this.revisionList.getRevisions();
 
 		for ( let i = 0; i < revs.length; i++ ) {
-			const revTags = revs[ i ].getTags();
-			for ( let j = 0; j < revTags.length; j++ ) {
-				if ( tagName === revTags[ j ] ) {
-					$( '[data-revid="' + revs[ i ].id + '"]' ).parent()
-						.addClass( 'mw-revslider-revision-filter-highlight' );
-				}
+			if ( revs[ i ].getTags().indexOf( tagName ) !== -1 ) {
+				$( '[data-revid="' + revs[ i ].id + '"]' ).parent()
+					.addClass( 'mw-revslider-revision-filter-highlight' );
 			}
 		}
 	},
