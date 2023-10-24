@@ -27,7 +27,7 @@
 	} );
 
 	QUnit.test( 'tooltip is composed correctly', function ( assert ) {
-		const revisionListView = new RevisionListView(),
+		const revisionListView = new RevisionListView( new RevisionList() ),
 			revision = new Revision( {
 				revid: 1,
 				size: 230,
@@ -51,7 +51,7 @@
 	} );
 
 	QUnit.revisionSlider.testOrSkip( 'tooltip is composed correctly with en lang', function ( assert ) {
-		const revisionListView = new RevisionListView(),
+		const revisionListView = new RevisionListView( new RevisionList() ),
 			revision = new Revision( {
 				revid: 1,
 				size: 2300,
@@ -77,7 +77,7 @@
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
 
 	QUnit.test( 'empty user leads to no user line', function ( assert ) {
-		const revisionListView = new RevisionListView();
+		const revisionListView = new RevisionListView( new RevisionList() );
 
 		const $userLineHtml = revisionListView.makeUserLine( null );
 
@@ -85,7 +85,7 @@
 	} );
 
 	QUnit.test( 'user line is composed correctly', function ( assert ) {
-		const revisionListView = new RevisionListView();
+		const revisionListView = new RevisionListView( new RevisionList() );
 
 		const $userLineHtml = revisionListView.makeUserLine( 'User1' );
 
@@ -94,7 +94,7 @@
 	} );
 
 	QUnit.test( 'IP user line is composed correctly', function ( assert ) {
-		const revisionListView = new RevisionListView();
+		const revisionListView = new RevisionListView( new RevisionList() );
 
 		const $userLineHtml = revisionListView.makeUserLine( '127.0.0.1' );
 
@@ -103,7 +103,7 @@
 	} );
 
 	QUnit.test( 'empty comment leads to no comment line', function ( assert ) {
-		const revisionListView = new RevisionListView();
+		const revisionListView = new RevisionListView( new RevisionList() );
 
 		const $commentHtml = revisionListView.makeCommentLine( new Revision( {
 			parsedcomment: '   '
@@ -113,7 +113,7 @@
 	} );
 
 	QUnit.test( 'comment line is composed correctly', function ( assert ) {
-		const revisionListView = new RevisionListView();
+		const revisionListView = new RevisionListView( new RevisionList() );
 
 		const $commentLineHtml = revisionListView.makeCommentLine( new Revision( {
 			parsedcomment: '<strong>Hello</strong>'
@@ -123,7 +123,7 @@
 	} );
 
 	QUnit.test( 'positive change is composed correctly', function ( assert ) {
-		const revisionListView = new RevisionListView();
+		const revisionListView = new RevisionListView( new RevisionList() );
 
 		const $changeSizeLineHtml = revisionListView.makeChangeSizeLine( 9 );
 
@@ -132,7 +132,7 @@
 	} );
 
 	QUnit.test( 'negative change is composed correctly', function ( assert ) {
-		const revisionListView = new RevisionListView();
+		const revisionListView = new RevisionListView( new RevisionList() );
 
 		const $changeSizeLineHtml = revisionListView.makeChangeSizeLine( -9 );
 
@@ -141,7 +141,7 @@
 	} );
 
 	QUnit.test( 'neutral change is composed correctly', function ( assert ) {
-		const revisionListView = new RevisionListView();
+		const revisionListView = new RevisionListView( new RevisionList() );
 
 		const $changeSizeLineHtml = revisionListView.makeChangeSizeLine( 0 );
 
@@ -150,7 +150,7 @@
 	} );
 
 	QUnit.test( 'big change number is formatted correctly', function ( assert ) {
-		const revisionListView = new RevisionListView();
+		const revisionListView = new RevisionListView( new RevisionList() );
 
 		const $changeSizeLineHtml = revisionListView.makeChangeSizeLine( 1000 );
 
@@ -158,7 +158,7 @@
 	} );
 
 	QUnit.test( 'page size is formatted correctly', function ( assert ) {
-		const revisionListView = new RevisionListView();
+		const revisionListView = new RevisionListView( new RevisionList() );
 
 		const $pageSizeLineHtml = revisionListView.makePageSizeLine( 1337 );
 
