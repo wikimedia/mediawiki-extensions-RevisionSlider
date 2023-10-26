@@ -110,6 +110,7 @@ $.extend( SliderArrowView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {OO.ui.ButtonWidget} button
 	 */
 	arrowClickHandler: function ( button ) {
@@ -128,6 +129,7 @@ $.extend( SliderArrowView.prototype, {
 	 * buttons does not seem right in case of RevisionSlider's arrow buttons.
 	 * This method removes focus from the disabled button if such case happens.
 	 *
+	 * @private
 	 * @param {jQuery.Event} e
 	 */
 	arrowFocusHandler: function ( e ) {

@@ -81,6 +81,7 @@ $.extend( PointerView.prototype, {
 	/**
 	 * Moves the pointer to a position
 	 *
+	 * @private
 	 * @param {number} posInPx
 	 * @param {number} revisionWidth
 	 * @param {number} [baseDuration] Duration per revisionWidth, is adjusted by log() distance
@@ -103,6 +104,7 @@ $.extend( PointerView.prototype, {
 	/**
 	 * Slides the pointer to the revision it's pointing at
 	 *
+	 * @private
 	 * @param {Slider} slider
 	 * @param {number} [duration]
 	 * @return {jQuery}
@@ -115,6 +117,7 @@ $.extend( PointerView.prototype, {
 	/**
 	 * Slides the pointer to the side of the slider when it's not in the current range of revisions
 	 *
+	 * @private
 	 * @param {Slider} slider
 	 * @param {boolean} posBeforeSlider
 	 * @param {number} [duration]

@@ -118,6 +118,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * Renders the revisions container and adds the revisions to it
 	 *
+	 * @private
 	 * @param {number} containerWidth
 	 * @param {jQuery} $revisions
 	 * @return {jQuery} the revisions container
@@ -134,6 +135,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * Renders the pointer container and adds the pointers to it
 	 *
+	 * @private
 	 * @param {number} containerWidth
 	 * @return {jQuery} the pointer container
 	 */
@@ -181,6 +183,10 @@ $.extend( SliderView.prototype, {
 			} );
 	},
 
+	/**
+	 * @private
+	 * @return {jQuery[]}
+	 */
 	renderPointerContainers: function () {
 		return [
 			$( '<div>' )
@@ -201,6 +207,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * Initializes the pointer dragging logic
 	 *
+	 * @private
 	 * @param {jQuery} $revisions
 	 */
 	initPointers: function ( $revisions ) {
@@ -246,17 +253,24 @@ $.extend( SliderView.prototype, {
 		) );
 	},
 
-	/** @return {number} */
+	/**
+	 * @private
+	 * @return {number}
+	 */
 	getOlderPointerPos: function () {
 		return this.pointerOlder.getPosition();
 	},
 
-	/** @return {number} */
+	/**
+	 * @private
+	 * @return {number}
+	 */
 	getNewerPointerPos: function () {
 		return this.pointerNewer.getPosition();
 	},
 
 	/**
+	 * @private
 	 * @param {number} pos
 	 * @return {number}
 	 */
@@ -265,6 +279,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {number} pos
 	 * @return {number}
 	 */
@@ -272,6 +287,12 @@ $.extend( SliderView.prototype, {
 		return this.pointerNewer.setPosition( pos );
 	},
 
+	/**
+	 * @private
+	 * @param {MouseEvent} event
+	 * @param {number} lastValidPosition
+	 * @return {number}
+	 */
 	showTooltipsOnMouseMoveHandler: function ( event, lastValidPosition ) {
 		const pos = this.getRevisionPositionFromLeftOffset( event.pageX );
 
@@ -289,6 +310,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * React on clicks on a revision element and move pointers
 	 *
+	 * @private
 	 * @param {MouseEvent} event
 	 */
 	revisionsClickHandler: function ( event ) {
@@ -331,6 +353,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {jQuery} $revisions
 	 */
 	addClickHandlerToRevisions: function ( $revisions ) {
@@ -338,6 +361,11 @@ $.extend( SliderView.prototype, {
 			.on( 'click', this.revisionsClickHandler.bind( this ) );
 	},
 
+	/**
+	 * @private
+	 * @param {MouseEvent} event
+	 * @param {jQuery} $revisions
+	 */
 	onPointerFocus: function ( event, $revisions ) {
 		const $hoveredRevisionWrapper = this.getRevElementAtPosition(
 			$revisions,
@@ -350,6 +378,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * Build rules for tabbing when `keydown` event triggers on pointers
 	 *
+	 * @private
 	 * @param {jQuery} $pointer
 	 * @param {KeyboardEvent} event
 	 * @param {jQuery} $revisions
@@ -411,6 +440,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * Build rules for tabbing when `keyup` event triggers on pointers
 	 *
+	 * @private
 	 * @param {jQuery} $pointer
 	 * @param {KeyboardEvent} event
 	 * @param {jQuery} $revisions
@@ -438,6 +468,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * Build options for the draggable
 	 *
+	 * @private
 	 * @param {jQuery} $revisions
 	 * @param {string} containmentClass
 	 * @return {Object}
@@ -510,6 +541,11 @@ $.extend( SliderView.prototype, {
 		};
 	},
 
+	/**
+	 * @private
+	 * @param {Element} pointerElement
+	 * @return {boolean}
+	 */
 	pointerIsBlockedByOther: function ( pointerElement ) {
 		const pointer = this.whichPointer( $( pointerElement ) ),
 			isNewer = pointer.getView().isNewerPointer();
@@ -518,6 +554,14 @@ $.extend( SliderView.prototype, {
 			( !isNewer && this.getNewerPointerPos() <= this.slider.getOldestVisibleRevisionIndex() + 1 );
 	},
 
+	/**
+	 * @private
+	 * @param {Event} event
+	 * @param {Object} ui
+	 * @param {Element} pointer
+	 * @param {number} lastValidLeftPos
+	 * @return {number}
+	 */
 	draggableDragAction: function ( event, ui, pointer, lastValidLeftPos ) {
 		const pos = this.getRevisionPositionFromLeftOffset(
 			$( pointer ).offset().left + this.revisionWidth / 2
@@ -534,6 +578,11 @@ $.extend( SliderView.prototype, {
 		return pos;
 	},
 
+	/**
+	 * @private
+	 * @param {number} leftOffset
+	 * @return {number}
+	 */
 	getRevisionPositionFromLeftOffset: function ( leftOffset ) {
 		const $revisions = this.getRevisionsElement(),
 			revisionsX = utils.correctElementOffsets( $revisions.offset() ).left;
@@ -551,6 +600,9 @@ $.extend( SliderView.prototype, {
 		return pos;
 	},
 
+	/**
+	 * @private
+	 */
 	setPointerDragCursor: function () {
 		$( '.mw-revslider-pointer, ' +
 			'.mw-revslider-pointer-container, ' +
@@ -561,6 +613,9 @@ $.extend( SliderView.prototype, {
 			.addClass( 'mw-revslider-pointer-grabbing' );
 	},
 
+	/**
+	 * @private
+	 */
 	removePointerDragCursor: function () {
 		$( '.mw-revslider-pointer, ' +
 			'.mw-revslider-pointer-container, ' +
@@ -574,6 +629,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * Get the relative index for a pointer.
 	 *
+	 * @private
 	 * @param {jQuery} $pointer
 	 * @return {number}
 	 */
@@ -590,6 +646,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * Loads a new diff and optionally adds a state to the history
 	 *
+	 * @private
 	 * @param {number} diff
 	 * @param {number} oldid
 	 * @param {boolean} pushState
@@ -643,6 +700,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {jQuery} $revs
 	 * @param {number} pos
 	 * @return {jQuery}
@@ -654,6 +712,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * Gets the jQuery element of the older selected revision
 	 *
+	 * @private
 	 * @param {jQuery} $revs
 	 * @return {jQuery}
 	 */
@@ -664,6 +723,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * Gets the jQuery element of the newer selected revision
 	 *
+	 * @private
 	 * @param {jQuery} $revs
 	 * @return {jQuery}
 	 */
@@ -674,6 +734,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * Initializes the Pointer objects based on the selected revisions
 	 *
+	 * @private
 	 * @param {jQuery} $oldRevElement
 	 * @param {jQuery} $newRevElement
 	 */
@@ -692,12 +753,17 @@ $.extend( SliderView.prototype, {
 
 	/**
 	 * Resets the slider lines based on the selected revisions
+	 *
+	 * @private
 	 */
 	resetSliderLines: function () {
 		this.updateOlderSliderLineCSS();
 		this.updateNewerSliderLineCSS();
 	},
 
+	/**
+	 * @private
+	 */
 	updateOlderSliderLineCSS: function () {
 		let widthToSet = ( this.getOlderDistanceToOldest() + this.getDistanceBetweenPointers() ) *
 				this.revisionWidth;
@@ -710,6 +776,9 @@ $.extend( SliderView.prototype, {
 		);
 	},
 
+	/**
+	 * @private
+	 */
 	updateNewerSliderLineCSS: function () {
 		let widthToSet = ( this.getNewerDistanceToNewest() + this.getDistanceBetweenPointers() + 2 ) *
 				this.revisionWidth,
@@ -724,6 +793,12 @@ $.extend( SliderView.prototype, {
 		);
 	},
 
+	/**
+	 * @private
+	 * @param {jQuery} $lineContainer
+	 * @param {number} widthToSet
+	 * @param {number} marginToSet
+	 */
 	setSliderLineCSS: function ( $lineContainer, widthToSet, marginToSet ) {
 		$lineContainer.css( 'width', widthToSet );
 		if ( this.dir === 'ltr' ) {
@@ -733,14 +808,26 @@ $.extend( SliderView.prototype, {
 		}
 	},
 
+	/**
+	 * @private
+	 * @return {number}
+	 */
 	getOlderDistanceToOldest: function () {
 		return this.getOlderPointerPos() - this.slider.getOldestVisibleRevisionIndex();
 	},
 
+	/**
+	 * @private
+	 * @return {number}
+	 */
 	getNewerDistanceToNewest: function () {
 		return this.slider.getNewestVisibleRevisionIndex() - this.getNewerPointerPos();
 	},
 
+	/**
+	 * @private
+	 * @return {number}
+	 */
 	getDistanceBetweenPointers: function () {
 		return this.getNewerPointerPos() - this.getOlderPointerPos();
 	},
@@ -748,6 +835,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * Highlights revisions between the pointers
 	 *
+	 * @private
 	 * @param {jQuery} $revisions
 	 */
 	resetRevisionStylesBasedOnPointerPosition: function ( $revisions ) {
@@ -779,6 +867,8 @@ $.extend( SliderView.prototype, {
 
 	/**
 	 * Redraws the lines for the pointers
+	 *
+	 * @private
 	 */
 	redrawPointerLines: function () {
 		this.fadeOutPointerLines( false );
@@ -789,6 +879,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {boolean} fade
 	 */
 	fadeOutPointerLines: function ( fade ) {
@@ -796,6 +887,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @return {number}
 	 */
 	calculateSliderContainerWidth: function () {
@@ -853,6 +945,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {jQuery} $element
 	 * @param {number} scrollLeft
 	 * @return {number}
@@ -870,6 +963,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * Visually move pointers to the positions set and reset pointer- and slider-lines
 	 *
+	 * @private
 	 * @param {number|string} [duration]
 	 */
 	alignPointersAndLines: function ( duration ) {
@@ -894,6 +988,7 @@ $.extend( SliderView.prototype, {
 	/**
 	 * Returns the Pointer object that belongs to the passed element
 	 *
+	 * @private
 	 * @param {jQuery} $e
 	 * @return {Pointer}
 	 */
@@ -902,6 +997,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {jQuery} $slider
 	 */
 	addNewerRevisionsIfNeeded: function ( $slider ) {
@@ -934,6 +1030,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {jQuery} $slider
 	 */
 	addOlderRevisionsIfNeeded: function ( $slider ) {
@@ -973,6 +1070,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {jQuery} $slider
 	 * @param {Array} revs
 	 */
@@ -1006,6 +1104,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {jQuery} $slider
 	 * @param {Array} revs
 	 * @param {number} precedingRevisionSize optional size of the revision preceding the first of revs,
@@ -1073,6 +1172,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {jQuery} $slider
 	 * @return {boolean}
 	 */
@@ -1084,6 +1184,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {jQuery} $slider
 	 */
 	expandSlider: function ( $slider ) {
@@ -1100,6 +1201,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @return {RevisionListView}
 	 */
 	getRevisionListView: function () {
@@ -1107,6 +1209,7 @@ $.extend( SliderView.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @return {jQuery}
 	 */
 	getRevisionsElement: function () {

@@ -53,6 +53,7 @@ $.extend( Settings.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {string} name
 	 * @param {string} defaultValue
 	 * @return {string|boolean}
@@ -70,6 +71,7 @@ $.extend( Settings.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {string} name
 	 * @param {boolean} [defaultValue]
 	 * @return {boolean}
@@ -79,6 +81,7 @@ $.extend( Settings.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {string} name
 	 * @param {string} value
 	 */
@@ -93,6 +96,7 @@ $.extend( Settings.prototype, {
 	},
 
 	/**
+	 * @private
 	 * @param {string} name
 	 * @param {boolean} value
 	 */
