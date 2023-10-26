@@ -146,18 +146,20 @@ $.extend( PointerLine.prototype, {
 
 	/**
 	 * Adds colored top-borders for the diff columns fitting the line colors between pointers and columns
+	 *
+	 * @param {boolean} [show=true]
 	 */
-	addColoredColumnBorders: function () {
-		$( '#mw-diff-otitle1' ).addClass( 'mw-revslider-older-diff-column' );
-		$( '#mw-diff-ntitle1' ).addClass( 'mw-revslider-newer-diff-column' );
+	addColoredColumnBorders: function ( show ) {
+		show = show !== false;
+		$( '#mw-diff-otitle1' ).toggleClass( 'mw-revslider-older-diff-column', show );
+		$( '#mw-diff-ntitle1' ).toggleClass( 'mw-revslider-newer-diff-column', show );
 	},
 
 	/**
 	 * Remove colored top-borders for the diff columns fitting the line colors between pointers and columns
 	 */
 	removeColoredColumnBorders: function () {
-		$( '#mw-diff-otitle1' ).removeClass( 'mw-revslider-older-diff-column' );
-		$( '#mw-diff-ntitle1' ).removeClass( 'mw-revslider-newer-diff-column' );
+		this.addColoredColumnBorders( false );
 	},
 
 	/**

@@ -147,13 +147,11 @@ $.extend( RevisionList.prototype, {
  * Transforms an array of revision data returned by MediaWiki API (including user gender information) into
  * an array of Revision objects
  *
- * @param {Array} revs
+ * @param {Object[]} revs
  * @return {Revision[]}
  */
 function makeRevisions( revs ) {
-	return revs.map( function ( revData ) {
-		return new Revision( revData );
-	} );
+	return revs.map( ( data ) => new Revision( data ) );
 }
 
 module.exports = {
