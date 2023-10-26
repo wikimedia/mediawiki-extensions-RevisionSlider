@@ -254,10 +254,12 @@ $.extend( RevisionListView.prototype, {
 	 * @param {jQuery} $revisionWrapper
 	 */
 	showTooltip: function ( $revisionWrapper ) {
-		const pos = +$revisionWrapper.find( '.mw-revslider-revision' ).attr( 'data-pos' ),
-			revId = +$revisionWrapper.find( '.mw-revslider-revision' ).attr( 'data-revid' ),
-			revision = this.getRevisionWithId( revId );
-		if ( revision === null ) {
+		const $revision = $revisionWrapper.find( '.mw-revslider-revision' );
+		const revId = +$revision.attr( 'data-revid' );
+		const pos = +$revision.attr( 'data-pos' );
+
+		const revision = this.revisionList.getRevisions().find( ( rev ) => rev.getId() === revId );
+		if ( !revision ) {
 			return;
 		}
 
@@ -285,20 +287,6 @@ $.extend( RevisionListView.prototype, {
 		tooltip.toggle( true );
 		// TODO this line should move somewhere else
 		$revisionWrapper.addClass( 'mw-revslider-revision-wrapper-hovered' );
-	},
-
-	/**
-	 * @param {number} revId
-	 * @return {Revision|null}
-	 */
-	getRevisionWithId: function ( revId ) {
-		let matchedRevision = null;
-		this.revisionList.revisions.forEach( function ( revision ) {
-			if ( revision.getId() === revId ) {
-				matchedRevision = revision;
-			}
-		} );
-		return matchedRevision;
 	},
 
 	/**
@@ -369,14 +357,14 @@ $.extend( RevisionListView.prototype, {
 	 * @return {string}
 	 */
 	getUserPage: function ( user ) {
-		return ( mw.util.isIPAddress( user, false ) ? 'Special:Contributions/' : 'User:' ) + this.stripInvalidCharacters( user );
+		return ( mw.util.isIPAddress( user ) ? 'Special:Contributions/' : 'User:' ) + this.stripInvalidCharacters( user );
 	},
 
 	/**
 	 * Generates the HTML for the user label
 	 *
 	 * @param {string} userString
-	 * @param {string} userGender
+	 * @param {string} [userGender='unknown']
 	 * @return {string|jQuery}
 	 */
 	makeUserLine: function ( userString, userGender ) {
