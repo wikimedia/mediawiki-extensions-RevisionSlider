@@ -101,6 +101,8 @@ $.extend( Slider.prototype, {
 	 * @param {number} value
 	 */
 	setFirstVisibleRevisionIndex: function ( value ) {
+		const highestPossibleFirstRev = this.revisions.getLength() - this.revisionsPerWindow;
+		value = Math.min( Math.max( 0, value ), highestPossibleFirstRev );
 		this.oldestVisibleRevisionIndex = value;
 	},
 
@@ -110,11 +112,8 @@ $.extend( Slider.prototype, {
 	 * @param {number} direction - Either -1, 0 or 1
 	 */
 	slide: function ( direction ) {
-		const highestPossibleFirstRev = this.revisions.getLength() - this.revisionsPerWindow;
-
-		this.oldestVisibleRevisionIndex += direction * this.revisionsPerWindow;
-		this.oldestVisibleRevisionIndex = Math.min( this.oldestVisibleRevisionIndex, highestPossibleFirstRev );
-		this.oldestVisibleRevisionIndex = Math.max( 0, this.oldestVisibleRevisionIndex );
+		const value = this.oldestVisibleRevisionIndex + direction * this.revisionsPerWindow;
+		this.setFirstVisibleRevisionIndex( value );
 	}
 } );
 
