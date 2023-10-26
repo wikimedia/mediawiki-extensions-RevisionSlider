@@ -5,15 +5,22 @@
  * @constructor
  */
 function RevisionListView( revisionList, dir ) {
-	this.revisionList = revisionList;
+	this.revisions = revisionList.getRevisions();
+	// Cache a possibly expensive calculation, we are going to need this many times
+	this.maxChangeSize = revisionList.getBiggestChangeSize();
 	this.dir = dir;
 }
 
 $.extend( RevisionListView.prototype, {
 	/**
-	 * @type {RevisionList}
+	 * @type {Revision[]}
 	 */
-	revisionList: null,
+	revisions: null,
+
+	/**
+	 * @type {number}
+	 */
+	maxChangeSize: 0,
 
 	/**
 	 * @type {number}
@@ -66,8 +73,7 @@ $.extend( RevisionListView.prototype, {
 	 * @return {jQuery}
 	 */
 	render: function ( revisionTickWidth, positionOffset ) {
-		const revs = this.revisionList.getRevisions(),
-			maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() ),
+		const revs = this.revisions,
 			self = this;
 
 		positionOffset = positionOffset || 0;
@@ -77,7 +83,7 @@ $.extend( RevisionListView.prototype, {
 
 		for ( let i = 0; i < revs.length; i++ ) {
 			const diffSize = revs[ i ].getRelativeSize();
-			const relativeChangeSize = this.calcRelativeChangeSize( diffSize, maxChangeSizeLogged );
+			const relativeChangeSize = this.calcRelativeChangeSize( diffSize );
 
 			this.$html
 				.append( $( '<div>' )
@@ -194,12 +200,11 @@ $.extend( RevisionListView.prototype, {
 	 * @param {jQuery} $renderedList
 	 */
 	adjustRevisionSizes: function ( $renderedList ) {
-		const revs = this.revisionList.getRevisions(),
-			maxChangeSizeLogged = Math.log( this.revisionList.getBiggestChangeSize() );
+		const revs = this.revisions;
 
 		for ( let i = 0; i < revs.length; i++ ) {
 			const diffSize = revs[ i ].getRelativeSize();
-			const relativeChangeSize = this.calcRelativeChangeSize( diffSize, maxChangeSizeLogged );
+			const relativeChangeSize = this.calcRelativeChangeSize( diffSize );
 
 			$renderedList.find( '.mw-revslider-revision[data-pos="' + ( i + 1 ) + '"]' ).css( {
 				height: relativeChangeSize + 'px',
@@ -208,13 +213,17 @@ $.extend( RevisionListView.prototype, {
 		}
 	},
 
-	calcRelativeChangeSize: function ( diffSize, maxChangeSizeLogged ) {
-		if ( diffSize === 0 ) {
+	/**
+	 * @param {number} diffSize
+	 * @return {number}
+	 */
+	calcRelativeChangeSize: function ( diffSize ) {
+		if ( !diffSize ) {
 			return 0;
 		}
 		return Math.ceil(
 			( this.maxRevisionHeight - this.minRevisionHeight ) *
-				Math.log( Math.abs( diffSize ) ) / maxChangeSizeLogged ) +
+				Math.log( Math.abs( diffSize ) ) / Math.log( this.maxChangeSize ) ) +
 			this.minRevisionHeight;
 	},
 
@@ -258,7 +267,7 @@ $.extend( RevisionListView.prototype, {
 		const revId = +$revision.attr( 'data-revid' );
 		const pos = +$revision.attr( 'data-pos' );
 
-		const revision = this.revisionList.getRevisions().find( ( rev ) => rev.getId() === revId );
+		const revision = this.revisions.find( ( rev ) => rev.getId() === revId );
 		if ( !revision ) {
 			return;
 		}
@@ -564,7 +573,7 @@ $.extend( RevisionListView.prototype, {
 	 * @param {string} tagName
 	 */
 	filterHighlightSameTagRevisions: function ( tagName ) {
-		const revs = this.revisionList.getRevisions();
+		const revs = this.revisions;
 
 		for ( let i = 0; i < revs.length; i++ ) {
 			if ( revs[ i ].getTags().indexOf( tagName ) !== -1 ) {

@@ -3,14 +3,15 @@ const Revision = require( './ext.RevisionSlider.Revision.js' ).Revision,
 
 /**
  * @class RevisionList
- * @param {Revision[]} revs
- * @param {Object[]} availableTags
+ * @param {Revision[]} [revs=[]]
+ * @param {Object[]} [availableTags=[]]
  * @constructor
  */
 function RevisionList( revs, availableTags ) {
+	// Make sure RevisionList instances don't accidentally share the same Array object
 	this.revisions = [];
-	this.availableTags = availableTags;
-	this.initialize( revs );
+	this.availableTags = availableTags || [];
+	this.push( revs || [] );
 	this.view = new RevisionListView( this );
 }
 
@@ -18,7 +19,7 @@ $.extend( RevisionList.prototype, {
 	/**
 	 * @type {Revision[]}
 	 */
-	revisions: [],
+	revisions: null,
 
 	/**
 	 * @type {RevisionListView}
@@ -26,25 +27,10 @@ $.extend( RevisionList.prototype, {
 	view: null,
 
 	/**
-	 * Initializes the RevisionList from a list of Revisions
-	 *
-	 * @param {Revision[]} revs
-	 */
-	initialize: function ( revs ) {
-		this.push( revs );
-	},
-
-	/**
 	 * @return {number}
 	 */
 	getBiggestChangeSize: function () {
-		let max = 0;
-
-		for ( let i = 0; i < this.revisions.length; i++ ) {
-			max = Math.max( max, Math.abs( this.revisions[ i ].getRelativeSize() ) );
-		}
-
-		return max;
+		return Math.max( ...this.revisions.map( ( rev ) => Math.abs( rev.getRelativeSize() ) ) );
 	},
 
 	/**
