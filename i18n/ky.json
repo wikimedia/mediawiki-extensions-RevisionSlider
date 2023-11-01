@@ -7,7 +7,7 @@
 	"revisionslider-page-size": "$1 {{PLURAL:$2|байт}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|байт}}",
 	"revisionslider-label-date": "Дата",
-	"revisionslider-label-username": "{{GENDER:$1|Колдонуучунун ысымы}}",
+	"revisionslider-label-username": "{{GENDER:$1|Колдонуучунун аты}}",
 	"revisionslider-next-dialog": "Кийинки",
 	"revisionslider-close-dialog": "Жабуу"
 }
