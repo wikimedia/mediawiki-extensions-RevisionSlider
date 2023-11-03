@@ -44,15 +44,16 @@ $.extend( PointerLine.prototype, {
 	 * Calculate and set line's width and position with the given pointer and column
 	 *
 	 * @private
+	 * @param {jQuery} $sliderView
 	 * @param {jQuery} $sourcePointer
 	 * @param {jQuery} $targetColumn
 	 */
-	setCssProperties: function ( $sourcePointer, $targetColumn ) {
+	setCssProperties: function ( $sliderView, $sourcePointer, $targetColumn ) {
 		const distance = this.calculateDistance( $sourcePointer, $targetColumn );
 
 		const widthToSet = Math.abs( distance );
 		let leftToSet = ( $targetColumn.offset().left + $targetColumn.width() / 2 ) -
-			$( '.mw-revslider-revision-slider' ).offset().left;
+			$sliderView.offset().left;
 
 		if ( distance > 0 ) {
 			// targetColumn is right relative to sourcePointer
@@ -86,10 +87,11 @@ $.extend( PointerLine.prototype, {
 	 */
 	drawLine: function () {
 		const isNewer = this.pointer.getView().isNewerPointer();
+		const $sliderView = $( '.mw-revslider-revision-slider' );
 		const $targetColumn = $( isNewer ? '.diff-ntitle' : '.diff-otitle' );
 
 		// don't draw lines when the diff view is not as expected or offset not available
-		if ( !$targetColumn.length || !$targetColumn.offset() ) {
+		if ( !$sliderView.length || $sliderView.offset() || !$targetColumn.length || !$targetColumn.offset() ) {
 			return;
 		}
 
@@ -102,7 +104,7 @@ $.extend( PointerLine.prototype, {
 			.toggleClass( 'mw-revslider-lower-color', !isNewer )
 			.toggleClass( 'mw-revslider-upper-color', isNewer );
 
-		this.setCssProperties( $sourcePointer, $targetColumn );
+		this.setCssProperties( $sliderView, $sourcePointer, $targetColumn );
 
 		const columnWidth = $targetColumn.width();
 		$upperLineDiv.addClass( 'mw-revslider-bottom-line' );
