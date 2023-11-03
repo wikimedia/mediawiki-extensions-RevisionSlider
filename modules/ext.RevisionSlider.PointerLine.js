@@ -175,7 +175,7 @@ $.extend( PointerLine.prototype, {
 	setColumnBorderHooks: function () {
 		mw.hook( 'wikipage.diff' ).add( this.addColoredColumnBorders );
 		mw.hook( 'revslider.expand' ).add( this.addColoredColumnBorders );
-		mw.hook( 'revslider.collapse' ).add( this.removeColoredColumnBorders );
+		mw.hook( 'revslider.collapse' ).add( this.removeColoredColumnBorders.bind( this ) );
 	},
 
 	/**
