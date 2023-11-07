@@ -90,8 +90,7 @@ $.extend( PointerLine.prototype, {
 		const $sliderView = $( '.mw-revslider-revision-slider' );
 		const $targetColumn = $( isNewer ? '.diff-ntitle' : '.diff-otitle' );
 
-		// don't draw lines when the diff view is not as expected or offset not available
-		if ( !$sliderView.length || $sliderView.offset() || !$targetColumn.length || !$targetColumn.offset() ) {
+		if ( !$sliderView.length || !$targetColumn.length ) {
 			return;
 		}
 
