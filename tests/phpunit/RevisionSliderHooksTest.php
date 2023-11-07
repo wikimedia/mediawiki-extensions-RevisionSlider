@@ -10,11 +10,16 @@ use MediaWiki\User\StaticUserOptionsLookup;
 class RevisionSliderHooksTest extends \MediaWikiIntegrationTestCase {
 
 	public function testShouldNotLoadWithoutRevisions() {
-		// Assert
-		$output = null;
-
 		// Arrange
+		$output = $this->createMock( OutputPage::class );
+		$output->method( 'getTitle' )
+			->willReturn( $this->createMock( Title::class ) );
+
 		$diffEngine = $this->newDiffEngine( null, $output );
+
+		// Assert
+		$output->expects( $this->never() )
+			->method( 'addModules' );
 
 		// Act
 		$this->newInstance()->onDifferenceEngineViewHeader( $diffEngine );
@@ -45,16 +50,13 @@ class RevisionSliderHooksTest extends \MediaWikiIntegrationTestCase {
 	public function testShouldNotLoadWhenUserIsLoggedInAndDisabledExtension() {
 		// Arrange
 		$options = [ 'revisionslider-disable' => true ];
-		$user = $this->createMock( User::class );
-		$user->method( 'isNamed' )
-			->willReturn( true );
 
 		$output = $this->createMock( OutputPage::class );
 		$output->method( 'getTitle' )
 			->willReturn( $this->createMock( Title::class ) );
 
 		$revision = $this->createMock( RevisionRecord::class );
-		$diffEngine = $this->newDiffEngine( $revision, $output, $user );
+		$diffEngine = $this->newDiffEngine( $revision, $output, true );
 
 		// Assert
 		$output->expects( $this->never() )
@@ -94,19 +96,21 @@ class RevisionSliderHooksTest extends \MediaWikiIntegrationTestCase {
 
 	private function newDiffEngine(
 		?RevisionRecord $revision,
-		?OutputPage $output,
-		?User $user = null
+		OutputPage $output,
+		bool $isNamed = false
 	): DifferenceEngine {
+		$user = $this->createMock( User::class );
+		$user->method( 'isNamed' )
+			->willReturn( $isNamed );
+
 		$diffEngine = $this->createMock( DifferenceEngine::class );
 		$diffEngine->method( 'getOldRevision' )
 			->willReturn( $revision );
 		$diffEngine->method( 'getNewRevision' )
 			->willReturn( $revision );
-		$diffEngine->expects( $output ? $this->atLeastOnce() : $this->never() )
-			->method( 'getOutput' )
+		$diffEngine->method( 'getOutput' )
 			->willReturn( $output );
-		$diffEngine->expects( $user ? $this->once() : $this->never() )
-			->method( 'getUser' )
+		$diffEngine->method( 'getUser' )
 			->willReturn( $user );
 		return $diffEngine;
 	}

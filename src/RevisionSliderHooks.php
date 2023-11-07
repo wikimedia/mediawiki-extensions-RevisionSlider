@@ -2,13 +2,15 @@
 
 namespace MediaWiki\Extension\RevisionSlider;
 
-use Config;
-use ConfigFactory;
-use Html;
 use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
+use MediaWiki\Config\Config;
+use MediaWiki\Config\ConfigFactory;
 use MediaWiki\Diff\Hook\DifferenceEngineViewHeaderHook;
+use MediaWiki\Html\Html;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
+use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\User\User;
 use MediaWiki\User\UserOptionsLookup;
 use Message;
 use OOUI\ButtonWidget;
@@ -43,12 +45,6 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 		$oldRevRecord = $differenceEngine->getOldRevision();
 		$newRevRecord = $differenceEngine->getNewRevision();
 
-		// sometimes the old revision can be null (e.g. missing rev), and perhaps also the
-		// new one (T167359)
-		if ( $oldRevRecord === null || $newRevRecord === null ) {
-			return;
-		}
-
 		// do not show on MobileDiff page
 		// Note: Since T245172, DifferenceEngine::getTitle() is the title of the page being diffed.
 		if ( $differenceEngine->getOutput()->getTitle()->isSpecial( 'MobileDiff' ) ) {
@@ -59,21 +55,7 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 		 * If the user is logged in and has explictly requested to disable the extension don't load.
 		 */
 		$user = $differenceEngine->getUser();
-		if ( $user->isNamed() && $this->userOptionsLookup->getBoolOption( $user, 'revisionslider-disable' ) ) {
-			return;
-		}
-
-		/**
-		 * Do not show the RevisionSlider when revisions from two different pages are being compared
-		 *
-		 * Since RevisionRecord::getPageAsLinkTarget only returns a LinkTarget, which doesn't
-		 * have an equals method, compare manually by namespace and text
-		 */
-		$oldTitle = $oldRevRecord->getPageAsLinkTarget();
-		$newTitle = $newRevRecord->getPageAsLinkTarget();
-		if ( $oldTitle->getNamespace() !== $newTitle->getNamespace() ||
-			$oldTitle->getDBKey() !== $newTitle->getDBKey()
-		) {
+		if ( $this->isDisabled( $user ) || !$this->isSamePage( $oldRevRecord, $newRevRecord ) ) {
 			return;
 		}
 
@@ -100,6 +82,34 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 		$out->addJsConfigVars( 'extRevisionSliderTimeOffset', intval( $timeOffset ) );
 		$out->enableOOUI();
 
+		$out->prependHTML( $this->getContainerHtml( $autoExpand ) );
+	}
+
+	public function isDisabled( User $user ): bool {
+		return $user->isNamed() &&
+			$this->userOptionsLookup->getBoolOption( $user, 'revisionslider-disable' );
+	}
+
+	private function isSamePage( ?RevisionRecord $oldRevRecord, ?RevisionRecord $newRevRecord ): bool {
+		// sometimes the old revision can be null (e.g. missing rev), and perhaps also the
+		// new one (T167359)
+		if ( !$oldRevRecord || !$newRevRecord ) {
+			return false;
+		}
+
+		/**
+		 * Do not show the RevisionSlider when revisions from two different pages are being compared
+		 *
+		 * Since RevisionRecord::getPageAsLinkTarget only returns a LinkTarget, which doesn't
+		 * have an equals method, compare manually by namespace and text
+		 */
+		$oldTitle = $oldRevRecord->getPageAsLinkTarget();
+		$newTitle = $newRevRecord->getPageAsLinkTarget();
+		return $oldTitle->getNamespace() === $newTitle->getNamespace() &&
+			$oldTitle->getDBKey() === $newTitle->getDBKey();
+	}
+
+	private function getContainerHtml( bool $autoExpand ): string {
 		$toggleButton = new ButtonWidget( [
 			'label' => ( new Message( 'revisionslider-toggle-label' ) )->text(),
 			'indicator' => 'down',
@@ -117,21 +127,17 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 			)
 		);
 
-		$out->prependHTML(
-			Html::rawElement(
-				'div',
-				[ 'class' => 'mw-revslider-container' ],
-				$toggleButton .
-				Html::rawElement(
-					'div',
-					[
-						'class' => 'mw-revslider-slider-wrapper',
-						'style' => ( !$autoExpand ? ' display: none;' : '' ),
-					],
-					Html::rawElement(
-						'div', [ 'class' => 'mw-revslider-placeholder' ],
-						$loadingSpinner
-					)
+		return Html::rawElement( 'div',
+			[ 'class' => 'mw-revslider-container' ],
+			$toggleButton .
+			Html::rawElement( 'div',
+				[
+					'class' => 'mw-revslider-slider-wrapper',
+					'style' => $autoExpand ? null : 'display: none;',
+				],
+				Html::rawElement( 'div',
+					[ 'class' => 'mw-revslider-placeholder' ],
+					$loadingSpinner
 				)
 			)
 		);
