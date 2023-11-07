@@ -1085,12 +1085,11 @@ $.extend( SliderView.prototype, {
 		const revisionsToRender = this.slider.getRevisionList().slice( revPositionOffset );
 
 		const $addedRevisions = new RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth, revPositionOffset );
+		this.addClickHandlerToRevisions( $addedRevisions );
 
 		$addedRevisions.find( '.mw-revslider-revision-wrapper' ).each( function () {
 			$revisions.append( $( this ) );
 		} );
-
-		this.addClickHandlerToRevisions( this.getRevisionsElement() );
 
 		if ( this.shouldExpandSlider( $slider ) ) {
 			this.expandSlider( $slider );
@@ -1126,8 +1125,7 @@ $.extend( SliderView.prototype, {
 		const revisionsToRender = this.slider.getRevisionList().slice( 0, revs.length );
 
 		const $addedRevisions = new RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth );
-
-		this.addClickHandlerToRevisions( this.getRevisionsElement() );
+		this.addClickHandlerToRevisions( $addedRevisions );
 
 		if ( this.getOlderPointerPos() !== -1 ) {
 			this.setOlderPointerPos( this.getOlderPointerPos() + revisionsToRender.getLength() );
