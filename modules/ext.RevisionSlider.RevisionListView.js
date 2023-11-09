@@ -130,7 +130,6 @@ $.extend( RevisionListView.prototype, {
 				);
 		}
 
-		this.keepTooltipsOnHover();
 		this.closeTooltipsOnClick();
 
 		return this.$html;
@@ -233,18 +232,25 @@ $.extend( RevisionListView.prototype, {
 	 * Clears the current revision focus and removes highlights and tooltip
 	 */
 	removeCurrentRevisionFocus: function () {
-		window.clearTimeout( this.tooltipTimeout );
+		this.clearRevisionFocusDelay();
 		this.removeCurrentRevisionFocusHighlight();
 		$( '.mw-revslider-revision-tooltip' ).remove();
 	},
 
 	/**
-	 * Removes the current revision focus after 500ms
+	 * Removes the current revision focus after 750ms
 	 *
 	 * @private
 	 */
 	removeCurrentRevisionFocusWithDelay: function () {
-		this.tooltipTimeout = window.setTimeout( this.removeCurrentRevisionFocus.bind( this ), 500 );
+		this.tooltipTimeout = window.setTimeout( this.removeCurrentRevisionFocus.bind( this ), 750 );
+	},
+
+	/**
+	 * @private
+	 */
+	clearRevisionFocusDelay: function () {
+		window.clearTimeout( this.tooltipTimeout );
 	},
 
 	removeCurrentRevisionFocusHighlight: function () {
@@ -259,7 +265,7 @@ $.extend( RevisionListView.prototype, {
 	 */
 	setRevisionFocus: function ( $revisionWrapper ) {
 		if ( $revisionWrapper.hasClass( 'mw-revslider-revision-wrapper-hovered' ) ) {
-			window.clearTimeout( this.tooltipTimeout );
+			this.clearRevisionFocusDelay();
 			return;
 		}
 		this.removeCurrentRevisionFocus();
@@ -297,7 +303,10 @@ $.extend( RevisionListView.prototype, {
 		// eslint-disable-next-line mediawiki/class-doc
 		tooltip.$element
 			.addClass( 'mw-revslider-revision-tooltip-' + pos )
-			.on( 'focusout', this.onFocusBlur.bind( this ) );
+			.on( 'focusout', this.onFocusBlur.bind( this ) )
+			// Set event handlers so that tooltips do not disappear immediately when hover is gone
+			.on( 'mouseleave', this.removeCurrentRevisionFocusWithDelay.bind( this ) )
+			.on( 'mouseenter', this.clearRevisionFocusDelay.bind( this ) );
 
 		const $focusedRevisionPointer = $( '.mw-revslider-pointer[data-pos="' + pos + '"]' );
 		if ( $focusedRevisionPointer.length ) {
@@ -308,23 +317,6 @@ $.extend( RevisionListView.prototype, {
 		}
 
 		tooltip.toggle( true );
-	},
-
-	/**
-	 * Sets event handlers on tooltips so they do not disappear when hovering over them
-	 *
-	 * @private
-	 */
-	keepTooltipsOnHover: function () {
-		const self = this;
-
-		$( document )
-			.on( 'mouseenter', '.mw-revslider-revision-tooltip', function () {
-				window.clearTimeout( self.tooltipTimeout );
-			} )
-			.on( 'mouseleave', '.mw-revslider-revision-tooltip', function () {
-				self.removeCurrentRevisionFocusWithDelay();
-			} );
 	},
 
 	/**
