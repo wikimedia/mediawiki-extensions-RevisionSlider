@@ -5,22 +5,15 @@
  * @constructor
  */
 function RevisionListView( revisionList, dir ) {
-	this.revisions = revisionList.getRevisions();
-	// Cache a possibly expensive calculation, we are going to need this many times
-	this.maxChangeSize = revisionList.getBiggestChangeSize();
+	this.revisionList = revisionList;
 	this.dir = dir;
 }
 
 $.extend( RevisionListView.prototype, {
 	/**
-	 * @type {Revision[]}
+	 * @type {RevisionList}
 	 */
-	revisions: null,
-
-	/**
-	 * @type {number}
-	 */
-	maxChangeSize: 0,
+	revisionList: null,
 
 	/**
 	 * @type {number}
@@ -69,12 +62,13 @@ $.extend( RevisionListView.prototype, {
 
 	/**
 	 * @param {number} revisionTickWidth
-	 * @param {number} positionOffset
+	 * @param {number} [positionOffset]
 	 * @return {jQuery}
 	 */
 	render: function ( revisionTickWidth, positionOffset ) {
-		const revs = this.revisions,
-			self = this;
+		const revs = this.revisionList.getRevisions();
+		const maxChangeSize = this.revisionList.getBiggestChangeSize();
+		const self = this;
 
 		positionOffset = positionOffset || 0;
 		this.revisionWidth = revisionTickWidth;
@@ -83,7 +77,7 @@ $.extend( RevisionListView.prototype, {
 
 		for ( let i = 0; i < revs.length; i++ ) {
 			const diffSize = revs[ i ].getRelativeSize();
-			const relativeChangeSize = this.calcRelativeChangeSize( diffSize );
+			const relativeChangeSize = this.calcRelativeChangeSize( diffSize, maxChangeSize );
 
 			this.$html
 				.append( $( '<div>' )
@@ -201,11 +195,12 @@ $.extend( RevisionListView.prototype, {
 	 * @param {jQuery} $renderedList
 	 */
 	adjustRevisionSizes: function ( $renderedList ) {
-		const revs = this.revisions;
+		const revs = this.revisionList.getRevisions();
+		const maxChangeSize = this.revisionList.getBiggestChangeSize();
 
 		for ( let i = 0; i < revs.length; i++ ) {
 			const diffSize = revs[ i ].getRelativeSize();
-			const relativeChangeSize = this.calcRelativeChangeSize( diffSize );
+			const relativeChangeSize = this.calcRelativeChangeSize( diffSize, maxChangeSize );
 
 			$renderedList.find( '.mw-revslider-revision[data-pos="' + ( i + 1 ) + '"]' ).css( {
 				height: relativeChangeSize + 'px',
@@ -217,15 +212,16 @@ $.extend( RevisionListView.prototype, {
 	/**
 	 * @private
 	 * @param {number} diffSize
+	 * @param {number} maxChangeSize
 	 * @return {number}
 	 */
-	calcRelativeChangeSize: function ( diffSize ) {
+	calcRelativeChangeSize: function ( diffSize, maxChangeSize ) {
 		if ( !diffSize ) {
 			return 0;
 		}
 		return Math.ceil(
 			( this.maxRevisionHeight - this.minRevisionHeight ) *
-				Math.log( Math.abs( diffSize ) ) / Math.log( this.maxChangeSize ) ) +
+				Math.log( Math.abs( diffSize ) ) / Math.log( maxChangeSize ) ) +
 			this.minRevisionHeight;
 	},
 
@@ -291,7 +287,7 @@ $.extend( RevisionListView.prototype, {
 		const revId = +$revision.attr( 'data-revid' );
 		const pos = +$revision.attr( 'data-pos' );
 
-		const revision = this.revisions.find( ( rev ) => rev.getId() === revId );
+		const revision = this.revisionList.getRevisions().find( ( rev ) => rev.getId() === revId );
 		const tooltip = this.makeTooltip( revision, $revisionWrapper );
 
 		// eslint-disable-next-line mediawiki/class-doc
@@ -599,7 +595,7 @@ $.extend( RevisionListView.prototype, {
 	 * @param {string} tagName
 	 */
 	filterHighlightSameTagRevisions: function ( tagName ) {
-		const revs = this.revisions;
+		const revs = this.revisionList.getRevisions();
 
 		for ( let i = 0; i < revs.length; i++ ) {
 			if ( revs[ i ].getTags().indexOf( tagName ) !== -1 ) {
