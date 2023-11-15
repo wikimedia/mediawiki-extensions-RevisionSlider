@@ -22,6 +22,11 @@ $.extend( RevisionList.prototype, {
 	revisions: null,
 
 	/**
+	 * @type {Object[]}
+	 */
+	availableTags: null,
+
+	/**
 	 * @type {RevisionListView}
 	 */
 	view: null,
