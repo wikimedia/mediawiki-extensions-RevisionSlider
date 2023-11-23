@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kareyac",
 			"Դավիթ Սարոյան"
 		]
 	},
@@ -13,7 +14,7 @@
 	"revisionslider-label-page-size": "Էջի չափը",
 	"revisionslider-label-change-size": "Փոփոխության չափը",
 	"revisionslider-label-comment": "Մեկնաբանություն",
-	"revisionslider-label-username": "{{GENDER:$1|Մասնակցային անուն}}",
+	"revisionslider-label-username": "{{GENDER:$1|Մասնակից}}",
 	"revisionslider-minoredit": "Սա չնչին խմբագրում է",
 	"revisionslider-loading-failed": "Տարբերակների սահիչը չհաջողվեց բեռնել։",
 	"revisionslider-toggle-title-expand": "Բացել տարբերակների սահիչը",
