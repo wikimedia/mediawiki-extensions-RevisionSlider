@@ -8,47 +8,87 @@ const Page = require( 'wdio-mediawiki/Page' ),
 	TAG_BUBBLE_SELECTOR = '.mw-revslider-tag-row:last-of-type .mw-revslider-bubble';
 
 class DiffPage extends Page {
-	get rsMain() { return $( '.mw-revslider-revision-slider' ); }
-	get rsToggleButton() { return $( '.mw-revslider-toggle-button' ); }
-	get rsAutoExpandButton() { return $( '.mw-revslider-auto-expand-button' ); }
-	get rsLoading() { return $( '.mw-revslider-diff-loading' ); }
+	get rsMain() {
+		return $( '.mw-revslider-revision-slider' );
+	}
+
+	get rsToggleButton() {
+		return $( '.mw-revslider-toggle-button' );
+	}
+
+	get rsAutoExpandButton() {
+		return $( '.mw-revslider-auto-expand-button' );
+	}
+
+	get rsLoading() {
+		return $( '.mw-revslider-diff-loading' );
+	}
+
 	async waitUntilLoaded() {
 		await this.rsLoading.waitForDisplayed( { reverse: true } );
 	}
 
-	get rsEditOlderButton() { return $( '#differences-prevlink' ); }
-	get rsEditNewerButton() { return $( '#differences-nextlink' ); }
+	get rsEditOlderButton() {
+		return $( '#differences-prevlink' );
+	}
 
-	get rsPointerOlder() { return $( '.mw-revslider-pointer-older' ); }
-	get rsPointerNewer() { return $( '.mw-revslider-pointer-newer' ); }
+	get rsEditNewerButton() {
+		return $( '#differences-nextlink' );
+	}
+
+	get rsPointerOlder() {
+		return $( '.mw-revslider-pointer-older' );
+	}
+
+	get rsPointerNewer() {
+		return $( '.mw-revslider-pointer-newer' );
+	}
+
 	async isOlderPointerOn( num ) {
 		return await this.rsPointerOlder.getAttribute( 'data-pos' ) === num.toString();
 	}
+
 	async isNewerPointerOn( num ) {
 		return await this.rsPointerNewer.getAttribute( 'data-pos' ) === num.toString();
 	}
 
-	get rsSummaryOlder() { return $( '#mw-diff-otitle3' ); }
-	get rsSummaryNewer() { return $( '#mw-diff-ntitle3' ); }
+	get rsSummaryOlder() {
+		return $( '#mw-diff-otitle3' );
+	}
+
+	get rsSummaryNewer() {
+		return $( '#mw-diff-ntitle3' );
+	}
+
 	async showsOlderSummary( num ) {
 		const summary = await this.rsSummaryOlder.getText();
 		return await summary.includes( 'Summary ' + num );
 	}
+
 	async showsNewerSummary( num ) {
 		const summary = await this.rsSummaryNewer.getText();
 		return await summary.includes( 'Summary ' + num );
 	}
 
-	get rsUserFilterBubble() { return $( USER_BUBBLE_SELECTOR ); }
-	get rsTagFilterBubble() { return $( TAG_BUBBLE_SELECTOR ); }
+	get rsUserFilterBubble() {
+		return $( USER_BUBBLE_SELECTOR );
+	}
 
-	getRevision( num ) { return $( '.mw-revslider-revision[data-pos="' + num + '"]' ); }
+	get rsTagFilterBubble() {
+		return $( TAG_BUBBLE_SELECTOR );
+	}
+
+	getRevision( num ) {
+		return $( '.mw-revslider-revision[data-pos="' + num + '"]' );
+	}
+
 	getRevisionUp( num ) {
 		return $(
 			'//div[contains(@class,"mw-revslider-revision")][@data-pos="' + num + '"]' +
 			'/following-sibling::div[contains(@class,"revision-wrapper-up")]'
 		);
 	}
+
 	getRevisionDown( num ) {
 		return $(
 			'//div[contains(@class,"mw-revslider-revision")][@data-pos="' + num + '"]' +
@@ -60,14 +100,22 @@ class DiffPage extends Page {
 		return $( '.mw-revslider-revision-tooltip-' + num );
 	}
 
-	get backwardsArrow() { return $( '.mw-revslider-arrow-backwards' ); }
-	get forwardsArrow() { return $( '.mw-revslider-arrow-forwards' ); }
+	get backwardsArrow() {
+		return $( '.mw-revslider-arrow-backwards' );
+	}
+
+	get forwardsArrow() {
+		return $( '.mw-revslider-arrow-forwards' );
+	}
+
 	async isBackwardsArrowDisabled() {
 		return await this.backwardsArrow.getAttribute( 'aria-disabled' ) === 'true';
 	}
+
 	async isForwardsArrowDisabled() {
 		return await this.forwardsArrow.getAttribute( 'aria-disabled' ) === 'true';
 	}
+
 	waitForSliding() {
 		this.waitForAnimation( $( '.mw-revslider-revisions-container' ) );
 	}
@@ -110,8 +158,13 @@ class DiffPage extends Page {
 		super.openTitle( title, { type: 'revision', diff: '' } );
 	}
 
-	get helpDialog() { return $( '.mw-revslider-help-dialog' ); }
-	get nextHelpButton() { return $( '.mw-revslider-help-next' ); }
+	get helpDialog() {
+		return $( '.mw-revslider-help-dialog' );
+	}
+
+	get nextHelpButton() {
+		return $( '.mw-revslider-help-next' );
+	}
 
 	/**
 	 * @param {boolean} [show] Defaults to true.
@@ -233,6 +286,7 @@ class DiffPage extends Page {
 	async dragOlderPointerTo( num ) {
 		await this.rsPointerOlder.dragAndDrop( await this.getRevision( num ) );
 	}
+
 	async dragNewerPointerTo( num ) {
 		await this.rsPointerNewer.dragAndDrop( await this.getRevision( num ) );
 	}

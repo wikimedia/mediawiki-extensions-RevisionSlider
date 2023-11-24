@@ -149,5 +149,7 @@ $.extend( Revision.prototype, {
 
 module.exports = {
 	Revision: Revision,
-	setUserOffset: function ( offset ) { userOffset = offset; }
+	setUserOffset: function ( offset ) {
+		userOffset = offset;
+	}
 };
