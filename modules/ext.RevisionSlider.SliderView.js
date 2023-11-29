@@ -500,7 +500,7 @@ $.extend( SliderView.prototype, {
 
 				self.isDragged = false;
 				self.getRevisionListView().enableHover();
-				self.removePointerDragCursor();
+				self.setPointerDragCursor( false );
 
 				if ( self.escapePressed ) {
 					return;
@@ -602,28 +602,16 @@ $.extend( SliderView.prototype, {
 
 	/**
 	 * @private
+	 * @param {boolean} [show=true]
 	 */
-	setPointerDragCursor: function () {
+	setPointerDragCursor: function ( show ) {
 		$( '.mw-revslider-pointer, ' +
 			'.mw-revslider-pointer-container, ' +
 			'.mw-revslider-pointer-container-newer, ' +
 			'.mw-revslider-pointer-container-older, ' +
 			'.mw-revslider-pointer-line, ' +
 			'.mw-revslider-revision-wrapper' )
-			.addClass( 'mw-revslider-pointer-grabbing' );
-	},
-
-	/**
-	 * @private
-	 */
-	removePointerDragCursor: function () {
-		$( '.mw-revslider-pointer, ' +
-			'.mw-revslider-pointer-container, ' +
-			'.mw-revslider-pointer-container-newer, ' +
-			'.mw-revslider-pointer-container-older, ' +
-			'.mw-revslider-pointer-line, ' +
-			'.mw-revslider-revision-wrapper' )
-			.removeClass( 'mw-revslider-pointer-grabbing' );
+			.toggleClass( 'mw-revslider-pointer-grabbing', show !== false );
 	},
 
 	/**
