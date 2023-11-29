@@ -10,8 +10,8 @@ use MediaWiki\Html\Html;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
-use MediaWiki\User\UserOptionsLookup;
 use Message;
 use OOUI\ButtonWidget;
 
