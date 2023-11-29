@@ -33,7 +33,7 @@ $.extend( Revision.prototype, {
 	/**
 	 * @type {string[]}
 	 */
-	tags: [],
+	tags: null,
 
 	/**
 	 * @type {boolean}

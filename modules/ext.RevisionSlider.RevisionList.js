@@ -66,6 +66,9 @@ $.extend( RevisionList.prototype, {
 		return this.availableTags;
 	},
 
+	/**
+	 * @return {Object.<string,string>}
+	 */
 	getUserGenders: function () {
 		const userGenders = {};
 		this.revisions.forEach( function ( revision ) {
