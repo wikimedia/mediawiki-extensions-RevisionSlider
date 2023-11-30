@@ -2,7 +2,7 @@
 
 use MediaWiki\Extension\RevisionSlider\RevisionSliderHooks;
 use MediaWiki\Revision\RevisionRecord;
-use MediaWiki\User\StaticUserOptionsLookup;
+use MediaWiki\User\Options\StaticUserOptionsLookup;
 
 /**
  * @covers \MediaWiki\Extension\RevisionSlider\RevisionSliderHooks
