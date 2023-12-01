@@ -157,7 +157,7 @@
 			]
 		},
 		"ext.RevisionSlider.dialogImages": {
-			"class": "ResourceLoaderImageModule",
+			"class": "MediaWiki\\ResourceLoader\\ImageModule",
 			"selector": ".mw-revslider-help-dialog-slide-{name}",
 			"images": {
 				"1": {
