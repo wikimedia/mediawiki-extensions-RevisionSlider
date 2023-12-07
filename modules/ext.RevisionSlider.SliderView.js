@@ -315,8 +315,12 @@ $.extend( SliderView.prototype, {
 	 */
 	revisionsClickHandler: function ( event ) {
 		const clickedPos = this.getRevisionPositionFromLeftOffset( event.pageX ),
-			$revisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), clickedPos ).parent(),
-			hasClickedTop = event.pageY - $revisionWrapper.offset().top < $revisionWrapper.height() / 2;
+			$revisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), clickedPos ).parent();
+		// Fail-safe in case a mouse click outside the valid range is picked up
+		if ( !$revisionWrapper.length ) {
+			return;
+		}
+		const hasClickedTop = event.pageY - $revisionWrapper.offset().top < $revisionWrapper.height() / 2;
 		let newNewerPointerPos, newOlderPointerPos;
 
 		if ( hasClickedTop &&
