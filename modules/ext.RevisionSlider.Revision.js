@@ -103,19 +103,11 @@ $.extend( Revision.prototype, {
 	/**
 	 * Uses moment.js to format the date
 	 *
-	 * @param {string} rawDate
-	 * @return {string}
-	 */
-	formatDate: function ( rawDate ) {
-		const offset = parseInt( userOffset );
-		return moment( rawDate ).utcOffset( offset ).format( 'LLL' );
-	},
-
-	/**
 	 * @return {string}
 	 */
 	getFormattedDate: function () {
-		return this.formatDate( this.timestamp );
+		const offset = parseInt( userOffset );
+		return moment( this.timestamp ).utcOffset( offset ).format( 'LLL' );
 	},
 
 	/**
