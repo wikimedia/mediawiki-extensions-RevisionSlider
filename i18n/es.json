@@ -8,7 +8,8 @@
 			"Jelou",
 			"Macofe",
 			"Rjelves",
-			"Rubentl134"
+			"Rubentl134",
+			"Rodney Araujo"
 		]
 	},
 	"revisionslider": "Deslizador de revisiones",
@@ -35,7 +36,7 @@
 	"revisionslider-help-dialog-slide2": "Cada barra representa una revisión de una página. Las barras de arriba muestran un crecimiento en el tamaño de la página, las barras de abajo muestran una reducción. En la imagen, la revisión 1 representa el contenido agregado, mientras que la revisión 2 representa la eliminación de contenido.",
 	"revisionslider-help-dialog-slide3a": "Para comparar determinadas revisiones, selecciónelas utilizando los dos punteros de color.\n\nEl puntero superior controla la revisión más reciente, el inferior la más antigua.\n\nMueva los punteros arrastrando y soltando o haciendo clic en la línea deslizante.",
 	"revisionslider-help-dialog-slide4": "Usa las flechas de avanzar y retroceder para moverte en el historial de revisiones y mostrar revisiones más nuevas y más antiguas.",
-	"revisionslider-tutorial": "Tutorial sobre el Deslizador de revisiones",
+	"revisionslider-tutorial": "Tutorial sobre el deslizador de revisiones",
 	"revisionslider-previous-dialog": "Anterior",
 	"revisionslider-next-dialog": "Siguiente",
 	"revisionslider-close-dialog": "Cerrar"
