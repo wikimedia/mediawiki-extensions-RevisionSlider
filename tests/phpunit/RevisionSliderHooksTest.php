@@ -1,8 +1,13 @@
 <?php
 
+use MediaWiki\Config\ConfigFactory;
+use MediaWiki\Config\HashConfig;
 use MediaWiki\Extension\RevisionSlider\RevisionSliderHooks;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Title\Title;
 use MediaWiki\User\Options\StaticUserOptionsLookup;
+use MediaWiki\User\User;
 
 /**
  * @covers \MediaWiki\Extension\RevisionSlider\RevisionSliderHooks
