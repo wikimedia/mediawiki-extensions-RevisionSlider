@@ -8,7 +8,7 @@
 			"V111P"
 		]
 	},
-	"revisionslider-preference-disable": "Скриване на плъзгача на промените",
+	"revisionslider-preference-disable": "Да не се показва плъзгача на промените",
 	"revisionslider-toggle-label": "Интерактивен преглед на историята",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|байт|байта}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|байт|байта}}",
@@ -18,6 +18,7 @@
 	"revisionslider-label-comment": "Резюме на редакцията",
 	"revisionslider-label-username": "{{GENDER:$1|Потребителско име}}",
 	"revisionslider-minoredit": "Това е малка промяна",
+	"revisionslider-loading-failed": "Плъзгачът на промените не успя да се зареди.",
 	"revisionslider-toggle-title-expand": "Отваряне на слайдера на версиите",
 	"revisionslider-toggle-title-collapse": "Свиване на слайдера на версии",
 	"revisionslider-turn-on-auto-expand-title": "Автоматично отворен слайдер на версии",
