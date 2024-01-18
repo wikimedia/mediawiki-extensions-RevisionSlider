@@ -3,6 +3,7 @@
 		"authors": [
 			"Brettchenweber",
 			"Cornelius Kibelka (WMDE)",
+			"Filzstift",
 			"Kghbln",
 			"Metalhead64",
 			"ThePiscin"
@@ -19,7 +20,7 @@
 	"revisionslider-label-change-size": "Größe der Änderung",
 	"revisionslider-label-comment": "Bearbeitungszusammenfassung",
 	"revisionslider-label-username": "{{GENDER:$1|Benutzername}}",
-	"revisionslider-minoredit": "Dies ist eine kleine Bearbeitung",
+	"revisionslider-minoredit": "Dies ist eine kleine Änderung",
 	"revisionslider-loading-failed": "Der Versionsblätterer konnte nicht geladen werden.",
 	"revisionslider-toggle-title-expand": "Versionsblätterer öffnen",
 	"revisionslider-toggle-title-collapse": "Versionsblätterer einklappen",
