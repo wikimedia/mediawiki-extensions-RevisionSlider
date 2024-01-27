@@ -82,8 +82,8 @@ $.extend( SliderView.prototype, {
 		this.pointerOlder = this.pointerOlder || new Pointer( 'mw-revslider-pointer-older' );
 		this.pointerNewer = this.pointerNewer || new Pointer( 'mw-revslider-pointer-newer' );
 
-		this.backwardArrowButton = sliderArrowView.renderBackwardArrow();
-		this.forwardArrowButton = sliderArrowView.renderForwardArrow();
+		this.backwardArrowButton = sliderArrowView.renderArrowButton( -1 );
+		this.forwardArrowButton = sliderArrowView.renderArrowButton( 1 );
 
 		this.$element = $( '<div>' )
 			.addClass( 'mw-revslider-revision-slider' )
