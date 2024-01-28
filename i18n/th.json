@@ -3,11 +3,14 @@
 		"authors": [
 			"Aefgh39622",
 			"Bluegram",
+			"Ekminarin",
 			"Horus"
 		]
 	},
 	"revisionslider-preference-disable": "ไม่แสดงแถบเลื่อนรุ่นแก้ไข",
 	"revisionslider-toggle-label": "เรียกดูประวัติแบบโต้ตอบ",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|ไบต์}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|ไบต์}}",
 	"revisionslider-label-date": "วันที่",
 	"revisionslider-label-page-size": "ขนาดหน้า",
 	"revisionslider-label-change-size": "ขนาดการเปลี่ยนแปลง",
