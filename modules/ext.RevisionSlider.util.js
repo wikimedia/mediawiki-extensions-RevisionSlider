@@ -43,7 +43,7 @@ function touchEventConverter( event ) {
 
 // fixes issues with zoomed Chrome on touch see https://github.com/jquery/jquery/issues/3187
 function correctElementOffsets( offset ) {
-	const isChrome = /chrom(e|ium)/.test( navigator.userAgent.toLowerCase() );
+	const isChrome = /Chrom(e|ium)/i.test( navigator.userAgent );
 
 	// since this problem only seems to appear with Chrome just use this in Chrome
 	if ( !isChrome ) {
@@ -74,7 +74,7 @@ function correctElementOffsets( offset ) {
  * @return {string} - 'default', 'negative' or 'reverse'
  */
 function determineRtlScrollType() {
-	const isChrome = /chrom(e|ium)/.test( navigator.userAgent.toLowerCase() );
+	const isChrome = /Chrom(e|ium)/i.test( navigator.userAgent );
 
 	// in Chrome V8 5.8.283 and 5.9.211 the detection below gives wrong results leading to strange behavior
 	// Chrome V8 6.0 seems to fix that issue so this workaround can be removed then
