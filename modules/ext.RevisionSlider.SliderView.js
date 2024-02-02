@@ -906,7 +906,6 @@ $.extend( SliderView.prototype, {
 		this.backwardArrowButton.setDisabled( this.slider.isAtStart() );
 		this.forwardArrowButton.setDisabled( this.slider.isAtEnd() );
 
-		// eslint-disable-next-line no-jquery/no-animate
 		$animatedElement.animate(
 			{ scrollLeft: this.getScrollLeft( $animatedElement ) },
 			duration,
