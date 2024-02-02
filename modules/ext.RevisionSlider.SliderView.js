@@ -906,14 +906,9 @@ $.extend( SliderView.prototype, {
 		this.backwardArrowButton.setDisabled( this.slider.isAtStart() );
 		this.forwardArrowButton.setDisabled( this.slider.isAtEnd() );
 
-		const animateObj = { scrollLeft: this.slider.getOldestVisibleRevisionIndex() * this.revisionWidth };
-		if ( this.dir === 'rtl' ) {
-			animateObj.scrollLeft = this.getRtlScrollLeft( $animatedElement, animateObj.scrollLeft );
-		}
-
 		// eslint-disable-next-line no-jquery/no-animate
 		$animatedElement.animate(
-			animateObj,
+			{ scrollLeft: this.getScrollLeft( $animatedElement ) },
 			duration,
 			null,
 			function () {
@@ -939,11 +934,11 @@ $.extend( SliderView.prototype, {
 	/**
 	 * @private
 	 * @param {jQuery} $element
-	 * @param {number} scrollLeft
 	 * @return {number}
 	 */
-	getRtlScrollLeft: function ( $element, scrollLeft ) {
-		if ( this.rtlScrollLeftType === 'reverse' ) {
+	getScrollLeft: function ( $element ) {
+		const scrollLeft = this.slider.getOldestVisibleRevisionIndex() * this.revisionWidth;
+		if ( this.dir !== 'rtl' || this.rtlScrollLeftType === 'reverse' ) {
 			return scrollLeft;
 		}
 		if ( this.rtlScrollLeftType === 'negative' ) {
@@ -1146,11 +1141,7 @@ $.extend( SliderView.prototype, {
 		const revIdNew = this.getRevElementAtPosition( $revisions, this.getNewerPointerPos() ).data( 'revid' );
 		this.diffPage.replaceState( revIdNew, revIdOld, this );
 
-		const scrollLeft = this.slider.getOldestVisibleRevisionIndex() * this.revisionWidth;
-		$revisionContainer.scrollLeft( scrollLeft );
-		if ( this.dir === 'rtl' ) {
-			$revisionContainer.scrollLeft( this.getRtlScrollLeft( $revisionContainer, scrollLeft ) );
-		}
+		$revisionContainer.scrollLeft( this.getScrollLeft( $revisionContainer ) );
 
 		if ( this.shouldExpandSlider( $slider ) ) {
 			this.expandSlider( $slider );
