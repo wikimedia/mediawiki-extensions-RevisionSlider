@@ -74,14 +74,6 @@ function correctElementOffsets( offset ) {
  * @return {string} - 'default', 'negative' or 'reverse'
  */
 function determineRtlScrollType() {
-	const isChrome = /Chrom(e|ium)/i.test( navigator.userAgent );
-
-	// in Chrome V8 5.8.283 and 5.9.211 the detection below gives wrong results leading to strange behavior
-	// Chrome V8 6.0 seems to fix that issue so this workaround can be removed then
-	if ( isChrome ) {
-		return 'default';
-	}
-
 	const $dummy = $( '<div>' )
 		.css( {
 			dir: 'rtl',
@@ -91,7 +83,7 @@ function determineRtlScrollType() {
 			top: '-1000px',
 			overflow: 'scroll'
 		} )
-		.text( 'ABCD' )
+		.text( 'ABCDE' )
 		.appendTo( 'body' )[ 0 ];
 	if ( $dummy.scrollLeft > 0 ) {
 		return 'default';
