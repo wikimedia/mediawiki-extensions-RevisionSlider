@@ -314,8 +314,15 @@ $.extend( SliderView.prototype, {
 	 * @param {MouseEvent} event
 	 */
 	revisionsClickHandler: function ( event ) {
-		const clickedPos = this.getRevisionPositionFromLeftOffset( event.pageX ),
-			$revisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), clickedPos ).parent();
+		let clickedPos;
+		// Just use the information from the element that received the click, if available
+		const $revElement = $( event.currentTarget ).find( '.mw-revslider-revision' );
+		if ( $revElement.length === 1 ) {
+			clickedPos = $revElement.data( 'pos' );
+		} else {
+			clickedPos = this.getRevisionPositionFromLeftOffset( event.pageX );
+		}
+		const $revisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), clickedPos ).parent();
 		// Fail-safe in case a mouse click outside the valid range is picked up
 		if ( !$revisionWrapper.length ) {
 			return;
