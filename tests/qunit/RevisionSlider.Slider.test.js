@@ -32,7 +32,7 @@
 
 	QUnit.test( 'Given 200 revisions sliding once increases oldestVisibleRevisionIndex by the number of revisions per window', function ( assert ) {
 		const slider = new Slider( makeNRevisions( 200 ) );
-		slider.setRevisionsPerWindow( 50 );
+		slider.setRevisionsPerWindow( 49.999 );
 		slider.slide( 1 );
 
 		assert.strictEqual( slider.getOldestVisibleRevisionIndex(), 50 );

@@ -53,7 +53,7 @@ $.extend( Slider.prototype, {
 	 * @param {number} n
 	 */
 	setRevisionsPerWindow: function ( n ) {
-		this.revisionsPerWindow = n;
+		this.revisionsPerWindow = Math.round( n );
 	},
 
 	/**
@@ -85,14 +85,16 @@ $.extend( Slider.prototype, {
 	 * @return {boolean}
 	 */
 	isAtStart: function () {
-		return this.getOldestVisibleRevisionIndex() === 0 || this.revisions.getLength() <= this.revisionsPerWindow;
+		return this.getOldestVisibleRevisionIndex() <= 0 ||
+			this.revisions.getLength() <= this.revisionsPerWindow;
 	},
 
 	/**
 	 * @return {boolean}
 	 */
 	isAtEnd: function () {
-		return this.getNewestVisibleRevisionIndex() === this.revisions.getLength() - 1 || this.revisions.getLength() <= this.revisionsPerWindow;
+		return this.getNewestVisibleRevisionIndex() >= this.revisions.getLength() - 1 ||
+			this.revisions.getLength() <= this.revisionsPerWindow;
 	},
 
 	/**

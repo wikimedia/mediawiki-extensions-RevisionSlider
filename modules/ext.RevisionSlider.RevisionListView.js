@@ -62,7 +62,7 @@ $.extend( RevisionListView.prototype, {
 
 	/**
 	 * @param {number} revisionTickWidth
-	 * @param {number} [positionOffset]
+	 * @param {number} [positionOffset=0]
 	 * @return {jQuery}
 	 */
 	render: function ( revisionTickWidth, positionOffset ) {
