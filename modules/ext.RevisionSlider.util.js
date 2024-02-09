@@ -84,16 +84,20 @@ function determineRtlScrollType() {
 			overflow: 'scroll'
 		} )
 		.text( 'ABCDE' )
-		.appendTo( 'body' )[ 0 ];
-	if ( $dummy.scrollLeft > 0 ) {
-		return 'default';
+		.appendTo( 'body' );
+	const definer = $dummy[ 0 ];
+	let type = 'reverse';
+
+	if ( definer.scrollLeft > 0 ) {
+		type = 'default';
 	} else {
-		$dummy.scrollLeft = 1;
-		if ( $dummy.scrollLeft === 0 ) {
-			return 'negative';
+		definer.scrollLeft = 1;
+		if ( definer.scrollLeft === 0 ) {
+			type = 'negative';
 		}
 	}
-	return 'reverse';
+	$dummy.remove();
+	return type;
 }
 
 function calculateRevisionsPerWindow( margin, revisionWidth ) {
