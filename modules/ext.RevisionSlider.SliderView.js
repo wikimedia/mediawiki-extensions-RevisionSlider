@@ -818,27 +818,24 @@ $.extend( SliderView.prototype, {
 	resetRevisionStylesBasedOnPointerPosition: function ( $revisions ) {
 		const olderRevPosition = this.getOlderPointerPos(),
 			newerRevPosition = this.getNewerPointerPos(),
-			startPosition = this.slider.getOldestVisibleRevisionIndex(),
-			endPosition = this.slider.getNewestVisibleRevisionIndex();
-		let positionIndex = startPosition;
+			// FIXME: Why do these methods return values that are off by one?
+			startPosition = this.slider.getOldestVisibleRevisionIndex() + 1,
+			endPosition = this.slider.getNewestVisibleRevisionIndex() + 1;
 
+		// We need to reset these in case they are outside the visible range
 		$revisions.find( '.mw-revslider-revision' )
 			.removeClass( 'mw-revslider-revision-old mw-revslider-revision-new' );
-		$revisions.find( '.mw-revslider-revision-wrapper' )
-			.removeClass( 'mw-revslider-revision-intermediate mw-revslider-revision-older mw-revslider-revision-newer' );
 
 		this.getRevElementAtPosition( $revisions, olderRevPosition ).addClass( 'mw-revslider-revision-old' );
 		this.getRevElementAtPosition( $revisions, newerRevPosition ).addClass( 'mw-revslider-revision-new' );
 
-		while ( positionIndex <= endPosition ) {
-			positionIndex++;
-			if ( positionIndex <= olderRevPosition ) {
-				this.getRevElementAtPosition( $revisions, positionIndex ).parent().addClass( 'mw-revslider-revision-older' );
-			} else if ( positionIndex > olderRevPosition && positionIndex < newerRevPosition ) {
-				this.getRevElementAtPosition( $revisions, positionIndex ).parent().addClass( 'mw-revslider-revision-intermediate' );
-			} else if ( positionIndex >= newerRevPosition ) {
-				this.getRevElementAtPosition( $revisions, positionIndex ).parent().addClass( 'mw-revslider-revision-newer' );
-			}
+		for ( let i = startPosition; i <= endPosition; i++ ) {
+			const older = i <= olderRevPosition;
+			const newer = i >= newerRevPosition;
+			this.getRevElementAtPosition( $revisions, i ).parent()
+				.toggleClass( 'mw-revslider-revision-older', older )
+				.toggleClass( 'mw-revslider-revision-intermediate', !older && !newer )
+				.toggleClass( 'mw-revslider-revision-newer', newer );
 		}
 	},
 
