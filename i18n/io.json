@@ -6,12 +6,13 @@
 		]
 	},
 	"revisionslider-preference-disable": "Ne montrez la kronologio di revizuri (RevisionSlider)",
-	"revisionslider-toggle-label": "Navigado interagiva di la historio dil artiklo",
+	"revisionslider-toggle-label": "Deskripto interagiva pri la kronologio dil artiklo",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bicoko*|bicoki*}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bicoko*|bicoki*}}",
 	"revisionslider-label-date": "Dato",
 	"revisionslider-label-username": "{{GENDER:$1|Uzero-nomo}}",
 	"revisionslider-minoredit": "Ico esas mikra redaktajo",
+	"revisionslider-arrow-tooltip-older": "Videz anciena modifikuri",
 	"revisionslider-previous-dialog": "Antea",
 	"revisionslider-next-dialog": "Sequanta",
 	"revisionslider-close-dialog": "Klozez"
