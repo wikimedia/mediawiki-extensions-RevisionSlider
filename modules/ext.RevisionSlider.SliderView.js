@@ -705,7 +705,7 @@ $.extend( SliderView.prototype, {
 	 * @return {jQuery}
 	 */
 	getRevElementAtPosition: function ( $revs, pos ) {
-		return $revs.find( 'div.mw-revslider-revision[data-pos="' + pos + '"]' );
+		return $revs.find( '.mw-revslider-revision[data-pos="' + pos + '"]' );
 	},
 
 	/**
@@ -716,7 +716,7 @@ $.extend( SliderView.prototype, {
 	 * @return {jQuery}
 	 */
 	getOldRevElement: function ( $revs ) {
-		return $revs.find( 'div.mw-revslider-revision[data-revid="' + mw.config.get( 'wgDiffOldId' ) + '"]' );
+		return $revs.find( '.mw-revslider-revision[data-revid="' + mw.config.get( 'wgDiffOldId' ) + '"]' );
 	},
 
 	/**
@@ -727,7 +727,7 @@ $.extend( SliderView.prototype, {
 	 * @return {jQuery}
 	 */
 	getNewRevElement: function ( $revs ) {
-		return $revs.find( 'div.mw-revslider-revision[data-revid="' + mw.config.get( 'wgDiffNewId' ) + '"]' );
+		return $revs.find( '.mw-revslider-revision[data-revid="' + mw.config.get( 'wgDiffNewId' ) + '"]' );
 	},
 
 	/**
@@ -824,9 +824,9 @@ $.extend( SliderView.prototype, {
 			endPosition = this.slider.getNewestVisibleRevisionIndex();
 		let positionIndex = startPosition;
 
-		$revisions.find( 'div.mw-revslider-revision' )
+		$revisions.find( '.mw-revslider-revision' )
 			.removeClass( 'mw-revslider-revision-old mw-revslider-revision-new' );
-		$revisions.find( 'div.mw-revslider-revision-wrapper' )
+		$revisions.find( '.mw-revslider-revision-wrapper' )
 			.removeClass( 'mw-revslider-revision-intermediate mw-revslider-revision-older mw-revslider-revision-newer' );
 
 		this.getRevElementAtPosition( $revisions, olderRevPosition ).addClass( 'mw-revslider-revision-old' );
