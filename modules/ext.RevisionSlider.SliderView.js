@@ -360,7 +360,7 @@ $.extend( SliderView.prototype, {
 			return;
 		}
 
-		this.updatePointersAndDiffView( newNewerPointerPos, newOlderPointerPos, true );
+		this.updatePointersAndDiffView( newNewerPointerPos, newOlderPointerPos );
 	},
 
 	/**
@@ -469,7 +469,7 @@ $.extend( SliderView.prototype, {
 			$revisions, this.getOlderPointerPos()
 		).data( 'revid' );
 
-		this.lastRequest = this.refreshDiffView( diff, oldid, true );
+		this.lastRequest = this.refreshDiffView( diff, oldid );
 
 		this.lastRequest.then( function () {
 			$pointer.trigger( 'focus' );
@@ -534,7 +534,7 @@ $.extend( SliderView.prototype, {
 					return;
 				}
 
-				self.refreshDiffView( diff, oldid, true );
+				self.refreshDiffView( diff, oldid );
 				self.alignPointersAndLines( 0 );
 				self.resetRevisionStylesBasedOnPointerPosition( $revisions );
 			},
@@ -648,12 +648,12 @@ $.extend( SliderView.prototype, {
 	 * @private
 	 * @param {number} diff
 	 * @param {number} oldid
-	 * @param {boolean} pushState
+	 * @param {boolean} [pushState=true] False to skip manipulating the browser history
 	 * @return {jQuery}
 	 */
 	refreshDiffView: function ( diff, oldid, pushState ) {
 		this.diffPage.refresh( diff, oldid, this );
-		if ( pushState ) {
+		if ( pushState !== false ) {
 			this.diffPage.pushState( diff, oldid, this );
 		}
 		return this.diffPage.lastRequest;
@@ -662,16 +662,14 @@ $.extend( SliderView.prototype, {
 	showNextDiff: function () {
 		this.updatePointersAndDiffView(
 			this.getNewerPointerPos() + 1,
-			this.getNewerPointerPos(),
-			true
+			this.getNewerPointerPos()
 		);
 	},
 
 	showPrevDiff: function () {
 		this.updatePointersAndDiffView(
 			this.getOlderPointerPos(),
-			this.getOlderPointerPos() - 1,
-			true
+			this.getOlderPointerPos() - 1
 		);
 	},
 
@@ -680,7 +678,7 @@ $.extend( SliderView.prototype, {
 	 *
 	 * @param {number} newPointerPos
 	 * @param {number} oldPointerPos
-	 * @param {boolean} pushState
+	 * @param {boolean} [pushState=true] False to skip manipulating the browser history
 	 */
 	updatePointersAndDiffView: function (
 		newPointerPos,
