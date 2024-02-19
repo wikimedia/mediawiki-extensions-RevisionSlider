@@ -756,49 +756,29 @@ $.extend( SliderView.prototype, {
 	 * @private
 	 */
 	resetSliderLines: function () {
-		this.updateOlderSliderLineCSS();
-		this.updateNewerSliderLineCSS();
-	},
-
-	/**
-	 * @private
-	 */
-	updateOlderSliderLineCSS: function () {
-		let widthToSet = ( this.getOlderDistanceToOldest() + this.getDistanceBetweenPointers() ) *
-				this.revisionWidth;
-		const marginToSet = -this.revisionWidth / 2;
-
-		widthToSet = Math.min( widthToSet, this.calculateSliderContainerWidth() + this.revisionWidth );
-
 		this.setSliderLineCSS(
-			$( '.mw-revslider-pointer-container-older' ), widthToSet, marginToSet
+			$( '.mw-revslider-pointer-container-older' ),
+			this.getOlderDistanceToOldest() + this.getDistanceBetweenPointers(),
+			0
 		);
-	},
-
-	/**
-	 * @private
-	 */
-	updateNewerSliderLineCSS: function () {
-		let widthToSet = ( this.getNewerDistanceToNewest() + this.getDistanceBetweenPointers() + 2 ) *
-				this.revisionWidth,
-			marginToSet = ( this.getOlderDistanceToOldest() * this.revisionWidth ) -
-				this.revisionWidth / 2;
-
-		widthToSet = Math.min( widthToSet, this.calculateSliderContainerWidth() + this.revisionWidth );
-		marginToSet = Math.max( marginToSet, -0.5 * this.revisionWidth );
-
 		this.setSliderLineCSS(
-			$( '.mw-revslider-pointer-container-newer' ), widthToSet, marginToSet
+			$( '.mw-revslider-pointer-container-newer' ),
+			this.getNewerDistanceToNewest() + this.getDistanceBetweenPointers() + 2,
+			this.getOlderDistanceToOldest()
 		);
 	},
 
 	/**
 	 * @private
 	 * @param {jQuery} $lineContainer
-	 * @param {number} widthToSet
-	 * @param {number} marginToSet
+	 * @param {number} widthToSet Total width of the line, in position units
+	 * @param {number} marginToSet Start of the line from the left, in position units
 	 */
 	setSliderLineCSS: function ( $lineContainer, widthToSet, marginToSet ) {
+		const maxWidth = this.calculateSliderContainerWidth() + this.revisionWidth;
+		widthToSet = Math.min( widthToSet * this.revisionWidth, maxWidth );
+		marginToSet = Math.max( 0, marginToSet * this.revisionWidth ) - this.revisionWidth / 2;
+
 		$lineContainer.css( 'width', widthToSet );
 		if ( this.dir === 'ltr' ) {
 			$lineContainer.css( 'margin-left', marginToSet );
@@ -825,7 +805,7 @@ $.extend( SliderView.prototype, {
 
 	/**
 	 * @private
-	 * @return {number}
+	 * @return {number} difference between the two positions, typically 1
 	 */
 	getDistanceBetweenPointers: function () {
 		return this.getNewerPointerPos() - this.getOlderPointerPos();
