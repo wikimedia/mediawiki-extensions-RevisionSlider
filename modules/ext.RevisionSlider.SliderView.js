@@ -302,7 +302,9 @@ $.extend( SliderView.prototype, {
 
 		const $hoveredRevisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), pos ).parent();
 		this.getRevisionListView().removeAllRevisionPreviewHighlights();
-		this.getRevisionListView().onRevisionHover( $hoveredRevisionWrapper, event );
+		if ( $hoveredRevisionWrapper.length ) {
+			this.getRevisionListView().onRevisionHover( $hoveredRevisionWrapper, event );
+		}
 
 		return pos;
 	},

@@ -113,9 +113,7 @@ $.extend( RevisionListView.prototype, {
 						)
 					)
 					.on( 'mouseenter', function ( event ) {
-						if ( self.allowRevisionPreviewHighlights ) {
-							self.onRevisionHover( $( this ), event );
-						}
+						self.onRevisionHover( $( this ), event );
 					} )
 					.on( 'mouseleave', function () {
 						self.removeAllRevisionPreviewHighlights();
@@ -144,7 +142,9 @@ $.extend( RevisionListView.prototype, {
 	 * @param {MouseEvent} event
 	 */
 	onRevisionHover: function ( $revisionWrapper, event ) {
-		if ( !$revisionWrapper.length || $( event.target ).closest( '.mw-revslider-revision-tooltip' ).length ) {
+		if ( !this.allowRevisionPreviewHighlights ||
+			$( event.target ).closest( '.mw-revslider-revision-tooltip' ).length
+		) {
 			return;
 		}
 
