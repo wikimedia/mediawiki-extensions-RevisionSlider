@@ -162,12 +162,12 @@ $.extend( SliderView.prototype, {
 			.on( 'click', this.revisionsClickHandler.bind( this ) )
 			.on( 'mouseout', function () {
 				if ( !self.isDragged ) {
-					self.getRevisionListView().unsetAllHovered();
+					self.getRevisionListView().removeAllRevisionPreviewHighlights();
 				}
 			} )
 			.on( 'mouseover', function ( event ) {
 				if ( !self.isDragged ) {
-					lastMouseMoveRevisionPos = self.showTooltipsOnMouseMoveHandler(
+					lastMouseMoveRevisionPos = self.pointerContainerMouseMoveHandler(
 						event,
 						null
 					);
@@ -175,7 +175,7 @@ $.extend( SliderView.prototype, {
 			} )
 			.on( 'mousemove', function ( event ) {
 				if ( !self.isDragged ) {
-					lastMouseMoveRevisionPos = self.showTooltipsOnMouseMoveHandler(
+					lastMouseMoveRevisionPos = self.pointerContainerMouseMoveHandler(
 						event,
 						lastMouseMoveRevisionPos
 					);
@@ -293,7 +293,7 @@ $.extend( SliderView.prototype, {
 	 * @param {number} lastValidPosition
 	 * @return {number}
 	 */
-	showTooltipsOnMouseMoveHandler: function ( event, lastValidPosition ) {
+	pointerContainerMouseMoveHandler: function ( event, lastValidPosition ) {
 		const pos = this.getRevisionPositionFromLeftOffset( event.pageX );
 
 		if ( pos === lastValidPosition ) {
@@ -301,8 +301,8 @@ $.extend( SliderView.prototype, {
 		}
 
 		const $hoveredRevisionWrapper = this.getRevElementAtPosition( this.getRevisionsElement(), pos ).parent();
-		this.getRevisionListView().unsetAllHovered();
-		this.getRevisionListView().setRevisionHoveredFromMouseEvent( $hoveredRevisionWrapper, event );
+		this.getRevisionListView().removeAllRevisionPreviewHighlights();
+		this.getRevisionListView().onRevisionHover( $hoveredRevisionWrapper, event );
 
 		return pos;
 	},
@@ -497,7 +497,7 @@ $.extend( SliderView.prototype, {
 					return false;
 				}
 				self.isDragged = true;
-				self.getRevisionListView().disableHover();
+				self.getRevisionListView().enableRevisionPreviewHighlights( false );
 				self.setPointerDragCursor();
 				self.fadeOutPointerLines( true );
 				self.escapePressed = false;
@@ -510,7 +510,7 @@ $.extend( SliderView.prototype, {
 					pointer = self.whichPointer( $p );
 
 				self.isDragged = false;
-				self.getRevisionListView().enableHover();
+				self.getRevisionListView().enableRevisionPreviewHighlights();
 				self.setPointerDragCursor( false );
 
 				if ( self.escapePressed ) {

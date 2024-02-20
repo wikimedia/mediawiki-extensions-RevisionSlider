@@ -38,7 +38,7 @@ $.extend( RevisionListView.prototype, {
 	/**
 	 * @type {boolean}
 	 */
-	allowHover: true,
+	allowRevisionPreviewHighlights: true,
 
 	/**
 	 * @type {string}
@@ -113,12 +113,12 @@ $.extend( RevisionListView.prototype, {
 						)
 					)
 					.on( 'mouseenter', function ( event ) {
-						if ( self.allowHover ) {
-							self.setRevisionHoveredFromMouseEvent( $( this ), event );
+						if ( self.allowRevisionPreviewHighlights ) {
+							self.onRevisionHover( $( this ), event );
 						}
 					} )
 					.on( 'mouseleave', function () {
-						self.unsetAllHovered();
+						self.removeAllRevisionPreviewHighlights();
 						self.removeCurrentRevisionFocusWithDelay();
 					} )
 				);
@@ -129,20 +129,21 @@ $.extend( RevisionListView.prototype, {
 		return this.$html;
 	},
 
-	enableHover: function () {
-		this.allowHover = true;
-	},
-
-	disableHover: function () {
-		this.allowHover = false;
-		this.unsetAllHovered();
+	/**
+	 * @param {boolean} [enabled=true]
+	 */
+	enableRevisionPreviewHighlights: function ( enabled ) {
+		this.allowRevisionPreviewHighlights = enabled !== false;
+		if ( !this.allowRevisionPreviewHighlights ) {
+			this.removeAllRevisionPreviewHighlights();
+		}
 	},
 
 	/**
 	 * @param {jQuery} $revisionWrapper
 	 * @param {MouseEvent} event
 	 */
-	setRevisionHoveredFromMouseEvent: function ( $revisionWrapper, event ) {
+	onRevisionHover: function ( $revisionWrapper, event ) {
 		if ( !$revisionWrapper.length || $( event.target ).closest( '.mw-revslider-revision-tooltip' ).length ) {
 			return;
 		}
@@ -165,14 +166,14 @@ $.extend( RevisionListView.prototype, {
 		}
 
 		if ( hasMovedTop ) {
-			this.setRevisionGhost( $revisionWrapper.find( '.mw-revslider-revision-wrapper-up' ) );
+			this.setRevisionPreviewHighlight( $revisionWrapper.find( '.mw-revslider-revision-wrapper-up' ) );
 			if ( isOlderTop ) {
-				this.setRevisionGhost( $neighborRevisionWrapper.find( '.mw-revslider-revision-wrapper-down' ) );
+				this.setRevisionPreviewHighlight( $neighborRevisionWrapper.find( '.mw-revslider-revision-wrapper-down' ) );
 			}
 		} else {
-			this.setRevisionGhost( $revisionWrapper.find( '.mw-revslider-revision-wrapper-down' ) );
+			this.setRevisionPreviewHighlight( $revisionWrapper.find( '.mw-revslider-revision-wrapper-down' ) );
 			if ( isNewerBottom ) {
-				this.setRevisionGhost( $neighborRevisionWrapper.find( '.mw-revslider-revision-wrapper-up' ) );
+				this.setRevisionPreviewHighlight( $neighborRevisionWrapper.find( '.mw-revslider-revision-wrapper-up' ) );
 			}
 		}
 	},
@@ -181,11 +182,11 @@ $.extend( RevisionListView.prototype, {
 	 * @private
 	 * @param {jQuery} $revisionWrapper
 	 */
-	setRevisionGhost: function ( $revisionWrapper ) {
+	setRevisionPreviewHighlight: function ( $revisionWrapper ) {
 		$revisionWrapper.addClass( 'mw-revslider-revision-hovered' );
 	},
 
-	unsetAllHovered: function () {
+	removeAllRevisionPreviewHighlights: function () {
 		$( '.mw-revslider-revision-wrapper-up, .mw-revslider-revision-wrapper-down' )
 			.removeClass( 'mw-revslider-revision-hovered' );
 	},
