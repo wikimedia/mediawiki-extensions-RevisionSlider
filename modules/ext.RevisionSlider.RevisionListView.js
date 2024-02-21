@@ -548,7 +548,7 @@ $.extend( RevisionListView.prototype, {
 	 */
 	setTagFilterEvents: function ( $tagBubble, event ) {
 		const $tagLine = $tagBubble.parent(),
-			tagName = $tagLine.data( 'tag-name' );
+			tagName = $tagLine.attr( 'data-tag-name' );
 
 		if ( this.selectedTag === tagName && event.type !== 'click' ) {
 			return;

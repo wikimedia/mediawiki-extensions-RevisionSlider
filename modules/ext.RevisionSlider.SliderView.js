@@ -320,7 +320,7 @@ $.extend( SliderView.prototype, {
 		// Just use the information from the element that received the click, if available
 		const $revElement = $( event.currentTarget ).find( '.mw-revslider-revision' );
 		if ( $revElement.length === 1 ) {
-			clickedPos = $revElement.data( 'pos' );
+			clickedPos = +$revElement.attr( 'data-pos' );
 		} else {
 			clickedPos = this.getRevisionPositionFromLeftOffset( event.pageX );
 		}
@@ -463,13 +463,13 @@ $.extend( SliderView.prototype, {
 			return;
 		}
 
-		const diff = this.getRevElementAtPosition(
+		const diff = +this.getRevElementAtPosition(
 			$revisions, this.getNewerPointerPos()
-		).data( 'revid' );
+		).attr( 'data-revid' );
 
-		const oldid = this.getRevElementAtPosition(
+		const oldid = +this.getRevElementAtPosition(
 			$revisions, this.getOlderPointerPos()
-		).data( 'revid' );
+		).attr( 'data-revid' );
 
 		this.lastRequest = this.refreshDiffView( diff, oldid );
 
@@ -523,13 +523,13 @@ $.extend( SliderView.prototype, {
 
 				pointer.setPosition( self.slider.getOldestVisibleRevisionIndex() + relativeIndex );
 
-				const diff = self.getRevElementAtPosition(
+				const diff = +self.getRevElementAtPosition(
 					$revisions, self.getNewerPointerPos()
-				).data( 'revid' );
+				).attr( 'data-revid' );
 
-				const oldid = self.getRevElementAtPosition(
+				const oldid = +self.getRevElementAtPosition(
 					$revisions, self.getOlderPointerPos()
-				).data( 'revid' );
+				).attr( 'data-revid' );
 
 				if ( self.getNewerPointerPos() === self.lastNewPointerPosition &&
 					self.getOlderPointerPos() === self.lastOldPointerPosition ) {
@@ -745,8 +745,8 @@ $.extend( SliderView.prototype, {
 			// Note: this is currently caught in init.js
 			throw new Error( 'RS-revs-not-specified' );
 		}
-		this.setOlderPointerPos( $oldRevElement.length ? $oldRevElement.data( 'pos' ) : -1 );
-		this.setNewerPointerPos( $newRevElement.data( 'pos' ) );
+		this.setOlderPointerPos( $oldRevElement.length ? +$oldRevElement.attr( 'data-pos' ) : -1 );
+		this.setNewerPointerPos( +$newRevElement.attr( 'data-pos' ) );
 		this.resetSliderLines();
 	},
 
@@ -1103,7 +1103,7 @@ $.extend( SliderView.prototype, {
 			// Special case: old revision has been previously not loaded, need to initialize correct position
 			const $oldRevElement = this.getOldRevElement( $addedRevisions );
 			if ( $oldRevElement.length !== 0 ) {
-				this.setOlderPointerPos( $oldRevElement.data( 'pos' ) );
+				this.setOlderPointerPos( +$oldRevElement.attr( 'data-pos' ) );
 				revisionStyleResetRequired = true;
 			}
 
@@ -1120,8 +1120,8 @@ $.extend( SliderView.prototype, {
 
 		this.slider.setFirstVisibleRevisionIndex( this.slider.getOldestVisibleRevisionIndex() + revisionsToRender.getLength() );
 
-		const revIdOld = this.getRevElementAtPosition( $revisions, this.getOlderPointerPos() ).data( 'revid' );
-		const revIdNew = this.getRevElementAtPosition( $revisions, this.getNewerPointerPos() ).data( 'revid' );
+		const revIdOld = +this.getRevElementAtPosition( $revisions, this.getOlderPointerPos() ).attr( 'data-revid' );
+		const revIdNew = +this.getRevElementAtPosition( $revisions, this.getNewerPointerPos() ).attr( 'data-revid' );
 		this.diffPage.replaceState( revIdNew, revIdOld, this );
 
 		$revisionContainer.scrollLeft( this.getScrollLeft( $revisionContainer ) );

@@ -81,7 +81,7 @@ $.extend( SliderArrowView.prototype, {
 			return;
 		}
 		mw.track( 'counter.MediaWiki.RevisionSlider.event.arrowClick' );
-		this.sliderView.slideView( button.$element.data( 'dir' ) );
+		this.sliderView.slideView( button.$element.attr( 'data-dir' ) );
 	},
 
 	/**
