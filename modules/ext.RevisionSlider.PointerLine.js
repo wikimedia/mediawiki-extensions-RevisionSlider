@@ -132,6 +132,8 @@ $.extend( PointerLine.prototype, {
 
 	/**
 	 * Initializes the DOM element with the line-box for drawing the lines
+	 *
+	 * @private
 	 */
 	initialize: function () {
 		// eslint-disable-next-line mediawiki/class-doc
@@ -182,16 +184,11 @@ $.extend( PointerLine.prototype, {
 	/**
 	 * @return {jQuery}
 	 */
-	render: function () {
-		this.initialize();
-		this.setColumnBorderHooks();
-		return this.getElement();
-	},
-
-	/**
-	 * @return {jQuery}
-	 */
 	getElement: function () {
+		if ( !this.$html ) {
+			this.initialize();
+			this.setColumnBorderHooks();
+		}
 		return this.$html;
 	}
 

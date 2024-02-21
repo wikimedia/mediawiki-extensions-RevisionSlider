@@ -97,7 +97,7 @@ $.extend( SliderView.prototype, {
 				this.renderPointerContainer( containerWidth ),
 				this.forwardArrowButton.$element,
 				$( '<div>' ).css( { clear: 'both' } ),
-				this.pointerOlder.getLine().render(), this.pointerNewer.getLine().render(),
+				this.pointerOlder.getLine().getElement(), this.pointerNewer.getLine().getElement(),
 				HelpButtonView.render()
 			);
 
@@ -193,13 +193,13 @@ $.extend( SliderView.prototype, {
 				.addClass( 'mw-revslider-pointer-container-older' )
 				.append(
 					$( '<div>' ).addClass( 'mw-revslider-slider-line' ),
-					this.pointerOlder.getView().render()
+					this.pointerOlder.getView().getElement()
 				),
 			$( '<div>' )
 				.addClass( 'mw-revslider-pointer-container-newer' )
 				.append(
 					$( '<div>' ).addClass( 'mw-revslider-slider-line' ),
-					this.pointerNewer.getView().render()
+					this.pointerNewer.getView().getElement()
 				)
 		];
 	},
