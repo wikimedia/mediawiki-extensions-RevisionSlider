@@ -403,7 +403,7 @@ $.extend( SliderView.prototype, {
 			isNewer = pointer.getView().isNewerPointer();
 		let offset = 0;
 
-		if ( event.which === OO.ui.Keys.RIGHT ) {
+		if ( event.which === ( this.dir === 'rtl' ? OO.ui.Keys.LEFT : OO.ui.Keys.RIGHT ) ) {
 			offset = 1;
 
 			if ( isNewer ) {
@@ -416,7 +416,7 @@ $.extend( SliderView.prototype, {
 					this.setOlderPointerPos( oldPos + 1 );
 				}
 			}
-		} else if ( event.which === OO.ui.Keys.LEFT ) {
+		} else if ( event.which === ( this.dir === 'rtl' ? OO.ui.Keys.RIGHT : OO.ui.Keys.LEFT ) ) {
 			offset = -1;
 
 			if ( isNewer ) {
