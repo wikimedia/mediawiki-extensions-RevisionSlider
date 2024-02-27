@@ -28,26 +28,14 @@ $.extend( PointerView.prototype, {
 	$html: null,
 
 	/**
-	 * Initializes the DOM element
-	 */
-	initialize: function () {
-		// eslint-disable-next-line mediawiki/class-doc
-		this.$html = $( '<div>' )
-			.addClass( 'mw-revslider-pointer mw-revslider-pointer-cursor ' + this.name );
-	},
-
-	/**
 	 * @return {jQuery}
 	 */
-	render: function () {
-		this.initialize();
-		return this.$html;
-	},
-
-	/**
-	 * @return {jQuery|null} Null if not initialized
-	 */
 	getElement: function () {
+		if ( !this.$html ) {
+			// eslint-disable-next-line mediawiki/class-doc
+			this.$html = $( '<div>' )
+				.addClass( 'mw-revslider-pointer mw-revslider-pointer-cursor ' + this.name );
+		}
 		return this.$html;
 	},
 
@@ -72,10 +60,7 @@ $.extend( PointerView.prototype, {
 	 * @param {number} pos
 	 */
 	setDataPositionAttribute: function ( pos ) {
-		if ( !this.$html ) {
-			this.initialize();
-		}
-		this.$html.attr( 'data-pos', pos );
+		this.getElement().attr( 'data-pos', pos );
 	},
 
 	/**
