@@ -1,12 +1,14 @@
 @import 'mediawiki.skin.variables.less';
 
-@media print {
-	.mw-revslider-container {
+.mw-revslider-container {
+	.client-nojs & {
 		display: none;
 	}
-}
 
-.mw-revslider-container {
+	@media print {
+		display: none;
+	}
+
 	/* This will flip with CSSJanus in case */
 	/* the interface is in RTL */
 	direction: ltr;

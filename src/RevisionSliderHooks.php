@@ -78,7 +78,6 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 			$out->addModules( 'ext.RevisionSlider.lazyJs' );
 			$this->statsdDataFactory->increment( 'RevisionSlider.event.lazyload' );
 		}
-		$out->addModuleStyles( 'ext.RevisionSlider.noscript' );
 		$out->addJsConfigVars( 'extRevisionSliderTimeOffset', $timeOffset );
 		$out->enableOOUI();
 

@@ -93,9 +93,6 @@
 				"revisionslider-turn-off-auto-expand-title"
 			]
 		},
-		"ext.RevisionSlider.noscript": {
-			"styles": "modules/ext.RevisionSlider.noscript.css"
-		},
 		"ext.RevisionSlider.Settings": {
 			"packageFiles": [
 				"modules/ext.RevisionSlider.Settings.js"
