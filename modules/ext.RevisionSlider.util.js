@@ -92,7 +92,9 @@ function determineRtlScrollType() {
 		type = 'default';
 	} else {
 		definer.scrollLeft = 1;
-		if ( definer.scrollLeft === 0 ) {
+		// T352169: While Chrome ignores the +1 above (as it should), there are strange rounding
+		// errors with many (not all) of the possible zoom factors >100%
+		if ( definer.scrollLeft < 1 ) {
 			type = 'negative';
 		}
 	}
