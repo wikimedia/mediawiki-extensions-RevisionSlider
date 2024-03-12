@@ -1054,7 +1054,7 @@ $.extend( SliderView.prototype, {
 		// loaded revision. This should be taken into account when rendering newly loaded revisions (tooltip)
 		const revisionsToRender = this.slider.getRevisionList().slice( revPositionOffset );
 
-		const $addedRevisions = new RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth, revPositionOffset );
+		const $addedRevisions = new RevisionListView( revisionsToRender ).render( this.revisionWidth, revPositionOffset );
 		this.addClickHandlerToRevisions( $addedRevisions );
 
 		$addedRevisions.find( '.mw-revslider-revision-wrapper' ).each( function () {
@@ -1094,7 +1094,7 @@ $.extend( SliderView.prototype, {
 		// loaded revision. This should be taken into account when rendering newly loaded revisions (tooltip)
 		const revisionsToRender = this.slider.getRevisionList().slice( 0, revs.length );
 
-		const $addedRevisions = new RevisionListView( revisionsToRender, this.dir ).render( this.revisionWidth );
+		const $addedRevisions = new RevisionListView( revisionsToRender ).render( this.revisionWidth );
 		this.addClickHandlerToRevisions( $addedRevisions );
 
 		if ( this.getOlderPointerPos() !== -1 ) {

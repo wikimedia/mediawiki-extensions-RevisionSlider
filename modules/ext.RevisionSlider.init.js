@@ -47,7 +47,6 @@ function initialize() {
 					SliderModule.makeRevisions( revs ),
 					changeTags
 				);
-				revisionList.getView().setDir( $container.css( 'direction' ) || 'ltr' );
 
 				const slider = new Slider( revisionList );
 				slider.getView().render( $container );

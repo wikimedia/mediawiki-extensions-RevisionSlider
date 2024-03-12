@@ -1,12 +1,10 @@
 /**
  * @class RevisionListView
  * @param {RevisionList} revisionList
- * @param {string} [dir]
  * @constructor
  */
-function RevisionListView( revisionList, dir ) {
+function RevisionListView( revisionList ) {
 	this.revisionList = revisionList;
-	this.dir = dir;
 }
 
 $.extend( RevisionListView.prototype, {
@@ -39,11 +37,6 @@ $.extend( RevisionListView.prototype, {
 	 * @type {boolean}
 	 */
 	allowRevisionPreviewHighlights: true,
-
-	/**
-	 * @type {string}
-	 */
-	dir: null,
 
 	/**
 	 * @type {string}
@@ -681,15 +674,6 @@ $.extend( RevisionListView.prototype, {
 			$( '<strong>' ).text( mw.msg( 'revisionslider-label-change-size' ) + mw.msg( 'colon-separator' ) ),
 			mw.message( 'revisionslider-change-size', $changeNumber, relativeSize, Math.abs( relativeSize ) ).parse()
 		);
-	},
-
-	/**
-	 * Set direction for the view
-	 *
-	 * @param {string} dir
-	 */
-	setDir: function ( dir ) {
-		this.dir = dir;
 	},
 
 	/**
