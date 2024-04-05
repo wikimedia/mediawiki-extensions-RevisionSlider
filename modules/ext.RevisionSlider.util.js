@@ -68,40 +68,6 @@ function correctElementOffsets( offset ) {
 	return offset;
 }
 
-/**
- * Based on jQuery RTL Scroll Type Detector plugin by othree: https://github.com/othree/jquery.rtl-scroll-type
- *
- * @return {string} - 'default', 'negative' or 'reverse'
- */
-function determineRtlScrollType() {
-	const $dummy = $( '<div>' )
-		.css( {
-			dir: 'rtl',
-			width: '4px',
-			height: '1px',
-			position: 'absolute',
-			top: '-1000px',
-			overflow: 'scroll'
-		} )
-		.text( 'ABCDE' )
-		.appendTo( 'body' );
-	const definer = $dummy[ 0 ];
-	let type = 'reverse';
-
-	if ( definer.scrollLeft > 0 ) {
-		type = 'default';
-	} else {
-		definer.scrollLeft = 1;
-		// T352169: While Chrome ignores the +1 above (as it should), there are strange rounding
-		// errors with many (not all) of the possible zoom factors >100%
-		if ( definer.scrollLeft < 1 ) {
-			type = 'negative';
-		}
-	}
-	$dummy.remove();
-	return type;
-}
-
 function calculateRevisionsPerWindow( margin, revisionWidth ) {
 	return Math.floor( ( $( '#mw-content-text' ).width() - margin ) / revisionWidth );
 }
@@ -109,6 +75,5 @@ function calculateRevisionsPerWindow( margin, revisionWidth ) {
 module.exports = {
 	calculateRevisionsPerWindow: calculateRevisionsPerWindow,
 	correctElementOffsets: correctElementOffsets,
-	determineRtlScrollType: determineRtlScrollType,
 	touchEventConverter: touchEventConverter
 };

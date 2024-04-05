@@ -41,18 +41,6 @@ $.extend( SliderView.prototype, {
 	backwardArrowButton: null,
 	/** @type {OO.ui.ButtonWidget} */
 	forwardArrowButton: null,
-
-	/**
-	 * @type {string}
-	 *
-	 * Value of scrollLeft property when in RTL mode varies between browser. This identifies
-	 * an implementation used by user's browser:
-	 * - 'default': 0 is the left-most position, values increase when scrolling right (same as scrolling from left to right in LTR mode)
-	 * - 'negative': 0 is right-most position, values decrease when scrolling left (ie. all values except 0 are negative)
-	 * - 'reverse': 0 is right-most position, values incrase when scrolling left
-	 */
-	rtlScrollLeftType: 'default',
-
 	/** @type {boolean} */
 	noMoreNewerRevisions: false,
 	/** @type {boolean} */
@@ -73,11 +61,7 @@ $.extend( SliderView.prototype, {
 			$revisions = this.getRevisionListView().render( this.revisionWidth ),
 			sliderArrowView = new SliderArrowView( this );
 
-		this.dir = $container.css( 'direction' ) || 'ltr';
-
-		if ( this.dir === 'rtl' ) {
-			this.rtlScrollLeftType = utils.determineRtlScrollType();
-		}
+		this.dir = $container.css( 'direction' );
 
 		this.pointerOlder = this.pointerOlder || new Pointer( 'mw-revslider-pointer-older' );
 		this.pointerNewer = this.pointerNewer || new Pointer( 'mw-revslider-pointer-newer' );
@@ -891,7 +875,7 @@ $.extend( SliderView.prototype, {
 		this.forwardArrowButton.setDisabled( this.slider.isAtEnd() );
 
 		$animatedElement.animate(
-			{ scrollLeft: this.getScrollLeft( $animatedElement ) },
+			{ scrollLeft: this.getScrollLeft() },
 			duration,
 			null,
 			function () {
@@ -916,18 +900,13 @@ $.extend( SliderView.prototype, {
 
 	/**
 	 * @private
-	 * @param {jQuery} $element
 	 * @return {number}
 	 */
-	getScrollLeft: function ( $element ) {
+	getScrollLeft: function () {
 		const scrollLeft = this.slider.getOldestVisibleRevisionIndex() * this.revisionWidth;
-		if ( this.dir !== 'rtl' || this.rtlScrollLeftType === 'reverse' ) {
-			return scrollLeft;
-		}
-		if ( this.rtlScrollLeftType === 'negative' ) {
-			return -scrollLeft;
-		}
-		return $element.prop( 'scrollWidth' ) - $element.width() - scrollLeft;
+		// See https://github.com/othree/jquery.rtl-scroll-type for why we don't need anything else
+		// anymore.
+		return this.dir === 'rtl' ? -scrollLeft : scrollLeft;
 	},
 
 	/**
@@ -1124,7 +1103,7 @@ $.extend( SliderView.prototype, {
 		const revIdNew = +this.getRevElementAtPosition( $revisions, this.getNewerPointerPos() ).attr( 'data-revid' );
 		this.diffPage.replaceState( revIdNew, revIdOld, this );
 
-		$revisionContainer.scrollLeft( this.getScrollLeft( $revisionContainer ) );
+		$revisionContainer.scrollLeft( this.getScrollLeft() );
 
 		if ( this.shouldExpandSlider( $slider ) ) {
 			this.expandSlider( $slider );
