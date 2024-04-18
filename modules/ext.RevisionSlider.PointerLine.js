@@ -150,44 +150,11 @@ $.extend( PointerLine.prototype, {
 	},
 
 	/**
-	 * Adds colored top-borders for the diff columns fitting the line colors between pointers and columns
-	 *
-	 * @param {boolean} [show=true]
-	 * @private
-	 */
-	addColoredColumnBorders: function ( show ) {
-		show = show !== false;
-		$( '#mw-diff-otitle1' ).toggleClass( 'mw-revslider-older-diff-column', show );
-		$( '#mw-diff-ntitle1' ).toggleClass( 'mw-revslider-newer-diff-column', show );
-	},
-
-	/**
-	 * Remove colored top-borders for the diff columns fitting the line colors between pointers and columns
-	 *
-	 * @private
-	 */
-	removeColoredColumnBorders: function () {
-		this.addColoredColumnBorders( false );
-	},
-
-	/**
-	 * Sets the hooks to draw the column borders
-	 *
-	 * @private
-	 */
-	setColumnBorderHooks: function () {
-		mw.hook( 'wikipage.diff' ).add( this.addColoredColumnBorders );
-		mw.hook( 'revslider.expand' ).add( this.addColoredColumnBorders );
-		mw.hook( 'revslider.collapse' ).add( this.removeColoredColumnBorders.bind( this ) );
-	},
-
-	/**
 	 * @return {jQuery}
 	 */
 	getElement: function () {
 		if ( !this.$html ) {
 			this.initialize();
-			this.setColumnBorderHooks();
 		}
 		return this.$html;
 	}

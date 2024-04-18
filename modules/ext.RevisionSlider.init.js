@@ -141,11 +141,9 @@ toggleButton.connect( this, {
 		if ( expanded ) {
 			expand();
 			mw.track( 'counter.MediaWiki.RevisionSlider.event.expand' );
-			mw.hook( 'revslider.expand' ).fire();
 		} else {
 			collapse();
 			mw.track( 'counter.MediaWiki.RevisionSlider.event.collapse' );
-			mw.hook( 'revslider.collapse' ).fire();
 		}
 	}
 } );
