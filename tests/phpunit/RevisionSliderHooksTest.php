@@ -30,28 +30,6 @@ class RevisionSliderHooksTest extends \MediaWikiIntegrationTestCase {
 		$this->newInstance()->onDifferenceEngineViewHeader( $diffEngine );
 	}
 
-	public function testShouldNotLoadOnMobileDiff() {
-		// Arrange
-		$title = $this->createMock( Title::class );
-		$title->method( 'isSpecial' )
-			->with( 'MobileDiff' )
-			->willReturn( true );
-
-		$output = $this->createMock( OutputPage::class );
-		$output->method( 'getTitle' )
-			->willReturn( $title );
-
-		$revision = $this->createMock( RevisionRecord::class );
-		$diffEngine = $this->newDiffEngine( $revision, $output );
-
-		// Assert
-		$output->expects( $this->never() )
-			->method( 'addModules' );
-
-		// Act
-		$this->newInstance()->onDifferenceEngineViewHeader( $diffEngine );
-	}
-
 	public function testShouldNotLoadWhenUserIsLoggedInAndDisabledExtension() {
 		// Arrange
 		$options = [ 'revisionslider-disable' => true ];

@@ -45,12 +45,6 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 		$oldRevRecord = $differenceEngine->getOldRevision();
 		$newRevRecord = $differenceEngine->getNewRevision();
 
-		// do not show on MobileDiff page
-		// Note: Since T245172, DifferenceEngine::getTitle() is the title of the page being diffed.
-		if ( $differenceEngine->getOutput()->getTitle()->isSpecial( 'MobileDiff' ) ) {
-			return;
-		}
-
 		/**
 		 * If the user is logged in and has explictly requested to disable the extension don't load.
 		 */
