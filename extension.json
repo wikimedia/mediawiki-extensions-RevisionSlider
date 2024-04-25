@@ -80,7 +80,6 @@
 				"mediawiki.jqueryMsg",
 				"ext.RevisionSlider.Settings",
 				"ext.RevisionSlider.Slider",
-				"mediawiki.api",
 				"mediawiki.util"
 			],
 			"messages": [
@@ -98,6 +97,7 @@
 				"modules/ext.RevisionSlider.Settings.js"
 			],
 			"dependencies": [
+				"mediawiki.api",
 				"mediawiki.user",
 				"mediawiki.storage",
 				"mediawiki.cookie"
