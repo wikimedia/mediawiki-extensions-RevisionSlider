@@ -56,7 +56,11 @@ $.extend( DiffPage.prototype, {
 			// Replace elements on the page with the newly loaded elements, from top to bottom
 			$( '#mw-content-text' ).replaceWith( $contentText );
 			$( '.printfooter' ).replaceWith( $data.find( '.printfooter' ) );
-			$( '#catlinks' ).replaceWith( $data.find( '#catlinks' ) );
+
+			const $catlinks = $data.find( '.catlinks[data-mw="interface"]' );
+			mw.hook( 'wikipage.categories' ).fire( $catlinks );
+			$( '.catlinks[data-mw="interface"]' ).replaceWith( $catlinks );
+
 			$( '#t-permalink' ).parent().replaceWith( $data.find( '#t-permalink' ).parent() );
 			$( '#ca-delete' ).parent().replaceWith( $data.find( '#ca-delete' ).parent() );
 			// Update edit link
