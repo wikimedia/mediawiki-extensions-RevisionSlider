@@ -672,7 +672,7 @@ $.extend( RevisionListView.prototype, {
 
 		return $( '<p>' ).append(
 			$( '<strong>' ).text( mw.msg( 'revisionslider-label-change-size' ) + mw.msg( 'colon-separator' ) ),
-			mw.message( 'revisionslider-change-size', $changeNumber, relativeSize, Math.abs( relativeSize ) ).parse()
+			mw.message( 'revisionslider-change-size', $changeNumber, relativeSize, Math.abs( relativeSize ) ).parseDom()
 		);
 	},
 

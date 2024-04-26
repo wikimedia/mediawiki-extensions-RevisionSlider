@@ -74,7 +74,7 @@ $.extend( HelpDialog.prototype, {
 		slide.$element.append(
 			$( '<div>' ).addClass( 'mw-revslider-help-dialog-image-landscape mw-revslider-help-dialog-slide-1' ),
 			$( '<p>' ).addClass( 'mw-revslider-help-dialog-text' )
-				.html( mw.message( 'revisionslider-help-dialog-slide1' ).parse() )
+				.append( mw.message( 'revisionslider-help-dialog-slide1' ).parseDom() )
 		);
 
 		slide.$element.find( 'a' ).attr( 'target', '_blank' );

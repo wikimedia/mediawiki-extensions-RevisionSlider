@@ -9,8 +9,11 @@ QUnit.test( 'Initialize HelpDialog', function ( assert ) {
 		return slide.$element.find( '.mw-revslider-help-dialog-text' ).html();
 	}
 
-	function addLinkTargets( parsedMessage ) {
-		const $container = $( '<div>' ).html( parsedMessage );
+	function addLinkTargets( message ) {
+		const $container = $( '<div>' ).append(
+			// eslint-disable-next-line mediawiki/msg-doc
+			mw.message( message ).parseDom()
+		);
 		$container.find( 'a' ).attr( 'target', '_blank' );
 		return $container.html();
 	}
@@ -22,18 +25,18 @@ QUnit.test( 'Initialize HelpDialog', function ( assert ) {
 	assert.strictEqual( helpDialog.slidePointer, 0 );
 	assert.strictEqual(
 		getSlideTextHtml( helpDialog.slides[ 0 ] ),
-		addLinkTargets( mw.message( 'revisionslider-help-dialog-slide1' ).parse() )
+		addLinkTargets( 'revisionslider-help-dialog-slide1' )
 	);
 	assert.strictEqual(
 		getSlideTextHtml( helpDialog.slides[ 1 ] ),
-		addLinkTargets( mw.message( 'revisionslider-help-dialog-slide2' ).parse() )
+		addLinkTargets( 'revisionslider-help-dialog-slide2' )
 	);
 	assert.strictEqual(
 		getSlideTextHtml( helpDialog.slides[ 2 ] ),
-		addLinkTargets( mw.message( 'revisionslider-help-dialog-slide3a' ).parse() )
+		addLinkTargets( 'revisionslider-help-dialog-slide3a' )
 	);
 	assert.strictEqual(
 		getSlideTextHtml( helpDialog.slides[ 3 ] ),
-		addLinkTargets( mw.message( 'revisionslider-help-dialog-slide4' ).parse() )
+		addLinkTargets( 'revisionslider-help-dialog-slide4' )
 	);
 } );
