@@ -77,7 +77,11 @@ $.extend( DiffPage.prototype, {
 
 			// Re-trigger existing, stable core hooks under the same circumstances as in core
 			mw.hook( 'wikipage.content' ).fire( $contentText );
-			mw.hook( 'wikipage.diff' ).fire( $( document.body ).find( 'table.diff' ) );
+
+			const $nodes = $( 'table.diff[data-mw="interface"]' );
+			if ( $nodes.length ) {
+				mw.hook( 'wikipage.diff' ).fire( $nodes.eq( 0 ) );
+			}
 		}, function ( xhr ) {
 			$( 'table.diff[data-mw="interface"]' ).removeClass( 'mw-revslider-diff-loading' );
 			if ( xhr.statusText !== 'abort' ) {
