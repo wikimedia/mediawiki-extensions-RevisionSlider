@@ -44,7 +44,6 @@
 		"dependencies": [
 			"ext.RevisionSlider.Slider",
 			"jquery.ui",
-			"mediawiki.jqueryMsg",
 			"oojs-ui"
 		],
 		"localBasePath": "tests/qunit",
