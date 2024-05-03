@@ -57,7 +57,8 @@ $.extend( DiffPage.prototype, {
 			$( '#mw-content-text' ).replaceWith( $contentText );
 			$( '.printfooter' ).replaceWith( $data.find( '.printfooter' ) );
 			$( '#catlinks' ).replaceWith( $data.find( '#catlinks' ) );
-			$( '#mw-panel' ).replaceWith( $data.find( '#mw-panel' ) );
+			$( '#t-permalink' ).parent().replaceWith( $data.find( '#t-permalink' ).parent() );
+			$( '#ca-delete' ).parent().replaceWith( $data.find( '#ca-delete' ).parent() );
 			// Update edit link
 			$( '#ca-edit a, #ca-ve-edit a' ).each( function () {
 				const uri = new mw.Uri( $( this ).attr( 'href' ) );
