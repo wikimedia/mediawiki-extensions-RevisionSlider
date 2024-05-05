@@ -5,32 +5,32 @@ const assert = require( 'assert' ),
 
 describe( 'RevisionSlider diff links', function () {
 
-	beforeEach( function () {
-		DiffPage.prepareSimpleTests( 3 );
+	beforeEach( async function () {
+		await DiffPage.prepareSimpleTests( 3 );
 		DiffPage.ready();
-		DiffPage.openSlider();
+		await DiffPage.openSlider();
 	} );
 
-	it( ' older edit diff link can be clicked', function () {
-		DiffPage.rsEditOlderButton.click();
-		DiffPage.waitUntilLoaded();
+	it( ' older edit diff link can be clicked', async function () {
+		await DiffPage.rsEditOlderButton.click();
+		await DiffPage.waitUntilLoaded();
 
-		assert( DiffPage.isOlderPointerOn( 1 ) );
-		assert( DiffPage.isNewerPointerOn( 2 ) );
-		assert( DiffPage.showsOlderSummary( 1 ) );
-		assert( DiffPage.showsNewerSummary( 2 ) );
+		assert( await DiffPage.isOlderPointerOn( 1 ) );
+		assert( await DiffPage.isNewerPointerOn( 2 ) );
+		assert( await DiffPage.showsOlderSummary( 1 ) );
+		assert( await DiffPage.showsNewerSummary( 2 ) );
 	} );
 
-	it( ' newer edit diff link can be clicked', function () {
-		DiffPage.rsEditOlderButton.click();
-		DiffPage.waitUntilLoaded();
+	it( ' newer edit diff link can be clicked', async function () {
+		await DiffPage.rsEditOlderButton.click();
+		await DiffPage.waitUntilLoaded();
 
-		DiffPage.rsEditNewerButton.click();
-		DiffPage.waitUntilLoaded();
+		await DiffPage.rsEditNewerButton.click();
+		await DiffPage.waitUntilLoaded();
 
-		assert( DiffPage.isOlderPointerOn( 2 ) );
-		assert( DiffPage.isNewerPointerOn( 3 ) );
-		assert( DiffPage.showsOlderSummary( 2 ) );
-		assert( DiffPage.showsNewerSummary( 3 ) );
+		assert( await DiffPage.isOlderPointerOn( 2 ) );
+		assert( await DiffPage.isNewerPointerOn( 3 ) );
+		assert( await DiffPage.showsOlderSummary( 2 ) );
+		assert( await DiffPage.showsNewerSummary( 3 ) );
 	} );
 } );

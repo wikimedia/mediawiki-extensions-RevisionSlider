@@ -269,22 +269,28 @@ $.extend( SliderView.prototype, {
 		) );
 	},
 
-	/** @returns {number} */
+	/** @return {number} */
 	getOlderPointerPos: function () {
 		return this.pointerOlder.getPosition();
 	},
 
-	/** @returns {number} */
+	/** @return {number} */
 	getNewerPointerPos: function () {
 		return this.pointerNewer.getPosition();
 	},
 
-	/** @returns {number} */
+	/**
+	 * @param pos
+	 * @return {number}
+	 */
 	setOlderPointerPos: function ( pos ) {
 		return this.pointerOlder.setPosition( pos );
 	},
 
-	/** @returns {number} */
+	/**
+	 * @param pos
+	 * @return {number}
+	 */
 	setNewerPointerPos: function ( pos ) {
 		return this.pointerNewer.setPosition( pos );
 	},
