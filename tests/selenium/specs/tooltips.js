@@ -5,49 +5,36 @@ const assert = require( 'assert' ),
 
 describe( 'RevisionSlider revision tooltips', function () {
 
-	before( function () {
-		DiffPage.prepareSimpleTests( 2 );
-	} );
-
-	beforeEach( function () {
+	before( async function () {
+		await DiffPage.prepareSimpleTests( 2 );
 		DiffPage.ready();
-		DiffPage.openSlider();
+		await DiffPage.openSlider();
 	} );
 
-	afterEach( function () {
-		browser.refresh();
-	} );
+	it( 'appears and remains on hovering it', async function () {
 
-	it( 'should appear on hover', function () {
-
-		DiffPage.dwellRevision( 1 );
-
-		DiffPage.dwellRevision( 2 );
+		await DiffPage.dwellRevision( 1 );
 
 		assert(
-			DiffPage.getTooltip( 2 ).isDisplayed(), 'tooltip 2 should appear'
+			await DiffPage.getTooltip( 1 ).isDisplayed(), 'tooltip 1 should appear'
+		);
+		assert(
+			!await DiffPage.getTooltip( 2 ).isDisplayed(), 'tooltip 2 should not appear'
 		);
 
+		await DiffPage.dwellRevision( 2 );
+
 		assert(
-			!DiffPage.getTooltip( 1 ).isDisplayed(), 'tooltip 1 should not appear'
+			await DiffPage.getTooltip( 2 ).isDisplayed(), 'tooltip 2 should appear'
+		);
+		assert(
+			!await DiffPage.getTooltip( 1 ).isDisplayed(), 'tooltip 1 should vanish'
 		);
 
-	} );
-
-	it( 'appears and remains on hover', function () {
-
-		DiffPage.dwellRevision( 1 );
-		DiffPage.getTooltip( 1 ).moveTo();
-
-		DiffPage.dwellRevision( 2 );
-		DiffPage.getTooltip( 2 ).moveTo();
+		await DiffPage.getTooltip( 2 ).moveTo();
 
 		assert(
-			DiffPage.getTooltip( 2 ).isDisplayed(), 'tooltip 2 should appear'
-		);
-
-		assert(
-			!DiffPage.getTooltip( 1 ).isDisplayed(), 'tooltip 1 should not appear'
+			await DiffPage.getTooltip( 2 ).isDisplayed(), 'tooltip 2 should still be visible'
 		);
 
 	} );
