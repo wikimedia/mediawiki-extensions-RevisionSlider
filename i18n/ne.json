@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Nirajan pant",
-			"बडा काजी"
+			"बडा काजी",
+			"हिमाल सुबेदी"
 		]
 	},
 	"revisionslider": "संशोधन स्लाइडर",
@@ -16,7 +17,7 @@
 	"revisionslider-label-change-size": "आकार परिवर्तन गर्नुहोस्",
 	"revisionslider-label-comment": "सम्पादन सारांश",
 	"revisionslider-label-username": "{{GENDER:$1|प्रयोगकर्ता}}",
-	"revisionslider-minoredit": "यो सानो सम्पादन हो",
+	"revisionslider-minoredit": "यो एउटा सानो सम्पादन हो",
 	"revisionslider-loading-failed": "संशोधन स्लाइडर लोड हुन असफल भयो।",
 	"revisionslider-toggle-title-expand": "संशोधन स्लाइडर खोल्नुहोस्",
 	"revisionslider-toggle-title-collapse": "संशोधन स्लाइडर संक्षिप्त गर्नुहोस्",
