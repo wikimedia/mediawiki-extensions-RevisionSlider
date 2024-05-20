@@ -19,7 +19,7 @@
 	"revisionslider-label-change-size": "更改大小",
 	"revisionslider-label-comment": "编辑摘要",
 	"revisionslider-label-username": "{{GENDER:$1|用户名}}",
-	"revisionslider-minoredit": "这是一个小编辑",
+	"revisionslider-minoredit": "这是小编辑",
 	"revisionslider-loading-failed": "修订滑块加载失败。",
 	"revisionslider-toggle-title-expand": "开启修订滑块",
 	"revisionslider-toggle-title-collapse": "关闭修订滑块",
