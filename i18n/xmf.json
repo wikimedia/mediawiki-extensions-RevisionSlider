@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Narazeni"
+		]
+	},
+	"revisionslider": "RevisionSlider",
+	"revisionslider-preference-disable": "ვაძირუა RevisionSlider",
+	"revisionslider-desc": "გინორთეფიშ ხასჷლას ოძირანს სლაიდერს ვერსიეფიშ გიშაგორალო დო ელაზჷმაფალო",
+	"revisionslider-toggle-label": "ისტორიაშ ინტერაქციულო გინოჯინა",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|ბიტი}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|ბიტი}}",
+	"revisionslider-label-date": "თარიღი",
+	"revisionslider-label-page-size": "ხასჷლაშ ზჷმა",
+	"revisionslider-label-change-size": "თირუაშ ზჷმა",
+	"revisionslider-label-comment": "რედაქტირაფაშ რეზიუმე",
+	"revisionslider-label-username": "{{GENDER:$1|მახვარებუ}}",
+	"revisionslider-minoredit": "თენა რე ციქა რედაქტირაფა",
+	"revisionslider-loading-failed": "ვერსიაშ სლაიდერიშ ინოხარგუაქ ვემიხუჯინჷ.",
+	"revisionslider-toggle-title-expand": "ვერსიაშ სლაიდერიშ გონწყუმა",
+	"revisionslider-toggle-title-collapse": "ვერსიაშ სლაიდერიშ ინოკიჩუა",
+	"revisionslider-turn-on-auto-expand-title": "ვერსიაშ სლაიდერი ირო გოფაჩილი ორდას",
+	"revisionslider-turn-off-auto-expand-title": "ვერსიაშ სლაიდერქ ავტომატურო ვეგინწყას",
+	"revisionslider-arrow-tooltip-newer": "უმოსი ახალი ვერსიეფიშ ძირაფა",
+	"revisionslider-arrow-tooltip-older": "უმოსი ჯვეში ვერსიეფიშ ძირაფა",
+	"revisionslider-show-help-tooltip": "მოხვარაშ ტექსტიშ ძირაფა",
+	"revisionslider-help-dialog-slide1": "ვერსიაშ სლაიდერი მეგეხვარებჷნა ნავიგაციას დო საშველს მერჩანა ქემუზჷმუათ ხასჷლაშ ვერსიეფი. თინა გერსხილი რე გერმანულნინამი ჯარალუაშ ტექნიკური თხუალაშ ერკებულს რინელი [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider კორნებაშა]. კჷნოხონარაფაშო ქუმობჭარით [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider ათაქ].",
+	"revisionslider-help-dialog-slide2": "ირი სჷმეტი ხასჷლაშ ართ ვერსიას უხუჯანს. ღოზიშ ჟილეშე მოჩამილი სჷმეტეფი ხასჷლაშ ზჷმაშ ძინას ოძირანს, ღოზიშ გიმეშე რინელეფი — რკებას. სურათის, ვერსია 1 ოძირანს დინორეშ გეძინას, ვერსია 2 — დინორეშ ლასუას.",
+	"revisionslider-help-dialog-slide3a": "ზოხოიანი ვერსიეფიშ ელაზჷმაფალო, გეგშაგორით თინეფი ჟირფერამი ბურთულიეფიშ გჷმორინაფათ.\n\nჟილენი ბურთული აკონტროლენს უმოსი ახალ ვერსიას, გიმენი ბურთული მიოწურუანს უმოსი ჯვეშ ვერსიაშა.\n\nბურთულიეფიშ გინაყარაფალო, ქმუკირტეთ თინეფს დო გეგნიღით შხვადო ვარ-და უბრალეთ ქეგუწკანტეთ მანგურ სჷმეტის.",
+	"revisionslider-help-dialog-slide4": "ხასჷლაშ ისტორიას გინოყარაფაშო ვარ-და ხასჷლაშ უმოსი ჯვეში დო ახალი ვერსიეფიშ ოძირაფალო, გჷმირინეთ კვარჩხანი დო მარძგვანი საგანეფი.",
+	"revisionslider-tutorial": "ვერსიაშ სლაიდერიშ სახემანჯღვერო",
+	"revisionslider-previous-dialog": "კინოხიანი",
+	"revisionslider-next-dialog": "გეჸვენჯი",
+	"revisionslider-close-dialog": "კილუა"
+}
