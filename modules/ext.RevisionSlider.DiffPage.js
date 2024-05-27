@@ -61,14 +61,11 @@ $.extend( DiffPage.prototype, {
 			mw.hook( 'wikipage.categories' ).fire( $catlinks );
 			$( '.catlinks[data-mw="interface"]' ).replaceWith( $catlinks );
 
-			$( '#t-permalink' ).parent().replaceWith( $data.find( '#t-permalink' ).parent() );
-			$( '#ca-delete' ).parent().replaceWith( $data.find( '#ca-delete' ).parent() );
-			// Update edit link
-			$( '#ca-edit a, #ca-ve-edit a' ).each( function () {
-				const uri = new mw.Uri( $( this ).attr( 'href' ) );
-				uri.query.oldid = diff;
-				$( this ).attr( 'href', uri.toString() );
+			// Replace navigation menus. See also T211557
+			[ '#t-permalink', '#ca-delete', '#ca-edit', '#footer-places-mobileview' ].forEach( ( selector ) => {
+				$( selector ).parent().replaceWith( $data.find( selector ).parent() );
 			} );
+
 			// Update wgRevisionId (T161257), and wgDiffOldId/NewId
 			mw.config.set( {
 				wgRevisionId: diff,
