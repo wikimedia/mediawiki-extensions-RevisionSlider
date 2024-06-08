@@ -3,15 +3,15 @@
 const assert = require( 'assert' ),
 	DiffPage = require( '../pageobjects/diff.page' );
 
-describe( 'RevisionSlider revision tooltips', function () {
+describe( 'RevisionSlider revision tooltips', () => {
 
-	before( async function () {
+	before( async () => {
 		await DiffPage.prepareSimpleTests( 2 );
 		DiffPage.ready();
 		await DiffPage.openSlider();
 	} );
 
-	it( 'appears and remains on hovering it', async function () {
+	it( 'appears and remains on hovering it', async () => {
 
 		await DiffPage.dwellRevision( 1 );
 

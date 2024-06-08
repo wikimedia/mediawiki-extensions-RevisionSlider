@@ -3,11 +3,11 @@
 
 	QUnit.module( 'ext.RevisionSlider.Pointer' );
 
-	QUnit.test( 'Initialize Pointer', function ( assert ) {
+	QUnit.test( 'Initialize Pointer', ( assert ) => {
 		assert.true( ( new Pointer( 'mw-revslider-pointer' ) ).getView().getElement().hasClass( 'mw-revslider-pointer' ) );
 	} );
 
-	QUnit.test( 'Set and get position', function ( assert ) {
+	QUnit.test( 'Set and get position', ( assert ) => {
 		const pointer = new Pointer(),
 			pos = 42;
 

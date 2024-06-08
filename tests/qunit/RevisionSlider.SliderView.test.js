@@ -8,16 +8,16 @@
 
 	QUnit.module( 'ext.RevisionSlider.SliderView' );
 
-	QUnit.testStart( function () {
+	QUnit.testStart( () => {
 		startHistoryState = history.state;
 		startHref = window.location.href;
 	} );
 
-	QUnit.testDone( function () {
+	QUnit.testDone( () => {
 		history.replaceState( startHistoryState, 'QUnit', startHref );
 	} );
 
-	QUnit.test( 'render adds the slider view with defined revisions selected', function ( assert ) {
+	QUnit.test( 'render adds the slider view with defined revisions selected', ( assert ) => {
 		const $container = $( '<div>' ),
 			view = new SliderView( new Slider( new RevisionList( [
 				new Revision( { revid: 1, size: 5, comment: 'Comment1', user: 'User1' } ),
@@ -41,7 +41,7 @@
 		assert.strictEqual( $revisionNew.attr( 'data-revid' ), '37' );
 	} );
 
-	QUnit.test( 'render throws an exception when no selected revisions provided', function ( assert ) {
+	QUnit.test( 'render throws an exception when no selected revisions provided', ( assert ) => {
 		const $container = $( '<div>' ),
 			view = new SliderView( new Slider( new RevisionList( [
 				new Revision( { revid: 1, size: 5, comment: 'Comment1', user: 'User1' } ),
@@ -53,7 +53,7 @@
 		mw.config.set( 'wgDiffNewId', null );
 
 		assert.throws(
-			function () {
+			() => {
 				view.render( $container );
 			}
 		);

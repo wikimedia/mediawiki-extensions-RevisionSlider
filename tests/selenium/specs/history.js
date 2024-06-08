@@ -3,22 +3,22 @@
 const assert = require( 'assert' ),
 	DiffPage = require( '../pageobjects/diff.page' );
 
-describe( 'RevisionSlider history', function () {
+describe( 'RevisionSlider history', () => {
 
-	before( async function () {
+	before( async () => {
 		await DiffPage.prepareSimpleTests( 4 );
 	} );
 
-	beforeEach( async function () {
+	beforeEach( async () => {
 		DiffPage.ready();
 		await DiffPage.openSlider();
 	} );
 
-	afterEach( async function () {
+	afterEach( async () => {
 		await browser.refresh();
 	} );
 
-	it( ' can be accessed using browser back and forward buttons after clicking', async function () {
+	it( ' can be accessed using browser back and forward buttons after clicking', async () => {
 		// On a page with 4 revisions, the default positions are 3 → 4.
 		await DiffPage.getRevisionDown( 1 ).click();
 		// Positions are 1 → 4 now.
@@ -41,7 +41,7 @@ describe( 'RevisionSlider history', function () {
 		assert( await DiffPage.showsNewerSummary( 4 ) );
 	} );
 
-	it( ' can be accessed using browser back and forward buttons after dragging', async function () {
+	it( ' can be accessed using browser back and forward buttons after dragging', async () => {
 		await DiffPage.dragOlderPointerTo( 1 );
 		await DiffPage.waitUntilLoaded();
 		await DiffPage.dragNewerPointerTo( 2 );

@@ -25,10 +25,10 @@ const HelpButtonView = {
 			click: 'showDialog'
 		} );
 		helpButton.$element
-			.on( 'mouseover', function () {
+			.on( 'mouseover', () => {
 				helpPopup.toggle( true );
 			} )
-			.on( 'mouseout', function () {
+			.on( 'mouseout', () => {
 				helpPopup.toggle( false );
 			} )
 			.children().attr( {

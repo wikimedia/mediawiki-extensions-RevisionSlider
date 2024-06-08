@@ -176,7 +176,7 @@ HelpDialog.init = function () {
 
 	$( document.body )
 		.append( windowManager.$element )
-		.on( 'click', function ( event ) {
+		.on( 'click', ( event ) => {
 			if ( $( event.target ).hasClass( 'mw-revslider-help-dialog' ) ) {
 				HelpDialog.hide();
 			}

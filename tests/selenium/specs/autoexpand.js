@@ -3,22 +3,22 @@
 const assert = require( 'assert' ),
 	DiffPage = require( '../pageobjects/diff.page' );
 
-describe( 'RevisionSlider expand', function () {
+describe( 'RevisionSlider expand', () => {
 
-	before( async function () {
+	before( async () => {
 		await DiffPage.prepareSimpleTests( 2 );
 	} );
 
-	beforeEach( async function () {
+	beforeEach( async () => {
 		DiffPage.ready();
 	} );
 
-	afterEach( async function () {
+	afterEach( async () => {
 		await DiffPage.resetAutoExpand();
 		await browser.refresh();
 	} );
 
-	it( ' does not automatically expand by default', async function () {
+	it( ' does not automatically expand by default', async () => {
 		assert(
 			await DiffPage.rsToggleButton.isDisplayed(),
 			'there should be a RevisionSlider expand button'
@@ -29,7 +29,7 @@ describe( 'RevisionSlider expand', function () {
 		);
 	} );
 
-	it( ' expands automatically when auto expand is on', async function () {
+	it( ' expands automatically when auto expand is on', async () => {
 		await DiffPage.openSlider();
 		await DiffPage.rsAutoExpandButton.click();
 
@@ -49,7 +49,7 @@ describe( 'RevisionSlider expand', function () {
 		);
 	} );
 
-	it( ' does not expand automatically when auto expand is off', async function () {
+	it( ' does not expand automatically when auto expand is off', async () => {
 		await DiffPage.openSlider();
 		await DiffPage.rsAutoExpandButton.click();
 		await DiffPage.rsAutoExpandButton.click();
@@ -71,7 +71,7 @@ describe( 'RevisionSlider expand', function () {
 		);
 	} );
 
-	it( ' hides when collapsed manually', async function () {
+	it( ' hides when collapsed manually', async () => {
 		await DiffPage.openSlider();
 		await DiffPage.rsToggleButton.click();
 

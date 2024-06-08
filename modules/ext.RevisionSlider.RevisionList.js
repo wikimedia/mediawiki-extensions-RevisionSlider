@@ -71,7 +71,7 @@ $.extend( RevisionList.prototype, {
 	 */
 	getUserGenders: function () {
 		const userGenders = {};
-		this.revisions.forEach( function ( revision ) {
+		this.revisions.forEach( ( revision ) => {
 			if ( revision.getUser() ) {
 				userGenders[ revision.getUser() ] = revision.getUserGender();
 			}

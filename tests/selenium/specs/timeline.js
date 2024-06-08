@@ -3,13 +3,13 @@
 const assert = require( 'assert' ),
 	DiffPage = require( '../pageobjects/diff.page' );
 
-describe( 'RevisionSlider timeline arrows', function () {
+describe( 'RevisionSlider timeline arrows', () => {
 
-	afterEach( async function () {
+	afterEach( async () => {
 		await browser.refresh();
 	} );
 
-	it( ' should be disabled with 3 revisions', async function () {
+	it( ' should be disabled with 3 revisions', async () => {
 		await DiffPage.prepareSimpleTests( 3 );
 		DiffPage.ready();
 		await DiffPage.openSlider();
@@ -24,7 +24,7 @@ describe( 'RevisionSlider timeline arrows', function () {
 		);
 	} );
 
-	it( ' should be enabled with adequate revisions', async function () {
+	it( ' should be enabled with adequate revisions', async () => {
 		await browser.setWindowSize( 400, 600 );
 		await DiffPage.prepareSimpleTests( 20 );
 		DiffPage.ready();

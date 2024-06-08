@@ -3,22 +3,22 @@
 const assert = require( 'assert' ),
 	DiffPage = require( '../pageobjects/diff.page' );
 
-describe( 'RevisionSlider filter highlighting', function () {
+describe( 'RevisionSlider filter highlighting', () => {
 
-	before( async function () {
+	before( async () => {
 		await DiffPage.prepareFilterTests();
 	} );
 
-	beforeEach( async function () {
+	beforeEach( async () => {
 		DiffPage.ready();
 		await DiffPage.openSlider();
 	} );
 
-	afterEach( async function () {
+	afterEach( async () => {
 		await browser.refresh();
 	} );
 
-	it( 'highlights revisions by the same user when I use the user filter', async function () {
+	it( 'highlights revisions by the same user when I use the user filter', async () => {
 		await DiffPage.dwellRevision( 1 );
 		await DiffPage.clickUserFilterBubble();
 		assert( await DiffPage.highlightsBubble( await DiffPage.rsUserFilterBubble ) );
@@ -34,7 +34,7 @@ describe( 'RevisionSlider filter highlighting', function () {
 		);
 	} );
 
-	it( 'stops highlighting revisions when the filter is clicked twice', async function () {
+	it( 'stops highlighting revisions when the filter is clicked twice', async () => {
 		await DiffPage.dwellRevision( 1 );
 		await DiffPage.clickUserFilterBubble();
 		await DiffPage.clickUserFilterBubble();
@@ -52,7 +52,7 @@ describe( 'RevisionSlider filter highlighting', function () {
 		);
 	} );
 
-	it( 'highlights revisions that have the same tag when I use the tag filter', async function () {
+	it( 'highlights revisions that have the same tag when I use the tag filter', async () => {
 		await DiffPage.dwellRevision( 4 );
 		await DiffPage.clickTagFilterBubble();
 
@@ -69,7 +69,7 @@ describe( 'RevisionSlider filter highlighting', function () {
 		);
 	} );
 
-	it( 'highlights revisions that have the same tag when I use the tag filter after I used the user filter', async function () {
+	it( 'highlights revisions that have the same tag when I use the tag filter after I used the user filter', async () => {
 		await DiffPage.dwellRevision( 4 );
 		await DiffPage.clickUserFilterBubble();
 		await DiffPage.clickTagFilterBubble();
@@ -94,7 +94,7 @@ describe( 'RevisionSlider filter highlighting', function () {
 		);
 	} );
 
-	it( 'only highlights revisions that have the same tag when I selected a user but hover a tag filter', async function () {
+	it( 'only highlights revisions that have the same tag when I selected a user but hover a tag filter', async () => {
 		await DiffPage.dwellRevision( 4 );
 		await DiffPage.clickUserFilterBubble();
 		await DiffPage.dwellTagFilterBubble();
@@ -119,7 +119,7 @@ describe( 'RevisionSlider filter highlighting', function () {
 		);
 	} );
 
-	it( 're-applies highlight when I selected a user but hover and on-hover a tag filter', async function () {
+	it( 're-applies highlight when I selected a user but hover and on-hover a tag filter', async () => {
 		await DiffPage.dwellRevision( 4 );
 		await DiffPage.clickUserFilterBubble();
 		await DiffPage.dwellTagFilterBubble();

@@ -3,22 +3,22 @@
 const assert = require( 'assert' ),
 	DiffPage = require( '../pageobjects/diff.page' );
 
-describe( 'RevisionSlider pointers', function () {
+describe( 'RevisionSlider pointers', () => {
 
-	before( async function () {
+	before( async () => {
 		await DiffPage.prepareSimpleTests( 3 );
 	} );
 
-	beforeEach( async function () {
+	beforeEach( async () => {
 		DiffPage.ready();
 		await DiffPage.openSlider();
 	} );
 
-	afterEach( async function () {
+	afterEach( async () => {
 		await browser.refresh();
 	} );
 
-	it( ' can be dragged', async function () {
+	it( ' can be dragged', async () => {
 		assert(
 			await DiffPage.isOlderPointerOn( 2 ),
 			'older pointer should be on previous revision'
