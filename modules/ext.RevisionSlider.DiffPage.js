@@ -44,7 +44,7 @@ $.extend( DiffPage.prototype, {
 			tryCount: 0
 		} );
 		// Don't chain, so lastRequest is a jQuery.jqXHR object
-		this.lastRequest.then( function ( data2 ) {
+		this.lastRequest.then( ( data2 ) => {
 			const $data = $( data2 ),
 				$container = $( '.mw-revslider-container' ),
 				scrollLeft = $container.find( '.mw-revslider-revisions-container' ).scrollLeft();
@@ -173,10 +173,8 @@ $.extend( DiffPage.prototype, {
 	 */
 	getExtraDiffPageParams: function () {
 		const params = {},
-			paramArray = location.search.slice( 1 ).split( '&' ).filter( function ( elem ) {
-				return elem.indexOf( '=' ) > 0 && elem.match( /^(diff|oldid)=/ ) === null;
-			} );
-		paramArray.forEach( function ( elem ) {
+			paramArray = location.search.slice( 1 ).split( '&' ).filter( ( elem ) => elem.indexOf( '=' ) > 0 && elem.match( /^(diff|oldid)=/ ) === null );
+		paramArray.forEach( ( elem ) => {
 			const pair = elem.split( '=', 2 );
 			params[ pair[ 0 ] ] = pair[ 1 ];
 		} );
@@ -187,7 +185,7 @@ $.extend( DiffPage.prototype, {
 	 * @param {SliderView} sliderView
 	 */
 	initOnPopState: function ( sliderView ) {
-		window.addEventListener( 'popstate', function ( event ) {
+		window.addEventListener( 'popstate', ( event ) => {
 			if ( event.state === null ) {
 				return;
 			}
@@ -205,11 +203,11 @@ $.extend( DiffPage.prototype, {
 	 * @param {SliderView} sliderView
 	 */
 	addHandlersToCoreLinks: function ( sliderView ) {
-		$( '#differences-nextlink' ).on( 'click', function () {
+		$( '#differences-nextlink' ).on( 'click', () => {
 			sliderView.showNextDiff();
 			return false;
 		} );
-		$( '#differences-prevlink' ).on( 'click', function () {
+		$( '#differences-prevlink' ).on( 'click', () => {
 			sliderView.showPrevDiff();
 			return false;
 		} );

@@ -14,7 +14,7 @@
 
 	QUnit.module( 'ext.RevisionSlider.Slider' );
 
-	QUnit.test( 'has revisions', function ( assert ) {
+	QUnit.test( 'has revisions', ( assert ) => {
 		const revs = new RevisionList( [
 				new Revision( { revid: 1 } ),
 				new Revision( { revid: 2 } )
@@ -24,13 +24,13 @@
 		assert.strictEqual( slider.getRevisionList(), revs );
 	} );
 
-	QUnit.test( 'Given no revisions, first visible revision index is 0', function ( assert ) {
+	QUnit.test( 'Given no revisions, first visible revision index is 0', ( assert ) => {
 		const slider = new Slider( makeNRevisions( 0 ) );
 
 		assert.strictEqual( slider.getOldestVisibleRevisionIndex(), 0 );
 	} );
 
-	QUnit.test( 'Given 200 revisions sliding once increases oldestVisibleRevisionIndex by the number of revisions per window', function ( assert ) {
+	QUnit.test( 'Given 200 revisions sliding once increases oldestVisibleRevisionIndex by the number of revisions per window', ( assert ) => {
 		const slider = new Slider( makeNRevisions( 200 ) );
 		slider.setRevisionsPerWindow( 49.999 );
 		slider.slide( 1 );
@@ -38,7 +38,7 @@
 		assert.strictEqual( slider.getOldestVisibleRevisionIndex(), 50 );
 	} );
 
-	QUnit.test( 'oldestVisibleRevisionIndex cannot be higher than revisions.length - revisionsPerWindow', function ( assert ) {
+	QUnit.test( 'oldestVisibleRevisionIndex cannot be higher than revisions.length - revisionsPerWindow', ( assert ) => {
 		const slider = new Slider( makeNRevisions( 75 ) );
 		slider.setRevisionsPerWindow( 50 );
 		slider.slide( 1 );
@@ -46,7 +46,7 @@
 		assert.strictEqual( slider.getOldestVisibleRevisionIndex(), 25 );
 	} );
 
-	QUnit.test( 'oldestVisibleRevisionIndex cannot be lower than 0', function ( assert ) {
+	QUnit.test( 'oldestVisibleRevisionIndex cannot be lower than 0', ( assert ) => {
 		const slider = new Slider( makeNRevisions( 50 ) );
 		slider.oldestVisibleRevisionIndex = 10;
 		slider.setRevisionsPerWindow( 20 );

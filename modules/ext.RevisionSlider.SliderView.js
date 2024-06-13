@@ -144,12 +144,12 @@ $.extend( SliderView.prototype, {
 			.css( pointerContainerStyle )
 			.append( this.renderPointerContainers() )
 			.on( 'click', this.revisionsClickHandler.bind( this ) )
-			.on( 'mouseout', function () {
+			.on( 'mouseout', () => {
 				if ( !self.isDragged ) {
 					self.getRevisionListView().removeAllRevisionPreviewHighlights();
 				}
 			} )
-			.on( 'mouseover', function ( event ) {
+			.on( 'mouseover', ( event ) => {
 				if ( !self.isDragged ) {
 					lastMouseMoveRevisionPos = self.pointerContainerMouseMoveHandler(
 						event,
@@ -157,7 +157,7 @@ $.extend( SliderView.prototype, {
 					);
 				}
 			} )
-			.on( 'mousemove', function ( event ) {
+			.on( 'mousemove', ( event ) => {
 				if ( !self.isDragged ) {
 					lastMouseMoveRevisionPos = self.pointerContainerMouseMoveHandler(
 						event,
@@ -203,7 +203,7 @@ $.extend( SliderView.prototype, {
 		$pointerNewer.attr( 'tabindex', 0 );
 		$pointerOlder.attr( 'tabindex', 0 );
 
-		$( document.body ).on( 'keydown', function ( e ) {
+		$( document.body ).on( 'keydown', ( e ) => {
 			if ( e.which === OO.ui.Keys.ESCAPE ) {
 				self.escapePressed = true;
 				$pointers.trigger( 'mouseup' );
@@ -211,7 +211,7 @@ $.extend( SliderView.prototype, {
 		} );
 
 		$pointers
-			.on( 'focus', function ( event ) {
+			.on( 'focus', ( event ) => {
 				self.onPointerFocus( event, $revisions );
 			} )
 			.on( 'blur', this.getRevisionListView().onFocusBlur.bind( this.getRevisionListView() ) )
@@ -457,7 +457,7 @@ $.extend( SliderView.prototype, {
 
 		this.lastRequest = this.refreshDiffView( diff, oldid );
 
-		this.lastRequest.then( function () {
+		this.lastRequest.then( () => {
 			$pointer.trigger( 'focus' );
 		} );
 	},
@@ -878,7 +878,7 @@ $.extend( SliderView.prototype, {
 			{ scrollLeft: this.getScrollLeft() },
 			duration,
 			null,
-			function () {
+			() => {
 				self.pointerOlder.getView().getElement().draggable( 'enable' );
 				self.pointerNewer.getView().getElement().draggable( 'enable' );
 
@@ -922,13 +922,13 @@ $.extend( SliderView.prototype, {
 
 		this.pointerOlder.getView()
 			.slideToSideOrPosition( this.slider, duration )
-			.promise().done( function () {
+			.promise().done( () => {
 				self.resetSliderLines();
 				self.redrawPointerLines();
 			} );
 		this.pointerNewer.getView()
 			.slideToSideOrPosition( this.slider, duration )
-			.promise().done( function () {
+			.promise().done( () => {
 				self.resetSliderLines();
 				self.redrawPointerLines();
 			} );
@@ -963,7 +963,7 @@ $.extend( SliderView.prototype, {
 			limit: revisionCount + 1,
 			knownUserGenders: this.slider.getRevisionList().getUserGenders(),
 			changeTags: this.slider.getRevisionList().getAvailableTags()
-		} ).then( function ( data ) {
+		} ).then( ( data ) => {
 			const revs = data.revisions.slice( 1 );
 			if ( revs.length === 0 ) {
 				self.noMoreNewerRevisions = true;
@@ -999,7 +999,7 @@ $.extend( SliderView.prototype, {
 			limit: revisionCount + 2,
 			knownUserGenders: this.slider.getRevisionList().getUserGenders(),
 			changeTags: this.slider.getRevisionList().getAvailableTags()
-		} ).then( function ( data ) {
+		} ).then( ( data ) => {
 			let revs = data.revisions.slice( 1 ).reverse();
 			if ( revs.length === 0 ) {
 				self.noMoreOlderRevisions = true;

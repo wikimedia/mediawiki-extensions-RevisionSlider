@@ -6,7 +6,7 @@
 
 	QUnit.module( 'ext.RevisionSlider.RevisionList' );
 
-	QUnit.test( 'Find biggest Revision', function ( assert ) {
+	QUnit.test( 'Find biggest Revision', ( assert ) => {
 		const revs = new RevisionList( [
 			new Revision( { revid: 1, size: 5 } ),
 			new Revision( { revid: 2, size: 21 } ),
@@ -16,7 +16,7 @@
 		assert.strictEqual( revs.getBiggestChangeSize(), 16 );
 	} );
 
-	QUnit.test( 'calculate relative size on init', function ( assert ) {
+	QUnit.test( 'calculate relative size on init', ( assert ) => {
 		const revs = new RevisionList( [
 			new Revision( { revid: 1, size: 5 } ),
 			new Revision( { revid: 2, size: 21 } ),
@@ -28,7 +28,7 @@
 		assert.strictEqual( revs.getRevisions()[ 2 ].getRelativeSize(), -8 );
 	} );
 
-	QUnit.test( 'getUserGenders', function ( assert ) {
+	QUnit.test( 'getUserGenders', ( assert ) => {
 		const revs = new RevisionList( [
 			new Revision( { revid: 1, user: 'User1', userGender: 'female' } ),
 			new Revision( { revid: 2, user: 'User2' } ),
@@ -38,7 +38,7 @@
 		assert.deepEqual( revs.getUserGenders(), { User1: 'female', User2: '', User3: 'male' } );
 	} );
 
-	QUnit.test( 'Push appends revisions to the end of the list', function ( assert ) {
+	QUnit.test( 'Push appends revisions to the end of the list', ( assert ) => {
 		const list = new RevisionList( [
 			new Revision( { revid: 1, size: 5 } ),
 			new Revision( { revid: 2, size: 21 } ),
@@ -63,7 +63,7 @@
 		assert.strictEqual( revisions[ 4 ].getRelativeSize(), 6 );
 	} );
 
-	QUnit.test( 'Unshift prepends revisions to the beginning of the list', function ( assert ) {
+	QUnit.test( 'Unshift prepends revisions to the beginning of the list', ( assert ) => {
 		const list = new RevisionList( [
 			new Revision( { revid: 5, size: 5 } ),
 			new Revision( { revid: 6, size: 21 } ),
@@ -88,7 +88,7 @@
 		assert.strictEqual( revisions[ 4 ].getRelativeSize(), -8 );
 	} );
 
-	QUnit.test( 'Unshift considers the size of the preceding revision if specified', function ( assert ) {
+	QUnit.test( 'Unshift considers the size of the preceding revision if specified', ( assert ) => {
 		const list = new RevisionList( [
 			new Revision( { revid: 5, size: 5 } ),
 			new Revision( { revid: 6, size: 21 } ),
@@ -108,7 +108,7 @@
 		assert.strictEqual( revisions[ 0 ].getRelativeSize(), 7 );
 	} );
 
-	QUnit.test( 'Slice returns a subset of the list', function ( assert ) {
+	QUnit.test( 'Slice returns a subset of the list', ( assert ) => {
 		const list = new RevisionList( [
 				new Revision( { revid: 1, size: 5 } ),
 				new Revision( { revid: 2, size: 21 } ),
@@ -126,7 +126,7 @@
 		assert.strictEqual( revisions[ 1 ].getRelativeSize(), -8 );
 	} );
 
-	QUnit.test( 'Slice returns a subset of the list, end param omitted', function ( assert ) {
+	QUnit.test( 'Slice returns a subset of the list, end param omitted', ( assert ) => {
 		const list = new RevisionList( [
 				new Revision( { revid: 1, size: 5 } ),
 				new Revision( { revid: 2, size: 21 } ),
@@ -144,7 +144,7 @@
 		assert.strictEqual( revisions[ 3 ].getId(), 8 );
 	} );
 
-	QUnit.test( 'makeRevisions converts revision data into list of Revision objects', function ( assert ) {
+	QUnit.test( 'makeRevisions converts revision data into list of Revision objects', ( assert ) => {
 		const revs = [
 				{ revid: 1, size: 5, userGender: 'female' },
 				{ revid: 2, size: 21, userGender: 'unknown' },

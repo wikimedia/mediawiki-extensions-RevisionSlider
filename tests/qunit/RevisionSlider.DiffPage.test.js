@@ -1,6 +1,6 @@
 QUnit.module( 'ext.RevisionSlider.DiffPage' );
 
-QUnit.test( 'Push state', function ( assert ) {
+QUnit.test( 'Push state', ( assert ) => {
 	const SliderModule = require( 'ext.RevisionSlider.Slider' ),
 		DiffPage = SliderModule.DiffPage,
 		SliderView = SliderModule.SliderView,

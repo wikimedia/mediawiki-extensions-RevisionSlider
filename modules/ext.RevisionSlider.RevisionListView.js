@@ -108,7 +108,7 @@ $.extend( RevisionListView.prototype, {
 					.on( 'mouseenter', function ( event ) {
 						self.onRevisionHover( $( this ), event );
 					} )
-					.on( 'mouseleave', function () {
+					.on( 'mouseleave', () => {
 						self.removeAllRevisionPreviewHighlights();
 						self.removeCurrentRevisionFocusWithDelay();
 					} )
@@ -318,7 +318,7 @@ $.extend( RevisionListView.prototype, {
 		const self = this;
 
 		$( document )
-			.on( 'click', function ( event ) {
+			.on( 'click', ( event ) => {
 				const $inside = $( event.target )
 					.closest( '.mw-revslider-revision-tooltip, .mw-revslider-revisions-container' );
 				if ( !$inside.length ) {

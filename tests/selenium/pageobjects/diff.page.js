@@ -293,7 +293,7 @@ class DiffPage extends Page {
 
 	waitForAnimation( el ) {
 		browser.execute( ( elem ) => {
-			setInterval( function () {
+			setInterval( () => {
 				if ( $( elem ).filter( ':not(animated)' ) ) {
 					clearInterval();
 				}

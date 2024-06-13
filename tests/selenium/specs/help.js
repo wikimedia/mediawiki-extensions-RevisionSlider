@@ -3,23 +3,23 @@
 const assert = require( 'assert' ),
 	DiffPage = require( '../pageobjects/diff.page' );
 
-describe( 'RevisionSlider help', function () {
+describe( 'RevisionSlider help', () => {
 
-	before( async function () {
+	before( async () => {
 		await DiffPage.prepareSimpleTests( 2, true );
 	} );
 
-	beforeEach( async function () {
+	beforeEach( async () => {
 		DiffPage.ready();
 		await DiffPage.openSlider();
 	} );
 
-	afterEach( async function () {
+	afterEach( async () => {
 		await browser.refresh();
 		await DiffPage.toggleHelpDialog( true );
 	} );
 
-	it( 'tutorial is present on first load', async function () {
+	it( 'tutorial is present on first load', async () => {
 
 		assert(
 			await DiffPage.helpDialog.isDisplayed(), 'help dialog should be visible'
@@ -27,7 +27,7 @@ describe( 'RevisionSlider help', function () {
 
 	} );
 
-	it( 'tutorial is not present after it was dismissed once', async function () {
+	it( 'tutorial is not present after it was dismissed once', async () => {
 
 		await DiffPage.toggleHelpDialog( false );
 
@@ -40,7 +40,7 @@ describe( 'RevisionSlider help', function () {
 
 	} );
 
-	it( 'tutorial sequence works', async function () {
+	it( 'tutorial sequence works', async () => {
 
 		await DiffPage.nextHelpButton.click();
 		await DiffPage.nextHelpButton.click();

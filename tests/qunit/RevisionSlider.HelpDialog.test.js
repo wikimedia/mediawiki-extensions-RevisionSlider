@@ -1,6 +1,6 @@
 QUnit.module( 'ext.RevisionSlider.HelpDialog' );
 
-QUnit.test( 'Initialize HelpDialog', function ( assert ) {
+QUnit.test( 'Initialize HelpDialog', ( assert ) => {
 	const HelpDialog = require( 'ext.RevisionSlider.Slider' ).HelpDialog;
 	const helpDialog = new HelpDialog(),
 		windowManager = new OO.ui.WindowManager();

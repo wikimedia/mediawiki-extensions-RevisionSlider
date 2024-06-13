@@ -3,15 +3,15 @@
 const assert = require( 'assert' ),
 	DiffPage = require( '../pageobjects/diff.page' );
 
-describe( 'RevisionSlider diff links', function () {
+describe( 'RevisionSlider diff links', () => {
 
-	beforeEach( async function () {
+	beforeEach( async () => {
 		await DiffPage.prepareSimpleTests( 3 );
 		DiffPage.ready();
 		await DiffPage.openSlider();
 	} );
 
-	it( ' older edit diff link can be clicked', async function () {
+	it( ' older edit diff link can be clicked', async () => {
 		await DiffPage.rsEditOlderButton.click();
 		await DiffPage.waitUntilLoaded();
 
@@ -21,7 +21,7 @@ describe( 'RevisionSlider diff links', function () {
 		assert( await DiffPage.showsNewerSummary( 2 ) );
 	} );
 
-	it( ' newer edit diff link can be clicked', async function () {
+	it( ' newer edit diff link can be clicked', async () => {
 		await DiffPage.rsEditOlderButton.click();
 		await DiffPage.waitUntilLoaded();
 

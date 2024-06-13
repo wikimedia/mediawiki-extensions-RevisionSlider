@@ -27,13 +27,13 @@ function initialize() {
 
 	HelpDialog.init();
 
-	api.fetchAvailableChangeTags().then( function ( data ) {
+	api.fetchAvailableChangeTags().then( ( data ) => {
 		const changeTags = data && data.query && data.query.tags || [];
 		api.fetchRevisionData( mw.config.get( 'wgPageName' ), {
 			startId: Math.max( mw.config.get( 'wgDiffOldId' ), mw.config.get( 'wgDiffNewId' ) ),
 			limit: utils.calculateRevisionsPerWindow( 160, 16 ),
 			changeTags: changeTags
-		} ).then( function ( data2 ) {
+		} ).then( ( data2 ) => {
 			mw.track( 'timing.MediaWiki.RevisionSlider.timing.initFetchRevisionData', mw.now() - startTime );
 
 			try {
@@ -51,7 +51,7 @@ function initialize() {
 				const slider = new Slider( revisionList );
 				slider.getView().render( $container );
 
-				$( window ).on( 'resize', OO.ui.throttle( function () {
+				$( window ).on( 'resize', OO.ui.throttle( () => {
 					slider.getView().render( $container );
 				}, 250 ) );
 
@@ -68,7 +68,7 @@ function initialize() {
 				mw.log.error( err );
 				mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
 			}
-		}, function ( err ) {
+		}, ( err ) => {
 			$( '.mw-revslider-placeholder' )
 				.text( mw.msg( 'revisionslider-loading-failed' ) );
 			mw.log.error( err );
