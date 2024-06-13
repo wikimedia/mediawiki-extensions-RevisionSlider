@@ -23,7 +23,7 @@
 	"revisionslider-turn-off-auto-expand-title": "Версийн слайдер авто схьамаяста",
 	"revisionslider-arrow-tooltip-newer": "Хьажа керла версеш",
 	"revisionslider-arrow-tooltip-older": "Хьажа кхин шира версеш",
-	"revisionslider-show-help-tooltip": "Нисдаран йоза гайта",
+	"revisionslider-show-help-tooltip": "ГӀоьнан текст гайта",
 	"revisionslider-help-dialog-slide1": "Версийн слайдеро гӀо до йаззамийн версешка хьажа. Шайна хеттарг йазде [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider леррина адрес] тӀе.",
 	"revisionslider-help-dialog-slide2": "ХӀора богӀам бу агӀонан верси. Сизан лакхара богӀамаш гойту агӀонан барам тӀекхетар, лахара богӀамаш гойту барам кӀезиг хилар. Редакци 1 суьрта тӀехь гойту чулацам тӀетохар, ткъа редакци 2 дӀабаккхар.",
 	"revisionslider-help-dialog-slide3a": "<p>Къастина версешка хьажа, харжа уьш, можа а, сийна гойтургаш лелаеш.</p><p>Сийначу гойтурго билгалйо керла верси, можачу гойтурго — шира верси.</p>",
