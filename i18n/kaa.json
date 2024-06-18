@@ -4,5 +4,11 @@
 			"Ajiniyaz Nurniyazov"
 		]
 	},
-	"revisionslider-toggle-label": "Bettiń tariyxın sholıw"
+	"revisionslider-toggle-label": "Bettiń tariyxın sholıw",
+	"revisionslider-label-date": "Sáne",
+	"revisionslider-label-page-size": "Bet kólemi",
+	"revisionslider-label-change-size": "Ózgeris kólemi",
+	"revisionslider-label-comment": "Ózgerisler túsindirmesi",
+	"revisionslider-label-username": "Paydalanıwshı atı",
+	"revisionslider-show-help-tooltip": "Járdem tekstin kórsetiw"
 }
