@@ -10,7 +10,8 @@
 			"Trial",
 			"Verdy p",
 			"Wladek92",
-			"Yasten"
+			"Yasten",
+			"SleaY"
 		]
 	},
 	"revisionslider": "RevisionSlider",
@@ -35,7 +36,7 @@
 	"revisionslider-show-help-tooltip": "Afficher le texte d’aide",
 	"revisionslider-help-dialog-slide1": "La glissière des versions aide à naviguer et à comparer les versions sur la page de diff. Elle est basée sur une [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider demande communautaire] de la liste des souhaits techniques de la communauté de langue allemande. Toute appréciation de votre part est la bienvenue [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider ici].",
 	"revisionslider-help-dialog-slide2": "Chaque barre représente une révision de la page. Les traits supérieurs indiquent une croissance en taille de la page, les traits inférieurs une diminution. Sur l’image, la révision 1 représente un contenu ajouté, tandis que la révision 2 représente une suppression.",
-	"revisionslider-help-dialog-slide3a": "Pour comparer certaines modifications, sélectionnez les révisions à l’aide des deux curseurs colorés.\n\nLe curseur supérieur contrôle la version la plus récente, l’inférieur la version plus ancienne.\n\nDéplacez les curseurs par glisser-déposer ou cliquez sur la ligne de la glissière.",
+	"revisionslider-help-dialog-slide3a": "Pour comparer certaines modifications, sélectionnez les versions à l’aide des deux curseurs colorés.\n\nLe curseur supérieur contrôle la version la plus récente, l’inférieur la version plus ancienne.\n\nDéplacez les curseurs par glisser-déposer ou cliquez sur la ligne de la glissière.",
 	"revisionslider-help-dialog-slide4": "Utilisez les flèches vers l’avant et vers l’arrière pour vous déplacer dans l’historique des versions et afficher les versions plus anciennes ou plus récentes.",
 	"revisionslider-tutorial": "Tutoriel de la glissière des versions",
 	"revisionslider-previous-dialog": "Précédent",
