@@ -12,7 +12,7 @@ function Slider( revisions ) {
 	this.view = new SliderView( this );
 }
 
-$.extend( Slider.prototype, {
+Object.assign( Slider.prototype, {
 	/**
 	 * @type {RevisionList}
 	 */

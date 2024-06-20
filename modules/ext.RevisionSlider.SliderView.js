@@ -21,7 +21,7 @@ function SliderView( slider ) {
 	this.diffPage.initOnPopState( this );
 }
 
-$.extend( SliderView.prototype, {
+Object.assign( SliderView.prototype, {
 
 	revisionWidth: 16,
 	containerMargin: 140,

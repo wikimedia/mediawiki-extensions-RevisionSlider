@@ -1,6 +1,6 @@
 QUnit.revisionSlider = {};
 
-$.extend( QUnit.revisionSlider, {
+Object.assign( QUnit.revisionSlider, {
 	// Helper function to add conditions to QUnit skip methods.
 	testOrSkip: function ( name, testCallback, skipCondition ) {
 		if ( skipCondition ) {

@@ -15,7 +15,7 @@ function RevisionList( revs, availableTags ) {
 	this.view = new RevisionListView( this );
 }
 
-$.extend( RevisionList.prototype, {
+Object.assign( RevisionList.prototype, {
 	/**
 	 * @type {Revision[]}
 	 */

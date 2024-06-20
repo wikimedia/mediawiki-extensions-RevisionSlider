@@ -11,7 +11,7 @@ function PointerLine( pointer, name ) {
 	this.name = name;
 }
 
-$.extend( PointerLine.prototype, {
+Object.assign( PointerLine.prototype, {
 	/**
 	 * @type {string}
 	 */

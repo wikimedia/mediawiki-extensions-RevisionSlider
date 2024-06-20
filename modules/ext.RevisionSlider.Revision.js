@@ -19,7 +19,7 @@ function Revision( data ) {
 	this.userGender = data.userGender || '';
 }
 
-$.extend( Revision.prototype, {
+Object.assign( Revision.prototype, {
 	/**
 	 * @type {number}
 	 */

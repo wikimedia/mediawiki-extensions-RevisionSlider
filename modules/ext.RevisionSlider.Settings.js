@@ -7,7 +7,7 @@ function Settings() {
 	this.autoExpand = this.loadBoolean( 'autoexpand' );
 }
 
-$.extend( Settings.prototype, {
+Object.assign( Settings.prototype, {
 	/**
 	 * @type {boolean}
 	 */

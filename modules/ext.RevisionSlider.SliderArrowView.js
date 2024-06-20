@@ -9,7 +9,7 @@ function SliderArrowView( sliderView ) {
 	this.sliderView = sliderView;
 }
 
-$.extend( SliderArrowView.prototype, {
+Object.assign( SliderArrowView.prototype, {
 	/**
 	 * @type {SliderView}
 	 */

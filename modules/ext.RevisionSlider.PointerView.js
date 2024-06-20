@@ -11,7 +11,7 @@ function PointerView( pointer, name ) {
 	this.name = name;
 }
 
-$.extend( PointerView.prototype, {
+Object.assign( PointerView.prototype, {
 	/**
 	 * @type {string}
 	 */

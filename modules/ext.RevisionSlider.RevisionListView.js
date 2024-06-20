@@ -7,7 +7,7 @@ function RevisionListView( revisionList ) {
 	this.revisionList = revisionList;
 }
 
-$.extend( RevisionListView.prototype, {
+Object.assign( RevisionListView.prototype, {
 	/**
 	 * @type {RevisionList}
 	 */

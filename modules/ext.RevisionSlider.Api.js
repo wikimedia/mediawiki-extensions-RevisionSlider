@@ -7,7 +7,7 @@ function Api( apiUrl ) {
 	this.url = apiUrl;
 }
 
-$.extend( Api.prototype, {
+Object.assign( Api.prototype, {
 	url: '',
 
 	/**
@@ -80,7 +80,7 @@ $.extend( Api.prototype, {
 							data2.query.users &&
 							data2.query.users.length > 0
 						) {
-							$.extend( genderData, self.getUserGenderData( data2.query.users, genderData ) );
+							Object.assign( genderData, self.getUserGenderData( data2.query.users, genderData ) );
 						}
 
 						revs.forEach( ( rev ) => {

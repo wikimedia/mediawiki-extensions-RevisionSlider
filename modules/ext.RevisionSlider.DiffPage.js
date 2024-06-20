@@ -8,7 +8,7 @@ function DiffPage() {
 	this.lastRequest = null;
 }
 
-$.extend( DiffPage.prototype, {
+Object.assign( DiffPage.prototype, {
 	/**
 	 * Refreshes the diff view with two given revision IDs
 	 *
@@ -29,7 +29,7 @@ $.extend( DiffPage.prototype, {
 		retryAttempt = retryAttempt || 0;
 
 		if ( Object.keys( params ).length > 0 ) {
-			$.extend( data, params );
+			Object.assign( data, params );
 		}
 
 		if ( this.lastRequest ) {

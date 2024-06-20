@@ -42,7 +42,7 @@ HelpDialog.static.actions = [
 	}
 ];
 
-$.extend( HelpDialog.prototype, {
+Object.assign( HelpDialog.prototype, {
 	/**
 	 * @type {OO.ui.PanelLayout[]}
 	 */

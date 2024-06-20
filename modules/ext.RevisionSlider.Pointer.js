@@ -13,7 +13,7 @@ function Pointer( name ) {
 	this.line = new PointerLine( this, name );
 }
 
-$.extend( Pointer.prototype, {
+Object.assign( Pointer.prototype, {
 	/**
 	 * @type {number}
 	 */
