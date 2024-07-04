@@ -4,5 +4,32 @@
 			"Ezagren"
 		]
 	},
-	"revisionslider-toggle-title-collapse": "Ungsutakan saluncur ralatan"
+	"revisionslider": "RevisionSlider",
+	"revisionslider-preference-disable": "Jangan tampaiakan saluncur ralatan",
+	"revisionslider-desc": "Tampaiakan saluncur nang kawa mamilih wan pambandingan ralatan di laman riwayat",
+	"revisionslider-toggle-label": "Jalajahi riwayat sacara bagawi-silang",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|bita}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|bita}}",
+	"revisionslider-label-date": "Tanggal",
+	"revisionslider-label-page-size": "Ukuran laman",
+	"revisionslider-label-change-size": "Ukuran paubahan",
+	"revisionslider-label-comment": "Ringkasan babakan",
+	"revisionslider-label-username": "{{GENDER:$1|Ngaran pamakai}}",
+	"revisionslider-minoredit": "Ngini babakan sapalih",
+	"revisionslider-loading-failed": "Saluncur ralatan gagal dimuat.",
+	"revisionslider-toggle-title-expand": "Buka saluncur ralatan",
+	"revisionslider-toggle-title-collapse": "Ungsutakan saluncur ralatan",
+	"revisionslider-turn-on-auto-expand-title": "Salalu urak saluncur ralatan",
+	"revisionslider-turn-off-auto-expand-title": "Jangan urak utumatis saluncur ralatan",
+	"revisionslider-arrow-tooltip-newer": "Ralatan labih hanyar",
+	"revisionslider-arrow-tooltip-older": "Ralatan labih lawas",
+	"revisionslider-show-help-tooltip": "Tampaiakan naskah patulung",
+	"revisionslider-help-dialog-slide1": "Saluncur ralatan manulung Pian dalam banavigasi wan mambandingakan ralatan di laman riwayat. Éksténsi ini diulah asasnya di [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider pamintan komunitas] matan komunitas téknis babasa Jérman. Umpan balik Pian diharapakan banar [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider di sini].",
+	"revisionslider-help-dialog-slide2": "Saban batang mawakilakan sabuting ralatan laman. Batang nang andakannya di atas manunjukakan paningkatan ukuran laman. Batang nang andakannya di bawah manunjukakan pangurangan. Pada gambar ini, pada ralatan 1 ada kontén nang ditambah, pahadangan pada ralatan 2 ada kontén nang dihapus.",
+	"revisionslider-help-dialog-slide3a": "Gasan mambandingakan ralatan tartantu, pilih ralatan mamakai dua kenop bakalir.\n\nKenop atas maitihi ralatan nang labih hanyar, kenop bawah marancangakan ka ralatan nang labih lawas.\n\nPindahakan kenop lawan cara drag and drop atawa klik pada garis slider.",
+	"revisionslider-help-dialog-slide4": "Pakai panah mundur wan maju gasan baugah malintasi riwayat ralatan wan manampaiakan ralatan nang labih lawas wan nang labih hanyar.",
+	"revisionslider-tutorial": "Bimbingan saluncur ralatan",
+	"revisionslider-previous-dialog": "Sabalumnya",
+	"revisionslider-next-dialog": "Salanjutnya",
+	"revisionslider-close-dialog": "Tukup"
 }

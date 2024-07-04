@@ -10,5 +10,11 @@
 	"revisionslider-label-change-size": "Ózgeris kólemi",
 	"revisionslider-label-comment": "Ózgerisler túsindirmesi",
 	"revisionslider-label-username": "Paydalanıwshı atı",
-	"revisionslider-show-help-tooltip": "Járdem tekstin kórsetiw"
+	"revisionslider-minoredit": "Bul kishi ózgeris",
+	"revisionslider-loading-failed": "Nusqalar slayderi júklenbedi.",
+	"revisionslider-show-help-tooltip": "Járdem tekstin kórsetiw",
+	"revisionslider-tutorial": "Nusqalar slayderi boyınsha qollanba",
+	"revisionslider-previous-dialog": "Aldınǵı",
+	"revisionslider-next-dialog": "Keyingi",
+	"revisionslider-close-dialog": "Jabıw"
 }
