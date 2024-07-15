@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mehtab ahmed"
+			"Mehtab ahmed",
+			"Charoo"
 		]
 	},
 	"revisionslider": "ورجاءَسوريندڙ",
@@ -24,7 +25,7 @@
 	"revisionslider-arrow-tooltip-newer": "نوان تر ورجاءَ ڏسو",
 	"revisionslider-arrow-tooltip-older": "پراڻا ورجاءَ ڏسو",
 	"revisionslider-show-help-tooltip": "مددي متن ڏيکاريو",
-	"revisionslider-help-dialog-slide1": "ورجاءَسوريندڙ توھان کي تفاوت صفحي جا ورجاءَ گهمڻ ۽ ڀيٽڻ ۾ مدد ڪري ٿو. ھي [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider نياتي خواھش] جرمن ڳالھائيندڙ ڪميونٽي جي تڪنيڪي خواھش-فھرست تي ٻڌل آھي. موٽ ڏيڻ کي [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider ھتي] تمام گهڻو ساراهيو ويندو.",
+	"revisionslider-help-dialog-slide1": "نظرثاني وارو سلائيڊر توھان کي مختلف صفحن تي نظرثاني ۽ موازنيَ ڪرڻ ۾ مدد ڪري ٿي. ھي [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider برادري جي خواھش] تي جرمن ڳالھائيندڙ برادري جي تڪنيڪي خواھش-فھرست تي ٻڌل آھي. موٽ ڏيڻ کي [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider ھتي] تمام گهڻو ساراهيو ويندو.",
 	"revisionslider-help-dialog-slide2": "ھر بار ھڪ صفحي ورجاءُ ظاھر ڪري ٿو. مٿيان بار صفحي جي ماپ ۾ واڌ کي ظاھر ڪن ٿا، ھيٺيان بار گهاٽ کي ظاھر ڪن ٿا. عڪس ۾، ورجاءُ 1 وڌل مواد کي ظاھر ڪري ٿو، جڏھن تہ ورجاءُ 2 مواد جي ھٽاءَ  کي ظاھر ڪري ٿو.",
 	"revisionslider-help-dialog-slide3a": "مخصوص ورجائن کي ڀيٽڻ لاءِ، ٻن رنگن وارا نابس استعمال ڪندي ورجاءَ چونڊيو.\n\nمٿيون ناب نون ورجائن کي ڏسي ٿو، جڏھن تہ ھيٺيون ناب پراڻن ورجائن کي پيش ڪري ٿو.\n\nنابس کي ڊريگ ۽ ڊراپ سان يا سوريندڙ پٽيءَ تي ٽڙڪ ڪرڻ سان چوريو.",
 	"revisionslider-help-dialog-slide4": "ورجاءُ سوانح منجهان چرڻ ۽ پراڻا ۽ نوان ورجاءَ ڏسڻ لاءِ پوئتي ۽ اڳتي وارا تير استعمال ڪريو.",
