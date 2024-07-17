@@ -4,13 +4,14 @@
 			"Merrahtar"
 		]
 	},
-	"revisionslider-toggle-label": "Кӣһче исторья интэрактивлэнне",
+	"revisionslider-toggle-label": "Интэрактивнэ исторья кӣһчмушш",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|ба̄ййт|ба̄йт|ба̄ййтэ}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|ба̄ййт|ба̄йт|ба̄ййтэ}}",
-	"revisionslider-label-date": "Да̄та",
+	"revisionslider-label-date": "Пе̄ййвме̄ррь",
 	"revisionslider-label-page-size": "Лыст ме̄ррь",
 	"revisionslider-label-change-size": "Воа̄йхэз ме̄ррь",
-	"revisionslider-label-comment": "Вуайхэзэ баяс",
+	"revisionslider-label-comment": "Воа̄йхэз баяс",
+	"revisionslider-label-username": "{{GENDER:$1|Оаннӭй нэ̄мм}}",
 	"revisionslider-minoredit": "Тэдта лӣ удць воа̄йхэсс",
 	"revisionslider-next-dialog": "Пуэдтӭй",
 	"revisionslider-close-dialog": "Ка̄һтӭ"
