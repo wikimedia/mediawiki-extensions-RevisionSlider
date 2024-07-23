@@ -4,6 +4,9 @@
 		"../../modules/.eslintrc.json",
 		"wikimedia/qunit"
 	],
+	"globals": {
+		"sinon": "readonly"
+	},
 	"rules": {
 		"no-jquery/no-extend": "warn"
 	}

@@ -1,21 +1,14 @@
 ( function () {
 	const SliderModule = require( 'ext.RevisionSlider.Slider' ),
+		DiffPage = SliderModule.DiffPage,
 		Slider = SliderModule.Slider,
 		SliderView = SliderModule.SliderView,
 		Revision = SliderModule.Revision,
-		RevisionList = SliderModule.RevisionList;
-	let startHistoryState, startHref;
+		RevisionList = SliderModule.RevisionList,
+		historyStub = { replaceState: sinon.spy() },
+		diffPage = new DiffPage( historyStub );
 
 	QUnit.module( 'ext.RevisionSlider.SliderView' );
-
-	QUnit.testStart( () => {
-		startHistoryState = history.state;
-		startHref = window.location.href;
-	} );
-
-	QUnit.testDone( () => {
-		history.replaceState( startHistoryState, 'QUnit', startHref );
-	} );
 
 	QUnit.test( 'render adds the slider view with defined revisions selected', ( assert ) => {
 		const $container = $( '<div>' ),
@@ -23,7 +16,7 @@
 				new Revision( { revid: 1, size: 5, comment: 'Comment1', user: 'User1' } ),
 				new Revision( { revid: 3, size: 21, comment: 'Comment2', user: 'User2' } ),
 				new Revision( { revid: 37, size: 13, comment: 'Comment3', user: 'User3' } )
-			] ) ) );
+			] ) ), diffPage );
 
 		mw.config.set( {
 			wgDiffOldId: 1,
@@ -39,6 +32,8 @@
 		assert.strictEqual( $revisionOld.attr( 'data-revid' ), '1' );
 		assert.strictEqual( $revisionNew.length, 1 );
 		assert.strictEqual( $revisionNew.attr( 'data-revid' ), '37' );
+
+		sinon.assert.calledOnce( historyStub.replaceState );
 	} );
 
 	QUnit.test( 'render throws an exception when no selected revisions provided', ( assert ) => {
@@ -47,7 +42,7 @@
 				new Revision( { revid: 1, size: 5, comment: 'Comment1', user: 'User1' } ),
 				new Revision( { revid: 3, size: 21, comment: 'Comment2', user: 'User2' } ),
 				new Revision( { revid: 37, size: 13, comment: 'Comment3', user: 'User3' } )
-			] ) ) );
+			] ) ), diffPage );
 
 		mw.config.set( 'wgDiffOldId', null );
 		mw.config.set( 'wgDiffNewId', null );
@@ -57,5 +52,7 @@
 				view.render( $container );
 			}
 		);
+
+		sinon.assert.calledOnce( historyStub.replaceState );
 	} );
 }() );

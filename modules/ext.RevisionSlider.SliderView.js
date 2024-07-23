@@ -12,11 +12,12 @@ const DiffPage = require( './ext.RevisionSlider.DiffPage.js' ),
  *
  * @class SliderView
  * @param {Slider} slider
+ * @param {DiffPage} [diffPage] Defaults to creating a new DiffPage without parameters
  * @constructor
  */
-function SliderView( slider ) {
+function SliderView( slider, diffPage ) {
 	this.slider = slider;
-	this.diffPage = new DiffPage( this.slider.getRevisionList() );
+	this.diffPage = diffPage || new DiffPage();
 	this.diffPage.addHandlersToCoreLinks( this );
 	this.diffPage.initOnPopState( this );
 }

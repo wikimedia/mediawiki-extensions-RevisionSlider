@@ -2,10 +2,13 @@
  * Module handling diff page reloading and the RevisionSlider browser history
  *
  * @class Diffpage
- * @constructor
+ * @param {History} [historyObj] defaults to the global History object
+ * ] * @constructor
  */
-function DiffPage() {
+function DiffPage( historyObj ) {
 	this.lastRequest = null;
+
+	this.history = historyObj || history;
 }
 
 Object.assign( DiffPage.prototype, {
@@ -106,7 +109,7 @@ Object.assign( DiffPage.prototype, {
 	 * @param {SliderView} sliderView
 	 */
 	replaceState: function ( diff, oldid, sliderView ) {
-		history.replaceState(
+		this.history.replaceState(
 			this.getStateObject( diff, oldid, sliderView ),
 			$( document ).find( 'title' ).text(),
 			this.getStateUrl( diff, oldid )
@@ -121,7 +124,7 @@ Object.assign( DiffPage.prototype, {
 	 * @param {SliderView} sliderView
 	 */
 	pushState: function ( diff, oldid, sliderView ) {
-		history.pushState(
+		this.history.pushState(
 			this.getStateObject( diff, oldid, sliderView ),
 			$( document ).find( 'title' ).text(),
 			this.getStateUrl( diff, oldid )

@@ -1,40 +1,33 @@
 QUnit.module( 'ext.RevisionSlider.DiffPage' );
 
-QUnit.test( 'Push state', ( assert ) => {
+QUnit.test( 'Push state', () => {
 	const SliderModule = require( 'ext.RevisionSlider.Slider' ),
-		DiffPage = SliderModule.DiffPage,
-		SliderView = SliderModule.SliderView,
-		Slider = SliderModule.Slider,
-		RevisionList = SliderModule.RevisionList,
-		Revision = SliderModule.Revision;
+		DiffPage = SliderModule.DiffPage;
 
-	const diffPage = new DiffPage(),
-		sliderView = new SliderView( new Slider( new RevisionList( [
-			new Revision( { revid: 1, comment: '' } ),
-			new Revision( { revid: 3, comment: '' } ),
-			new Revision( { revid: 37, comment: '' } )
-		] ) )
-		);
+	const historyStub = { pushState: sinon.spy() };
+	const sliderStub = { getOldestVisibleRevisionIndex: sinon.stub().returns( 42 ) };
+	const pointerStub = { getPosition: sinon.stub().returns( 5 ) };
+	const sliderViewStub = {
+		pointerOlder: pointerStub,
+		pointerNewer: pointerStub,
+		slider: sliderStub
+	};
+	const diffPage = new DiffPage( historyStub );
 
 	mw.config.set( {
 		wgDiffOldId: 1,
 		wgDiffNewId: 37
 	} );
-	sliderView.render( $( '<div>' ) );
 
-	const histLength = history.length;
+	diffPage.pushState( 3, 37, sliderViewStub );
 
-	diffPage.pushState( 3, 37, sliderView );
-
-	assert.strictEqual( history.length, histLength + 1 );
-	assert.propEqual(
-		history.state,
-		{
-			diff: 3,
-			oldid: 37,
-			pointerOlderPos: 1,
-			pointerNewerPos: 3,
-			sliderPos: NaN
-		}
+	sinon.assert.calledWith(
+		historyStub.pushState,
+		{ diff: 3, oldid: 37, pointerNewerPos: 5, pointerOlderPos: 5, sliderPos: 42 },
+		sinon.match.any,
+		sinon.match.any
 	);
+
+	sinon.assert.calledOnce( sliderStub.getOldestVisibleRevisionIndex );
+	sinon.assert.calledTwice( pointerStub.getPosition );
 } );
