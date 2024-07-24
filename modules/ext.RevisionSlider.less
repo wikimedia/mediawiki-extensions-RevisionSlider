@@ -49,7 +49,7 @@
 .mw-revslider-revision-border-box {
 	height: 100%;
 	width: 100%;
-	border-left: @border-width-base @border-style-base #fff;
+	border-left: @border-width-base @border-style-base @background-color-base;
 	box-sizing: border-box;
 
 	.mw-revslider-revision-old & {
@@ -61,7 +61,7 @@
 	}
 
 	.mw-revslider-revision-filter-highlight & {
-		border: @border-width-base @border-style-base #72777d;
+		border: @border-width-base @border-style-base @border-color-interactive;
 		background-color: #7f7f7f;
 	}
 }
@@ -132,11 +132,11 @@
 	}
 
 	.mw-revslider-change-positive {
-		color: #006400;
+		color: @color-content-added;
 	}
 
 	.mw-revslider-change-negative {
-		color: #8b0000;
+		color: @color-content-removed;
 	}
 
 	.mw-revslider-change-none {
