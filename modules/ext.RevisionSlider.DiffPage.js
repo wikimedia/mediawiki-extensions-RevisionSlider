@@ -2,8 +2,8 @@
  * Module handling diff page reloading and the RevisionSlider browser history
  *
  * @class Diffpage
- * @param {History} [historyObj] defaults to the global History object
- * ] * @constructor
+ * @param {History} [historyObj] Defaults to the global History object
+ * @constructor
  */
 function DiffPage( historyObj ) {
 	this.lastRequest = null;
