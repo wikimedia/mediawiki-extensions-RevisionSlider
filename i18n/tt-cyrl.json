@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Don Alessandro",
 			"Ерней",
 			"Ильнар"
 		]
@@ -21,7 +22,7 @@
 	"revisionslider-toggle-title-expand": "Юрамалар гизгечен ачу",
 	"revisionslider-toggle-title-collapse": "Юрамалар гизгечен ябу",
 	"revisionslider-turn-on-auto-expand-title": "Юрамалар гизгечен автоматик рәвештә ачып кую",
-	"revisionslider-turn-off-auto-expand-title": "Юрамалар гизгечен ябык килеш тотарга",
+	"revisionslider-turn-off-auto-expand-title": "Юрамалар гизгечен ябык килеш тоту",
 	"revisionslider-arrow-tooltip-newer": "Яңарак юрамаларны карау",
 	"revisionslider-arrow-tooltip-older": "Искерәк юрамаларны карау",
 	"revisionslider-show-help-tooltip": "Белешмәнең текстын күрсәтергә",
