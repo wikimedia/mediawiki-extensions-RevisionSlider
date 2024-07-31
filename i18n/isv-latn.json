@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"IJzeren Jan"
+		]
+	},
+	"revisionslider-preference-disable": "Ne pokazyvati časovu os versij",
+	"revisionslider-desc": "Pokazyvaje časovy os, na ktoroj vy možete izbrati i sravniti versije stranice",
+	"revisionslider-toggle-label": "Prěgleděti historiju interaktivno",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|bajt|bajtov}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|bajt|bajtov}}",
+	"revisionslider-label-date": "Data",
+	"revisionslider-label-page-size": "Razměr stranice",
+	"revisionslider-label-change-size": "Razměr izměny",
+	"revisionslider-label-comment": "Opis pravky",
+	"revisionslider-label-username": "{{GENDER:$1|Koristničsko ime}}",
+	"revisionslider-minoredit": "Tuto jest mala pravka",
+	"revisionslider-loading-failed": "Včityvanje časovoj osi versij ne udalo se.",
+	"revisionslider-toggle-title-expand": "Otvoriti časovu os versij",
+	"revisionslider-toggle-title-collapse": "Svinuti časovu os versij",
+	"revisionslider-turn-on-auto-expand-title": "Vsegda razvivati časovu os versij",
+	"revisionslider-turn-off-auto-expand-title": "Ne razvivati časovu os versij avtomatično",
+	"revisionslider-arrow-tooltip-newer": "Pokazati novějše versije",
+	"revisionslider-arrow-tooltip-older": "Pokazati starějše versije",
+	"revisionslider-show-help-tooltip": "Pokazati tekst pomoči",
+	"revisionslider-help-dialog-slide1": "Časova os versij pomože vam navigovati i sravniti versije stranice. Ona byla izrabotana na osnově [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider želanja] od němečskojezyčnoj občiny. Budemo mnogo blagodarni za vaše povratne informacije na [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider tutoj stranici].",
+	"revisionslider-help-dialog-slide2": "Vsaky stolpec prědstavjaje jednu versiju stranice. Stolpce na gorě pokazyvajut uveličenje razměra stranice, stolpce na dolu pokazyvajut umenšenje. Na obrazku versija 1 pokazyvaje dodanje sodržanja, a versija 2 odstranjenje sodržanja.",
+	"revisionslider-help-dialog-slide3a": "Ako vy hočete sravniti versije, izberite versije s pomočju dvoh kolorovyh kuljek.\n\nVrhnjeju kuljkoju izberite novějšu versiju, nižnjeju kuljkoju izberite starějšu.\n\nPrěsuvajte kuljky, prětegajuči i opuščajuči je, ili nakliknite stolpec v časovoj osi.",
+	"revisionslider-help-dialog-slide4": "Upotrěbjajte strělky nazad i vprěd za prěměščenje se po historiji versij i pokazanje starějših i novějših versij.",
+	"revisionslider-tutorial": "Provodnik po časovoj osi versij",
+	"revisionslider-previous-dialog": "Poprědnja",
+	"revisionslider-next-dialog": "Naslědnja",
+	"revisionslider-close-dialog": "Zatvoriti"
+}
