@@ -6,7 +6,8 @@
 			"Romaine",
 			"Sjoerddebruin",
 			"Wiki13",
-			"Xbaked potatox"
+			"Xbaked potatox",
+			"Siebrand"
 		]
 	},
 	"revisionslider": "Paginageschiedenisbalk",
@@ -30,7 +31,7 @@
 	"revisionslider-arrow-tooltip-older": "Oudere versies weergeven",
 	"revisionslider-show-help-tooltip": "Hulptekst weergeven",
 	"revisionslider-help-dialog-slide1": "De paginageschiedenisbalk helpt bij het navigeren door en het vergelijken van versies van een pagina. Hij is ontwikkeld op basis van een [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider wens] van de Duitstalige gemeenschap. Terugkoppeling is zeer welkom en kan [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider hier] worden achtergelaten.",
-	"revisionslider-help-dialog-slide2": "Elke kolom is een wijziging (versie) van de pagina. De kolommen bovenaan tonen een groei in grootte van de pagina, de kolommen onderaan een vermindering. In de afbeelding laat versie 1 een toevoeging en versie 2 een verwijdering van inhoud zien.",
+	"revisionslider-help-dialog-slide2": "Elke kolom is een wijziging (versie) van de pagina. De kolommen bovenaan geven een groei in grootte van de pagina weer, de kolommen onderaan een vermindering. In de afbeelding laat versie 1 een toevoeging en versie 2 een verwijdering van inhoud zien.",
 	"revisionslider-help-dialog-slide3a": "Om bepaalde versies met elkaar te vergelijken, kiest u met de gekleurde knoppen twee versies uit.\n\nMet bovenste knop kiest u de nieuwere versie en met de onderste, de oudere.\n\nVerplaats de knoppen door ze te verslepen of op de schuifbalk te klikken.",
 	"revisionslider-help-dialog-slide4": "Gebruik de pijltjes voor- en achteruit om door de versiegeschiedenis te lopen en oudere en nieuwere versies weer te geven.",
 	"revisionslider-tutorial": "Handleiding paginageschiedenisbalk",
