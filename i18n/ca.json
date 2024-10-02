@@ -5,7 +5,8 @@
 			"Fitoschido",
 			"Medol",
 			"Mguix",
-			"Townie"
+			"Townie",
+			"Lluis Cat"
 		]
 	},
 	"revisionslider": "RevisionSlider",
@@ -30,7 +31,7 @@
 	"revisionslider-show-help-tooltip": "Mostra el text d’ajuda",
 	"revisionslider-help-dialog-slide1": "El control lliscant de revisions us ajuda a navegar i comparar revisions en una pàgina de diferències. Està basat en un [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider desig de la comunitat] procedent de la llista de desitjos de la comunitat tècnica germanoparlant. Agraïm enormement els vostres comentaris [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider aquí].",
 	"revisionslider-help-dialog-slide2": "Cada barra representa una revisió de pàgina. Les barres de la part superior mostren un augment en la grandària de la pàgina, i les barres de la part inferior mostren com s'han reduït. En la imatge, la revisió 1 representa contingut afegit, mentre que la revisió 2 representa contingut eliminat.",
-	"revisionslider-help-dialog-slide3a": "<p>Per comparar dues revisions qualssevol, seleccioneu les revisions utilitzant els dos botons de color.</p><p>El botó superior controla la revisió més nova, i el botó inferior controla la revisió més antiga.</p><p>Moveu els botons arrossegant i deixant anar, o bé fent clic en la barra lliscant.</p>",
+	"revisionslider-help-dialog-slide3a": "Per comparar dues revisions qualssevol, seleccioneu les revisions utilitzant els dos botons de color.\n\nEl botó superior controla la revisió més nova, i el botó inferior controla la revisió més antiga.\n\nMoveu els botons arrossegant i deixant anar, o bé fent clic en la barra lliscant.",
 	"revisionslider-help-dialog-slide4": "Utilitzeu les fletxes cap enrere i cap endavant per moure-us a través de l'historial de revisions i per veure revisions més antigues i més noves.",
 	"revisionslider-tutorial": "Tutorial del control lliscant de revisions",
 	"revisionslider-previous-dialog": "Anterior",
