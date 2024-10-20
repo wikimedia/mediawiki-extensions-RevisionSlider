@@ -8,6 +8,7 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\StaticUserOptionsLookup;
 use MediaWiki\User\User;
+use Wikimedia\Stats\NullStatsdDataFactory;
 
 /**
  * @covers \MediaWiki\Extension\RevisionSlider\RevisionSliderHooks
