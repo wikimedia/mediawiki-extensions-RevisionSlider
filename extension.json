@@ -183,7 +183,7 @@
 			"services": [
 				"ConfigFactory",
 				"UserOptionsLookup",
-				"StatsdDataFactory"
+				"StatsFactory"
 			]
 		}
 	},

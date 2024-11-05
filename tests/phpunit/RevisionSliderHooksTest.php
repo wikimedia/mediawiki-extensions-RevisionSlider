@@ -8,7 +8,7 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\StaticUserOptionsLookup;
 use MediaWiki\User\User;
-use Wikimedia\Stats\NullStatsdDataFactory;
+use Wikimedia\Stats\StatsFactory;
 
 /**
  * @covers \MediaWiki\Extension\RevisionSlider\RevisionSliderHooks
@@ -74,7 +74,7 @@ class RevisionSliderHooksTest extends \MediaWikiIntegrationTestCase {
 		return new RevisionSliderHooks(
 			$configFactory,
 			new StaticUserOptionsLookup( [], $options ),
-			new NullStatsdDataFactory()
+			StatsFactory::newNull()
 		);
 	}
 

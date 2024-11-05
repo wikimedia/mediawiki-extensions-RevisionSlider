@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\RevisionSlider;
 
-use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ConfigFactory;
 use MediaWiki\Diff\Hook\DifferenceEngineViewHeaderHook;
@@ -14,6 +13,8 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
 use OOUI\ButtonWidget;
+use Wikimedia\Stats\Metrics\CounterMetric;
+use Wikimedia\Stats\StatsFactory;
 
 /**
  * RevisionSlider extension hooks
@@ -26,16 +27,17 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 
 	private Config $config;
 	private UserOptionsLookup $userOptionsLookup;
-	private StatsdDataFactoryInterface $statsdDataFactory;
+	private CounterMetric $eventsCounter;
 
 	public function __construct(
 		ConfigFactory $configFactory,
 		UserOptionsLookup $userOptionsLookup,
-		StatsdDataFactoryInterface $statsdDataFactory
+		StatsFactory $statsFactory
 	) {
 		$this->config = $configFactory->makeConfig( 'revisionslider' );
 		$this->userOptionsLookup = $userOptionsLookup;
-		$this->statsdDataFactory = $statsdDataFactory;
+		$this->eventsCounter = $statsFactory->getCounter( 'RevisionSlider_events_total' )
+			->setLabel( 'event', 'n/a' );
 	}
 
 	/**
@@ -53,7 +55,9 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 			return;
 		}
 
-		$this->statsdDataFactory->increment( 'RevisionSlider.event.hookinit' );
+		$this->eventsCounter->setLabel( 'event', 'hookinit' )
+			->copyToStatsdAt( 'RevisionSlider.event.hookinit' )
+			->increment();
 
 		$timeOffset = 0;
 		if ( $this->config->get( MainConfigNames::Localtimezone ) !== null ) {
@@ -67,10 +71,14 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 		$out->addModuleStyles( 'ext.RevisionSlider.lazyCss' );
 		if ( $autoExpand ) {
 			$out->addModules( 'ext.RevisionSlider.init' );
-			$this->statsdDataFactory->increment( 'RevisionSlider.event.load' );
+			$this->eventsCounter->setLabel( 'event', 'load' )
+				->copyToStatsdAt( 'RevisionSlider.event.load' )
+				->increment();
 		} else {
 			$out->addModules( 'ext.RevisionSlider.lazyJs' );
-			$this->statsdDataFactory->increment( 'RevisionSlider.event.lazyload' );
+			$this->eventsCounter->setLabel( 'event', 'lazyload' )
+				->copyToStatsdAt( 'RevisionSlider.event.lazyload' )
+				->increment();
 		}
 		$out->addJsConfigVars( 'extRevisionSliderTimeOffset', $timeOffset );
 		$out->enableOOUI();
