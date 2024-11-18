@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cabal"
+		]
+	},
+	"revisionslider-page-size": "$1 {{PLURAL:$2|ਬਾਈਟ|ਬਾਈਟਾਂ}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3| ਬਾਈਟ|ਬਾਈਟਾਂ}}"
+}
