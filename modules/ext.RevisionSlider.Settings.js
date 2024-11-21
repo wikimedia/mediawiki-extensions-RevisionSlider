@@ -55,43 +55,14 @@ Object.assign( Settings.prototype, {
 	/**
 	 * @private
 	 * @param {string} name
-	 * @param {string} defaultValue
-	 * @return {string|boolean}
-	 */
-	loadSetting: function ( name, defaultValue ) {
-		let setting;
-		if ( mw.user.isNamed() ) {
-			setting = mw.user.options.get( 'userjs-revslider-' + name );
-		} else {
-			setting = mw.storage.get( 'mw-revslider-' + name ) ||
-				mw.cookie.get( '-revslider-' + name );
-		}
-
-		return setting !== null && setting !== false ? setting : defaultValue;
-	},
-
-	/**
-	 * @private
-	 * @param {string} name
-	 * @param {boolean} [defaultValue]
 	 * @return {boolean}
 	 */
-	loadBoolean: function ( name, defaultValue ) {
-		return this.loadSetting( name, defaultValue ? '1' : '0' ) === '1';
-	},
-
-	/**
-	 * @private
-	 * @param {string} name
-	 * @param {string} value
-	 */
-	saveSetting: function ( name, value ) {
+	loadBoolean: function ( name ) {
 		if ( mw.user.isNamed() ) {
-			( new mw.Api() ).saveOption( 'userjs-revslider-' + name, value );
+			return mw.user.options.get( 'userjs-revslider-' + name ) === '1';
 		} else {
-			if ( !mw.storage.set( 'mw-revslider-' + name, value ) ) {
-				mw.cookie.set( '-revslider-' + name, value ); // use cookie when localStorage is not available
-			}
+			return ( mw.storage.get( 'mw-revslider-' + name ) ||
+				mw.cookie.get( '-revslider-' + name ) ) === '1';
 		}
 	},
 
@@ -101,7 +72,14 @@ Object.assign( Settings.prototype, {
 	 * @param {boolean} value
 	 */
 	saveBoolean: function ( name, value ) {
-		this.saveSetting( name, value ? '1' : '0' );
+		value = value ? '1' : '0';
+		if ( mw.user.isNamed() ) {
+			( new mw.Api() ).saveOption( 'userjs-revslider-' + name, value );
+		} else {
+			if ( !mw.storage.set( 'mw-revslider-' + name, value ) ) {
+				mw.cookie.set( '-revslider-' + name, value ); // use cookie when localStorage is not available
+			}
+		}
 	}
 } );
 
