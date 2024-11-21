@@ -726,7 +726,7 @@ Object.assign( SliderView.prototype, {
 		if ( this.getOlderPointerPos() !== 0 || this.getNewerPointerPos() !== 0 ) {
 			return;
 		}
-		if ( $oldRevElement.length === 0 && $newRevElement.length === 0 ) {
+		if ( !$oldRevElement.length && !$newRevElement.length ) {
 			// Note: this is currently caught in init.js
 			throw new Error( 'RS-revs-not-specified' );
 		}
@@ -966,7 +966,7 @@ Object.assign( SliderView.prototype, {
 			changeTags: this.slider.getRevisionList().getAvailableTags()
 		} ).then( ( data ) => {
 			const revs = data.revisions.slice( 1 );
-			if ( revs.length === 0 ) {
+			if ( !revs.length ) {
 				self.noMoreNewerRevisions = true;
 				return;
 			}
@@ -1002,7 +1002,7 @@ Object.assign( SliderView.prototype, {
 			changeTags: this.slider.getRevisionList().getAvailableTags()
 		} ).then( ( data ) => {
 			let revs = data.revisions.slice( 1 ).reverse();
-			if ( revs.length === 0 ) {
+			if ( !revs.length ) {
 				self.noMoreOlderRevisions = true;
 				return;
 			}

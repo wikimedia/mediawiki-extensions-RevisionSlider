@@ -154,7 +154,7 @@ Object.assign( RevisionListView.prototype, {
 			$neighborRevisionWrapper = $revisionWrapper.next();
 		}
 
-		if ( $neighborRevisionWrapper.length === 0 ) {
+		if ( !$neighborRevisionWrapper.length ) {
 			return;
 		}
 

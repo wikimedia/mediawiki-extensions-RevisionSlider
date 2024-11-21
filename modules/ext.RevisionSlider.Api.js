@@ -153,7 +153,7 @@ Object.assign( Api.prototype, {
 	 * @return {jQuery.jqXHR}
 	 */
 	fetchUserGenderData: function ( users ) {
-		if ( users.length === 0 ) {
+		if ( !users.length ) {
 			return $.Deferred().resolve();
 		}
 		return $.ajax( {
