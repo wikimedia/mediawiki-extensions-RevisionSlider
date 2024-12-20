@@ -18,7 +18,7 @@ function initialize() {
 		'aria-controls': 'mw-revslider-slider-wrapper'
 	} );
 
-	mw.track( 'counter.MediaWiki.RevisionSlider.event.init' );
+	utils.incrementEventStats( 'init' );
 	SliderModule.setUserOffset(
 		mw.user.options.get( 'timecorrection' ) ?
 			mw.user.options.get( 'timecorrection' ).split( '|' )[ 1 ] :
@@ -35,6 +35,7 @@ function initialize() {
 			changeTags: changeTags
 		} ).then( ( data2 ) => {
 			mw.track( 'timing.MediaWiki.RevisionSlider.timing.initFetchRevisionData', mw.now() - startTime );
+			// TODO: timers towards Prometheus not supported by statsv
 
 			try {
 				const revs = data2.revisions;
@@ -62,17 +63,18 @@ function initialize() {
 
 				$( '.mw-revslider-placeholder' ).remove();
 				mw.track( 'timing.MediaWiki.RevisionSlider.timing.init', mw.now() - startTime );
+				// TODO: timers towards Prometheus not supported by statsv
 			} catch ( err ) {
 				$( '.mw-revslider-placeholder' )
 					.text( mw.msg( 'revisionslider-loading-failed' ) );
 				mw.log.error( err );
-				mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
+				utils.incrementErrorStats( 'init' );
 			}
 		}, ( err ) => {
 			$( '.mw-revslider-placeholder' )
 				.text( mw.msg( 'revisionslider-loading-failed' ) );
 			mw.log.error( err );
-			mw.track( 'counter.MediaWiki.RevisionSlider.error.init' );
+			utils.incrementErrorStats( 'init' );
 		} );
 	} );
 }
@@ -122,13 +124,13 @@ autoExpandButton.connect( this, {
 				'aria-label', mw.msg( 'revisionslider-turn-off-auto-expand-title' )
 			);
 			expand();
-			mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand_on' );
+			utils.incrementEventStats( 'autoexpand_on' );
 		} else {
 			autoExpandButton.setTitle( mw.msg( 'revisionslider-turn-on-auto-expand-title' ) );
 			autoExpandButton.$element.children().attr(
 				'aria-label', mw.msg( 'revisionslider-turn-on-auto-expand-title' )
 			);
-			mw.track( 'counter.MediaWiki.RevisionSlider.event.autoexpand_off' );
+			utils.incrementEventStats( 'autoexpand_off' );
 		}
 	}
 } );
@@ -140,10 +142,10 @@ toggleButton.connect( this, {
 		expanded = !expanded;
 		if ( expanded ) {
 			expand();
-			mw.track( 'counter.MediaWiki.RevisionSlider.event.expand' );
+			utils.incrementEventStats( 'expand' );
 		} else {
 			collapse();
-			mw.track( 'counter.MediaWiki.RevisionSlider.event.collapse' );
+			utils.incrementEventStats( 'collapse' );
 		}
 	}
 } );

@@ -1,3 +1,4 @@
+const utils = require( './ext.RevisionSlider.util.js' );
 /**
  * Module containing presentation logic for the arrow buttons
  *
@@ -80,7 +81,7 @@ Object.assign( SliderArrowView.prototype, {
 		if ( button.isDisabled() ) {
 			return;
 		}
-		mw.track( 'counter.MediaWiki.RevisionSlider.event.arrowClick' );
+		utils.incrementEventStats( 'arrowClick' );
 		this.sliderView.slideView( button.$element.attr( 'data-dir' ) );
 	},
 
