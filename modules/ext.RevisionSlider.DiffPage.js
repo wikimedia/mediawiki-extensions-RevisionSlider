@@ -1,3 +1,4 @@
+const utils = require( './ext.RevisionSlider.util.js' );
 /**
  * Module handling diff page reloading and the RevisionSlider browser history
  *
@@ -91,7 +92,7 @@ Object.assign( DiffPage.prototype, {
 			$( 'table.diff[data-mw="interface"]' ).removeClass( 'mw-revslider-diff-loading' );
 			if ( xhr.statusText !== 'abort' ) {
 				this.tryCount++;
-				mw.track( 'counter.MediaWiki.RevisionSlider.error.refresh' );
+				utils.incrementErrorStats( 'refresh' );
 				if ( retryAttempt <= retryLimit ) {
 					self.refresh( diff, oldid, sliderView, retryAttempt + 1 );
 				}
@@ -192,7 +193,7 @@ Object.assign( DiffPage.prototype, {
 			if ( event.state === null ) {
 				return;
 			}
-			mw.track( 'counter.MediaWiki.RevisionSlider.event.historyChange' );
+			require( 'ext.RevisionSlider.Slider' ).utils.incrementEventStats( 'historyChange' );
 			sliderView.slider.setFirstVisibleRevisionIndex( event.state.sliderPos );
 			sliderView.updatePointersAndDiffView(
 				event.state.pointerNewerPos,

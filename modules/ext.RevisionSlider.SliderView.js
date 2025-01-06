@@ -504,7 +504,7 @@ Object.assign( SliderView.prototype, {
 					return;
 				}
 
-				mw.track( 'counter.MediaWiki.RevisionSlider.event.pointerMove' );
+				utils.incrementEventStats( 'pointerMove' );
 
 				pointer.setPosition( self.slider.getOldestVisibleRevisionIndex() + relativeIndex );
 

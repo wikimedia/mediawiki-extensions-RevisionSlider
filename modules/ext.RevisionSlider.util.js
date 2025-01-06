@@ -72,8 +72,20 @@ function calculateRevisionsPerWindow( margin, revisionWidth ) {
 	return Math.floor( ( $( '#mw-content-text' ).width() - margin ) / revisionWidth );
 }
 
+function incrementEventStats( eventType ) {
+	mw.track( `counter.MediaWiki.RevisionSlider.event.${ eventType }` );
+	mw.track( 'stats.mediawiki_RevisionSlider_events_total', 1, { event: eventType } );
+}
+
+function incrementErrorStats( eventType ) {
+	mw.track( `counter.MediaWiki.RevisionSlider.error.${ eventType }` );
+	mw.track( 'stats.mediawiki_RevisionSlider_errors_total', 1, { event: eventType } );
+}
+
 module.exports = {
 	calculateRevisionsPerWindow: calculateRevisionsPerWindow,
 	correctElementOffsets: correctElementOffsets,
-	touchEventConverter: touchEventConverter
+	touchEventConverter: touchEventConverter,
+	incrementEventStats: incrementEventStats,
+	incrementErrorStats: incrementErrorStats
 };
