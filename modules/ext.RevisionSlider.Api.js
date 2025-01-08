@@ -178,10 +178,10 @@ Object.assign( Api.prototype, {
 		const allUsers = revs.map( ( rev ) => !( 'anon' in rev ) && rev.user );
 		return allUsers.filter( ( name, index ) =>
 			// Anonymous users don't have a name
-			 name && !( name in knownUserGenders ) &&
+			name && !( name in knownUserGenders ) &&
 				// This filters duplicates by rejecting all but the first one
 				allUsers.indexOf( name ) === index
-		 );
+		);
 	},
 
 	/**
@@ -216,8 +216,8 @@ Object.assign( Api.prototype, {
 				return tag;
 			} ).filter( ( tag ) =>
 				// Remove hidden tags (tags with no displayname)
-				 tag
-			 );
+				tag
+			);
 		} );
 		return revs;
 	}
