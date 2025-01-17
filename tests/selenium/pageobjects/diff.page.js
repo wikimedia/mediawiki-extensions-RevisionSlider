@@ -133,7 +133,7 @@ class DiffPage extends Page {
 		await BlankPage.open();
 		await this.toggleHelpDialog( showHelp );
 		await this.addUserEditsToPage( title, num );
-		this.open( title );
+		await this.open( title );
 	}
 
 	async prepareFilterTests() {
@@ -154,8 +154,8 @@ class DiffPage extends Page {
 		}
 	}
 
-	open( title ) {
-		super.openTitle( title, { type: 'revision', diff: '' } );
+	async open( title ) {
+		return super.openTitle( title, { type: 'revision', diff: '' } );
 	}
 
 	get helpDialog() {
