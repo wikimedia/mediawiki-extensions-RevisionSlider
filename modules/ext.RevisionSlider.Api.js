@@ -214,9 +214,7 @@ Object.assign( Api.prototype, {
 					return false;
 				} );
 				return tag;
-			} ).filter( ( tag ) =>
-				// Remove hidden tags (tags with no displayname)
-				tag
+			} ).filter( ( tag ) => tag // Remove hidden tags (tags with no displayname)
 			);
 		} );
 		return revs;
