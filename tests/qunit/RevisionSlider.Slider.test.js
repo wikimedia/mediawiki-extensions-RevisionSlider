@@ -1,4 +1,4 @@
-( function () {
+QUnit.module( 'ext.RevisionSlider.Slider', () => {
 	const SliderModule = require( 'ext.RevisionSlider.Slider' ),
 		Slider = SliderModule.Slider,
 		Revision = SliderModule.Revision,
@@ -11,8 +11,6 @@
 		}
 		return new RevisionList( revs );
 	}
-
-	QUnit.module( 'ext.RevisionSlider.Slider' );
 
 	QUnit.test( 'has revisions', ( assert ) => {
 		const revs = new RevisionList( [
@@ -54,4 +52,4 @@
 
 		assert.strictEqual( slider.getOldestVisibleRevisionIndex(), 0 );
 	} );
-}() );
+} );

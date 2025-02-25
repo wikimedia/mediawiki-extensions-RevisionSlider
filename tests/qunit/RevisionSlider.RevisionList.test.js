@@ -1,10 +1,8 @@
-( function () {
+QUnit.module( 'ext.RevisionSlider.RevisionList', () => {
 	const SliderModule = require( 'ext.RevisionSlider.Slider' ),
 		Revision = SliderModule.Revision,
 		RevisionList = SliderModule.RevisionList,
 		makeRevisions = SliderModule.makeRevisions;
-
-	QUnit.module( 'ext.RevisionSlider.RevisionList' );
 
 	QUnit.test( 'Find biggest Revision', ( assert ) => {
 		const revs = new RevisionList( [
@@ -159,4 +157,4 @@
 		assert.strictEqual( revisions[ 2 ].getId(), 3 );
 		assert.strictEqual( revisions[ 2 ].getSize(), 13 );
 	} );
-}() );
+} );
