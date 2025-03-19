@@ -2,11 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"BrennodAloisi",
-			"Cedric31"
+			"Cedric31",
+			"Lhanars"
 		]
 	},
 	"revisionslider-toggle-label": "Navigar dins l'istoric",
 	"revisionslider-show-help-tooltip": "Mostrar lo tèxt d’ajuda",
+	"revisionslider-help-dialog-slide1": "Lo cursor de revisions vos ajuda a navegar e comparar las revisions sus una pagina de diferéncias. Es basat d'un [//mèta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider desir de la comunitat] eissit de la lista de desirs de la comunitat tecnica germanofòna. Mercejam enòrmament vòstres comentaris [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider aquí].",
+	"revisionslider-help-dialog-slide2": "Cada barra representa una revision de pagina. Las barras en aut mòstran una aumentacion de la talha de la pagina, e las barras en bas mòstran cossí se son redusidas. Dins l'imatge, la revision 1 representa lo contengut apondut, del temps que la revision 2 representa lo contengut suprimit.",
+	"revisionslider-help-dialog-slide3a": "Per comparar las revisions que volètz veire, seleccionatz las revisions en utilizant los dos botons de color.\n\nLo boton superior contraròtla la revision mai nòva, e lo boton inferior contraròtla la revision mai anciana.\n\nMovètz los botons en los arrossegant, o en clicant sus la barra.",
+	"revisionslider-help-dialog-slide4": "Utilizatz las flèchas endavant e arrièr per navegar dins l'istoric de las revisions e afichar las revisions mai ancianas e mai nòvas.",
 	"revisionslider-tutorial": "Tutorial del cursor de revision",
 	"revisionslider-previous-dialog": "Precedent",
 	"revisionslider-next-dialog": "Seguent",
