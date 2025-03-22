@@ -1,7 +1,5 @@
-( function () {
+QUnit.module( 'ext.RevisionSlider.PointerView', () => {
 	const PointerView = require( 'ext.RevisionSlider.Slider' ).private.PointerView;
-
-	QUnit.module( 'ext.RevisionSlider.PointerView' );
 
 	QUnit.test( 'Initialize PointerView', ( assert ) => {
 		assert.true( ( new PointerView( null, 'mw-revslider-pointer' ) ).getElement().hasClass( 'mw-revslider-pointer' ) );
@@ -15,4 +13,4 @@
 		pv.getElement().addClass( 'mw-revslider-pointer-newer' );
 		assert.true( pv.isNewerPointer() );
 	} );
-}() );
+} );

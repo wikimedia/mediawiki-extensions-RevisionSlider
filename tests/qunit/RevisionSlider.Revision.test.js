@@ -1,8 +1,6 @@
-( function () {
+QUnit.module( 'ext.RevisionSlider.Revision', () => {
 	const SliderModule = require( 'ext.RevisionSlider.Slider' ),
 		Revision = SliderModule.Revision;
-
-	QUnit.module( 'ext.RevisionSlider.Revision' );
 
 	QUnit.test( 'create Revision', ( assert ) => {
 		const data = {
@@ -81,4 +79,4 @@
 
 		assert.strictEqual( rev.getFormattedDate(), '26 April 2016 3:27 AM' );
 	}, mw.config.get( 'wgUserLanguage' ) !== 'en' );
-}() );
+} );

@@ -1,4 +1,4 @@
-( function () {
+QUnit.module( 'ext.RevisionSlider.SliderView', () => {
 	const SliderModule = require( 'ext.RevisionSlider.Slider' ),
 		DiffPage = SliderModule.DiffPage,
 		Slider = SliderModule.Slider,
@@ -7,8 +7,6 @@
 		RevisionList = SliderModule.RevisionList,
 		historyStub = { replaceState: sinon.spy() },
 		diffPage = new DiffPage( historyStub );
-
-	QUnit.module( 'ext.RevisionSlider.SliderView' );
 
 	QUnit.test( 'render adds the slider view with defined revisions selected', ( assert ) => {
 		const $container = $( '<div>' ),
@@ -55,4 +53,4 @@
 
 		sinon.assert.calledOnce( historyStub.replaceState );
 	} );
-}() );
+} );
