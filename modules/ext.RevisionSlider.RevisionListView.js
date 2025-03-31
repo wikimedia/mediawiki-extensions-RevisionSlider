@@ -584,7 +584,7 @@ Object.assign( RevisionListView.prototype, {
 		const revs = this.revisionList.getRevisions();
 
 		for ( let i = 0; i < revs.length; i++ ) {
-			if ( revs[ i ].getTags().indexOf( tagName ) !== -1 ) {
+			if ( revs[ i ].getTags().includes( tagName ) ) {
 				$( '[data-revid="' + revs[ i ].id + '"]' ).parent()
 					.addClass( 'mw-revslider-revision-filter-highlight' );
 			}
