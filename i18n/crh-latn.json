@@ -5,5 +5,24 @@
 		]
 	},
 	"revisionslider-preference-disable": "Versiya taydırıcısını kösterme",
-	"revisionslider-toggle-label": "Keçmişke interaktiv şekilde baq"
+	"revisionslider-toggle-label": "Keçmişke interaktiv şekilde baq",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|bayt}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|bayt}}",
+	"revisionslider-label-date": "Tarih",
+	"revisionslider-label-page-size": "Saife büyükligi",
+	"revisionslider-label-change-size": "Deñiştirüv büyükligi",
+	"revisionslider-label-comment": "Deñiştirme açıqlanması",
+	"revisionslider-label-username": "{{GENDER:$1|Qullanıcı adı}}",
+	"revisionslider-minoredit": "Bu, kiçik deñiştirmedir",
+	"revisionslider-loading-failed": "Versiya taydırıcısı yüklenip olamadı.",
+	"revisionslider-toggle-title-expand": "Versiya taydırıcısını aç",
+	"revisionslider-toggle-title-collapse": "Versiya taydırıcısını qapat",
+	"revisionslider-turn-on-auto-expand-title": "Versiya taydırıcısı er vaqıt açıq olsun",
+	"revisionslider-turn-off-auto-expand-title": "Versiya taydırıcısı avtomatik açıq olmasın",
+	"revisionslider-arrow-tooltip-newer": "Yañı versiyalarnı köster",
+	"revisionslider-arrow-tooltip-older": "Eski versiyalarnı köster",
+	"revisionslider-show-help-tooltip": "Yardım metnini köster",
+	"revisionslider-previous-dialog": "Evelki",
+	"revisionslider-next-dialog": "Soñraki",
+	"revisionslider-close-dialog": "Qapat"
 }
