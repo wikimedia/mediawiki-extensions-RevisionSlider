@@ -35,7 +35,7 @@ function initialize() {
 			changeTags: changeTags
 		} ).then( ( data2 ) => {
 			mw.track( 'timing.MediaWiki.RevisionSlider.timing.initFetchRevisionData', mw.now() - startTime );
-			// TODO: timers towards Prometheus not supported by statsv
+			mw.track( 'stats.mediawiki_RevisionSlider_initFetchRevisionData_seconds', mw.now() - startTime );
 
 			try {
 				const revs = data2.revisions;
@@ -63,7 +63,7 @@ function initialize() {
 
 				$( '.mw-revslider-placeholder' ).remove();
 				mw.track( 'timing.MediaWiki.RevisionSlider.timing.init', mw.now() - startTime );
-				// TODO: timers towards Prometheus not supported by statsv
+				mw.track( 'stats.mediawiki_RevisionSlider_init_seconds', mw.now() - startTime );
 			} catch ( err ) {
 				$( '.mw-revslider-placeholder' )
 					.text( mw.msg( 'revisionslider-loading-failed' ) );
