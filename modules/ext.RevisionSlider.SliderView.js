@@ -923,13 +923,13 @@ Object.assign( SliderView.prototype, {
 
 		this.pointerOlder.getView()
 			.slideToSideOrPosition( this.slider, duration )
-			.promise().done( () => {
+			.promise().then( () => {
 				self.resetSliderLines();
 				self.redrawPointerLines();
 			} );
 		this.pointerNewer.getView()
 			.slideToSideOrPosition( this.slider, duration )
-			.promise().done( () => {
+			.promise().then( () => {
 				self.resetSliderLines();
 				self.redrawPointerLines();
 			} );

@@ -48,7 +48,7 @@ Object.assign( Api.prototype, {
 		options = options || {};
 
 		const xhr = this.fetchRevisions( pageName, options )
-			.done( ( data ) => {
+			.then( ( data ) => {
 				let revs = data.query.pages[ 0 ].revisions;
 				const revContinue = data.continue,
 					genderData = options.knownUserGenders || {},
@@ -74,7 +74,7 @@ Object.assign( Api.prototype, {
 				const userNames = self.getUniqueUserNamesWithUnknownGender( revs, genderData );
 
 				userXhr = self.fetchUserGenderData( userNames )
-					.done( ( data2 ) => {
+					.then( ( data2 ) => {
 						if ( typeof data2 === 'object' &&
 							data2.query &&
 							data2.query.users &&
@@ -90,10 +90,8 @@ Object.assign( Api.prototype, {
 						} );
 
 						deferred.resolve( { revisions: revs, continue: revContinue } );
-					} )
-					.fail( deferred.reject );
-			} )
-			.fail( deferred.reject );
+					}, deferred.reject );
+			}, deferred.reject );
 
 		return deferred.promise( {
 			abort: function () {
