@@ -12,10 +12,7 @@
 		"max-len": "off",
 		"no-jquery/no-global-selector": "off",
 		"no-jquery/no-class-state": "off",
-		"no-mixed-spaces-and-tabs": "warn",
-		"no-jquery/no-extend": "warn",
-		"implicit-arrow-linebreak": "warn",
-		"no-jquery/no-done-fail": "warn"
+		"implicit-arrow-linebreak": "warn"
 	},
 	"settings": {
 		"jsdoc": {
