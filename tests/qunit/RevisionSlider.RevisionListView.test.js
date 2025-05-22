@@ -37,8 +37,6 @@ QUnit.module( 'ext.RevisionSlider.RevisionListView', () => {
 
 		revision.setRelativeSize( 210 );
 
-		SliderModule.setUserOffset( 0 );
-
 		const tooltip = revisionListView.makeTooltip( revision, {} );
 		const tooltipHtml = tooltip.$element.html();
 
@@ -60,8 +58,6 @@ QUnit.module( 'ext.RevisionSlider.RevisionListView', () => {
 			} );
 
 		revision.setRelativeSize( 2100 );
-
-		SliderModule.setUserOffset( 0 );
 
 		const tooltip = revisionListView.makeTooltip( revision, {} );
 		const tooltipHtml = tooltip.$element.html();

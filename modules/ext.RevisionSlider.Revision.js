@@ -1,6 +1,5 @@
-let userOffset;
+const DateFormatter = require( 'mediawiki.DateFormatter' );
 
-/* global moment:false */
 /**
  * @class Revision
  * @param {Object} data - Containing keys `id`, `size`, `parsedcomment`, `timestamp`, `user` and `minor`
@@ -106,8 +105,7 @@ Object.assign( Revision.prototype, {
 	 * @return {string}
 	 */
 	getFormattedDate: function () {
-		const offset = parseInt( userOffset );
-		return moment( this.timestamp ).utcOffset( offset ).format( 'LLL' );
+		return DateFormatter.formatTimeAndDate( new Date( this.timestamp ) );
 	},
 
 	/**
@@ -140,8 +138,5 @@ Object.assign( Revision.prototype, {
 } );
 
 module.exports = {
-	Revision: Revision,
-	setUserOffset: function ( offset ) {
-		userOffset = offset;
-	}
+	Revision: Revision
 };

@@ -127,7 +127,6 @@ module.exports = {
 	Revision: require( './ext.RevisionSlider.Revision.js' ).Revision,
 	RevisionList: require( './ext.RevisionSlider.RevisionList.js' ).RevisionList,
 	RevisionListView: require( './ext.RevisionSlider.RevisionListView.js' ),
-	setUserOffset: require( './ext.RevisionSlider.Revision.js' ).setUserOffset,
 	Slider: Slider,
 	SliderView: SliderView,
 	utils: require( './ext.RevisionSlider.util.js' ),

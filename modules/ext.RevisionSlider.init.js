@@ -19,11 +19,6 @@ function initialize() {
 	} );
 
 	utils.incrementEventStats( 'init' );
-	SliderModule.setUserOffset(
-		mw.user.options.get( 'timecorrection' ) ?
-			mw.user.options.get( 'timecorrection' ).split( '|' )[ 1 ] :
-			mw.config.get( 'extRevisionSliderTimeOffset' )
-	);
 
 	HelpDialog.init();
 

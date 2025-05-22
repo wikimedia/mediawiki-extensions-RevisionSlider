@@ -126,7 +126,7 @@
 				"mediawiki.jqueryMsg",
 				"mediawiki.Uri",
 				"mediawiki.util",
-				"moment",
+				"mediawiki.DateFormatter",
 				"oojs-ui",
 				"oojs-ui.styles.icons-interactions",
 				"oojs-ui.styles.icons-movement"
