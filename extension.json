@@ -124,7 +124,6 @@
 				"jquery.ui",
 				"mediawiki.language",
 				"mediawiki.jqueryMsg",
-				"mediawiki.Uri",
 				"mediawiki.util",
 				"mediawiki.DateFormatter",
 				"oojs-ui",
