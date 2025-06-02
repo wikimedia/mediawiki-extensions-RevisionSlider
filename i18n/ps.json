@@ -9,11 +9,11 @@
 			"شاه زمان پټان"
 		]
 	},
-	"revisionslider-toggle-label": "ياداښت ولټوي",
+	"revisionslider-toggle-label": "په بلونج ډول پېښليک ښودل",
 	"revisionslider-label-date": "نېټه",
 	"revisionslider-label-page-size": "مخ کچه",
 	"revisionslider-label-change-size": "کچه بدلول",
-	"revisionslider-label-comment": "تبصره",
+	"revisionslider-label-comment": "سمون لنډيز",
 	"revisionslider-label-username": "{{GENDER:$1|کارن‌نوم}}",
 	"revisionslider-minoredit": "دا يو وړوکی سمون دی",
 	"revisionslider-show-help-tooltip": "لارښود متن ښکاره کول",
