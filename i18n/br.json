@@ -4,6 +4,32 @@
 			"Huñvreüs"
 		]
 	},
+	"revisionslider": "RevisionSlider",
 	"revisionslider-preference-disable": "Kuzhat riklenn stummoù",
-	"revisionslider-toggle-label": "Merdeiñ etreoberiat en istor"
+	"revisionslider-desc": "Diskouez a ra ur risklerez a c’haller dibab stummoù ganti ha keñveriañ anezho war ur bajenn diforc’hañ",
+	"revisionslider-toggle-label": "Merdeiñ etreoberiat en istor",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|okted}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|okted}}",
+	"revisionslider-label-date": "Deiziad",
+	"revisionslider-label-page-size": "Ment ar bajenn",
+	"revisionslider-label-change-size": "Ment ar c’hemm",
+	"revisionslider-label-comment": "Diverradenn ar c'hemmoù",
+	"revisionslider-label-username": "Anv {{GENDER:$1|implijer|implijerez}}",
+	"revisionslider-minoredit": "Ur c'hemm dister eo hemañ",
+	"revisionslider-loading-failed": "C'hwitet eo bet kargañ ar risklerez stummoù.",
+	"revisionslider-toggle-title-expand": "Digeriñ ar risklerez stummoù",
+	"revisionslider-toggle-title-collapse": "Gwintañ ar risklerez stummoù",
+	"revisionslider-turn-on-auto-expand-title": "Astenn atav ar risklerez stummoù",
+	"revisionslider-turn-off-auto-expand-title": "Arabat astenn ar risklerez stummoù ent emgefre",
+	"revisionslider-arrow-tooltip-newer": "Gwelet stummoù nevesoc'h",
+	"revisionslider-arrow-tooltip-older": "Gwelet stummoù koshoc'h",
+	"revisionslider-show-help-tooltip": "Diskouez an destenn skoazell",
+	"revisionslider-help-dialog-slide1": "Ar risklerez stummoù a sikour ac'hanoc'h da welet ha da geñveriañ stummoù war ar bajenn diforc'hañ. Diazezet eo war un [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider het ar gumuniezh] tennet eus roll hetoù teknikel ar gumuniezh alamanek. Priziet e vez kalz an evezhiadennoù [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider amañ].",
+	"revisionslider-help-dialog-slide2": "Pep barrenn a ro da welet ur stumm eus ur bajenn. Ar barrennoù a-us a ziskouez kresk ment ar bajenn, ar barrennoù a-is a ziskouez un digresk. Er skeudenn e tiskouez adweladenn 1 endalc'had ouzhpennet, diskouez a ra stumm 2 endalc'had tennet.",
+	"revisionslider-help-dialog-slide3a": "Evit keñveriañ stummoù zo, diuzit ar stummoù gant an daou zornell livet.\n\nAn dornell uhelañ a reol ar stumm nevesoc'h, an dornell izelañ a glot gant ar stumm koshoc'h.\n\nDilec'hiit an dornelloù en ur riklañ ha leuskel pe en ur glikañ war linenn ar rikler.",
+	"revisionslider-help-dialog-slide4": "Implijit ar biroù a-dreñv hag a-raok evit mont dre istor ar stummoù ha diskouez stummoù koshoc'h ha nevesoc'h.",
+	"revisionslider-tutorial": "Tutorial ar risklerez stummoù",
+	"revisionslider-previous-dialog": "Kent",
+	"revisionslider-next-dialog": "War-lerc'h",
+	"revisionslider-close-dialog": "Serriñ"
 }
