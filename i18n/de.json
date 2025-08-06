@@ -4,13 +4,14 @@
 			"Brettchenweber",
 			"Cornelius Kibelka (WMDE)",
 			"Filzstift",
+			"Inkowik",
 			"Kghbln",
 			"Metalhead64",
 			"ThePiscin"
 		]
 	},
 	"revisionslider": "Versionsblätterer",
-	"revisionslider-preference-disable": "Den Versionsblätterer nicht anzeigen",
+	"revisionslider-preference-disable": "Versionsblätterer deaktivieren",
 	"revisionslider-desc": "Bietet eine Navigationsleiste, mit der das Auswählen und Vergleichen von Versionen in einer Vergleichsansicht einfacher möglich wird",
 	"revisionslider-toggle-label": "Versionsgeschichte interaktiv durchsuchen",
 	"revisionslider-page-size": "{{PLURAL:$2|Ein Byte|$1 Bytes}}",

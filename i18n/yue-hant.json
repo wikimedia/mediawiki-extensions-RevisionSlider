@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ktchankt"
+		]
+	},
+	"revisionslider-preference-disable": "唔好顯示修訂時間軸",
+	"revisionslider-label-date": "日子",
+	"revisionslider-label-comment": "編輯摘要",
+	"revisionslider-previous-dialog": "之前",
+	"revisionslider-next-dialog": "之後",
+	"revisionslider-close-dialog": "閂"
+}
