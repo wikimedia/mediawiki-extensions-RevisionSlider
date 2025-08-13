@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ktchankt",
+			"Yueman"
+		]
+	},
+	"revisionslider-preference-disable": "唔好顯示修訂時間軸",
+	"revisionslider-desc": "顯示一個可以揀同比較修訂版本之間差異嘅時間軸",
+	"revisionslider-toggle-label": "互動噉睇編輯紀錄",
+	"revisionslider-page-size": "$1 個{{PLURAL:$2|位元組}}",
+	"revisionslider-change-size": "$1 個{{PLURAL:$3|位元組}}",
+	"revisionslider-label-date": "日子",
+	"revisionslider-label-page-size": "版面大細",
+	"revisionslider-label-change-size": "改動大細",
+	"revisionslider-label-comment": "編輯摘要",
+	"revisionslider-label-username": "{{GENDER:$1|用戶名}}",
+	"revisionslider-minoredit": "呢個係細修改",
+	"revisionslider-loading-failed": "修訂時間軸載入唔到。",
+	"revisionslider-toggle-title-expand": "攤開修訂時間軸",
+	"revisionslider-toggle-title-collapse": "摺埋修訂時間軸",
+	"revisionslider-turn-on-auto-expand-title": "一路都攤開修訂時間軸",
+	"revisionslider-turn-off-auto-expand-title": "唔好自動攤開修訂時間軸",
+	"revisionslider-arrow-tooltip-newer": "睇新啲嘅修訂版本",
+	"revisionslider-arrow-tooltip-older": "睇舊啲嘅修訂版本",
+	"revisionslider-show-help-tooltip": "顯示幫手說明",
+	"revisionslider-help-dialog-slide1": "修訂時間軸可以方便你睇同比較修訂版本。呢個係由德文維基社群技術願望清單嘅[//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider 社群願望]做基礎去改。歡迎你[//www.mediawiki.org/wiki/Extension_talk:RevisionSlider 到呢度畀意見]。",
+	"revisionslider-help-dialog-slide2": "每條棒代表一個修訂版本。喺上面嘅棒代表頁嘅大細增加咗，喺下面嘅棒代表頁嘅大細減少咗。喺呢幅圖，修訂版本1代表加咗內容，修訂版本2代表減咗內容。",
+	"revisionslider-help-dialog-slide3a": "要比較特定修訂版本，用雙色扭掣去揀相關版本。\n\n上面個扭掣控制新版，下面個扭掣控制舊版。\n\n可以用滑鼠拖拉同點擊條棒去郁啲扭掣。",
+	"revisionslider-help-dialog-slide4": "用向後同向前箭嘴喺修訂版本間郁動，就可以顯示舊啲同新啲嘅修訂。",
+	"revisionslider-tutorial": "修訂時間軸教學",
+	"revisionslider-previous-dialog": "之前",
+	"revisionslider-next-dialog": "之後",
+	"revisionslider-close-dialog": "閂"
+}
