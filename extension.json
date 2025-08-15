@@ -18,7 +18,7 @@
 		"MediaWiki": ">= 1.45"
 	},
 	"ConfigRegistry": {
-		"revisionslider": "GlobalVarConfig::newInstance"
+		"revisionslider": "MediaWiki\\Config\\GlobalVarConfig::newInstance"
 	},
 	"MessagesDirs": {
 		"RevisionSlider": [
