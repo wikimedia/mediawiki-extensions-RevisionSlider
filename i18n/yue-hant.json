@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ktchankt",
-			"Yueman"
+			"Yueman",
+			"H78c67c"
 		]
 	},
 	"revisionslider-preference-disable": "唔好顯示修訂時間軸",
@@ -19,7 +20,7 @@
 	"revisionslider-loading-failed": "修訂時間軸載入唔到。",
 	"revisionslider-toggle-title-expand": "攤開修訂時間軸",
 	"revisionslider-toggle-title-collapse": "摺埋修訂時間軸",
-	"revisionslider-turn-on-auto-expand-title": "一路都攤開修訂時間軸",
+	"revisionslider-turn-on-auto-expand-title": "每次都攤開修訂時間軸",
 	"revisionslider-turn-off-auto-expand-title": "唔好自動攤開修訂時間軸",
 	"revisionslider-arrow-tooltip-newer": "睇新啲嘅修訂版本",
 	"revisionslider-arrow-tooltip-older": "睇舊啲嘅修訂版本",
