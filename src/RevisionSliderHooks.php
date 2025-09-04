@@ -25,17 +25,15 @@ use Wikimedia\Stats\StatsFactory;
  */
 class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferencesHook {
 
-	private Config $config;
-	private UserOptionsLookup $userOptionsLookup;
-	private CounterMetric $eventsCounter;
+	private readonly Config $config;
+	private readonly CounterMetric $eventsCounter;
 
 	public function __construct(
 		ConfigFactory $configFactory,
-		UserOptionsLookup $userOptionsLookup,
-		StatsFactory $statsFactory
+		private readonly UserOptionsLookup $userOptionsLookup,
+		StatsFactory $statsFactory,
 	) {
 		$this->config = $configFactory->makeConfig( 'revisionslider' );
-		$this->userOptionsLookup = $userOptionsLookup;
 		$this->eventsCounter = $statsFactory->getCounter( 'RevisionSlider_events_total' )
 			->setLabel( 'event', 'n/a' );
 	}
