@@ -24,17 +24,11 @@ Object.assign( DiffPage.prototype, {
 	refresh: function ( diff, oldid, sliderView, retryAttempt ) {
 		const self = this,
 			retryLimit = 2,
-			data = {
-				diff: diff,
-				oldid: oldid
-			},
-			params = this.getExtraDiffPageParams();
+			params = this.getCurrentDiffPageParams();
 
+		params.diff = diff;
+		params.oldid = oldid;
 		retryAttempt = retryAttempt || 0;
-
-		if ( Object.keys( params ).length > 0 ) {
-			Object.assign( data, params );
-		}
 
 		if ( this.lastRequest ) {
 			this.lastRequest.abort();
@@ -44,7 +38,7 @@ Object.assign( DiffPage.prototype, {
 
 		this.lastRequest = $.ajax( {
 			url: mw.util.wikiScript( 'index' ),
-			data: data,
+			data: params,
 			tryCount: 0
 		} );
 		// Don't chain, so lastRequest is a jQuery.jqXHR object
@@ -160,10 +154,14 @@ Object.assign( DiffPage.prototype, {
 	 * @return {string}
 	 */
 	getStateUrl: function ( diff, oldid ) {
-		let url = mw.util.wikiScript( 'index' ) + '?diff=' + diff + '&oldid=' + oldid;
-		const params = this.getExtraDiffPageParams();
+		let url = mw.util.wikiScript( 'index' );
+		const params = this.getCurrentDiffPageParams();
+		params.diff = diff;
+		params.oldid = oldid;
+		let first = true;
 		for ( const key in params ) {
-			url += '&' + key + '=' + params[ key ];
+			url += ( first ? '?' : '&' ) + key + '=' + params[ key ];
+			first = false;
 		}
 		return url;
 	},
@@ -175,9 +173,9 @@ Object.assign( DiffPage.prototype, {
 	 * @private
 	 * @return {Object}
 	 */
-	getExtraDiffPageParams: function () {
+	getCurrentDiffPageParams: function () {
 		const params = {},
-			paramArray = location.search.slice( 1 ).split( '&' ).filter( ( elem ) => elem.indexOf( '=' ) > 0 && elem.match( /^(diff|oldid)=/ ) === null );
+			paramArray = location.search.slice( 1 ).split( '&' ).filter( ( elem ) => elem.indexOf( '=' ) > 0 );
 		paramArray.forEach( ( elem ) => {
 			const pair = elem.split( '=', 2 );
 			params[ pair[ 0 ] ] = pair[ 1 ];
