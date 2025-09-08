@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"GilPe",
 			"Macofe",
 			"Robby",
 			"Volvox"
@@ -13,7 +14,7 @@
 	"revisionslider-label-date": "Datum",
 	"revisionslider-label-page-size": "Gréisst vun der Säit",
 	"revisionslider-label-change-size": "Gréisst vun der Ännerung",
-	"revisionslider-label-comment": "Resumé vun der Ännerung",
+	"revisionslider-label-comment": "Resümmee vun der Ännerung",
 	"revisionslider-label-username": "{{GENDER:$1|Benotzernumm}}",
 	"revisionslider-minoredit": "Dëst ass eng kleng Ännerung",
 	"revisionslider-loading-failed": "De RevisionSlider konnt net geluede ginn.",
