@@ -154,16 +154,10 @@ Object.assign( DiffPage.prototype, {
 	 * @return {string}
 	 */
 	getStateUrl: function ( diff, oldid ) {
-		let url = mw.util.wikiScript( 'index' );
 		const params = this.getCurrentDiffPageParams();
 		params.diff = diff;
 		params.oldid = oldid;
-		let first = true;
-		for ( const key in params ) {
-			url += ( first ? '?' : '&' ) + key + '=' + params[ key ];
-			first = false;
-		}
-		return url;
+		return mw.util.wikiScript( 'index' ) + '?' + $.param( params );
 	},
 
 	/**
@@ -175,10 +169,12 @@ Object.assign( DiffPage.prototype, {
 	 */
 	getCurrentDiffPageParams: function () {
 		const params = {},
-			paramArray = location.search.slice( 1 ).split( '&' ).filter( ( elem ) => elem.indexOf( '=' ) > 0 );
+			paramArray = location.search.slice( 1 ).split( '&' );
 		paramArray.forEach( ( elem ) => {
 			const pair = elem.split( '=', 2 );
-			params[ pair[ 0 ] ] = pair[ 1 ];
+			if ( pair.length === 2 ) {
+				params[ pair[ 0 ] ] = pair[ 1 ];
+			}
 		} );
 		return params;
 	},
