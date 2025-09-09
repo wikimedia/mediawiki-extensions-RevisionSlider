@@ -38,6 +38,7 @@ Object.assign( Api.prototype, {
 	 * @param {number} [options.startId]
 	 * @param {number} [options.endId]
 	 * @param {Object.<string,string>} [options.knownUserGenders]
+	 * @param {Object[]} [options.changeTags]
 	 * @return {jQuery.promise}
 	 */
 	fetchRevisionData: function ( pageName, options ) {

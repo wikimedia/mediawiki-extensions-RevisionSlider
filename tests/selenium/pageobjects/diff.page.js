@@ -167,7 +167,7 @@ class DiffPage extends Page {
 	}
 
 	/**
-	 * @param {boolean} [show] Defaults to true.
+	 * @param {boolean} [show=true]
 	 */
 	async toggleHelpDialog( show ) {
 		const hide = ( show === false ) ? '1' : '0';
