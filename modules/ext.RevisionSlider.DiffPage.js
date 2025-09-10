@@ -73,7 +73,7 @@ Object.assign( DiffPage.prototype, {
 
 			$( '.mw-revslider-revisions-container' ).scrollLeft( scrollLeft );
 
-			self.addHandlersToCoreLinks( sliderView );
+			this.addHandlersToCoreLinks( sliderView );
 
 			// Re-trigger existing, stable core hooks under the same circumstances as in core
 			mw.hook( 'wikipage.content' ).fire( $contentText );

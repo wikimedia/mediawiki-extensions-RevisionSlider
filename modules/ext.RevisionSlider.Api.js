@@ -42,8 +42,7 @@ Object.assign( Api.prototype, {
 	 * @return {jQuery.promise}
 	 */
 	fetchRevisionData: function ( pageName, options ) {
-		const deferred = $.Deferred(),
-			self = this;
+		const deferred = $.Deferred();
 		let userXhr;
 
 		options = options || {};
@@ -60,7 +59,7 @@ Object.assign( Api.prototype, {
 				}
 
 				if ( changeTags && changeTags.length > 0 ) {
-					revs = self.getRevisionsWithNewTags( revs, changeTags );
+					revs = this.getRevisionsWithNewTags( revs, changeTags );
 				}
 
 				// No need to query any gender data if masculine, feminine, and neutral are all
@@ -72,16 +71,16 @@ Object.assign( Api.prototype, {
 					return deferred.resolve( { revisions: revs, continue: revContinue } );
 				}
 
-				const userNames = self.getUniqueUserNamesWithUnknownGender( revs, genderData );
+				const userNames = this.getUniqueUserNamesWithUnknownGender( revs, genderData );
 
-				userXhr = self.fetchUserGenderData( userNames )
+				userXhr = this.fetchUserGenderData( userNames )
 					.then( ( data2 ) => {
 						if ( typeof data2 === 'object' &&
 							data2.query &&
 							data2.query.users &&
 							data2.query.users.length > 0
 						) {
-							Object.assign( genderData, self.getUserGenderData( data2.query.users, genderData ) );
+							Object.assign( genderData, this.getUserGenderData( data2.query.users, genderData ) );
 						}
 
 						revs.forEach( ( rev ) => {

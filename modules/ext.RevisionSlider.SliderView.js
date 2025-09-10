@@ -125,7 +125,6 @@ Object.assign( SliderView.prototype, {
 	 * @return {jQuery} the pointer container
 	 */
 	renderPointerContainer: function ( containerWidth ) {
-		const self = this;
 		const pointerContainerWidth = containerWidth + this.revisionWidth - 1;
 		let pointerContainerPosition = 53,
 			pointerContainerStyle, lastMouseMoveRevisionPos;
@@ -146,21 +145,21 @@ Object.assign( SliderView.prototype, {
 			.append( this.renderPointerContainers() )
 			.on( 'click', this.revisionsClickHandler.bind( this ) )
 			.on( 'mouseout', () => {
-				if ( !self.isDragged ) {
-					self.getRevisionListView().removeAllRevisionPreviewHighlights();
+				if ( !this.isDragged ) {
+					this.getRevisionListView().removeAllRevisionPreviewHighlights();
 				}
 			} )
 			.on( 'mouseover', ( event ) => {
-				if ( !self.isDragged ) {
-					lastMouseMoveRevisionPos = self.pointerContainerMouseMoveHandler(
+				if ( !this.isDragged ) {
+					lastMouseMoveRevisionPos = this.pointerContainerMouseMoveHandler(
 						event,
 						null
 					);
 				}
 			} )
 			.on( 'mousemove', ( event ) => {
-				if ( !self.isDragged ) {
-					lastMouseMoveRevisionPos = self.pointerContainerMouseMoveHandler(
+				if ( !this.isDragged ) {
+					lastMouseMoveRevisionPos = this.pointerContainerMouseMoveHandler(
 						event,
 						lastMouseMoveRevisionPos
 					);
@@ -206,14 +205,14 @@ Object.assign( SliderView.prototype, {
 
 		$( document.body ).on( 'keydown', ( e ) => {
 			if ( e.which === OO.ui.Keys.ESCAPE ) {
-				self.escapePressed = true;
+				this.escapePressed = true;
 				$pointers.trigger( 'mouseup' );
 			}
 		} );
 
 		$pointers
 			.on( 'focus', ( event ) => {
-				self.onPointerFocus( event, $revisions );
+				this.onPointerFocus( event, $revisions );
 			} )
 			.on( 'blur', this.getRevisionListView().onFocusBlur.bind( this.getRevisionListView() ) )
 			.on( 'keydown', function ( event ) {
@@ -865,8 +864,7 @@ Object.assign( SliderView.prototype, {
 	 * @param {number|string} [duration]
 	 */
 	slideView: function ( direction, duration ) {
-		const $animatedElement = this.$element.find( '.mw-revslider-revisions-container' ),
-			self = this;
+		const $animatedElement = this.$element.find( '.mw-revslider-revisions-container' );
 
 		this.slider.slide( direction );
 		this.pointerOlder.getView().getElement().draggable( 'disable' );
@@ -880,18 +878,18 @@ Object.assign( SliderView.prototype, {
 			duration,
 			null,
 			() => {
-				self.pointerOlder.getView().getElement().draggable( 'enable' );
-				self.pointerNewer.getView().getElement().draggable( 'enable' );
+				this.pointerOlder.getView().getElement().draggable( 'enable' );
+				this.pointerNewer.getView().getElement().draggable( 'enable' );
 
-				if ( self.slider.isAtStart() && !self.noMoreOlderRevisions ) {
-					self.addOlderRevisionsIfNeeded( $( '.mw-revslider-revision-slider' ) );
+				if ( this.slider.isAtStart() && !this.noMoreOlderRevisions ) {
+					this.addOlderRevisionsIfNeeded( $( '.mw-revslider-revision-slider' ) );
 				}
-				if ( self.slider.isAtEnd() && !self.noMoreNewerRevisions ) {
-					self.addNewerRevisionsIfNeeded( $( '.mw-revslider-revision-slider' ) );
+				if ( this.slider.isAtEnd() && !this.noMoreNewerRevisions ) {
+					this.addNewerRevisionsIfNeeded( $( '.mw-revslider-revision-slider' ) );
 				}
 
-				self.resetRevisionStylesBasedOnPointerPosition(
-					self.getRevisionsElement()
+				this.resetRevisionStylesBasedOnPointerPosition(
+					this.getRevisionsElement()
 				);
 			}
 		);
@@ -917,21 +915,19 @@ Object.assign( SliderView.prototype, {
 	 * @param {number|string} [duration]
 	 */
 	alignPointersAndLines: function ( duration ) {
-		const self = this;
-
 		this.fadeOutPointerLines( true );
 
 		this.pointerOlder.getView()
 			.slideToSideOrPosition( this.slider, duration )
 			.promise().then( () => {
-				self.resetSliderLines();
-				self.redrawPointerLines();
+				this.resetSliderLines();
+				this.redrawPointerLines();
 			} );
 		this.pointerNewer.getView()
 			.slideToSideOrPosition( this.slider, duration )
 			.promise().then( () => {
-				self.resetSliderLines();
-				self.redrawPointerLines();
+				this.resetSliderLines();
+				this.redrawPointerLines();
 			} );
 	},
 
@@ -952,7 +948,6 @@ Object.assign( SliderView.prototype, {
 	 */
 	addNewerRevisionsIfNeeded: function ( $slider ) {
 		const api = new RevisionSliderApi( mw.util.wikiScript( 'api' ) ),
-			self = this,
 			revisions = this.slider.getRevisionList().getRevisions(),
 			revisionCount = utils.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth );
 		if ( this.noMoreNewerRevisions || !this.slider.isAtEnd() ) {
@@ -967,14 +962,14 @@ Object.assign( SliderView.prototype, {
 		} ).then( ( data ) => {
 			const revs = data.revisions.slice( 1 );
 			if ( !revs.length ) {
-				self.noMoreNewerRevisions = true;
+				this.noMoreNewerRevisions = true;
 				return;
 			}
 
-			self.addRevisionsAtEnd( $slider, revs );
+			this.addRevisionsAtEnd( $slider, revs );
 
 			if ( !( 'continue' in data ) ) {
-				self.noMoreNewerRevisions = true;
+				this.noMoreNewerRevisions = true;
 			}
 		} );
 	},
@@ -985,7 +980,6 @@ Object.assign( SliderView.prototype, {
 	 */
 	addOlderRevisionsIfNeeded: function ( $slider ) {
 		const api = new RevisionSliderApi( mw.util.wikiScript( 'api' ) ),
-			self = this,
 			revisions = this.slider.getRevisionList().getRevisions(),
 			revisionCount = utils.calculateRevisionsPerWindow( this.containerMargin + this.outerMargin, this.revisionWidth );
 		let precedingRevisionSize = 0;
@@ -1003,7 +997,7 @@ Object.assign( SliderView.prototype, {
 		} ).then( ( data ) => {
 			let revs = data.revisions.slice( 1 ).reverse();
 			if ( !revs.length ) {
-				self.noMoreOlderRevisions = true;
+				this.noMoreOlderRevisions = true;
 				return;
 			}
 
@@ -1011,10 +1005,10 @@ Object.assign( SliderView.prototype, {
 				precedingRevisionSize = revs[ 0 ].size;
 				revs = revs.slice( 1 );
 			}
-			self.addRevisionsAtStart( $slider, revs, precedingRevisionSize );
+			this.addRevisionsAtStart( $slider, revs, precedingRevisionSize );
 
 			if ( !( 'continue' in data ) ) {
-				self.noMoreOlderRevisions = true;
+				this.noMoreOlderRevisions = true;
 			}
 		} );
 	},
