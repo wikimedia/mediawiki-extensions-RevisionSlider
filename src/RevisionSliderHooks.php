@@ -19,7 +19,6 @@ use Wikimedia\Stats\StatsFactory;
 /**
  * RevisionSlider extension hooks
  *
- * @file
  * @ingroup Extensions
  * @license GPL-2.0-or-later
  */
