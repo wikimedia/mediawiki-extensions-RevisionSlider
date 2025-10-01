@@ -1,11 +1,9 @@
-'use strict';
-
-const Page = require( 'wdio-mediawiki/Page' ),
-	Api = require( 'wdio-mediawiki/Api' ),
-	BlankPage = require( 'wdio-mediawiki/BlankPage' ),
-	Util = require( 'wdio-mediawiki/Util' ),
-	USER_BUBBLE_SELECTOR = '.mw-revslider-username-row .mw-revslider-bubble',
-	TAG_BUBBLE_SELECTOR = '.mw-revslider-tag-row:last-of-type .mw-revslider-bubble';
+import Page from 'wdio-mediawiki/Page';
+import * as Api from 'wdio-mediawiki/Api.js';
+import BlankPage from 'wdio-mediawiki/BlankPage';
+import * as Util from 'wdio-mediawiki/Util';
+const USER_BUBBLE_SELECTOR = '.mw-revslider-username-row .mw-revslider-bubble';
+const TAG_BUBBLE_SELECTOR = '.mw-revslider-tag-row:last-of-type .mw-revslider-bubble';
 
 class DiffPage extends Page {
 	get rsMain() {
@@ -200,7 +198,7 @@ class DiffPage extends Page {
 	 */
 	async addUserEditsToPage( title, num ) {
 		await browser.call( async () => {
-			const bot = await Api.bot();
+			const bot = await Api.mwbot();
 			for ( let i = 1; i <= num; i++ ) {
 				await bot.edit(
 					title,
@@ -216,7 +214,7 @@ class DiffPage extends Page {
 	 */
 	addTaggedEditToPage( title ) {
 		browser.call( async () => {
-			const bot = await Api.bot();
+			const bot = await Api.mwbot();
 			return bot.edit(
 				title,
 				'',
@@ -233,12 +231,12 @@ class DiffPage extends Page {
 		const otherUser = await Util.getTestString( 'User-' );
 		const otherUserPassword = await Util.getTestString();
 		await browser.call( async () => {
-			const bot = await Api.bot();
+			const bot = await Api.mwbot();
 			return await Api.createAccount( bot, otherUser, otherUserPassword );
 		} );
 
 		await browser.call( async () => {
-			const bot = await Api.bot( otherUser, otherUserPassword );
+			const bot = await Api.mwbot( otherUser, otherUserPassword );
 			return bot.edit(
 				title,
 				'RevisionSlider-Test-Other-Text with tag',
@@ -302,4 +300,4 @@ class DiffPage extends Page {
 	}
 }
 
-module.exports = new DiffPage();
+export default new DiffPage();

@@ -1,7 +1,5 @@
-'use strict';
-
-const assert = require( 'assert' ),
-	DiffPage = require( '../pageobjects/diff.page' );
+import assert from 'assert';
+import DiffPage from '../pageobjects/diff.page';
 
 describe( 'RevisionSlider timeline arrows', () => {
 
