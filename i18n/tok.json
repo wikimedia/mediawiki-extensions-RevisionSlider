@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ne"
+		]
+	},
+	"revisionslider-toggle-label": "o lukin e ante lon linja tenpo",
+	"revisionslider-label-date": "tenpo",
+	"revisionslider-label-page-size": "suli lipu",
+	"revisionslider-label-change-size": "suli ante",
+	"revisionslider-label-comment": "toki ante",
+	"revisionslider-label-username": "{{GENDER:$1|nimi jan}}",
+	"revisionslider-minoredit": "ni li ante lili",
+	"revisionslider-arrow-tooltip-newer": "ante sin",
+	"revisionslider-arrow-tooltip-older": "ante pini",
+	"revisionslider-show-help-tooltip": "o lukin e sona ilo",
+	"revisionslider-tutorial": "linja tenpo pi ante lipu",
+	"revisionslider-previous-dialog": "pini",
+	"revisionslider-next-dialog": "kama",
+	"revisionslider-close-dialog": "o weka"
+}
