@@ -257,22 +257,22 @@ of the frameless one (to fit the size of the toggle button */
 	&.mw-revslider-pointer-newer {
 		top: -6px;
 		border: @border-width-base @border-style-base @new;
-		.vertical-gradient( lighten( @new, 30% ), @new );
+		background-image: linear-gradient( lighten( @new, 30% ), @new );
 
 		&:hover,
 		&:focus {
-			.vertical-gradient( lighten( @new, 40% ), @new );
+			background-image: linear-gradient( lighten( @new, 40% ), @new );
 		}
 	}
 
 	&.mw-revslider-pointer-older {
 		top: 4px;
 		border: @border-width-base @border-style-base @oldHandle;
-		.vertical-gradient( lighten( @oldHandle, 30% ), @oldHandle );
+		background-image: linear-gradient( lighten( @oldHandle, 30% ), @oldHandle );
 
 		&:hover,
 		&:focus {
-			.vertical-gradient( lighten( @oldHandle, 40% ), @oldHandle );
+			background-image: linear-gradient( lighten( @oldHandle, 40% ), @oldHandle );
 		}
 	}
 }
