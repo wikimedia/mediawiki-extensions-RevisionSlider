@@ -34,7 +34,7 @@ Object.assign( DiffPage.prototype, {
 			this.lastRequest.abort();
 		}
 
-		$( 'table.diff[data-mw="interface"]' ).addClass( 'mw-revslider-diff-loading' );
+		$( 'table.diff[data-mw="interface"],table.diff[data-mw-interface]' ).addClass( 'mw-revslider-diff-loading' );
 
 		this.lastRequest = $.ajax( {
 			url: mw.util.wikiScript( 'index' ),
@@ -55,9 +55,9 @@ Object.assign( DiffPage.prototype, {
 			$( '#mw-content-text' ).replaceWith( $contentText );
 			$( '.printfooter' ).replaceWith( $data.find( '.printfooter' ) );
 
-			const $catlinks = $data.find( '.catlinks[data-mw="interface"]' );
+			const $catlinks = $data.find( '.catlinks[data-mw="interface"],.catlinks[data-mw-interface]' );
 			mw.hook( 'wikipage.categories' ).fire( $catlinks );
-			$( '.catlinks[data-mw="interface"]' ).replaceWith( $catlinks );
+			$( '.catlinks[data-mw="interface"],.catlinks[data-mw-interface]' ).replaceWith( $catlinks );
 
 			// Replace navigation menus. See also T211557
 			[ '#t-permalink', '#ca-delete', '#ca-edit', '#footer-places-mobileview' ].forEach( ( selector ) => {
@@ -78,12 +78,12 @@ Object.assign( DiffPage.prototype, {
 			// Re-trigger existing, stable core hooks under the same circumstances as in core
 			mw.hook( 'wikipage.content' ).fire( $contentText );
 
-			const $nodes = $( 'table.diff[data-mw="interface"]' );
+			const $nodes = $( 'table.diff[data-mw="interface"],table.diff[data-mw-interface]' );
 			if ( $nodes.length ) {
 				mw.hook( 'wikipage.diff' ).fire( $nodes.eq( 0 ) );
 			}
 		}, function ( xhr ) {
-			$( 'table.diff[data-mw="interface"]' ).removeClass( 'mw-revslider-diff-loading' );
+			$( 'table.diff[data-mw="interface"],table.diff[data-mw-interface]' ).removeClass( 'mw-revslider-diff-loading' );
 			if ( xhr.statusText !== 'abort' ) {
 				this.tryCount++;
 				utils.incrementErrorStats( 'refresh' );
