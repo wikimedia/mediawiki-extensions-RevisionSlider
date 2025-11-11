@@ -15,7 +15,7 @@
 	"type": "other",
 	"manifest_version": 2,
 	"requires": {
-		"MediaWiki": ">= 1.45"
+		"MediaWiki": ">= 1.46"
 	},
 	"ConfigRegistry": {
 		"revisionslider": "MediaWiki\\Config\\GlobalVarConfig::newInstance"
