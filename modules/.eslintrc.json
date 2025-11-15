@@ -12,7 +12,8 @@
 		"max-len": "off",
 		"no-jquery/no-global-selector": "off",
 		"no-jquery/no-class-state": "off",
-		"implicit-arrow-linebreak": "warn"
+		"implicit-arrow-linebreak": "warn",
+		"mediawiki/no-unlabeled-buttonwidget": "warn"
 	},
 	"settings": {
 		"jsdoc": {
