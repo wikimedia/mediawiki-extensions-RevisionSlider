@@ -5,6 +5,7 @@
 			"Þjarkur"
 		]
 	},
+	"revisionslider-preference-disable": "Ekki sýna útgáfuferilssleðann",
 	"revisionslider-toggle-label": "Fletta í gegnum breytingarskrá",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|bæti}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|bæti}}",
