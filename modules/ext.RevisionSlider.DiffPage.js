@@ -168,14 +168,12 @@ Object.assign( DiffPage.prototype, {
 	 * @return {Object}
 	 */
 	getCurrentDiffPageParams: function () {
-		const params = {},
-			paramArray = location.search.slice( 1 ).split( '&' );
-		paramArray.forEach( ( elem ) => {
-			const pair = elem.split( '=', 2 );
-			if ( pair.length === 2 ) {
-				params[ pair[ 0 ] ] = pair[ 1 ];
-			}
-		} );
+		const urlSearchParams = new URLSearchParams( location.search );
+		// In the future this can use ES2019 'Object.fromEntries' method
+		const params = {};
+		for ( const [ k, v ] of urlSearchParams.entries() ) {
+			params[ k ] = v;
+		}
 		return params;
 	},
 
