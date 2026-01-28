@@ -6,5 +6,8 @@
 	},
 	"revisionslider-page-size": "$1 {{PLURAL:$2|ਬਾਈਟ|ਬਾਈਟਾਂ}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3| ਬਾਈਟ|ਬਾਈਟਾਂ}}",
-	"revisionslider-label-page-size": "ਵਰਕੇ ਦਾ ਆਕਾਰ"
+	"revisionslider-label-date": "ਮਿਤੀ",
+	"revisionslider-label-page-size": "ਵਰਕੇ ਦਾ ਆਕਾਰ",
+	"revisionslider-label-change-size": "ਆਕਾਰ ਬਦਲੋ",
+	"revisionslider-close-dialog": "ਬੰਦ ਕਰੋ"
 }
