@@ -198,9 +198,9 @@ class DiffPage extends Page {
 	 */
 	async addUserEditsToPage( title, num ) {
 		await browser.call( async () => {
-			const bot = await Api.mwbot();
+			const apiClient = await Api.createApiClient();
 			for ( let i = 1; i <= num; i++ ) {
-				await bot.edit(
+				await apiClient.edit(
 					title,
 					'RevisionSlider-Test-Text ' + i,
 					'RevisionSlider-Test-Summary ' + i
@@ -214,12 +214,11 @@ class DiffPage extends Page {
 	 */
 	addTaggedEditToPage( title ) {
 		browser.call( async () => {
-			const bot = await Api.mwbot();
-			return bot.edit(
+			const apiClient = await Api.createApiClient();
+			return apiClient.edit(
 				title,
 				'',
-				'RevisionSlider-Test-Tagged',
-				{ tags: 'mw-blank' }
+				'RevisionSlider-Test-Tagged'
 			);
 		} );
 	}
@@ -231,17 +230,19 @@ class DiffPage extends Page {
 		const otherUser = await Util.getTestString( 'User-' );
 		const otherUserPassword = await Util.getTestString();
 		await browser.call( async () => {
-			const bot = await Api.mwbot();
-			return await Api.createAccount( bot, otherUser, otherUserPassword );
+			const apiClient = await Api.createApiClient();
+			return await apiClient.createAccount( otherUser, otherUserPassword );
 		} );
 
 		await browser.call( async () => {
-			const bot = await Api.mwbot( otherUser, otherUserPassword );
-			return bot.edit(
+			const apiClient = await Api.createApiClient( {
+				username: otherUser,
+				password: otherUserPassword
+			} );
+			return apiClient.edit(
 				title,
 				'RevisionSlider-Test-Other-Text with tag',
-				'RevisionSlider-Test-Other-Tagged',
-				{ tags: 'mw-replace' }
+				'RevisionSlider-Test-Other-Tagged'
 			);
 
 		} );
