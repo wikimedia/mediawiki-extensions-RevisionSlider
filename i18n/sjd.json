@@ -4,6 +4,7 @@
 			"Merrahtar"
 		]
 	},
+	"revisionslider-preference-disable": "Эль вуэзхэллэ «[https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:RevisionSlider Ве̄рсьяе мӣлльтэ сла̄йдэр]»",
 	"revisionslider-toggle-label": "Интэрактивнэ исторья кӣһчмушш",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|ба̄ййт|ба̄йт|ба̄ййтэ}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|ба̄ййт|ба̄йт|ба̄ййтэ}}",
