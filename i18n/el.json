@@ -3,7 +3,8 @@
 		"authors": [
 			"Geraki",
 			"NikosLikomitros",
-			"Nikosgranturismogt"
+			"Nikosgranturismogt",
+			"Warudo"
 		]
 	},
 	"revisionslider": "RevisionSlider",
@@ -16,7 +17,7 @@
 	"revisionslider-label-page-size": "Μέγεθος σελίδας",
 	"revisionslider-label-change-size": "Αλλαγή μεγέθους",
 	"revisionslider-label-comment": "Σύνοψη επεξεργασίας",
-	"revisionslider-label-username": "{{GENDER:$1|Όνομα χρήστη}}",
+	"revisionslider-label-username": "Όνομα {{GENDER:$1|χρήστη|χρήστριας}}",
 	"revisionslider-minoredit": "Αυτή είναι μια μικροεπεξεργασία",
 	"revisionslider-loading-failed": "Ο ολισθητής αναθεωρήσεων απέτυχε να φορτώσει.",
 	"revisionslider-toggle-title-expand": "Άνοιγμα ολισθητή αναθεωρήσεων",
