@@ -14,6 +14,7 @@ use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
 use OOUI\ButtonWidget;
 use Wikimedia\Stats\Metrics\CounterMetric;
+use Wikimedia\Stats\Metrics\NullMetric;
 use Wikimedia\Stats\StatsFactory;
 
 /**
@@ -25,7 +26,7 @@ use Wikimedia\Stats\StatsFactory;
 class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferencesHook {
 
 	private readonly Config $config;
-	private readonly CounterMetric $eventsCounter;
+	private readonly CounterMetric|NullMetric $eventsCounter;
 
 	public function __construct(
 		ConfigFactory $configFactory,
