@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ajeje Brazorf"
+			"Ajeje Brazorf",
+			"Gmelfi"
 		]
 	},
+	"revisionslider-toggle-label": "Naviga ntâ crunuluggìa n manera ntirattiva",
 	"revisionslider-page-size": "$1 {{PLURAL:$2|byte}}",
 	"revisionslider-change-size": "$1 {{PLURAL:$3|byte}}",
 	"revisionslider-label-username": "{{GENDER:$1|Nomu utenti}}",
