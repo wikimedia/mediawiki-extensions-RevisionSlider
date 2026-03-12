@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Red Winged Duck",
-			"Renessaince"
+			"Renessaince",
+			"Ucukor"
 		]
 	},
 	"revisionslider": "Слайдэр вэрсіяў",
@@ -16,7 +17,7 @@
 	"revisionslider-label-change-size": "Памер зьмены",
 	"revisionslider-label-comment": "Апісаньне зьменаў",
 	"revisionslider-label-username": "{{GENDER:$1|Удзельнік|Удзельніца}}",
-	"revisionslider-minoredit": "Гэта дробная праўка",
+	"revisionslider-minoredit": "Гэта дробнае рэдагаваньне",
 	"revisionslider-loading-failed": "Не атрымалася загрузіць слайдэр вэрсіяў.",
 	"revisionslider-toggle-title-expand": "Адкрыць слайдэр вэрсіяў",
 	"revisionslider-toggle-title-collapse": "Згарнуць слайдэр вэрсіяў",
