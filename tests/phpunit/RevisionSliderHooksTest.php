@@ -2,6 +2,7 @@
 
 use MediaWiki\Config\ConfigFactory;
 use MediaWiki\Config\HashConfig;
+use MediaWiki\Diff\DifferenceEngine;
 use MediaWiki\Extension\RevisionSlider\RevisionSliderHooks;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Revision\RevisionRecord;
