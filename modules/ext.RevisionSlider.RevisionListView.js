@@ -660,7 +660,7 @@ Object.assign( RevisionListView.prototype, {
 		}
 
 		// Classes are documented above
-		// eslint-disable-next-line mediawiki/class-doc
+
 		const $changeNumber = $( '<span>' )
 			.addClass( changeSizeClass )
 			.attr( {
