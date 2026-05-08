@@ -10,15 +10,16 @@
 			"Rapsar",
 			"SaldırganSincap",
 			"Sezgin İbiş",
-			"Vito Genovese"
+			"Vito Genovese",
+			"ToprakM"
 		]
 	},
 	"revisionslider": "RevisionSlider",
 	"revisionslider-preference-disable": "Sürüm kaydırıcısını gösterme",
 	"revisionslider-desc": "Farklı bir sayfada sürümlerin seçilmesine ve karşılaştırılmasına izin veren bir kaydırıcı gösterir",
 	"revisionslider-toggle-label": "Etkileşimli olarak geçmişe göz at",
-	"revisionslider-page-size": "$1 {{PLURAL:$2|bayt|bayt}}",
-	"revisionslider-change-size": "$1 {{PLURAL:$3|bayt|bayt}}",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|bayt}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|bayt}}",
 	"revisionslider-label-date": "Tarih",
 	"revisionslider-label-page-size": "Sayfa boyutu",
 	"revisionslider-label-change-size": "Boyut değişikliği",
