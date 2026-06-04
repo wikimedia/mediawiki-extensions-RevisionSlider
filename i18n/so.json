@@ -4,5 +4,31 @@
 			"AhmedG612"
 		]
 	},
-	"revisionslider-toggle-label": "Si is dhexgal ah u baadh taariikhda"
+	"revisionslider-preference-disable": "Ha muujin slider-ka dib u eegista",
+	"revisionslider-desc": "Waxay muujisaa slider u oggolaanaya xulashada iyo isbarbardhigga dib u eegisyada bogga isbeddelka",
+	"revisionslider-toggle-label": "Si is dhexgal ah u baadh taariikhda",
+	"revisionslider-page-size": "$1 {{PLURAL:$2|bayt|baytyada}}",
+	"revisionslider-change-size": "$1 {{PLURAL:$3|bayt|baytyada}}",
+	"revisionslider-label-date": "Taariikh",
+	"revisionslider-label-page-size": "Cabbirka bogga",
+	"revisionslider-label-change-size": "Beddel cabbirka",
+	"revisionslider-label-comment": "Soo koobida wax ka beddel",
+	"revisionslider-label-username": "{{GENDER:$1|Magaca isticmaale}}",
+	"revisionslider-minoredit": "Kani waa wax ka beddel yar",
+	"revisionslider-loading-failed": "Slider-ka dib u eegista wuu fashilmay in uu soo shubmo.",
+	"revisionslider-toggle-title-expand": "Fur slider-ka dib u eegista",
+	"revisionslider-toggle-title-collapse": "Xir slider-ka dib u eegista",
+	"revisionslider-turn-on-auto-expand-title": "Mar walba fidi slider-ka dib u eegista",
+	"revisionslider-turn-off-auto-expand-title": "Si toos ah ha u fidin slider-ka dib u eegista",
+	"revisionslider-arrow-tooltip-newer": "Eeg dib u eegisyo cusub",
+	"revisionslider-arrow-tooltip-older": "Eeg dib u eegisyo hore",
+	"revisionslider-show-help-tooltip": "Muuji qoraalka caawinta",
+	"revisionslider-help-dialog-slide1": "Slider-ka dib u eegista wuxuu kaa caawinayaa inaad dhex marato oo isbarbardhigto dib u eegisyada bogga isbeddelka. Wuxuu ku saleysan yahay [//meta.wikimedia.org/wiki/WMDE_Technical_Wishes/RevisionSlider rabitaan bulshada] oo ka yimid liiska rabitaannada farsamo ee bulshada Jarmalka ku hadasha. Fikrad-celinta aad bay muhiim u tahay waxaana lagu bixin karaa [//www.mediawiki.org/wiki/Extension_talk:RevisionSlider halkan].",
+	"revisionslider-help-dialog-slide2": "Bar kasta waxay matalaysaa dib u eegis bog. Baararka sare waxay muujinayaan kororka cabbirka bogga, halka baararka hoose ay muujinayaan dhimista. Sawirka, dib u eegista 1 waxay matalaysaa waxyaabo lagu daray, halka dib u eegista 2 ay matalayso waxyaabo laga saaray.",
+	"revisionslider-help-dialog-slide3a": "Si aad u isbarbardhigto dib u eegisyo gaar ah, ku xulo dib u eegisyada adigoo adeegsanaya labada badhan ee midabbada leh.\n\nBadhanka kore wuxuu maamulaa dib u eegista cusub, halka badhanka hoose uu la xiriira dib u eegista hore.\n\nU dhaqaaji badhannada adigoo jiidaya ama adigoo gujinaya khadka slider-ka.",
+	"revisionslider-help-dialog-slide4": "Isticmaal fallaadhaha hore iyo gadaal si aad ugu dhex socoto taariikhda dib u eegista oo aad u muujiso dib u eegisyo hore iyo kuwa cusub.",
+	"revisionslider-tutorial": "Cashar barashada slider-ka dib u eegista",
+	"revisionslider-previous-dialog": "Kii hore",
+	"revisionslider-next-dialog": "Xiga",
+	"revisionslider-close-dialog": "Xir"
 }
