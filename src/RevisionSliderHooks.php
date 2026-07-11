@@ -54,7 +54,6 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 		}
 
 		$this->eventsCounter->setLabel( 'event', 'hookinit' )
-			->copyToStatsdAt( 'RevisionSlider.event.hookinit' )
 			->increment();
 
 		$timeOffset = 0;
@@ -70,12 +69,10 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 		if ( $autoExpand ) {
 			$out->addModules( 'ext.RevisionSlider.init' );
 			$this->eventsCounter->setLabel( 'event', 'load' )
-				->copyToStatsdAt( 'RevisionSlider.event.load' )
 				->increment();
 		} else {
 			$out->addModules( 'ext.RevisionSlider.lazyJs' );
 			$this->eventsCounter->setLabel( 'event', 'lazyload' )
-				->copyToStatsdAt( 'RevisionSlider.event.lazyload' )
 				->increment();
 		}
 		$out->addJsConfigVars( 'extRevisionSliderTimeOffset', $timeOffset );
