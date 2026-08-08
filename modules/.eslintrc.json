@@ -13,7 +13,8 @@
 		"no-jquery/no-global-selector": "off",
 		"no-jquery/no-class-state": "off",
 		"implicit-arrow-linebreak": "warn",
-		"mediawiki/no-unlabeled-buttonwidget": "warn"
+		"mediawiki/no-unlabeled-buttonwidget": "warn",
+		"no-jquery/no-jquery-ui": "warn"
 	},
 	"settings": {
 		"jsdoc": {
