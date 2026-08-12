@@ -1,4 +1,3 @@
-import assert from 'assert';
 import DiffPage from '../pageobjects/diff.page.js';
 
 describe( 'RevisionSlider help', () => {
@@ -8,7 +7,7 @@ describe( 'RevisionSlider help', () => {
 	} );
 
 	beforeEach( async () => {
-		DiffPage.ready();
+		await DiffPage.ready();
 		await DiffPage.openSlider();
 	} );
 
@@ -19,9 +18,7 @@ describe( 'RevisionSlider help', () => {
 
 	it( 'tutorial is present on first load', async () => {
 
-		assert(
-			await DiffPage.helpDialog.isDisplayed(), 'help dialog should be visible'
-		);
+		await expect( DiffPage.helpDialog ).toBeDisplayed();
 
 	} );
 
@@ -32,9 +29,7 @@ describe( 'RevisionSlider help', () => {
 		await browser.refresh();
 		await DiffPage.openSlider();
 
-		assert(
-			!await DiffPage.helpDialog.isDisplayed(), 'help dialog should not be present'
-		);
+		await expect( DiffPage.helpDialog ).not.toBeDisplayed();
 
 	} );
 
@@ -47,9 +42,7 @@ describe( 'RevisionSlider help', () => {
 		await browser.refresh();
 		await DiffPage.openSlider();
 
-		assert(
-			!await DiffPage.helpDialog.isDisplayed(), 'help dialog should not be present'
-		);
+		await expect( DiffPage.helpDialog ).not.toBeDisplayed();
 
 	} );
 

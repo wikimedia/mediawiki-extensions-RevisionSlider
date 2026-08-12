@@ -1,5 +1,4 @@
-import assert from 'assert';
-import DiffPage from '../pageobjects/diff.page';
+import DiffPage from '../pageobjects/diff.page.js';
 
 describe( 'RevisionSlider pointers', () => {
 
@@ -8,7 +7,7 @@ describe( 'RevisionSlider pointers', () => {
 	} );
 
 	beforeEach( async () => {
-		DiffPage.ready();
+		await DiffPage.ready();
 		await DiffPage.openSlider();
 	} );
 
@@ -17,14 +16,9 @@ describe( 'RevisionSlider pointers', () => {
 	} );
 
 	it( ' can be dragged', async () => {
-		assert(
-			await DiffPage.isOlderPointerOn( 2 ),
-			'older pointer should be on previous revision'
-		);
-		assert(
-			await DiffPage.isNewerPointerOn( 3 ),
-			'newer pointer should be on current revision'
-		);
+		// The older pointer starts on the previous revision, the newer one on the current
+		expect( await DiffPage.isOlderPointerOn( 2 ) ).toBe( true );
+		expect( await DiffPage.isNewerPointerOn( 3 ) ).toBe( true );
 
 		await DiffPage.dragOlderPointerTo( 1 );
 		await DiffPage.waitUntilLoaded();
@@ -32,21 +26,10 @@ describe( 'RevisionSlider pointers', () => {
 		await DiffPage.dragNewerPointerTo( 2 );
 		await DiffPage.waitUntilLoaded();
 
-		assert(
-			await DiffPage.isOlderPointerOn( 1 ),
-			'older pointer should be on revision 1'
-		);
-		assert(
-			await DiffPage.isNewerPointerOn( 2 ),
-			'newer pointer should be on revision 2'
-		);
-		assert(
-			await DiffPage.showsOlderSummary( 1 ),
-			'revision 1 should be loaded on the left of the diff'
-		);
-		assert(
-			await DiffPage.showsNewerSummary( 2 ),
-			'revision 2 should be loaded on the right of the diff'
-		);
+		expect( await DiffPage.isOlderPointerOn( 1 ) ).toBe( true );
+		expect( await DiffPage.isNewerPointerOn( 2 ) ).toBe( true );
+		// Revisions 1 and 2 should be loaded on the left and right of the diff
+		expect( await DiffPage.showsOlderSummary( 1 ) ).toBe( true );
+		expect( await DiffPage.showsNewerSummary( 2 ) ).toBe( true );
 	} );
 } );

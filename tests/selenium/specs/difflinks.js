@@ -1,11 +1,10 @@
-import assert from 'assert';
 import DiffPage from '../pageobjects/diff.page.js';
 
 describe( 'RevisionSlider diff links', () => {
 
 	beforeEach( async () => {
 		await DiffPage.prepareSimpleTests( 3 );
-		DiffPage.ready();
+		await DiffPage.ready();
 		await DiffPage.openSlider();
 	} );
 
@@ -13,10 +12,10 @@ describe( 'RevisionSlider diff links', () => {
 		await DiffPage.rsEditOlderButton.click();
 		await DiffPage.waitUntilLoaded();
 
-		assert( await DiffPage.isOlderPointerOn( 1 ) );
-		assert( await DiffPage.isNewerPointerOn( 2 ) );
-		assert( await DiffPage.showsOlderSummary( 1 ) );
-		assert( await DiffPage.showsNewerSummary( 2 ) );
+		expect( await DiffPage.isOlderPointerOn( 1 ) ).toBe( true );
+		expect( await DiffPage.isNewerPointerOn( 2 ) ).toBe( true );
+		expect( await DiffPage.showsOlderSummary( 1 ) ).toBe( true );
+		expect( await DiffPage.showsNewerSummary( 2 ) ).toBe( true );
 	} );
 
 	it( ' newer edit diff link can be clicked', async () => {
@@ -26,9 +25,9 @@ describe( 'RevisionSlider diff links', () => {
 		await DiffPage.rsEditNewerButton.click();
 		await DiffPage.waitUntilLoaded();
 
-		assert( await DiffPage.isOlderPointerOn( 2 ) );
-		assert( await DiffPage.isNewerPointerOn( 3 ) );
-		assert( await DiffPage.showsOlderSummary( 2 ) );
-		assert( await DiffPage.showsNewerSummary( 3 ) );
+		expect( await DiffPage.isOlderPointerOn( 2 ) ).toBe( true );
+		expect( await DiffPage.isNewerPointerOn( 3 ) ).toBe( true );
+		expect( await DiffPage.showsOlderSummary( 2 ) ).toBe( true );
+		expect( await DiffPage.showsNewerSummary( 3 ) ).toBe( true );
 	} );
 } );

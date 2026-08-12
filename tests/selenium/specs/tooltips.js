@@ -1,11 +1,10 @@
-import assert from 'assert';
-import DiffPage from '../pageobjects/diff.page';
+import DiffPage from '../pageobjects/diff.page.js';
 
 describe( 'RevisionSlider revision tooltips', () => {
 
 	before( async () => {
 		await DiffPage.prepareSimpleTests( 2 );
-		DiffPage.ready();
+		await DiffPage.ready();
 		await DiffPage.openSlider();
 	} );
 
@@ -13,27 +12,17 @@ describe( 'RevisionSlider revision tooltips', () => {
 
 		await DiffPage.dwellRevision( 1 );
 
-		assert(
-			await DiffPage.getTooltip( 1 ).isDisplayed(), 'tooltip 1 should appear'
-		);
-		assert(
-			!await DiffPage.getTooltip( 2 ).isDisplayed(), 'tooltip 2 should not appear'
-		);
+		await expect( DiffPage.getTooltip( 1 ) ).toBeDisplayed();
+		await expect( DiffPage.getTooltip( 2 ) ).not.toBeDisplayed();
 
 		await DiffPage.dwellRevision( 2 );
 
-		assert(
-			await DiffPage.getTooltip( 2 ).isDisplayed(), 'tooltip 2 should appear'
-		);
-		assert(
-			!await DiffPage.getTooltip( 1 ).isDisplayed(), 'tooltip 1 should vanish'
-		);
+		await expect( DiffPage.getTooltip( 2 ) ).toBeDisplayed();
+		await expect( DiffPage.getTooltip( 1 ) ).not.toBeDisplayed();
 
 		await DiffPage.getTooltip( 2 ).moveTo();
 
-		assert(
-			await DiffPage.getTooltip( 2 ).isDisplayed(), 'tooltip 2 should still be visible'
-		);
+		await expect( DiffPage.getTooltip( 2 ) ).toBeDisplayed();
 
 	} );
 

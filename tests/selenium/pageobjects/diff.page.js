@@ -1,7 +1,7 @@
 import Page from 'wdio-mediawiki/Page';
-import * as Api from 'wdio-mediawiki/Api.js';
+import { createApiClient } from 'wdio-mediawiki/Api.js';
 import BlankPage from 'wdio-mediawiki/BlankPage';
-import * as Util from 'wdio-mediawiki/Util';
+import { getTestString, waitForModuleState } from 'wdio-mediawiki/Util';
 const USER_BUBBLE_SELECTOR = '.mw-revslider-username-row .mw-revslider-bubble';
 const TAG_BUBBLE_SELECTOR = '.mw-revslider-tag-row:last-of-type .mw-revslider-bubble';
 
@@ -114,12 +114,12 @@ class DiffPage extends Page {
 		return await this.forwardsArrow.getAttribute( 'aria-disabled' ) === 'true';
 	}
 
-	waitForSliding() {
-		this.waitForAnimation( $( '.mw-revslider-revisions-container' ) );
+	async waitForSliding() {
+		await this.waitForAnimation( $( '.mw-revslider-revisions-container' ) );
 	}
 
-	ready() {
-		Util.waitForModuleState( 'ext.RevisionSlider.lazyJs' );
+	async ready() {
+		await waitForModuleState( 'ext.RevisionSlider.lazyJs' );
 	}
 
 	/**
@@ -127,7 +127,7 @@ class DiffPage extends Page {
 	 * @param {boolean} [showHelp] Display help dialog. Defaults to false.
 	 */
 	async prepareSimpleTests( num, showHelp = false ) {
-		const title = Util.getTestString( 'revisionslider-test-' );
+		const title = getTestString( 'revisionslider-test-' );
 		await BlankPage.open();
 		await this.toggleHelpDialog( showHelp );
 		await this.addUserEditsToPage( title, num );
@@ -135,7 +135,7 @@ class DiffPage extends Page {
 	}
 
 	async prepareFilterTests() {
-		const title = await Util.getTestString( 'revisionslider-test-' );
+		const title = getTestString( 'revisionslider-test-' );
 		await BlankPage.open();
 		await this.toggleHelpDialog( false );
 		await this.hasPageWithDifferentEdits( title );
@@ -144,12 +144,7 @@ class DiffPage extends Page {
 
 	async openSlider() {
 		await this.rsToggleButton.click();
-		try {
-			await this.rsMain.waitForDisplayed( { timeout: 2500 } );
-		} catch ( e ) {
-			await this.rsToggleButton.click();
-			await this.rsMain.waitForDisplayed();
-		}
+		await this.rsMain.waitForDisplayed();
 	}
 
 	async open( title ) {
@@ -197,55 +192,46 @@ class DiffPage extends Page {
 	 * @param {number} num Number of different edits to add.
 	 */
 	async addUserEditsToPage( title, num ) {
-		await browser.call( async () => {
-			const apiClient = await Api.createApiClient();
-			for ( let i = 1; i <= num; i++ ) {
-				await apiClient.edit(
-					title,
-					'RevisionSlider-Test-Text ' + i,
-					'RevisionSlider-Test-Summary ' + i
-				);
-			}
-		} );
+		const apiClient = await createApiClient();
+		for ( let i = 1; i <= num; i++ ) {
+			await apiClient.edit(
+				title,
+				'RevisionSlider-Test-Text ' + i,
+				'RevisionSlider-Test-Summary ' + i
+			);
+		}
 	}
 
 	/**
 	 * @param {string} title Article to edit.
 	 */
-	addTaggedEditToPage( title ) {
-		browser.call( async () => {
-			const apiClient = await Api.createApiClient();
-			return apiClient.edit(
-				title,
-				'',
-				'RevisionSlider-Test-Tagged'
-			);
-		} );
+	async addTaggedEditToPage( title ) {
+		const apiClient = await createApiClient();
+		await apiClient.edit(
+			title,
+			'',
+			'RevisionSlider-Test-Tagged'
+		);
 	}
 
 	/**
 	 * @param {string} title Article to edit.
 	 */
 	async addTaggedOtherUserEditToPage( title ) {
-		const otherUser = await Util.getTestString( 'User-' );
-		const otherUserPassword = await Util.getTestString();
-		await browser.call( async () => {
-			const apiClient = await Api.createApiClient();
-			return await apiClient.createAccount( otherUser, otherUserPassword );
-		} );
+		const otherUser = getTestString( 'User-' );
+		const otherUserPassword = getTestString();
+		const adminClient = await createApiClient();
+		await adminClient.createAccount( otherUser, otherUserPassword );
 
-		await browser.call( async () => {
-			const apiClient = await Api.createApiClient( {
-				username: otherUser,
-				password: otherUserPassword
-			} );
-			return apiClient.edit(
-				title,
-				'RevisionSlider-Test-Other-Text with tag',
-				'RevisionSlider-Test-Other-Tagged'
-			);
-
+		const otherUserClient = await createApiClient( {
+			username: otherUser,
+			password: otherUserPassword
 		} );
+		await otherUserClient.edit(
+			title,
+			'RevisionSlider-Test-Other-Text with tag',
+			'RevisionSlider-Test-Other-Tagged'
+		);
 	}
 
 	async dwellRevision( num ) {
@@ -290,14 +276,13 @@ class DiffPage extends Page {
 		await this.rsPointerNewer.dragAndDrop( await this.getRevision( num ) );
 	}
 
-	waitForAnimation( el ) {
-		browser.execute( ( elem ) => {
-			setInterval( () => {
-				if ( $( elem ).filter( ':not(animated)' ) ) {
-					clearInterval();
-				}
-			}, 500 );
-		}, el );
+	// Waits until the jQuery animation on the given element has finished.
+	async waitForAnimation( el ) {
+		const element = await el;
+		await browser.waitUntil(
+			async () => !await browser.execute( ( elem ) => $( elem ).is( ':animated' ), element ),
+			{ timeoutMsg: 'The animation did not finish' }
+		);
 	}
 }
 

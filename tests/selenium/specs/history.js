@@ -1,4 +1,3 @@
-import assert from 'assert';
 import DiffPage from '../pageobjects/diff.page.js';
 
 describe( 'RevisionSlider history', () => {
@@ -8,7 +7,7 @@ describe( 'RevisionSlider history', () => {
 	} );
 
 	beforeEach( async () => {
-		DiffPage.ready();
+		await DiffPage.ready();
 		await DiffPage.openSlider();
 	} );
 
@@ -33,10 +32,10 @@ describe( 'RevisionSlider history', () => {
 		await DiffPage.waitUntilLoaded();
 
 		// 2 steps back and 1 forward is the same as 1 back, i.e. positions should be 1 → 4 now.
-		assert( await DiffPage.isOlderPointerOn( 1 ) );
-		assert( await DiffPage.isNewerPointerOn( 4 ) );
-		assert( await DiffPage.showsOlderSummary( 1 ) );
-		assert( await DiffPage.showsNewerSummary( 4 ) );
+		expect( await DiffPage.isOlderPointerOn( 1 ) ).toBe( true );
+		expect( await DiffPage.isNewerPointerOn( 4 ) ).toBe( true );
+		expect( await DiffPage.showsOlderSummary( 1 ) ).toBe( true );
+		expect( await DiffPage.showsNewerSummary( 4 ) ).toBe( true );
 	} );
 
 	it( ' can be accessed using browser back and forward buttons after dragging', async () => {
@@ -52,10 +51,10 @@ describe( 'RevisionSlider history', () => {
 		await browser.forward();
 		await DiffPage.waitUntilLoaded();
 
-		assert( await DiffPage.isOlderPointerOn( 1 ) );
-		assert( await DiffPage.isNewerPointerOn( 4 ) );
-		assert( await DiffPage.showsOlderSummary( 1 ) );
-		assert( await DiffPage.showsNewerSummary( 4 ) );
+		expect( await DiffPage.isOlderPointerOn( 1 ) ).toBe( true );
+		expect( await DiffPage.isNewerPointerOn( 4 ) ).toBe( true );
+		expect( await DiffPage.showsOlderSummary( 1 ) ).toBe( true );
+		expect( await DiffPage.showsNewerSummary( 4 ) ).toBe( true );
 	} );
 
 } );
