@@ -4,12 +4,12 @@ namespace MediaWiki\Extension\RevisionSlider;
 
 use MediaWiki\Config\Config;
 use MediaWiki\Config\ConfigFactory;
+use MediaWiki\Diff\DifferenceEngine;
 use MediaWiki\Diff\Hook\DifferenceEngineViewHeaderHook;
 use MediaWiki\Html\Html;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Message\Message;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
-use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
 use OOUI\ButtonWidget;
@@ -42,14 +42,11 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 	 * @inheritDoc
 	 */
 	public function onDifferenceEngineViewHeader( $differenceEngine ) {
-		$oldRevRecord = $differenceEngine->getOldRevision();
-		$newRevRecord = $differenceEngine->getNewRevision();
-
 		/**
 		 * If the user is logged in and has explictly requested to disable the extension don't load.
 		 */
 		$user = $differenceEngine->getUser();
-		if ( $this->isDisabled( $user ) || !$this->isSamePage( $oldRevRecord, $newRevRecord ) ) {
+		if ( $this->isDisabled( $user ) || !$this->isSamePage( $differenceEngine ) ) {
 			return;
 		}
 
@@ -86,23 +83,17 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 			$this->userOptionsLookup->getBoolOption( $user, 'revisionslider-disable' );
 	}
 
-	private function isSamePage( ?RevisionRecord $oldRevRecord, ?RevisionRecord $newRevRecord ): bool {
+	/**
+	 * Do not show the RevisionSlider when revisions from two different pages are being compared
+	 */
+	private function isSamePage( DifferenceEngine $differenceEngine ): bool {
+		$oldRevision = $differenceEngine->getOldRevision();
+		$newRevision = $differenceEngine->getNewRevision();
 		// sometimes the old revision can be null (e.g. missing rev), and perhaps also the
 		// new one (T167359)
-		if ( !$oldRevRecord || !$newRevRecord ) {
-			return false;
-		}
-
-		/**
-		 * Do not show the RevisionSlider when revisions from two different pages are being compared
-		 *
-		 * Since RevisionRecord::getPageAsLinkTarget only returns a LinkTarget, which doesn't
-		 * have an equals method, compare manually by namespace and text
-		 */
-		$oldTitle = $oldRevRecord->getPageAsLinkTarget();
-		$newTitle = $newRevRecord->getPageAsLinkTarget();
-		return $oldTitle->getNamespace() === $newTitle->getNamespace() &&
-			$oldTitle->getDBKey() === $newTitle->getDBKey();
+		return $oldRevision &&
+			$newRevision &&
+			$oldRevision->getPage()->isSamePageAs( $newRevision->getPage() );
 	}
 
 	private function getContainerHtml( bool $autoExpand ): string {
