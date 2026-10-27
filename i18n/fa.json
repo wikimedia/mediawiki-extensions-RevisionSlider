@@ -8,7 +8,8 @@
 			"MohammadtheEditor",
 			"Obzord",
 			"Physicsch",
-			"فلورانس"
+			"فلورانس",
+			"LProfo"
 		]
 	},
 	"revisionslider": "RevisionSlider",
@@ -27,7 +28,7 @@
 	"revisionslider-toggle-title-expand": "گسترش نوار لغزنده نسخه",
 	"revisionslider-toggle-title-collapse": "بستن کشویی نوار لغزنده",
 	"revisionslider-turn-on-auto-expand-title": "همیشه کشویی تجدید نظر گسترش یابد",
-	"revisionslider-turn-off-auto-expand-title": "هنوز کشویی تجدید نظر به طور خودکار گسترش نیافته",
+	"revisionslider-turn-off-auto-expand-title": "اسلایدر نسخه را خودکار گسترش نده",
 	"revisionslider-arrow-tooltip-newer": "مشاهده نسخه‌های جدیدتر",
 	"revisionslider-arrow-tooltip-older": "مشاهده نسخه‌های قدیمی تر",
 	"revisionslider-show-help-tooltip": "نمایش متن راهنما",
