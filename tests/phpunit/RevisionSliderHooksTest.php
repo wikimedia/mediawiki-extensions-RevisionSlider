@@ -1,6 +1,5 @@
 <?php
 
-use MediaWiki\Config\ConfigFactory;
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Diff\DifferenceEngine;
 use MediaWiki\Extension\RevisionSlider\RevisionSliderHooks;
@@ -68,12 +67,8 @@ class RevisionSliderHooksTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	public function newInstance( array $options = [] ): RevisionSliderHooks {
-		$configFactory = $this->createMock( ConfigFactory::class );
-		$configFactory->method( 'makeConfig' )
-			->willReturn( new HashConfig() );
-
 		return new RevisionSliderHooks(
-			$configFactory,
+			new HashConfig(),
 			new StaticUserOptionsLookup( [], $options ),
 			StatsFactory::newNull()
 		);

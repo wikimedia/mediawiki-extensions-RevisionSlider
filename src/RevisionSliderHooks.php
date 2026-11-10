@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\RevisionSlider;
 
 use MediaWiki\Config\Config;
-use MediaWiki\Config\ConfigFactory;
 use MediaWiki\Diff\DifferenceEngine;
 use MediaWiki\Diff\Hook\DifferenceEngineViewHeaderHook;
 use MediaWiki\Html\Html;
@@ -25,15 +24,13 @@ use Wikimedia\Stats\StatsFactory;
  */
 class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferencesHook {
 
-	private readonly Config $config;
 	private readonly CounterMetric|NullMetric $eventsCounter;
 
 	public function __construct(
-		ConfigFactory $configFactory,
+		private readonly Config $mainConfig,
 		private readonly UserOptionsLookup $userOptionsLookup,
 		StatsFactory $statsFactory,
 	) {
-		$this->config = $configFactory->makeConfig( 'revisionslider' );
 		$this->eventsCounter = $statsFactory->getCounter( 'RevisionSlider_events_total' )
 			->setLabel( 'event', 'n/a' );
 	}
@@ -54,8 +51,8 @@ class RevisionSliderHooks implements DifferenceEngineViewHeaderHook, GetPreferen
 			->increment();
 
 		$timeOffset = 0;
-		if ( $this->config->get( MainConfigNames::Localtimezone ) !== null ) {
-			$timeOffset = $this->config->get( MainConfigNames::LocalTZoffset ) ?? 0;
+		if ( $this->mainConfig->get( MainConfigNames::Localtimezone ) !== null ) {
+			$timeOffset = $this->mainConfig->get( MainConfigNames::LocalTZoffset ) ?? 0;
 		}
 
 		$autoExpand = $this->userOptionsLookup->getBoolOption( $user, 'userjs-revslider-autoexpand' );

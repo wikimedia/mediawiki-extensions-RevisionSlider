@@ -180,7 +180,7 @@
 		"RevisionSliderHooks": {
 			"class": "MediaWiki\\Extension\\RevisionSlider\\RevisionSliderHooks",
 			"services": [
-				"ConfigFactory",
+				"MainConfig",
 				"UserOptionsLookup",
 				"StatsFactory"
 			]
